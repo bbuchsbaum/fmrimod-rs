@@ -1,0 +1,7 @@
+{
+  "oracle": "independent dense Cholesky/QR plus balanced eigenspace REML solutions; first 10 replicates per case",
+  "comparisons": 80,
+  "max_normalized_error": 1.5051147464294557e-14,
+  "analytic_parameter_comparisons": 55,
+  "max_parameter_error": 1.0000871137667967e-08
+}

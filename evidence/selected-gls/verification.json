@@ -1,0 +1,107 @@
+{
+  "recorded_utc": "2026-10-27T03:26:19.977929+00:00",
+  "checks": {
+    "fixture": {
+      "command": "LC_ALL=en_US.UTF-8 Rscript --vanilla scripts/generate_selected_gls.R",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-gls/fixture.log"
+    },
+    "all-features": {
+      "command": "cargo test -p fmri-noise -p fmrireg --all-features",
+      "exit": 0,
+      "passed": 41,
+      "ignored": 0,
+      "log": "evidence/selected-gls/all-features.log"
+    },
+    "selected-final": {
+      "command": "cargo test -p fmrireg --all-features --test selected_gls",
+      "exit": 0,
+      "passed": 5,
+      "ignored": 0,
+      "log": "evidence/selected-gls/selected-final.log"
+    },
+    "minimal": {
+      "command": "cargo test -p fmrireg --no-default-features --test selected_gls",
+      "exit": 0,
+      "passed": 4,
+      "ignored": 0,
+      "log": "evidence/selected-gls/minimal.log"
+    },
+    "clippy": {
+      "command": "cargo clippy -p fmri-noise -p fmrireg --all-features --lib --no-deps -- -D warnings",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-gls/clippy.log"
+    },
+    "example": {
+      "command": "cargo run -p fmrireg --features dataset --example selected_gls",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-gls/example.log"
+    },
+    "source-preservation": {
+      "command": "python3 scripts/check_source_preservation.py",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-gls/source-preservation.log"
+    }
+  },
+  "reference_cases": 24,
+  "reference_provenance": {
+    "R": "R version 4.5.1 (2025-06-13)",
+    "stats": "4.5.1",
+    "method": "Dense original AR covariance from stats::ARMAacf or inverse finite zero-history filter, followed by covariance subsetting or independent segments; explicit GLS normal equations"
+  },
+  "sha256": {
+    "crates/fmrireg/Cargo.toml": "171091e672a98d7b4415e86e7291c241b5dcbb42b59c9eb7447863a1a439eb87",
+    "crates/fmrireg/tests/selected_gls.rs": "577e086d53e5e2f6a838acca70445ad381d46bd3e5e139b3295599fa923a3f0f",
+    "crates/fmrireg/tests/fixtures/selected_gls.json": "2ca9373be15867f562a38bc5dc0e22a84c345bea461841dd6bd7150c3fe8e90c",
+    "crates/fmrireg/examples/selected_gls.rs": "dde5fb27533ab2b45e81cb71dab26f9ae5d49df3f1c988c7b3d129b1c82cbe3d",
+    "scripts/generate_selected_gls.R": "f292848da078616ba1bece1fe4f2e9f359ce818e286fe6ecd9a38876ec09e9d8",
+    "docs/SELECTED_GLS.md": "c26ced4a2c5bd5be1142ed2f15d2177bc521753a351747438ffe04042290a0f0",
+    "docs/CAPABILITIES.md": "e0fb4c6d8f47f6f88a5fc639c1a8a8d982ddd56881e80d9f6c76df00737f6f65",
+    "docs/PLAN.md": "cd9449b6318a59198d4bf2d61f03af91de968383e46efc3a53cfe7900df61d6e",
+    "crates/fmri-noise/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmri-noise/src/lib.rs": "2440203c8fc02c10ae274b8db97eae7673583b6b0dac9fdf0c20fa9f70b50658",
+    "crates/fmri-noise/src/selected.rs": "e0bb8c6b9b4eaadba1a4f5fc455f2165bf670132d263770d8c656ea210935edb",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/ar.rs": "a19aeb0af7dfcc4d405a4c2e6de0ce8816b136c6a8660c47c05a45af2d8a90ab",
+    "crates/fmrireg/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+    "crates/fmrireg/src/lib.rs": "ef011152b5c53ac50c4318e2f3ef843233fced218bc13680106b44f1b697f46c",
+    "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+    "crates/fmrireg/src/selection.rs": "b46d57bcdf20cf7fbbaf956c6ebcd744910084428e345341ca7748ea1a0fbb26",
+    "crates/fmrireg/src/dataset.rs": "0bbfff19de41213c4ca21d8410e228176d5dc89b1bcd035965df9f0d085a8778",
+    "crates/fmridataset/src/lib.rs": "08b129c164242fd6844aa761385a9b766d0752b1dcad4cebd44c1b06c2096b74",
+    "crates/fmridataset/src/axis.rs": "9f623816c403baeb9432f8c6a944895536b81af5a414518333e3bb91fe0f185a",
+    "crates/fmridataset/src/space.rs": "757b0dda2edbc04c5b57150e7c033f95ef0396cf0955cba010eb504466c36af6",
+    "crates/fmridataset/src/selection.rs": "bca9e37f14703780e42e9f37b197809d996db3a2c8a8a42f1040ff9a010b0414",
+    "crates/fmridataset/src/errors.rs": "c03e6a6c71604f116f1ee0a338cd2da5e2ee0c18b303a843891d0e7e443c4c91",
+    "crates/fmridataset/src/array.rs": "84e92650bdffaa4306f7722f9ae6a6651eb285ff35f066a876f80ebc15de9df8",
+    "crates/fmridataset/src/frame.rs": "7dfcbfb04b54912760203c75238731f1b1b8b4154a2b6753b3a86ac9a7e96b52",
+    "crates/fmridataset/src/sampling.rs": "30e6e6483478d7f3f0997202a49b6cebba9732be52cb10cfd480bee6c6cb8f14"
+  },
+  "tolerances": {
+    "numeric": "2e-9*(1+abs(reference))",
+    "df_rank_ids": "exact"
+  },
+  "qualification": [
+    "Known stationary finite AR coefficients; independent original runs; equal innovation scale",
+    "Orders 0-4 plus negative AR1; preserve/restart gaps; stationary/zero startup",
+    "Full suites passed before addition of one rank-loss test; final selected suite and minimal suite include that test",
+    "Strict all-feature library clippy passed; new example executed"
+  ],
+  "limits": [
+    "Censored AR coefficient estimation and design-bias correction not qualified",
+    "No new benchmark, real-data quality or full-process memory claim",
+    "No whole-workspace or hosted-CI claim; no publication"
+  ],
+  "adverse_evidence": [
+    "Initial clippy found one needless range loop in new code; fixed without suppressing lint"
+  ]
+}

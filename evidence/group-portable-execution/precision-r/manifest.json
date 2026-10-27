@@ -1,0 +1,408 @@
+{
+  "format": "fmri-group-estimate",
+  "version": 1,
+  "shape": [
+    20,
+    33
+  ],
+  "metadata": {
+    "subjects": [
+      {
+        "observation": "o0",
+        "dataset": "portable-execution",
+        "participant": "participant-0",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o1",
+        "dataset": "portable-execution",
+        "participant": "participant-1",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o2",
+        "dataset": "portable-execution",
+        "participant": "participant-2",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o3",
+        "dataset": "portable-execution",
+        "participant": "participant-3",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o4",
+        "dataset": "portable-execution",
+        "participant": "participant-4",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o5",
+        "dataset": "portable-execution",
+        "participant": "participant-5",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o6",
+        "dataset": "portable-execution",
+        "participant": "participant-6",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o7",
+        "dataset": "portable-execution",
+        "participant": "participant-7",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o8",
+        "dataset": "portable-execution",
+        "participant": "participant-8",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o9",
+        "dataset": "portable-execution",
+        "participant": "participant-9",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o10",
+        "dataset": "portable-execution",
+        "participant": "participant-10",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o11",
+        "dataset": "portable-execution",
+        "participant": "participant-11",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o12",
+        "dataset": "portable-execution",
+        "participant": "participant-12",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o13",
+        "dataset": "portable-execution",
+        "participant": "participant-13",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o14",
+        "dataset": "portable-execution",
+        "participant": "participant-14",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o15",
+        "dataset": "portable-execution",
+        "participant": "participant-15",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o16",
+        "dataset": "portable-execution",
+        "participant": "participant-16",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o17",
+        "dataset": "portable-execution",
+        "participant": "participant-17",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o18",
+        "dataset": "portable-execution",
+        "participant": "participant-18",
+        "measurement": "baseline"
+      },
+      {
+        "observation": "o19",
+        "dataset": "portable-execution",
+        "participant": "participant-19",
+        "measurement": "baseline"
+      }
+    ],
+    "estimand": {
+      "id": "synthetic-effect",
+      "definition": "deterministic portable execution fixture",
+      "units": "arbitrary"
+    },
+    "feature_space": {
+      "kind": "volume",
+      "dimensions": [
+        33,
+        1,
+        1
+      ],
+      "affine": [
+        [
+          1.2345678901234567,
+          0,
+          0,
+          11.234567890123451
+        ],
+        [
+          0,
+          2.3456789012345669,
+          0,
+          -3.1415926535897931
+        ],
+        [
+          0,
+          0,
+          3.4567890123456779,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "support": [
+        32,
+        31,
+        30,
+        29,
+        28,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "template": "precision-fixture"
+    },
+    "variance_origins": [
+      {
+        "kind": "estimated",
+        "df": {
+          "kind": "scalar",
+          "value": 12.345678901234567
+        },
+        "method": "precision-fixture",
+        "approximate": true
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      },
+      {
+        "kind": "known",
+        "method": "known synthetic sampling variance"
+      }
+    ],
+    "fit_receipts": [
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      },
+      {
+        "model": "deterministic generator",
+        "noise": "known variance",
+        "selection": "all generated features"
+      }
+    ],
+    "admission": {
+      "target": "known synthetic feature support",
+      "evidence": "same generated indexed feature axis for every subject"
+    }
+  },
+  "effects": {
+    "file": "effects.f64",
+    "sha256": "9e9b9a6b464d3ed3f0aaf6857906b4adab222338e71c931b76036e7eebf090b3"
+  },
+  "variances": {
+    "file": "variances.f64",
+    "sha256": "151eb6313567a19e8d7693c63954476bc366c2f1c799980ffc383b2e67fde7a4"
+  }
+}

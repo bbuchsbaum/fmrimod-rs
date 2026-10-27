@@ -1,0 +1,15 @@
+{
+  "group_dataset_and_benchmark_source_hashes_match": true,
+  "subsequent_unrelated_facade_changes": [
+    "crates/fmrimod/Cargo.toml",
+    "crates/fmrimod/examples/analysis_viewer.rs"
+  ],
+  "artifact_hashes_verified": 76,
+  "baseline_candidate_inputs_identical_and_match_prior_R_receipt": 52,
+  "result_directory": "evidence/group-portable-execution/run-20261027T183910Z",
+  "docs_sha256": {
+    "docs/GROUP_PORTABLE_EXECUTION.md": "7da59265470d83f730b0f0db9557c7f13228b4bffa5860da49101671633884e1",
+    "docs/GROUP_ESTIMATE_FORMAT.md": "e08652e16aec198e5726ebd7eabcc2f6fc2c74b1e1bb3c0a947e7d583ab7ed42",
+    "docs/PLAN.md": "e2cfec20f97d3310c752357c3e930b3413cbc1f42ed12e0935f51c8082b2af7c"
+  }
+}

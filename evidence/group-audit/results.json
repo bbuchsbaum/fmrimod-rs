@@ -1,0 +1,85 @@
+{
+  "package_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-audit/r-library/fmrigds",
+  "R": "R version 4.5.1 (2025-06-13)",
+  "tolerances": {
+    "relative": 1e-10
+  },
+  "seed": [2701, 2702, 2703],
+  "witnesses": {
+    "different_estimands": {
+      "claim": "OLS mean 3; common-effect estimate 1.8, variance 0.4",
+      "observed": [3, 1.8, 0.40000000000000002]
+    },
+    "dl_analytic": {
+      "claim": "Two studies -1,+1 with variance 1 give tau2=1 and group variance=1",
+      "observed": {
+        "beta_g": 0,
+        "var_g": 1,
+        "tau2": 1
+      }
+    },
+    "native_reference": {
+      "claim": "Fresh compiled FE and DL meta-regression agree with R paths on missing/invalid-variance fixtures",
+      "observed": true
+    },
+    "ols_missing": {
+      "claim": "Public OLS matches independent base-R QR including per-feature degrees of freedom",
+      "observed": [5, 4]
+    },
+    "absolute_floor": {
+      "claim": "Default 1e-12 variance floor breaks unit-scale invariance below that floor",
+      "observed": [3.4641016151377548, 0.034641016151377553]
+    },
+    "map_zero_times_na": {
+      "claim": "Public map [1,0] of [2,NA] yields NA; support-only result is 2",
+      "observed": null
+    },
+    "mapping_covariance": {
+      "claim": "Equal-weight average variance is 0.5 under independence, 0.9 at correlation 0.8",
+      "observed": [0.5, 0.90000000000000002]
+    },
+    "provider_scope": {
+      "claim": "Covariance provider receives only feature indices; same covariance used for both subjects despite distinct marginal input variances",
+      "observed": [0.5, 0.5]
+    },
+    "affine_compatibility": {
+      "claim": "Default compatibility accepts same dimensions with 10-unit affine translation",
+      "observed": true
+    },
+    "contrast_collision": {
+      "claim": "Public contrast renaming accepts duplicate resulting IDs",
+      "observed": ["same", "same"]
+    },
+    "valid_zero": {
+      "claim": "Zeros retained by default; explicit zero policy masks effect and variance together",
+      "observed": true
+    },
+    "pooled_scope": {
+      "claim": "Separately fitting feature blocks changes pooled covariance; streaming must preserve declared fit scope",
+      "observed": [608.84659521168703, 2213.9058396406313, 0]
+    },
+    "lmm_missing": {
+      "claim": "Current repeated LMM rejects a feature with any missing observation",
+      "observed": true
+    },
+    "max_t_family": {
+      "claim": "Familywise p-values differ if each feature block is treated as a separate family",
+      "observed": {
+        "full": [0.8910505836575876, 0.97665369649805445, 0.85214007782101164, 1, 1, 0.74319066147859925],
+        "singleton": [0.30739299610894943, 0.42412451361867703, 0.26070038910505838, 0.82101167315175094, 0.9221789883268483, 0.1828793774319066]
+      }
+    },
+    "contrast_covariance": {
+      "claim": "Marginal variances alone give difference variance 2; true covariance gives 0.4",
+      "observed": [2, 0.40000000000000002]
+    },
+    "knownvar_dense_oracle": {
+      "claim": "Compiled low-rank known-variance coefficients, SE and REML objective match independent dense covariance solve",
+      "observed": true
+    },
+    "effect_only_constructor": {
+      "claim": "new_gds rejects beta without var/se, although OLS and unweighted LMM do not use sampling variance",
+      "observed": "Error : If 'beta' is provided, either 'var' or 'se' must also be present\n"
+    }
+  }
+}

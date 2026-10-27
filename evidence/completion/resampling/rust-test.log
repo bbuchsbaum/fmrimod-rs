@@ -1,0 +1,21 @@
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `test` profile [unoptimized] target(s) in 2.28s
+     Running tests/influence.rs (target/debug/deps/influence-1d77c3ed887a3606)
+
+running 2 tests
+test missingness_rank_loss_and_sink_failure_stay_explicit ... ok
+test exact_deletions_match_fresh_metafor_in_both_tau_modes ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/resampling.rs (target/debug/deps/resampling-d3184cbb32a822f7)
+
+running 3 tests
+test rejects_missing_invalid_exchangeability_budget_and_undefined_statistic ... ok
+test seeded_draws_are_reproducible_and_never_zero ... ok
+test fresh_r_complete_enumeration_and_whole_family_block_invariance ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

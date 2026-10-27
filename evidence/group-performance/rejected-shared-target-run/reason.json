@@ -1,0 +1,4 @@
+{
+  "accepted": false,
+  "reason": "Cargo reused the candidate executable when the older baseline source was copied into a shared target directory. Binary hashes were identical; no speedup from these runs is valid. Forced baseline source recompilation and added binary-identity and intercept-factorization guards."
+}

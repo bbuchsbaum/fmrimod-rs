@@ -1,0 +1,39 @@
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `test` profile [unoptimized] target(s) in 1.44s
+     Running unittests src/lib.rs (target/debug/deps/fmri_group-6610cef1a9efc734)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/group.rs (target/debug/deps/group-16193551350b7294)
+
+running 12 tests
+test first_level_bridge_rejects_different_estimands_and_feature_identity ... ok
+test identity_validation_and_variance_requirement ... ok
+test budget_and_sink_failure_are_enforced ... ok
+test dataset_rejects_permuted_variance_axis ... ok
+test f32_source_and_invalid_variance_policy ... ok
+test fdr_matches_base_r_and_preserves_missing_family_members ... ok
+test retained_zero_rank_is_not_reported_as_too_few_observations ... ok
+test bounded_pattern_cache_and_row_permutation ... FAILED
+test unit_invariance_dl_boundary_and_valid_zero ... ok
+test first_level_to_group_and_explicit_provenance ... ok
+test missingness_rank_and_constant_feature_are_local ... ok
+test independent_r_oracles_and_block_invariance ... ok
+
+failures:
+
+---- bounded_pattern_cache_and_row_permutation stdout ----
+
+thread 'bounded_pattern_cache_and_row_permutation' (16748913) panicked at crates/fmri-group/tests/group.rs:463:5:
+assertion failed: r.factorizations > 8
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    bounded_pattern_cache_and_row_permutation
+
+test result: FAILED. 11 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `-p fmri-group --test group`

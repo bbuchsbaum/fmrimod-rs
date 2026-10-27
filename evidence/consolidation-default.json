@@ -1,0 +1,1899 @@
+[
+  {
+    "label": "libraries",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--lib",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/libraries.log",
+    "sha256": "bf0b2c6beb73e88ae7e9b2698052db8ef0c6bedac5905e07eafdda8710a6f91a",
+    "passed": 453,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-ar_small_orders",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "ar_small_orders",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-ar_small_orders.log",
+    "sha256": "934e2ed3cf70ca318b20b0c66f7cb7ddf75f835a76d72a2ab8881234661ff59e",
+    "passed": 2,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-arp",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "arp",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-arp.log",
+    "sha256": "d084ba5bea9dc313b2b5d75d360b71d3a4213f73d0171adceb6b64a73918b44d",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-contracts.log",
+    "sha256": "8dd50244e37d73e091a81bfcd88144bf2a182cae73b3ed7aaa5cee7dee6508d1",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-convolution_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "convolution_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-convolution_contract.log",
+    "sha256": "b8ab3fab7a6ba9158a47d7d8d3b11907bf5ca82ad9194cbdb7b27f9de0090260",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-cross_validation",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "cross_validation",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-cross_validation.log",
+    "sha256": "f9c7b06443c541d7f3366736d82bc24ed6b7a77f7959f6382eeae2ad43767bc5",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-cross_validation_spm",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "cross_validation_spm",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-cross_validation_spm.log",
+    "sha256": "7d90a32cdc6b73a6f2f4a28002a582d3ccab8fe9391d08a0d4064d42a7f58995",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-current_spline_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "current_spline_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-current_spline_contract.log",
+    "sha256": "1c0abf9af804535c56b6b7c8d91d7241dd6071ec178dfd08df22fac15b314215",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-design_safety",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "design_safety",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-design_safety.log",
+    "sha256": "580288aedb85fde694e2920be196e641e09b69fd8e633563dc14ea09ffa78c1e",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-edge_case_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "edge_case_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-edge_case_tests.log",
+    "sha256": "724bbf647666eea446de35eeb866cedd3bac5c859a51f702bc350e841214adde",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-frame_contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "frame_contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-frame_contracts.log",
+    "sha256": "ab3c528ae40a5c1439ec8fe4e169d0c3b013ebfc5dd4de3fb6273baf6cf32b12",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-golden_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "golden_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-golden_tests.log",
+    "sha256": "e7bacb5ad06ad698d4d0c0c071f859b86a170e4f3c4ef8c631c8668193f0fe09",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_audit",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "hrf_audit",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-hrf_audit.log",
+    "sha256": "c19189fb963c691d2521de8453a4b09c0efd23e415b4a0dfe7659f6d11a7123c",
+    "passed": 3,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_decorator_fixtures_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "hrf_decorator_fixtures_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-hrf_decorator_fixtures_parity.log",
+    "sha256": "44d35955f8e85adae35fac774ec07d74c6c38da559e81a129c5ca1f9696bebd0",
+    "passed": 5,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_fixtures_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "hrf_fixtures_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-hrf_fixtures_parity.log",
+    "sha256": "c52a5dea1a59c196de10cecd3d5d87e424f3e14e6f628ec90bcca9ed0544abe9",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_spec_roundtrip",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "hrf_spec_roundtrip",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-hrf_spec_roundtrip.log",
+    "sha256": "ef6f7a88cb28c92c4c7878f0c74188de56c3de48e446b76e31e023a57284dd72",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-integration_test",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "integration_test",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-integration_test.log",
+    "sha256": "29db0998da90087d7ae1bef51c0a457c563822b8332f80e5147f6451324e59f7",
+    "passed": 17,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-invalid_allocation",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "invalid_allocation",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-invalid_allocation.log",
+    "sha256": "6346c7499aeda35586479fd73d86613c691faa904e8ac130abc101e4ec10c6a8",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-nuisance_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "nuisance_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-nuisance_contract.log",
+    "sha256": "f9a1799ca67e0eea4ddd580e300e77f26a4c5d97058d2e515ac47d712107c8ec",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-parallel",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "parallel",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-parallel.log",
+    "sha256": "24bd93739fa8f49c4c7d9b8c1d089ba5c66e494f079cff68b4701e92f64f2288",
+    "passed": 5,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-pipeline",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "pipeline",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-pipeline.log",
+    "sha256": "26f2695a2e67e400133f45d4e3ad7fb2b16e1c511225f8b775a2786945c0029a",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-r_core_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "r_core_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-r_core_contract.log",
+    "sha256": "863c6917e5ce8368b7d1eb4c35ac2644ea2bcf80694dd65064fde34778c3c1c2",
+    "passed": 9,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-regressor_design_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "regressor_design_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-regressor_design_parity.log",
+    "sha256": "600afaa80f88d3f2d25aa91951f287a5889192c561b3490f61e8438ec6b52bd8",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-regressor_design_spmg3_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "regressor_design_spmg3_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-regressor_design_spmg3_parity.log",
+    "sha256": "c70c46ba886fa64695b89373828eb4b24a9feb17ce0bd74d142f77dbedab8809",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-sampled_feature_design",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "sampled_feature_design",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-sampled_feature_design.log",
+    "sha256": "5ea82066fe408d7dd4b1b85724c647ef89097b08f03c663791ceb4a1e78867f7",
+    "passed": 3,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-sampled_features",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "sampled_features",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-sampled_features.log",
+    "sha256": "8cf8cc38e47901cf53715a22d7838b4b698aa2874a0ae080f8cf8430f3083c8f",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-selected_arp_estimation",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "selected_arp_estimation",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-selected_arp_estimation.log",
+    "sha256": "4844a712f3a6f12b7853b377a522bf82e8ae626a86da8ecd316fdc536084ab51",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-selected_estimation",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "selected_estimation",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-selected_estimation.log",
+    "sha256": "7b30f6c943e0771dcaa86e1423538b976f39dd6a7c15addb847e5352266e497d",
+    "passed": 5,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-selected_gls",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "selected_gls",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-selected_gls.log",
+    "sha256": "8573456ef2a564892c42ee271fdac203b67a17e712ac2ce2be0ab94fe19121fa",
+    "passed": 5,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-speed_contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "speed_contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-speed_contracts.log",
+    "sha256": "519ff693fb1a33c7693affa23f59d085876c10d4714843734e3250dcad42f26e",
+    "passed": 3,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-spmg_hrf_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "spmg_hrf_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-spmg_hrf_parity.log",
+    "sha256": "e182e13f4efc3e3e1ac9bdc362891cf954c8ee0a5c993575fb4fbf3401eb7a8c",
+    "passed": 2,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-tent_hrf_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "tent_hrf_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-tent_hrf_parity.log",
+    "sha256": "ef8fa83f5ed11014f58528026554799ed8eddcc454584493c7c7c67be9ff866e",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_afni_integration",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_afni_integration",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_afni_integration.log",
+    "sha256": "92a063c18f26be308556c8d687ad42d270b34ce83c0ecfb0c51124d67d52c7b5",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_basis_functions",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_basis_functions",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_basis_functions.log",
+    "sha256": "0d56d83dc6481f62214492376d3cb741e6dcd2ba2657c354d53eee7b0b042338",
+    "passed": 14,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_contrast_weights",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_contrast_weights",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_contrast_weights.log",
+    "sha256": "d79cb746f7015d2b722b9466290397727d60ef5956f9a92f19a5b1ad49dce644",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_convolution",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_convolution",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_convolution.log",
+    "sha256": "f4ee7cfa8d489d3d6b3289c2499f515e76f3e1720c2d6be0e0a4f5c70684c24c",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_core_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_core_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_core_parity.log",
+    "sha256": "dc5ed267ca1799610cffb1765c5379bea3b2e124e929870b9344e359dfccd2dd",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_crossval",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_crossval",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_crossval.log",
+    "sha256": "10f8e32643ed1c80ecf03465a7fbb7a9b60913ad93f528d098363bb19da31341",
+    "passed": 14,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_dataframe_conversion",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_dataframe_conversion",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_dataframe_conversion.log",
+    "sha256": "8ead2809693cb6a99cc712b66e6b1b028a68d5d976306134b3a79f879a9b8947",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_event_basis",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_event_basis",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_event_basis.log",
+    "sha256": "c543481d21b7ff3ec02773478217fdb6e64a4c9cecaac04147239230776c3ed9",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_event_model",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_event_model",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_event_model.log",
+    "sha256": "8296226fc215948ba9d3a69dcde1e73acae8ea038dea1f95f8140b94c8df0644",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_events",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_events",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_events.log",
+    "sha256": "f3c16c7fb42ca7dfc2d8f90368131c9f2277157312c0cc349113b35dd4d1c640",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_export",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_export",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_export.log",
+    "sha256": "e52696eb1d4fb0ba976d75b95788406caeafdaf6dec943132bc67e0b428f41cd",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_fcontrast",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_fcontrast",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_fcontrast.log",
+    "sha256": "a49cdf2b5d2b197c101efd781e76a42f13e15bc678fd31954be63b8b944e0945",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_at_operator",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_at_operator",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_formula_at_operator.log",
+    "sha256": "bc0b66eb17b64f4bfd19763fa7035d12fd760a09733810b799b1e5204afc96db",
+    "passed": 9,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_dsl",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_dsl",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_formula_dsl.log",
+    "sha256": "f60831d1425b70b3c4bc0848f3a24d427900538ab3bd68eefbafe1bac88c716f",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_interface",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_interface",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_formula_interface.log",
+    "sha256": "6d7e9a691867daa988522f17a3a4e4df0da9ede63a6cd0085c74602efe4ee32d",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_parser",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_parser",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_formula_parser.log",
+    "sha256": "6bc08f799dc4dddab48174e97df7d5ad6fa943186f65608f0f900909c6f39eed",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_hrf_integration",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_hrf_integration",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_hrf_integration.log",
+    "sha256": "4ebef1aa9f8bacf176d9e4037d9080c586dadab65258f6c3e71e42ee44acd920",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_python_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_python_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_python_parity.log",
+    "sha256": "9a0fa3e7198e3a259fd5a7cb75e892e11ce7dcc0404c7d0d751cecc9071d1a49",
+    "passed": 25,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_sampling",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_sampling",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_sampling.log",
+    "sha256": "5fc02840963ea1a1beb98206980ed7c492dd5b3b1e50c522f35400e1cacfd667",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_scale_within",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_scale_within",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_scale_within.log",
+    "sha256": "a046a66e734bfe21a0fd6c5109a415490ebff23487b42d540dba3b78a7224668",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_serialization",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_serialization",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_serialization.log",
+    "sha256": "b5739d47daa77da522f82b8e565cae06adc57662dbb494e17070025234e14eba",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_standardized",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_standardized",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_standardized.log",
+    "sha256": "994d3769704a60fed9d258eff7391049ec33c4bb4e24492c22d55c2258f3e54e",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_utils",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "test_utils",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-test_utils.log",
+    "sha256": "9cdc8317da2ad82207b5b4655985d2b71564693fb2b2908749dbc66876a37242",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-whitening_into",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "whitening_into",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-whitening_into.log",
+    "sha256": "5ae699828fe389d2c153b77a5d6f711b254e3b09ec32cf6108b980e5d15929f2",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-workflow_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--test",
+      "workflow_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/test-workflow_tests.log",
+    "sha256": "f654f487cf57661c8cfbe735965619a5f3d4b9d424283c825168e865612b25f2",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-algebra_gls",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "algebra_gls",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-algebra_gls.log",
+    "sha256": "6c71eb9b3c5868450206b0ba790d44e15fca6f01d9d692d69b77301a60cad11c",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-algebra_qr",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "algebra_qr",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-algebra_qr.log",
+    "sha256": "d67017892ebbd380c12fd2ab0662bbcbfb100330459bb7d7fdf1eef982f34728",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-baseline_model",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "baseline_model",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-baseline_model.log",
+    "sha256": "001f1ac85e4dd4f6410c786c3c3a594499925e4111d8f8d1be75b20410c3b84f",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-block_throughput",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "block_throughput",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-block_throughput.log",
+    "sha256": "84c3683ca75073d96505f37132bdf6355e25475ed077effbb35957579c087900",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-comprehensive_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "comprehensive_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-comprehensive_demo.log",
+    "sha256": "dab736acc5326b72f1445533086208605a3bccfc93394ee0007bc2b698d4ae15",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-core_port",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "core_port",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-core_port.log",
+    "sha256": "e853eee6edd51b3a0e0f4331d3a87f421366c3490b69f3c2fe853f7c29a2f1b1",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-dataframe_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "dataframe_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-dataframe_demo.log",
+    "sha256": "37df3098798767d86020f8c0817a0ac93f34209bb251beda8467edc4865dd960",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-empirical_hrf_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "empirical_hrf_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-empirical_hrf_demo.log",
+    "sha256": "10c896ba89fb757cae16015910093a23b3c61672dfb2ab9ae4fb2f4c01b65e88",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-empirical_hrf_plotting",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "empirical_hrf_plotting",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-empirical_hrf_plotting.log",
+    "sha256": "77542a741ae9e9c592a321e394584d38980fbe80888f919dc328a558b994133b",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-event_basis_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "event_basis_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-event_basis_demo.log",
+    "sha256": "305d0c8984878608dd78be09be54b83038c0e372eb845f8338fc18658e9cdcd4",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-first_level",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "first_level",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-first_level.log",
+    "sha256": "3b32719d86f7b341db1f063eca22318799a27e23da4b197c8bbba545916500dd",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-frame_view",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "frame_view",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-frame_view.log",
+    "sha256": "487b1a844e86e744a67825e52d7f73f052b6dd767da108f44bd5878f11ca3ba4",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-gls_benchmark",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "gls_benchmark",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-gls_benchmark.log",
+    "sha256": "b5d75d57b4d6213850c1c06987270a77325a303e5746932f3fb0e5f35eebc6d8",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-hill_kernel",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "hill_kernel",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-hill_kernel.log",
+    "sha256": "319a063458faf2f331ee78cc03207c45daf44c8ef1f9d58d094798280f59eb52",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-html_plotting_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "html_plotting_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-html_plotting_demo.log",
+    "sha256": "53d31bceeadd8b5dec9c1854499a4d633becbc4f23381f5d5afc6ae6101b7ff1",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-nuisance_design",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "nuisance_design",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-nuisance_design.log",
+    "sha256": "144058397d77bc2c0fb092b683032207b8df43c1a52d661ef7ef778731bb8507",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-plotting_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "plotting_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-plotting_demo.log",
+    "sha256": "0518eae7f00bec194b368d367c51d47943a5a02513975cb3d1a601b530fda9d6",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-plotting_demo_simple",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "plotting_demo_simple",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-plotting_demo_simple.log",
+    "sha256": "32dfd1bf00bf3c86c01ada20922b9d1e15450626740785a19a7c10179645e1f9",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-port_benchmark",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "port_benchmark",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-port_benchmark.log",
+    "sha256": "c38a052f2a3ac6adfea78910262a8e56b284c259c22b0b4b3c77f9d6066404c3",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-port_design",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "port_design",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-port_design.log",
+    "sha256": "6075dd31b9ccda03031045b8f006c7fff559e697d815dc1582f49d91e4ff1136",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-reusable_fit",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "reusable_fit",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-reusable_fit.log",
+    "sha256": "3e89184269bb8f42aa08e2805988e5a2a5327dc0a5c27bc542fc72c969dcee69",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-sampled_feature_design",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "sampled_feature_design",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-sampled_feature_design.log",
+    "sha256": "e1ab3a9f07e938939e495b9cad3a0f69378202792f82dce6044e4e999dce0838",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-sampled_features",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "sampled_features",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-sampled_features.log",
+    "sha256": "5525241d6fbadbcede4d987793989c41cfb36c6cec371cf39541837ca5df50a5",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-scale_within_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "scale_within_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-scale_within_demo.log",
+    "sha256": "3f48e9370bcfd741eabd5e5c3b3fa2f1168cd5ae62c2d97b7713f028143de7f4",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-selected_ar1",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "selected_ar1",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-selected_ar1.log",
+    "sha256": "e1f14ce51f26060143735638e51b56d38970029b975b42b695cd9f1ad8eb3170",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-selected_arp",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "selected_arp",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-selected_arp.log",
+    "sha256": "f5a38eba2891a955301e71e180d4d2b79501dc0efed7ee5620c1c9af3e64c5bb",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-selected_gls",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "selected_gls",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-selected_gls.log",
+    "sha256": "0971ee48161ce48e27d65c7ec0e5f54e743e7f8cfa8516cf78d36f72a6238434",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-serialization_example",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "serialization_example",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-serialization_example.log",
+    "sha256": "3c136a98610297d194173c8270f52e719e01fa6f988af4062a9c7081ff650ff6",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-standardized_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "standardized_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-standardized_demo.log",
+    "sha256": "30002f524f7a52e37d21649d4fbda3cd50fda9f6b474c826c70b5e894ebc454c",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_conditions",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "test_conditions",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-test_conditions.log",
+    "sha256": "c24a8cad6d1d2809ee21ea96f88c7bd4fb26f31a1dc607b1da60d24beabc9a8f",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_poly",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "test_poly",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-test_poly.log",
+    "sha256": "25ca4b03b63bec235918cb5ca11ed551f34007327265680a32e32ca3b1a3a914",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_sampling",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "test_sampling",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-test_sampling.log",
+    "sha256": "09966586b000c46b8904f290e8bd3ec17de174fb43eac6d144ddac9a19b9fe9f",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-throughput",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "throughput",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-throughput.log",
+    "sha256": "34ffcf1c8e2b1ca28ccf32b4b94d47d8e5b016164af3a2fa79f388f62809f95f",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-validate_spm_canonical",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "validate_spm_canonical",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-validate_spm_canonical.log",
+    "sha256": "6e15351263c6097d4e7cbaa2c99de41a28676648b750300e7d1968d457cf49cf",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_01_hrf",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "vignette_01_hrf",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-vignette_01_hrf.log",
+    "sha256": "4491ff4124b58dfe186796c1cfa22fafa016012c39d42742ba89adc5b84667a4",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_01_introduction",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "vignette_01_introduction",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-vignette_01_introduction.log",
+    "sha256": "fe037e038672d07123eacaae65b4537bf065979c35fd60b45fd5f6ca918fcd21",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_02_baseline",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "vignette_02_baseline",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-vignette_02_baseline.log",
+    "sha256": "c7570d80110c8c02466accdae21f59ab124dba90b6479dffac34e3708f621e75",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_02_regressor",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "vignette_02_regressor",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-vignette_02_regressor.log",
+    "sha256": "d5c2339a3428b0dca335bc58bfdc1b77e68a6c9e95894ba4a5b897bdc312abe8",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_03_event_models",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "vignette_03_event_models",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-vignette_03_event_models.log",
+    "sha256": "20b8d9dfe0fb03b36eb6618495a284da48ad699aeaeb512eed2e12b0444f8b2c",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_03_generators",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "vignette_03_generators",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-vignette_03_generators.log",
+    "sha256": "48b6258c496fa205acb07211da657e611c59bf865d5bb7a23c27f4d0618b2d6f",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_04_advanced",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "vignette_04_advanced",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-vignette_04_advanced.log",
+    "sha256": "2b0cf7176e24521f0213f7c5372f2e86e6d212677354745cc5ae24039c81b9ee",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_04_contrasts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--example",
+      "vignette_04_contrasts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/example-vignette_04_contrasts.log",
+    "sha256": "697c1b65e636f31f55651829f27774054c3ba65a91ac4eae808f9dc775c5d454",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "doctests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "-j",
+      "1",
+      "--doc"
+    ],
+    "exit_code": 0,
+    "log": "evidence/consolidation-default/doctests.log",
+    "sha256": "22139d01491d4b20261614d0220a88839890810c46b929a5581a466191dcd744",
+    "passed": 71,
+    "failed": 0,
+    "ignored": 17
+  }
+]

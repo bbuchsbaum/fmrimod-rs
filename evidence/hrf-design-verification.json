@@ -1,0 +1,42 @@
+{
+  "full_workspace": {
+    "batches": 81,
+    "passed": 891,
+    "failed": 0,
+    "ignored": 21,
+    "receipt": "evidence/hrf-design-final.json"
+  },
+  "post_checks": {
+    "hrf-design-post": {
+      "exit": 0,
+      "passed": 508,
+      "failed": 0,
+      "ignored": 20,
+      "log_sha256": "5f62f6b4d59a758d1ce0584fcb1b8dc4fa560d03500bc84fd847066b4d960d25"
+    },
+    "hrf-design-minimal": {
+      "exit": 0,
+      "passed": 168,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "23718084ee3ee93ae3a1bc3125069120fefbbf9027cd8e6b4e3a671897454185"
+    },
+    "hrf-design-clippy": {
+      "exit": 0,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "f59b2d678a10b4baf36f1ccab9c3d71fd1b8680f36eb8cc3b7a5cc586c86a8db"
+    },
+    "hrf-design-format": {
+      "exit": 0,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "source_manifest_sha256": "be16811663313eeb808b56524c0c6d03d9a113c1559b3b895f6d38248a35db71",
+  "scope": "All-feature workspace campaign plus affected-crate rechecks after final missing-pair guard. R/Scala reference files verified unchanged. Legacy Clippy warnings are not claimed clean.",
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
+}

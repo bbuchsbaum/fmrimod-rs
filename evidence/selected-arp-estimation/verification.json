@@ -1,0 +1,398 @@
+{
+  "recorded_utc": "2026-10-27T11:39:02.933820+00:00",
+  "checks": {
+    "fixture": {
+      "command": "LC_ALL=en_US.UTF-8 Rscript --vanilla scripts/generate_selected_arp_estimation.R",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-arp-estimation/fixture.log"
+    },
+    "all-features": {
+      "command": "cargo test -p fmri-noise -p fmrireg --all-features -- --nocapture",
+      "exit": 0,
+      "passed": 52,
+      "ignored": 0,
+      "log": "evidence/selected-arp-estimation/all-features.log"
+    },
+    "minimal": {
+      "command": "cargo test -p fmrireg --no-default-features --test selected_arp_estimation -- --nocapture",
+      "exit": 0,
+      "passed": 3,
+      "ignored": 0,
+      "log": "evidence/selected-arp-estimation/minimal.log"
+    },
+    "clippy": {
+      "command": "cargo clippy -p fmri-noise -p fmrireg --lib --all-features --no-deps -- -D warnings",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-arp-estimation/clippy.log"
+    },
+    "example": {
+      "command": "cargo run -p fmrireg --features dataset --example selected_arp",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-arp-estimation/example.log"
+    },
+    "source-preservation": {
+      "command": "python3 scripts/check_source_preservation.py",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-arp-estimation/source-preservation.log"
+    }
+  },
+  "reference_cases": 12,
+  "reference_provenance": {
+    "R": "R version 4.5.1 (2025-06-13)",
+    "seed": 60272,
+    "method": "Dense retained residual projection and lag covariance operators; direct Yule-Walker solve, ARMAacf covariance and dense GLS"
+  },
+  "simulations": [
+    {
+      "order": 2,
+      "policy": 0,
+      "seed": 92020,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        -0.0030216401888161267,
+        -0.0004931077896225496,
+        -0.0030216401888161267,
+        -0.0004931077896225496
+      ],
+      "mean_residual_correlations": [
+        -0.013425954673564,
+        -0.009021653324781565
+      ],
+      "coverage": 0.95,
+      "coverage_wilson_95": [
+        0.8882495307680808,
+        0.9784563208456319
+      ]
+    },
+    {
+      "order": 2,
+      "policy": 1,
+      "seed": 92021,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        0.0011927712594690166,
+        -0.00041190830893295116,
+        0.0011927712594690166,
+        -0.00041190830893295116
+      ],
+      "mean_residual_correlations": [
+        -0.021297491729026702,
+        0.0006122285861205276
+      ],
+      "coverage": 0.97,
+      "coverage_wilson_95": [
+        0.9154806357094724,
+        0.9897454759759611
+      ]
+    },
+    {
+      "order": 2,
+      "policy": 2,
+      "seed": 92022,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        -0.002950232506022964,
+        -0.002004561625375516,
+        2.8301665131240384e-05,
+        0.0014442002653225735
+      ],
+      "mean_residual_correlations": [
+        -0.010499681627880056,
+        -0.03214084111471685
+      ],
+      "coverage": 0.95,
+      "coverage_wilson_95": [
+        0.8882495307680808,
+        0.9784563208456319
+      ]
+    },
+    {
+      "order": 2,
+      "policy": 3,
+      "seed": 92023,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        0.0009042126314270732,
+        0.0013267349225184915,
+        -0.0005555185537814616,
+        -0.001206397975705
+      ],
+      "mean_residual_correlations": [
+        -0.019639120329926037,
+        -0.009453370957315596
+      ],
+      "coverage": 0.92,
+      "coverage_wilson_95": [
+        0.8500189229905127,
+        0.9589065385156194
+      ]
+    },
+    {
+      "order": 3,
+      "policy": 0,
+      "seed": 92030,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        0.0005391891729065839,
+        -0.0010017708989450312,
+        0.0011513124809315568,
+        0.0005391891729065839,
+        -0.0010017708989450312,
+        0.0011513124809315568
+      ],
+      "mean_residual_correlations": [
+        -0.026264145279462362,
+        -0.021162120108196483,
+        -0.006586586312136038
+      ],
+      "coverage": 0.96,
+      "coverage_wilson_95": [
+        0.9016292856411208,
+        0.9843366960084523
+      ]
+    },
+    {
+      "order": 3,
+      "policy": 1,
+      "seed": 92031,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        -0.0019869236563492825,
+        0.00491262601904557,
+        -0.002687117367825238,
+        -0.0019869236563492825,
+        0.00491262601904557,
+        -0.002687117367825238
+      ],
+      "mean_residual_correlations": [
+        -0.01438179864144123,
+        -0.02513020799995675,
+        -0.01612886873646982
+      ],
+      "coverage": 0.98,
+      "coverage_wilson_95": [
+        0.929988209271456,
+        0.9944980324498376
+      ]
+    },
+    {
+      "order": 3,
+      "policy": 2,
+      "seed": 92032,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        0.0003995649027880155,
+        2.5009025924737082e-05,
+        -0.002753677822150486,
+        0.00020066402269215079,
+        -0.0037991580384727393,
+        0.003188868444950401
+      ],
+      "mean_residual_correlations": [
+        -0.008275007525006732,
+        -0.015442878675906943,
+        -0.003562251001671482
+      ],
+      "coverage": 0.92,
+      "coverage_wilson_95": [
+        0.8500189229905127,
+        0.9589065385156194
+      ]
+    },
+    {
+      "order": 3,
+      "policy": 3,
+      "seed": 92033,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        -0.004454113438667981,
+        0.0039307478652421705,
+        0.0005819361226780354,
+        -0.0019721858653970665,
+        -0.0034122788474288345,
+        0.0008307222046187628
+      ],
+      "mean_residual_correlations": [
+        -0.00943056743525922,
+        -0.016923317480537606,
+        -0.017770621103209348
+      ],
+      "coverage": 0.95,
+      "coverage_wilson_95": [
+        0.8882495307680808,
+        0.9784563208456319
+      ]
+    },
+    {
+      "order": 4,
+      "policy": 0,
+      "seed": 92040,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        0.0016712584430706061,
+        -0.0038515065446712814,
+        0.005117918330683777,
+        -0.0009788184941853168,
+        0.0016712584430706061,
+        -0.0038515065446712814,
+        0.005117918330683777,
+        -0.0009788184941853168
+      ],
+      "mean_residual_correlations": [
+        -0.021124723681210072,
+        -0.010962132144597576,
+        -0.018214683337736598,
+        -0.017981546272879075
+      ],
+      "coverage": 0.98,
+      "coverage_wilson_95": [
+        0.929988209271456,
+        0.9944980324498376
+      ]
+    },
+    {
+      "order": 4,
+      "policy": 1,
+      "seed": 92041,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        0.001243479246492445,
+        -0.002522192283005049,
+        0.004952531228465412,
+        -0.0026836589234589094,
+        0.001243479246492445,
+        -0.002522192283005049,
+        0.004952531228465412,
+        -0.0026836589234589094
+      ],
+      "mean_residual_correlations": [
+        -0.013061450736206747,
+        -0.004101189958354848,
+        -0.021119943307508073,
+        -0.01832342824943419
+      ],
+      "coverage": 0.93,
+      "coverage_wilson_95": [
+        0.8625048526092651,
+        0.9656807389327273
+      ]
+    },
+    {
+      "order": 4,
+      "policy": 2,
+      "seed": 92042,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        0.0003756536034181107,
+        0.0020284693634823004,
+        -0.0005114031518638508,
+        0.0024772707192601776,
+        0.000883280876155487,
+        -0.003909502251812422,
+        -0.002531546753027816,
+        0.0017265545959989491
+      ],
+      "mean_residual_correlations": [
+        -0.024466387559121575,
+        -0.01531730115054995,
+        -0.020765112244161322,
+        -0.006859844508572803
+      ],
+      "coverage": 0.95,
+      "coverage_wilson_95": [
+        0.8882495307680808,
+        0.9784563208456319
+      ]
+    },
+    {
+      "order": 4,
+      "policy": 3,
+      "seed": 92043,
+      "replicates": 100,
+      "failures": 0,
+      "bias": [
+        0.0029015706720992747,
+        -0.005677371879146798,
+        0.0004249360566522622,
+        0.0020788920027779286,
+        9.218279231662102e-05,
+        0.00042107986988360946,
+        -0.0061250091384827164,
+        -0.0037514738391919854
+      ],
+      "mean_residual_correlations": [
+        -0.007301953950605403,
+        -0.016860325469538244,
+        -0.01567649276874543,
+        -0.01449269669455593
+      ],
+      "coverage": 0.96,
+      "coverage_wilson_95": [
+        0.9016292856411208,
+        0.9843366960084523
+      ]
+    }
+  ],
+  "sha256": {
+    "crates/fmrireg/Cargo.toml": "5c6686fe4eec1240078eab0ecdfbbfcbf5004b5958d0151d8eb0ae670fd81f05",
+    "crates/fmrireg/tests/selected_arp_estimation.rs": "bff9ec3f6088361f73c64a0195917dd85f49444e8a68885ae7611d47320ff3f8",
+    "crates/fmrireg/tests/fixtures/selected_arp_estimation.json": "8cffc418c169f373d6278f25be6993e9d415f638909a50b1ac2371dbecb554f9",
+    "scripts/generate_selected_arp_estimation.R": "63ed5cf52e839eaf62c5f7bb28c6a82658e23e49386d54c7179fb113a6f0ac37",
+    "crates/fmrireg/examples/selected_arp.rs": "a87a783933bc1a860a9ce9215e91adbcc1aefd412ae1926a5270efc75181ee6b",
+    "docs/SELECTED_ESTIMATION.md": "0417e44144a990ae201b5c22d73131b3143a7a5e62aa61cdca112c0a7e7811f6",
+    "docs/CAPABILITIES.md": "233e88a2c030129333d8d2c939db90c79281363d9955156964fb3719a95d6387",
+    "docs/PLAN.md": "995be3499b76e340d9ed7ba6295b5266633ea84a2e092f45ab56949b002eecb4",
+    "crates/fmri-noise/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmri-noise/src/lib.rs": "d0194404f721ede8e5044bc3a36661c2f5bb53a06ea8c99a7e61a092ac6e9ce6",
+    "crates/fmri-noise/src/selected_estimation.rs": "1f1ac197cb6c0fd1a6dd8bb5f846b003609f4b0f6b3015dc33e59a72516e3543",
+    "crates/fmri-noise/src/selected.rs": "e0bb8c6b9b4eaadba1a4f5fc455f2165bf670132d263770d8c656ea210935edb",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/ar.rs": "a19aeb0af7dfcc4d405a4c2e6de0ce8816b136c6a8660c47c05a45af2d8a90ab",
+    "crates/fmrireg/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+    "crates/fmrireg/src/lib.rs": "dc64a0e69b9baef1e873bc3edc5b3a78a716c80e3cb05e96b2db030590d1b8f4",
+    "crates/fmrireg/src/selected_estimation.rs": "ccb260a1409bdfd63f467025049e87f11d6e6b1f6771d024b73132ebb1795e03",
+    "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+    "crates/fmrireg/src/selection.rs": "b46d57bcdf20cf7fbbaf956c6ebcd744910084428e345341ca7748ea1a0fbb26",
+    "crates/fmrireg/src/dataset.rs": "0bbfff19de41213c4ca21d8410e228176d5dc89b1bcd035965df9f0d085a8778",
+    "crates/fmridataset/src/lib.rs": "08b129c164242fd6844aa761385a9b766d0752b1dcad4cebd44c1b06c2096b74",
+    "crates/fmridataset/src/axis.rs": "9f623816c403baeb9432f8c6a944895536b81af5a414518333e3bb91fe0f185a",
+    "crates/fmridataset/src/space.rs": "757b0dda2edbc04c5b57150e7c033f95ef0396cf0955cba010eb504466c36af6",
+    "crates/fmridataset/src/selection.rs": "bca9e37f14703780e42e9f37b197809d996db3a2c8a8a42f1040ff9a010b0414",
+    "crates/fmridataset/src/errors.rs": "c03e6a6c71604f116f1ee0a338cd2da5e2ee0c18b303a843891d0e7e443c4c91",
+    "crates/fmridataset/src/array.rs": "84e92650bdffaa4306f7722f9ae6a6651eb285ff35f066a876f80ebc15de9df8",
+    "crates/fmridataset/src/frame.rs": "7dfcbfb04b54912760203c75238731f1b1b8b4154a2b6753b3a86ac9a7e96b52",
+    "crates/fmridataset/src/sampling.rs": "30e6e6483478d7f3f0997202a49b6cebba9732be52cb10cfd480bee6c6cb8f14"
+  },
+  "tolerances": {
+    "correction_matrix": "2e-11*(1+abs(reference))",
+    "moments_coefficients_diagnostics": "2e-10*(1+abs(reference))",
+    "GLS": "2e-9*(1+abs(reference))"
+  },
+  "limits": [
+    "Stationary fixed-order estimation; orders 2-4 qualified, higher orders not qualified",
+    "Finite-lag tail approximation, shared innovation scale; no automatic repair or order reduction",
+    "Calibration simulations use moderate coefficients, 16 noise features and an independent inference target",
+    "No parameter-uncertainty correction, zero-history estimation, new benchmark, whole-workspace/hosted-CI or publication claim"
+  ],
+  "verification_note": "All-feature suite predates only example burn-in correction; corrected example executed separately; numerical library and tests unchanged after suite."
+}

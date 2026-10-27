@@ -1,0 +1,25 @@
+
+Attaching package: 'fmrigds'
+
+The following object is masked from 'package:stats':
+
+    contrasts
+
+different_estimands: OLS mean 3; common-effect estimate 1.8, variance 0.4
+dl_analytic: Two studies -1,+1 with variance 1 give tau2=1 and group variance=1
+native_reference: Fresh compiled FE and DL meta-regression agree with R paths on missing/invalid-variance fixtures
+ols_missing: Public OLS matches independent base-R QR including per-feature degrees of freedom
+absolute_floor: Default 1e-12 variance floor breaks unit-scale invariance below that floor
+map_zero_times_na: Public map [1,0] of [2,NA] yields NA; support-only result is 2
+mapping_covariance: Equal-weight average variance is 0.5 under independence, 0.9 at correlation 0.8
+provider_scope: Covariance provider receives only feature indices; same covariance used for both subjects despite distinct marginal input variances
+affine_compatibility: Default compatibility accepts same dimensions with 10-unit affine translation
+contrast_collision: Public contrast renaming accepts duplicate resulting IDs
+valid_zero: Zeros retained by default; explicit zero policy masks effect and variance together
+pooled_scope: Separately fitting feature blocks changes pooled covariance; streaming must preserve declared fit scope
+lmm_missing: Current repeated LMM rejects a feature with any missing observation
+max_t_family: Familywise p-values differ if each feature block is treated as a separate family
+contrast_covariance: Marginal variances alone give difference variance 2; true covariance gives 0.4
+knownvar_dense_oracle: Compiled low-rank known-variance coefficients, SE and REML objective match independent dense covariance solve
+effect_only_constructor: new_gds rejects beta without var/se, although OLS and unweighted LMM do not use sampling variance
+PASS: 17 witnesses

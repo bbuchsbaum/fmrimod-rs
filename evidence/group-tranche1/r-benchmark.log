@@ -1,0 +1,14 @@
+20-1000-0 ols median 0.018 seconds
+20-1000-0 fe median 0.007 seconds
+20-1000-0 dl median 0.008 seconds
+100-10000-0 ols median 0.122 seconds
+100-10000-0 fe median 0.031 seconds
+100-10000-0 dl median 0.033 seconds
+100-10000-1 ols median 0.156 seconds
+100-10000-1 fe median 0.034 seconds
+100-10000-1 dl median 0.034 seconds
+100-100000-0 ols median 1.223 seconds
+100-100000-0 fe median 0.245 seconds
+100-100000-0 dl median 0.261 seconds
+100-10000-0-p5 ols median 0.134 seconds
+100-10000-0-p20 ols median 0.196 seconds

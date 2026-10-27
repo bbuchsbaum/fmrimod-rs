@@ -1,0 +1,422 @@
+   Compiling fmrihrf v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf)
+warning: unused import: `HrfExt`
+ --> crates/fmrihrf/examples/validate_spm_canonical.rs:4:35
+  |
+4 | use fmrihrf::hrf::{spm_canonical, HrfExt};
+  |                                   ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Array2`
+  --> crates/fmrihrf/tests/edge_case_tests.rs:10:23
+   |
+10 | use ndarray::{Array1, Array2};
+   |                       ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmrihrf` (test "edge_case_tests") generated 1 warning (run `cargo fix --test "edge_case_tests"` to apply 1 suggestion)
+warning: `fmrihrf` (example "validate_spm_canonical") generated 1 warning (run `cargo fix --example "validate_spm_canonical"` to apply 1 suggestion)
+    Finished `test` profile [unoptimized] target(s) in 5.29s
+     Running unittests src/lib.rs (target/debug/deps/fmrihrf-9396e3e2a761762b)
+
+running 171 tests
+test error::tests::test_error_from_io ... ok
+test error::tests::test_error_from_ndarray_shape ... ok
+test error::tests::test_error_display ... ok
+test hrf::core::tests::test_hrf_from_coefficients_invalid_length ... ok
+test hrf::core::tests::test_hrf_edge_cases ... ok
+test hrf::core::tests::test_basic_evaluation ... ok
+test hrf::core::tests::test_evaluate_deriv_numeric ... ok
+test hrf::core::tests::test_hrf_from_coefficients_single_basis ... ok
+test hrf::core::tests::test_hrf_from_coefficients ... ok
+test error::tests::test_error_serialization ... ok
+test hrf::core::tests::test_multi_basis_hrf ... ok
+test hrf::core::tests::test_evaluate_deriv_trait_object ... ok
+test hrf::core::tests::test_evaluate_deriv_multi_basis ... ok
+test hrf::core::tests::test_block_evaluation ... ok
+test hrf::core::tests::test_simple_hrf_implementation ... ok
+test hrf::derivatives::tests::test_numeric_derivative ... ok
+test hrf::derivatives::tests::test_derivative_hrf_zero_order ... ok
+test hrf::derivatives::tests::test_spmg1_derivative ... ok
+test hrf::derivatives::tests::test_spmg1_hrf_with_derivative ... ok
+test hrf::derivatives::tests::test_spmg2_hrf ... ok
+test hrf::derivatives::tests::test_spmg3_hrf ... ok
+test hrf::empirical::tests::test_empirical_hrf_errors ... ok
+test hrf::empirical::tests::test_empirical_hrf_basic ... ok
+test hrf::empirical::tests::test_empirical_hrf_extrapolation ... ok
+test hrf::empirical::tests::test_empirical_hrf_cubic_spline ... ok
+test hrf::derivatives::tests::test_derivative_hrf ... ok
+test hrf::empirical::tests::test_empirical_hrf_interpolation ... ok
+test hrf::empirical::tests::test_gen_empirical_hrf_alias ... ok
+test hrf::functions::tests::test_boxcar_hrf ... ok
+test hrf::functions::tests::test_boxcar_hrf_custom_amplitude ... ok
+test hrf::functions::tests::test_boxcar_hrf_normalized ... ok
+test hrf::functions::tests::test_fir_hrf ... ok
+test hrf::core::tests::test_block_evaluation_multi_basis ... ok
+test hrf::functions::tests::test_fourier_hrf ... ok
+test hrf::functions::tests::test_bspline_hrf ... ok
+test hrf::functions::tests::test_gamma_hrf ... ok
+test hrf::functions::tests::test_gaussian_hrf ... ok
+test hrf::functions::tests::test_boxcar_hrf_invalid_width - should panic ... ok
+test hrf::functions::tests::test_half_cosine_hrf ... ok
+test hrf::functions::tests::test_hrf_time ... ok
+test hrf::functions::tests::test_hrf_basis_lwu ... ok
+test hrf::functions::tests::test_inv_logit_hrf_defaults ... ok
+test hrf::functions::tests::test_inv_logit_hrf_invalid_scale ... ok
+test hrf::derivatives::tests::test_derivative_hrf_second_order ... ok
+test hrf::functions::tests::test_inv_logit_hrf_with_lag ... ok
+test hrf::functions::tests::test_lwu_hrf_validation ... ok
+test hrf::functions::tests::test_mexhat_hrf ... ok
+test hrf::functions::tests::test_sine_basis_hrf_defaults ... ok
+test hrf::functions::tests::test_sine_basis_hrf_shape ... ok
+test hrf::functions::tests::test_sine_basis_hrf_values_match_r ... ok
+test hrf::functions::tests::test_sine_basis_hrf_zero_outside_support ... ok
+test hrf::functions::tests::test_sine_hrf ... ok
+test hrf::functions::tests::test_spm_canonical ... ok
+test hrf::functions::tests::test_hrf_basis_lwu_normalized ... ok
+test hrf::functions::tests::test_spm_with_derivatives ... ok
+test hrf::functions::tests::test_weighted_hrf_constant ... ok
+test hrf::functions::tests::test_lwu_hrf ... ok
+test hrf::functions::tests::test_weighted_hrf_linear ... ok
+test hrf::functions::tests::test_weighted_hrf_linear_outside ... ok
+test hrf::functions::tests::test_weighted_hrf_normalize_constant ... ok
+test hrf::functions::tests::test_weighted_hrf_normalize_linear ... ok
+test hrf::functions::tests::test_weighted_hrf_normalize_linear_scaling ... ok
+test hrf::functions::tests::test_weighted_hrf_uniform ... ok
+test hrf::functions::tests::test_weighted_hrf_uniform_times ... ok
+test hrf::functions::tests::test_weighted_hrf_uniform_validation ... ok
+test hrf::functions::tests::test_weighted_hrf_validation_length_mismatch ... ok
+test hrf::functions::tests::test_weighted_hrf_validation_negative_start ... ok
+test hrf::functions::tests::test_weighted_hrf_validation_non_increasing ... ok
+test hrf::functions::tests::test_weighted_hrf_validation_too_few_weights ... ok
+test hrf::generators::tests::test_combined_hrfs ... ok
+test hrf::generators::tests::test_daguerre_laguerre_basis ... ok
+test hrf::generators::tests::test_daguerre_generator ... ok
+test hrf::generators::tests::test_daguerre_scale_parameter_in_params ... ok
+test hrf::generators::tests::test_daguerre_single_basis ... ok
+test hrf::generators::tests::test_daguerre_from_string ... ok
+test hrf::generators::tests::test_daguerre_with_scale ... ok
+test hrf::generators::tests::test_hrf_from_basis ... ok
+test hrf::generators::tests::test_hrf_generator_basic ... ok
+test hrf::generators::tests::test_hrf_with_lag ... ok
+test hrf::generators::tests::test_make_hrf ... ok
+test hrf::generators::tests::test_make_hrf_from_params ... ok
+test hrf::generators::tests::test_parse_hrf_spec ... ok
+test hrf::library::tests::test_get_predefined_hrf ... ok
+test hrf::library::tests::test_list_predefined_hrfs ... ok
+test hrf::generators::tests::test_parse_params ... ok
+test hrf::registry::tests::test_get_hrf_case_insensitive ... ok
+test hrf::generators::tests::test_hrf_normalized ... ok
+test hrf::registry::tests::test_get_predefined_hrf ... ok
+test hrf::registry::tests::test_hrf_not_found ... ok
+test hrf::registry::tests::test_list_available_hrfs ... ok
+test hrf::registry::tests::test_register_custom_hrf ... ok
+test hrf::registry::tests::test_register_duplicate_fails ... ok
+test hrf::library::tests::test_hrf_library ... ok
+test hrf::registry::tests::test_remove_hrf ... ok
+test hrf::generators::tests::test_decorators ... ok
+test penalty::tests::test_custom_shrink_factor ... ok
+test hrf::generators::tests::test_enhanced_string_parsing ... ok
+test hrf::generators::tests::test_gen_hrf_from_string ... ok
+test penalty::tests::test_difference_matrix ... ok
+test penalty::tests::test_penalty_fourier ... ok
+test penalty::tests::test_penalty_identity ... ok
+test penalty::tests::test_penalty_spmg2 ... ok
+test penalty::tests::test_penalty_bspline ... ok
+test penalty::tests::test_auto_penalty ... ok
+test penalty::tests::test_penalty_roughness_fir ... ok
+test reconstruction::tests::test_dimension_mismatch ... ok
+test reconstruction::tests::test_create_regressor_impulse ... ok
+test reconstruction::tests::test_reconstruct_hrf ... ok
+test reconstruction::tests::test_reconstruct_hrf_linear_combo ... ok
+test reconstruction::tests::test_reconstruction_from_sampling ... ok
+test reconstruction::tests::test_reconstruction_matrix_basic ... ok
+test regressor::convolution::tests::test_build_neural_input_edge_cases ... ok
+test regressor::convolution::tests::test_convolve_precision_error ... ok
+test reconstruction::tests::test_reconstruction_matrix_multi_basis ... ok
+test regressor::convolution::tests::test_convolve_block ... ok
+test regressor::convolution::tests::test_interp_linear_edge_cases ... ok
+test regressor::convolution::tests::test_convolve_impulse ... ok
+test regressor::convolution::tests::test_next_power_of_2 ... ok
+test regressor::core::tests::test_null_regressor ... ok
+test regressor::convolution::tests::test_fft_convolution ... ok
+test regressor::core::tests::test_null_regressor_in_design ... ok
+test regressor::core::tests::test_regressor_basic ... ok
+test regressor::core::tests::test_regressor_filtering ... ok
+test regressor::core::tests::test_regressor_neural_input ... ok
+test regressor::core::tests::test_regressor_neural_input_impulse ... ok
+test regressor::core::tests::test_regressor_evaluate ... ok
+test regressor::core::tests::test_regressor_set ... ok
+test regressor::core::tests::test_regressor_shift ... ok
+test regressor::core::tests::test_trial_varying_broadcast ... ok
+test regressor::core::tests::test_trial_varying_validation_length_mismatch ... ok
+test regressor::core::tests::test_trial_varying_validation_nbasis_mismatch ... ok
+test regressor::core::tests::test_trial_varying_with_amplitude_filtering ... ok
+test regressor::core::tests::test_trial_varying_basic ... ok
+test regressor::design::tests::test_design_matrix_from_set ... ok
+test regressor::design::tests::test_design_matrix_with_names ... ok
+test plotting::tests::test_plot_comparison ... ok
+test regressor::design::tests::test_design_options_builder ... ok
+test regressor::neural_input::tests::test_neural_input_blocks ... ok
+test regressor::neural_input::tests::test_neural_input_impulse ... ok
+test regressor::design::tests::test_design_multiple_regressors ... ok
+test regressor::design::tests::test_design_single_regressor ... ok
+test regressor::design::tests::test_design_with_intercept ... ok
+test regressor::neural_input::tests::test_neural_input_overlapping ... ok
+test sampling::tests::test_concatenate ... ok
+test sampling::tests::test_concatenate_different_precision ... ok
+test sampling::tests::test_multi_block_sampling_frame ... ok
+test sampling::tests::test_samples_and_offsets ... ok
+test tests::test_version ... ok
+test sampling::tests::test_builder ... ok
+test regressor::core::tests::test_trial_varying_matches_single_hrf ... ok
+test utils::cache::tests::test_cache_eviction ... ok
+test sampling::tests::test_to_dict_from_dict ... ok
+test sampling::tests::test_uniform_sampling_frame ... ok
+test utils::cache::tests::test_cached_hrf_eval ... ok
+test utils::misc::tests::test_apply_binary_op ... ok
+test utils::cache::tests::test_cache_statistics ... ok
+test regressor::design::tests::test_design_regressor_set ... ok
+test utils::misc::tests::test_normalize_max ... ok
+test utils::cache::tests::test_eviction_statistics ... ok
+test utils::misc::tests::test_recycle_or_error ... ok
+test utils::misc::tests::test_find_peaks ... ok
+test regressor::convolution::tests::test_convolve_method_variations ... ok
+test utils::misc::tests::test_shift_regressor ... ok
+test utils::misc::tests::test_time_grid ... ok
+test utils::cache::tests::test_reset_stats ... ok
+test utils::cache::tests::test_clear_cache ... ok
+test reconstruction::tests::test_reconstruction_matrix_blocked ... ok
+2026-10-26 22:22:21.831 fmrihrf-9396e3e2a761762b[39220:12901856] XType: Using static font registry.
+test plotting::tests::test_plot_config_validation ... ok
+test plotting::tests::test_plot_hrf_svg ... ok
+test plotting::tests::test_plot_file_extensions ... ok
+test plotting::tests::test_plot_edge_cases ... ok
+
+test result: ok. 171 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+     Running tests/convolution_contract.rs (target/debug/deps/convolution_contract-392e30148b181e02)
+
+running 13 tests
+test block_evaluation_uses_trapezoid_and_duration_mean ... ok
+test invalid_convolution_inputs_return_errors ... ok
+test normalization_reference_count_matches_r_ties_to_even_rounding ... ok
+test positive_semidefinite_validation_uses_the_actual_matrix ... ok
+test off_grid_impulses_preserve_exact_time_and_signed_amplitude ... ok
+test registered_factories_can_use_the_registry_without_holding_its_lock ... ok
+test condition_sets_preserve_custom_hrf_instead_of_reconstructing_by_name ... ok
+test empty_trial_varying_events_and_explicit_span_are_valid ... ok
+test causal_hrfs_and_fixed_normalization_are_invariant_to_query_partition ... ok
+test long_blocks_starting_before_window_keep_their_tails ... ok
+test blocks_integrate_even_below_precision_and_average_by_duration ... ok
+test fixed_normalization_modes_match_r_and_preserve_relative_derivative_scales ... ok
+test current_r_conv_and_reference_loop_fixtures ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+     Running tests/cross_validation.rs (target/debug/deps/cross_validation-e8a9aab1233aeefd)
+
+running 6 tests
+test test_sampling_frame_cross_validation ... ok
+test test_spm_canonical_cross_validation ... ok
+test test_bspline_cross_validation ... ok
+test test_fourier_cross_validation ... ok
+test test_design_matrix_cross_validation ... ok
+test test_regressor_cross_validation ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cross_validation_spm.rs (target/debug/deps/cross_validation_spm-7e0037b20bd8c275)
+
+running 4 tests
+test test_spm_canonical_peak_location ... ok
+test test_spm_canonical_backward_compatibility ... ok
+test test_spm_canonical_normalization ... ok
+test test_spm_canonical_matches_r_original ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/current_spline_contract.rs (target/debug/deps/current_spline_contract-ee1dc1b660e2d6cc)
+
+running 1 test
+test current_r_endpoint_constrained_splines_across_degrees_and_sizes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/edge_case_tests.rs (target/debug/deps/edge_case_tests-eddc47d783521bab)
+
+running 7 tests
+test test_sampling_frame_edge_cases ... ok
+test test_empirical_hrf_edge_cases ... ok
+test test_regressor_edge_cases ... ok
+test test_hrf_string_parsing_edge_cases ... ok
+test test_hrf_decorators_complex ... ok
+test test_convolution_edge_cases ... ok
+test test_design_matrix_complex_scenarios ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/hrf_audit.rs (target/debug/deps/hrf_audit-4a702136157ace00)
+
+running 4 tests
+test derivatives_dispatch_through_trait_objects_and_respect_endpoint ... ok
+test empirical_linear_default_and_explicit_cubic ... ok
+test current_r_basis_penalty_and_reconstruction_contracts ... ok
+test portable_regressor_roundtrip_preserves_actual_response ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/hrf_decorator_fixtures_parity.rs (target/debug/deps/hrf_decorator_fixtures_parity-8b1cf4f8395ca74c)
+
+running 5 tests
+test test_spmg1_lag2_r_fixture_parity ... ok
+test test_half_cosine_hrf_segments_r_fixture_parity ... ok
+test test_spmg1_gen_hrf_lagged_multi_r_fixture_parity ... ok
+test test_spmg1_block_width5_r_fixture_parity ... ok
+test test_spmg1_gen_hrf_blocked_multi_r_fixture_parity ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/hrf_fixtures_parity.rs (target/debug/deps/hrf_fixtures_parity-9e9b3dc3fc5420ec)
+
+running 4 tests
+test test_gaussian_hrf_r_fixture_parity ... ok
+test test_mexhat_hrf_r_fixture_parity ... ok
+test test_gamma_hrf_r_fixture_parity ... ok
+test test_lwu_hrf_r_fixture_parity ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration_test.rs (target/debug/deps/integration_test-5cf9564335ef3d2c)
+
+running 4 tests
+test test_multi_block_sampling_frame ... ok
+test test_sampling_frame_basic ... ok
+test test_spm_canonical_basic ... ok
+test test_hrf_with_block_duration ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/regressor_design_parity.rs (target/debug/deps/regressor_design_parity-e56d28295c079eb0)
+
+running 1 test
+test test_regressor_design_block_example_parity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/regressor_design_spmg3_parity.rs (target/debug/deps/regressor_design_spmg3_parity-263a3fe8f0a5f86d)
+
+running 1 test
+test test_regressor_design_spmg3_block_example_parity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/sampled_features.rs (target/debug/deps/sampled_features-39382a0d2ccbe513)
+
+running 4 tests
+test invalid_inputs_strides_and_scale_extremes ... ok
+test mask_centering_identity_and_run_isolation ... ok
+test zoh_mass_is_invariant_to_resampling_and_not_impulse_count ... ok
+test current_r_uniform_irregular_mask_center_scale_and_multibasis ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.31s
+
+     Running tests/spmg_hrf_parity.rs (target/debug/deps/spmg_hrf_parity-75b3d48a900e17c0)
+
+running 2 tests
+test test_spmg2_hrf_r_fixture_parity ... ok
+test test_spmg3_hrf_r_fixture_parity ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tent_hrf_parity.rs (target/debug/deps/tent_hrf_parity-38a29c488035cbae)
+
+running 1 test
+test test_tent_hrf_r_fixture_parity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_serialization.rs (target/debug/deps/test_serialization-67bfb4f9f9978e34)
+
+running 6 tests
+test tests::test_error_serialization ... ok
+test tests::test_penalty_options_serialization ... ok
+test tests::test_regressor_data_serialization ... ok
+test tests::test_sampling_frame_serialization ... ok
+test tests::test_sampling_frame_builder_serialization ... ok
+test tests::test_regressor_set_data_serialization ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/workflow_tests.rs (target/debug/deps/workflow_tests-7863efbf028b2fdd)
+
+running 7 tests
+test test_custom_hrf_workflow ... ok
+test test_string_based_hrf_creation ... ok
+test test_concatenated_runs_workflow ... ok
+test test_regressor_set_workflow ... ok
+test test_basic_glm_workflow ... ok
+test test_multi_basis_hrf_workflow ... ok
+test test_block_design_workflow ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests fmrihrf
+
+running 52 tests
+test crates/fmrihrf/src/hrf/core.rs - hrf::core::hrf_from_coefficients (line 253) ... ignored
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::gen_hrf (line 458) - compile ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::gamma_hrf (line 175) ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 847) ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 836) ... ok
+test crates/fmrihrf/src/hrf/empirical.rs - hrf::empirical::empirical_hrf (line 36) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::weighted_hrf_uniform (line 1348) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::spm_canonical (line 44) ... ok
+test crates/fmrihrf/src/hrf/library.rs - hrf::library::hrf_library (line 213) ... ok
+test crates/fmrihrf/src/hrf/derivatives.rs - hrf::derivatives::derivative_hrf (line 193) ... ok
+test crates/fmrihrf/src/reconstruction.rs - reconstruction::reconstruction_matrix (line 24) ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 861) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::gamma_hrf (line 191) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::weighted_hrf (line 1250) ... ok
+test crates/fmrihrf/src/lib.rs - (line 9) ... ok
+test crates/fmrihrf/src/hrf/core.rs - hrf::core::HrfExt::evaluate_deriv (line 144) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::Regressor::neural_input (line 348) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::null_regressor (line 437) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 479) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 503) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 521) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor_set (line 669) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor_set (line 696) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix (line 551) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::column (line 682) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::column_by_name (line 712) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::new (line 596) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::set_condition_names (line 756) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::with_names (line 631) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions (line 16) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions (line 26) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions::builder (line 66) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder (line 91) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::build (line 182) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::include_intercept (line 158) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::method (line 139) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::precision (line 121) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor (line 216) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor (line 233) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor_set (line 290) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor_set (line 313) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressors (line 370) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressors (line 403) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_matrix_from_set (line 835) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_matrix_from_set (line 856) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 485) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 473) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 502) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 49) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 68) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 85) ... ok
+test crates/fmrihrf/src/utils/cache.rs - utils::cache::get_cache_stats (line 199) ... ok
+
+test result: ok. 51 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 7.70s
+

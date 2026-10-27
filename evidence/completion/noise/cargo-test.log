@@ -1,0 +1,71 @@
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+    Finished `test` profile [unoptimized] target(s) in 1.15s
+     Running unittests src/lib.rs (target/debug/deps/fmri_noise-f413ff7c445c2bbe)
+
+running 4 tests
+test selected_estimation::strict_selected_ar_tests::rejects_invalid_yule_walker_systems_without_repair ... ok
+test ar::tests::nonpositive_definite_acvf_repair_matches_r ... ok
+test finite::tests::rejects_every_nonfinite_position_and_accepts_finite_extremes ... ok
+test correction::arp_reference::correction_stage_matches_r_with_consecutive_censor_rows ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/ar_small_orders.rs (target/debug/deps/ar_small_orders-65f46f70ae04fbb2)
+
+running 2 tests
+test zero_history_fused_path_preserves_scalar_rounding_on_mixed_scales ... ok
+test ar_apply_matches_independent_scalar_reference_across_orders_and_strides ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/arp.rs (target/debug/deps/arp-22e735851a41e88c)
+
+running 3 tests
+test invalid_order_stationarity_and_no_boundary_leakage ... ok
+test startup_matches_dense_stationary_covariance_and_r_conditional_filter ... ok
+test current_fmriar_fixed_orders_corrected_and_uncorrected ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running tests/contracts.rs (target/debug/deps/contracts-2cd32684f6f5c659)
+
+running 4 tests
+test boundaries_and_resets_do_not_leak_and_do_not_drop_rows ... ok
+test source_built_fmriar_ar1_estimation_matches_with_censoring_and_offsets ... ok
+test independent_stationary_covariance_whitens_to_innovation_identity ... ok
+test low_rank_bias_maps_and_corrected_estimates_match_independent_dense_r ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/extensions.rs (target/debug/deps/extensions-874f71cc0e99b182)
+
+running 10 tests
+test source_built_r_zero_history_witness_matches_known_arma_plan ... ok
+test arma_zero_history_is_independent_by_run_and_matches_scalar_recursion ... ok
+test fixture_has_fresh_source_fingerprints ... ok
+test innovation_scale_is_known_or_explicit_plugin_only ... ok
+test specialized_apply_into_reuses_output_and_rejects_bad_inner_or_scaling ... ok
+test parcel_acvf_pools_features_not_means_and_weights_global_by_feature_count ... ok
+test parcel_plan_requires_matched_design_and_preserves_columns ... ok
+test conditional_selection_is_scale_relative_and_rejects_giant_orders ... ok
+test conditional_order_selection_is_comparable_and_auditable ... ok
+test hannan_rissanen_is_explicit_single_series_and_refuses_bad_orders ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/whitening_into.rs (target/debug/deps/whitening_into-013e557dc689e15b)
+
+running 4 tests
+test trait_default_apply_into_remains_available_to_custom_plans ... ok
+test apply_into_rejects_invalid_dimensions_nonfinite_values_and_overflow ... ok
+test ar1_apply_into_reuses_strided_output_and_matches_dense_transform ... ok
+test arp_apply_into_preserves_startup_run_and_reset_semantics ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmri_noise
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

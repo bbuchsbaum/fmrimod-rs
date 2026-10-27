@@ -1,0 +1,8 @@
+{
+  "status": "incomplete_environmental_failure",
+  "default_workspace": "passed; command and exit 0 persisted in receipt.json",
+  "all_features_workspace": "failed compilation with ENOSPC; exact process exit was not persisted before disk exhaustion",
+  "artifact_copy": "runner also failed copying artifacts with ENOSPC; partial snapshots are not valid final evidence",
+  "recovery": "qualification-bounded-progress.log and subsequent source-bound receipt use target-at-a-time checks",
+  "original_receipt_preserved": true
+}

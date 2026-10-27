@@ -1,0 +1,67 @@
+{
+  "gls-final-tests": {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "fmri-noise",
+      "-p",
+      "fmrireg",
+      "-p",
+      "fmrimod",
+      "--all-features"
+    ],
+    "exit": 0,
+    "passed": 20,
+    "failed": 0,
+    "ignored": 0,
+    "log_sha256": "ccef2d3e40b6366e0bede943859d350045b786178c47940fc80cebc1ee1ad1b5"
+  },
+  "gls-minimal": {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "fmrireg",
+      "--no-default-features"
+    ],
+    "exit": 0,
+    "passed": 9,
+    "failed": 0,
+    "ignored": 0,
+    "log_sha256": "96c2ee61a5ba3ad1d88ff8bbc320e0a33d7cca729df5a7ec2eeefbcc77a6c9e9"
+  },
+  "gls-format": {
+    "command": [
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit": 0,
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "clippy": {
+    "exit": 0,
+    "log_sha256": "19f7e8a9f20ea2aa0a281f913acb050745cc88c77bd54ad852bcf4a1b482cd76"
+  },
+  "source_sha256": {
+    "crates/fmri-noise/tests/arp.rs": "43f0be30503523f308ccb13b71cb17644d33712d57d3e0e3fb66f7a85fcfc7c4",
+    "crates/fmri-noise/tests/contracts.rs": "9e69d584408c9a3e103d384332ad69de0af1e5502cde26fffcd430a0e00929c1",
+    "crates/fmri-noise/src/lib.rs": "9480c4c78ce58b910acb5b7758bd7e682613ad0a32c2de941e9ca6bc3ef6625d",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/ar.rs": "c918a93c1d53e92b874745a553814eebb19984a3b9f726b1aee35540c643b265",
+    "crates/fmrireg/tests/arp.rs": "ddd6ed8049e1c525c309df56741765b982b98fb82598cc0a869478aca0387065",
+    "crates/fmrireg/tests/contracts.rs": "a55f8f4b65572b94cb030f62c07ba3b5f25b44b33c90efa63310e5aefb6f5c7e",
+    "crates/fmrireg/examples/throughput.rs": "328c19802afa729f08ffd922c9610099c0982047a8ef8f6cad3ee5f57831b079",
+    "crates/fmrireg/examples/gls_benchmark.rs": "dcfdf58d04333f3d87ad89830190d78b3579ca3ae53830d72d2480a6b844904f",
+    "crates/fmrireg/src/lib.rs": "7660b3d0e44b06158fd1aa190fe0753c49baa8e263876942f858bec8e36e2948",
+    "crates/fmrireg/src/dataset.rs": "2898a1a0ab6b8fedc2e301e9e0fec0cd56ef55da3ed87dde91be60c073e8c711",
+    "crates/fmrimod/examples/first_level.rs": "16aa909e54ce4b804bdc261bd6c45cff432f55213a5cd95da3618141f8947df0",
+    "crates/fmrimod/src/lib.rs": "50c1f107da9d08a72803fbf647efbe533fdc93554beb1438b708d04eafc03f00"
+  }
+}

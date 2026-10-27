@@ -1,0 +1,5 @@
+   Compiling fmridesign v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign)
+    Finished `dev` profile [unoptimized] target(s) in 0.77s
+     Running `target/debug/examples/sampled_feature_design`
+DesignMatrix(40 × 5) columns: [sound.b1, motion.b1, sound.b2, motion.b2, intercept]
+Canonical-basis contrast: [1, -1, 0, 0, 0]

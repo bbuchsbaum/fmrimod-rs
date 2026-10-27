@@ -1,0 +1,21 @@
+[
+  {
+    "label": "libraries",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--lib",
+      "--message-format=json"
+    ],
+    "exit_code": 101,
+    "log": "evidence/hrf-design-workspace/libraries.log",
+    "sha256": "713d185fda4fb577024ee95a37f68b7585921bc86ccfddda1ef332ce8a3ff74d",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  }
+]

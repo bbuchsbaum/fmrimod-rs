@@ -1,0 +1,1961 @@
+warning: unused import: `crate::core::bspline::BSpline`
+ --> crates/splines/src/test_rust_bs_comparison.rs:4:9
+  |
+4 |     use crate::core::bspline::BSpline;
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `splines` (lib test) generated 1 warning (run `cargo fix --lib -p splines --tests` to apply 1 suggestion)
+   Compiling fmrihrf v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf)
+warning: unused import: `Array2`
+  --> crates/fmrihrf/tests/edge_case_tests.rs:10:23
+   |
+10 | use ndarray::{Array1, Array2};
+   |                       ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmrihrf` (test "edge_case_tests") generated 1 warning (run `cargo fix --test "edge_case_tests"` to apply 1 suggestion)
+warning: unused import: `HrfExt`
+ --> crates/fmrihrf/examples/validate_spm_canonical.rs:4:35
+  |
+4 | use fmrihrf::hrf::{spm_canonical, HrfExt};
+  |                                   ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmrihrf` (example "validate_spm_canonical") generated 1 warning (run `cargo fix --example "validate_spm_canonical"` to apply 1 suggestion)
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+warning: unused imports: `Contrast as ComputedContrast` and `TermInfo`
+  --> crates/fmridesign/examples/vignette_04_contrasts.rs:15:55
+   |
+15 | use fmridesign::contrast::weights::{contrast_weights, Contrast as ComputedContrast, TermInfo};
+   |                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `EventSpec`
+  --> crates/fmridesign/examples/vignette_04_contrasts.rs:22:58
+   |
+22 | use fmridesign::types::{ContrastSpec as OldContrastSpec, EventSpec};
+   |                                                          ^^^^^^^^^
+
+warning: `fmridesign` (example "vignette_04_contrasts") generated 2 warnings (run `cargo fix --example "vignette_04_contrasts"` to apply 1 suggestion)
+warning: unused import: `Term`
+ --> crates/fmridesign/tests/test_formula_parser.rs:3:66
+  |
+3 | use fmridesign::formula::{parse_formula, FormulaParser, HrfSpec, Term, TermParam};
+  |                                                                  ^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (test "test_formula_parser") generated 1 warning (run `cargo fix --test "test_formula_parser"` to apply 1 suggestion)
+warning: unused import: `Array2`
+  --> crates/fmridesign/tests/test_core_parity.rs:13:30
+   |
+13 | use ndarray::{array, Array1, Array2};
+   |                              ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (test "test_core_parity") generated 1 warning (run `cargo fix --test "test_core_parity"` to apply 1 suggestion)
+warning: unused import: `fmridesign::types::EventSpec`
+ --> crates/fmridesign/tests/test_convolution.rs:6:5
+  |
+6 | use fmridesign::types::EventSpec;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `event`
+  --> crates/fmridesign/tests/test_convolution.rs:75:9
+   |
+75 |     let event = EventVariable::new("impulse", onsets, values, durations).unwrap();
+   |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_event`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `hrf_kernel`
+  --> crates/fmridesign/tests/test_convolution.rs:79:9
+   |
+79 |     let hrf_kernel = t.mapv(|x: f64| {
+   |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_hrf_kernel`
+
+warning: `fmridesign` (test "test_convolution") generated 3 warnings (run `cargo fix --test "test_convolution"` to apply 1 suggestion)
+warning: unused import: `SamplingFrame`
+ --> crates/fmridesign/examples/test_sampling.rs:2:56
+  |
+2 | use fmridesign::sampling::{multi_block_sampling_frame, SamplingFrame};
+  |                                                        ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (example "test_sampling") generated 1 warning (run `cargo fix --example "test_sampling"` to apply 1 suggestion)
+warning: unused import: `hrf`
+ --> crates/fmridesign/tests/test_formula_dsl.rs:3:34
+  |
+3 | use fmridesign::formula::{event, hrf, interaction, term, HrfSpec, Term};
+  |                                  ^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (test "test_formula_dsl") generated 1 warning (run `cargo fix --test "test_formula_dsl"` to apply 1 suggestion)
+warning: unused import: `parse_formula`
+ --> crates/fmridesign/tests/test_formula_at_operator.rs:3:27
+  |
+3 | use fmridesign::formula::{parse_formula, FormulaParser, TermParam};
+  |                           ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `fmridesign::types::ValidationError`
+ --> crates/fmridesign/tests/test_formula_at_operator.rs:4:5
+  |
+4 | use fmridesign::types::ValidationError;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `fmridesign` (test "test_formula_at_operator") generated 2 warnings (run `cargo fix --test "test_formula_at_operator"` to apply 2 suggestions)
+warning: unused import: `fmridesign::contrast::weights::TermInfo`
+ --> crates/fmridesign/tests/test_afni_integration.rs:4:5
+  |
+4 | use fmridesign::contrast::weights::TermInfo;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused imports: `oneway_contrast`, `pair_contrast`, and `unit_contrast`
+ --> crates/fmridesign/tests/test_afni_integration.rs:6:23
+  |
+6 |     contrast_weights, oneway_contrast, pair_contrast, unit_contrast, ContrastSpecEnum,
+  |                       ^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^  ^^^^^^^^^^^^^
+
+warning: `fmridesign` (test "test_afni_integration") generated 2 warnings (run `cargo fix --test "test_afni_integration"` to apply 2 suggestions)
+warning: unused import: `DataFrame`
+ --> crates/fmridesign/tests/test_crossval.rs:3:24
+  |
+3 | use fmridesign::core::{DataFrame, EventModel};
+  |                        ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `EventMatrix`
+ --> crates/fmridesign/tests/test_crossval.rs:5:39
+  |
+5 | use fmridesign::events::{EventFactor, EventMatrix, EventVariable};
+  |                                       ^^^^^^^^^^^
+
+warning: unused import: `ValidationError`
+ --> crates/fmridesign/tests/test_crossval.rs:6:36
+  |
+6 | use fmridesign::types::{EventSpec, ValidationError};
+  |                                    ^^^^^^^^^^^^^^^
+
+warning: unused import: `ndarray::array`
+ --> crates/fmridesign/tests/test_crossval.rs:8:5
+  |
+8 | use ndarray::array;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> crates/fmridesign/tests/test_crossval.rs:9:5
+  |
+9 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `fmridesign` (test "test_crossval") generated 5 warnings (run `cargo fix --test "test_crossval"` to apply 5 suggestions)
+warning: unused import: `uniform_sampling_frame`
+  --> crates/fmridesign/examples/vignette_01_introduction.rs:17:56
+   |
+17 | use fmridesign::sampling::{multi_block_sampling_frame, uniform_sampling_frame};
+   |                                                        ^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `fmridesign::types::EventSpec`
+  --> crates/fmridesign/examples/vignette_01_introduction.rs:18:5
+   |
+18 | use fmridesign::types::EventSpec;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: variable does not need to be mutable
+   --> crates/fmridesign/examples/vignette_01_introduction.rs:282:9
+    |
+282 |     let mut combined = fmridesign::core::DesignMatrix::from_event_model(model2);
+    |         ----^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (example "vignette_01_introduction") generated 3 warnings (run `cargo fix --example "vignette_01_introduction"` to apply 2 suggestions)
+warning: unexpected `cfg` condition value: `dataframe`
+ --> crates/fmridesign/examples/dataframe_demo.rs:5:7
+  |
+5 | #[cfg(feature = "dataframe")]
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: expected values for `feature` are: `default`, `parallel`, `plotly`, `plotters`, `rayon`, and `visualization`
+  = help: consider adding `dataframe` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: unexpected `cfg` condition value: `dataframe`
+  --> crates/fmridesign/examples/dataframe_demo.rs:50:11
+   |
+50 | #[cfg(not(feature = "dataframe"))]
+   |           ^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: expected values for `feature` are: `default`, `parallel`, `plotly`, `plotters`, `rayon`, and `visualization`
+   = help: consider adding `dataframe` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: `fmridesign` (example "dataframe_demo") generated 2 warnings
+warning: unused variable: `multirun_event`
+   --> crates/fmridesign/examples/event_basis_demo.rs:129:9
+    |
+129 |     let multirun_event = EventBasis::new(
+    |         ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_multirun_event`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `rt_basis`
+   --> crates/fmridesign/examples/event_basis_demo.rs:228:9
+    |
+228 |     let rt_basis = EventBasis::new(
+    |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_rt_basis`
+
+warning: unused variable: `accuracy_basis`
+   --> crates/fmridesign/examples/event_basis_demo.rs:236:9
+    |
+236 |     let accuracy_basis = EventBasis::new(
+    |         ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_accuracy_basis`
+
+warning: `fmridesign` (example "event_basis_demo") generated 3 warnings
+warning: unused import: `BaselineSpec`
+  --> crates/fmridesign/examples/vignette_02_baseline.rs:16:48
+   |
+16 |     baseline, baseline_model, block, nuisance, BaselineSpec, BasisType, InterceptType, SamplingInfo,
+   |                                                ^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (example "vignette_02_baseline") generated 1 warning (run `cargo fix --example "vignette_02_baseline"` to apply 1 suggestion)
+warning: unused import: `ValidationError`
+ --> crates/fmridesign/tests/test_events.rs:5:36
+  |
+5 | use fmridesign::types::{EventSpec, ValidationError};
+  |                                    ^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused imports: `Array1` and `Array2`
+ --> crates/fmridesign/tests/test_events.rs:6:22
+  |
+6 | use ndarray::{array, Array1, Array2};
+  |                      ^^^^^^  ^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> crates/fmridesign/tests/test_events.rs:7:5
+  |
+7 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `fmridesign` (test "test_events") generated 3 warnings (run `cargo fix --test "test_events"` to apply 3 suggestions)
+warning: unused import: `ndarray::array`
+ --> crates/fmridesign/tests/test_fcontrast.rs:7:5
+  |
+7 | use ndarray::array;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `contrast1`
+   --> crates/fmridesign/tests/test_fcontrast.rs:161:9
+    |
+161 |     let contrast1 = fmridesign::contrast::contrast_weights(&spec1.into(), &term1).unwrap();
+    |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_contrast1`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `contrast2`
+   --> crates/fmridesign/tests/test_fcontrast.rs:164:9
+    |
+164 |     let contrast2 = fmridesign::contrast::contrast_weights(&spec2.into(), &term2).unwrap();
+    |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_contrast2`
+
+warning: `fmridesign` (test "test_fcontrast") generated 3 warnings (run `cargo fix --test "test_fcontrast"` to apply 1 suggestion)
+warning: unused import: `Array2`
+  --> crates/fmridesign/tests/test_python_parity.rs:12:30
+   |
+12 | use ndarray::{array, Array1, Array2};
+   |                              ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `fmridesign::contrast::weights::TermInfo`
+ --> crates/fmridesign/tests/test_python_parity.rs:5:5
+  |
+5 | use fmridesign::contrast::weights::TermInfo;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `fmridesign` (test "test_python_parity") generated 2 warnings (run `cargo fix --test "test_python_parity"` to apply 1 suggestion)
+warning: unused import: `approx::assert_abs_diff_eq`
+   --> crates/fmridesign/src/core.rs:967:9
+    |
+967 |     use approx::assert_abs_diff_eq;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `crate::events::EventFactor`
+   --> crates/fmridesign/src/io/export.rs:427:9
+    |
+427 |     use crate::events::EventFactor;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `SamplingFrameExt` and `SamplingFrame`
+   --> crates/fmridesign/src/io/export.rs:428:27
+    |
+428 |     use crate::sampling::{SamplingFrame, SamplingFrameExt};
+    |                           ^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^
+
+warning: unused variable: `column_names`
+   --> crates/fmridesign/src/design_colmap.rs:821:13
+    |
+821 |         let column_names = vec!["task_A".to_string(), "drift_1".to_string()];
+    |             ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_column_names`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> crates/fmridesign/src/regressors.rs:588:13
+    |
+588 |         let mut model = EventModel::new(vec![Box::new(term)], sampling).unwrap();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (lib test) generated 5 warnings (run `cargo fix --lib -p fmridesign --tests` to apply 4 suggestions)
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+    Finished `test` profile [unoptimized] target(s) in 22.84s
+     Running unittests src/lib.rs (target/debug/deps/fmri_group-1a640143e34cf39d)
+
+running 2 tests
+test meta_regression::numerical_tests::analytic_derivative_matches_independent_finite_difference ... ok
+test meta_regression::numerical_tests::unequal_pairs_derivative_denominator_and_column_scaling ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/group.rs (target/debug/deps/group-69f8a8ec926bad73)
+
+running 16 tests
+test budget_and_sink_failure_are_enforced ... ok
+test fdr_matches_base_r_and_preserves_missing_family_members ... ok
+test f32_source_and_invalid_variance_policy ... ok
+test dataset_rejects_permuted_variance_axis ... ok
+test first_level_bridge_rejects_different_estimands_and_feature_identity ... ok
+test identity_validation_and_variance_requirement ... ok
+test intercept_failure_policy_and_budget_are_feature_local ... ok
+test first_level_to_group_and_explicit_provenance ... ok
+test unit_invariance_dl_boundary_and_valid_zero ... ok
+test missingness_rank_and_constant_feature_are_local ... ok
+test centered_intercept_matches_decimal_across_offsets_units_and_contrasts ... ok
+test retained_zero_rank_is_not_reported_as_too_few_observations ... ok
+test independent_r_oracles_and_block_invariance ... ok
+test bounded_pattern_cache_and_row_permutation ... ok
+test prepared_ols_reuses_geometry_but_rereads_data_and_feature_axes ... ok
+test tiled_meta_matches_decimal_and_preserves_zero_tau_bits ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/influence.rs (target/debug/deps/influence-1f3942d0e0e10f73)
+
+running 3 tests
+test missingness_rank_loss_and_sink_failure_stay_explicit ... ok
+test positive_fixed_tau_does_not_require_an_estimable_zero_tau_fit ... ok
+test exact_deletions_match_fresh_metafor_in_both_tau_modes ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/meta_regression.rs (target/debug/deps/meta_regression-c6f2a6fb68533f27)
+
+running 8 tests
+test prepared_reads_new_data_and_enforces_binding_budget_and_sink ... ok
+test feature_local_rank_missingness_and_nonconvergence ... ok
+test extreme_weight_near_zero_and_large_statistics_are_distinguished ... ok
+test requested_outputs_are_real_omissions_and_joint_matches_marginal ... ok
+test zero_heterogeneity_constant_effects_and_negative_contrasts ... ok
+test analytic_equal_variance_pm_large_offset_and_row_order ... ok
+test positive_qr_complement_denominator_survives_extreme_weights ... ok
+test fresh_metafor_covariance_and_inference_oracles ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/portable.rs (target/debug/deps/portable-fd410025c91c61ac)
+
+running 8 tests
+test writer_rejects_wrong_shape_and_budget_before_payload_write ... ok
+test finish_never_overwrites_an_appearing_manifest ... ok
+test volume_space_round_trip_preserves_support_order ... ok
+test effects_only_round_trip_and_incomplete_is_not_openable ... ok
+test estimated_df_round_trip_and_metadata_preflight ... ok
+test variance_checksum_and_block_order_are_enforced ... ok
+test reader_rejects_unknown_version_truncation_and_manifest_over_budget ... ok
+test reader_rejects_unknown_nested_semantics_and_invalid_identity_before_payload_read ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests/portable_execution.rs (target/debug/deps/portable_execution-4add89b5285afa96)
+
+running 1 test
+test portable_disk_and_materialized_memory_match_across_methods_blocks_and_shared_weights ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/repeated.rs (target/debug/deps/repeated-e0087870f1b7fabe)
+
+running 3 tests
+test covariance_order_and_spd_are_admission_contracts ... ok
+test rejects_constant_slope_basis ... ok
+test fixed_ri_matches_analytic_gls_witness ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/repeated_numerics.rs (target/debug/deps/repeated_numerics-6aa19efb355bc73c)
+
+running 10 tests
+test huge_negative_random_variance_is_rejected_even_when_total_covariance_is_spd ... ok
+test true_two_visit_confounding_and_reml_subject_intercepts_are_rejected ... ok
+test limits_invalid_covariance_and_invalid_indices_never_return_estimates ... ok
+test analytic_covariance_gradients_match_central_differences_for_ml_and_reml ... ok
+test exact_zero_random_covariance_and_singular_fixed_g_are_valid ... ok
+test high_heterogeneity_fit_is_invariant_to_fixed_design_units ... ok
+test fitted_ml_reml_exact_boundary_and_variance_witness ... ok
+test fitted_response_units_and_large_intercept_offset_are_invariant ... ok
+test correlated_slope_objective_matches_independent_r_optimizer ... ok
+test covariance_coordinate_and_subject_order_changes_preserve_fit ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.34s
+
+     Running tests/resampling.rs (target/debug/deps/resampling-8128000ab9c98a92)
+
+running 4 tests
+test rejects_missing_invalid_exchangeability_budget_and_undefined_statistic ... ok
+test column_and_contrast_units_cannot_change_the_null_space ... ok
+test seeded_draws_are_reproducible_and_never_zero ... ok
+test fresh_r_complete_enumeration_and_whole_family_block_invariance ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/shared_weights.rs (target/debug/deps/shared_weights-3a956b246d5f6692)
+
+running 4 tests
+test analytic_weighted_mean_and_difficult_geometry_keep_inference ... ok
+test shared_declaration_validates_and_budget_includes_retained_buffers ... ok
+test mismatching_weights_missing_rows_and_random_effects_fall_back ... ok
+test batched_common_effect_matches_general_across_units_blocks_inference_and_reuse ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/lib.rs (target/debug/deps/fmri_noise-0af318032589dd24)
+
+running 4 tests
+test selected_estimation::strict_selected_ar_tests::rejects_invalid_yule_walker_systems_without_repair ... ok
+test finite::tests::rejects_every_nonfinite_position_and_accepts_finite_extremes ... ok
+test ar::tests::nonpositive_definite_acvf_repair_matches_r ... ok
+test correction::arp_reference::correction_stage_matches_r_with_consecutive_censor_rows ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/ar_small_orders.rs (target/debug/deps/ar_small_orders-16a65c57f38de791)
+
+running 2 tests
+test zero_history_fused_path_preserves_scalar_rounding_on_mixed_scales ... ok
+test ar_apply_matches_independent_scalar_reference_across_orders_and_strides ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/arp.rs (target/debug/deps/arp-c58aec0dd9994ba9)
+
+running 3 tests
+test invalid_order_stationarity_and_no_boundary_leakage ... ok
+test startup_matches_dense_stationary_covariance_and_r_conditional_filter ... ok
+test current_fmriar_fixed_orders_corrected_and_uncorrected ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running tests/contracts.rs (target/debug/deps/contracts-f66dfd5ee6bc05c6)
+
+running 4 tests
+test boundaries_and_resets_do_not_leak_and_do_not_drop_rows ... ok
+test source_built_fmriar_ar1_estimation_matches_with_censoring_and_offsets ... ok
+test independent_stationary_covariance_whitens_to_innovation_identity ... ok
+test low_rank_bias_maps_and_corrected_estimates_match_independent_dense_r ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/extensions.rs (target/debug/deps/extensions-bcdde269c7c701ce)
+
+running 11 tests
+test fixture_has_fresh_source_fingerprints ... ok
+test arma_zero_history_is_independent_by_run_and_matches_scalar_recursion ... ok
+test independent_r_zero_history_witness_matches_known_arma_plan ... ok
+test specialized_apply_into_reuses_output_and_rejects_bad_inner_or_scaling ... ok
+test innovation_scale_is_known_or_explicit_plugin_only ... ok
+test parcel_acvf_pools_features_not_means_and_weights_global_by_feature_count ... ok
+test parcel_plan_requires_matched_design_and_preserves_columns ... ok
+test conditional_selection_is_scale_relative_and_rejects_giant_orders ... ok
+test hannan_rissanen_is_explicit_single_series_and_refuses_bad_orders ... ok
+test conditional_order_selection_is_comparable_and_auditable ... ok
+test full_hr_estimate_and_all_order_scores_match_independent_r_qr ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/whitening_into.rs (target/debug/deps/whitening_into-9e19389a297a614f)
+
+running 4 tests
+test trait_default_apply_into_remains_available_to_custom_plans ... ok
+test apply_into_rejects_invalid_dimensions_nonfinite_values_and_overflow ... ok
+test ar1_apply_into_reuses_strided_output_and_matches_dense_transform ... ok
+test arp_apply_into_preserves_startup_run_and_reset_semantics ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/fmridataset-38a277887cb157a2)
+
+running 1 test
+test sampling::tests::sampling_frame_samples ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/file_source.rs (target/debug/deps/file_source-bab45972ce6a2f48)
+
+running 5 tests
+test file_source_budget_includes_scratch_and_precedes_revalidation_io ... ok
+test file_source_views_preserve_strides_repetitions_and_order ... ok
+test feature_major_file_reads_raw_little_endian_f64_into_row_major_blocks ... ok
+test file_source_rejects_short_extra_nonregular_and_overflowing_inputs ... ok
+test contiguous_feature_block_crosses_scratch_boundaries_without_reordering ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/frame_contracts.rs (target/debug/deps/frame_contracts-2acbca51864f7fd3)
+
+running 13 tests
+test diagnostic_serialization_preserves_nonfinite_and_missing_float_bits ... ok
+test equal_shapes_and_ids_do_not_imply_equal_spaces ... ok
+test malformed_reader_estimates_are_rejected_without_reading ... ok
+test budget_is_checked_before_reader_invocation_and_f32_is_preserved ... ok
+test affine_validation_is_independent_of_coordinate_unit_scale ... ok
+test empty_axes_preserve_shape_and_dtype_without_budget ... ok
+test duplicate_source_gathers_are_valid_but_frame_duplicates_are_not ... ok
+test sampling_utility_rejects_invalid_finite_domains_and_overflow ... ok
+test constructors_reject_ambiguous_alignment_and_bad_annotations ... ok
+test axis_blocks_and_assay_annotations_survive_views ... ok
+test upstream_readme_values_ids_and_space_are_aligned ... ok
+test nested_views_equal_composed_view_and_serialize_visible_axes ... ok
+test arbitrary_source_gathers_match_independent_coordinate_oracle ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/nifti.rs (target/debug/deps/nifti-eab9cf7e9174be57)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/fmridesign-b08a57f44c16daf5)
+
+running 240 tests
+test baseline::tests::test_baseline_convenience ... ok
+test afni::tests::test_zero_weights_error ... ok
+test afni::tests::test_format_glt_string ... ok
+test basis::dct::tests::test_dct_basis_shapes ... ok
+test afni::tests::test_format_glt_string_fractional ... ok
+test afni::tests::test_weights_to_glt_single ... ok
+test basis::dct::tests::test_dct_basis_orthogonality ... ok
+test afni::tests::test_weights_to_glt_multiple ... ok
+test baseline::tests::test_nuisance_spec ... ok
+test basis::dct::tests::test_dct_basis_with_constant ... ok
+test baseline::tests::test_block_spec ... ok
+test basis::polynomial::tests::test_polynomial_raw ... ok
+test afni::tests::test_format_afni_gltsym ... ok
+test basis::polynomial::tests::test_natural_polynomial_centering ... ok
+test baseline::tests::test_block_diagonal ... ok
+test basis::spline::tests::test_bspline_basis ... ok
+test basis::sub_basis::tests::test_sub_basis_empty_indices ... ok
+test basis::sub_basis::tests::test_sub_basis_creation ... ok
+test basis::sub_basis::tests::test_sub_basis_evaluate ... ok
+test basis::sub_basis::tests::test_sub_basis_from_slice ... ok
+test basis::spline::tests::test_natural_spline_vs_bspline ... ok
+test basis::spline::tests::test_natural_spline_constraints ... ok
+test basis::polynomial::tests::test_polynomial_orthogonal ... ok
+test basis::sub_basis::tests::test_sub_basis_out_of_range ... ok
+test basis::spline::tests::test_natural_spline_smoothness ... ok
+test basis::sub_basis::tests::test_sub_basis_names ... ok
+test basis::sub_basis::tests::test_sub_basis_predict ... ok
+test basis::transform::tests::test_ident_transform ... ok
+test basis::transform::tests::test_robust_scale_mad ... ok
+test basis::transform::tests::test_scale_center_only ... ok
+test baseline::tests::test_baseline_model_creation ... ok
+test basis::transform::tests::test_scale_transform ... ok
+test basis::transform::tests::test_scale_within_groups ... ok
+test basis::transform::tests::test_standardized_fit_transform ... ok
+test cache::tests::test_eviction ... ok
+test cache::tests::test_basic_cache_operations ... ok
+test cache::tests::test_hash_array ... ok
+test condition_basis_list::tests::test_condition_basis_list_missing_condition ... ok
+test condition_basis_list::tests::test_condition_basis_list_multi_basis ... ok
+test condition_basis_list::tests::test_condition_basis_list_single_basis ... ok
+test contrast::fcontrast::tests::test_fcontrast_enum_variant ... ok
+test contrast::fcontrast::tests::test_fcontrast_from_impl ... ok
+test contrast::fcontrast::tests::test_fcontrast_spec_creation ... ok
+test contrast::fcontrast::tests::test_fcontrast_spec_trait ... ok
+test contrast::fcontrast::tests::test_fcontrast_weights_empty_sub_contrasts ... ok
+test contrast::fcontrast::tests::test_fcontrast_weights_single_sub_contrast ... ok
+test contrast::fcontrast::tests::test_fcontrast_weights_from_pair_sub_contrasts ... ok
+test contrast::fcontrast::tests::test_into_contrast_spec_for_empty_vec ... ok
+test contrast::fcontrast::tests::test_into_contrast_spec_for_vec ... ok
+test contrast::fcontrast::tests::test_kronecker_product ... ok
+test contrast::fcontrast::tests::test_polynomial_contrasts ... ok
+test contrast::fcontrast::tests::test_fcontrasts_helper_uses_proper_spec ... ok
+test contrast::weights::tests::test_unit_contrast_no_where_clause ... ok
+test contrast::weights::tests::test_where_clause_empty_string_selects_all ... ok
+test condition_basis_list::tests::test_split_by_condition_no_basis ... ok
+test condition_basis_list::tests::test_split_by_condition ... ok
+test contrast::weights::tests::test_where_clause_empty_result_errors ... ok
+test contrast::weights::tests::test_where_clause_equality_quoted ... ok
+test contrast::weights::tests::test_where_clause_equality ... ok
+test convolve::tests::test_discrete_convolve ... ok
+test convolve_cached::tests::test_cached_convolution ... ok
+test convolve_cached::tests::test_precompute_cache ... ok
+test convolve::tests::test_convolve_event_variable ... ok
+test convolve_design::tests::test_convolve_full ... ok
+test convolve_design::tests::test_convolve_regressors ... ok
+test convolve_design::tests::test_convolve_design_matrix ... ok
+test core::tests::test_event_creation ... ok
+test core::tests::test_event_model_builder ... ok
+test core::tests::test_baseline_model ... ok
+test core::tests::test_event_with_durations ... ok
+test covariate::tests::test_covariate_event ... ok
+test covariate::tests::test_covariate_validation ... ok
+test covariate::tests::test_covariate_term ... ok
+test covariate::tests::test_covariate_with_prefix ... ok
+test covariate::tests::test_interpolation_extrapolation_clamping ... ok
+test covariate::tests::test_interpolation_exact_match ... ok
+test covariate::tests::test_interpolation_multi_covariate ... ok
+test covariate::tests::test_interpolation_simple_linear ... ok
+test covariate::tests::test_interpolation_single_source_point ... ok
+test covariate::tests::test_multi_covariate_event ... ok
+test crossval::tests::test_kfold_split ... ok
+test crossval::tests::test_leave_one_out ... ok
+test crossval::tests::test_stratified_kfold ... ok
+test contrast::weights::tests::test_where_clause_negation_regex ... ok
+test crossval::tests::test_time_series_split ... ok
+test contrast::weights::tests::test_where_clause_negation ... ok
+test contrast::weights::tests::test_where_clause_inequality ... ok
+test design::tests::test_builder_with_multiple_columns ... ok
+test design::tests::test_design_matrix_creation ... ok
+test design::tests::test_design_matrix_builder ... ok
+test contrast::weights::tests::test_pair_contrast_with_where_clause ... ok
+test design::tests::test_design_matrix_with_times ... ok
+test design::tests::test_display ... ok
+test design::tests::test_hstack_design_matrices ... ok
+test contrast::weights::tests::test_where_clause_substring_match ... ok
+test design::tests::test_subset_columns ... ok
+test design::tests::test_subset_rows ... ok
+test dataframe_polars::tests::test_builder ... ok
+test design_colmap::tests::test_column_names ... ok
+test design_colmap::tests::test_column_role_display ... ok
+test design_colmap::tests::test_derive_basis_label_fir ... ok
+test dataframe_polars::tests::test_dataframe_creation ... ok
+test dataframe_polars::tests::test_unique ... ok
+test design_colmap::tests::test_derive_basis_label_spmg3 ... ok
+test design_colmap::tests::test_derive_basis_label_generic ... ok
+test design_colmap::tests::test_empty_column_map ... ok
+test design_colmap::tests::test_filter_by_role ... ok
+test contrast::weights::tests::test_unit_contrast_with_where_clause ... ok
+test contrast::weights::tests::test_where_clause_regex ... ok
+test design_colmap::tests::test_merge_event_baseline ... ok
+test design_colmap::tests::test_model_source_display ... ok
+test design_colmap::tests::test_modulation_type_display ... ok
+test design_colmap::tests::test_from_event_model_basic ... ok
+test design_colmap::tests::test_select_columns ... ok
+test design_colmap::tests::test_from_event_model_parametric ... ok
+test events::cells::tests::test_cells_continuous ... ok
+test events::cells::tests::test_cells_categorical ... ok
+test design_colmap::tests::test_from_event_model_with_basis ... ok
+test events::cells::tests::test_cells_interaction ... ok
+test contrast::weights::tests::test_where_clause_double_pipe_or ... ok
+test events::dataframe_conversion::tests::test_event_factor_from_dataframe ... ok
+test events::dataframe_conversion::tests::test_event_variable_from_dataframe ... ok
+test events::dataframe_conversion::tests::test_roundtrip_conversion ... ok
+test events::event_basis::tests::test_design_matrix ... ok
+test events::cells::tests::test_conditions_categorical ... ok
+test events::event_basis::tests::test_event_basis_creation ... ok
+test events::event_factor::tests::test_event_factor_creation ... ok
+test events::cells::tests::test_conditions_continuous ... ok
+test events::event_factor::tests::test_design_matrix ... ok
+test events::event_factor::tests::test_level_methods ... ok
+test events::event_matrix::tests::test_apply_transform ... ok
+test events::event_matrix::tests::test_column_names ... ok
+test events::event_matrix::tests::test_design_matrix ... ok
+test events::event_matrix::tests::test_event_matrix_creation ... ok
+test events::event_matrix::tests::test_get_column ... ok
+test events::event_term::tests::test_single_event_term ... ok
+test events::event_term::tests::test_continuous_interaction ... ok
+test events::event_term::tests::test_categorical_interaction ... ok
+test events::event_variable::tests::test_design_matrix ... ok
+test events::event_variable::tests::test_event_variable_creation ... ok
+test events::event_variable::tests::test_transform_values ... ok
+test events::event_term::tests::test_mixed_interaction ... ok
+test dataframe_polars::tests::test_filter ... ok
+test formula::context::tests::test_context_with_dataframe ... ok
+test formula::context::tests::test_scale_function ... ok
+test formula::dsl::tests::test_event_creation ... ok
+test formula::dsl::tests::test_event_interaction ... ok
+test formula::dsl::tests::test_event_with_hrf ... ok
+test formula::dsl::tests::test_formula_building ... ok
+test formula::dsl::tests::test_hrf_namespace ... ok
+test design_colmap::tests::test_from_baseline_model_intercept_global ... ok
+test formula::event_model::tests::test_event_model_builder ... ok
+test formula::parser::tests::test_parse_addition ... ok
+test formula::event_model::tests::test_event_model_simple ... ok
+test formula::parser::tests::test_parse_chained_pipes ... ok
+test contrast::weights::tests::test_where_clause_or ... ok
+test formula::event_model::tests::test_event_model_with_hrf ... ok
+test formula::parser::tests::test_parse_formula_with_lhs ... ok
+test formula::event_model::tests::test_bare_terms_route_to_event_specs ... ok
+test formula::parser::tests::test_parse_hrf_function ... ok
+test formula::parser::tests::test_parse_complex_formula ... ok
+test formula::parser::tests::test_parse_hrf_with_kwargs ... ok
+test formula::parser::tests::test_parse_interaction ... ok
+test formula::parser::tests::test_parse_multiple_kwargs ... ok
+test formula::parser::tests::test_parse_pipe_operator ... ok
+test formula::parser::tests::test_parse_pipe_with_addition ... ok
+test formula::parser::tests::test_parse_pipe_with_basis ... ok
+test formula::parser::tests::test_parse_simple_variable ... ok
+test formula::parser::tests::test_parse_trialwise_function ... ok
+test formula::term::tests::test_interaction_term ... ok
+test formula::parser::tests::test_parse_poly_function ... ok
+test design_colmap::tests::test_from_baseline_model_nuisance ... ok
+test formula::term::tests::test_term_builder ... ok
+test formula::term::tests::test_term_creation ... ok
+test design_colmap::tests::test_from_baseline_model_drift ... ok
+test formula::term::tests::test_term_with_hrf ... ok
+test design_colmap::tests::test_from_baseline_model_intercept_per_run ... ok
+test hrf::tests::test_canonical_hrf ... ok
+test hrf::tests::test_custom_hrf ... ok
+test hrf::tests::test_fir_basis ... ok
+test hrf::tests::test_fourier_basis ... ok
+test io::export::tests::test_csv_export ... ok
+test io::export::tests::test_custom_delimiter ... ok
+test io::import::tests::test_csv_import_options ... ok
+test io::export::tests::test_json_export ... ok
+test naming::tests::test_make_column_names ... ok
+test naming::tests::test_make_unique_colnames ... ok
+test naming::tests::test_make_unique_tags ... ok
+test naming::tests::test_zeropad ... ok
+test naming::tests::test_sanitize_level ... ok
+test residualize::tests::test_residualize_col_index_out_of_bounds ... ok
+test residualize::tests::test_residualize_identity_with_zero_columns ... ok
+test naming::tests::test_sanitize ... ok
+test residualize::tests::test_residualize_dimensions ... ok
+test regressors::tests::test_regressor_names ... ok
+test residualize::tests::test_residualize_known_values ... ok
+test regressors::tests::test_regressor_extraction ... ok
+test residualize::tests::test_residualize_missing_column_name ... ok
+test contrast::weights::tests::test_oneway_contrast_with_where_clause ... ok
+test regressors::tests::test_regex_pattern ... ok
+test residualize::tests::test_residualize_multi_column_y ... ok
+test residualize::tests::test_residualize_row_mismatch ... ok
+test residualize::tests::test_residualize_perfect_fit ... ok
+test residualize::tests::test_residualize_with_column_names ... ok
+test residualize::tests::test_residualize_with_column_subset ... ok
+test residualize::tests::test_residuals_orthogonal_to_design ... ok
+test sampling::tests::test_multi_block_different_trs ... ok
+test sampling::tests::test_multi_block_sampling_frame ... ok
+test sampling::tests::test_uniform_sampling_frame ... ok
+test trialwise::tests::test_create_trial_factor ... ok
+test trialwise::tests::test_process_trialwise_columns ... ok
+test types::tests::test_uniform_durations ... ok
+test trialwise::tests::test_trial_padding ... ok
+test types::tests::test_validate_durations ... ok
+test types::tests::test_validate_onsets ... ok
+test utils::event_utils::tests::test_group_consecutive_events ... ok
+test utils::event_utils::tests::test_inter_onset_intervals ... ok
+test utils::event_utils::tests::test_split_by_block_timing ... ok
+test utils::event_utils::tests::test_split_onsets_by_fn ... ok
+test utils::event_utils::tests::test_split_onsets_by_labels ... ok
+test utils::generics::tests::test_all_equal ... ok
+test utils::generics::tests::test_rep ... ok
+test utils::generics::tests::test_seq ... ok
+test utils::generics::tests::test_unique_ordered ... ok
+test utils::model_utils::tests::test_count_event_types ... ok
+test utils::model_utils::tests::test_model_conditions ... ok
+test utils::term_utils::tests::test_extract_term_indices ... ok
+test utils::term_utils::tests::test_split_by_term ... ok
+test utils::validation::tests::test_uniform_durations ... ok
+test utils::validation::tests::test_validate_onsets ... ok
+test validation::tests::test_collinearity_detected ... ok
+test validation::tests::test_collinearity_none ... ok
+test validation::tests::test_collinearity_skips_intercept ... ok
+test validation::tests::test_validate_estimable_contrast ... ok
+test validation::tests::test_validate_intercept_orthogonality ... ok
+test visualization::simple::tests::test_correlation_summary_detects_known_pair ... ok
+test validation::tests::test_validate_sum_to_zero ... ok
+test validation::tests::test_validate_f_contrast_full_rank ... ok
+test visualization::simple::tests::test_design_summary_contains_all_column_names ... ok
+test cache::tests::test_time_based_eviction ... ok
+
+test result: ok. 240 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/design_safety.rs (target/debug/deps/design_safety-77b2cb8cc525c58b)
+
+running 4 tests
+test unsupported_legacy_contrasts_do_not_become_zero_vectors ... ok
+test hstack_requires_identical_finite_time_grid ... ok
+test estimability_is_relative_and_scale_invariant ... ok
+test legacy_selectors_match_exact_column_names ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/golden_tests.rs (target/debug/deps/golden_tests-af8aa38b1758306f)
+
+running 4 tests
+test golden_test_basis_functions_orthogonal_polynomials ... ok
+test golden_test_basis_functions_bspline_invariants ... ok
+test golden_test_event_model_basic_hrf ... ok
+test golden_test_core_design_matrix_conditioning ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/hrf_spec_roundtrip.rs (target/debug/deps/hrf_spec_roundtrip-65841b21ae358115)
+
+running 1 test
+test roundtrip_preserves_spmg_parameters_and_custom_samples ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration_test.rs (target/debug/deps/integration_test-f41c198219292e4b)
+
+running 13 tests
+test test_basic_types ... ok
+test test_natural_polynomial_basis ... ok
+test test_bspline_basis ... ok
+test test_event_model_creation ... ok
+test test_formula_parsing ... ok
+test test_polynomial_basis_without_intercept ... ok
+test test_raw_polynomial_basis ... ok
+test test_polynomial_basis ... ok
+test test_sampling_frame ... ok
+test test_spline_with_knots ... ok
+test test_utils ... ok
+test test_natural_spline_basis ... ok
+test test_naming_functions ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/nuisance_contract.rs (target/debug/deps/nuisance_contract-b1c2e6078d6d5169)
+
+running 4 tests
+test dct_matches_r_and_is_orthonormal_run_local_without_dc ... ok
+test invalid_inputs_and_selection_contracts ... ok
+test current_r_polynomial_intercepts_and_named_covariates ... ok
+test iid_spikes_and_row_exclusion_match_r_coefficients_rss_and_rank_df ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/r_core_contract.rs (target/debug/deps/r_core_contract-456f2d629dfe7936)
+
+running 9 tests
+test sampled_convolution_rejects_ambiguous_or_invalid_time_grids ... ok
+test cached_convolution_preserves_sub_millisecond_timing_amplitudes_and_hrf_identity ... ok
+test duplicate_impulses_add_and_short_blocks_remain_blocks ... ok
+test spline_fits_and_predictions_match_r_including_boundaries ... ok
+test runwise_polynomial_baselines_match_current_r ... ok
+test empty_runs_and_absent_conditions_keep_their_columns_without_tail_leakage ... ok
+test cached_models_do_not_confuse_amplitudes ... ok
+test signed_modulators_and_factor_interactions_match_r ... ok
+test formula_event_designs_match_current_r_values_and_basis_order ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests/sampled_feature_design.rs (target/debug/deps/sampled_feature_design-358094cc7c2db817)
+
+running 3 tests
+test invalid_names_and_mutated_frames_are_checked ... ok
+test single_basis_names_and_broadcast_frame_fields_are_preserved ... ok
+test current_r_uniform_irregular_mask_center_scale_and_multibasis ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.58s
+
+     Running tests/test_afni_integration.rs (target/debug/deps/test_afni_integration-ae8640d3da3f8920)
+
+running 6 tests
+test test_format_afni_gltsym ... ok
+test test_write_glt_single_file ... ok
+test test_write_glt_multiple_files ... ok
+test test_simple_contrast_to_glt ... ok
+test test_oneway_contrast_to_glt ... ok
+test test_complex_contrast_workflow ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/test_basis_functions.rs (target/debug/deps/test_basis_functions-fb82d17bb60d9ddf)
+
+running 14 tests
+test test_bspline_boundary_behavior ... ok
+test test_bspline_basis ... ok
+test test_bspline_names ... ok
+test test_bspline_cox_de_boor ... ok
+test test_polynomial_basis ... ok
+test test_bspline_with_knots ... ok
+test test_polynomial_names ... ok
+test test_small_bspline_df ... ok
+test test_zero_degree ... ok
+test test_identity_basis ... ok
+test test_polynomial_with_intercept ... ok
+test test_polynomial_larger_degree ... ok
+test test_natural_spline_basis ... ok
+test test_orthogonal_polynomials ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_contrast_weights.rs (target/debug/deps/test_contrast_weights-d134e1102b6be931)
+
+running 12 tests
+test test_oneway_contrast ... ok
+test invalid_basis_metadata_is_rejected ... ok
+test test_polynomial_contrast ... ok
+test unit_and_polynomial_contrasts_expand_basis_major ... ok
+test test_pair_contrast_weights ... ok
+test a_missing_pair_group_cannot_silently_become_a_unit_contrast ... ok
+test pair_level_selection_stays_aligned_after_basis_expansion ... ok
+test pair_selectors_do_not_match_partial_condition_names ... ok
+test test_contrast_with_basis_expansion ... ok
+test mixed_fcontrast_preserves_aligned_subcontrast_rows ... ok
+test test_column_contrast_weights ... ok
+test explicit_and_linear_contrasts_keep_the_requested_estimand ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/test_convolution.rs (target/debug/deps/test_convolution-c9861abb9c3324cd)
+
+running 6 tests
+test test_convolve_array_edge_cases ... ok
+test test_convolve_options_default ... ok
+test test_convolve_array_multiple_impulses ... ok
+test test_convolve_array_basic ... ok
+test test_convolve_array_scaling ... ok
+test test_full_convolution_workflow ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_core_parity.rs (target/debug/deps/test_core_parity-b75c81a80f8d2b31)
+
+running 11 tests
+test test_event_variable_creation_and_centering ... ok
+test test_error_handling ... ok
+test test_event_matrix_creation ... ok
+test test_event_factor_design_matrix ... ok
+test test_bspline_basis ... ok
+test test_event_factor_creation_and_methods ... ok
+test test_polynomial_basis ... ok
+test test_formula_parsing ... ok
+test test_contrast_computations ... ok
+test test_event_model_design_matrix_generation ... ok
+test test_full_pipeline_from_formula ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/test_crossval.rs (target/debug/deps/test_crossval-c2eedd1a970ec6eb)
+
+running 14 tests
+test test_edge_cases ... ok
+test test_custom_split ... ok
+test test_leave_one_out ... ok
+test test_kfold_uneven_split ... ok
+test test_kfold_basic ... ok
+test test_kfold_shuffled ... ok
+test test_cv_iterator ... ok
+test test_leave_p_out ... ok
+test test_split_events ... ok
+test test_reproducibility ... ok
+test test_stratified_kfold ... ok
+test test_no_overlap ... ok
+test test_time_series_split ... ok
+test test_design_matrix_consistency ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/test_dataframe_conversion.rs (target/debug/deps/test_dataframe_conversion-25864d7c5879c974)
+
+running 7 tests
+test test_dataframe_length_validation ... ok
+test test_event_basis_to_dataframe ... ok
+test test_event_variable_with_transform_to_dataframe ... ok
+test test_event_variable_to_dataframe ... ok
+test test_dataframe_builder ... ok
+test test_event_factor_to_dataframe ... ok
+test test_event_matrix_to_dataframe ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_event_basis.rs (target/debug/deps/test_event_basis-b73a78d40ad06908)
+
+running 11 tests
+test test_event_basis_nonfinite_values ... ok
+test test_event_basis_design_matrix ... ok
+test test_event_basis_impulse_events ... ok
+test test_event_basis_validation ... ok
+test test_event_basis_spline ... ok
+test test_event_basis_scaled_values ... ok
+test test_event_basis_quadratic ... ok
+test test_event_basis_linear ... ok
+test test_event_basis_multirun_scaling ... ok
+test test_event_basis_high_degree_polynomial ... ok
+test test_event_basis_to_dataframe ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_event_model.rs (target/debug/deps/test_event_model-3ceec0e687bcbf27)
+
+running 4 tests
+test test_event_model_empty ... ok
+test test_event_model_no_sampling_frame ... ok
+test test_event_model_caching ... ok
+test test_event_model_design_matrix_generation ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_events.rs (target/debug/deps/test_events-4a6005a9896faaaa)
+
+running 11 tests
+test test_event_factor_invalid ... ok
+test test_event_factor ... ok
+test test_event_design_matrix ... ok
+test test_event_spec_durations ... ok
+test test_event_factor_split ... ok
+test test_event_spec_onsets ... ok
+test test_event_variable_as_block ... ok
+test test_event_variable_as_impulse ... ok
+test test_event_variable_block_with_amplitudes ... ok
+test test_event_variable_invalid ... ok
+test test_event_variable_with_amplitudes ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_export.rs (target/debug/deps/test_export-a7e75cc257dd08e2)
+
+running 12 tests
+test test_design_matrix_csv_export ... ok
+test test_custom_delimiter ... ok
+test test_no_headers ... ok
+test test_custom_precision ... ok
+test test_pretty_json ... ok
+test test_design_matrix_json_export ... ok
+test test_event_model_csv_export ... ok
+test test_write_csv_to_file ... ok
+test test_event_model_json_export ... ok
+test test_write_json_to_file ... ok
+test test_dataframe_json_export ... ok
+test test_dataframe_csv_export ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/test_fcontrast.rs (target/debug/deps/test_fcontrast-6a81b72296f70586)
+
+running 7 tests
+test test_fcontrasts_empty_specs ... ok
+test test_interaction_fcontrasts ... ok
+test test_oneway_produces_valid_fcontrast ... ok
+test test_main_effect_fcontrasts ... ok
+test test_fcontrasts_with_polynomial ... ok
+test test_fcontrasts_mismatched_conditions ... ok
+test test_fcontrasts_from_multiple_contrasts ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_formula_at_operator.rs (target/debug/deps/test_formula_at_operator-b21ffc1dded73f1a)
+
+running 9 tests
+test test_at_operator_with_bs ... ok
+test test_at_operator_precedence ... ok
+test test_at_operator_with_kwargs ... ok
+test test_at_operator_in_complex_formula ... ok
+test test_at_operator_with_interaction ... ok
+test test_at_operator_with_hrf ... ok
+test test_at_operator_with_poly ... ok
+test test_at_operator_with_simple_basis ... ok
+test test_invalid_at_operator_usage ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_formula_dsl.rs (target/debug/deps/test_formula_dsl-1e850cf0458b9c4d)
+
+running 11 tests
+test test_formula_building ... ok
+test test_event_with_hrf ... ok
+test test_hrf_namespace ... ok
+test test_event_creation ... ok
+test test_event_interaction ... ok
+test test_interaction_builder ... ok
+test test_interaction_with_hrf ... ok
+test test_term_builder ... ok
+test test_term_set_param ... ok
+test test_term_with_name ... ok
+test test_term_without_name ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_formula_interface.rs (target/debug/deps/test_formula_interface-f122d0a80b482cfb)
+
+running 13 tests
+test test_empty_formula ... ok
+test test_parse_formula ... ok
+test test_hrf_with_type ... ok
+test test_simple_formula ... ok
+test test_event_model_builder ... ok
+test test_multiple_events_formula ... ok
+test test_invalid_formula ... ok
+test test_formula_with_lhs ... ok
+test test_interaction_formula ... ok
+test test_formula_with_covariates ... ok
+test test_design_matrix_generation ... ok
+test test_bare_terms_resolve_against_event_columns ... ok
+test test_nested_hrf_basis_and_dataframe_dimensions ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/test_formula_parser.rs (target/debug/deps/test_formula_parser-645257713c4f7036)
+
+running 11 tests
+test test_parse_formula_with_lhs ... ok
+test test_parse_hrf_with_kwargs ... ok
+test test_parse_hrf_function ... ok
+test test_parse_complex_formula ... ok
+test test_parse_hrf_with_type ... ok
+test test_parse_formula_convenience ... ok
+test test_parse_interaction ... ok
+test test_parse_poly_function ... ok
+test test_parse_simple_variable ... ok
+test test_parse_invalid_syntax ... ok
+test test_parse_trialwise ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_hrf_integration.rs (target/debug/deps/test_hrf_integration-f381510789eb0719)
+
+running 4 tests
+test test_hrf_convolution_gamma ... ok
+test test_hrf_convolution_canonical ... ok
+test test_no_hrf_for_covariates ... ok
+test test_hrf_types ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/test_python_parity.rs (target/debug/deps/test_python_parity-878094f435033af9)
+
+running 25 tests
+test test_empty_events ... ok
+test test_event_variable_simple ... ok
+test test_event_matrix_creation ... ok
+test test_negative_durations ... ok
+test test_event_variable_design_matrix ... ok
+test test_event_variable_centering ... ok
+test test_mismatched_lengths ... ok
+test test_non_finite_values ... ok
+test test_event_factor_simple ... ok
+test test_bspline_basis ... ok
+test test_event_factor_design_matrix ... ok
+test test_event_factor_level_methods ... ok
+test test_parse_simple_formula ... ok
+test test_parse_multiple_terms ... ok
+test test_parse_with_kwargs ... ok
+test test_parse_interaction ... ok
+test test_robust_scale_transform ... ok
+test test_scale_transform ... ok
+test test_polynomial_basis ... ok
+test test_unit_contrast ... ok
+test test_oneway_contrast ... ok
+test test_pair_contrast ... ok
+test test_event_model_design_matrix ... ok
+test test_interaction_term_design_matrix ... ok
+test test_full_pipeline_formula_to_design_matrix ... ok
+
+test result: ok. 25 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/test_sampling.rs (target/debug/deps/test_sampling-e5ecfb38d58e4336)
+
+running 7 tests
+test test_multi_block_different_trs ... ok
+test test_multi_block_sampling_frame ... ok
+test test_multi_block_invalid_trs ... ok
+test test_sampling_frame_block_info ... ok
+test test_sampling_frame_timevec ... ok
+test test_uniform_sampling_frame ... ok
+test test_uniform_sampling_frame_with_start ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_scale_within.rs (target/debug/deps/test_scale_within-9ecea5eae141e919)
+
+running 7 tests
+test test_scale_within_center_only ... ok
+test test_scale_within_scale_only ... ok
+test test_scale_within_single_group ... ok
+test test_scale_within_basic ... ok
+test test_scale_within_empty_group ... ok
+test test_scale_within_vs_global ... ok
+test test_scale_within_error_handling ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_standardized.rs (target/debug/deps/test_standardized-78aa28c814fff527)
+
+running 12 tests
+test test_standardized_basic_fit_transform ... ok
+test test_standardized_constant_data ... ok
+test test_standardized_cross_validation_scenario ... ok
+test test_standardized_center_only ... ok
+test test_standardized_empty_data_error ... ok
+test test_standardized_auto_fit ... ok
+test test_standardized_large_values ... ok
+test test_standardized_negative_values ... ok
+test test_standardized_predict ... ok
+test test_standardized_scale_only ... ok
+test test_standardized_predict_no_coef ... ok
+test test_standardized_single_value ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_utils.rs (target/debug/deps/test_utils-217f6b7978b7bdc3)
+
+running 11 tests
+test test_event_terms_extraction ... ok
+test test_has_interactions ... ok
+test test_factor_and_variable_names ... ok
+test test_empty_model ... ok
+test test_model_conditions_basic ... ok
+test test_model_conditions_with_basis ... ok
+test test_total_conditions ... ok
+test test_count_event_types ... ok
+test test_cells_extraction ... ok
+test test_has_cells_trait ... ok
+test test_model_conditions_with_interaction ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/fmrihrf-99e30158052d31bd)
+
+running 165 tests
+test error::tests::test_error_display ... ok
+test error::tests::test_error_from_io ... ok
+test error::tests::test_error_from_ndarray_shape ... ok
+test hrf::core::tests::test_hrf_from_coefficients_invalid_length ... ok
+test hrf::core::tests::test_basic_evaluation ... ok
+test hrf::core::tests::test_hrf_from_coefficients ... ok
+test hrf::core::tests::test_hrf_from_coefficients_single_basis ... ok
+test hrf::core::tests::test_hrf_edge_cases ... ok
+test hrf::core::tests::test_evaluate_deriv_numeric ... ok
+test hrf::core::tests::test_evaluate_deriv_trait_object ... ok
+test hrf::core::tests::test_evaluate_deriv_multi_basis ... ok
+test hrf::core::tests::test_block_evaluation ... ok
+test hrf::core::tests::test_multi_basis_hrf ... ok
+test hrf::core::tests::test_simple_hrf_implementation ... ok
+test hrf::derivatives::tests::test_derivative_hrf_zero_order ... ok
+test hrf::derivatives::tests::test_numeric_derivative ... ok
+test hrf::derivatives::tests::test_spmg1_derivative ... ok
+test hrf::derivatives::tests::test_spmg1_hrf_with_derivative ... ok
+test hrf::derivatives::tests::test_spmg2_hrf ... ok
+test hrf::derivatives::tests::test_spmg3_hrf ... ok
+test hrf::empirical::tests::test_empirical_hrf_basic ... ok
+test hrf::empirical::tests::test_empirical_hrf_cubic_spline ... ok
+test hrf::empirical::tests::test_empirical_hrf_errors ... ok
+test hrf::empirical::tests::test_empirical_hrf_extrapolation ... ok
+test hrf::empirical::tests::test_empirical_hrf_interpolation ... ok
+test hrf::empirical::tests::test_gen_empirical_hrf_alias ... ok
+test hrf::functions::tests::test_boxcar_hrf ... ok
+test hrf::functions::tests::test_boxcar_hrf_custom_amplitude ... ok
+test hrf::derivatives::tests::test_derivative_hrf ... ok
+test hrf::functions::tests::test_boxcar_hrf_normalized ... ok
+test hrf::functions::tests::test_bspline_hrf ... ok
+test hrf::core::tests::test_block_evaluation_multi_basis ... ok
+test hrf::functions::tests::test_fir_hrf ... ok
+test hrf::functions::tests::test_fourier_hrf ... ok
+test hrf::functions::tests::test_boxcar_hrf_invalid_width - should panic ... ok
+test hrf::functions::tests::test_gamma_hrf ... ok
+test hrf::functions::tests::test_gaussian_hrf ... ok
+test hrf::functions::tests::test_half_cosine_hrf ... ok
+test hrf::functions::tests::test_hrf_time ... ok
+test hrf::functions::tests::test_hrf_basis_lwu ... ok
+test hrf::functions::tests::test_inv_logit_hrf_invalid_scale ... ok
+test hrf::functions::tests::test_inv_logit_hrf_defaults ... ok
+test hrf::functions::tests::test_inv_logit_hrf_with_lag ... ok
+test hrf::functions::tests::test_lwu_hrf_validation ... ok
+test hrf::functions::tests::test_mexhat_hrf ... ok
+test hrf::functions::tests::test_sine_basis_hrf_defaults ... ok
+test hrf::functions::tests::test_sine_basis_hrf_shape ... ok
+test hrf::functions::tests::test_sine_basis_hrf_values_match_r ... ok
+test hrf::functions::tests::test_sine_basis_hrf_zero_outside_support ... ok
+test hrf::functions::tests::test_sine_hrf ... ok
+test hrf::derivatives::tests::test_derivative_hrf_second_order ... ok
+test hrf::functions::tests::test_spm_canonical ... ok
+test hrf::functions::tests::test_spm_with_derivatives ... ok
+test hrf::functions::tests::test_hrf_basis_lwu_normalized ... ok
+test hrf::functions::tests::test_weighted_hrf_constant ... ok
+test hrf::functions::tests::test_lwu_hrf ... ok
+test hrf::functions::tests::test_weighted_hrf_linear ... ok
+test hrf::functions::tests::test_weighted_hrf_linear_outside ... ok
+test hrf::functions::tests::test_weighted_hrf_normalize_constant ... ok
+test hrf::functions::tests::test_weighted_hrf_normalize_linear ... ok
+test hrf::functions::tests::test_weighted_hrf_normalize_linear_scaling ... ok
+test hrf::functions::tests::test_weighted_hrf_uniform ... ok
+test hrf::functions::tests::test_weighted_hrf_uniform_times ... ok
+test hrf::functions::tests::test_weighted_hrf_uniform_validation ... ok
+test hrf::functions::tests::test_weighted_hrf_validation_length_mismatch ... ok
+test hrf::functions::tests::test_weighted_hrf_validation_negative_start ... ok
+test hrf::functions::tests::test_weighted_hrf_validation_non_increasing ... ok
+test hrf::functions::tests::test_weighted_hrf_validation_too_few_weights ... ok
+test hrf::generators::tests::test_combined_hrfs ... ok
+test hrf::generators::tests::test_daguerre_laguerre_basis ... ok
+test hrf::generators::tests::test_daguerre_scale_parameter_in_params ... ok
+test hrf::generators::tests::test_daguerre_generator ... ok
+test hrf::generators::tests::test_daguerre_single_basis ... ok
+test hrf::generators::tests::test_daguerre_from_string ... ok
+test hrf::generators::tests::test_daguerre_with_scale ... ok
+test hrf::generators::tests::test_hrf_generator_basic ... ok
+test hrf::generators::tests::test_hrf_from_basis ... ok
+test hrf::generators::tests::test_hrf_with_lag ... ok
+test hrf::generators::tests::test_make_hrf ... ok
+test hrf::generators::tests::test_make_hrf_from_params ... ok
+test hrf::generators::tests::test_parse_hrf_spec ... ok
+test hrf::generators::tests::test_parse_params ... ok
+test hrf::library::tests::test_get_predefined_hrf ... ok
+test hrf::library::tests::test_list_predefined_hrfs ... ok
+test hrf::registry::tests::test_get_hrf_case_insensitive ... ok
+test hrf::registry::tests::test_get_predefined_hrf ... ok
+test hrf::registry::tests::test_hrf_not_found ... ok
+test hrf::registry::tests::test_list_available_hrfs ... ok
+test hrf::registry::tests::test_register_custom_hrf ... ok
+test hrf::registry::tests::test_register_duplicate_fails ... ok
+test hrf::registry::tests::test_remove_hrf ... ok
+test hrf::library::tests::test_hrf_library ... ok
+test penalty::tests::test_custom_shrink_factor ... ok
+test hrf::generators::tests::test_hrf_normalized ... ok
+test penalty::tests::test_difference_matrix ... ok
+test hrf::generators::tests::test_decorators ... ok
+test hrf::generators::tests::test_enhanced_string_parsing ... ok
+test penalty::tests::test_penalty_fourier ... ok
+test hrf::generators::tests::test_gen_hrf_from_string ... ok
+test penalty::tests::test_penalty_identity ... ok
+test penalty::tests::test_penalty_bspline ... ok
+test penalty::tests::test_auto_penalty ... ok
+test penalty::tests::test_penalty_spmg2 ... ok
+test penalty::tests::test_penalty_roughness_fir ... ok
+test reconstruction::tests::test_dimension_mismatch ... ok
+test reconstruction::tests::test_create_regressor_impulse ... ok
+test reconstruction::tests::test_reconstruct_hrf ... ok
+test reconstruction::tests::test_reconstruction_from_sampling ... ok
+test reconstruction::tests::test_reconstruct_hrf_linear_combo ... ok
+test reconstruction::tests::test_reconstruction_matrix_basic ... ok
+test regressor::convolution::tests::test_build_neural_input_edge_cases ... ok
+test reconstruction::tests::test_reconstruction_matrix_multi_basis ... ok
+test regressor::convolution::tests::test_convolve_precision_error ... ok
+test regressor::convolution::tests::test_interp_linear_edge_cases ... ok
+test regressor::convolution::tests::test_convolve_impulse ... ok
+test regressor::convolution::tests::test_next_power_of_2 ... ok
+test regressor::convolution::tests::test_fft_convolution ... ok
+test regressor::core::tests::test_null_regressor ... ok
+test regressor::convolution::tests::test_convolve_block ... ok
+test regressor::core::tests::test_null_regressor_in_design ... ok
+test regressor::core::tests::test_regressor_basic ... ok
+test regressor::core::tests::test_regressor_filtering ... ok
+test regressor::core::tests::test_regressor_neural_input ... ok
+test regressor::core::tests::test_regressor_neural_input_impulse ... ok
+test regressor::core::tests::test_regressor_set ... ok
+test regressor::core::tests::test_regressor_shift ... ok
+test regressor::core::tests::test_regressor_evaluate ... ok
+test regressor::core::tests::test_trial_varying_broadcast ... ok
+test regressor::core::tests::test_trial_varying_validation_length_mismatch ... ok
+test regressor::core::tests::test_trial_varying_validation_nbasis_mismatch ... ok
+test regressor::core::tests::test_trial_varying_with_amplitude_filtering ... ok
+test regressor::design::tests::test_design_matrix_with_names ... ok
+test regressor::design::tests::test_design_options_builder ... ok
+test regressor::core::tests::test_trial_varying_basic ... ok
+test regressor::design::tests::test_design_matrix_from_set ... ok
+test regressor::neural_input::tests::test_neural_input_overlapping ... ok
+test sampling::tests::test_concatenate_different_precision ... ok
+test regressor::neural_input::tests::test_neural_input_blocks ... ok
+test sampling::tests::test_builder ... ok
+test regressor::neural_input::tests::test_neural_input_impulse ... ok
+test regressor::design::tests::test_design_single_regressor ... ok
+test sampling::tests::test_multi_block_sampling_frame ... ok
+test sampling::tests::test_concatenate ... ok
+test regressor::design::tests::test_design_multiple_regressors ... ok
+test sampling::tests::test_samples_and_offsets ... ok
+test sampling::tests::test_to_dict_from_dict ... ok
+test sampling::tests::test_uniform_sampling_frame ... ok
+test tests::test_version ... ok
+test regressor::design::tests::test_design_with_intercept ... ok
+test utils::cache::tests::test_cache_eviction ... ok
+test utils::misc::tests::test_apply_binary_op ... ok
+test utils::misc::tests::test_find_peaks ... ok
+test utils::misc::tests::test_normalize_max ... ok
+test utils::cache::tests::test_cache_statistics ... ok
+test utils::misc::tests::test_recycle_or_error ... ok
+test utils::misc::tests::test_shift_regressor ... ok
+test utils::misc::tests::test_time_grid ... ok
+test utils::cache::tests::test_cached_hrf_eval ... ok
+test utils::cache::tests::test_clear_cache ... ok
+test regressor::design::tests::test_design_regressor_set ... ok
+test utils::cache::tests::test_eviction_statistics ... ok
+test utils::cache::tests::test_reset_stats ... ok
+test regressor::core::tests::test_trial_varying_matches_single_hrf ... ok
+test regressor::convolution::tests::test_convolve_method_variations ... ok
+test reconstruction::tests::test_reconstruction_matrix_blocked ... ok
+
+test result: ok. 165 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/convolution_contract.rs (target/debug/deps/convolution_contract-df29c58985f8e2a8)
+
+running 13 tests
+test invalid_convolution_inputs_return_errors ... ok
+test empty_trial_varying_events_and_explicit_span_are_valid ... ok
+test condition_sets_preserve_custom_hrf_instead_of_reconstructing_by_name ... ok
+test registered_factories_can_use_the_registry_without_holding_its_lock ... ok
+test normalization_reference_count_matches_r_ties_to_even_rounding ... ok
+test block_evaluation_uses_trapezoid_and_duration_mean ... ok
+test positive_semidefinite_validation_uses_the_actual_matrix ... ok
+test off_grid_impulses_preserve_exact_time_and_signed_amplitude ... ok
+test causal_hrfs_and_fixed_normalization_are_invariant_to_query_partition ... ok
+test blocks_integrate_even_below_precision_and_average_by_duration ... ok
+test long_blocks_starting_before_window_keep_their_tails ... ok
+test fixed_normalization_modes_match_r_and_preserve_relative_derivative_scales ... ok
+test current_r_conv_and_reference_loop_fixtures ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.47s
+
+     Running tests/cross_validation.rs (target/debug/deps/cross_validation-82e24bca96a33a29)
+
+running 6 tests
+test test_sampling_frame_cross_validation ... ok
+test test_spm_canonical_cross_validation ... ok
+test test_bspline_cross_validation ... ok
+test test_fourier_cross_validation ... ok
+test test_design_matrix_cross_validation ... ok
+test test_regressor_cross_validation ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cross_validation_spm.rs (target/debug/deps/cross_validation_spm-22d602722a8e44cc)
+
+running 4 tests
+test test_spm_canonical_peak_location ... ok
+test test_spm_canonical_backward_compatibility ... ok
+test test_spm_canonical_normalization ... ok
+test test_spm_canonical_matches_r_original ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/current_spline_contract.rs (target/debug/deps/current_spline_contract-f451fbeed99195b4)
+
+running 1 test
+test current_r_endpoint_constrained_splines_across_degrees_and_sizes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/edge_case_tests.rs (target/debug/deps/edge_case_tests-c4c8e27350e7edc6)
+
+running 7 tests
+test test_sampling_frame_edge_cases ... ok
+test test_empirical_hrf_edge_cases ... ok
+test test_regressor_edge_cases ... ok
+test test_hrf_string_parsing_edge_cases ... ok
+test test_hrf_decorators_complex ... ok
+test test_convolution_edge_cases ... ok
+test test_design_matrix_complex_scenarios ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/hrf_audit.rs (target/debug/deps/hrf_audit-55ddc729b553b976)
+
+running 3 tests
+test derivatives_dispatch_through_trait_objects_and_respect_endpoint ... ok
+test empirical_linear_default_and_explicit_cubic ... ok
+test current_r_basis_penalty_and_reconstruction_contracts ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/hrf_decorator_fixtures_parity.rs (target/debug/deps/hrf_decorator_fixtures_parity-31374265bc18afbf)
+
+running 5 tests
+test test_half_cosine_hrf_segments_r_fixture_parity ... ok
+test test_spmg1_lag2_r_fixture_parity ... ok
+test test_spmg1_gen_hrf_lagged_multi_r_fixture_parity ... ok
+test test_spmg1_block_width5_r_fixture_parity ... ok
+test test_spmg1_gen_hrf_blocked_multi_r_fixture_parity ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/hrf_fixtures_parity.rs (target/debug/deps/hrf_fixtures_parity-995a0a2b7fec5732)
+
+running 4 tests
+test test_gaussian_hrf_r_fixture_parity ... ok
+test test_lwu_hrf_r_fixture_parity ... ok
+test test_mexhat_hrf_r_fixture_parity ... ok
+test test_gamma_hrf_r_fixture_parity ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration_test.rs (target/debug/deps/integration_test-ba3d6dcc54a79717)
+
+running 4 tests
+test test_multi_block_sampling_frame ... ok
+test test_sampling_frame_basic ... ok
+test test_spm_canonical_basic ... ok
+test test_hrf_with_block_duration ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/regressor_design_parity.rs (target/debug/deps/regressor_design_parity-42ad47d9661c3e43)
+
+running 1 test
+test test_regressor_design_block_example_parity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/regressor_design_spmg3_parity.rs (target/debug/deps/regressor_design_spmg3_parity-60ffbeab4a69ee93)
+
+running 1 test
+test test_regressor_design_spmg3_block_example_parity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/sampled_features.rs (target/debug/deps/sampled_features-a9a09d9ff48a30fe)
+
+running 4 tests
+test invalid_inputs_strides_and_scale_extremes ... ok
+test mask_centering_identity_and_run_isolation ... ok
+test zoh_mass_is_invariant_to_resampling_and_not_impulse_count ... ok
+test current_r_uniform_irregular_mask_center_scale_and_multibasis ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.44s
+
+     Running tests/spmg_hrf_parity.rs (target/debug/deps/spmg_hrf_parity-545fcdeeea8b4eb1)
+
+running 2 tests
+test test_spmg2_hrf_r_fixture_parity ... ok
+test test_spmg3_hrf_r_fixture_parity ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tent_hrf_parity.rs (target/debug/deps/tent_hrf_parity-7a823c182b0f4f05)
+
+running 1 test
+test test_tent_hrf_r_fixture_parity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/test_serialization.rs (target/debug/deps/test_serialization-ce72449559aba831)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/workflow_tests.rs (target/debug/deps/workflow_tests-374a09cafd96b8d5)
+
+running 7 tests
+test test_concatenated_runs_workflow ... ok
+test test_string_based_hrf_creation ... ok
+test test_custom_hrf_workflow ... ok
+test test_regressor_set_workflow ... ok
+test test_multi_basis_hrf_workflow ... ok
+test test_basic_glm_workflow ... ok
+test test_block_design_workflow ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/fmrimod-41b70bac505a3314)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/analysis.rs (target/debug/deps/analysis-562f2f5902ba7a86)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cohort.rs (target/debug/deps/cohort-b5438ac857755513)
+
+running 2 tests
+test estimates_only_bridge_and_errors_keep_sessions_usable ... ok
+test ordered_workers_and_exact_budget_match_analytic_group ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/group.rs (target/debug/deps/group-67a3774cf257f1cc)
+
+running 1 test
+test group_facade_preserves_dataset_identity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/group_requirements.rs (target/debug/deps/group_requirements-dd58a97fa52f00b2)
+
+running 3 tests
+test ols_requires_effects_only_regardless_of_its_execution_options ... ok
+test meta_regression_requires_input_variance_even_for_effects_only_group_output ... ok
+test group_and_viewer_union_preserves_scalar_binding_and_requires_variance ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/ingress.rs (target/debug/deps/ingress-4036dacfc75601e6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/outputs.rs (target/debug/deps/outputs-6ae7525f9f3b028a)
+
+running 7 tests
+test rejects_bad_design_names_and_weights_before_data_read ... ok
+test rejects_duplicate_consumers_and_mismatched_subject_or_model ... ok
+test same_id_requires_same_scientific_definition_and_resolved_weights ... ok
+test custom_whitening_must_be_explicitly_versioned_for_durable_reuse ... ok
+test capability_requires_exact_identity_and_does_not_promote_marginal_to_joint ... ok
+test compiles_union_preserves_consumer_order_and_maximum_uncertainty ... ok
+test compiled_requirement_prepares_and_runs_on_ols ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/pipeline.rs (target/debug/deps/pipeline-95b08a0af543ca17)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/session.rs (target/debug/deps/session-390a850472509a81)
+
+running 13 tests
+test from_f64_accepts_nonstandard_layout_without_reinterpreting_values ... ok
+test from_f64_compacts_a_sliced_owned_backing_array ... ok
+test reader_load_moves_its_buffer_without_a_second_full_copy ... ok
+test preparation_byte_math_reports_overflow_before_model_allocation ... ok
+test model_spec_clone_does_not_retain_hidden_design_backing ... ok
+test failed_budget_keeps_cached_model_usable ... ok
+test fixed_ar_settings_and_estimated_tolerance_participate_in_cache_identity ... ok
+test detached_state_checks_source_identity_and_preserves_retained_model ... ok
+test resident_session_reuses_models_and_matches_blocking ... ok
+test output_budget_and_sink_failure_do_not_execute_or_poison_cache ... ok
+test detached_outputs_match_analytic_slopes_and_variances_without_data ... ok
+test explicit_retention_preserves_outputs_budgets_and_invalidation ... ok
+test estimated_ar_design_change_matches_fresh_session ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/lib.rs (target/debug/deps/fmrireg-a75dee4daa1b2df2)
+
+running 1 test
+test finite::tests::rejects_every_nonfinite_position_and_accepts_finite_extremes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/arp.rs (target/debug/deps/arp-d4cd33d4e276d74a)
+
+running 3 tests
+test aligned_gls_blocks_preserve_ids_and_reject_permuted_rows ... ok
+test stationary_gls_matches_independent_dense_covariance_solve ... ok
+test conditional_feasible_gls_matches_current_r_full_fit ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests/contracts.rs (target/debug/deps/contracts-634e4b7877898a68)
+
+running 8 tests
+test ill_conditioned_full_rank_design_recovers_known_coefficients ... ok
+test analytic_intercept_and_invalid_inputs ... ok
+test contrast_overflow_errors_instead_of_returning_misleading_inference ... ok
+test bounded_reader_matches_dense_and_refuses_budget_before_sink ... ok
+test rank_deficient_estimability_and_chunk_equivalence ... ok
+test r_ols_contrasts_and_explicit_covariance_gls ... ok
+test residual_variance_preserves_small_errors_on_large_offsets_across_blocks ... ok
+test feasible_gls_uses_corrected_noise_and_preserves_feature_block_fits ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/invalid_allocation.rs (target/debug/deps/invalid_allocation-cafdf2f7eb4d8257)
+
+running 1 test
+test broadcast_nonfinite_data_is_rejected_before_numeric_allocation ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/output.rs (target/debug/deps/output-604f025b7b182bdc)
+
+running 10 tests
+test estimates_only_does_not_compute_overflowing_residual_squares ... ok
+test output_context_copies_only_logical_sliced_weights ... ok
+test gls_marginal_and_joint_match_independent_precision_solution ... ok
+test requests_preserve_estimability_and_allow_zero_scale ... ok
+test custom_transform_compatibility_and_transformed_validation ... ok
+test analytic_joint_covariance_dependent_and_zero_estimands ... ok
+test retained_fit_is_model_bound_and_matches_analytic_uncertainty ... ok
+test near_collinear_estimand_variance_uses_stable_geometry ... ok
+test current_r_fixture_matches_requested_effects_and_standard_errors ... ok
+test minimal_workspace_tail_strides_and_owned_summary_outlive_models ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/output_dataset.rs (target/debug/deps/output_dataset-398548b326407079)
+
+running 3 tests
+test summary_assay_checks_identity_and_feature_order ... ok
+test ordered_summary_blocks_match_dense_and_survive_models ... ok
+test budgets_preflight_before_reads_and_errors_stop_sinks ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parallel.rs (target/debug/deps/parallel-3b742b061e95b079)
+
+running 5 tests
+test aggregate_budget_rejects_before_reading_and_exact_bound_passes ... ok
+test parallel_assay_checks_identity_before_reading ... ok
+test sinks_can_retain_owned_results_with_the_models_lifetime ... ok
+test errors_join_workers_without_further_sink_delivery ... ok
+test ordered_parallel_gls_matches_dense_for_every_output_and_worker_count ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/selected_arp_estimation.rs (target/debug/deps/selected_arp_estimation-0b0c3a0964406534)
+
+running 4 tests
+test order_contracts_and_ar1_compatibility ... ok
+test estimated_plan_runs_through_id_bound_streaming ... ok
+test independent_r_orders_two_to_four_and_diagnostics ... ok
+test arp_simulations_recovery_whitening_and_independent_target_coverage ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.28s
+
+     Running tests/selected_estimation.rs (target/debug/deps/selected_estimation-cbe1fcc1a8b23151)
+
+running 5 tests
+test nonstationary_corrected_estimates_are_errors_not_clipped ... ok
+test unsupported_geometry_bad_residuals_and_singular_correction_error ... ok
+test estimated_plan_runs_through_id_bound_streaming ... ok
+test selected_correction_and_fgls_match_independent_dense_r ... ok
+test stationary_simulations_check_recovery_whitening_and_conditional_coverage ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.46s
+
+     Running tests/selected_gls.rs (target/debug/deps/selected_gls-e6340e32a8fd4828)
+
+running 5 tests
+test invalid_selection_coefficients_shapes_and_short_runs ... ok
+test excluding_a_run_uses_retained_rank_and_rejects_its_contrast ... ok
+test no_gaps_matches_contiguous_kernels_and_selection_handles_strides ... ok
+test selected_assay_streaming_preserves_ids_and_matches_dense ... ok
+test selected_arp_matches_dense_r_covariance_gls_and_inference ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/speed_contracts.rs (target/debug/deps/speed_contracts-d5a971bde482f7f1)
+
+running 3 tests
+test workspaces_reject_invalid_inputs_and_recover_after_error ... ok
+test reused_gls_matches_independent_analytic_two_run_solution ... ok
+test analytic_variance_and_reuse_with_tail_blocks_and_strides ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/splines-c12a807ad66c8f82)
+
+running 42 tests
+test basis::evaluation::tests::test_linear_interpolation ... ok
+test basis::design_matrix::tests::test_design_matrix_no_intercept ... ok
+test basis::design_matrix::tests::test_design_matrix_basic ... ok
+test basis::evaluation::tests::test_basis_functions ... ok
+test basis::design_matrix::tests::test_design_matrix_builder ... ok
+test core::bspline::tests::test_bspline_builder ... ok
+test core::bspline::tests::test_bspline_basic ... ok
+test core::bspline::tests::test_bspline_design_matrix ... ok
+test core::bspline::tests::test_bspline_valid_range ... ok
+test core::bspline::tests::test_bspline_prediction ... ok
+test core::bspline::tests::test_bspline_with_knots ... ok
+test core::interpolation::tests::test_interpolation_spline_builder ... ok
+test core::interpolation::tests::test_interpolation_spline_basic ... ok
+test core::interpolation::tests::test_interpolation_spline_between_points ... ok
+test core::interpolation::tests::test_interpolation_spline_data_sorting ... ok
+test core::interpolation::tests::test_interpolation_spline_derivatives ... ok
+test core::interpolation::tests::test_interpolation_spline_errors ... ok
+test core::interpolation::tests::test_interpolation_spline_exact_fit ... ok
+test core::interpolation::tests::test_interpolation_spline_fundamental_properties ... ok
+test core::naturalspline::tests::test_natural_spline_basic ... ok
+test core::naturalspline::tests::test_natural_spline_builder ... ok
+test core::naturalspline::tests::test_natural_spline_design_matrix ... ok
+test core::naturalspline::tests::test_natural_spline_with_knots ... ok
+test test_final_bs_verification::final_bs_verification::test_bspline_boundary_conditions ... ok
+test core::naturalspline::tests::test_natural_spline_extrapolation ... ok
+test test_final_bs_verification::final_bs_verification::test_bspline_intercept_false_equivalence ... ok
+test test_final_bs_verification::final_bs_verification::test_bspline_intercept_true_equivalence ... ok
+test test_rust_bs_comparison::rust_bs_comparison::test_boundary_conditions ... ok
+test test_rust_bs_comparison::rust_bs_comparison::test_detailed_comparison ... ok
+test test_rust_bs_comparison::rust_bs_comparison::test_rust_vs_r_bs_basic ... ok
+test test_rust_bs_comparison::rust_bs_comparison::test_rust_vs_r_bs_no_intercept ... ok
+test test_utility_equivalence::utility_equivalence_tests::test_comprehensive_r_equivalence ... ok
+test test_utility_equivalence::utility_equivalence_tests::test_interpolation_spline_utilities ... ok
+test test_utility_equivalence::utility_equivalence_tests::test_natural_spline_utilities ... ok
+test test_utility_equivalence::utility_equivalence_tests::test_spline_des_function ... ok
+test utils::spline_utils::tests::test_as_vector_bspline ... ok
+test utils::spline_utils::tests::test_spline_des_basic ... ok
+test test_utility_equivalence::utility_equivalence_tests::test_utility_functions_equivalence_with_r ... ok
+test utils::spline_utils::tests::test_spline_des_with_derivatives ... ok
+test utils::spline_utils::tests::test_spline_des_no_intercept ... ok
+test utils::spline_utils::tests::test_spline_knots_bspline ... ok
+test utils::spline_utils::tests::test_spline_order_bspline ... ok
+
+test result: ok. 42 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+   Doc-tests fmri_group
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmri_noise
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmridataset
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmridesign
+
+running 27 tests
+test crates/fmridesign/src/basis/sub_basis.rs - basis::sub_basis::SubBasis::from_slice (line 91) ... ignored
+test crates/fmridesign/src/basis/sub_basis.rs - basis::sub_basis::SubBasis::new (line 33) ... ignored
+test crates/fmridesign/src/basis/sub_basis.rs - basis::sub_basis::sub_basis (line 226) ... ignored
+test crates/fmridesign/src/basis/sub_basis.rs - basis::sub_basis::sub_basis_slice (line 249) ... ignored
+test crates/fmridesign/src/contrast.rs - contrast::contrast (line 490) ... ignored
+test crates/fmridesign/src/core.rs - core::event_table (line 897) ... ignored
+test crates/fmridesign/src/covariate.rs - covariate::covariate (line 325) ... ignored
+test crates/fmridesign/src/events/event_variable.rs - events::event_variable::EventVariable::bin_values (line 163) ... ignored
+test crates/fmridesign/src/formula/event_model.rs - formula::event_model::event_model (line 20) ... ignored
+test crates/fmridesign/src/formula/mod.rs - formula::formula (line 27) ... ignored
+test crates/fmridesign/src/io/import.rs - io::import::load_events_csv (line 348) ... ignored
+test crates/fmridesign/src/io/import.rs - io::import::load_events_json (line 366) ... ignored
+test crates/fmridesign/src/lib.rs - (line 9) ... ignored
+test crates/fmridesign/src/regressors.rs - regressors::regressors (line 102) ... ignored
+test crates/fmridesign/src/sampling.rs - sampling::uniform_sampling_frame (line 40) ... ignored
+test crates/fmridesign/src/trialwise.rs - trialwise::trialwise (line 46) ... ignored
+test crates/fmridesign/src/events/event_factor.rs - events::event_factor::EventFactor::new (line 40) ... ok
+test crates/fmridesign/src/events/event_variable.rs - events::event_variable::EventVariable::new (line 41) ... ok
+test crates/fmridesign/src/residualize.rs - residualize (line 16) ... ok
+test crates/fmridesign/src/baseline.rs - baseline::baseline (line 578) ... ok
+test crates/fmridesign/src/baseline.rs - baseline::block (line 698) ... ok
+test crates/fmridesign/src/baseline.rs - baseline::nuisance (line 647) ... ok
+test crates/fmridesign/src/covariate.rs - covariate::CovariateEvent::new (line 41) ... ok
+test crates/fmridesign/src/formula/dsl.rs - formula::dsl::EventVar (line 12) ... ok
+test crates/fmridesign/src/events/event_matrix.rs - events::event_matrix::EventMatrix::new (line 33) ... ok
+test crates/fmridesign/src/events/event_basis.rs - events::event_basis::EventBasis::new (line 35) ... ok
+test crates/fmridesign/src/events/event_term.rs - events::event_term::EventTerm::new (line 41) ... ok
+
+test result: ok. 11 passed; 0 failed; 16 ignored; 0 measured; 0 filtered out; finished in 5.05s
+
+   Doc-tests fmrihrf
+
+running 52 tests
+test crates/fmrihrf/src/hrf/core.rs - hrf::core::hrf_from_coefficients (line 253) ... ignored
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::gen_hrf (line 458) - compile ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 861) ... ok
+test crates/fmrihrf/src/lib.rs - (line 9) ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 836) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::weighted_hrf_uniform (line 1348) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::gamma_hrf (line 191) ... ok
+test crates/fmrihrf/src/hrf/core.rs - hrf::core::HrfExt::evaluate_deriv (line 144) ... ok
+test crates/fmrihrf/src/hrf/library.rs - hrf::library::hrf_library (line 213) ... ok
+test crates/fmrihrf/src/reconstruction.rs - reconstruction::reconstruction_matrix (line 24) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::weighted_hrf (line 1250) ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 847) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::gamma_hrf (line 175) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::spm_canonical (line 44) ... ok
+test crates/fmrihrf/src/hrf/derivatives.rs - hrf::derivatives::derivative_hrf (line 193) ... ok
+test crates/fmrihrf/src/hrf/empirical.rs - hrf::empirical::empirical_hrf (line 36) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::Regressor::neural_input (line 348) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::null_regressor (line 437) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 479) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 503) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 521) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor_set (line 669) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor_set (line 696) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix (line 551) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::column (line 682) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::column_by_name (line 712) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::new (line 596) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::set_condition_names (line 756) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::with_names (line 631) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions (line 16) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions (line 26) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions::builder (line 66) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder (line 91) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::build (line 182) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::include_intercept (line 158) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::method (line 139) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::precision (line 121) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor (line 216) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor (line 233) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor_set (line 290) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor_set (line 313) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressors (line 370) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressors (line 403) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_matrix_from_set (line 835) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_matrix_from_set (line 856) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 473) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 49) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 485) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 68) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 502) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 85) ... ok
+test crates/fmrihrf/src/utils/cache.rs - utils::cache::get_cache_stats (line 199) ... ok
+
+test result: ok. 51 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 10.25s
+
+   Doc-tests fmrimod
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmrireg
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests splines
+
+running 9 tests
+test crates/splines/src/utils/spline_utils.rs - utils::spline_utils::spline_order (line 51) ... ok
+test crates/splines/src/lib.rs - (line 48) ... ok
+test crates/splines/src/core/bspline.rs - core::bspline::BSpline<T>::new (line 50) ... ok
+test crates/splines/src/lib.rs - (line 14) ... ok
+test crates/splines/src/core/naturalspline.rs - core::naturalspline::NaturalSpline<T>::new (line 50) ... ok
+test crates/splines/src/utils/spline_utils.rs - utils::spline_utils::as_vector (line 79) ... ok
+test crates/splines/src/utils/spline_utils.rs - utils::spline_utils::spline_knots (line 27) ... ok
+test crates/splines/src/utils/spline_utils.rs - utils::spline_utils::spline_des (line 120) ... ok
+test crates/splines/src/core/interpolation.rs - core::interpolation::InterpolationSpline<T>::new (line 44) ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.31s
+

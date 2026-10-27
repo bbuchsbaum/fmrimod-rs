@@ -1,0 +1,4 @@
+{"draws":999,"family_rejections":8,"features":4,"freedman_lane":false,"kind":"permutation_calibration","marginal_rejections":3,"n":8,"replicates":200,"seconds":0.146609958,"seed":77181}
+{"draws":999,"family_rejections":11,"features":4,"freedman_lane":true,"kind":"permutation_calibration","marginal_rejections":5,"n":8,"replicates":200,"seconds":0.181668791,"seed":77181}
+{"draws":999,"family_rejections":11,"features":4,"freedman_lane":false,"kind":"permutation_calibration","marginal_rejections":11,"n":30,"replicates":200,"seconds":0.238623209,"seed":77203}
+{"draws":999,"family_rejections":6,"features":4,"freedman_lane":true,"kind":"permutation_calibration","marginal_rejections":6,"n":30,"replicates":200,"seconds":0.608595208,"seed":77203}

@@ -1,0 +1,14 @@
+{
+  "platform": "macOS-14.3-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+  "binary_sha256": "9b61aa70551bcd21160aab5403abfc7298808346be79b65cdd4d82f1e0e5f6d3",
+  "thread_env": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "build": "cargo build --release -p fmrireg --features dataset --example selected_qualification",
+  "memory_note": "wait4 rusage process peak includes resident original/selected/dense reference copies; not streaming-only RSS; macOS bytes",
+  "timing_note": "one cold preparation per fresh process; first stream then three warm repetitions; execution serial; no competing benchmark jobs started by this script"
+}

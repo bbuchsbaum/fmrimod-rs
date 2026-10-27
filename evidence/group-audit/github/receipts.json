@@ -1,0 +1,170 @@
+[
+  {
+    "slug": "mapping",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Action completed."
+        }
+      ],
+      "structuredContent": {
+        "issue": {
+          "url": "https://github.com/bbuchsbaum/fmrigds/issues/36",
+          "title": "map_to(): missing values outside nonzero map support contaminate valid targets",
+          "issue_number": 36,
+          "body": "Reproduced in a fresh R 4.5.1 process against a fresh native build of fmrigds 0.1.0.9000 at commit `273b029bbe9c6c9024bfc12fe4ff6cdb98e18639`. Relevant current GitHub default-branch implementation was also inspected; this report does not claim a full default-branch binary rebuild. Existing open/closed repository issues were searched before filing.\n\n## Reproduction\n\n```r\nlibrary(fmrigds)\ng <- new_gds(\n  list(beta = array(c(2, NA_real_), c(2,1,1)), var = array(1, c(2,1,1))),\n  space_sample_labels(c(\"kept\",\"unused\")), \"s1\", \"c1\")\nout <- compute(map_to(g, space_sample_labels(\"target\"), matrix(c(1,0),1)))\nprint(as.numeric(assay(out, \"beta\"))) # NA, expected 2\nstopifnot(is.na(assay(out, \"beta\")[1]))\n```\n\n## Expected behavior and scope\n\nA zero map coefficient means that source feature is outside the target's support. Its missing value should not invalidate an otherwise observed target. The independent-variance path uses dense matrix multiplication, so `0 * NA` contaminates the result. This is distinct from missing subjects in a reducer (issue #7). Suggested priority: P2. Iterate nonzero support; preserve missingness for genuinely contributing sources. Do not replace all missing values with zero. A narrow workaround is to subset to the map's actual support before mapping. Regression tests should cover dense/sparse maps, missing effects and variances outside support, and missing values inside support.\n",
+          "state": "open",
+          "user": {
+            "login": "bbuchsbaum",
+            "name": "bbuchsbaum",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/53819?v=4",
+            "id": 53819
+          },
+          "assignees": null,
+          "labels": null,
+          "milestone": null,
+          "state_reason": null,
+          "comments": 0,
+          "created_at": "2026-10-27T12:13:04Z",
+          "updated_at": "2026-10-27T12:13:04Z",
+          "closed_at": null,
+          "display_url": "https://github.com/bbuchsbaum/fmrigds/issues/36",
+          "display_title": "map_to(): missing values outside nonzero map support contaminate valid targets"
+        },
+        "url": "https://github.com/bbuchsbaum/fmrigds/issues/36",
+        "title": "map_to(): missing values outside nonzero map support contaminate valid targets",
+        "display_url": "https://github.com/bbuchsbaum/fmrigds/issues/36",
+        "display_title": "map_to(): missing values outside nonzero map support contaminate valid targets"
+      },
+      "isError": false
+    }
+  },
+  {
+    "slug": "geometry",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Action completed."
+        }
+      ],
+      "structuredContent": {
+        "issue": {
+          "url": "https://github.com/bbuchsbaum/fmrigds/issues/37",
+          "title": "assert_compatible_spaces() accepts voxel grids with different affines by default",
+          "issue_number": 37,
+          "body": "Reproduced in a fresh R 4.5.1 process against a fresh native build of fmrigds 0.1.0.9000 at commit `273b029bbe9c6c9024bfc12fe4ff6cdb98e18639`. Relevant current GitHub default-branch implementation was also inspected; this report does not claim a full default-branch binary rebuild. Existing open/closed repository issues were searched before filing.\n\n## Reproduction\n\n```r\nlibrary(fmrigds)\na <- diag(4)\nb <- a\nb[1,4] <- 10\ns1 <- space_voxel(c(2,2,2), a, storage=\"dense\")\ns2 <- space_voxel(c(2,2,2), b, storage=\"dense\")\nprint(assert_compatible_spaces(s1,s2)) # TRUE despite different coordinates\nstopifnot(assert_compatible_spaces(s1,s2))\n```\n\n## Expected behavior and scope\n\nThe default validator checks dimensions and optional identity metadata but omits the voxel affine. Thus equal indices can denote different physical locations while compatibility succeeds. Expected: default voxel-grid compatibility rejects this translation, or an explicitly weaker metadata-only API is clearly distinguished from geometric compatibility. Suggested priority: P2. This is a validator gap, not the NIfTI export affine defects in #6/#8. Workaround: explicitly compare affine and ordered support (or request `fields=c('type','dim','affine')` for this dense example). Passing geometric checks alone still does not establish anatomical registration.\n",
+          "state": "open",
+          "user": {
+            "login": "bbuchsbaum",
+            "name": "bbuchsbaum",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/53819?v=4",
+            "id": 53819
+          },
+          "assignees": null,
+          "labels": null,
+          "milestone": null,
+          "state_reason": null,
+          "comments": 0,
+          "created_at": "2026-10-27T12:13:08Z",
+          "updated_at": "2026-10-27T12:13:08Z",
+          "closed_at": null,
+          "display_url": "https://github.com/bbuchsbaum/fmrigds/issues/37",
+          "display_title": "assert_compatible_spaces() accepts voxel grids with different affines by default"
+        },
+        "url": "https://github.com/bbuchsbaum/fmrigds/issues/37",
+        "title": "assert_compatible_spaces() accepts voxel grids with different affines by default",
+        "display_url": "https://github.com/bbuchsbaum/fmrigds/issues/37",
+        "display_title": "assert_compatible_spaces() accepts voxel grids with different affines by default"
+      },
+      "isError": false
+    }
+  },
+  {
+    "slug": "contrast",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Action completed."
+        }
+      ],
+      "structuredContent": {
+        "issue": {
+          "url": "https://github.com/bbuchsbaum/fmrigds/issues/38",
+          "title": "harmonise_contrasts() accepts collisions in resulting contrast IDs",
+          "issue_number": 38,
+          "body": "Reproduced in a fresh R 4.5.1 process against a fresh native build of fmrigds 0.1.0.9000 at commit `273b029bbe9c6c9024bfc12fe4ff6cdb98e18639`. Relevant current GitHub default-branch implementation was also inspected; this report does not claim a full default-branch binary rebuild. Existing open/closed repository issues were searched before filing.\n\n## Reproduction\n\n```r\nlibrary(fmrigds)\ng <- new_gds(\n list(beta=array(c(1,2),c(1,1,2)), var=array(1,c(1,1,2))),\n space_sample_labels(\"f1\"), \"s1\", c(\"a\",\"b\"))\nh <- harmonise_contrasts(g,c(a=\"b\"))\nprint(contrasts(h)) # \"b\" \"b\"\nprint(as.numeric(assay(h,\"beta\"))) # 1 2: distinct estimates still present\nstopifnot(anyDuplicated(contrasts(h)) > 0)\n```\n\n## Expected behavior and scope\n\nA partial rename colliding with an unmapped ID produces duplicate contrast identifiers without aggregation or an error. Distinct estimates then have the same lookup key. Expected: validate the entire resulting axis and reject collisions before changing the object. Many-to-one aggregation needs a separate explicit operation and uncertainty rule. Suggested priority: P2. Workaround: validate uniqueness of the full proposed names before calling. Test both mapped-to-mapped and mapped-to-unmapped collisions, and ensure valid renames preserve contrast metadata alignment.\n",
+          "state": "open",
+          "user": {
+            "login": "bbuchsbaum",
+            "name": "bbuchsbaum",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/53819?v=4",
+            "id": 53819
+          },
+          "assignees": null,
+          "labels": null,
+          "milestone": null,
+          "state_reason": null,
+          "comments": 0,
+          "created_at": "2026-10-27T12:13:13Z",
+          "updated_at": "2026-10-27T12:13:13Z",
+          "closed_at": null,
+          "display_url": "https://github.com/bbuchsbaum/fmrigds/issues/38",
+          "display_title": "harmonise_contrasts() accepts collisions in resulting contrast IDs"
+        },
+        "url": "https://github.com/bbuchsbaum/fmrigds/issues/38",
+        "title": "harmonise_contrasts() accepts collisions in resulting contrast IDs",
+        "display_url": "https://github.com/bbuchsbaum/fmrigds/issues/38",
+        "display_title": "harmonise_contrasts() accepts collisions in resulting contrast IDs"
+      },
+      "isError": false
+    }
+  },
+  {
+    "slug": "variance-floor",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Action completed."
+        }
+      ],
+      "structuredContent": {
+        "issue": {
+          "url": "https://github.com/bbuchsbaum/fmrigds/issues/39",
+          "title": "Default absolute variance floor changes meta-analysis z and p under unit rescaling",
+          "issue_number": 39,
+          "body": "Reproduced in a fresh R 4.5.1 process against a fresh native build of fmrigds 0.1.0.9000 at commit `273b029bbe9c6c9024bfc12fe4ff6cdb98e18639`. Relevant current GitHub default-branch implementation was also inspected; this report does not claim a full default-branch binary rebuild. Existing open/closed repository issues were searched before filing.\n\n## Reproduction\n\n```r\nlibrary(fmrigds)\nfit <- function(scale=1) {\n g <- new_gds(\n  list(beta=array(c(1,2,3)*scale,c(1,3,1)),\n       var=array(scale^2,c(1,3,1))),\n  space_sample_labels(\"f1\"), c(\"s1\",\"s2\",\"s3\"), \"c1\")\n compute(reduce(g, method=\"fixed\"))\n}\na <- fit()\nb <- fit(1e-8)\nprint(c(original=assay(a,\"z_g\")[1], rescaled=assay(b,\"z_g\")[1]))\n# 3.464101615, 0.034641016\nprint(c(original=assay(a,\"p_g\")[1], rescaled=assay(b,\"p_g\")[1]))\nstopifnot(abs(assay(a,\"z_g\")[1]-assay(b,\"z_g\")[1]) > 1)\n```\n\n## Expected behavior and scope\n\nMultiplying effects by a positive unit conversion and variances by its square should preserve z and p. The default `eps=1e-12` clamps positive variances below an absolute, unit-dependent floor. Here the original variances are 1 and rescaled variances are 1e-16, all positive and representable; z shrinks by 100. Expected: scale-stable inference, or an explicit regularization policy with units and a visible warning when applied. Suggested priority: P2 (narrow small-variance trigger, but silently changes inference). This is not a request to accept zero/negative variances. A workaround is to express data in units keeping positive variances above the floor; choosing a smaller eps requires care. Tests should cover scale invariance, heterogeneous weights, and invalid variances for both R and compiled paths.\n",
+          "state": "open",
+          "user": {
+            "login": "bbuchsbaum",
+            "name": "bbuchsbaum",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/53819?v=4",
+            "id": 53819
+          },
+          "assignees": null,
+          "labels": null,
+          "milestone": null,
+          "state_reason": null,
+          "comments": 0,
+          "created_at": "2026-10-27T12:13:15Z",
+          "updated_at": "2026-10-27T12:13:15Z",
+          "closed_at": null,
+          "display_url": "https://github.com/bbuchsbaum/fmrigds/issues/39",
+          "display_title": "Default absolute variance floor changes meta-analysis z and p under unit rescaling"
+        },
+        "url": "https://github.com/bbuchsbaum/fmrigds/issues/39",
+        "title": "Default absolute variance floor changes meta-analysis z and p under unit rescaling",
+        "display_url": "https://github.com/bbuchsbaum/fmrigds/issues/39",
+        "display_title": "Default absolute variance floor changes meta-analysis z and p under unit rescaling"
+      },
+      "isError": false
+    }
+  }
+]

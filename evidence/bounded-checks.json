@@ -1,0 +1,1439 @@
+[
+  {
+    "label": "libraries",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--lib",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/libraries.log",
+    "sha256": "de0f48b313425606ac25f6d7b07a74804feebfb459a07853f0e3833738d54335",
+    "passed": 454,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-contracts.log",
+    "sha256": "221f125cec58fe79d36c2a18247981e9af3a6e1fb455d806fc9f8a3d5f500309",
+    "passed": 10,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-convolution_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "convolution_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-convolution_contract.log",
+    "sha256": "3c2f14e3c966488842ce7df6d36e49e41145bfbee4ab50114eeabdd08a103f1f",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-cross_validation",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "cross_validation",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-cross_validation.log",
+    "sha256": "22df8bca17ec09b95be7f08520fc02577ee12f0ccddeb13107a7a5c2b91e743f",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-cross_validation_spm",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "cross_validation_spm",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-cross_validation_spm.log",
+    "sha256": "bd2e1e9b9919bf686b29bb25bbb5ccc9186c60f7dccb24172a7c0ee2389c0973",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-current_spline_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "current_spline_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-current_spline_contract.log",
+    "sha256": "539563d4ad8187ac6dd6327d02bdd281f9ad973b3f860f169588328cba73079b",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-edge_case_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "edge_case_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-edge_case_tests.log",
+    "sha256": "8043f4cb62b0f8011d0ac764a75f973b4959efee56ba47c497041adf0eb9092a",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-frame_contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "frame_contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-frame_contracts.log",
+    "sha256": "8d481ce112fc76057772aba182c2bb5b121d584cdc6809da47c7613b9c4e50cd",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-golden_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "golden_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-golden_tests.log",
+    "sha256": "4544dce02858ce8b9a58f5a456147116c761c17684b0e2981cc07f6d2c6521f4",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_decorator_fixtures_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "hrf_decorator_fixtures_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-hrf_decorator_fixtures_parity.log",
+    "sha256": "c9ab84dc32fed989cda4d9d54bf43770176adabcdc419774cec4348eaf15cea5",
+    "passed": 5,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_fixtures_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "hrf_fixtures_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-hrf_fixtures_parity.log",
+    "sha256": "e4c3fb49109d0ecf019b0afcc9b34a8fc3a6a20175bc6a4fb678a1b41c25546a",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-integration_test",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "integration_test",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-integration_test.log",
+    "sha256": "bc89fa538dedfbd0ddc0dd85f7e34816e645d94e2eebd00150ab5ba616fad45b",
+    "passed": 17,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-r_core_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "r_core_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-r_core_contract.log",
+    "sha256": "302a75ae28b185d38bce6d2cf296491a3446470eb8242a7085560810d106f3cf",
+    "passed": 9,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-regressor_design_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "regressor_design_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-regressor_design_parity.log",
+    "sha256": "787e0fbb5d496c7fe8c7d0f06b3a63295eddba6b25048cf7681cd76faf93d348",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-regressor_design_spmg3_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "regressor_design_spmg3_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-regressor_design_spmg3_parity.log",
+    "sha256": "1eb99d72652f78223e4df00e118d7c795da5454cf10e8e7d3e3a722e0a8e04e4",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-spmg_hrf_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "spmg_hrf_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-spmg_hrf_parity.log",
+    "sha256": "935ccb2691e8bd83f46f4573a3060ad378d455e1ebc0d62c1fc0a26c0ea48086",
+    "passed": 2,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-tent_hrf_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "tent_hrf_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-tent_hrf_parity.log",
+    "sha256": "998b848b56aee8aab3c9e77bd7a10828b81afcbe8bdb962d3be40c00428719df",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_afni_integration",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_afni_integration",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_afni_integration.log",
+    "sha256": "309a9adb0eb438191623bce99964b1ef3519b465d362275047f00905ddf3ac9b",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_basis_functions",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_basis_functions",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_basis_functions.log",
+    "sha256": "beda40878d7158b08824c55c5c5a620022573b0983444916eacf25638e9b6d8b",
+    "passed": 14,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_contrast_weights",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_contrast_weights",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_contrast_weights.log",
+    "sha256": "17e9d68777b23d6e12c8957ed045d222cf2b0a396179e53c7cb97ebfe07935e3",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_convolution",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_convolution",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_convolution.log",
+    "sha256": "a3e012df448ceb1d227571d43eda4338906b7d36ec63b92303fc21cc03aefc2f",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_core_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_core_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_core_parity.log",
+    "sha256": "9a761f13d67673a2fcf4836dfd0baad55c0feb7c3d2e32cb1b9447d01ed5e030",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_crossval",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_crossval",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_crossval.log",
+    "sha256": "d6040b2110be417526ca24be0d9a3da925b069c2d616744b3bbbca01ca414015",
+    "passed": 14,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_dataframe_conversion",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_dataframe_conversion",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_dataframe_conversion.log",
+    "sha256": "7ee98fc7dadb63d71e43485defecadf746b72e90997d800f190c4af542b3cdf6",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_event_basis",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_event_basis",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_event_basis.log",
+    "sha256": "2db0322c120adc328f2a5c5e98c17d828a9a456faab8404714777b8d4a73fede",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_event_model",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_event_model",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_event_model.log",
+    "sha256": "17757d5c3f82208c7c44fd9725ca105c8257ae038d6884e2cb85e676e44e4b62",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_events",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_events",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_events.log",
+    "sha256": "eba5d6c016ba9ecfd7af21e99f0b68a48b11816f8c32f826080085ade928c8f5",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_export",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_export",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_export.log",
+    "sha256": "ce62282e86de92bcdb262062aa908e3b03d9d3f28c7284624992c04aca88a9ce",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_fcontrast",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_fcontrast",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_fcontrast.log",
+    "sha256": "52380d8d42b4b1f0f109a5f113c3506c96a7add344d4565db5d37ac5ccb29ee6",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_at_operator",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_at_operator",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_formula_at_operator.log",
+    "sha256": "f7ed5d4ef41732aaafc6f29caee0d1f05fd705c7af6c981fa24867d0595eec45",
+    "passed": 9,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_dsl",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_dsl",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_formula_dsl.log",
+    "sha256": "345f18ca5440591b1b5c8d6d15b86e7a2ce2fdf3e51c26ae277f0c63f78c4786",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_interface",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_interface",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_formula_interface.log",
+    "sha256": "c3ec9430fa0a9cb7d275a09a74031f88e8ca160d22fc6a1b1e63ee327c2869e9",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_parser",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_parser",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_formula_parser.log",
+    "sha256": "f32cfbd2014ef37d6e523a1e00d6254743b5b97c417cdce7a668811e36282e15",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_hrf_integration",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_hrf_integration",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_hrf_integration.log",
+    "sha256": "4bdf1ff1b69a6b9dc35ec1c9effe9497cba412a1fddc8b5c478545daa9bfc7f7",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_python_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_python_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_python_parity.log",
+    "sha256": "c127f3f85ed355374b55d47a4eb07dd63b1741e8cb439d93214d4e876a78851d",
+    "passed": 25,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_sampling",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_sampling",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_sampling.log",
+    "sha256": "2686fc2a2904d8c9d331a32d14358f90e01e7a2623db31df5eff81fe9d25ca1e",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_scale_within",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_scale_within",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_scale_within.log",
+    "sha256": "94f7ebe0e7f15026e19dc4cd40f52d1ce7020ff5f5f629400d6b1e32155edb1d",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_serialization",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_serialization",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_serialization.log",
+    "sha256": "b8badfa63d7a70d2b09eb9ac4b3adf06879b7a38c44b196d5e555b8a6613e310",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_standardized",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_standardized",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_standardized.log",
+    "sha256": "f2398a32f9e7ceef9f7274af5cdbf1e8e8754f179c60a2ebcbf84296d4cbc3b1",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_utils",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_utils",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-test_utils.log",
+    "sha256": "f1d7cff5cdfc71d7bd3756ab05eebc5208847ddfed1c2f5eee7e7015363b1a81",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-workflow_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "workflow_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/test-workflow_tests.log",
+    "sha256": "cce3825ec55d81e48572599caa479901400577a470dde237a7644e2b24fe9c6d",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-baseline_model",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "baseline_model",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-baseline_model.log",
+    "sha256": "28c80c9bc9487281880fd3f434b15496adca4b37f130498bfbc99784c833f061",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-comprehensive_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "comprehensive_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-comprehensive_demo.log",
+    "sha256": "d8f3311d7e24917f7bc4af507432155603bdded609565db969f76081ae938652",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-core_port",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "core_port",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-core_port.log",
+    "sha256": "d0cd77fbbd443676ce00c20c1b7f10b2266b5307d0315eb6500ff05fcf8b9db1",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-dataframe_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "dataframe_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-dataframe_demo.log",
+    "sha256": "033cd317b46f8f74bb021d4b0f340981291385121c9cabc41ca78acb3dd7efdf",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-empirical_hrf_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "empirical_hrf_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-empirical_hrf_demo.log",
+    "sha256": "7b76c9f1a8bb2e2606c6bb476b9daed5109d54b5baeb5b84eadd2f1c1805d731",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-empirical_hrf_plotting",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "empirical_hrf_plotting",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-empirical_hrf_plotting.log",
+    "sha256": "1ff3423a22b002a1d6bf2ed5ab3fda9ccbb7585648d9f8988ac9a099eccafd15",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-event_basis_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "event_basis_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-event_basis_demo.log",
+    "sha256": "9363413a97fd3563f6afb4eca6ee18227c490de5efa2a4af6c66c56690066aa5",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-first_level",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "first_level",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-first_level.log",
+    "sha256": "5bff2fadd1aff225fb4eaae95906603dd4d6dbc7f6707a40ef9e526c114cff07",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-frame_view",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "frame_view",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-frame_view.log",
+    "sha256": "2e3b4026e31832449729c12ea34f4ff2494ff63c48cda8375fe4c958cee0dc4a",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-html_plotting_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "html_plotting_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-html_plotting_demo.log",
+    "sha256": "4c61666768992d5da648cf3c4814a59818cb45be7055c1abb1421f6cbb4c628f",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-plotting_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "plotting_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-plotting_demo.log",
+    "sha256": "06b55275d6654493a429d348ac16fdd7fcb2f82631b7ac20f40754a5a7c6bb1c",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-plotting_demo_simple",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "plotting_demo_simple",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-plotting_demo_simple.log",
+    "sha256": "f7861427928200c8786abdd85dbc0f3fbf681312f0b7c54cce428261cc8ca1e9",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-port_benchmark",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "port_benchmark",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-port_benchmark.log",
+    "sha256": "bac6ac4696fb676902b8efe7bbd226d31d6a21c2ec00cc3c7fed7d7519e85866",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-port_design",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "port_design",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-port_design.log",
+    "sha256": "00643f2a3fdbe0fb46593c394d5e2d94ed214cff3dd084a4682c2382f0739845",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-scale_within_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "scale_within_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-scale_within_demo.log",
+    "sha256": "ec1db73cc4ace734af0939a087fcb264584422fd50b422937257e057ce01aacf",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-serialization_example",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "serialization_example",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-serialization_example.log",
+    "sha256": "8f161ddeb0339f9bfb49aa85a6d3b1486823e658bd4f85145117762c2afd4f2b",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-standardized_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "standardized_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-standardized_demo.log",
+    "sha256": "19285e67da2937d4b0e20b7b8c0cb69fd027e3acb5d03d7de94a46e52b1bda5b",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_conditions",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "test_conditions",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-test_conditions.log",
+    "sha256": "42c95ed6d16354098e07c74ef642432e394fabb983720bc440354dde9d712656",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_poly",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "test_poly",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-test_poly.log",
+    "sha256": "6fe06e89b7efe57ec103d5c3b2bf2a8b316d5d508297a364902a27cf6801a81e",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_sampling",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "test_sampling",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-test_sampling.log",
+    "sha256": "8f2899722751e03eff726eca5196a37d3c683afef40ccfcf07a2bf18950f820d",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-throughput",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "throughput",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-throughput.log",
+    "sha256": "b429fd60f58178597b10709619b4d6b9b9cf85e49894c0fe00a6f9cf67ef4b8f",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-validate_spm_canonical",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "validate_spm_canonical",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-validate_spm_canonical.log",
+    "sha256": "6e3eae53b661d2e9e7af2abaafe4f1ef5af0737d13c63889151ae540b6bcbf99",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_01_hrf",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_01_hrf",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-vignette_01_hrf.log",
+    "sha256": "4761bf4eff6f0ce1caf2bacd22afd3c15dd3c72c484f4b9dd1f65ec2ce1b4dea",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_01_introduction",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_01_introduction",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-vignette_01_introduction.log",
+    "sha256": "e920cc5530aa1b337c0ef2910ff971c018ed5638cb718b17e949514b3b3ce2d0",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_02_baseline",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_02_baseline",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-vignette_02_baseline.log",
+    "sha256": "8b39cabef636401c26229d98645f0a9b74faa129c203a1640072bbaf0aec5cc8",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_02_regressor",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_02_regressor",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-vignette_02_regressor.log",
+    "sha256": "dab8a095e4ff91f7f8b30e63b8c999c6d581249b33566da91f55c253f3c263df",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_03_event_models",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_03_event_models",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-vignette_03_event_models.log",
+    "sha256": "909e6b1ae30420427c2332521128ce80c88a14d3db23b9c40c92ce63c7f62b13",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_03_generators",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_03_generators",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-vignette_03_generators.log",
+    "sha256": "c54e0eda613fedc948a462e9dbeb6f8bd76cce37950dd4a097c3c294b4da528a",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_04_advanced",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_04_advanced",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-vignette_04_advanced.log",
+    "sha256": "144e5b962c935f1cd23b2cd213cbfbcf94ebd74001cc35b2a61c2dcba278a917",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_04_contrasts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_04_contrasts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/example-vignette_04_contrasts.log",
+    "sha256": "36183bf4153e7a0645377d0e5437e8076e1db93d1e123f4b2073490f84fa65af",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "doctests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--doc"
+    ],
+    "exit_code": 0,
+    "log": "evidence/bounded-checks/doctests.log",
+    "sha256": "975aa27e9143e5454a066df30785890db00824932ecd6716c15685b53ae37996",
+    "passed": 71,
+    "failed": 0,
+    "ignored": 21
+  }
+]

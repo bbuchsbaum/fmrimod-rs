@@ -1,0 +1,222 @@
+[
+  {
+    "coverage": 0.94,
+    "covered": 564,
+    "id": "8-2-0",
+    "inference": "z",
+    "max_scaled_error": 3.336245131451793e-11,
+    "method": "FE",
+    "rejections": 36,
+    "replicates": 600,
+    "weighted_evaluations": 600
+  },
+  {
+    "coverage": 0.955,
+    "covered": 573,
+    "id": "8-2-0",
+    "inference": "z",
+    "max_scaled_error": 3.336245131451793e-11,
+    "method": "DL",
+    "rejections": 27,
+    "replicates": 600,
+    "weighted_evaluations": 842
+  },
+  {
+    "coverage": 0.9916666666666667,
+    "covered": 595,
+    "id": "8-2-0",
+    "inference": "adhoc",
+    "max_scaled_error": 8.734684271752365e-15,
+    "method": "DL",
+    "rejections": 5,
+    "replicates": 600,
+    "weighted_evaluations": 842
+  },
+  {
+    "coverage": 0.955,
+    "covered": 573,
+    "id": "8-2-0",
+    "inference": "z",
+    "max_scaled_error": 3.336245131451793e-11,
+    "method": "PM",
+    "rejections": 27,
+    "replicates": 600,
+    "weighted_evaluations": 2089
+  },
+  {
+    "coverage": 0.9916666666666667,
+    "covered": 595,
+    "id": "8-2-0",
+    "inference": "adhoc",
+    "max_scaled_error": 5.940997428534529e-13,
+    "method": "PM",
+    "rejections": 5,
+    "replicates": 600,
+    "weighted_evaluations": 2089
+  },
+  {
+    "coverage": 0.7716666666666666,
+    "covered": 463,
+    "id": "8-2-0.5",
+    "inference": "z",
+    "max_scaled_error": 3.319891732890756e-11,
+    "method": "FE",
+    "rejections": 137,
+    "replicates": 600,
+    "weighted_evaluations": 600
+  },
+  {
+    "coverage": 0.9166666666666666,
+    "covered": 550,
+    "id": "8-2-0.5",
+    "inference": "z",
+    "max_scaled_error": 3.3227217910036555e-11,
+    "method": "DL",
+    "rejections": 50,
+    "replicates": 600,
+    "weighted_evaluations": 1142
+  },
+  {
+    "coverage": 0.9683333333333334,
+    "covered": 581,
+    "id": "8-2-0.5",
+    "inference": "adhoc",
+    "max_scaled_error": 1.5955277301979903e-14,
+    "method": "DL",
+    "rejections": 19,
+    "replicates": 600,
+    "weighted_evaluations": 1142
+  },
+  {
+    "coverage": 0.9166666666666666,
+    "covered": 550,
+    "id": "8-2-0.5",
+    "inference": "z",
+    "max_scaled_error": 3.3213819421995226e-11,
+    "method": "PM",
+    "rejections": 50,
+    "replicates": 600,
+    "weighted_evaluations": 3970
+  },
+  {
+    "coverage": 0.9683333333333334,
+    "covered": 581,
+    "id": "8-2-0.5",
+    "inference": "adhoc",
+    "max_scaled_error": 6.110254337893208e-13,
+    "method": "PM",
+    "rejections": 19,
+    "replicates": 600,
+    "weighted_evaluations": 3970
+  },
+  {
+    "coverage": 0.9616666666666667,
+    "covered": 577,
+    "id": "20-3-0",
+    "inference": "z",
+    "max_scaled_error": 3.302003205846107e-11,
+    "method": "FE",
+    "rejections": 23,
+    "replicates": 600,
+    "weighted_evaluations": 600
+  },
+  {
+    "coverage": 0.9733333333333334,
+    "covered": 584,
+    "id": "20-3-0",
+    "inference": "z",
+    "max_scaled_error": 3.302003205846107e-11,
+    "method": "DL",
+    "rejections": 16,
+    "replicates": 600,
+    "weighted_evaluations": 869
+  },
+  {
+    "coverage": 0.9816666666666667,
+    "covered": 589,
+    "id": "20-3-0",
+    "inference": "adhoc",
+    "max_scaled_error": 7.514906798813624e-13,
+    "method": "DL",
+    "rejections": 11,
+    "replicates": 600,
+    "weighted_evaluations": 869
+  },
+  {
+    "coverage": 0.9733333333333334,
+    "covered": 584,
+    "id": "20-3-0",
+    "inference": "z",
+    "max_scaled_error": 3.302003205846107e-11,
+    "method": "PM",
+    "rejections": 16,
+    "replicates": 600,
+    "weighted_evaluations": 2184
+  },
+  {
+    "coverage": 0.9816666666666667,
+    "covered": 589,
+    "id": "20-3-0",
+    "inference": "adhoc",
+    "max_scaled_error": 3.219126176985093e-13,
+    "method": "PM",
+    "rejections": 11,
+    "replicates": 600,
+    "weighted_evaluations": 2184
+  },
+  {
+    "coverage": 0.7283333333333334,
+    "covered": 437,
+    "id": "20-3-0.5",
+    "inference": "z",
+    "max_scaled_error": 3.3286367993980716e-11,
+    "method": "FE",
+    "rejections": 163,
+    "replicates": 600,
+    "weighted_evaluations": 600
+  },
+  {
+    "coverage": 0.9366666666666666,
+    "covered": 562,
+    "id": "20-3-0.5",
+    "inference": "z",
+    "max_scaled_error": 3.331648753889727e-11,
+    "method": "DL",
+    "rejections": 38,
+    "replicates": 600,
+    "weighted_evaluations": 1192
+  },
+  {
+    "coverage": 0.955,
+    "covered": 573,
+    "id": "20-3-0.5",
+    "inference": "adhoc",
+    "max_scaled_error": 2.013653617413095e-14,
+    "method": "DL",
+    "rejections": 27,
+    "replicates": 600,
+    "weighted_evaluations": 1192
+  },
+  {
+    "coverage": 0.935,
+    "covered": 561,
+    "id": "20-3-0.5",
+    "inference": "z",
+    "max_scaled_error": 3.3060350283222954e-11,
+    "method": "PM",
+    "rejections": 39,
+    "replicates": 600,
+    "weighted_evaluations": 4310
+  },
+  {
+    "coverage": 0.9533333333333334,
+    "covered": 572,
+    "id": "20-3-0.5",
+    "inference": "adhoc",
+    "max_scaled_error": 5.859028026271483e-13,
+    "method": "PM",
+    "rejections": 28,
+    "replicates": 600,
+    "weighted_evaluations": 4310
+  }
+]

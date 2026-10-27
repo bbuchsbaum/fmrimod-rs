@@ -1,0 +1,36 @@
+[
+  {
+    "allocated_bytes": 1354525,
+    "allocation_calls": 8202,
+    "block_features": 256,
+    "columns": 1,
+    "errors_by_output": [
+      2.3273911224018237e-16,
+      4.8756001144255416e-17,
+      9.500478235697776e-16,
+      3.3014650801685355e-11,
+      4.2542756221362405e-16,
+      0.0,
+      0.0
+    ],
+    "factorizations": 0,
+    "features": 1000,
+    "first_seconds": 0.000703333,
+    "id": "20-1000-0",
+    "max_scaled_error": 3.3014650801685355e-11,
+    "median_seconds": 0.000683125,
+    "method": "fe",
+    "n": 20,
+    "numeric_working_bytes": 382880,
+    "seconds": [
+      0.000691834,
+      0.00068,
+      0.000745542,
+      0.000683125,
+      0.000678708
+    ],
+    "setup_seconds": 0.0003855,
+    "standalone_cdf_seconds": 0.00001675,
+    "standalone_read_seconds": 0.000077917
+  }
+]

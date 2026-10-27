@@ -1,0 +1,11 @@
+Loading required package: Matrix
+Loading required package: metadat
+Loading required package: numDeriv
+
+Loading the 'metafor' package (version 5.0-1). For an
+introduction to the package please type: help(metafor)
+
+Warning messages:
+1: package 'metafor' was built under R version 4.5.2 
+2: package 'metadat' was built under R version 4.5.2 
+PASS: 1800 fresh metafor fits; all interval counts match; max error 5.9e-13

@@ -1,0 +1,1 @@
+{"actor":"codex-fmrimod","entity":"bd-01M5YMSRRTC1S3Z8EDY6TM0XXV","kind":"reserve_open","mode":"exclusive","op":"20261027T123721.100977Z-p14014-c0000-r0773-hdbd7c8","paths":["crates/fmrimod/src/lib.rs","crates/fmrimod/Cargo.toml","crates/fmrimod/tests/group.rs"],"reservation_id":"rv-01M5YNTZ2C9EEJXKDC8EA1B32R","ts":"2026-10-27T12:37:21.100977Z","ttl_s":3600,"v":2}

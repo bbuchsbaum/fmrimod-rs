@@ -1,0 +1,1542 @@
+{
+  "interval": "95% Wilson; coverage conditional on delivered estimates",
+  "generator_sha256": "f6d79214eacc59035440b250cec9250fa885f5711b9207a922aad1ee69460ab9",
+  "qualification": {
+    "run": "evidence/completion/run-20261027T203534Z",
+    "receipt": "evidence/completion/run-20261027T203534Z/receipt.json"
+  },
+  "ar": [
+    {
+      "scenario": "moderate",
+      "successes": 500,
+      "failures": {},
+      "attempts": 500,
+      "same_feature": true,
+      "coverage": {
+        "covered": 478,
+        "denominator": 500,
+        "rate": 0.956,
+        "lower": 0.9342805571276716,
+        "upper": 0.9707660443713928
+      }
+    },
+    {
+      "scenario": "moderate",
+      "successes": 500,
+      "failures": {},
+      "attempts": 500,
+      "same_feature": false,
+      "coverage": {
+        "covered": 469,
+        "denominator": 500,
+        "rate": 0.938,
+        "lower": 0.9133402868983618,
+        "upper": 0.9559807908573184
+      }
+    },
+    {
+      "scenario": "persistent",
+      "successes": 499,
+      "failures": {
+        "invalid noise input: nonpositive selected AR innovation variance; no repair or fallback": 1
+      },
+      "attempts": 500,
+      "same_feature": true,
+      "coverage": {
+        "covered": 427,
+        "denominator": 499,
+        "rate": 0.8557114228456913,
+        "lower": 0.8221616873833008,
+        "upper": 0.8838262413618264
+      }
+    },
+    {
+      "scenario": "persistent",
+      "successes": 499,
+      "failures": {
+        "invalid noise input: nonpositive selected AR innovation variance; no repair or fallback": 1
+      },
+      "attempts": 500,
+      "same_feature": false,
+      "coverage": {
+        "covered": 427,
+        "denominator": 499,
+        "rate": 0.8557114228456913,
+        "lower": 0.8221616873833008,
+        "upper": 0.8838262413618264
+      }
+    },
+    {
+      "scenario": "short_runs",
+      "successes": 500,
+      "failures": {},
+      "attempts": 500,
+      "same_feature": true,
+      "coverage": {
+        "covered": 451,
+        "denominator": 500,
+        "rate": 0.902,
+        "lower": 0.8727939491335183,
+        "upper": 0.9250760811353939
+      }
+    },
+    {
+      "scenario": "short_runs",
+      "successes": 500,
+      "failures": {},
+      "attempts": 500,
+      "same_feature": false,
+      "coverage": {
+        "covered": 448,
+        "denominator": 500,
+        "rate": 0.896,
+        "lower": 0.8661557291243417,
+        "upper": 0.919805793230109
+      }
+    },
+    {
+      "scenario": "heavy_censor",
+      "successes": 0,
+      "failures": {
+        "invalid noise input: unsupported selected lag: reduce explicit lag budget or change selection": 500
+      },
+      "attempts": 500,
+      "same_feature": true,
+      "coverage": null
+    },
+    {
+      "scenario": "heavy_censor",
+      "successes": 0,
+      "failures": {
+        "invalid noise input: unsupported selected lag: reduce explicit lag budget or change selection": 500
+      },
+      "attempts": 500,
+      "same_feature": false,
+      "coverage": null
+    }
+  ],
+  "group": [
+    {
+      "scenario": "known_boundary",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 472,
+        "denominator": 500,
+        "rate": 0.944,
+        "lower": 0.920255206353293,
+        "upper": 0.9609743793168485
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 497,
+        "denominator": 500,
+        "rate": 0.994,
+        "lower": 0.9825097478959467,
+        "upper": 0.9979574037280398
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 477,
+        "denominator": 500,
+        "rate": 0.954,
+        "lower": 0.9319222072317267,
+        "upper": 0.9691548916291838
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 497,
+        "denominator": 500,
+        "rate": 0.994,
+        "lower": 0.9825097478959467,
+        "upper": 0.9979574037280398
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 479,
+        "denominator": 500,
+        "rate": 0.958,
+        "lower": 0.9366484142456699,
+        "upper": 0.9723676898915483
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 497,
+        "denominator": 500,
+        "rate": 0.994,
+        "lower": 0.9825097478959467,
+        "upper": 0.9979574037280398
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 393,
+        "denominator": 500,
+        "rate": 0.786,
+        "lower": 0.7479418772435874,
+        "upper": 0.8196970000124048
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 472,
+        "denominator": 500,
+        "rate": 0.944,
+        "lower": 0.920255206353293,
+        "upper": 0.9609743793168485
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 459,
+        "denominator": 500,
+        "rate": 0.918,
+        "lower": 0.8906451408426114,
+        "upper": 0.9389809105315311
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 482,
+        "denominator": 500,
+        "rate": 0.964,
+        "lower": 0.9438156730319722,
+        "upper": 0.9771089390197072
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 460,
+        "denominator": 500,
+        "rate": 0.92,
+        "lower": 0.8928936834221488,
+        "upper": 0.9407018705901475
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 481,
+        "denominator": 500,
+        "rate": 0.962,
+        "lower": 0.9414152274693561,
+        "upper": 0.9755398819441696
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 279,
+        "denominator": 500,
+        "rate": 0.558,
+        "lower": 0.5141915296492833,
+        "upper": 0.6009240468571767
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 429,
+        "denominator": 500,
+        "rate": 0.858,
+        "lower": 0.8246703326752246,
+        "upper": 0.885870639554304
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 443,
+        "denominator": 500,
+        "rate": 0.886,
+        "lower": 0.8551509101576845,
+        "upper": 0.9109630990059973
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 469,
+        "denominator": 500,
+        "rate": 0.938,
+        "lower": 0.9133402868983618,
+        "upper": 0.9559807908573184
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 442,
+        "denominator": 500,
+        "rate": 0.884,
+        "lower": 0.8529581630365658,
+        "upper": 0.9091863434889621
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 464,
+        "denominator": 500,
+        "rate": 0.928,
+        "lower": 0.9019315959830375,
+        "upper": 0.9475419685818739
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 370,
+        "denominator": 500,
+        "rate": 0.74,
+        "lower": 0.6998260397638378,
+        "upper": 0.7765142768146172
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 466,
+        "denominator": 500,
+        "rate": 0.932,
+        "lower": 0.9064790772661258,
+        "upper": 0.9509334925750932
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 450,
+        "denominator": 500,
+        "rate": 0.9,
+        "lower": 0.8705780903680599,
+        "upper": 0.9233224372626984
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 475,
+        "denominator": 500,
+        "rate": 0.95,
+        "lower": 0.9272318388284524,
+        "upper": 0.9659062547561506
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 447,
+        "denominator": 500,
+        "rate": 0.894,
+        "lower": 0.8639490699892671,
+        "upper": 0.9180429497270297
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 473,
+        "denominator": 500,
+        "rate": 0.946,
+        "lower": 0.9225734384893529,
+        "upper": 0.9626256498189425
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 398,
+        "denominator": 500,
+        "rate": 0.796,
+        "lower": 0.758484663357909,
+        "upper": 0.8290017270888521
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 473,
+        "denominator": 500,
+        "rate": 0.946,
+        "lower": 0.9225734384893529,
+        "upper": 0.9626256498189425
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 450,
+        "denominator": 500,
+        "rate": 0.9,
+        "lower": 0.8705780903680599,
+        "upper": 0.9233224372626984
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 476,
+        "denominator": 500,
+        "rate": 0.952,
+        "lower": 0.92957280316411,
+        "upper": 0.9675347930586469
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 449,
+        "denominator": 500,
+        "rate": 0.898,
+        "lower": 0.868365377095774,
+        "upper": 0.9215656478968306
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 476,
+        "denominator": 500,
+        "rate": 0.952,
+        "lower": 0.92957280316411,
+        "upper": 0.9675347930586469
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 411,
+        "denominator": 500,
+        "rate": 0.822,
+        "lower": 0.7860548114500956,
+        "upper": 0.8530351132926648
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 8,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 481,
+        "denominator": 500,
+        "rate": 0.962,
+        "lower": 0.9414152274693561,
+        "upper": 0.9755398819441696
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 463,
+        "denominator": 500,
+        "rate": 0.926,
+        "lower": 0.8996652466777695,
+        "upper": 0.945838815248988
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 8,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 485,
+        "denominator": 500,
+        "rate": 0.97,
+        "lower": 0.9510963331640543,
+        "upper": 0.9817367868020865
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 462,
+        "denominator": 500,
+        "rate": 0.924,
+        "lower": 0.8974035863260316,
+        "upper": 0.9441309729625723
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 8,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 484,
+        "denominator": 500,
+        "rate": 0.968,
+        "lower": 0.9486551309545582,
+        "upper": 0.9802084863734289
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 472,
+        "denominator": 500,
+        "rate": 0.944,
+        "lower": 0.920255206353293,
+        "upper": 0.9609743793168485
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 485,
+        "denominator": 500,
+        "rate": 0.97,
+        "lower": 0.9510963331640543,
+        "upper": 0.9817367868020865
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 478,
+        "denominator": 500,
+        "rate": 0.956,
+        "lower": 0.9342805571276716,
+        "upper": 0.9707660443713928
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 484,
+        "denominator": 500,
+        "rate": 0.968,
+        "lower": 0.9486551309545582,
+        "upper": 0.9802084863734289
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 478,
+        "denominator": 500,
+        "rate": 0.956,
+        "lower": 0.9342805571276716,
+        "upper": 0.9707660443713928
+      }
+    },
+    {
+      "scenario": "known_boundary",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 484,
+        "denominator": 500,
+        "rate": 0.968,
+        "lower": 0.9486551309545582,
+        "upper": 0.9802084863734289
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 400,
+        "denominator": 500,
+        "rate": 0.8,
+        "lower": 0.7627108946948261,
+        "upper": 0.8327145010282427
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 471,
+        "denominator": 500,
+        "rate": 0.942,
+        "lower": 0.917943812143745,
+        "upper": 0.9593162708882429
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 471,
+        "denominator": 500,
+        "rate": 0.942,
+        "lower": 0.917943812143745,
+        "upper": 0.9593162708882429
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 477,
+        "denominator": 500,
+        "rate": 0.954,
+        "lower": 0.9319222072317267,
+        "upper": 0.9691548916291838
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 470,
+        "denominator": 500,
+        "rate": 0.94,
+        "lower": 0.9156389368747802,
+        "upper": 0.9576516435190539
+      }
+    },
+    {
+      "scenario": "known_heterogeneous",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 474,
+        "denominator": 500,
+        "rate": 0.948,
+        "lower": 0.9248988560621544,
+        "upper": 0.9642697348842947
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 249,
+        "denominator": 500,
+        "rate": 0.498,
+        "lower": 0.45435686059170843,
+        "upper": 0.5416736367701378
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 403,
+        "denominator": 500,
+        "rate": 0.806,
+        "lower": 0.7690603702807669,
+        "upper": 0.8382735333567634
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 469,
+        "denominator": 500,
+        "rate": 0.938,
+        "lower": 0.9133402868983618,
+        "upper": 0.9559807908573184
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 478,
+        "denominator": 500,
+        "rate": 0.956,
+        "lower": 0.9342805571276716,
+        "upper": 0.9707660443713928
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 470,
+        "denominator": 500,
+        "rate": 0.94,
+        "lower": 0.9156389368747802,
+        "upper": 0.9576516435190539
+      }
+    },
+    {
+      "scenario": "estimated_df4",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 475,
+        "denominator": 500,
+        "rate": 0.95,
+        "lower": 0.9272318388284524,
+        "upper": 0.9659062547561506
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 386,
+        "denominator": 500,
+        "rate": 0.772,
+        "lower": 0.7332341279039163,
+        "upper": 0.8066182308849994
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 464,
+        "denominator": 500,
+        "rate": 0.928,
+        "lower": 0.9019315959830375,
+        "upper": 0.9475419685818739
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 472,
+        "denominator": 500,
+        "rate": 0.944,
+        "lower": 0.920255206353293,
+        "upper": 0.9609743793168485
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 479,
+        "denominator": 500,
+        "rate": 0.958,
+        "lower": 0.9366484142456699,
+        "upper": 0.9723676898915483
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 474,
+        "denominator": 500,
+        "rate": 0.948,
+        "lower": 0.9248988560621544,
+        "upper": 0.9642697348842947
+      }
+    },
+    {
+      "scenario": "estimated_df20",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 477,
+        "denominator": 500,
+        "rate": 0.954,
+        "lower": 0.9319222072317267,
+        "upper": 0.9691548916291838
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 400,
+        "denominator": 500,
+        "rate": 0.8,
+        "lower": 0.7627108946948261,
+        "upper": 0.8327145010282427
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 468,
+        "denominator": 500,
+        "rate": 0.936,
+        "lower": 0.911047591162316,
+        "upper": 0.9543039839552107
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 470,
+        "denominator": 500,
+        "rate": 0.94,
+        "lower": 0.9156389368747802,
+        "upper": 0.9576516435190539
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 474,
+        "denominator": 500,
+        "rate": 0.948,
+        "lower": 0.9248988560621544,
+        "upper": 0.9642697348842947
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 472,
+        "denominator": 500,
+        "rate": 0.944,
+        "lower": 0.920255206353293,
+        "upper": 0.9609743793168485
+      }
+    },
+    {
+      "scenario": "high_leverage_missing",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 474,
+        "denominator": 500,
+        "rate": 0.948,
+        "lower": 0.9248988560621544,
+        "upper": 0.9642697348842947
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 398,
+        "denominator": 500,
+        "rate": 0.796,
+        "lower": 0.758484663357909,
+        "upper": 0.8290017270888521
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 30,
+      "attempts": 500,
+      "method": "CommonEffect",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 468,
+        "denominator": 500,
+        "rate": 0.936,
+        "lower": 0.911047591162316,
+        "upper": 0.9543039839552107
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 467,
+        "denominator": 500,
+        "rate": 0.934,
+        "lower": 0.9087605988391466,
+        "upper": 0.9526214736402262
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 30,
+      "attempts": 500,
+      "method": "DerSimonianLaird",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 475,
+        "denominator": 500,
+        "rate": 0.95,
+        "lower": 0.9272318388284524,
+        "upper": 0.9659062547561506
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "Normal",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 470,
+        "denominator": 500,
+        "rate": 0.94,
+        "lower": 0.9156389368747802,
+        "upper": 0.9576516435190539
+      }
+    },
+    {
+      "scenario": "skew_errors",
+      "n": 30,
+      "attempts": 500,
+      "method": "PauleMandel",
+      "inference": "ModifiedKnappHartung",
+      "successes": 500,
+      "failures": {},
+      "coverage": {
+        "covered": 474,
+        "denominator": 500,
+        "rate": 0.948,
+        "lower": 0.9248988560621544,
+        "upper": 0.9642697348842947
+      }
+    }
+  ],
+  "repeated": [
+    {
+      "scenario": "ri_boundary",
+      "successes": 1000,
+      "failures": {},
+      "attempts": 1000,
+      "n": 8,
+      "coverage": [
+        {
+          "covered": 944,
+          "denominator": 1000,
+          "rate": 0.944,
+          "lower": 0.927976651850269,
+          "upper": 0.9566251866145581
+        }
+      ],
+      "mean_prepare_ms": 0.017621655000000038,
+      "mean_fit_ms": 0.23790242200000003
+    },
+    {
+      "scenario": "ri_interior",
+      "successes": 1000,
+      "failures": {},
+      "attempts": 1000,
+      "n": 8,
+      "coverage": [
+        {
+          "covered": 907,
+          "denominator": 1000,
+          "rate": 0.907,
+          "lower": 0.8874087442345036,
+          "upper": 0.9234762743582547
+        }
+      ],
+      "mean_prepare_ms": 0.01835348200000003,
+      "mean_fit_ms": 1.3316825130000005
+    },
+    {
+      "scenario": "slope_boundary",
+      "successes": 1000,
+      "failures": {},
+      "attempts": 1000,
+      "n": 8,
+      "coverage": [
+        {
+          "covered": 965,
+          "denominator": 1000,
+          "rate": 0.965,
+          "lower": 0.9517133776255466,
+          "upper": 0.9747277369828871
+        },
+        {
+          "covered": 963,
+          "denominator": 1000,
+          "rate": 0.963,
+          "lower": 0.9494176025179306,
+          "upper": 0.9730388191244452
+        }
+      ],
+      "mean_prepare_ms": 0.02774401099999999,
+      "mean_fit_ms": 1.4387054590000004
+    },
+    {
+      "scenario": "slope_interior",
+      "successes": 998,
+      "failures": {
+        "NonConvergence": 2
+      },
+      "attempts": 1000,
+      "n": 8,
+      "coverage": [
+        {
+          "covered": 913,
+          "denominator": 998,
+          "rate": 0.9148296593186372,
+          "lower": 0.8958812614290382,
+          "upper": 0.9305968132302699
+        },
+        {
+          "covered": 920,
+          "denominator": 998,
+          "rate": 0.9218436873747495,
+          "lower": 0.9035265692612854,
+          "upper": 0.9369257723608614
+        }
+      ],
+      "mean_prepare_ms": 0.03113246400000002,
+      "mean_fit_ms": 5.355893439000001
+    },
+    {
+      "scenario": "ri_boundary",
+      "successes": 1000,
+      "failures": {},
+      "attempts": 1000,
+      "n": 30,
+      "coverage": [
+        {
+          "covered": 960,
+          "denominator": 1000,
+          "rate": 0.96,
+          "lower": 0.945990355878742,
+          "upper": 0.9704890263145473
+        }
+      ],
+      "mean_prepare_ms": 0.05824225199999999,
+      "mean_fit_ms": 0.6317242050000003
+    },
+    {
+      "scenario": "ri_interior",
+      "successes": 1000,
+      "failures": {},
+      "attempts": 1000,
+      "n": 30,
+      "coverage": [
+        {
+          "covered": 939,
+          "denominator": 1000,
+          "rate": 0.939,
+          "lower": 0.9224198811757163,
+          "upper": 0.9522202248739662
+        }
+      ],
+      "mean_prepare_ms": 0.058778592999999955,
+      "mean_fit_ms": 1.5045824979999984
+    },
+    {
+      "scenario": "slope_boundary",
+      "successes": 1000,
+      "failures": {},
+      "attempts": 1000,
+      "n": 30,
+      "coverage": [
+        {
+          "covered": 955,
+          "denominator": 1000,
+          "rate": 0.955,
+          "lower": 0.9403171620637766,
+          "upper": 0.9662004877143683
+        },
+        {
+          "covered": 970,
+          "denominator": 1000,
+          "rate": 0.97,
+          "lower": 0.9574965858524128,
+          "upper": 0.9789062611711653
+        }
+      ],
+      "mean_prepare_ms": 0.08611305199999983,
+      "mean_fit_ms": 4.785128666000008
+    },
+    {
+      "scenario": "slope_interior",
+      "successes": 988,
+      "failures": {
+        "NonConvergence": 12
+      },
+      "attempts": 1000,
+      "n": 30,
+      "coverage": [
+        {
+          "covered": 917,
+          "denominator": 988,
+          "rate": 0.9281376518218624,
+          "lower": 0.9103216224875498,
+          "upper": 0.9426372778249049
+        },
+        {
+          "covered": 931,
+          "denominator": 988,
+          "rate": 0.9423076923076923,
+          "lower": 0.9259833404991586,
+          "upper": 0.9552058780269468
+        }
+      ],
+      "mean_prepare_ms": 0.09550425400000004,
+      "mean_fit_ms": 18.87659805299999
+    }
+  ],
+  "permutation": [
+    {
+      "n": 8,
+      "method": "sign flip",
+      "attempts": 200,
+      "features": 4,
+      "draws": 999,
+      "family_error": {
+        "covered": 8,
+        "denominator": 200,
+        "rate": 0.04,
+        "lower": 0.020405632066152306,
+        "upper": 0.07693206820093293
+      },
+      "marginal_error": {
+        "covered": 3,
+        "denominator": 200,
+        "rate": 0.015,
+        "lower": 0.00511423779325831,
+        "upper": 0.04316572879269026
+      }
+    },
+    {
+      "n": 8,
+      "method": "Freedman-Lane",
+      "attempts": 200,
+      "features": 4,
+      "draws": 999,
+      "family_error": {
+        "covered": 11,
+        "denominator": 200,
+        "rate": 0.055,
+        "lower": 0.03098534170345884,
+        "upper": 0.0957869987723084
+      },
+      "marginal_error": {
+        "covered": 5,
+        "denominator": 200,
+        "rate": 0.025,
+        "lower": 0.010724719651761264,
+        "upper": 0.05717834040664198
+      }
+    },
+    {
+      "n": 30,
+      "method": "sign flip",
+      "attempts": 200,
+      "features": 4,
+      "draws": 999,
+      "family_error": {
+        "covered": 11,
+        "denominator": 200,
+        "rate": 0.055,
+        "lower": 0.03098534170345884,
+        "upper": 0.0957869987723084
+      },
+      "marginal_error": {
+        "covered": 11,
+        "denominator": 200,
+        "rate": 0.055,
+        "lower": 0.03098534170345884,
+        "upper": 0.0957869987723084
+      }
+    },
+    {
+      "n": 30,
+      "method": "Freedman-Lane",
+      "attempts": 200,
+      "features": 4,
+      "draws": 999,
+      "family_error": {
+        "covered": 6,
+        "denominator": 200,
+        "rate": 0.03,
+        "lower": 0.013820314340111346,
+        "upper": 0.06389429245451925
+      },
+      "marginal_error": {
+        "covered": 6,
+        "denominator": 200,
+        "rate": 0.03,
+        "lower": 0.013820314340111346,
+        "upper": 0.06389429245451925
+      }
+    }
+  ],
+  "inputs": {
+    "ar-calibration.jsonl": "386a9551378bca3d1f433d32fcf01207603d5e97f3f61d1408b416a028d9a29a",
+    "group-calibration.jsonl": "8971b35387efc83f7d27466af617ac2ff1360123b9e419838f0210719e5bb66f",
+    "repeated-calibration.jsonl": "59b666d18b9a1de52eef7a645e077ad8d5eb5e0bd58ba39bdecdb3ed21a85305",
+    "permutation-calibration.jsonl": "3bec72224ea70d1c60413e7a1906c1fc560e1d1968b8db3d06594a49ed0efd78"
+  }
+}

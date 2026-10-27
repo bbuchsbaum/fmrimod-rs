@@ -1,0 +1,1619 @@
+[
+  {
+    "label": "libraries",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--lib",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/libraries.log",
+    "sha256": "6b9f95b9785d8b134d0aac3b434bae6d439193e803689b57b6d1e1cc3ecdaa07",
+    "passed": 456,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-arp",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "arp",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-arp.log",
+    "sha256": "eca9164936056d9b4e2d2c6a4cdfb3873a8a681090b962a047e619364afa2058",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-contracts.log",
+    "sha256": "18399838ab4a71e9f9639ee4ebd0fe37ec10f19f99262eb5147c38af58bcbb6b",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-convolution_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "convolution_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-convolution_contract.log",
+    "sha256": "8a8048d5b0518a821c928dc7f7befc95e5a8a964722124cdcde7c4343fd4b64f",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-cross_validation",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "cross_validation",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-cross_validation.log",
+    "sha256": "8bf366943f92050fa705cc93389c6eacb00f94c07a49c9d310da9f6c356f9c7f",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-cross_validation_spm",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "cross_validation_spm",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-cross_validation_spm.log",
+    "sha256": "8335302ee21cabc54891034eac0b954634b45cd61f67ae2b34af17670d6bc005",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-current_spline_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "current_spline_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-current_spline_contract.log",
+    "sha256": "59b248917d70995c8dd143fd3d8e31cf7ae64cc32855a6a616f03eeda76afd61",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-design_safety",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "design_safety",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-design_safety.log",
+    "sha256": "76e83865b5f7ff49b1e799deadd499ad55cde5648ee7eac9037999d7cab337e9",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-edge_case_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "edge_case_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-edge_case_tests.log",
+    "sha256": "70114f9bc265dcf82c93215c603b1c05c3ca785893fa7cfb7a3d63874d911a86",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-frame_contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "frame_contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-frame_contracts.log",
+    "sha256": "9be58c397aa638c965acebcd364b351ab87665026f6bada3750565dcec8680fd",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-golden_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "golden_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-golden_tests.log",
+    "sha256": "4793af1f2e9dccb6f17eedd87c686c746030ee3a4e76350408b94a6703df4b67",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_audit",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "hrf_audit",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-hrf_audit.log",
+    "sha256": "9a7f7c55d45e8c44c0ffb84ac388d85deb346b037bbc20a6c88db59a46f9d8e4",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_decorator_fixtures_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "hrf_decorator_fixtures_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-hrf_decorator_fixtures_parity.log",
+    "sha256": "1b65fa8cd5db92dc0059776af9143f4507564d96c4631b78516da2c997a2a46f",
+    "passed": 5,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_fixtures_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "hrf_fixtures_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-hrf_fixtures_parity.log",
+    "sha256": "112932ff870da67366291fbfd5e1c0e2ff18ea7314cfe4e638b6297f636301f9",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-hrf_spec_roundtrip",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "hrf_spec_roundtrip",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-hrf_spec_roundtrip.log",
+    "sha256": "2455f2f95aafab3cb23936b13c18ff2cf3e0ce35d5adb50ff6f20858bb3c40ea",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-integration_test",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "integration_test",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-integration_test.log",
+    "sha256": "f84fe7bb16c46357e45073176951e4ffee451c07ddf32cc3026c8218f3ab0473",
+    "passed": 17,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-parallel",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "parallel",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-parallel.log",
+    "sha256": "585dadb17ad1a9e0c3d8f5b9367895f24565669bc38cb88fd08c754febbdfa26",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-pipeline",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "pipeline",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-pipeline.log",
+    "sha256": "de800d443546a74bc9e0c480e1f5c0879215eaac0c7fbb257dc7adf40fde82ca",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-r_core_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "r_core_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-r_core_contract.log",
+    "sha256": "e8172f2dc9cc9b13ad8a9b76b14b045145446a63163a2bf29a24809fcb74696e",
+    "passed": 9,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-regressor_design_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "regressor_design_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-regressor_design_parity.log",
+    "sha256": "637b563cda6d3bdefd98efefea59b0c962cce7867d3124c7fded9a00552270a5",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-regressor_design_spmg3_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "regressor_design_spmg3_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-regressor_design_spmg3_parity.log",
+    "sha256": "18cdc05ff1b2f3d654af6a1930392357970013c48342090bf7837da30b94f1e5",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-speed_contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "speed_contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-speed_contracts.log",
+    "sha256": "f06b1b7934aeed8b91052ebbbbc8aa6ab1fa572ef35a4dcaacda3acb46b7e485",
+    "passed": 3,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-spmg_hrf_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "spmg_hrf_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-spmg_hrf_parity.log",
+    "sha256": "c45b5586ff23050c57c7cb9f2d57339d1a950511e62cf74917d269ecb0695192",
+    "passed": 2,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-tent_hrf_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "tent_hrf_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-tent_hrf_parity.log",
+    "sha256": "ce158bbe42974531bc4d346ec38a0f369bb43c3373f983e2faf8ef01ba676482",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_afni_integration",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_afni_integration",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_afni_integration.log",
+    "sha256": "b0b5a56b9b1fc3fe503740bff315ebbeafebda9a53add579bf80826316773f7f",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_basis_functions",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_basis_functions",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_basis_functions.log",
+    "sha256": "4985e105c110de84f3371784700686a6db52a1efb03ccc79491d35416898adfc",
+    "passed": 14,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_contrast_weights",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_contrast_weights",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_contrast_weights.log",
+    "sha256": "cedb4951bcdfea1610a1bdea1a9f037c7e2b008e0d3d05c0edd87af9e5c9f278",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_convolution",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_convolution",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_convolution.log",
+    "sha256": "4e3d60abe69dd39776fb040a55b7450896e27adcba9dd5d3c2f91bcb1b6c288e",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_core_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_core_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_core_parity.log",
+    "sha256": "8462d25ace29e2b5de98c7fdfa7cea19194f79caec369ec11b25add4047b82ad",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_crossval",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_crossval",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_crossval.log",
+    "sha256": "d7231de8e8caa1e5074c47af88dabe569059f19b6374d3b9bc86855ce1d7abea",
+    "passed": 14,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_dataframe_conversion",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_dataframe_conversion",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_dataframe_conversion.log",
+    "sha256": "86bd6da5c6ee7df0c01c59d2b42f157ead2f0370fad20d9cabe8febe37f2f07c",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_event_basis",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_event_basis",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_event_basis.log",
+    "sha256": "106ac65272cf818bfb530cc3e3cb9221e203207e5daa7ff28ebdf671f0e223a8",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_event_model",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_event_model",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_event_model.log",
+    "sha256": "017f98b26bee30696f48c9233c2ebcfbb2a110d8ecb7bcc099cf07cf8c3fa0fd",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_events",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_events",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_events.log",
+    "sha256": "bf697c7a7510c5e1992eae835ec01764e1715f9a2d8a1489791686034bdd1eb6",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_export",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_export",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_export.log",
+    "sha256": "364d1ce1324dc1e5e67c753e4edb4e224fb7284aee8040a9984445e4ab2ecf17",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_fcontrast",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_fcontrast",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_fcontrast.log",
+    "sha256": "bdec618f81579629997e2758bd771e3b83038e624047cdff575bd146a40474f8",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_at_operator",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_at_operator",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_formula_at_operator.log",
+    "sha256": "1444c70e959f0b8720ecb80057b59b0357dfd2ad6f92e6af357ba15132285188",
+    "passed": 9,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_dsl",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_dsl",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_formula_dsl.log",
+    "sha256": "9651cb81aca799df926ab5376820715a4040596f3a30916dd91edbc5674b6387",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_interface",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_interface",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_formula_interface.log",
+    "sha256": "d77dc25c7232417716a7aaf84e37511f57b34f5b34d5fad08a91f1affe6d86c0",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_formula_parser",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_formula_parser",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_formula_parser.log",
+    "sha256": "983e02e58263b6edf5bda695d09a4347923553a3766d52676a21a404147bf61b",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_hrf_integration",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_hrf_integration",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_hrf_integration.log",
+    "sha256": "4c8c00bd800cdea5844a499fa8dd4b9897db6443c1c75e4a5909e484454bcb12",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_python_parity",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_python_parity",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_python_parity.log",
+    "sha256": "28b8cf5ced9105974f22a6081ab75154cb8906fd925c84c32223a2eb62fc307a",
+    "passed": 25,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_sampling",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_sampling",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_sampling.log",
+    "sha256": "888d6e2821eb4ad14d71d122667ce365621849bc3812ea16e83ced6192690dc4",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_scale_within",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_scale_within",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_scale_within.log",
+    "sha256": "adf2f51be0454caaa176aa62b11dbe428d9d73972f9e1d2b6b2306059a5fa74a",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_serialization",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_serialization",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_serialization.log",
+    "sha256": "e2fee842afd96938bcc85dc380092524b0a9e474a737c03b1e247720ee973c88",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_standardized",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_standardized",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_standardized.log",
+    "sha256": "302e3f31d2df6aa037f84a1650de3608741266206e9802e1aa0a79ddb9d049b2",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-test_utils",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "test_utils",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-test_utils.log",
+    "sha256": "942524b20a7a0f6506304e2854fcf0132858766582dec4b173cc00858b431063",
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-whitening_into",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "whitening_into",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-whitening_into.log",
+    "sha256": "67618326f388e2f88e7a63e54e12dc74b68b1f286fc4ea5f27de742322f3c018",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-workflow_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "workflow_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/test-workflow_tests.log",
+    "sha256": "5b7069e4b40a5e698aab08c32ed133f05e44f7f9d09cb5bc444b268dc972e785",
+    "passed": 7,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-baseline_model",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "baseline_model",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-baseline_model.log",
+    "sha256": "336b1ae8ceffa2adb72273f7aff2de2516bec970ec867cd79eccff356a7e5de9",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-comprehensive_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "comprehensive_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-comprehensive_demo.log",
+    "sha256": "e913e0930876836bf3f941a6f3d54fe27128f95cabf33c27d56c2b054f6991b6",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-core_port",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "core_port",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-core_port.log",
+    "sha256": "7b5e8002c082842158927d0058bacebeb5618e44528754a53c7cba5785b72028",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-dataframe_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "dataframe_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-dataframe_demo.log",
+    "sha256": "bb4d039eb15fb0f99c2cb71bda8f241b796fb6a1386f53312d5e2f54db040cfc",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-empirical_hrf_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "empirical_hrf_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-empirical_hrf_demo.log",
+    "sha256": "d717e648116c6227f4abdec5cc430900d0c51de76f06e04c796d6689f923fd2a",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-empirical_hrf_plotting",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "empirical_hrf_plotting",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-empirical_hrf_plotting.log",
+    "sha256": "b1ad9635b4b8a57d4fca972af88e77b30c32975ca19e51ac0e20c30ca1ec2c8c",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-event_basis_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "event_basis_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-event_basis_demo.log",
+    "sha256": "badc5c2afe64c7322835734ead9e32f33abab1334392d5186a2b7710ce022e45",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-first_level",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "first_level",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-first_level.log",
+    "sha256": "7d1edda42a1c4869a993e67af1db49c0e08b5e93d187531a09c7a824943d5a02",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-frame_view",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "frame_view",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-frame_view.log",
+    "sha256": "579f45ad23a59b48a901793f8c75864b42ef52e16ac3e3e75dbedd917e29185c",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-gls_benchmark",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "gls_benchmark",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-gls_benchmark.log",
+    "sha256": "42a21a9ef9df69e50a8d70dc58bdf022b8217c44ac45df3b58d3d41332159dad",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-html_plotting_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "html_plotting_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-html_plotting_demo.log",
+    "sha256": "a7280b033ce18f1e5e737252c79ea78edc5f949a4216e986b858ee1dba0ceec7",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-plotting_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "plotting_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-plotting_demo.log",
+    "sha256": "716cf7336906ba35f36153456782c56b81acffd9e761607a4d386e92ce7f6703",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-plotting_demo_simple",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "plotting_demo_simple",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-plotting_demo_simple.log",
+    "sha256": "3b1ac9c96f05dc9751a2bc1c184c96ce5b922910e8a96944d614709809b40765",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-port_benchmark",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "port_benchmark",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-port_benchmark.log",
+    "sha256": "b2309d7988d6ecdf78420a77043d8ce1f2b556c942615c8c8acc9b3de1625856",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-port_design",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "port_design",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-port_design.log",
+    "sha256": "0978b9cd753ea30c9cacd0484a2d073579224ec20b512e8a90f4e8c08a027f4c",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-scale_within_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "scale_within_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-scale_within_demo.log",
+    "sha256": "1de03047a5652e50c58e403a66d8e490ef2b443167d9aa1adede7d5e9b861bbe",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-serialization_example",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "serialization_example",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-serialization_example.log",
+    "sha256": "b7530bc5c4d030796b6007e9d66d130c219e08973a8276c24ca7ee7cfffa26cd",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-standardized_demo",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "standardized_demo",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-standardized_demo.log",
+    "sha256": "1c7a7e802aa4a6ed6a414a517678a52b33aea46dfe96dc57e448b292da1962cc",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_conditions",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "test_conditions",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-test_conditions.log",
+    "sha256": "d5457cc66980b48d8030ba8f0f375de654cfbbc686abfcfb187f8e6183f682a4",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_poly",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "test_poly",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-test_poly.log",
+    "sha256": "8b385c18a56de1f487be356fc3430a7f24e244f93502e7dbe5e7797f21301808",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-test_sampling",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "test_sampling",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-test_sampling.log",
+    "sha256": "f032e7ec1f462316789575bf13ce40516cf441bf4b7e9b642feec6235d3a2652",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-throughput",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "throughput",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-throughput.log",
+    "sha256": "f3d0ddee50b159aff128b1092f7d338679d3592f53ef6a872648dc1a35e3b732",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-validate_spm_canonical",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "validate_spm_canonical",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-validate_spm_canonical.log",
+    "sha256": "033b0a3f82f5054d360b958478744f62e9ad4e06282fd76ed4734e8194d16cf0",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_01_hrf",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_01_hrf",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-vignette_01_hrf.log",
+    "sha256": "1d19a101bf2db758432c2a8aa7d9f040b6e2cb65ce26fde1790d69a4a4e66daf",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_01_introduction",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_01_introduction",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-vignette_01_introduction.log",
+    "sha256": "477a064e3ea6fd9a556043a514f7f9fadc7936ab1c3144840661a3dd956f0e64",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_02_baseline",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_02_baseline",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-vignette_02_baseline.log",
+    "sha256": "43846b08eedd775bfa127a6a1098b403f950269bd1b97ce265c5d5bf97fd66a2",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_02_regressor",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_02_regressor",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-vignette_02_regressor.log",
+    "sha256": "bbf6d130df0ae74038270b5e440537a12b7cf896b0de6700cdd249abd8b1660f",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_03_event_models",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_03_event_models",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-vignette_03_event_models.log",
+    "sha256": "6b1fc8b62fd788b19eea84455913e3ba2b5f72f729ab0d6cdb510a7732b7710b",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_03_generators",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_03_generators",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-vignette_03_generators.log",
+    "sha256": "d9de3825e2205c3277fcf9af5fca9bc45ef1b84bd4cbc745ecdfca925f870fa4",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_04_advanced",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_04_advanced",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-vignette_04_advanced.log",
+    "sha256": "6f9ac59159d66c48f5b2a6f42655dd12241a73d74a36780e15c0b924c664e093",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "example-vignette_04_contrasts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--example",
+      "vignette_04_contrasts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/example-vignette_04_contrasts.log",
+    "sha256": "a860debd9e9412d0e21182ea55bb8f48dba7f9ed21ce61f663cbf532dafb3a1b",
+    "passed": 0,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "doctests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--doc"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-final/doctests.log",
+    "sha256": "b3fe8c547528961be9c5a1551cbd5e69a079f15d06a1a481ea84555e29be761a",
+    "passed": 71,
+    "failed": 0,
+    "ignored": 21
+  }
+]

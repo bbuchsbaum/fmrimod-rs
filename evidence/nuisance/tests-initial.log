@@ -1,0 +1,8 @@
+   Compiling fmridesign v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign)
+error: couldn't read `crates/fmridesign/tests/fixtures/nuisance_contract.json`: No such file or directory (os error 2)
+  --> crates/fmridesign/tests/nuisance_contract.rs:10:26
+   |
+10 |     serde_json::from_str(include_str!("fixtures/nuisance_contract.json")).unwrap()
+   |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: could not compile `fmridesign` (test "nuisance_contract") due to 1 previous error

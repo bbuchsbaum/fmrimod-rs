@@ -1,0 +1,9 @@
+{
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)\nbinary: rustc\ncommit-hash: ed61e7d7e242494fb7057f2657300d9e77bb4fcb\ncommit-date: 2025-11-07\nhost: aarch64-apple-darwin\nrelease: 1.91.1\nLLVM version: 21.1.2\n",
+  "cargo": "cargo 1.91.1 (ea2d97820 2025-10-10)\n",
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t14.3\nBuildVersion:\t\t23D56\n",
+  "architecture": "arm64",
+  "threads": 1,
+  "profile": "release opt-level=3 thin-LTO codegen-units=1 portable backend",
+  "source_note": "Matched frozen dependency sources; baseline substitutes only pre-tranche fmri-group/src/fit.rs. Whole workspace is concurrently edited; git HEAD alone is not source identity."
+}

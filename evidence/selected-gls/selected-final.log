@@ -1,0 +1,13 @@
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+    Finished `test` profile [unoptimized] target(s) in 0.68s
+     Running tests/selected_gls.rs (target/debug/deps/selected_gls-2e78f34b010f7c80)
+
+running 5 tests
+test invalid_selection_coefficients_shapes_and_short_runs ... ok
+test excluding_a_run_uses_retained_rank_and_rejects_its_contrast ... ok
+test no_gaps_matches_contiguous_kernels_and_selection_handles_strides ... ok
+test selected_arp_matches_dense_r_covariance_gls_and_inference ... ok
+test selected_assay_streaming_preserves_ids_and_matches_dense ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+

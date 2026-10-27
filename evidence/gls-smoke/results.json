@@ -1,0 +1,171 @@
+[
+  {
+    "block": 1000,
+    "cold": {
+      "contrast": 0.0001365,
+      "fit": 0.000964125,
+      "generate": 0.003517167,
+      "wall": 0.00576,
+      "whiten": 0.001042041
+    },
+    "df": 292,
+    "features": 1000,
+    "n": 300,
+    "order": 4,
+    "p": 8,
+    "phi": [
+      [
+        2.171403655388228,
+        -2.3539762434102904,
+        1.800345065155176,
+        -0.6875395547941472
+      ],
+      [
+        2.5037670877673794,
+        -3.018017269118914,
+        2.4896884512120456,
+        -0.99
+      ]
+    ],
+    "rank": 8,
+    "setup": {
+      "correction_prepare": 0.000424709,
+      "design_whiten": 8e-06,
+      "gls_prepare": 2.9917e-05,
+      "initial_prepare": 4.4083e-05,
+      "noise_fit": 0.000399792,
+      "residual": 4.0959e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.000134709,
+        "fit": 0.001025375,
+        "generate": 0.003470041,
+        "wall": 0.005779584,
+        "whiten": 0.001065333
+      },
+      {
+        "contrast": 0.0001435,
+        "fit": 0.000945417,
+        "generate": 0.003380042,
+        "wall": 0.005572167,
+        "whiten": 0.001011084
+      },
+      {
+        "contrast": 0.000130291,
+        "fit": 0.000928042,
+        "generate": 0.003333833,
+        "wall": 0.005498,
+        "whiten": 0.00100675
+      }
+    ],
+    "workers": 1,
+    "engine": "rust",
+    "key": "300-8-1000-ar4-b1000-w1",
+    "exit": 0,
+    "process_seconds": 0.052884817123413086,
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/gls_benchmark",
+      "300",
+      "8",
+      "1000",
+      "4",
+      "1000",
+      "1",
+      "3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-smoke/300-8-1000-ar4-b1000-w1-rust.bin"
+    ],
+    "peak_rss_bytes": 31014912,
+    "output_sha256": "6ada07af41e182a90295e7b0d19897b28145fbae57e44608194edd81a94ef18d"
+  },
+  {
+    "n": 300,
+    "p": 8,
+    "features": 1000,
+    "order": 4,
+    "block": 1000,
+    "workers": 1,
+    "rank": 8,
+    "df": 292,
+    "phi": [
+      [
+        2.1714036553909835,
+        -2.3539762434162617,
+        1.8003450651610167,
+        -0.6875395547967633
+      ],
+      [
+        2.503767087765529,
+        -3.018017269115224,
+        2.489688451210211,
+        -0.99
+      ]
+    ],
+    "setup": {
+      "initial_prepare": 0.0050000000000000044,
+      "residual": 0.0010000000000000009,
+      "correction_prepare": 0.043999999999999984,
+      "noise_fit": 0.0040000000000000036,
+      "design_whiten": 0.0020000000000000018,
+      "gls_prepare": 0
+    },
+    "cold": {
+      "wall": 0.012999999999999984,
+      "generate": 0.00899999999999998,
+      "whiten": 0.0020000000000000018,
+      "fit": 0.0020000000000000018,
+      "contrast": 0
+    },
+    "warm": [
+      {
+        "wall": 0.027000000000000024,
+        "generate": 0.007000000000000006,
+        "whiten": 0.0020000000000000018,
+        "fit": 0.016000000000000014,
+        "contrast": 0.0020000000000000018
+      },
+      {
+        "wall": 0.010000000000000009,
+        "generate": 0.006000000000000005,
+        "whiten": 0.0020000000000000018,
+        "fit": 0.0010000000000000009,
+        "contrast": 0.0010000000000000009
+      },
+      {
+        "wall": 0.010999999999999954,
+        "generate": 0.006999999999999951,
+        "whiten": 0.0020000000000000018,
+        "fit": 0.0020000000000000018,
+        "contrast": 0
+      }
+    ],
+    "R": "R version 4.5.1 (2025-06-13)",
+    "BLAS": "/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib",
+    "engine": "r",
+    "key": "300-8-1000-ar4-b1000-w1",
+    "exit": 0,
+    "process_seconds": 0.37828898429870605,
+    "command": [
+      "Rscript",
+      "--vanilla",
+      "scripts/benchmark_gls.R",
+      "300",
+      "8",
+      "1000",
+      "4",
+      "1000",
+      "1",
+      "3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-smoke/300-8-1000-ar4-b1000-w1-r.bin"
+    ],
+    "peak_rss_bytes": 215302144,
+    "output_sha256": "05447d09023205dd1b3d68572768c2a0081e88f67571d98545c8c1bbd80d7d5b",
+    "comparison": {
+      "max_abs": 3.2883917810977437e-11,
+      "max_scaled": 2.023334701232365e-12,
+      "values": 13000,
+      "tolerance": 2e-08,
+      "passed": true
+    }
+  }
+]

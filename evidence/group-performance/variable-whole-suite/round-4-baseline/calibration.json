@@ -1,0 +1,32 @@
+[
+  {
+    "method": "ols",
+    "monte_carlo_se": 0.005141206084179081,
+    "n": 20,
+    "rate": 0.056,
+    "rejections": 112,
+    "replicates": 2000,
+    "scope": "iid normal null, unit known sampling variance",
+    "seed": 2710
+  },
+  {
+    "method": "fe",
+    "monte_carlo_se": 0.0052687284993630104,
+    "n": 20,
+    "rate": 0.059,
+    "rejections": 118,
+    "replicates": 2000,
+    "scope": "iid normal null, unit known sampling variance",
+    "seed": 2710
+  },
+  {
+    "method": "dl",
+    "monte_carlo_se": 0.004756245893559331,
+    "n": 20,
+    "rate": 0.0475,
+    "rejections": 95,
+    "replicates": 2000,
+    "scope": "iid normal null, unit known sampling variance",
+    "seed": 2710
+  }
+]

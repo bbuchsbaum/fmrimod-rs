@@ -1,0 +1,15 @@
+# fmrimod-rs
+
+One Cargo workspace for idiomatic Rust fMRI modelling capabilities. R sources
+in ~/code/fmrihrf, ~/code/fmridesign, ~/code/fmridataset, ~/code/fmrireg and
+~/code/fmriAR define scientific reference behavior, not an API translation target.
+See docs/PLAN.md and evidence/source-manifest.json. Use Mote for work state.
+Preserve original sibling repositories and their dirty work. No remote publication
+or removal of originals is authorized. Retain each crate's license.
+
+Regression scope: core fast OLS/GLS estimation, AR modelling, contrasts,
+uncertainty and bounded-memory data processing. Reduced rank and peripheral
+workflows are deferred. Do not substitute IID errors for requested AR models.
+For numerical changes add independent analytic or freshly built R reference
+checks, bind fixtures to source hashes, and record tolerances. Benchmarks must
+compare equivalent outputs and report workload, threads and memory limitations.

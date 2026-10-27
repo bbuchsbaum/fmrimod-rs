@@ -1,0 +1,135 @@
+    Finished `test` profile [unoptimized] target(s) in 0.14s
+   Doc-tests fmri_noise
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmridataset
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmridesign
+
+running 31 tests
+test crates/fmridesign/src/basis/sub_basis.rs - basis::sub_basis::SubBasis::from_slice (line 91) ... ignored
+test crates/fmridesign/src/basis/sub_basis.rs - basis::sub_basis::SubBasis::new (line 33) ... ignored
+test crates/fmridesign/src/basis/sub_basis.rs - basis::sub_basis::sub_basis (line 226) ... ignored
+test crates/fmridesign/src/basis/sub_basis.rs - basis::sub_basis::sub_basis_slice (line 249) ... ignored
+test crates/fmridesign/src/contrast.rs - contrast::contrast (line 490) ... ignored
+test crates/fmridesign/src/core.rs - core::event_table (line 897) ... ignored
+test crates/fmridesign/src/covariate.rs - covariate::covariate (line 325) ... ignored
+test crates/fmridesign/src/events/event_variable.rs - events::event_variable::EventVariable::bin_values (line 163) ... ignored
+test crates/fmridesign/src/formula/event_model.rs - formula::event_model::event_model (line 20) ... ignored
+test crates/fmridesign/src/formula/mod.rs - formula::formula (line 27) ... ignored
+test crates/fmridesign/src/io/import.rs - io::import::load_events_csv (line 348) ... ignored
+test crates/fmridesign/src/io/import.rs - io::import::load_events_json (line 366) ... ignored
+test crates/fmridesign/src/lib.rs - (line 9) ... ignored
+test crates/fmridesign/src/regressors.rs - regressors::regressors (line 102) ... ignored
+test crates/fmridesign/src/sampling.rs - sampling::uniform_sampling_frame (line 40) ... ignored
+test crates/fmridesign/src/trialwise.rs - trialwise::trialwise (line 46) ... ignored
+test crates/fmridesign/src/visualization/correlation_map.rs - visualization::correlation_map::correlation_map (line 20) ... ignored
+test crates/fmridesign/src/visualization/design_map.rs - visualization::design_map::design_map (line 112) ... ignored
+test crates/fmridesign/src/visualization/design_map.rs - visualization::design_map::plot_design_matrix (line 326) ... ignored
+test crates/fmridesign/src/visualization/design_map.rs - visualization::design_map::plot_model_summary (line 465) ... ignored
+test crates/fmridesign/src/baseline.rs - baseline::baseline (line 578) ... ok
+test crates/fmridesign/src/formula/dsl.rs - formula::dsl::EventVar (line 12) ... ok
+test crates/fmridesign/src/covariate.rs - covariate::CovariateEvent::new (line 41) ... ok
+test crates/fmridesign/src/events/event_variable.rs - events::event_variable::EventVariable::new (line 41) ... ok
+test crates/fmridesign/src/baseline.rs - baseline::block (line 698) ... ok
+test crates/fmridesign/src/events/event_basis.rs - events::event_basis::EventBasis::new (line 35) ... ok
+test crates/fmridesign/src/residualize.rs - residualize (line 16) ... ok
+test crates/fmridesign/src/events/event_factor.rs - events::event_factor::EventFactor::new (line 40) ... ok
+test crates/fmridesign/src/events/event_matrix.rs - events::event_matrix::EventMatrix::new (line 33) ... ok
+test crates/fmridesign/src/baseline.rs - baseline::nuisance (line 647) ... ok
+test crates/fmridesign/src/events/event_term.rs - events::event_term::EventTerm::new (line 41) ... ok
+
+test result: ok. 11 passed; 0 failed; 20 ignored; 0 measured; 0 filtered out; finished in 2.98s
+
+   Doc-tests fmrihrf
+
+running 52 tests
+test crates/fmrihrf/src/hrf/core.rs - hrf::core::hrf_from_coefficients (line 253) ... ignored
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::gen_hrf (line 458) - compile ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::gamma_hrf (line 191) ... ok
+test crates/fmrihrf/src/hrf/empirical.rs - hrf::empirical::empirical_hrf (line 36) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::weighted_hrf (line 1250) ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 847) ... ok
+test crates/fmrihrf/src/hrf/derivatives.rs - hrf::derivatives::derivative_hrf (line 193) ... ok
+test crates/fmrihrf/src/lib.rs - (line 9) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::gamma_hrf (line 175) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::spm_canonical (line 44) ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 861) ... ok
+test crates/fmrihrf/src/hrf/functions.rs - hrf::functions::weighted_hrf_uniform (line 1348) ... ok
+test crates/fmrihrf/src/hrf/core.rs - hrf::core::HrfExt::evaluate_deriv (line 144) ... ok
+test crates/fmrihrf/src/hrf/library.rs - hrf::library::hrf_library (line 213) ... ok
+test crates/fmrihrf/src/hrf/generators.rs - hrf::generators::make_hrf (line 836) ... ok
+test crates/fmrihrf/src/reconstruction.rs - reconstruction::reconstruction_matrix (line 24) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::Regressor::neural_input (line 348) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::null_regressor (line 437) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 479) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 503) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor (line 521) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor_set (line 669) ... ok
+test crates/fmrihrf/src/regressor/core.rs - regressor::core::regressor_set (line 696) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix (line 551) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::column (line 682) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::column_by_name (line 712) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::new (line 596) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::set_condition_names (line 756) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignMatrix::with_names (line 631) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions (line 16) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions (line 26) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptions::builder (line 66) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder (line 91) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::build (line 182) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::include_intercept (line 158) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::method (line 139) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::DesignOptionsBuilder::precision (line 121) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor (line 216) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor (line 233) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor_set (line 290) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressor_set (line 313) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressors (line 370) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_from_regressors (line 403) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_matrix_from_set (line 835) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::design_matrix_from_set (line 856) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 473) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 485) ... ok
+test crates/fmrihrf/src/regressor/design.rs - regressor::design::regressor_design (line 502) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 49) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 68) ... ok
+test crates/fmrihrf/src/sampling.rs - sampling::SamplingFrame::new (line 85) ... ok
+test crates/fmrihrf/src/utils/cache.rs - utils::cache::get_cache_stats (line 199) ... ok
+
+test result: ok. 51 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 7.78s
+
+   Doc-tests fmrimod
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmrireg
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests splines
+
+running 9 tests
+test crates/splines/src/utils/spline_utils.rs - utils::spline_utils::spline_order (line 51) ... ok
+test crates/splines/src/core/bspline.rs - core::bspline::BSpline<T>::new (line 50) ... ok
+test crates/splines/src/utils/spline_utils.rs - utils::spline_utils::spline_knots (line 27) ... ok
+test crates/splines/src/utils/spline_utils.rs - utils::spline_utils::as_vector (line 79) ... ok
+test crates/splines/src/utils/spline_utils.rs - utils::spline_utils::spline_des (line 120) ... ok
+test crates/splines/src/core/interpolation.rs - core::interpolation::InterpolationSpline<T>::new (line 44) ... ok
+test crates/splines/src/lib.rs - (line 48) ... ok
+test crates/splines/src/lib.rs - (line 14) ... ok
+test crates/splines/src/core/naturalspline.rs - core::naturalspline::NaturalSpline<T>::new (line 50) ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.69s
+

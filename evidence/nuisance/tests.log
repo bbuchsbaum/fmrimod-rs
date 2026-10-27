@@ -1,0 +1,46 @@
+   Compiling fmridesign v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign)
+    Finished `test` profile [unoptimized] target(s) in 0.55s
+     Running tests/design_safety.rs (target/debug/deps/design_safety-b7705c92255fbb5b)
+
+running 4 tests
+test hstack_requires_identical_finite_time_grid ... ok
+test unsupported_legacy_contrasts_do_not_become_zero_vectors ... ok
+test legacy_selectors_match_exact_column_names ... ok
+test estimability_is_relative_and_scale_invariant ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/nuisance_contract.rs (target/debug/deps/nuisance_contract-5c1b898a3a8d79c7)
+
+running 4 tests
+test invalid_inputs_and_selection_contracts ... ok
+test dct_matches_r_and_is_orthonormal_run_local_without_dc ... ok
+test current_r_polynomial_intercepts_and_named_covariates ... ok
+test iid_spikes_and_row_exclusion_match_r_coefficients_rss_and_rank_df ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/r_core_contract.rs (target/debug/deps/r_core_contract-683e26912e45043c)
+
+running 9 tests
+test sampled_convolution_rejects_ambiguous_or_invalid_time_grids ... ok
+test cached_convolution_preserves_sub_millisecond_timing_amplitudes_and_hrf_identity ... ok
+test spline_fits_and_predictions_match_r_including_boundaries ... ok
+test duplicate_impulses_add_and_short_blocks_remain_blocks ... ok
+test runwise_polynomial_baselines_match_current_r ... ok
+test cached_models_do_not_confuse_amplitudes ... ok
+test empty_runs_and_absent_conditions_keep_their_columns_without_tail_leakage ... ok
+test signed_modulators_and_factor_interactions_match_r ... ok
+test formula_event_designs_match_current_r_values_and_basis_order ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/sampled_feature_design.rs (target/debug/deps/sampled_feature_design-c4b1b68d593e123a)
+
+running 3 tests
+test invalid_names_and_mutated_frames_are_checked ... ok
+test single_basis_names_and_broadcast_frame_fields_are_preserved ... ok
+test current_r_uniform_irregular_mask_center_scale_and_multibasis ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.32s
+

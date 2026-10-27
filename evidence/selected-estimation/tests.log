@@ -1,0 +1,15 @@
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+    Finished `test` profile [unoptimized] target(s) in 1.50s
+     Running tests/selected_estimation.rs (target/debug/deps/selected_estimation-bddfce590d55ba51)
+
+running 3 tests
+test unsupported_geometry_bad_residuals_and_singular_correction_error ... ok
+test selected_correction_and_fgls_match_independent_dense_r ... ok
+SIM scenario=0 reps=160 failures=0 bias=[-0.0007207506226910024, -0.0007207506226910024] residual_lag1=-0.010205 coverage=0.962500
+SIM scenario=1 reps=160 failures=0 bias=[-0.002819512468374355, -0.002819512468374355] residual_lag1=-0.016020 coverage=0.925000
+SIM scenario=2 reps=160 failures=0 bias=[-0.0026498332128259312, -0.0018221531942914926] residual_lag1=-0.009828 coverage=0.962500
+SIM scenario=3 reps=160 failures=0 bias=[-0.0037228109885449486, -0.0007459467691862121] residual_lag1=-0.010618 coverage=0.962500
+test stationary_simulations_check_recovery_whitening_and_conditional_coverage ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.45s
+

@@ -1,0 +1,39 @@
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+
+Attaching package: 'fmrigds'
+
+The following object is masked from 'package:stats':
+
+    contrasts
+
+Loading required package: Matrix
+Loading required package: metadat
+Loading required package: numDeriv
+
+Loading the 'metafor' package (version 5.0-1). For an
+introduction to the package please type: help(metafor)
+
+Warning messages:
+1: package 'metafor' was built under R version 4.5.2 
+2: package 'metadat' was built under R version 4.5.2 
+Warning message:
+In summary.lm(lm(yi ~ X, weights = wi)) :
+  essentially perfect fit: summary may be unreliable
+PASS: fresh metafor, dense QR/uniroot and compiled fmrigds references
+BENCH 20-200-3 FE 2e-04 s
+BENCH 20-200-3 DL 0.0006866667 s
+BENCH 20-200-3 PM 0.955 s
+BENCH 20-1000-3 FE 0.00102 s
+BENCH 20-1000-3 DL 0.0034 s
+BENCH 100-200-5 FE 0.001226667 s
+BENCH 100-200-5 DL 0.003631579 s
+BENCH 100-200-5 PM 2.797 s
+BENCH 100-1000-5 FE 0.00596 s
+BENCH 100-1000-5 DL 0.018125 s
+BENCH 100-10000-5 FE 0.05933333 s
+BENCH 100-10000-5 DL 0.182 s

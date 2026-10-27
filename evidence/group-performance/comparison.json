@@ -1,0 +1,674 @@
+[
+  {
+    "id": "20-1000-0",
+    "method": "ols",
+    "n": 20,
+    "features": 1000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.000701667,
+        0.000480709,
+        0.000530083,
+        0.000508834,
+        0.000692166,
+        0.000496292,
+        0.000485625,
+        0.000478334,
+        0.000478334,
+        0.00047825
+      ],
+      "median_seconds": 0.0004909585,
+      "allocation_calls": 7315,
+      "allocated_bytes": 1436668,
+      "max_scaled_error": 1.8247700057750518e-14,
+      "standalone_read_seconds": 5.0228999999999996e-05,
+      "standalone_cdf_seconds": 0.0002203125
+    },
+    "candidate": {
+      "seconds": [
+        0.000542,
+        0.00054375,
+        0.000541084,
+        0.000554917,
+        0.000545291,
+        0.000470875,
+        0.000469167,
+        0.000468917,
+        0.000467833,
+        0.000468333
+      ],
+      "median_seconds": 0.0005059795,
+      "allocation_calls": 3236,
+      "allocated_bytes": 408102,
+      "max_scaled_error": 1.82287135364439e-14,
+      "standalone_read_seconds": 8.7542e-05,
+      "standalone_cdf_seconds": 0.0002568545
+    },
+    "speedup": 0.9703130265158963
+  },
+  {
+    "id": "20-1000-0",
+    "method": "fe",
+    "n": 20,
+    "features": 1000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.000707792,
+        0.000681417,
+        0.000687208,
+        0.000727708,
+        0.00068175,
+        0.000691834,
+        0.00068,
+        0.000745542,
+        0.000683125,
+        0.000678708
+      ],
+      "median_seconds": 0.0006851665,
+      "allocation_calls": 8202,
+      "allocated_bytes": 1354525,
+      "max_scaled_error": 3.3014650801685355e-11,
+      "standalone_read_seconds": 8.125e-05,
+      "standalone_cdf_seconds": 1.65e-05
+    },
+    "candidate": {
+      "seconds": [
+        0.00036175,
+        0.000347625,
+        0.000345292,
+        0.000349583,
+        0.000349667,
+        0.000350792,
+        0.000348375,
+        0.00034525,
+        0.000346292,
+        0.000347042
+      ],
+      "median_seconds": 0.000348,
+      "allocation_calls": 3204,
+      "allocated_bytes": 565021,
+      "max_scaled_error": 3.3014650801685355e-11,
+      "standalone_read_seconds": 8.29375e-05,
+      "standalone_cdf_seconds": 1.6292e-05
+    },
+    "speedup": 1.9688692528735632
+  },
+  {
+    "id": "20-1000-0",
+    "method": "dl",
+    "n": 20,
+    "features": 1000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.000705583,
+        0.000693125,
+        0.000696792,
+        0.000763791,
+        0.000699458,
+        0.000700125,
+        0.000709542,
+        0.00070525,
+        0.000699458,
+        0.000695333
+      ],
+      "median_seconds": 0.0006997915,
+      "allocation_calls": 8202,
+      "allocated_bytes": 1354515,
+      "max_scaled_error": 3.330788104255863e-11,
+      "standalone_read_seconds": 7.8104e-05,
+      "standalone_cdf_seconds": 1.5166500000000001e-05
+    },
+    "candidate": {
+      "seconds": [
+        0.000481541,
+        0.0004745,
+        0.00047475,
+        0.000474167,
+        0.000474083,
+        0.000481583,
+        0.000475917,
+        0.000476,
+        0.000476458,
+        0.000475625
+      ],
+      "median_seconds": 0.000475771,
+      "allocation_calls": 3204,
+      "allocated_bytes": 565011,
+      "max_scaled_error": 3.330788104255863e-11,
+      "standalone_read_seconds": 8.077050000000001e-05,
+      "standalone_cdf_seconds": 1.4791499999999999e-05
+    },
+    "speedup": 1.4708578286612677
+  },
+  {
+    "id": "100-10000-0",
+    "method": "ols",
+    "n": 100,
+    "features": 10000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.01362775,
+        0.013575708,
+        0.013480375,
+        0.014043417,
+        0.014292833,
+        0.013710917,
+        0.01373525,
+        0.014583708,
+        0.015054458,
+        0.014776709
+      ],
+      "median_seconds": 0.0138893335,
+      "allocation_calls": 91923,
+      "allocated_bytes": 55510940,
+      "max_scaled_error": 8.264144907105244e-14,
+      "standalone_read_seconds": 0.00207925,
+      "standalone_cdf_seconds": 0.003603771
+    },
+    "candidate": {
+      "seconds": [
+        0.009894292,
+        0.009736292,
+        0.009731375,
+        0.009741333,
+        0.009775041,
+        0.009826667,
+        0.009833,
+        0.009713875,
+        0.009862875,
+        0.010147333
+      ],
+      "median_seconds": 0.009800854000000001,
+      "allocation_calls": 31100,
+      "allocated_bytes": 10343894,
+      "max_scaled_error": 8.264144907105244e-14,
+      "standalone_read_seconds": 0.0020567285,
+      "standalone_cdf_seconds": 0.003574104
+    },
+    "speedup": 1.417155433597929
+  },
+  {
+    "id": "100-10000-0",
+    "method": "fe",
+    "n": 100,
+    "features": 10000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.025593541,
+        0.026963625,
+        0.025715459,
+        0.026286792,
+        0.025536,
+        0.026846958,
+        0.026985125,
+        0.026557541,
+        0.027548958,
+        0.027283333
+      ],
+      "median_seconds": 0.0267022495,
+      "allocation_calls": 101022,
+      "allocated_bytes": 54486237,
+      "max_scaled_error": 3.2614790336439284e-11,
+      "standalone_read_seconds": 0.004059146499999999,
+      "standalone_cdf_seconds": 0.000103313
+    },
+    "candidate": {
+      "seconds": [
+        0.014033,
+        0.014325542,
+        0.014083542,
+        0.013881792,
+        0.013815709,
+        0.014330583,
+        0.014520583,
+        0.01417125,
+        0.013797709,
+        0.014048459
+      ],
+      "median_seconds": 0.014066000499999998,
+      "allocation_calls": 31024,
+      "allocated_bytes": 18377693,
+      "max_scaled_error": 3.2614790336439284e-11,
+      "standalone_read_seconds": 0.004217646,
+      "standalone_cdf_seconds": 0.0001055625
+    },
+    "speedup": 1.8983540843752995
+  },
+  {
+    "id": "100-10000-0",
+    "method": "dl",
+    "n": 100,
+    "features": 10000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.027516709,
+        0.028037166,
+        0.02652225,
+        0.026409541,
+        0.026714,
+        0.026379667,
+        0.026388584,
+        0.026117084,
+        0.027185958,
+        0.025885416
+      ],
+      "median_seconds": 0.026465895500000003,
+      "allocation_calls": 101022,
+      "allocated_bytes": 54486227,
+      "max_scaled_error": 2.986632417806201e-11,
+      "standalone_read_seconds": 0.0040805625,
+      "standalone_cdf_seconds": 0.0001380415
+    },
+    "candidate": {
+      "seconds": [
+        0.021357417,
+        0.021409167,
+        0.021165958,
+        0.020345958,
+        0.020376834,
+        0.020769792,
+        0.0207975,
+        0.020854625,
+        0.020954916,
+        0.020546208
+      ],
+      "median_seconds": 0.0208260625,
+      "allocation_calls": 31024,
+      "allocated_bytes": 18377683,
+      "max_scaled_error": 2.986632417806201e-11,
+      "standalone_read_seconds": 0.0042832915,
+      "standalone_cdf_seconds": 0.0001387915
+    },
+    "speedup": 1.270806495466918
+  },
+  {
+    "id": "100-10000-1",
+    "method": "ols",
+    "n": 100,
+    "features": 10000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.013391666,
+        0.015690167,
+        0.01534825,
+        0.013901375,
+        0.013362916,
+        0.013870625,
+        0.014111833,
+        0.013461166,
+        0.013631625,
+        0.013194875
+      ],
+      "median_seconds": 0.013751125,
+      "allocation_calls": 94151,
+      "allocated_bytes": 56487652,
+      "max_scaled_error": 1.9316911230451137e-13,
+      "standalone_read_seconds": 0.0020654375,
+      "standalone_cdf_seconds": 0.0036558955
+    },
+    "candidate": {
+      "seconds": [
+        0.009982375,
+        0.009938417,
+        0.010006209,
+        0.009743334,
+        0.00973775,
+        0.009982958,
+        0.009953583,
+        0.009742541,
+        0.00979025,
+        0.009739333
+      ],
+      "median_seconds": 0.0098643335,
+      "allocation_calls": 31100,
+      "allocated_bytes": 10343894,
+      "max_scaled_error": 1.9316911230451137e-13,
+      "standalone_read_seconds": 0.0021413129999999997,
+      "standalone_cdf_seconds": 0.0035624999999999997
+    },
+    "speedup": 1.3940247458178499
+  },
+  {
+    "id": "100-10000-1",
+    "method": "fe",
+    "n": 100,
+    "features": 10000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.031886917,
+        0.032303625,
+        0.031985417,
+        0.025646959,
+        0.026048458,
+        0.02597425,
+        0.026422583,
+        0.027856458,
+        0.025797458,
+        0.027108333
+      ],
+      "median_seconds": 0.026765458,
+      "allocation_calls": 101022,
+      "allocated_bytes": 54448845,
+      "max_scaled_error": 3.2614790336439284e-11,
+      "standalone_read_seconds": 0.004023583000000001,
+      "standalone_cdf_seconds": 0.000106625
+    },
+    "candidate": {
+      "seconds": [
+        0.014427667,
+        0.01425475,
+        0.014794792,
+        0.014148208,
+        0.013950541,
+        0.014045708,
+        0.014131209,
+        0.014707875,
+        0.015600375,
+        0.014428291
+      ],
+      "median_seconds": 0.0143412085,
+      "allocation_calls": 31024,
+      "allocated_bytes": 18377693,
+      "max_scaled_error": 3.2614790336439284e-11,
+      "standalone_read_seconds": 0.0041735209999999995,
+      "standalone_cdf_seconds": 0.00010739549999999999
+    },
+    "speedup": 1.8663321155954185
+  },
+  {
+    "id": "100-10000-1",
+    "method": "dl",
+    "n": 100,
+    "features": 10000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.026422292,
+        0.026593875,
+        0.026946916,
+        0.026031916,
+        0.026188084,
+        0.026656667,
+        0.0277065,
+        0.026827625,
+        0.026048666,
+        0.02607
+      ],
+      "median_seconds": 0.0265080835,
+      "allocation_calls": 101022,
+      "allocated_bytes": 54448835,
+      "max_scaled_error": 2.986632417806201e-11,
+      "standalone_read_seconds": 0.0042626875,
+      "standalone_cdf_seconds": 0.0001435415
+    },
+    "candidate": {
+      "seconds": [
+        0.020715375,
+        0.020752667,
+        0.020413417,
+        0.020795708,
+        0.02114025,
+        0.021037625,
+        0.020380333,
+        0.020643083,
+        0.020829041,
+        0.020498042
+      ],
+      "median_seconds": 0.020734021,
+      "allocation_calls": 31024,
+      "allocated_bytes": 18377683,
+      "max_scaled_error": 2.986632417806201e-11,
+      "standalone_read_seconds": 0.0041858335,
+      "standalone_cdf_seconds": 0.000148
+    },
+    "speedup": 1.2784825239638757
+  },
+  {
+    "id": "100-100000-0",
+    "method": "ols",
+    "n": 100,
+    "features": 100000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.140456958,
+        0.139992,
+        0.136816667,
+        0.138927583,
+        0.137389,
+        0.134148166,
+        0.136408292,
+        0.143141333,
+        0.138929833,
+        0.14113575
+      ],
+      "median_seconds": 0.138928708,
+      "allocation_calls": 911404,
+      "allocated_bytes": 554852168,
+      "max_scaled_error": 1.9257923103653046e-13,
+      "standalone_read_seconds": 0.020355625000000002,
+      "standalone_cdf_seconds": 0.035961021
+    },
+    "candidate": {
+      "seconds": [
+        0.09660875,
+        0.096675416,
+        0.096697625,
+        0.096900209,
+        0.098338667,
+        0.096323709,
+        0.096216959,
+        0.09674725,
+        0.0961715,
+        0.09598975
+      ],
+      "median_seconds": 0.09664208299999999,
+      "allocation_calls": 302504,
+      "allocated_bytes": 103143722,
+      "max_scaled_error": 1.9257923103653046e-13,
+      "standalone_read_seconds": 0.021256125,
+      "standalone_cdf_seconds": 0.036500832999999996
+    },
+    "speedup": 1.437559122147647
+  },
+  {
+    "id": "100-100000-0",
+    "method": "fe",
+    "n": 100,
+    "features": 100000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.264430958,
+        0.264588541,
+        0.265618334,
+        0.26279225,
+        0.262906125,
+        0.264567541,
+        0.263882541,
+        0.2640775,
+        0.265344208,
+        0.265328625
+      ],
+      "median_seconds": 0.26449924950000003,
+      "allocation_calls": 1002777,
+      "allocated_bytes": 544726065,
+      "max_scaled_error": 3.3303945030934636e-11,
+      "standalone_read_seconds": 0.040862875,
+      "standalone_cdf_seconds": 0.0010689789999999998
+    },
+    "candidate": {
+      "seconds": [
+        0.140202875,
+        0.14333075,
+        0.144614917,
+        0.139927209,
+        0.142700292,
+        0.144436333,
+        0.147347416,
+        0.149270125,
+        0.146718542,
+        0.14603275
+      ],
+      "median_seconds": 0.144525625,
+      "allocation_calls": 302779,
+      "allocated_bytes": 183177521,
+      "max_scaled_error": 3.3303945030934636e-11,
+      "standalone_read_seconds": 0.0408305625,
+      "standalone_cdf_seconds": 0.0009917705
+    },
+    "speedup": 1.8301200877007109
+  },
+  {
+    "id": "100-100000-0",
+    "method": "dl",
+    "n": 100,
+    "features": 100000,
+    "columns": 1,
+    "baseline": {
+      "seconds": [
+        0.261816583,
+        0.26058325,
+        0.263114708,
+        0.263723084,
+        0.265706667,
+        0.261637042,
+        0.267708083,
+        0.266249583,
+        0.2673915,
+        0.266299292
+      ],
+      "median_seconds": 0.2647148755,
+      "allocation_calls": 1002777,
+      "allocated_bytes": 544726055,
+      "max_scaled_error": 3.331909058858234e-11,
+      "standalone_read_seconds": 0.0406765625,
+      "standalone_cdf_seconds": 0.001427104
+    },
+    "candidate": {
+      "seconds": [
+        0.211582833,
+        0.209188708,
+        0.210201625,
+        0.210271666,
+        0.20839125,
+        0.210045458,
+        0.213941333,
+        0.211945333,
+        0.211399959,
+        0.2106535
+      ],
+      "median_seconds": 0.21046258299999998,
+      "allocation_calls": 302779,
+      "allocated_bytes": 183177511,
+      "max_scaled_error": 3.331909058858234e-11,
+      "standalone_read_seconds": 0.0410471455,
+      "standalone_cdf_seconds": 0.001478271
+    },
+    "speedup": 1.2577764262258437
+  },
+  {
+    "id": "100-10000-0-p5",
+    "method": "ols",
+    "n": 100,
+    "features": 10000,
+    "columns": 5,
+    "baseline": {
+      "seconds": [
+        0.012014833,
+        0.011873292,
+        0.011239792,
+        0.011167292,
+        0.011621,
+        0.011376417,
+        0.012087333,
+        0.011722375,
+        0.011233416,
+        0.011242167
+      ],
+      "median_seconds": 0.0114987085,
+      "allocation_calls": 91942,
+      "allocated_bytes": 56259968,
+      "max_scaled_error": 6.647145783823958e-10,
+      "standalone_read_seconds": 0.0021079790000000003,
+      "standalone_cdf_seconds": 0.001439875
+    },
+    "candidate": {
+      "seconds": [
+        0.006524083,
+        0.006578958,
+        0.006628042,
+        0.006449292,
+        0.006547166,
+        0.006721458,
+        0.00660775,
+        0.006904834,
+        0.006671959,
+        0.006535625
+      ],
+      "median_seconds": 0.006593354,
+      "allocation_calls": 31627,
+      "allocated_bytes": 19745354,
+      "max_scaled_error": 6.647145783823958e-10,
+      "standalone_read_seconds": 0.002082271,
+      "standalone_cdf_seconds": 0.0014194165
+    },
+    "speedup": 1.7439847003512932
+  },
+  {
+    "id": "100-10000-0-p20",
+    "method": "ols",
+    "n": 100,
+    "features": 10000,
+    "columns": 20,
+    "baseline": {
+      "seconds": [
+        0.013272916,
+        0.013408917,
+        0.012907541,
+        0.013111,
+        0.013576583,
+        0.013186458,
+        0.014726125,
+        0.013208125,
+        0.013262542,
+        0.012906958
+      ],
+      "median_seconds": 0.0132353335,
+      "allocation_calls": 92014,
+      "allocated_bytes": 59587998,
+      "max_scaled_error": 2.1935505198534284e-10,
+      "standalone_read_seconds": 0.0021080624999999997,
+      "standalone_cdf_seconds": 0.0014575
+    },
+    "candidate": {
+      "seconds": [
+        0.008620958,
+        0.009262042,
+        0.009588958,
+        0.009400166,
+        0.008499667,
+        0.008739125,
+        0.008806541,
+        0.008472958,
+        0.008580958,
+        0.008630625
+      ],
+      "median_seconds": 0.008684875,
+      "allocation_calls": 31729,
+      "allocated_bytes": 21917024,
+      "max_scaled_error": 2.1935505198534284e-10,
+      "standalone_read_seconds": 0.0020879584999999997,
+      "standalone_cdf_seconds": 0.0014613335000000002
+    },
+    "speedup": 1.523952100634724
+  }
+]

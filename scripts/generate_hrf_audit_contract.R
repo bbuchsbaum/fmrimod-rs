@@ -1,0 +1,18 @@
+suppressPackageStartupMessages(library(fmrihrf))
+suppressPackageStartupMessages(library(jsonlite))
+stopifnot(normalizePath(find.package('fmrihrf'))==normalizePath('evidence/r-library/fmrihrf'))
+t<-c(-1,0,.25,1,2.7,4,6,10,17,23.999,24,25)
+hs<-list(spmg1=HRF_SPMG1,spmg2=HRF_SPMG2,spmg3=HRF_SPMG3,
+ fourier5=hrf_fourier_generator(5,24),fourier6=hrf_fourier_generator(6,24),
+ fir=hrf_fir_generator(5,24),bspline=hrf_bspline_generator(5,24),tent=hrf_tent_generator(5,24))
+cases<-lapply(names(hs),function(name){h<-hs[[name]];m<-reconstruction_matrix(h,t);coef<-seq_len(ncol(m))*.3
+ list(name=name,values=unname(m),penalty=unname(penalty_matrix(h,order=2)),coefficients=coef,reconstruction=drop(m%*%coef))})
+tp<-c(0,1,3,7,12,24);yp<-c(0,.2,1,.4,-.1,0)
+emp<-empirical_hrf(tp,yp)
+dt<-c(.3,1.3,5.7,9.1,16.2)
+source<-path.expand('~/code/fmrihrf');files<-list.files(file.path(source,'R'),full.names=TRUE)
+hashes<-as.list(tools::md5sum(files));names(hashes)<-substring(names(hashes),nchar(source)+2L)
+write_json(list(provenance=list(source=source,commit=system2('git',c('-C',source,'rev-parse','HEAD'),stdout=TRUE),source_md5=hashes,R=R.version.string),times=t,cases=cases,
+ empirical=list(times=tp,values=yp,expected=as.numeric(evaluate(emp,t))),derivative_times=dt,
+ derivatives=list(spmg1=as.numeric(deriv(HRF_SPMG1,dt)),spmg2=unname(deriv(HRF_SPMG2,dt)))),
+ 'crates/fmrihrf/tests/fixtures/hrf_audit.json',auto_unbox=TRUE,pretty=TRUE,digits=17)

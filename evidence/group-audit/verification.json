@@ -1,0 +1,16 @@
+{
+  "build_exit": 0,
+  "witness_exit": 0,
+  "witness_count": 17,
+  "source_files_verified": 93,
+  "source_copy_matches": true,
+  "rust_kernels_changed": false,
+  "rust_workspace_tests_rerun": false,
+  "performance_measured": false,
+  "limits": [
+    "No full R package check",
+    "No adapter roundtrip suite",
+    "No mixed model calibration",
+    "No advanced LDR runtime qualification"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "source": "/Users/bbuchsbaum/code/scala/scalafim",
+  "head": "ac2ec8b706fce08596a943d79f71a140aad05948",
+  "qualification": "Read-only source consultation, not Scala runtime validation. File hashes bind working-tree content, which may differ from HEAD.",
+  "files": {
+    "modules/hrf/shared/src/main/scala/scalafim/fmri/hrf/HrfDescriptor.scala": "4ce4ff35fa55c24bbb84555c74645355cf2a284492277eca1f61af0ac079cfe1",
+    "modules/hrf/shared/src/main/scala/scalafim/fmri/hrf/HrfFunctions.scala": "1a181c4ed8088e1133f2aa13ed71e3beaeef31871a8c4bd992f4fcf485ff9b1a",
+    "modules/hrf/shared/src/main/scala/scalafim/fmri/hrf/Deriv.scala": "f62cbd474be6cc423e970488640e6ecf25d7129e57bec7c4a2ac2a6e0f777390",
+    "modules/hrf/shared/src/main/scala/scalafim/fmri/hrf/Penalty.scala": "58930b50b6c41ad1da7ac1c577006069922578ec1010fc8c15f610abd08b4a42",
+    "modules/hrf/shared/src/main/scala/scalafim/fmri/hrf/HrfIdentity.scala": "f3692145d08ac50e066e4dd23656a1fd911fd0dc5348e3e92726a6a1a2bfc85e",
+    "modules/design/shared/src/main/scala/scalafim/fmri/design/contrast/ConvolvedContrastWeights.scala": "0bbad9c8ec62fc3d9772111f924a1d968dfbf6b4973090a0038dabbcc77aea3d"
+  }
+}

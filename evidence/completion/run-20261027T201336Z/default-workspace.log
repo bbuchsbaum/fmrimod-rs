@@ -1,0 +1,449 @@
+   Compiling syn v2.0.119
+   Compiling syn v3.0.9
+   Compiling bytemuck_derive v1.12.1
+   Compiling thiserror-impl v1.0.69
+   Compiling bytemuck v1.25.2
+   Compiling thiserror v1.0.69
+   Compiling serde_derive v1.0.229
+   Compiling zerocopy v0.8.63
+   Compiling zerocopy-derive v0.8.63
+   Compiling serde v1.0.229
+   Compiling safe_arch v0.7.4
+   Compiling wide v0.7.33
+   Compiling simba v0.8.1
+   Compiling nalgebra-macros v0.2.2
+   Compiling ndarray v0.16.1
+   Compiling nalgebra v0.32.6
+   Compiling ppv-lite86 v0.2.21
+   Compiling rand_chacha v0.3.1
+   Compiling rand v0.8.8
+   Compiling rand_distr v0.4.3
+   Compiling simba v0.6.0
+   Compiling log v0.4.34
+   Compiling splines v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/splines)
+   Compiling nalgebra v0.29.0
+   Compiling sprs v0.11.6
+   Compiling half v2.7.1
+   Compiling ciborium-io v0.2.2
+   Compiling anstyle v1.0.14
+   Compiling plotters-backend v0.3.7
+   Compiling clap_lex v1.1.1
+   Compiling clap_builder v4.6.7
+   Compiling statrs v0.16.1
+   Compiling plotters-svg v0.3.7
+   Compiling ciborium-ll v0.2.2
+   Compiling itertools v0.10.5
+   Compiling fmrihrf v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf)
+   Compiling is-terminal v0.4.17
+   Compiling same-file v1.0.6
+   Compiling cast v0.3.0
+   Compiling criterion-plot v0.5.0
+   Compiling walkdir v2.5.0
+   Compiling ciborium v0.2.2
+   Compiling plotters v0.3.7
+   Compiling clap v4.6.7
+   Compiling tinytemplate v1.2.1
+   Compiling anes v0.1.6
+   Compiling oorandom v11.1.5
+   Compiling criterion v0.5.1
+   Compiling diff v0.1.13
+   Compiling yansi v1.0.1
+   Compiling pretty_assertions v1.4.1
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+   Compiling fmridataset v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset)
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+   Compiling ahash v0.8.12
+   Compiling polars-error v0.35.4
+   Compiling hashbrown v0.14.5
+   Compiling enum_dispatch v0.3.13
+   Compiling polars-utils v0.35.4
+   Compiling polars-arrow v0.35.4
+   Compiling semver v1.0.28
+   Compiling futures-core v0.3.34
+   Compiling futures-sink v0.3.34
+   Compiling aho-corasick v1.1.5
+   Compiling futures-channel v0.3.34
+   Compiling rustc_version v0.4.1
+   Compiling futures-macro v0.3.34
+   Compiling slab v0.4.12
+   Compiling futures-task v0.3.34
+   Compiling futures-io v0.3.34
+   Compiling pin-project-lite v0.2.17
+   Compiling futures-util v0.3.34
+   Compiling polars-row v0.35.4
+   Compiling polars-core v0.35.4
+   Compiling rstest_macros v0.18.2
+   Compiling regex-automata v0.4.18
+   Compiling polars-ops v0.35.4
+   Compiling polars v0.35.4
+   Compiling fmridesign v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign)
+   Compiling regex v1.13.1
+   Compiling futures-executor v0.3.34
+   Compiling glob v0.3.4
+   Compiling relative-path v1.9.3
+   Compiling futures v0.3.34
+   Compiling futures-timer v3.0.4
+   Compiling rstest v0.18.2
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+   Compiling fmrimod v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod)
+   Compiling termcolor v1.4.1
+   Compiling humantime v2.4.0
+   Compiling env_logger v0.10.2
+warning: unused import: `crate::core::bspline::BSpline`
+ --> crates/splines/src/test_rust_bs_comparison.rs:4:9
+  |
+4 |     use crate::core::bspline::BSpline;
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `splines` (lib test) generated 1 warning (run `cargo fix --lib -p splines --tests` to apply 1 suggestion)
+warning: unused import: `DataFrame`
+ --> crates/fmridesign/tests/test_crossval.rs:3:24
+  |
+3 | use fmridesign::core::{DataFrame, EventModel};
+  |                        ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `EventMatrix`
+ --> crates/fmridesign/tests/test_crossval.rs:5:39
+  |
+5 | use fmridesign::events::{EventFactor, EventMatrix, EventVariable};
+  |                                       ^^^^^^^^^^^
+
+warning: unused import: `ValidationError`
+ --> crates/fmridesign/tests/test_crossval.rs:6:36
+  |
+6 | use fmridesign::types::{EventSpec, ValidationError};
+  |                                    ^^^^^^^^^^^^^^^
+
+warning: unused import: `ndarray::array`
+ --> crates/fmridesign/tests/test_crossval.rs:8:5
+  |
+8 | use ndarray::array;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> crates/fmridesign/tests/test_crossval.rs:9:5
+  |
+9 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unexpected `cfg` condition value: `dataframe`
+ --> crates/fmridesign/examples/dataframe_demo.rs:5:7
+  |
+5 | #[cfg(feature = "dataframe")]
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: expected values for `feature` are: `default`, `parallel`, `plotly`, `plotters`, `rayon`, and `visualization`
+  = help: consider adding `dataframe` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: unexpected `cfg` condition value: `dataframe`
+  --> crates/fmridesign/examples/dataframe_demo.rs:50:11
+   |
+50 | #[cfg(not(feature = "dataframe"))]
+   |           ^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: expected values for `feature` are: `default`, `parallel`, `plotly`, `plotters`, `rayon`, and `visualization`
+   = help: consider adding `dataframe` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: `fmridesign` (example "dataframe_demo") generated 2 warnings
+warning: unused import: `Array2`
+  --> crates/fmridesign/tests/test_core_parity.rs:13:30
+   |
+13 | use ndarray::{array, Array1, Array2};
+   |                              ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (test "test_crossval") generated 5 warnings (run `cargo fix --test "test_crossval"` to apply 5 suggestions)
+warning: unused import: `SamplingFrame`
+ --> crates/fmridesign/examples/test_sampling.rs:2:56
+  |
+2 | use fmridesign::sampling::{multi_block_sampling_frame, SamplingFrame};
+  |                                                        ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (test "test_core_parity") generated 1 warning (run `cargo fix --test "test_core_parity"` to apply 1 suggestion)
+warning: `fmridesign` (example "test_sampling") generated 1 warning (run `cargo fix --example "test_sampling"` to apply 1 suggestion)
+warning: unused import: `approx::assert_abs_diff_eq`
+   --> crates/fmridesign/src/core.rs:967:9
+    |
+967 |     use approx::assert_abs_diff_eq;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `crate::events::EventFactor`
+   --> crates/fmridesign/src/io/export.rs:427:9
+    |
+427 |     use crate::events::EventFactor;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `SamplingFrameExt` and `SamplingFrame`
+   --> crates/fmridesign/src/io/export.rs:428:27
+    |
+428 |     use crate::sampling::{SamplingFrame, SamplingFrameExt};
+    |                           ^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^
+
+warning: unused variable: `column_names`
+   --> crates/fmridesign/src/design_colmap.rs:821:13
+    |
+821 |         let column_names = vec!["task_A".to_string(), "drift_1".to_string()];
+    |             ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_column_names`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> crates/fmridesign/src/regressors.rs:588:13
+    |
+588 |         let mut model = EventModel::new(vec![Box::new(term)], sampling).unwrap();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `hrf`
+ --> crates/fmridesign/tests/test_formula_dsl.rs:3:34
+  |
+3 | use fmridesign::formula::{event, hrf, interaction, term, HrfSpec, Term};
+  |                                  ^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (test "test_formula_dsl") generated 1 warning (run `cargo fix --test "test_formula_dsl"` to apply 1 suggestion)
+warning: `fmridesign` (lib test) generated 5 warnings (run `cargo fix --lib -p fmridesign --tests` to apply 4 suggestions)
+warning: unused import: `ndarray::array`
+ --> crates/fmridesign/tests/test_fcontrast.rs:7:5
+  |
+7 | use ndarray::array;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `contrast1`
+   --> crates/fmridesign/tests/test_fcontrast.rs:161:9
+    |
+161 |     let contrast1 = fmridesign::contrast::contrast_weights(&spec1.into(), &term1).unwrap();
+    |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_contrast1`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `contrast2`
+   --> crates/fmridesign/tests/test_fcontrast.rs:164:9
+    |
+164 |     let contrast2 = fmridesign::contrast::contrast_weights(&spec2.into(), &term2).unwrap();
+    |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_contrast2`
+
+warning: `fmridesign` (test "test_fcontrast") generated 3 warnings (run `cargo fix --test "test_fcontrast"` to apply 1 suggestion)
+warning: unused import: `ValidationError`
+ --> crates/fmridesign/tests/test_events.rs:5:36
+  |
+5 | use fmridesign::types::{EventSpec, ValidationError};
+  |                                    ^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused imports: `Array1` and `Array2`
+ --> crates/fmridesign/tests/test_events.rs:6:22
+  |
+6 | use ndarray::{array, Array1, Array2};
+  |                      ^^^^^^  ^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> crates/fmridesign/tests/test_events.rs:7:5
+  |
+7 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `fmridesign` (test "test_events") generated 3 warnings (run `cargo fix --test "test_events"` to apply 3 suggestions)
+warning: unused variable: `multirun_event`
+   --> crates/fmridesign/examples/event_basis_demo.rs:129:9
+    |
+129 |     let multirun_event = EventBasis::new(
+    |         ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_multirun_event`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `rt_basis`
+   --> crates/fmridesign/examples/event_basis_demo.rs:228:9
+    |
+228 |     let rt_basis = EventBasis::new(
+    |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_rt_basis`
+
+warning: unused variable: `accuracy_basis`
+   --> crates/fmridesign/examples/event_basis_demo.rs:236:9
+    |
+236 |     let accuracy_basis = EventBasis::new(
+    |         ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_accuracy_basis`
+
+warning: `fmridesign` (example "event_basis_demo") generated 3 warnings
+warning: unused import: `parse_formula`
+ --> crates/fmridesign/tests/test_formula_at_operator.rs:3:27
+  |
+3 | use fmridesign::formula::{parse_formula, FormulaParser, TermParam};
+  |                           ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `fmridesign::types::ValidationError`
+ --> crates/fmridesign/tests/test_formula_at_operator.rs:4:5
+  |
+4 | use fmridesign::types::ValidationError;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `fmridesign` (test "test_formula_at_operator") generated 2 warnings (run `cargo fix --test "test_formula_at_operator"` to apply 2 suggestions)
+warning: unused import: `BaselineSpec`
+  --> crates/fmridesign/examples/vignette_02_baseline.rs:16:48
+   |
+16 |     baseline, baseline_model, block, nuisance, BaselineSpec, BasisType, InterceptType, SamplingInfo,
+   |                                                ^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (example "vignette_02_baseline") generated 1 warning (run `cargo fix --example "vignette_02_baseline"` to apply 1 suggestion)
+warning: unused import: `fmridesign::types::EventSpec`
+ --> crates/fmridesign/tests/test_convolution.rs:6:5
+  |
+6 | use fmridesign::types::EventSpec;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `event`
+  --> crates/fmridesign/tests/test_convolution.rs:75:9
+   |
+75 |     let event = EventVariable::new("impulse", onsets, values, durations).unwrap();
+   |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_event`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `hrf_kernel`
+  --> crates/fmridesign/tests/test_convolution.rs:79:9
+   |
+79 |     let hrf_kernel = t.mapv(|x: f64| {
+   |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_hrf_kernel`
+
+warning: `fmridesign` (test "test_convolution") generated 3 warnings (run `cargo fix --test "test_convolution"` to apply 1 suggestion)
+warning: unused import: `Term`
+ --> crates/fmridesign/tests/test_formula_parser.rs:3:66
+  |
+3 | use fmridesign::formula::{parse_formula, FormulaParser, HrfSpec, Term, TermParam};
+  |                                                                  ^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (test "test_formula_parser") generated 1 warning (run `cargo fix --test "test_formula_parser"` to apply 1 suggestion)
+warning: unused imports: `Contrast as ComputedContrast` and `TermInfo`
+  --> crates/fmridesign/examples/vignette_04_contrasts.rs:15:55
+   |
+15 | use fmridesign::contrast::weights::{contrast_weights, Contrast as ComputedContrast, TermInfo};
+   |                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `EventSpec`
+  --> crates/fmridesign/examples/vignette_04_contrasts.rs:22:58
+   |
+22 | use fmridesign::types::{ContrastSpec as OldContrastSpec, EventSpec};
+   |                                                          ^^^^^^^^^
+
+warning: unused import: `fmridesign::contrast::weights::TermInfo`
+ --> crates/fmridesign/tests/test_afni_integration.rs:4:5
+  |
+4 | use fmridesign::contrast::weights::TermInfo;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused imports: `oneway_contrast`, `pair_contrast`, and `unit_contrast`
+ --> crates/fmridesign/tests/test_afni_integration.rs:6:23
+  |
+6 |     contrast_weights, oneway_contrast, pair_contrast, unit_contrast, ContrastSpecEnum,
+  |                       ^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^  ^^^^^^^^^^^^^
+
+warning: `fmridesign` (example "vignette_04_contrasts") generated 2 warnings (run `cargo fix --example "vignette_04_contrasts"` to apply 1 suggestion)
+warning: `fmridesign` (test "test_afni_integration") generated 2 warnings (run `cargo fix --test "test_afni_integration"` to apply 2 suggestions)
+warning: unused import: `Array2`
+  --> crates/fmridesign/tests/test_python_parity.rs:12:30
+   |
+12 | use ndarray::{array, Array1, Array2};
+   |                              ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `fmridesign::contrast::weights::TermInfo`
+ --> crates/fmridesign/tests/test_python_parity.rs:5:5
+  |
+5 | use fmridesign::contrast::weights::TermInfo;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `uniform_sampling_frame`
+  --> crates/fmridesign/examples/vignette_01_introduction.rs:17:56
+   |
+17 | use fmridesign::sampling::{multi_block_sampling_frame, uniform_sampling_frame};
+   |                                                        ^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `fmridesign::types::EventSpec`
+  --> crates/fmridesign/examples/vignette_01_introduction.rs:18:5
+   |
+18 | use fmridesign::types::EventSpec;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: variable does not need to be mutable
+   --> crates/fmridesign/examples/vignette_01_introduction.rs:282:9
+    |
+282 |     let mut combined = fmridesign::core::DesignMatrix::from_event_model(model2);
+    |         ----^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: `fmridesign` (test "test_python_parity") generated 2 warnings (run `cargo fix --test "test_python_parity"` to apply 1 suggestion)
+warning: `fmridesign` (example "vignette_01_introduction") generated 3 warnings (run `cargo fix --example "vignette_01_introduction"` to apply 2 suggestions)
+error[E0308]: arguments to this function are incorrect
+   --> crates/fmri-group/tests/portable_execution.rs:238:17
+    |
+238 |                 near(a.q_fixed, b.q_fixed);
+    |                 ^^^^
+    |
+note: expected `f64`, found `Option<f64>`
+   --> crates/fmri-group/tests/portable_execution.rs:238:22
+    |
+238 |                 near(a.q_fixed, b.q_fixed);
+    |                      ^^^^^^^^^
+    = note: expected type `f64`
+               found enum `Option<f64>`
+note: expected `f64`, found `Option<f64>`
+   --> crates/fmri-group/tests/portable_execution.rs:238:33
+    |
+238 |                 near(a.q_fixed, b.q_fixed);
+    |                                 ^^^^^^^^^
+    = note: expected type `f64`
+               found enum `Option<f64>`
+note: function defined here
+   --> crates/fmri-group/tests/portable_execution.rs:194:4
+    |
+194 | fn near(a: f64, b: f64) {
+    |    ^^^^ ------  ------
+help: consider using `Option::expect` to unwrap the `Option<f64>` value, panicking if the value is an `Option::None`
+    |
+238 |                 near(a.q_fixed.expect("REASON"), b.q_fixed);
+    |                               +++++++++++++++++
+help: consider using `Option::expect` to unwrap the `Option<f64>` value, panicking if the value is an `Option::None`
+    |
+238 |                 near(a.q_fixed, b.q_fixed.expect("REASON"));
+    |                                          +++++++++++++++++
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `fmri-group` (test "portable_execution") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

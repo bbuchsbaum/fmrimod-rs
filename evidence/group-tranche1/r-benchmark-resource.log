@@ -1,0 +1,9 @@
+
+Attaching package: 'fmrigds'
+
+The following object is masked from 'package:stats':
+
+    contrasts
+
+       20.37 real        15.69 user         1.44 sys
+time: sysctl kern.clockrate: Operation not permitted

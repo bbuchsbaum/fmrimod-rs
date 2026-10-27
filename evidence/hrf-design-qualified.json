@@ -1,0 +1,181 @@
+[
+  {
+    "label": "libraries",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--lib",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-qualified/libraries.log",
+    "sha256": "858b354dd0f9bd79f8269bbc2a62e3e73857eeb19b6b754a33bd53bd118fad75",
+    "passed": 456,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-arp",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "arp",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-qualified/test-arp.log",
+    "sha256": "437dbd2c5993a791840301f8fc54e7d78acf058b2296618bcd77aa87bb7ab8e1",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-contracts",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "contracts",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-qualified/test-contracts.log",
+    "sha256": "80b8e88796815675c20ca5ecc612115e41d9ceb4287f4248a6b604dd7708859f",
+    "passed": 12,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-convolution_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "convolution_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-qualified/test-convolution_contract.log",
+    "sha256": "7a1f97a2b18508c3747b1557ce4d3781fc20fd4f2306e87f2eb71d8db754e6e2",
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-cross_validation",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "cross_validation",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-qualified/test-cross_validation.log",
+    "sha256": "da0cb2c81cad8a86c2d4e42edf1db9218838669d8efd10456176b6d95682a803",
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-cross_validation_spm",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "cross_validation_spm",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-qualified/test-cross_validation_spm.log",
+    "sha256": "02edd8b407c7dab3761a91062cfa870554fb3c513ffa016e281036ddaea2ea5d",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-current_spline_contract",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "current_spline_contract",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-qualified/test-current_spline_contract.log",
+    "sha256": "656861575b9e3a8fc500c98ec1753ea573b9fadac2269b72041f6519aa130127",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-design_safety",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "design_safety",
+      "--message-format=json"
+    ],
+    "exit_code": 0,
+    "log": "evidence/hrf-design-qualified/test-design_safety.log",
+    "sha256": "847f581dbce0dc745dc1803d58d328f7d86bcaaf863ec005ed16b4dd495a0ce2",
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  {
+    "label": "test-edge_case_tests",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "-j",
+      "1",
+      "--test",
+      "edge_case_tests",
+      "--message-format=json"
+    ],
+    "exit_code": 101,
+    "log": "evidence/hrf-design-qualified/test-edge_case_tests.log",
+    "sha256": "2b9fe149dd67cc8c9453f7207f33ed9b52566f46bde4f96627bcd579e7220d15",
+    "passed": 6,
+    "failed": 1,
+    "ignored": 0
+  }
+]

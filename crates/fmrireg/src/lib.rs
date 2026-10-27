@@ -592,3 +592,8 @@ impl GlsModel<fmri_noise::ArPlan> {
         Self::new(design, estimator.fit(residuals.view())?, tolerance)
     }
 }
+
+#[cfg(feature = "dataset")]
+pub mod selection;
+
+pub mod selected_estimation;

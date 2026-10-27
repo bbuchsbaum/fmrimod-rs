@@ -1,0 +1,13 @@
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+    Finished `test` profile [unoptimized] target(s) in 2.19s
+     Running tests/selected_estimation.rs (target/debug/deps/selected_estimation-bddfce590d55ba51)
+
+running 4 tests
+test nonstationary_corrected_estimates_are_errors_not_clipped ... ok
+test unsupported_geometry_bad_residuals_and_singular_correction_error ... ok
+test selected_correction_and_fgls_match_independent_dense_r ... ok
+test stationary_simulations_check_recovery_whitening_and_conditional_coverage ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.23s
+

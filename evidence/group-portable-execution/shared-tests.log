@@ -1,0 +1,12 @@
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `test` profile [unoptimized] target(s) in 0.30s
+     Running tests/shared_weights.rs (target/debug/deps/shared_weights-0c05a4678bd50f5f)
+
+running 4 tests
+test analytic_weighted_mean_and_difficult_geometry_keep_inference ... ok
+test shared_declaration_validates_and_budget_includes_retained_buffers ... ok
+test mismatching_weights_missing_rows_and_random_effects_fall_back ... ok
+test batched_common_effect_matches_general_across_units_blocks_inference_and_reuse ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

@@ -1,0 +1,32 @@
+[
+  {
+    "beta_sum": -29.878554927262293,
+    "features": 1000,
+    "median_fit_seconds": 0.000835208,
+    "n": 300,
+    "p": 8,
+    "prepare_seconds": 0.000068334,
+    "repetitions": 5,
+    "variance_sum": 134.65560160297468
+  },
+  {
+    "beta_sum": -28.307358780409242,
+    "features": 10000,
+    "median_fit_seconds": 0.007176834,
+    "n": 300,
+    "p": 8,
+    "prepare_seconds": 0.000065167,
+    "repetitions": 5,
+    "variance_sum": 1343.7763090417918
+  },
+  {
+    "beta_sum": 2.0034163937388545,
+    "features": 1000,
+    "median_fit_seconds": 0.005156084,
+    "n": 1200,
+    "p": 32,
+    "prepare_seconds": 0.001231875,
+    "repetitions": 5,
+    "variance_sum": 499.26312538665377
+  }
+]

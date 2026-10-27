@@ -1,0 +1,19 @@
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `test` profile [unoptimized] target(s) in 1.43s
+     Running tests/meta_regression.rs (target/debug/deps/meta_regression-a5827709fd1b160d)
+
+running 1 test
+
+thread 'positive_qr_complement_denominator_survives_extreme_weights' (18117082) panicked at crates/fmri-group/tests/meta_regression.rs:15:5:
+0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000032607788885620297 != 9.5
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test positive_qr_complement_denominator_survives_extreme_weights ... FAILED
+
+failures:
+
+failures:
+    positive_qr_complement_denominator_survives_extreme_weights
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 6 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `-p fmri-group --test meta_regression`

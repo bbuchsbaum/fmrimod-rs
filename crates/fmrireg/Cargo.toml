@@ -24,3 +24,19 @@ default = []
 # Uses the system framework on macOS; other targets retain the portable backend.
 accelerate = []
 dataset = ["dep:fmridataset"]
+
+[[example]]
+name = "selected_gls"
+required-features = ["dataset"]
+
+[[example]]
+name = "selected_ar1"
+required-features = ["dataset"]
+
+[[example]]
+name = "selected_arp"
+required-features = ["dataset"]
+
+[[example]]
+name = "selected_qualification"
+required-features = ["dataset"]

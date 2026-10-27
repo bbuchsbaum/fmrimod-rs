@@ -1,0 +1,75 @@
+{
+  "platform": "macOS-14.3-arm64-arm-64bit-Mach-O",
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+  "R": "R version 4.5.1 (2025-06-13)",
+  "BLAS": "/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib",
+  "rust": [
+    {
+      "beta_sum": -29.878554927262293,
+      "features": 1000,
+      "median_fit_seconds": 0.000904833,
+      "n": 300,
+      "p": 8,
+      "prepare_seconds": 0.00022875,
+      "repetitions": 5,
+      "variance_sum": 134.65560160297468
+    },
+    {
+      "beta_sum": -28.307358780409242,
+      "features": 10000,
+      "median_fit_seconds": 0.007248625,
+      "n": 300,
+      "p": 8,
+      "prepare_seconds": 6.3959e-05,
+      "repetitions": 5,
+      "variance_sum": 1343.7763090417918
+    },
+    {
+      "beta_sum": 2.0034163937388545,
+      "features": 1000,
+      "median_fit_seconds": 0.004974166,
+      "n": 1200,
+      "p": 32,
+      "prepare_seconds": 0.0012775,
+      "repetitions": 5,
+      "variance_sum": 499.26312538665377
+    }
+  ],
+  "r": [
+    {
+      "n": 300,
+      "p": 8,
+      "features": 1000,
+      "prepare_seconds": 0.0010000000000000009,
+      "median_fit_seconds": 0.0020000000000000018,
+      "beta_sum": -29.87855492726223,
+      "variance_sum": 134.65560160297485,
+      "repetitions": 5
+    },
+    {
+      "n": 300,
+      "p": 8,
+      "features": 10000,
+      "prepare_seconds": 0,
+      "median_fit_seconds": 0.019999999999999962,
+      "beta_sum": -28.30735878040938,
+      "variance_sum": 1343.7763090417905,
+      "repetitions": 5
+    },
+    {
+      "n": 1200,
+      "p": 32,
+      "features": 1000,
+      "prepare_seconds": 0,
+      "median_fit_seconds": 0.03300000000000003,
+      "beta_sum": 2.0034163937387293,
+      "variance_sum": 499.26312538665286,
+      "repetitions": 5
+    }
+  ],
+  "peak_rss_bytes": {
+    "rust": 95354880,
+    "r": 304119808
+  },
+  "checksum_comparison_passed": true
+}

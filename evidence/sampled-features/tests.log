@@ -1,0 +1,120 @@
+   Compiling fmrihrf v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf)
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:16:175
+   |
+16 | ...p(){FeatureGrid::Times(&times[r])}else{FeatureGrid::Uniform{start:.1,step:.2}},mask:if case["masked"].as_bool().unwrap(){Some(masks[r]...
+   |                                                                      ^^
+   |
+help: must have an integer part
+   |
+16 |   let runs:Vec<_>=(0..2).map(|r|FeatureRun{values:values[r].view(),grid:if case["irregular"].as_bool().unwrap(){FeatureGrid::Times(&times[r])}else{FeatureGrid::Uniform{start:0.1,step:.2}},mask:if case["masked"].as_bool().unwrap(){Some(masks[r].as_slice())}else{None}}).collect();
+   |                                                                                                                                                                               +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:16:183
+   |
+16 | ...ureGrid::Times(&times[r])}else{FeatureGrid::Uniform{start:.1,step:.2}},mask:if case["masked"].as_bool().unwrap(){Some(masks[r].as_slic...
+   |                                                                      ^^
+   |
+help: must have an integer part
+   |
+16 |   let runs:Vec<_>=(0..2).map(|r|FeatureRun{values:values[r].view(),grid:if case["irregular"].as_bool().unwrap(){FeatureGrid::Times(&times[r])}else{FeatureGrid::Uniform{start:.1,step:0.2}},mask:if case["masked"].as_bool().unwrap(){Some(masks[r].as_slice())}else{None}}).collect();
+   |                                                                                                                                                                                       +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:30:37
+   |
+30 |  let frame=SamplingFrame::uniform(9,.25,.01).unwrap();
+   |                                     ^^^
+   |
+help: must have an integer part
+   |
+30 |  let frame=SamplingFrame::uniform(9,0.25,.01).unwrap();
+   |                                     +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:30:41
+   |
+30 |  let frame=SamplingFrame::uniform(9,.25,.01).unwrap();
+   |                                         ^^^
+   |
+help: must have an integer part
+   |
+30 |  let frame=SamplingFrame::uniform(9,.25,0.01).unwrap();
+   |                                         +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:34:32
+   |
+34 |   for i in 0..9{let t=i as f64*.25;let expected=if t<=1.{t*t}else{2.*t-1.};assert!((actual[(i,0)]-expected).abs()<1e-10);}
+   |                                ^^^
+   |
+help: must have an integer part
+   |
+34 |   for i in 0..9{let t=i as f64*0.25;let expected=if t<=1.{t*t}else{2.*t-1.};assert!((actual[(i,0)]-expected).abs()<1e-10);}
+   |                                +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:40:82
+   |
+40 |  let run=FeatureRun{values:values.view(),grid:FeatureGrid::Uniform{start:0.,step:.5},mask:Some(&mask)};
+   |                                                                                  ^^
+   |
+help: must have an integer part
+   |
+40 |  let run=FeatureRun{values:values.view(),grid:FeatureGrid::Uniform{start:0.,step:0.5},mask:Some(&mask)};
+   |                                                                                  +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:44:38
+   |
+44 |  let frame=SamplingFrame::uniform(20,.25,.025).unwrap();
+   |                                      ^^^
+   |
+help: must have an integer part
+   |
+44 |  let frame=SamplingFrame::uniform(20,0.25,.025).unwrap();
+   |                                      +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:44:42
+   |
+44 |  let frame=SamplingFrame::uniform(20,.25,.025).unwrap();
+   |                                          ^^^^
+   |
+help: must have an integer part
+   |
+44 |  let frame=SamplingFrame::uniform(20,.25,0.025).unwrap();
+   |                                          +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:48:59
+   |
+48 |  let frame2=SamplingFrame::new(vec![20,20],vec![.25],None,.025).unwrap();let response=all.evaluate(&frame2,&Ramp,ConvolutionMethod::Auto)...
+   |                                                           ^^^^
+   |
+help: must have an integer part
+   |
+48 |  let frame2=SamplingFrame::new(vec![20,20],vec![.25],None,0.025).unwrap();let response=all.evaluate(&frame2,&Ramp,ConvolutionMethod::Auto).unwrap();
+   |                                                           +
+
+error: float literals must have an integer part
+  --> crates/fmrihrf/tests/sampled_features.rs:55:92
+   |
+55 |  let run=FeatureRun{values:data.slice(s![..,..;2]),grid:FeatureGrid::Uniform{start:0.,step:.5},mask:None};
+   |                                                                                            ^^
+   |
+help: must have an integer part
+   |
+55 |  let run=FeatureRun{values:data.slice(s![..,..;2]),grid:FeatureGrid::Uniform{start:0.,step:0.5},mask:None};
+   |                                                                                            +
+
+error: no rules expected `.`
+  --> crates/fmrihrf/tests/sampled_features.rs:48:49
+   |
+48 |  let frame2=SamplingFrame::new(vec![20,20],vec![.25],None,.025).unwrap();let response=all.evaluate(&frame2,&Ramp,ConvolutionMethod::Auto)...
+   |                                                 ^ no rules expected this token in macro call
+   |
+   = note: while trying to match end of macro
+
+error: could not compile `fmrihrf` (test "sampled_features") due to 11 previous errors

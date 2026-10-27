@@ -1,0 +1,31 @@
+{
+  "allocated_bytes": 725521977,
+  "allocation_calls": 905459,
+  "allocation_checksum": 5559425486000052104,
+  "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183910Z/input-100-100000-5",
+  "factorizations": 100000,
+  "first_fit_seconds": 0.618509958,
+  "materialization_read_budget_bytes": 268435456,
+  "materialization_seconds": 0.0,
+  "numeric_working_bytes": 2081760,
+  "open_checksum_seconds": 0.386680709,
+  "peak_rss_bytes": 40828928,
+  "preparation_seconds": 0.000032667,
+  "shape": [
+    100,
+    100000
+  ],
+  "shared_features": 0,
+  "sink_checksum": 5559425486000052104,
+  "sink_count": 1600000,
+  "sink_sum": 57124853.64581739,
+  "storage": "disk",
+  "strategy": "general",
+  "warm_fit_seconds": [
+    0.617212208,
+    0.607459083,
+    0.609103542,
+    0.614686834,
+    0.620053542
+  ]
+}

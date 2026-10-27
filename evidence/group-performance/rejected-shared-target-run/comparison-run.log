@@ -1,0 +1,18 @@
+baseline round 1 complete
+candidate round 2 complete
+candidate round 3 complete
+baseline round 4 complete
+20-1000-0 ols: 0.99x
+20-1000-0 fe: 1.01x
+20-1000-0 dl: 0.99x
+100-10000-0 ols: 0.99x
+100-10000-0 fe: 1.00x
+100-10000-0 dl: 1.00x
+100-10000-1 ols: 0.97x
+100-10000-1 fe: 1.00x
+100-10000-1 dl: 1.00x
+100-100000-0 ols: 1.29x
+100-100000-0 fe: 1.06x
+100-100000-0 dl: 1.01x
+100-10000-0-p5 ols: 1.10x
+100-10000-0-p20 ols: 1.04x

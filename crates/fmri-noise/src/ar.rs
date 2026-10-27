@@ -239,7 +239,7 @@ impl ArPlan {
 }
 
 // Schur step-down recursion: all reflection coefficients must lie inside (-1,1).
-fn stationary(phi: &[f64]) -> Result<()> {
+pub(crate) fn stationary(phi: &[f64]) -> Result<()> {
     if phi.iter().any(|x| !x.is_finite()) {
         return Err(NoiseError::Invalid("nonfinite AR coefficients"));
     }
@@ -257,7 +257,7 @@ fn stationary(phi: &[f64]) -> Result<()> {
 }
 
 // Solve stationary Yule-Walker equations with unit innovation variance.
-fn unit_acvf(phi: &[f64]) -> Result<Vec<f64>> {
+pub(crate) fn unit_acvf(phi: &[f64]) -> Result<Vec<f64>> {
     let p = phi.len();
     let mut a = DMatrix::identity(p + 1, p + 1);
     for h in 0..=p {

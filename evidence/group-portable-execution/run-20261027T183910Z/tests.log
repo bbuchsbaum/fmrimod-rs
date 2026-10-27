@@ -1,0 +1,265 @@
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+   Compiling fmrimod v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod)
+    Finished `test` profile [unoptimized] target(s) in 3.12s
+     Running unittests src/lib.rs (target/debug/deps/fmri_group-af2cab7091054fb9)
+
+running 2 tests
+test meta_regression::numerical_tests::analytic_derivative_matches_independent_finite_difference ... ok
+test meta_regression::numerical_tests::unequal_pairs_derivative_denominator_and_column_scaling ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/group.rs (target/debug/deps/group-3b4c4d76564a22df)
+
+running 16 tests
+test dataset_rejects_permuted_variance_axis ... ok
+test fdr_matches_base_r_and_preserves_missing_family_members ... ok
+test first_level_bridge_rejects_different_estimands_and_feature_identity ... ok
+test identity_validation_and_variance_requirement ... ok
+test budget_and_sink_failure_are_enforced ... ok
+test intercept_failure_policy_and_budget_are_feature_local ... ok
+test unit_invariance_dl_boundary_and_valid_zero ... ok
+test f32_source_and_invalid_variance_policy ... ok
+test retained_zero_rank_is_not_reported_as_too_few_observations ... ok
+test first_level_to_group_and_explicit_provenance ... ok
+test centered_intercept_matches_decimal_across_offsets_units_and_contrasts ... ok
+test missingness_rank_and_constant_feature_are_local ... ok
+test prepared_ols_reuses_geometry_but_rereads_data_and_feature_axes ... ok
+test independent_r_oracles_and_block_invariance ... ok
+test bounded_pattern_cache_and_row_permutation ... ok
+test tiled_meta_matches_decimal_and_preserves_zero_tau_bits ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/meta_regression.rs (target/debug/deps/meta_regression-64ef8ed45a483d0a)
+
+running 8 tests
+test feature_local_rank_missingness_and_nonconvergence ... ok
+test extreme_weight_near_zero_and_large_statistics_are_distinguished ... ok
+test zero_heterogeneity_constant_effects_and_negative_contrasts ... ok
+test prepared_reads_new_data_and_enforces_binding_budget_and_sink ... ok
+test requested_outputs_are_real_omissions_and_joint_matches_marginal ... ok
+test analytic_equal_variance_pm_large_offset_and_row_order ... ok
+test positive_qr_complement_denominator_survives_extreme_weights ... ok
+test fresh_metafor_covariance_and_inference_oracles ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/portable.rs (target/debug/deps/portable-782abbf476d73e3d)
+
+running 8 tests
+test writer_rejects_wrong_shape_and_budget_before_payload_write ... ok
+test finish_never_overwrites_an_appearing_manifest ... ok
+test volume_space_round_trip_preserves_support_order ... ok
+test effects_only_round_trip_and_incomplete_is_not_openable ... ok
+test reader_rejects_unknown_version_truncation_and_manifest_over_budget ... ok
+test estimated_df_round_trip_and_metadata_preflight ... ok
+test variance_checksum_and_block_order_are_enforced ... ok
+test reader_rejects_unknown_nested_semantics_and_invalid_identity_before_payload_read ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/portable_execution.rs (target/debug/deps/portable_execution-2e1f0c925ec7d0ab)
+
+running 1 test
+test portable_disk_and_materialized_memory_match_across_methods_blocks_and_shared_weights ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/shared_weights.rs (target/debug/deps/shared_weights-b36911536e06be95)
+
+running 4 tests
+test analytic_weighted_mean_and_difficult_geometry_keep_inference ... ok
+test shared_declaration_validates_and_budget_includes_retained_buffers ... ok
+test mismatching_weights_missing_rows_and_random_effects_fall_back ... ok
+test batched_common_effect_matches_general_across_units_blocks_inference_and_reuse ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests examples/group_benchmark.rs (target/debug/examples/group_benchmark-2fc2d4cf0b2902c7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/group_pipeline.rs (target/debug/examples/group_pipeline-ac27e934f8c0e90d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/meta_regression_benchmark.rs (target/debug/examples/meta_regression_benchmark-cad6b1a1a8fb62f2)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/portable_execution_benchmark.rs (target/debug/examples/portable_execution_benchmark-0e5cb5a9fc812567)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/portable_first_level.rs (target/debug/examples/portable_first_level-935f4b587c815aba)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/weighted_group.rs (target/debug/examples/weighted_group-f95dd4a70f51acca)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/fmridataset-5a7df92094abeffc)
+
+running 1 test
+test sampling::tests::sampling_frame_samples ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/file_source.rs (target/debug/deps/file_source-4ef0683ddbd3f6cd)
+
+running 5 tests
+test feature_major_file_reads_raw_little_endian_f64_into_row_major_blocks ... ok
+test file_source_views_preserve_strides_repetitions_and_order ... ok
+test file_source_budget_includes_scratch_and_precedes_revalidation_io ... ok
+test file_source_rejects_short_extra_nonregular_and_overflowing_inputs ... ok
+test contiguous_feature_block_crosses_scratch_boundaries_without_reordering ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/frame_contracts.rs (target/debug/deps/frame_contracts-545e189eb4810cd4)
+
+running 13 tests
+test malformed_reader_estimates_are_rejected_without_reading ... ok
+test budget_is_checked_before_reader_invocation_and_f32_is_preserved ... ok
+test diagnostic_serialization_preserves_nonfinite_and_missing_float_bits ... ok
+test sampling_utility_rejects_invalid_finite_domains_and_overflow ... ok
+test affine_validation_is_independent_of_coordinate_unit_scale ... ok
+test equal_shapes_and_ids_do_not_imply_equal_spaces ... ok
+test duplicate_source_gathers_are_valid_but_frame_duplicates_are_not ... ok
+test axis_blocks_and_assay_annotations_survive_views ... ok
+test upstream_readme_values_ids_and_space_are_aligned ... ok
+test empty_axes_preserve_shape_and_dtype_without_budget ... ok
+test constructors_reject_ambiguous_alignment_and_bad_annotations ... ok
+test nested_views_equal_composed_view_and_serialize_visible_axes ... ok
+test arbitrary_source_gathers_match_independent_coordinate_oracle ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/nifti.rs (target/debug/deps/nifti-706dfb0f41a45e84)
+
+running 7 tests
+test unused_nan_calibration_metadata_does_not_invalidate_an_unchanged_source ... ok
+test budget_is_checked_before_truncated_values_are_read ... ok
+test metadata_mutation_including_scaling_invalidates_the_source ... ok
+test qform_accepts_standard_rotation_reflection_and_near_unit_quaternions ... ok
+test invalid_geometry_is_rejected_before_values ... ok
+test streamed_reader_preserves_order_scaling_and_gzip_parity ... ok
+test typed_float_frames_match_scalar_provider_and_analytic_scaling ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/frame_view.rs (target/debug/examples/frame_view-df7fcb59caee5455)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/fmrimod-c84cd5729342ff98)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/analysis.rs (target/debug/deps/analysis-a368df74b298a45d)
+
+running 4 tests
+test policy_and_binding_errors_are_preflighted ... ok
+test inspect_compiles_named_outputs_without_voxel_reads ... ok
+test resident_updates_reuse_exact_models_and_preserve_failed_updates ... ok
+test file_fallback_budgets_match_executor_and_low_level_outputs ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/cohort.rs (target/debug/deps/cohort-a015c6b7aa3ba75e)
+
+running 2 tests
+test estimates_only_bridge_and_errors_keep_sessions_usable ... ok
+test ordered_workers_and_exact_budget_match_analytic_group ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/group.rs (target/debug/deps/group-3fcfe15d6393f4db)
+
+running 1 test
+test group_facade_preserves_dataset_identity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/ingress.rs (target/debug/deps/ingress-5b14ccb9f01d6c6d)
+
+running 2 tests
+test file_batches_release_data_reuse_models_and_reduce_workers_to_budget ... ok
+test bounded_loading_is_ordered_and_preflights_before_reads ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/outputs.rs (target/debug/deps/outputs-f4a0b538582c3339)
+
+running 7 tests
+test rejects_bad_design_names_and_weights_before_data_read ... ok
+test capability_requires_exact_identity_and_does_not_promote_marginal_to_joint ... ok
+test rejects_duplicate_consumers_and_mismatched_subject_or_model ... ok
+test custom_whitening_must_be_explicitly_versioned_for_durable_reuse ... ok
+test same_id_requires_same_scientific_definition_and_resolved_weights ... ok
+test compiles_union_preserves_consumer_order_and_maximum_uncertainty ... ok
+test compiled_requirement_prepares_and_runs_on_ols ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/pipeline.rs (target/debug/deps/pipeline-a28285259423825c)
+
+running 1 test
+test fractional_multirun_multibasis_design_to_streamed_gls_and_contrasts ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/session.rs (target/debug/deps/session-48e7e1ee08917c82)
+
+running 12 tests
+test from_f64_accepts_nonstandard_layout_without_reinterpreting_values ... ok
+test from_f64_compacts_a_sliced_owned_backing_array ... ok
+test reader_load_moves_its_buffer_without_a_second_full_copy ... ok
+test resident_session_reuses_models_and_matches_blocking ... ok
+test failed_budget_keeps_cached_model_usable ... ok
+test model_spec_clone_does_not_retain_hidden_design_backing ... ok
+test detached_state_checks_source_identity_and_preserves_retained_model ... ok
+test preparation_byte_math_reports_overflow_before_model_allocation ... ok
+test fixed_ar_settings_and_estimated_tolerance_participate_in_cache_identity ... ok
+test output_budget_and_sink_failure_do_not_execute_or_poison_cache ... ok
+test explicit_retention_preserves_outputs_budgets_and_invalidation ... ok
+test estimated_ar_design_change_matches_fresh_session ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests examples/cohort_latency.rs (target/debug/examples/cohort_latency-b8e7c330ddba2030)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/complete_first_level.rs (target/debug/examples/complete_first_level-eaf8b951c856eed8)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/first_level.rs (target/debug/examples/first_level-634995d6032eaa3e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

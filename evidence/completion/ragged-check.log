@@ -1,0 +1,21 @@
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+error[E0609]: no field `objective` on type `RepeatedDiagnostics`
+   --> crates/fmri-group/tests/repeated_numerics.rs:504:38
+    |
+504 |         (fitted.diagnostics.unwrap().objective - reference["objective"].as_f64().unwrap()).abs()
+    |                                      ^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `evaluations`, `projected_gradient`, `start_objectives`, `eta_boundary`, `g_rank` ... and 6 others
+
+error[E0609]: no field `objective` on type `RepeatedDiagnostics`
+   --> crates/fmri-group/tests/repeated_numerics.rs:517:38
+    |
+517 |         (fitted.diagnostics.unwrap().objective - f["ri_objective"].as_f64().unwrap()).abs() < 1e-9
+    |                                      ^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `evaluations`, `projected_gradient`, `start_objectives`, `eta_boundary`, `g_rank` ... and 6 others
+
+For more information about this error, try `rustc --explain E0609`.
+error: could not compile `fmri-group` (test "repeated_numerics") due to 2 previous errors

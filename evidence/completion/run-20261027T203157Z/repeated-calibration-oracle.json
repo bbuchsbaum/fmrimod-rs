@@ -1,0 +1,5 @@
+{
+  "oracle": "independent dense Cholesky/QR at each reported covariance; first 10 replicates per case",
+  "comparisons": 80,
+  "max_normalized_error": 1.5051147464294557e-14
+}

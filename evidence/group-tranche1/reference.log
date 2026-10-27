@@ -1,0 +1,8 @@
+
+Attaching package: 'fmrigds'
+
+The following object is masked from 'package:stats':
+
+    contrasts
+
+PASS: base-R QR, metafor FE/DL, native fmrigds FE/DL and global BH/BY fixture

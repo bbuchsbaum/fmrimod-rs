@@ -1,0 +1,3113 @@
+{
+  "started": "2026-10-27T20:35:34.107505+00:00",
+  "platform": "macOS-14.3-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "git_head": "0febf8cb942de33e483ccc7dd80fb6b6e1d167e1",
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+  "commands": [
+    {
+      "name": "format",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8460901670041494,
+      "log": "evidence/completion/run-20261027T203534Z/format.log",
+      "free_bytes_before": 1643134976,
+      "free_bytes_after": 1642926080,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "name": "numerical-clippy",
+      "command": [
+        "cargo",
+        "clippy",
+        "-p",
+        "fmri-group",
+        "-p",
+        "fmri-noise",
+        "-p",
+        "fmrireg",
+        "--lib",
+        "--all-features",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3047833339951467,
+      "log": "evidence/completion/run-20261027T203534Z/numerical-clippy.log",
+      "free_bytes_before": 1642876928,
+      "free_bytes_after": 1642876928,
+      "log_sha256": "1b06c206522a9ad6653edd56b1bb9e19254f4cd592480fbc8b10cbddc2b994e9",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "name": "repeated-example",
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "fmri-group",
+        "--example",
+        "repeated_group",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "seconds": 1.1831269999966025,
+      "log": "evidence/completion/run-20261027T203534Z/repeated-example.log",
+      "free_bytes_before": 1642876928,
+      "free_bytes_after": 1639096320,
+      "log_sha256": "23fc1bb1dce1769598ffb08570af83b835cfd43cadf0061f06aba9dc0e1f5c70",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "name": "ar-calibration",
+      "command": [
+        "cargo",
+        "run",
+        "--release",
+        "-p",
+        "fmrireg",
+        "--example",
+        "completion_ar_calibration",
+        "--locked",
+        "--",
+        "500"
+      ],
+      "exit_code": 0,
+      "seconds": 9.325713625003118,
+      "log": "evidence/completion/run-20261027T203534Z/ar-calibration.log",
+      "free_bytes_before": 1639092224,
+      "free_bytes_after": 1636597760,
+      "log_sha256": "62f7c089f687c6389c32c579df86cf08d320a52127eed55fd72966ffd4d8bc24",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "name": "group-calibration",
+      "command": [
+        "cargo",
+        "run",
+        "--release",
+        "-p",
+        "fmri-group",
+        "--example",
+        "completion_group_calibration",
+        "--locked",
+        "--",
+        "500"
+      ],
+      "exit_code": 0,
+      "seconds": 11.611940915987361,
+      "log": "evidence/completion/run-20261027T203534Z/group-calibration.log",
+      "free_bytes_before": 1636597760,
+      "free_bytes_after": 1634476032,
+      "log_sha256": "d894c9490e64242ac1629e1917d64158da8552ae96d546a275217514aceea59b",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "name": "repeated-calibration",
+      "command": [
+        "cargo",
+        "run",
+        "--release",
+        "-p",
+        "fmri-group",
+        "--example",
+        "repeated_calibration",
+        "--locked",
+        "--",
+        "1000"
+      ],
+      "exit_code": 0,
+      "seconds": 40.090933291998226,
+      "log": "evidence/completion/run-20261027T203534Z/repeated-calibration.log",
+      "free_bytes_before": 1634467840,
+      "free_bytes_after": 1625501696,
+      "log_sha256": "257c6885785e92a2bff1707780f6459687ee9695eefcf8576a2cc9a2238c9924",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "name": "permutation-calibration",
+      "command": [
+        "cargo",
+        "run",
+        "--release",
+        "-p",
+        "fmri-group",
+        "--example",
+        "permutation_calibration",
+        "--locked",
+        "--",
+        "200"
+      ],
+      "exit_code": 0,
+      "seconds": 5.657634250004776,
+      "log": "evidence/completion/run-20261027T203534Z/permutation-calibration.log",
+      "free_bytes_before": 1625501696,
+      "free_bytes_after": 1620303872,
+      "log_sha256": "5084ab2e75358d730676903dd6a8bd3cedfda59e2fa54878c412eec1fe34d35d",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "name": "group-metafor-oracle",
+      "command": [
+        "Rscript",
+        "--vanilla",
+        "scripts/completion_calibration.R"
+      ],
+      "exit_code": 0,
+      "seconds": 7.275303166999947,
+      "log": "evidence/completion/run-20261027T203534Z/group-metafor-oracle.log",
+      "free_bytes_before": 1620303872,
+      "free_bytes_after": 1635356672,
+      "log_sha256": "50727cfc95e8f60764bb3bfac251034e385e6a461aa602ecb2a1c543f98424c3",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "name": "repeated-dense-oracle",
+      "command": [
+        "Rscript",
+        "--vanilla",
+        "scripts/repeated_calibration.R"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3843679170240648,
+      "log": "evidence/completion/run-20261027T203534Z/repeated-dense-oracle.log",
+      "free_bytes_before": 1635356672,
+      "free_bytes_after": 1635319808,
+      "log_sha256": "2b5cc53e56c994756613f15b636d8049d13384aca10c220151aac5b623a3a778",
+      "tests": {
+        "passed": 0,
+        "failed": 0,
+        "ignored": 0
+      }
+    }
+  ],
+  "sources_before": {
+    "Cargo.lock": "d7beddd96ba50b0153a2d43d74d0391b1b9e6de57341d7f286c57dca748bb8ed",
+    "Cargo.toml": "f44dfed3192a1bc61ee3c551662bed6c1b59d603be0d191ac89530762c0b6bfb",
+    "crates/fmri-group/Cargo.toml": "d506c0961e5da07731ce26914c846170c1e98d81317514a320c114eb8c39a7a9",
+    "crates/fmri-group/benchmarks/reference.R": "f1dcaf12bf6500730cad55ca739802272a866fc7cb857deccf49fdab1760faca",
+    "crates/fmri-group/benchmarks/run.py": "1d8f128c60bddd0f084eece9cf214c38666f61ea4744d1ff470b4f7df4f7e2ca",
+    "crates/fmri-group/benchmarks/summarize.py": "7e257ce3300904f25e02eb9cd98d0085e77467ae491a37b8d00ac64ee3ecfc05",
+    "crates/fmri-group/benchmarks/verify.py": "984f3d4d15c98a64c0c89a5ff69a2ec405c6958bd1fb01d8d14ec2599eb52756",
+    "crates/fmri-group/examples/completion_group_calibration.rs": "44dd937cc1063fa9bf70ad4bfa4ff3bb22f28e348f5c74e020c13c6301dd9194",
+    "crates/fmri-group/examples/group_benchmark.rs": "7f40b26ac03d84fbc06c5a485d5285ee0019fe8f7ca40bb55ae62771e59a05a8",
+    "crates/fmri-group/examples/group_pipeline.rs": "b7bbd455a6b563e13b9b001f42f66e4c2f2d39f37462f2923fc697fde654c8dd",
+    "crates/fmri-group/examples/meta_regression_benchmark.rs": "735fa65f07c5862572c7392580e1ac614ea8a70ce419544608a7a0f6f714f9b8",
+    "crates/fmri-group/examples/permutation_calibration.rs": "efdb52cc4c0f26a7aa7c7ab531815fb53f6e72f188bbe5a06c00d753898fa736",
+    "crates/fmri-group/examples/portable_execution_benchmark.rs": "7c667a4d91453a5759402b15379ef5f0be7a4c9e6ef37c7bca351615e9a1e35c",
+    "crates/fmri-group/examples/portable_first_level.rs": "6b2a2b48e4f45fb97595e558c2185fd675ef593219546186920730213bc09d86",
+    "crates/fmri-group/examples/repeated_calibration.rs": "61948c749e7efd1b2ae05e136909fbdacdbf495cab2753014e37e7f335cfb9a3",
+    "crates/fmri-group/examples/repeated_group.rs": "40e954f681f49a149429a71795c93fabdde09350c9d0e04823a69de3677fab84",
+    "crates/fmri-group/examples/weighted_group.rs": "323bc2c3aba264c684f28f7e2f6096e5f68ff9d595e2d6e1e883a690894a1841",
+    "crates/fmri-group/src/cohort.rs": "38731b3bc106de4d5d5b14ab4ef3a07acb5bc2eaf250c81a91f4b398bdee03f1",
+    "crates/fmri-group/src/fit.rs": "5d5839f4bf58c0a86ad4ea094f74c1c980257ed480f71b8f8091b3b2ec3bb632",
+    "crates/fmri-group/src/influence.rs": "4018c5ef74793eb4786298a463729ca2af9535ae68fc7943f2d35a97b5bcf07d",
+    "crates/fmri-group/src/lib.rs": "1be5b723435a9a66d8fb205e9b3950cfe27ea877c3e813fbec2fdf5578eb12ff",
+    "crates/fmri-group/src/meta_regression.rs": "29d30199481005d95eaf17b887d8a799d45412a73361e18fc30b13899f3f60ed",
+    "crates/fmri-group/src/multiplicity.rs": "11b98409785b465b8838a71bed99c50b8e495a0b9da14d6816275b194e511426",
+    "crates/fmri-group/src/portable.rs": "d6466c38547d2e213378a858f455892e5256f54afd2ddfb8c69f90d98250345e",
+    "crates/fmri-group/src/repeated.rs": "e3a26f8a0b5eef993edcd39d8aa8fd82a0cb815f7606814e00e8fdd6b2ad7298",
+    "crates/fmri-group/src/resampling.rs": "fa742d40bfaf1d9d023c9b11d6810bcf32265c811027c157bf41650d22fc0175",
+    "crates/fmri-group/tests/common/mod.rs": "a1cfb3b3928b6d29e3b97adbee7b9cebf5ca07f925a46471fc5526bcb882b235",
+    "crates/fmri-group/tests/fixtures/influence_reference.json": "0343ee733c4b9a5157d405921b2c02411147d357f4cbd89345893d982170b22a",
+    "crates/fmri-group/tests/fixtures/repeated_reference.json": "89d68aa16d349ea739584125c7c6985a01afb1d4eff6daa56c6667cd282d5218",
+    "crates/fmri-group/tests/fixtures/resampling_reference.json": "76fff5d768e545d00b61a44b60e895173acfc8d34cd420cec5a1eb98876bd1c5",
+    "crates/fmri-group/tests/group.rs": "729bff74bf1965fc7ab0de2d7a85fc22b0027a98e8e406b7b9ef072f8ee5cdfe",
+    "crates/fmri-group/tests/influence.rs": "935da3df29abe84d4cf60308f4e02994a98c4909f2bfe93a72ce6c4e1345aa84",
+    "crates/fmri-group/tests/meta_reference.json": "4773e5ec0e3bf7c819af4907e508f1cb72dc541da4913b36825a5e1d94b86b14",
+    "crates/fmri-group/tests/meta_regression.rs": "3bbf5452485707741d720bfa5a848ab9872b6d7e76b5adfd3e373e571c49226d",
+    "crates/fmri-group/tests/performance_reference.json": "40fe46c1d6ff8865c6a475a1551f64398e78eb6df7cc5333ff653de73b78812d",
+    "crates/fmri-group/tests/portable.rs": "6f0bd11e3631b6d0ad82b2634ece336066f332b9c494ac4509d66cdb8324587a",
+    "crates/fmri-group/tests/portable_execution.rs": "19a9baa83898d2c783879890a551f42f48a10b6d455dd39d634f2249d0ba5a39",
+    "crates/fmri-group/tests/reference.json": "b7629aa7d59286eaf3a7e1528b149372b72bb53588b82b9bcd83c4c21061997f",
+    "crates/fmri-group/tests/repeated.rs": "c79b24182d9cbbdb66fdd3c0cad0914281cff7636b72c409ff798066160e8d95",
+    "crates/fmri-group/tests/repeated_numerics.rs": "99a4411d4bdccfd7ccfafa810701f64ad80f694a4b9b1071c1b7d980d53ea112",
+    "crates/fmri-group/tests/resampling.rs": "a3033782311add6e24cf34eb608a8ad23a81e7e00132002542a5e92c76c1b162",
+    "crates/fmri-group/tests/shared_weights.rs": "06cff2d654260640c2f0d15d62843f9f4a5f3867e12e9756aab8586a9541c337",
+    "crates/fmri-noise/Cargo.toml": "3375f87390276d641f0c5c1175891858984fd83a63511cc0b4ddd3f4410c0455",
+    "crates/fmri-noise/src/ar.rs": "a19aeb0af7dfcc4d405a4c2e6de0ce8816b136c6a8660c47c05a45af2d8a90ab",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/extensions.rs": "619b9b0ad0ca37a7f1a7a36718c915a82cea2cd273af2a585626f676a2266dd7",
+    "crates/fmri-noise/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmri-noise/src/lib.rs": "ac709295b12d9cc2bd2f63c87fa62aa12fc89d3e6cdc17514c5451166101f52f",
+    "crates/fmri-noise/src/selected.rs": "e0bb8c6b9b4eaadba1a4f5fc455f2165bf670132d263770d8c656ea210935edb",
+    "crates/fmri-noise/src/selected_estimation.rs": "1f1ac197cb6c0fd1a6dd8bb5f846b003609f4b0f6b3015dc33e59a72516e3543",
+    "crates/fmri-noise/tests/ar_small_orders.rs": "d6e85f24dddbf0cadc5c0f9838391a5335341b9081cb15b4efa05efa958be1aa",
+    "crates/fmri-noise/tests/arp.rs": "43f0be30503523f308ccb13b71cb17644d33712d57d3e0e3fb66f7a85fcfc7c4",
+    "crates/fmri-noise/tests/contracts.rs": "9e69d584408c9a3e103d384332ad69de0af1e5502cde26fffcd430a0e00929c1",
+    "crates/fmri-noise/tests/extensions.rs": "4c32407ea86eddb994a08052db67ff81c36fd790211a55c8bffa16652d65141a",
+    "crates/fmri-noise/tests/fixtures/arp.json": "7172e6ef880034c9fcfb3254b5da619f49582a34dd148e7677810e4d304f4676",
+    "crates/fmri-noise/tests/fixtures/correction.json": "42eea3b43f03eb37210ff4f4fd54a79ab74bfa8fa0d542f831a26adc2c393e54",
+    "crates/fmri-noise/tests/fixtures/estimation.json": "ba53dc4cdd79e38a62762fe32da5b55bae0295871a16c6d5306f06c7ad6826c4",
+    "crates/fmri-noise/tests/fixtures/noise_extensions.json": "56fb929bf45ba339b821539b898fe51c5d430a5449874bc831795bd4b80a7a2d",
+    "crates/fmri-noise/tests/whitening_into.rs": "44a50aadaedbddc4eba7450592117cac1ccb795a756d7b978961e2721cca122e",
+    "crates/fmridataset/Cargo.toml": "03700f3678d35afb0db00bfd29a6c968f7049f371919baecdd75515086205a34",
+    "crates/fmridataset/examples/frame_view.rs": "a5e19dcc0b06a1b2e26261eb86fdf89f90cf4fdd7a6452b8783e7c7c8879f33e",
+    "crates/fmridataset/src/array.rs": "cff144f88c3cc7e09950cbf1035a035fc64c9845b6a0f2e9ba74bf48c4cdde89",
+    "crates/fmridataset/src/axis.rs": "9f623816c403baeb9432f8c6a944895536b81af5a414518333e3bb91fe0f185a",
+    "crates/fmridataset/src/errors.rs": "c03e6a6c71604f116f1ee0a338cd2da5e2ee0c18b303a843891d0e7e443c4c91",
+    "crates/fmridataset/src/frame.rs": "7dfcbfb04b54912760203c75238731f1b1b8b4154a2b6753b3a86ac9a7e96b52",
+    "crates/fmridataset/src/lib.rs": "618697e8a4cbcd624ffb1559a2ead0c03862f311e16b0d4d45d839463c503bdf",
+    "crates/fmridataset/src/nifti.rs": "e379cca1f8720e44043347fffc648704a0e09562d60fdb7016b1044ae755de72",
+    "crates/fmridataset/src/sampling.rs": "30e6e6483478d7f3f0997202a49b6cebba9732be52cb10cfd480bee6c6cb8f14",
+    "crates/fmridataset/src/selection.rs": "bca9e37f14703780e42e9f37b197809d996db3a2c8a8a42f1040ff9a010b0414",
+    "crates/fmridataset/src/space.rs": "757b0dda2edbc04c5b57150e7c033f95ef0396cf0955cba010eb504466c36af6",
+    "crates/fmridataset/tests/file_source.rs": "1a7b24ed10442df7e9e21d6a1f5207b706a063759ee3e7f7f8bf495d60af4dd7",
+    "crates/fmridataset/tests/frame_contracts.rs": "1b6f6891cf9abda604bcbd7aa9752be2ae3f38e12dca041c25c0801581d8f37b",
+    "crates/fmridataset/tests/nifti.rs": "18fead44d990f80bd66cc7c3fe7c50ed85cdd9a95e77472afabac9797bf8c969",
+    "crates/fmridesign/Cargo.toml": "79118150b02af085c1e5cbf5be5b1b9a9da36133f6df5e4b80a9e5beb322ecba",
+    "crates/fmridesign/benches/design_matrix.rs": "6564f21bd3c0f7911ad171f39476122c1b16ee3d2bff32ba4e26884e4d29e232",
+    "crates/fmridesign/examples/baseline_model.rs": "3b150c390422e6ba0752650f0d3b84d5614a05295e71e00c2a201398c633ef15",
+    "crates/fmridesign/examples/core_port.rs": "6f350239a8666f7335cd0f45c93946c36d3b547a35d2a77c0df02ba763c1a075",
+    "crates/fmridesign/examples/dataframe_demo.rs": "b2dc065c309619a31ff415338f56ee3ef9d0b35136546b0313ec47950b4e4ea5",
+    "crates/fmridesign/examples/event_basis_demo.rs": "75f1c36ec3ab7ef7f2464f5fe3105a399858fe9ac628e3fc1a4ba32045834cf9",
+    "crates/fmridesign/examples/nuisance_design.rs": "b5733a893c1741f681ba43f61089019d21709c59b1a7a76065587de2affb4253",
+    "crates/fmridesign/examples/sampled_feature_design.rs": "e28c21900c67165e3957802adb8d458ec94eef938a3914cb80a352a7d959b001",
+    "crates/fmridesign/examples/scale_within_demo.rs": "14f2bc293143e624bec36c285d13a843f40f35cbb909a110bd3630f80001c823",
+    "crates/fmridesign/examples/standardized_demo.rs": "66b02ec78beb8e397a33ca1d971d150498467fda56da40cc8d5a3191f1115728",
+    "crates/fmridesign/examples/test_conditions.rs": "dc0debf80615d0611473c6c52aaccf188c6c1a324450b60fc8e6d63d9e8328a7",
+    "crates/fmridesign/examples/test_poly.rs": "eebd5b30392ada4bb443f9e4d082275d3354a17c1c50672f49908cfaa152168c",
+    "crates/fmridesign/examples/test_sampling.rs": "ed6f06b894508bac6b51c690a0ca4eac868db501f4fce273fd7b227df5b4e64d",
+    "crates/fmridesign/examples/vignette_01_introduction.rs": "0f892a4b2dc65789034573cbbb8de0614b1b11c7a387d10fd0d9ba1b49b7c026",
+    "crates/fmridesign/examples/vignette_02_baseline.rs": "3965f5d08f7c9d69f9b3a7279a99ddb71617eeb655e52dd4bf0dadf925482d24",
+    "crates/fmridesign/examples/vignette_03_event_models.rs": "0c670fdf1ca3641129402e46baaec385d16716b2efe47def562b19fa4dc72355",
+    "crates/fmridesign/examples/vignette_04_contrasts.rs": "9b93da5e1d7e01e0500c8918b8008690fe1d652663ca1737d53d510e07ce7a89",
+    "crates/fmridesign/scripts/generate_golden_fixtures.R": "889021d7b2a68ef3338aaa4a934ee9451c2a0bcc01348297cffc04b0abceb20b",
+    "crates/fmridesign/scripts/generate_r_core_contract.R": "c13b0160c896ba139bc2ba04c879e2aed58c8fce69b3f95ef690eec3d256bdb7",
+    "crates/fmridesign/src/afni.rs": "1f3856b80e4521a31a25a78d3f0abab882e633c3ea69eb1e4951b7ec258be98d",
+    "crates/fmridesign/src/baseline.rs": "9ce58de2c230a2bccbcbc76bda2eedb4711b4f80f0101e49a7ec0ff2d2594d42",
+    "crates/fmridesign/src/basis/dct.rs": "5ca5b9a3d7d4016967eb2440d7f9d915bd1c20053ff4351819884dd4715d0e61",
+    "crates/fmridesign/src/basis/identity.rs": "762438413a5f96acba8d23c0d569d0fb60141e2a3dfcc2bc4780633610041f34",
+    "crates/fmridesign/src/basis/mod.rs": "010f3ffa986e4bc5d41ef4e408db5f85b68cab96df11ac1cf002a0a9f55d1aa3",
+    "crates/fmridesign/src/basis/polynomial.rs": "f0b012e4805b78e14daf1802688d5451842d0f25dff423b82584386ffdbfd3d7",
+    "crates/fmridesign/src/basis/spline.rs": "dffd8f42525d3f286ca2b78e56233b71a1223c6509947a83248b25101e6dddc2",
+    "crates/fmridesign/src/basis/sub_basis.rs": "f81c5427815b2e3f66659e3efa34e7459ff2c88f935a999d8b885c93b2c8c9a9",
+    "crates/fmridesign/src/basis/transform.rs": "327d0224fbd2ca6b5eea6a7019056b88d8bca699f63e6a6a635ed6e169e16e57",
+    "crates/fmridesign/src/cache.rs": "41d6e192736ff67b54c85d99df05d8ce99d35e17104ebc511a8fd42a9198d4f2",
+    "crates/fmridesign/src/condition_basis_list.rs": "53b4b853b829f161d63b99ba491bef927b0cf155473efc54ba1cf4c0135e1511",
+    "crates/fmridesign/src/contrast/fcontrast.rs": "b542d946ad205e4566fe3819a17f2771729a795ef1861b263e8a84399fec7f79",
+    "crates/fmridesign/src/contrast/spec.rs": "487040e804d3b129cd09a5ea7f5e5e2fa0746b9ef4406af9342194ffdd1a354a",
+    "crates/fmridesign/src/contrast/weights.rs": "7fa97136b34f52aacc87a3289a3ff7834e06607c687b3d119a26e71a6cbc30e7",
+    "crates/fmridesign/src/contrast.rs": "db27216b1a37c7da434c2696c20ef3a428a762a5497fc77b100788fe6622625d",
+    "crates/fmridesign/src/convolve.rs": "0edfd00176417f170d0b53237f0831e115f32f36f6e3038711168740b03a7e86",
+    "crates/fmridesign/src/convolve_cached.rs": "d8cff710e4acccf392c1acdfeda5903170d1f064b84159d4761ed104657516d3",
+    "crates/fmridesign/src/convolve_design.rs": "8e80e2bfc5e924bd4db5310bb74fbf0a6a80df1c92050cd89d02129f68639089",
+    "crates/fmridesign/src/core.rs": "9359c7c68184ce587621370fcd1f831ed690f82058313292d9c2d16169fb4d30",
+    "crates/fmridesign/src/covariate.rs": "ce1a1f9e770aa7302459a5963a1246a096306696af443c81555c1ffc0dade0dc",
+    "crates/fmridesign/src/crossval.rs": "f2f194ea13e40a0f17610eb1b5742eaaa59deca99aebc469b359233084186ac2",
+    "crates/fmridesign/src/dataframe_polars.rs": "5e7bbc639f03a8fc3fb1afabb80c60fba1ff49a21b3191476123e3c162561492",
+    "crates/fmridesign/src/design.rs": "d2bc5803d68e4f910f1467140eda90bd377667dbfc6d357ceb6f15764a8de10d",
+    "crates/fmridesign/src/design_colmap.rs": "422e644bc67314d89322d26d01bb7fdcd4372ad99a69daa8a4fea4309c19cc6e",
+    "crates/fmridesign/src/error.rs": "39e3df60b43f8e1c2504071a4cbf69df750b7df68832d4560f350d1a566c84a8",
+    "crates/fmridesign/src/events/cells.rs": "743b4a856c26e5eb688b6ffc3ffe1af4963a652fe8ac9102f4d42c332e4ab630",
+    "crates/fmridesign/src/events/dataframe_conversion.rs": "23f9348dd26595eaadde3e3915a76263e0c35519b3c445bf4fe9a3ac8d367acc",
+    "crates/fmridesign/src/events/event_basis.rs": "ce4bce94f064fc4d44ca2648a4086606d4b0e498165ab55338220e181bdb9457",
+    "crates/fmridesign/src/events/event_factor.rs": "1fbab99bab37338ed858ee350066870620cad96b26f8a132b589ee897e6dc748",
+    "crates/fmridesign/src/events/event_hrf.rs": "414fd04faa54d556355ddbd500e36e76ab8243c8100c68e7f93d70aa307661e6",
+    "crates/fmridesign/src/events/event_matrix.rs": "de3e197846015d8231070fd839cc03e91367aa54df5dd10183864cd62ccebc53",
+    "crates/fmridesign/src/events/event_term.rs": "44015338beeb81e4dd772691fa4fa5af9463a3ec75bbd72a1f100efb6aa49c6f",
+    "crates/fmridesign/src/events/event_variable.rs": "164e3a0ebc8c1df5fb24e3d070e1927685ce96c7c253af67eec644a7f72516b2",
+    "crates/fmridesign/src/events/mod.rs": "d560044eec8a463f2068038aa489f558e4cffc35c5857dccf39950719b704323",
+    "crates/fmridesign/src/formula/builder.rs": "086cb1aa4c67d62f1665ef39d1eb14009e6c50ae27ef8afc5fb74bdf8f569a19",
+    "crates/fmridesign/src/formula/context.rs": "eac2d7aa55588a061f58650ffb061edda70d5ed8b85d5d2ed418d90421b10abd",
+    "crates/fmridesign/src/formula/dsl.rs": "7d38cf7b34d77af8c729e2a14a0e3798044c725364a2a3046510e5b3a461e070",
+    "crates/fmridesign/src/formula/event_model.rs": "b7351f9951d77c07ee74f2a1d50fa7c2ebf3b04b5360ebfd0aa1d97e16e77c18",
+    "crates/fmridesign/src/formula/mod.rs": "012948de98d194be2f13f51bb71876359189c08983473c50def5b22e33194579",
+    "crates/fmridesign/src/formula/parser.rs": "0962d945bdd3d8df00618b342ae31d45c4637a74fcfeb6b50c77262277e7364e",
+    "crates/fmridesign/src/formula/term.rs": "b1f515955d4e100a9a9159d1e7489e8eadb9cee16a0e927132a02f0431e8212c",
+    "crates/fmridesign/src/hrf.rs": "7277e760a857fdd00e11c26b3f70e86b62ebc82f560a1ee35dcd1bd6e379df69",
+    "crates/fmridesign/src/io/export.rs": "07dc0fcdcec90f3d166879b43e259dd8ffa02f799a7a2c237cd1f974e8daefda",
+    "crates/fmridesign/src/io/import.rs": "8a08303ce0e42d5425e69260528774389a950c1f6d05c31a3acaed01a9c35f11",
+    "crates/fmridesign/src/io/mod.rs": "47e80e60211c9843ac1644cdd9ec90e24bd446a7378fee68215ab770f848768c",
+    "crates/fmridesign/src/lib.rs": "84b9421762531af081e3d4df760f2026877a311ef18b922b46902781a92eb710",
+    "crates/fmridesign/src/naming.rs": "c50177bb052d9d19523b819cf950ddded1594d11ab79cd226d973c2ee140aa06",
+    "crates/fmridesign/src/nuisance.rs": "26a9b9ffa57d4f41ab6e040379bcfa47e0e80c8503f11bcd927b07558586ea80",
+    "crates/fmridesign/src/regressors.rs": "ccd922955c86a899672dc194b5ebc17599fe781a938184734be11163173613b4",
+    "crates/fmridesign/src/residualize.rs": "d872ad3e2c812540cc65f2f941f41fce73502e9f1bbbae2f08738f9e0ac83a02",
+    "crates/fmridesign/src/sampled_features.rs": "180c4392e224d47c1ef5914a16c5e2ca32b78a3fbbf757a140fbd34ae31eb07b",
+    "crates/fmridesign/src/sampling.rs": "49ba2e4db5a5dd38e6dde5248a67aa4eded76a04e0460a55d669185a7f762e50",
+    "crates/fmridesign/src/trialwise.rs": "9245ff3da5df65e2fe527e6cf72b5ac0004f1c4c769fad4c6d82a6667bf84f30",
+    "crates/fmridesign/src/types.rs": "95a8838c46d60d3b2976ed651f194b3f6d4c95ff5c8cda8f52a2d8d62f6617f0",
+    "crates/fmridesign/src/utils/event_utils.rs": "792cf8eb01874b710835d917d48309e221502369461a700aa7301935d55ff246",
+    "crates/fmridesign/src/utils/generics.rs": "7384270917c0d2d0bcecb6bae361006c7736a208c9e5f647c733cdbc69f1aaf3",
+    "crates/fmridesign/src/utils/mod.rs": "41971ba3307be105341e0b70c82cdb3da99af30f8889548b7ced4b6cc16e531a",
+    "crates/fmridesign/src/utils/model_utils.rs": "631791ccaf6bf29614b843a85ecea1ffaf06c197927bba5628a905cbc674f0e5",
+    "crates/fmridesign/src/utils/term_utils.rs": "386c12be5dcb8d2caf4f4af09e9a79a7d37b621fa5b41f2652c41b203dc6af5b",
+    "crates/fmridesign/src/utils/validation.rs": "117d22f3b1e0040d800ee093eb57b31eceb746e8c43aff547f94951d22caff8a",
+    "crates/fmridesign/src/validation.rs": "60ca628874c5e3a5086f23201ffb71e2ab0e4ba84cd43caa86f5390a910b4272",
+    "crates/fmridesign/src/visualization/correlation_map.rs": "ac2e84c5dc899655e490411d263bb82cac346a415afb966a214efeb3a725c3cd",
+    "crates/fmridesign/src/visualization/design_map.rs": "cae629b32ed62cfee4a148de977e65bdb6b63452a33ff4b4850425b05433fa7b",
+    "crates/fmridesign/src/visualization/simple.rs": "b1032dcccb65c451e67bc37f94ad726300f071da95d8f1f16dbf6af9be6f9fbd",
+    "crates/fmridesign/tests/design_safety.rs": "683c030674ce4f80ab1de3da4af15693bd8e1c99bb9216319e9685638d1adbd1",
+    "crates/fmridesign/tests/fixtures/nuisance_contract.json": "d9ca206bd31b9a75d7288cb0358724ad6fc7d2b711fd30d953c139e6677652aa",
+    "crates/fmridesign/tests/fixtures/r_core_contract.json": "3e6604dbd4596a0c025f186313869bc6383f658cff2970a5bc1051d624d7aa70",
+    "crates/fmridesign/tests/golden_tests.rs": "f8deca8bb34f368fc721bcd174a31a9e93d97104295b876d8c890bb81e275fc7",
+    "crates/fmridesign/tests/hrf_spec_roundtrip.rs": "58fc91fed426666a55e71af6a83ff7713f3a09264011b27de12de2206464ea34",
+    "crates/fmridesign/tests/integration_test.rs": "9a42e5eb84098ed3189ef99c9538b53687431cd3924c53b9dfca350f6ab4b4e1",
+    "crates/fmridesign/tests/nuisance_contract.rs": "527ed93861ff9178db82f206bfed36cc501d71d4efe770a892e632db41133e3e",
+    "crates/fmridesign/tests/r_core_contract.rs": "fcccf9771f72aaca08c11f9e8098af3dc2bed4bf6a305f3c9181a2d1dc2beb67",
+    "crates/fmridesign/tests/sampled_feature_design.rs": "20a365a6206c3dd4c1e03156c9fc9d68cc669651b594074069e5ab004647adf7",
+    "crates/fmridesign/tests/test_afni_integration.rs": "08e27a213dd90d5fc3e04f8c15ff1f600339524dc717fc9430d00d4c01badd9f",
+    "crates/fmridesign/tests/test_basis_functions.rs": "73d5d3e8484c061b86da883f45fe9e2cd9c27e1314dfe578849b50c99784e249",
+    "crates/fmridesign/tests/test_contrast_weights.rs": "0e48101ca8f23a603eeb250aec7647c7271001b1ae3edcf7b6c053626091e84e",
+    "crates/fmridesign/tests/test_convolution.rs": "839f4551e64f9589d86ab73b0ef67b994424c8b6a5b0f4be60bf4884dd484b24",
+    "crates/fmridesign/tests/test_core_parity.rs": "04563536ddb86ec119e41e96d38767cf2b7c46ea50ae78d5011956ea4b3cf271",
+    "crates/fmridesign/tests/test_crossval.rs": "9538a4e8f886bd1437dcaadf112ca3880579e347d5d6067de8ae723aa720450a",
+    "crates/fmridesign/tests/test_dataframe_conversion.rs": "c8b994d0fdcefa34eb39a3dfa5b7554eec0ea3a26069cbf1da15df6528f84921",
+    "crates/fmridesign/tests/test_event_basis.rs": "997a5d2ee68a6d972c27b26ff659f474976f015fd50601d84f64a4fcdfc8191c",
+    "crates/fmridesign/tests/test_event_model.rs": "cbe72e041b7f531d700d789eb473c165ce837683028549fb9e95ca32c417f6ce",
+    "crates/fmridesign/tests/test_events.rs": "0232ec222333b61b858be702e116610930827c8091247b15111492c8959cbbe3",
+    "crates/fmridesign/tests/test_export.rs": "102fbe878c91f092014d26926dad18e23100e71d3444022944b4c7f60eba7aa1",
+    "crates/fmridesign/tests/test_fcontrast.rs": "1a1c2642656ba4476bcdf864dc22375426f426dd2ac0b4d2e1e0fb3caaa7674e",
+    "crates/fmridesign/tests/test_formula_at_operator.rs": "423977e0735308083f0deb252d02ad04262978e42c49fc53c05441e78aab1560",
+    "crates/fmridesign/tests/test_formula_dsl.rs": "c31e95065e5a14b8656aa6a6ed3869da99d54b8632187d4ff533b1dd1ade7a66",
+    "crates/fmridesign/tests/test_formula_interface.rs": "81670b836b9ab3b21b9c842edf7280e424be0336bbaa9a33f0493ec4c099b167",
+    "crates/fmridesign/tests/test_formula_parser.rs": "dda3379a9a1fb1f8e79f3866d287979e13e0d1ea21190d03a7162bb574b0b100",
+    "crates/fmridesign/tests/test_hrf_integration.rs": "379a5943bdbaeee45d02f267caf87f493f26a101bf6ea57f21ddd06858e07d30",
+    "crates/fmridesign/tests/test_python_parity.rs": "d1782b88d323edefd009757c47942f164ca7ddd51d5e088154cd988cdd8de49f",
+    "crates/fmridesign/tests/test_sampling.rs": "6f328b112cd965842552be48537030cd409d3fc4baa885b6c30256b5e5cf89a2",
+    "crates/fmridesign/tests/test_scale_within.rs": "af518db32f1b243a4e87a6297d9050933b3c4d9d52580b6acac4d45c2e2f546e",
+    "crates/fmridesign/tests/test_standardized.rs": "9cd348559e20e3b100aeea4eed8d960ad9a740373f88511ede8a99619cfd2210",
+    "crates/fmridesign/tests/test_utils.rs": "abbe6e826fae36703fef7fda287f5b8d1ce8c2794901a519b6903196ec4c43f4",
+    "crates/fmrihrf/Cargo.toml": "1a2146766f01b426bb57ad49f01484ea92742cf3c73b0b72f3acc35257eec52b",
+    "crates/fmrihrf/benches/hrf_benchmark.rs": "41488d9538ad387c1797efab931b649250a0d8e8819d3a2f83d990832845779a",
+    "crates/fmrihrf/examples/comprehensive_demo.rs": "e80f65d9507ff6da15b1d7c2313a6e7ff29574eeaf2a05bc2850470a93f3e8ef",
+    "crates/fmrihrf/examples/empirical_hrf_demo.rs": "4937f203bc903bad69f553b139bb0ef2ec1c61d4ad429641ebff5872e761cc1e",
+    "crates/fmrihrf/examples/empirical_hrf_plotting.rs": "9e03228ecac66fe0d84eb8f5c19dea8257ce3032ccc449e63ef95a935b48ed6f",
+    "crates/fmrihrf/examples/html_plotting_demo.rs": "dac858718bffb4c6b2a12d612de5b5a6b44ce8c17d11411d9af79b41def1ad77",
+    "crates/fmrihrf/examples/plotting_demo.rs": "ff593e165a9e6af46d868796521e0cf76e4a58448b82b55323d774b04aa0db1c",
+    "crates/fmrihrf/examples/plotting_demo_simple.rs": "1282eccb14f8cc44d62843de1e9ff846fdfc1fbebda19b9e4516c867dea64b67",
+    "crates/fmrihrf/examples/port_benchmark.rs": "86cc0f67684ba4066a71fbe393384c566f8b333c7d3ad2b504b2e93f23f60911",
+    "crates/fmrihrf/examples/port_design.rs": "e9c03e9622dc8511567d8894ee93c0560cc0adc5d790d9d019a2b9c654b43306",
+    "crates/fmrihrf/examples/sampled_features.rs": "8738cced4f2e296279f4390c4dda891e96c98ace24260e1b2bec211a39eff061",
+    "crates/fmrihrf/examples/serialization_example.rs": "56be2c098eab1164013d57fcc25e933585113e56fcd371124e501a7a0a1f49d4",
+    "crates/fmrihrf/examples/validate_spm_canonical.rs": "ff1da109f7b7033dba7954a14c36b088cb029dd11de7234300e72bb947e7e719",
+    "crates/fmrihrf/examples/vignette_01_hrf.rs": "57b8851f604df1fcf5f39cb44b0b12b016edd7c6cc27cc8c74bdbf65af03b2b6",
+    "crates/fmrihrf/examples/vignette_02_regressor.rs": "87bcafe91a6ea6f12cc7b8c4d0a522c947291f24e701c64dd23223bead362067",
+    "crates/fmrihrf/examples/vignette_03_generators.rs": "692d43dbedf510fc785b443e35d6d83ac0f9710cb781d007eec0b48297255491",
+    "crates/fmrihrf/examples/vignette_04_advanced.rs": "032070618df727364df3cc76f62b7926979f9639ea0f462ccb7d25e85e9a19fa",
+    "crates/fmrihrf/scripts/generate_convolution_contract.R": "f73f478515476575512c6357ef9d7de9fe8202670fc7d25e64be68deb7c2d940",
+    "crates/fmrihrf/scripts/generate_r_fixtures.R": "2b3cc0583a6f706fc20dfbcf3cf334ea3d8d4085fd86881e83010faa6512d7e8",
+    "crates/fmrihrf/src/error.rs": "da700d1089fe4ecfa437db8173d8d430dd8e76d58096753a0f77fc3ed44a9bb9",
+    "crates/fmrihrf/src/hrf/core.rs": "497eb70c176a62d35b3550683ecd19ca0476bb993b4aed8d05eb4e01b701529a",
+    "crates/fmrihrf/src/hrf/derivatives.rs": "4d43e2ff6c5866c2fb7c4d4c3304b841c98f0cf178e4b633d4221bad998eb1e6",
+    "crates/fmrihrf/src/hrf/empirical.rs": "c0e4741cc41f68d65a83c396f1843ba865530970884976dcfd43443ad7559c24",
+    "crates/fmrihrf/src/hrf/functions.rs": "d4bbfc36660e93f1d5139999d81e2ebdabeba4fe798dd575163ca64943708014",
+    "crates/fmrihrf/src/hrf/generators.rs": "203e530e6c4a0001777c2d50b1e536cc45123ea40805ab4317f604fc9a642ed5",
+    "crates/fmrihrf/src/hrf/library.rs": "7f659345ea25941c05440b48dfb28af2b0130d6c6bbaaf2b1769e0b1b6420347",
+    "crates/fmrihrf/src/hrf/mod.rs": "302c88f3d18d955fa28cbafaa0502246e1ebf5672989ba92e086db13846e5043",
+    "crates/fmrihrf/src/hrf/normalization.rs": "b5e20f1cf2d7f65b7cd273a95411a67c50a10296600c275c67c45502f8b2e8f8",
+    "crates/fmrihrf/src/hrf/recipe.rs": "928af23b37c19030455d182f188f8a47c50b42e6f173feb4b0ab01cb16fbfa86",
+    "crates/fmrihrf/src/hrf/registry.rs": "cf8d9a15c9b775d1733093c845e6162d2ff61e821d7e47c7147c954887c40e1e",
+    "crates/fmrihrf/src/lib.rs": "61b0fa66905c63a1891a5009a483ce52d9b684056f7ee4f7e8060e5498be4657",
+    "crates/fmrihrf/src/penalty.rs": "a0385c7eb7eebafe75fc736c837c3609d7ad997239993a1d0ba343cdd2df5fb4",
+    "crates/fmrihrf/src/plotting.rs": "d2611fca9348ed47f1118f41d82cba4aa7992745ff8574cd4f03d02ffb71fffc",
+    "crates/fmrihrf/src/reconstruction.rs": "8f5b7d567075f37f5f1492f53fe5347a294ce48463d63abbf7a73123ad5afa88",
+    "crates/fmrihrf/src/regressor/convolution.rs": "e24956a116f7e08653a918d56a73f6ff586b7c92a5a47744e9f493416c020075",
+    "crates/fmrihrf/src/regressor/core.rs": "ff8dbca79c8d9909aeae911cba59ff761cec36daae7b70b98aaa1967925ed8a6",
+    "crates/fmrihrf/src/regressor/design.rs": "1864d0aa84b6c8281f45a1bea83b4e83131c8b21181e9b73f6d617ca1c39f1ce",
+    "crates/fmrihrf/src/regressor/event_design.rs": "9288796babd7821e27a588a4c5f6f64ed179154b28c2e198a422ce5f3e2ec820",
+    "crates/fmrihrf/src/regressor/mod.rs": "61cc5d39c156ae16c5571d198675effc91b72349c09d48e42257992784680f4d",
+    "crates/fmrihrf/src/regressor/neural_input.rs": "f2e8344993cdead8c65222a69d72685a740bec4bd312586a35984590e427a128",
+    "crates/fmrihrf/src/regressor/sampled.rs": "c9fa2394e1a84025710080fcf3860c0ed9e69b76437e6c93025023da9a017c9a",
+    "crates/fmrihrf/src/sampling.rs": "271c8b08552cdec1bfb5791de6389bb42c73639a7f76d3fdd4316b34bf4cce43",
+    "crates/fmrihrf/src/types.rs": "9376c52fd3eb228ed735e874e1a532244c4606b2b25dc0feee78eaa1f91f60d7",
+    "crates/fmrihrf/src/utils/cache.rs": "31a32ff0b32ce5ad20fae97e54c727ee2a7a27e94e3c2611671b000584532050",
+    "crates/fmrihrf/src/utils/misc.rs": "17ff6ffca7bbf0d1ca8b2aed46c37533000f8a4f889cf17b3a4b10bd8c0e63fa",
+    "crates/fmrihrf/src/utils/mod.rs": "70b5fd123cdc1334a20f665f05887c8d13bba00b254ad10a57365126d7e66817",
+    "crates/fmrihrf/tests/convolution_contract.rs": "1ccbc18de3979642ca57d1aa342cb95024a1815d3cd1b72205b7370e7b7fcc6e",
+    "crates/fmrihrf/tests/cross_validation.rs": "ed46faebd8b7f534211e9f69492bebb8eb26b1a0660372d0bcf4464f6fac7024",
+    "crates/fmrihrf/tests/cross_validation_spm.rs": "8d18a8321532361c694a8d521b1fe574086b6a17fda8abe3dad2624f244475e1",
+    "crates/fmrihrf/tests/current_spline_contract.rs": "90a4930b707753ab6bc4ae897307661cbaf2d3d9680ba7dff54e450d39d2d9b7",
+    "crates/fmrihrf/tests/edge_case_tests.rs": "536b53e2d64192fb387e39efed74b92eb4f56d632b9c54b146e9d967280ed5b8",
+    "crates/fmrihrf/tests/fixtures/convolution_contract.json": "6c3a8a7e885ad550117f68c6e7c12e7ba575fbf2ae941341c436b1ceda07ecc8",
+    "crates/fmrihrf/tests/fixtures/current_splines.json": "c6f477c179fbc347100f5874a944f8bdaf899404c6d8f243a7d8d425f8a01cf3",
+    "crates/fmrihrf/tests/fixtures/hrf_audit.json": "8b3bd3176e38d0a2f5063047a41bfde6782d6ce75d68873f0f4598ddaa725058",
+    "crates/fmrihrf/tests/fixtures/sampled_features.json": "ed98a0f2939ccbb7a61356a6bdae99ca14cd56178d63679def73cdf15d9bffac",
+    "crates/fmrihrf/tests/hrf_audit.rs": "32b22eed3f3965afd480314240f57e606805a2d4fd19f5762b1afcf35da84099",
+    "crates/fmrihrf/tests/hrf_decorator_fixtures_parity.rs": "9013f73e7ce1217c53918fa28ce435ef93b4ecfd4671c171c21cc15d0936e7d4",
+    "crates/fmrihrf/tests/hrf_fixtures_parity.rs": "d46ae1afffcaa6014c1a309373785cf1c2b709659d122bf2a65e6b997d6433af",
+    "crates/fmrihrf/tests/integration_test.rs": "345026d867334539dd2cdcc03a672cd64c15706cca9fa9e62945fa0966c88c1d",
+    "crates/fmrihrf/tests/regressor_design_parity.rs": "b6b9c71c73488ed27de8dd9e1ceaedad51c9171aab6c7ddb2f43bfd233320105",
+    "crates/fmrihrf/tests/regressor_design_spmg3_parity.rs": "309d6080dfefece3e138ebd0de8eca9e7eac3d68ecc1be8389e2cc5cdba45e33",
+    "crates/fmrihrf/tests/sampled_features.rs": "5187837737322da26ea9953eb57c74b858d5aa053390d8af2dc495b8631da477",
+    "crates/fmrihrf/tests/spmg_hrf_parity.rs": "ef2bb4b7fc73fd29db6a2b44af86d2b67c2aad8cde0afbb8f5dc0a8594b1e885",
+    "crates/fmrihrf/tests/tent_hrf_parity.rs": "896abc794da8ff56ac83dde5a5a3c220f39e6636678ceb1a7733e9c1eb58a756",
+    "crates/fmrihrf/tests/test_serialization.rs": "54b00b9ac2686948396d2a3d2976198179a3f8ad5bea9b204bf8b379e05f8342",
+    "crates/fmrihrf/tests/workflow_tests.rs": "63274e9960175f5088c7b5873cc1840ccea3d8b62b224d48709176756ad120c2",
+    "crates/fmrimod/Cargo.toml": "e97173ce599b7fd84ed5c34d8536789452391e1554e7cecde5278c46d3024a0e",
+    "crates/fmrimod/examples/analysis_viewer.rs": "8fd9473e4cd411b3802e3ca62f4009984807ef72ba024fb68d778ef00d7fce94",
+    "crates/fmrimod/examples/cohort_latency.rs": "111d2fb4a25a51d5a8258881a05ffb780293501600b72be913c8f7c2a74548d4",
+    "crates/fmrimod/examples/complete_first_level.rs": "ceb5543f2c261db6b251e7f87392379e37be7a5a078a86bdd9f876b6669c4734",
+    "crates/fmrimod/examples/first_level.rs": "16aa909e54ce4b804bdc261bd6c45cff432f55213a5cd95da3618141f8947df0",
+    "crates/fmrimod/scripts/analysis_browser.cjs": "4b1e5a7c98b05ad96fdec36dacf031053d7eb7f5b369446a4685623dd0f85c0b",
+    "crates/fmrimod/scripts/analysis_viewer.py": "1a2dcb2d6a6784c34e3ba5f6c79f1dcb2b6e013cc713f4c3f9a38bc4ad1b7144",
+    "crates/fmrimod/scripts/generate_cohort.py": "dee15fc33167e5a9a3ff5fbb7106eb12707a0591fc1f2c8855f32e90993c2334",
+    "crates/fmrimod/scripts/test_analysis_server.py": "33e8f7c55aaef0099e6b2e88c4f82d3f90b82ebd42cd2b902a46ad51204f0abc",
+    "crates/fmrimod/src/analysis.rs": "6db89f7a3bcbd8d2f5715bdfc94e623bf11097409aa03bd69084c2052649f441",
+    "crates/fmrimod/src/cohort.rs": "56a52b73fb20c15a1e31a82a6cf34fa852d83847ee009b9b8670bbd87ec88694",
+    "crates/fmrimod/src/group_requirements.rs": "82608e7b386cd8c8146d335659825b40512c3a1d907aae0e0b44f184ed4f56ac",
+    "crates/fmrimod/src/ingress.rs": "4b7b19a5036dd30ffc9fc0aca741fe737b5ac40d85bfb778789b56ab49074a1c",
+    "crates/fmrimod/src/lib.rs": "d054ab7d0cd8004abff40c7cc87cee67ba6b0663816fbd83b488d5ab18266f38",
+    "crates/fmrimod/src/outputs.rs": "07f4748be45fa681524766e419a860121f09831e06131794db2c90e5245c172e",
+    "crates/fmrimod/src/session.rs": "c3a529793f4ed370171473c0df6d14ddf9fa52dca58bb5017a8d1ef47671397b",
+    "crates/fmrimod/tests/analysis.rs": "b96793bb211cb07d3bb0408f7bfefc7107226871602f659d41e44c3b745c1647",
+    "crates/fmrimod/tests/cohort.rs": "082ac4c7a9ee68357b8377d4d98f9aef5b23fe5065de5c34ed55a8f390b3258a",
+    "crates/fmrimod/tests/fixtures/pipeline.json": "0d9e320518311fa79895f9ac07e4be414018a2f76891970bae5ee197305ec9a8",
+    "crates/fmrimod/tests/group.rs": "3b5d0229b60af0877e8afddb8a2bf2a1487de504835ae740de2335f9c05cdc08",
+    "crates/fmrimod/tests/group_requirements.rs": "a278caae7a8df0b8cf4c5cc2d2e2a73f8ee3894d7aaf6f01897d564fa4793389",
+    "crates/fmrimod/tests/ingress.rs": "032328361bb69c01ee0707097c2d5a6667862a88e901d0de3d509bc410a96b68",
+    "crates/fmrimod/tests/outputs.rs": "238779a5931bebce00248c49d3a6010c9c4894d09d62b738ea9689fde938d031",
+    "crates/fmrimod/tests/pipeline.rs": "bf6d89a513e53b29fc67abfbe2587c0c7cd55896baf44c74508db04d5787e465",
+    "crates/fmrimod/tests/session.rs": "b11c17382eecb04a1bddd1c5611c57475246e3d8066eef5ced0e3a6184ec9277",
+    "crates/fmrireg/Cargo.toml": "2bb512108f68acc06df63d6002215884acda002098b720c92e5b59cd6bfc24c5",
+    "crates/fmrireg/examples/algebra_gls.rs": "f65700083a3c8c094b8eec3d85b5e3851262ce60c55eb5434ffcf4afb361798a",
+    "crates/fmrireg/examples/algebra_qr.rs": "90957bed53445d15dec28eb1d79e27e5577b292815ab578eb97e5c3bfe74dc42",
+    "crates/fmrireg/examples/block_throughput.rs": "4fdca5037f11f068399ac5fe6cd034e04c21e6f53472c284547fc8e812d2d5c9",
+    "crates/fmrireg/examples/completion_ar_calibration.rs": "225d0e7faf960985f2dd9a20aff35e5b838d32c5831d4e7f11d2e8707218354b",
+    "crates/fmrireg/examples/gls_benchmark.rs": "da3153110e00a07d61dd976536f82b78e26f97a445cc89eeaf3e93d5de684cc9",
+    "crates/fmrireg/examples/hill_kernel.rs": "99725208833407771d2699b3bd6cfe8b445a60f8f9a9b9676291250de27ccc88",
+    "crates/fmrireg/examples/output_benchmark.rs": "97a6dda455de23801c7177375a2e8d7fbc5443b5b609c2b9a697fbbbadd6329d",
+    "crates/fmrireg/examples/reusable_fit.rs": "ad360a2b380e80749625f29f36477a95a18b70cf066ea1013d7df3e9cba60de4",
+    "crates/fmrireg/examples/selected_ar1.rs": "6cdc5ce527cf16bad0c7030670f884c17e9a493ede84fd12d1f558499c250ea5",
+    "crates/fmrireg/examples/selected_arp.rs": "a87a783933bc1a860a9ce9215e91adbcc1aefd412ae1926a5270efc75181ee6b",
+    "crates/fmrireg/examples/selected_gls.rs": "dde5fb27533ab2b45e81cb71dab26f9ae5d49df3f1c988c7b3d129b1c82cbe3d",
+    "crates/fmrireg/examples/selected_qualification.rs": "c9e745039f85815c40f1499771bec649849635912684e29e6d2e03822602b01a",
+    "crates/fmrireg/examples/throughput.rs": "328c19802afa729f08ffd922c9610099c0982047a8ef8f6cad3ee5f57831b079",
+    "crates/fmrireg/scripts/cohort_qualification.py": "54c2e51697b13e220336691a830da6cab83d430a0c5d3defb4c534f7b8276f2b",
+    "crates/fmrireg/scripts/hill_compare.py": "7dbbb5a852de90c91cae137d3d25bc92385c17c6c7527695893fc6238bb2cd2c",
+    "crates/fmrireg/scripts/qualify_algebra.py": "4f466c6187a4e452c6e80616cd0b4e508ede5ffebfe35bbb41a7fbb25fc60b74",
+    "crates/fmrireg/scripts/qualify_hill.py": "c3b92151ddb5986b893ca2a3599edf7dd299412b400185b8df43575dcbca0de6",
+    "crates/fmrireg/scripts/qualify_speed.py": "b1ca25d1201f3575529ab0c3e35458aa5a660ab7e964d6ac214553f9fca13ddf",
+    "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+    "crates/fmrireg/src/dataset.rs": "630bf108d20141f662ce71722363be3c7ced70e264fccc33c82556abe29c9421",
+    "crates/fmrireg/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmrireg/src/lib.rs": "e0dae8748aac365948ba6c136d02daff33b1b38020f208ed6d09ffe5907f53f3",
+    "crates/fmrireg/src/output.rs": "e1f72b9e435ba51290ec00b159590c2146d520ebc2f990e1e86697e4a84ac8f3",
+    "crates/fmrireg/src/output_dataset.rs": "69d52108862e6c85887b8f91445d5885311cd335a02dbf867629f0c8e7ff6775",
+    "crates/fmrireg/src/selected_estimation.rs": "ccb260a1409bdfd63f467025049e87f11d6e6b1f6771d024b73132ebb1795e03",
+    "crates/fmrireg/src/selection.rs": "b46d57bcdf20cf7fbbaf956c6ebcd744910084428e345341ca7748ea1a0fbb26",
+    "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+    "crates/fmrireg/tests/arp.rs": "ddd6ed8049e1c525c309df56741765b982b98fb82598cc0a869478aca0387065",
+    "crates/fmrireg/tests/contracts.rs": "a55f8f4b65572b94cb030f62c07ba3b5f25b44b33c90efa63310e5aefb6f5c7e",
+    "crates/fmrireg/tests/fixtures/estimation.json": "3c62bd7d39b1a51fc02c0c7e0e6dceb6c5c1af971166c98bbaa792f24e054a61",
+    "crates/fmrireg/tests/fixtures/selected_arp_estimation.json": "8cffc418c169f373d6278f25be6993e9d415f638909a50b1ac2371dbecb554f9",
+    "crates/fmrireg/tests/fixtures/selected_estimation.json": "6a81465e196e10b9e0685132a9c5870340f0506a0a2bda0c163c6aa9f6564cd9",
+    "crates/fmrireg/tests/fixtures/selected_gls.json": "2ca9373be15867f562a38bc5dc0e22a84c345bea461841dd6bd7150c3fe8e90c",
+    "crates/fmrireg/tests/invalid_allocation.rs": "ef8b68c67f896efb1b3a0dcc5fb60532397d0690cd3ae7ac3bbbed4ac5daab52",
+    "crates/fmrireg/tests/output.rs": "5c7592eaeb5a19e069c6a7758366841c2d1758578a730af920a386a4406dd4d5",
+    "crates/fmrireg/tests/output_dataset.rs": "6f211a317aca527e5588fe520744566f0e10c06a95eb02c353d3e1c2eaa75ce1",
+    "crates/fmrireg/tests/parallel.rs": "d0d2783f45198b517b05ebdf554f460deb2392d7ef42b863546e3d34b4388b60",
+    "crates/fmrireg/tests/selected_arp_estimation.rs": "bff9ec3f6088361f73c64a0195917dd85f49444e8a68885ae7611d47320ff3f8",
+    "crates/fmrireg/tests/selected_estimation.rs": "2503063347116b34670e89f8f65064321b5342e88769b723b1a69d3e402aeb0c",
+    "crates/fmrireg/tests/selected_gls.rs": "577e086d53e5e2f6a838acca70445ad381d46bd3e5e139b3295599fa923a3f0f",
+    "crates/fmrireg/tests/speed_contracts.rs": "d8b80f6d0d1ae31ad92c5e6760acb4627a9ea1acf217e111bc9a482fb24d8648",
+    "crates/splines/Cargo.toml": "9dfbdddd8786bd5109a968302f32a48402fdb75f9a0cbab17dc295fa3513f327",
+    "crates/splines/benches/performance.rs": "f6c3f9cdfc170be1082de6c560d708b7962e6e20e878e37fd98fca1f9527f0e9",
+    "crates/splines/debug_matrix.rs": "b0a53aebf4385361c9263eb31534724d4fe48139ea95bbc0fd42f332764dcaf7",
+    "crates/splines/debug_matrix_test.rs": "28fe3a7546905c298c27abb190ef4c587eea2971a18c05416c7d4e474c2c90fa",
+    "crates/splines/src/basis/design_matrix.rs": "dee9b4f0b0291622a5bfecdec9a88b012f028eff63ea33d8fea5b9351dac3ad7",
+    "crates/splines/src/basis/evaluation.rs": "b39180f156e229b9bba449713e7052d8305accce715c76a083ccb22b8e655bf7",
+    "crates/splines/src/basis/mod.rs": "268e2b5e8cd31b3711488a09890f41799b9a942da1a357020b31d0cecad264a6",
+    "crates/splines/src/core/bspline.rs": "1b80827f0456994ef6995c592348e78c99f2b4509356d10bf5606de010417a86",
+    "crates/splines/src/core/interpolation.rs": "3440f4584def3136d1f203bceb5dc897fb0d2dbe299455033dfb33de79b25aa2",
+    "crates/splines/src/core/mod.rs": "cc58b125c12f4d7bf896645c02811e6fe640d734a460c5e198666dd891b0f0f9",
+    "crates/splines/src/core/naturalspline.rs": "3898c980b3a0970586a9028cb4fc7b60a59b001785a1f8129635e244913eadec",
+    "crates/splines/src/errors.rs": "d19995b4bd1669f7e6bc78a9adc41f5fbf39b32ee4b5e8af1e43f16fba86442f",
+    "crates/splines/src/lib.rs": "5b4f7006ca5077fe6711a20bbb9ada548d32cbb0808921141cec69c4e0d50100",
+    "crates/splines/src/test_rust_bs_comparison.rs": "f9f44e3f7ae17187eb52eacb17ed54899b9c51cb5e81fd241b76d011f23697af",
+    "crates/splines/src/types/mod.rs": "d5f3e99f489b6c30f513efc5590319fc086fdc925c727176ffa1f7634a68c189",
+    "crates/splines/src/types/spline_result.rs": "8cd204f969a7d71d825b61f0ab0acda5bca55ccb12d7001b07bbac6533349281",
+    "crates/splines/src/types/spline_traits.rs": "cbc13598ad9bf19f9ce33a298bc915cf1174fafb39a67bc95d5d41544fd97262",
+    "crates/splines/src/types/xy_vector.rs": "c9a48c63eaedf34c00dd3973b6ad5b8e29a3370f5439458e714ce7b266bd9bf8",
+    "crates/splines/src/utils/knots.rs": "f8b9848cb2779f03339f62795751e0edfff939865c6207798f7e93e16f9ba572",
+    "crates/splines/src/utils/mod.rs": "5cf06cc8526a09148c15148ff1a2983391cea4cea575865844d1524c54a2a03f",
+    "crates/splines/src/utils/spline_utils.rs": "f9ca94d2bbbdc70a3ad1c32ce8e355eab5e80d819d0a55f26661c0826bf2373e",
+    "crates/splines/src/utils/validation.rs": "539158b1732560603f2a473568e3d6dfeabbadd8d3eb13d66c197f0e2f13f1e4",
+    "crates/splines/test_final_bs_verification.rs": "b37864ebe22ef9f2da8bf21afea67e506aa8d01de94736dc99644adda2ae513e",
+    "crates/splines/test_utility_equivalence.rs": "b3d5881eb7316e8d97e2f4b990b0b85ce4911c1435d3723cd72d4a2727db3ee4",
+    "scripts/audit_group_reference.R": "9f18ad75be8c594ca1863fcdf5413af6e230fc8665326dc4afc552f1816af249",
+    "scripts/audit_upstream.py": "b5598278329b8e46287fcf9953d785048e19087084000fa877db8ee5e4e62e13",
+    "scripts/benchmark_estimation.R": "014880d8a3798ed9ecc2b72697906e0a98baf57b0fb73118ad9a5a383f03e730",
+    "scripts/benchmark_gls.R": "6795c639d8829caf91a31c4b2631cd1c576180ad92e8a859bb8ed865d5eef330",
+    "scripts/benchmark_gls.py": "f9a71d3a41996622012abf4aac293289dd793b1b70adf367122e3cf442261464",
+    "scripts/check_bounded.py": "f1f5fcf1b0be5b34404d9b01b4be755cda772c970fb885605e64176eec1cf37e",
+    "scripts/check_source_preservation.py": "42d49b6fceb26cf3c3b39043990c8f34a4fbbdb2df73e252b4a10f2a1a8d6f42",
+    "scripts/completion_calibration.R": "3d8b43e6556e6b265df9f9a8f33fa2ce3fb6a79decb486ebad9814b45af3ef2a",
+    "scripts/generate_arp_contract.R": "41701138c2aef4adc09905e88071a6942cb3468f0d57b18d710c756b55febe44",
+    "scripts/generate_estimation_contract.R": "f38ac81ee122bf45a9ed47376003a89babf6617d7152a590254c0ef3ffecaf73",
+    "scripts/generate_hrf_audit_contract.R": "a28be7205c0b1f36b0b55f2f2f47c8a852d99dcb55731fe685faff530bfde21f",
+    "scripts/generate_nuisance_contract.R": "6568e14f59a06b483f4998f9ae11900a24762e8df94e330727b79000423c0dba",
+    "scripts/generate_pipeline_contract.R": "514000092d00fa1f167f748b21baad7a2b307eb7acc6f7ec32d339786a4b09da",
+    "scripts/generate_sampled_features.R": "cc271121bc17dbb300c3c0713da946e7c42e310c8d29d1634dcf4bdfd2616831",
+    "scripts/generate_selected_arp_estimation.R": "63ed5cf52e839eaf62c5f7bb28c6a82658e23e49386d54c7179fb113a6f0ac37",
+    "scripts/generate_selected_estimation.R": "2cf1c9589a929c899661c1ba9a0277a889329cb3e2aa73f5a01d2dae3cfbf1eb",
+    "scripts/generate_selected_gls.R": "f292848da078616ba1bece1fe4f2e9f359ce818e286fe6ecd9a38876ec09e9d8",
+    "scripts/generate_spline_contract.R": "2d4b765f63d6de7cb37fb4fee1962f47f3efcc23e74ac02128f2c593edd7ea89",
+    "scripts/group_meta_benchmark.py": "c865849f8c0a9aa32fb66378f556088840114e7c7f815201bab3ade012187e5c",
+    "scripts/group_meta_reference.R": "8cf9825144427d3a00acd202bf597b61d4383c5aff3c596afc7526ccbb373689",
+    "scripts/group_performance.py": "26daba3a7a13d9b09b361b8f38e7a2eaf02969709b506b3d318b95ce9634b862",
+    "scripts/group_portable_benchmark.py": "9e59500701598562fb11a1395bc86f34fd30569e240258b48c216fc7a2011b70",
+    "scripts/group_portable_reference.R": "d0a9d3382608b56f79e9e1887d8ad465edbb23382e2fe119ba3a08ccb52eb056",
+    "scripts/group_reference.R": "2975bb00e1d566d6ff0c876f0a278fed2b23acc7f6d250e53183d0bf34f3e6e7",
+    "scripts/import_sources.py": "8c50565cafd23d48676f2849ccb59dcbfe3b0dab7035d0579c60b4edfc03812f",
+    "scripts/influence_reference.R": "c59fac513855ffd7cabba977d328ed9411cc356b864603f4ae8c076b0e37f049",
+    "scripts/noise_extensions_reference.R": "03092b57565293ae23fac2d6c8a140610fbc1978aa51713e278408081c9d3be8",
+    "scripts/qualify_completion.py": "4851bb2b2a5e2c817f8d6f45c952a4da7741d9c12fd5cdff32e9ef428b0e926e",
+    "scripts/qualify_selected.py": "1378b50ae3c13d8791e9dccc4869065d12be66a138f6fc667dca4751108fe0b5",
+    "scripts/repeated_calibration.R": "5797b0cc2f49af5050f6d040b10fb024cafdf0574343f77e65b68aeb70204dff",
+    "scripts/repeated_reference.R": "25b3735e7b216dfb56e304d8df0d94a193694a772dbef0dd0a08f04d06c949a9",
+    "scripts/report_gls.py": "d7e891b10c566d34bc44b55ca79526b147f12c8c8457178b37190ebf07f74482",
+    "scripts/resampling_reference.R": "94e787053ad216eeb4717cb843e4bd779f53f7eac1ba7a70ef22d8d3e6e8cc25",
+    "scripts/verify_gls_benchmarks.py": "31e2bbf02acdb1b5c35dd4dbc61bc8676e5d500098e00c687d3a1ad884b7fe76",
+    "scripts/verify_hrf_design.py": "5e0a751ec739899b8ab4c16b36fedebf6c3ae14ff74be7a3e8c26ad70781507a",
+    "scripts/verify_workspace.py": "82764d5b2f8102215a121805ccc32ce17d1d72ff41370fbc6718358e1100a394"
+  },
+  "threads": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "target_inventory": [
+    {
+      "kind": [
+        "lib"
+      ],
+      "crate_types": [
+        "lib"
+      ],
+      "name": "fmrihrf",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/src/lib.rs",
+      "edition": "2021",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "comprehensive_demo",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/comprehensive_demo.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "empirical_hrf_demo",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/empirical_hrf_demo.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "empirical_hrf_plotting",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/empirical_hrf_plotting.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "html_plotting_demo",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/html_plotting_demo.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "plotting_demo",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/plotting_demo.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "plotting_demo_simple",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/plotting_demo_simple.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "port_benchmark",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/port_benchmark.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "port_design",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/port_design.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "sampled_features",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/sampled_features.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "serialization_example",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/serialization_example.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "validate_spm_canonical",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/validate_spm_canonical.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "vignette_01_hrf",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/vignette_01_hrf.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "vignette_02_regressor",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/vignette_02_regressor.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "vignette_03_generators",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/vignette_03_generators.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "vignette_04_advanced",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/examples/vignette_04_advanced.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "convolution_contract",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/convolution_contract.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "cross_validation",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/cross_validation.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "cross_validation_spm",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/cross_validation_spm.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "current_spline_contract",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/current_spline_contract.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "edge_case_tests",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/edge_case_tests.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "hrf_audit",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/hrf_audit.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "hrf_decorator_fixtures_parity",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/hrf_decorator_fixtures_parity.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "hrf_fixtures_parity",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/hrf_fixtures_parity.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "integration_test",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/integration_test.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "regressor_design_parity",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/regressor_design_parity.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "regressor_design_spmg3_parity",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/regressor_design_spmg3_parity.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "sampled_features",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/sampled_features.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "spmg_hrf_parity",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/spmg_hrf_parity.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "tent_hrf_parity",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/tent_hrf_parity.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_serialization",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/test_serialization.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "workflow_tests",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/tests/workflow_tests.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "bench"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "hrf_benchmark",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf/benches/hrf_benchmark.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "lib"
+      ],
+      "crate_types": [
+        "lib"
+      ],
+      "name": "splines",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/splines/src/lib.rs",
+      "edition": "2021",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    {
+      "kind": [
+        "bench"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "performance",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/splines/benches/performance.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "lib"
+      ],
+      "crate_types": [
+        "lib"
+      ],
+      "name": "fmridesign",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/src/lib.rs",
+      "edition": "2021",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "baseline_model",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/baseline_model.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "core_port",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/core_port.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "dataframe_demo",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/dataframe_demo.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "event_basis_demo",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/event_basis_demo.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "nuisance_design",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/nuisance_design.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "sampled_feature_design",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/sampled_feature_design.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "scale_within_demo",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/scale_within_demo.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "standardized_demo",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/standardized_demo.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_conditions",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/test_conditions.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_poly",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/test_poly.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_sampling",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/test_sampling.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "vignette_01_introduction",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/vignette_01_introduction.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "vignette_02_baseline",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/vignette_02_baseline.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "vignette_03_event_models",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/vignette_03_event_models.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "vignette_04_contrasts",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/examples/vignette_04_contrasts.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "design_safety",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/design_safety.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "golden_tests",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/golden_tests.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "hrf_spec_roundtrip",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/hrf_spec_roundtrip.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "integration_test",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/integration_test.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "nuisance_contract",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/nuisance_contract.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "r_core_contract",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/r_core_contract.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "sampled_feature_design",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/sampled_feature_design.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_afni_integration",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_afni_integration.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_basis_functions",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_basis_functions.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_contrast_weights",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_contrast_weights.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_convolution",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_convolution.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_core_parity",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_core_parity.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_crossval",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_crossval.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_dataframe_conversion",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_dataframe_conversion.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_event_basis",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_event_basis.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_event_model",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_event_model.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_events",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_events.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_export",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_export.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_fcontrast",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_fcontrast.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_formula_at_operator",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_formula_at_operator.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_formula_dsl",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_formula_dsl.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_formula_interface",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_formula_interface.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_formula_parser",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_formula_parser.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_hrf_integration",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_hrf_integration.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_python_parity",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_python_parity.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_sampling",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_sampling.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_scale_within",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_scale_within.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_standardized",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_standardized.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "test_utils",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/tests/test_utils.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "bench"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "design_matrix",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridesign/benches/design_matrix.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "rlib"
+      ],
+      "crate_types": [
+        "rlib"
+      ],
+      "name": "fmridataset",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset/src/lib.rs",
+      "edition": "2021",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "frame_view",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset/examples/frame_view.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "file_source",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset/tests/file_source.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "frame_contracts",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset/tests/frame_contracts.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "nifti",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset/tests/nifti.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "lib"
+      ],
+      "crate_types": [
+        "lib"
+      ],
+      "name": "fmri_noise",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise/src/lib.rs",
+      "edition": "2021",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "ar_small_orders",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise/tests/ar_small_orders.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "arp",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise/tests/arp.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "contracts",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise/tests/contracts.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "extensions",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise/tests/extensions.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "whitening_into",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise/tests/whitening_into.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "lib"
+      ],
+      "crate_types": [
+        "lib"
+      ],
+      "name": "fmrireg",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/src/lib.rs",
+      "edition": "2021",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "algebra_gls",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/algebra_gls.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "algebra_qr",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/algebra_qr.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "block_throughput",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/block_throughput.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "completion_ar_calibration",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/completion_ar_calibration.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "gls_benchmark",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/gls_benchmark.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "hill_kernel",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/hill_kernel.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "output_benchmark",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/output_benchmark.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "reusable_fit",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/reusable_fit.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "selected_ar1",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/selected_ar1.rs",
+      "edition": "2021",
+      "required-features": [
+        "dataset"
+      ],
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "selected_arp",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/selected_arp.rs",
+      "edition": "2021",
+      "required-features": [
+        "dataset"
+      ],
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "selected_gls",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/selected_gls.rs",
+      "edition": "2021",
+      "required-features": [
+        "dataset"
+      ],
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "selected_qualification",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/selected_qualification.rs",
+      "edition": "2021",
+      "required-features": [
+        "dataset"
+      ],
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "throughput",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/examples/throughput.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "arp",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/arp.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "contracts",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/contracts.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "invalid_allocation",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/invalid_allocation.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "output",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/output.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "output_dataset",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/output_dataset.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "parallel",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/parallel.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "selected_arp_estimation",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/selected_arp_estimation.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "selected_estimation",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/selected_estimation.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "selected_gls",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/selected_gls.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "speed_contracts",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/tests/speed_contracts.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "lib"
+      ],
+      "crate_types": [
+        "lib"
+      ],
+      "name": "fmrimod",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/src/lib.rs",
+      "edition": "2021",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "analysis_viewer",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/examples/analysis_viewer.rs",
+      "edition": "2021",
+      "required-features": [
+        "nifti"
+      ],
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "cohort_latency",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/examples/cohort_latency.rs",
+      "edition": "2021",
+      "required-features": [
+        "nifti"
+      ],
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "complete_first_level",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/examples/complete_first_level.rs",
+      "edition": "2021",
+      "required-features": [
+        "formula"
+      ],
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "first_level",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/examples/first_level.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "analysis",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/tests/analysis.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "cohort",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/tests/cohort.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "group",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/tests/group.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "group_requirements",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/tests/group_requirements.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "ingress",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/tests/ingress.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "outputs",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/tests/outputs.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "pipeline",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/tests/pipeline.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "session",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/tests/session.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "lib"
+      ],
+      "crate_types": [
+        "lib"
+      ],
+      "name": "fmri_group",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/src/lib.rs",
+      "edition": "2021",
+      "doc": true,
+      "doctest": true,
+      "test": true
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "completion_group_calibration",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/completion_group_calibration.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "group_benchmark",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/group_benchmark.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "group_pipeline",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/group_pipeline.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "meta_regression_benchmark",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/meta_regression_benchmark.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "permutation_calibration",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/permutation_calibration.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "portable_execution_benchmark",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/portable_execution_benchmark.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "portable_first_level",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/portable_first_level.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "repeated_calibration",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/repeated_calibration.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "repeated_group",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/repeated_group.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "example"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "weighted_group",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/examples/weighted_group.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": false
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "group",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/group.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "influence",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/influence.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "meta_regression",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/meta_regression.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "portable",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/portable.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "portable_execution",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/portable_execution.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "repeated",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/repeated.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "repeated_numerics",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/repeated_numerics.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "resampling",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/resampling.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    },
+    {
+      "kind": [
+        "test"
+      ],
+      "crate_types": [
+        "bin"
+      ],
+      "name": "shared_weights",
+      "src_path": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group/tests/shared_weights.rs",
+      "edition": "2021",
+      "doc": false,
+      "doctest": false,
+      "test": true
+    }
+  ],
+  "sources_after": {
+    "Cargo.lock": "d7beddd96ba50b0153a2d43d74d0391b1b9e6de57341d7f286c57dca748bb8ed",
+    "Cargo.toml": "f44dfed3192a1bc61ee3c551662bed6c1b59d603be0d191ac89530762c0b6bfb",
+    "crates/fmri-group/Cargo.toml": "d506c0961e5da07731ce26914c846170c1e98d81317514a320c114eb8c39a7a9",
+    "crates/fmri-group/benchmarks/reference.R": "f1dcaf12bf6500730cad55ca739802272a866fc7cb857deccf49fdab1760faca",
+    "crates/fmri-group/benchmarks/run.py": "1d8f128c60bddd0f084eece9cf214c38666f61ea4744d1ff470b4f7df4f7e2ca",
+    "crates/fmri-group/benchmarks/summarize.py": "7e257ce3300904f25e02eb9cd98d0085e77467ae491a37b8d00ac64ee3ecfc05",
+    "crates/fmri-group/benchmarks/verify.py": "984f3d4d15c98a64c0c89a5ff69a2ec405c6958bd1fb01d8d14ec2599eb52756",
+    "crates/fmri-group/examples/completion_group_calibration.rs": "44dd937cc1063fa9bf70ad4bfa4ff3bb22f28e348f5c74e020c13c6301dd9194",
+    "crates/fmri-group/examples/group_benchmark.rs": "7f40b26ac03d84fbc06c5a485d5285ee0019fe8f7ca40bb55ae62771e59a05a8",
+    "crates/fmri-group/examples/group_pipeline.rs": "b7bbd455a6b563e13b9b001f42f66e4c2f2d39f37462f2923fc697fde654c8dd",
+    "crates/fmri-group/examples/meta_regression_benchmark.rs": "735fa65f07c5862572c7392580e1ac614ea8a70ce419544608a7a0f6f714f9b8",
+    "crates/fmri-group/examples/permutation_calibration.rs": "efdb52cc4c0f26a7aa7c7ab531815fb53f6e72f188bbe5a06c00d753898fa736",
+    "crates/fmri-group/examples/portable_execution_benchmark.rs": "7c667a4d91453a5759402b15379ef5f0be7a4c9e6ef37c7bca351615e9a1e35c",
+    "crates/fmri-group/examples/portable_first_level.rs": "6b2a2b48e4f45fb97595e558c2185fd675ef593219546186920730213bc09d86",
+    "crates/fmri-group/examples/repeated_calibration.rs": "61948c749e7efd1b2ae05e136909fbdacdbf495cab2753014e37e7f335cfb9a3",
+    "crates/fmri-group/examples/repeated_group.rs": "40e954f681f49a149429a71795c93fabdde09350c9d0e04823a69de3677fab84",
+    "crates/fmri-group/examples/weighted_group.rs": "323bc2c3aba264c684f28f7e2f6096e5f68ff9d595e2d6e1e883a690894a1841",
+    "crates/fmri-group/src/cohort.rs": "38731b3bc106de4d5d5b14ab4ef3a07acb5bc2eaf250c81a91f4b398bdee03f1",
+    "crates/fmri-group/src/fit.rs": "5d5839f4bf58c0a86ad4ea094f74c1c980257ed480f71b8f8091b3b2ec3bb632",
+    "crates/fmri-group/src/influence.rs": "4018c5ef74793eb4786298a463729ca2af9535ae68fc7943f2d35a97b5bcf07d",
+    "crates/fmri-group/src/lib.rs": "1be5b723435a9a66d8fb205e9b3950cfe27ea877c3e813fbec2fdf5578eb12ff",
+    "crates/fmri-group/src/meta_regression.rs": "29d30199481005d95eaf17b887d8a799d45412a73361e18fc30b13899f3f60ed",
+    "crates/fmri-group/src/multiplicity.rs": "11b98409785b465b8838a71bed99c50b8e495a0b9da14d6816275b194e511426",
+    "crates/fmri-group/src/portable.rs": "d6466c38547d2e213378a858f455892e5256f54afd2ddfb8c69f90d98250345e",
+    "crates/fmri-group/src/repeated.rs": "e3a26f8a0b5eef993edcd39d8aa8fd82a0cb815f7606814e00e8fdd6b2ad7298",
+    "crates/fmri-group/src/resampling.rs": "fa742d40bfaf1d9d023c9b11d6810bcf32265c811027c157bf41650d22fc0175",
+    "crates/fmri-group/tests/common/mod.rs": "a1cfb3b3928b6d29e3b97adbee7b9cebf5ca07f925a46471fc5526bcb882b235",
+    "crates/fmri-group/tests/fixtures/influence_reference.json": "0343ee733c4b9a5157d405921b2c02411147d357f4cbd89345893d982170b22a",
+    "crates/fmri-group/tests/fixtures/repeated_reference.json": "89d68aa16d349ea739584125c7c6985a01afb1d4eff6daa56c6667cd282d5218",
+    "crates/fmri-group/tests/fixtures/resampling_reference.json": "76fff5d768e545d00b61a44b60e895173acfc8d34cd420cec5a1eb98876bd1c5",
+    "crates/fmri-group/tests/group.rs": "729bff74bf1965fc7ab0de2d7a85fc22b0027a98e8e406b7b9ef072f8ee5cdfe",
+    "crates/fmri-group/tests/influence.rs": "935da3df29abe84d4cf60308f4e02994a98c4909f2bfe93a72ce6c4e1345aa84",
+    "crates/fmri-group/tests/meta_reference.json": "4773e5ec0e3bf7c819af4907e508f1cb72dc541da4913b36825a5e1d94b86b14",
+    "crates/fmri-group/tests/meta_regression.rs": "3bbf5452485707741d720bfa5a848ab9872b6d7e76b5adfd3e373e571c49226d",
+    "crates/fmri-group/tests/performance_reference.json": "40fe46c1d6ff8865c6a475a1551f64398e78eb6df7cc5333ff653de73b78812d",
+    "crates/fmri-group/tests/portable.rs": "6f0bd11e3631b6d0ad82b2634ece336066f332b9c494ac4509d66cdb8324587a",
+    "crates/fmri-group/tests/portable_execution.rs": "19a9baa83898d2c783879890a551f42f48a10b6d455dd39d634f2249d0ba5a39",
+    "crates/fmri-group/tests/reference.json": "b7629aa7d59286eaf3a7e1528b149372b72bb53588b82b9bcd83c4c21061997f",
+    "crates/fmri-group/tests/repeated.rs": "c79b24182d9cbbdb66fdd3c0cad0914281cff7636b72c409ff798066160e8d95",
+    "crates/fmri-group/tests/repeated_numerics.rs": "99a4411d4bdccfd7ccfafa810701f64ad80f694a4b9b1071c1b7d980d53ea112",
+    "crates/fmri-group/tests/resampling.rs": "a3033782311add6e24cf34eb608a8ad23a81e7e00132002542a5e92c76c1b162",
+    "crates/fmri-group/tests/shared_weights.rs": "06cff2d654260640c2f0d15d62843f9f4a5f3867e12e9756aab8586a9541c337",
+    "crates/fmri-noise/Cargo.toml": "3375f87390276d641f0c5c1175891858984fd83a63511cc0b4ddd3f4410c0455",
+    "crates/fmri-noise/src/ar.rs": "a19aeb0af7dfcc4d405a4c2e6de0ce8816b136c6a8660c47c05a45af2d8a90ab",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/extensions.rs": "619b9b0ad0ca37a7f1a7a36718c915a82cea2cd273af2a585626f676a2266dd7",
+    "crates/fmri-noise/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmri-noise/src/lib.rs": "ac709295b12d9cc2bd2f63c87fa62aa12fc89d3e6cdc17514c5451166101f52f",
+    "crates/fmri-noise/src/selected.rs": "e0bb8c6b9b4eaadba1a4f5fc455f2165bf670132d263770d8c656ea210935edb",
+    "crates/fmri-noise/src/selected_estimation.rs": "1f1ac197cb6c0fd1a6dd8bb5f846b003609f4b0f6b3015dc33e59a72516e3543",
+    "crates/fmri-noise/tests/ar_small_orders.rs": "d6e85f24dddbf0cadc5c0f9838391a5335341b9081cb15b4efa05efa958be1aa",
+    "crates/fmri-noise/tests/arp.rs": "43f0be30503523f308ccb13b71cb17644d33712d57d3e0e3fb66f7a85fcfc7c4",
+    "crates/fmri-noise/tests/contracts.rs": "9e69d584408c9a3e103d384332ad69de0af1e5502cde26fffcd430a0e00929c1",
+    "crates/fmri-noise/tests/extensions.rs": "4c32407ea86eddb994a08052db67ff81c36fd790211a55c8bffa16652d65141a",
+    "crates/fmri-noise/tests/fixtures/arp.json": "7172e6ef880034c9fcfb3254b5da619f49582a34dd148e7677810e4d304f4676",
+    "crates/fmri-noise/tests/fixtures/correction.json": "42eea3b43f03eb37210ff4f4fd54a79ab74bfa8fa0d542f831a26adc2c393e54",
+    "crates/fmri-noise/tests/fixtures/estimation.json": "ba53dc4cdd79e38a62762fe32da5b55bae0295871a16c6d5306f06c7ad6826c4",
+    "crates/fmri-noise/tests/fixtures/noise_extensions.json": "56fb929bf45ba339b821539b898fe51c5d430a5449874bc831795bd4b80a7a2d",
+    "crates/fmri-noise/tests/whitening_into.rs": "44a50aadaedbddc4eba7450592117cac1ccb795a756d7b978961e2721cca122e",
+    "crates/fmridataset/Cargo.toml": "03700f3678d35afb0db00bfd29a6c968f7049f371919baecdd75515086205a34",
+    "crates/fmridataset/examples/frame_view.rs": "a5e19dcc0b06a1b2e26261eb86fdf89f90cf4fdd7a6452b8783e7c7c8879f33e",
+    "crates/fmridataset/src/array.rs": "cff144f88c3cc7e09950cbf1035a035fc64c9845b6a0f2e9ba74bf48c4cdde89",
+    "crates/fmridataset/src/axis.rs": "9f623816c403baeb9432f8c6a944895536b81af5a414518333e3bb91fe0f185a",
+    "crates/fmridataset/src/errors.rs": "c03e6a6c71604f116f1ee0a338cd2da5e2ee0c18b303a843891d0e7e443c4c91",
+    "crates/fmridataset/src/frame.rs": "7dfcbfb04b54912760203c75238731f1b1b8b4154a2b6753b3a86ac9a7e96b52",
+    "crates/fmridataset/src/lib.rs": "618697e8a4cbcd624ffb1559a2ead0c03862f311e16b0d4d45d839463c503bdf",
+    "crates/fmridataset/src/nifti.rs": "e379cca1f8720e44043347fffc648704a0e09562d60fdb7016b1044ae755de72",
+    "crates/fmridataset/src/sampling.rs": "30e6e6483478d7f3f0997202a49b6cebba9732be52cb10cfd480bee6c6cb8f14",
+    "crates/fmridataset/src/selection.rs": "bca9e37f14703780e42e9f37b197809d996db3a2c8a8a42f1040ff9a010b0414",
+    "crates/fmridataset/src/space.rs": "757b0dda2edbc04c5b57150e7c033f95ef0396cf0955cba010eb504466c36af6",
+    "crates/fmridataset/tests/file_source.rs": "1a7b24ed10442df7e9e21d6a1f5207b706a063759ee3e7f7f8bf495d60af4dd7",
+    "crates/fmridataset/tests/frame_contracts.rs": "1b6f6891cf9abda604bcbd7aa9752be2ae3f38e12dca041c25c0801581d8f37b",
+    "crates/fmridataset/tests/nifti.rs": "18fead44d990f80bd66cc7c3fe7c50ed85cdd9a95e77472afabac9797bf8c969",
+    "crates/fmridesign/Cargo.toml": "79118150b02af085c1e5cbf5be5b1b9a9da36133f6df5e4b80a9e5beb322ecba",
+    "crates/fmridesign/benches/design_matrix.rs": "6564f21bd3c0f7911ad171f39476122c1b16ee3d2bff32ba4e26884e4d29e232",
+    "crates/fmridesign/examples/baseline_model.rs": "3b150c390422e6ba0752650f0d3b84d5614a05295e71e00c2a201398c633ef15",
+    "crates/fmridesign/examples/core_port.rs": "6f350239a8666f7335cd0f45c93946c36d3b547a35d2a77c0df02ba763c1a075",
+    "crates/fmridesign/examples/dataframe_demo.rs": "b2dc065c309619a31ff415338f56ee3ef9d0b35136546b0313ec47950b4e4ea5",
+    "crates/fmridesign/examples/event_basis_demo.rs": "75f1c36ec3ab7ef7f2464f5fe3105a399858fe9ac628e3fc1a4ba32045834cf9",
+    "crates/fmridesign/examples/nuisance_design.rs": "b5733a893c1741f681ba43f61089019d21709c59b1a7a76065587de2affb4253",
+    "crates/fmridesign/examples/sampled_feature_design.rs": "e28c21900c67165e3957802adb8d458ec94eef938a3914cb80a352a7d959b001",
+    "crates/fmridesign/examples/scale_within_demo.rs": "14f2bc293143e624bec36c285d13a843f40f35cbb909a110bd3630f80001c823",
+    "crates/fmridesign/examples/standardized_demo.rs": "66b02ec78beb8e397a33ca1d971d150498467fda56da40cc8d5a3191f1115728",
+    "crates/fmridesign/examples/test_conditions.rs": "dc0debf80615d0611473c6c52aaccf188c6c1a324450b60fc8e6d63d9e8328a7",
+    "crates/fmridesign/examples/test_poly.rs": "eebd5b30392ada4bb443f9e4d082275d3354a17c1c50672f49908cfaa152168c",
+    "crates/fmridesign/examples/test_sampling.rs": "ed6f06b894508bac6b51c690a0ca4eac868db501f4fce273fd7b227df5b4e64d",
+    "crates/fmridesign/examples/vignette_01_introduction.rs": "0f892a4b2dc65789034573cbbb8de0614b1b11c7a387d10fd0d9ba1b49b7c026",
+    "crates/fmridesign/examples/vignette_02_baseline.rs": "3965f5d08f7c9d69f9b3a7279a99ddb71617eeb655e52dd4bf0dadf925482d24",
+    "crates/fmridesign/examples/vignette_03_event_models.rs": "0c670fdf1ca3641129402e46baaec385d16716b2efe47def562b19fa4dc72355",
+    "crates/fmridesign/examples/vignette_04_contrasts.rs": "9b93da5e1d7e01e0500c8918b8008690fe1d652663ca1737d53d510e07ce7a89",
+    "crates/fmridesign/scripts/generate_golden_fixtures.R": "889021d7b2a68ef3338aaa4a934ee9451c2a0bcc01348297cffc04b0abceb20b",
+    "crates/fmridesign/scripts/generate_r_core_contract.R": "c13b0160c896ba139bc2ba04c879e2aed58c8fce69b3f95ef690eec3d256bdb7",
+    "crates/fmridesign/src/afni.rs": "1f3856b80e4521a31a25a78d3f0abab882e633c3ea69eb1e4951b7ec258be98d",
+    "crates/fmridesign/src/baseline.rs": "9ce58de2c230a2bccbcbc76bda2eedb4711b4f80f0101e49a7ec0ff2d2594d42",
+    "crates/fmridesign/src/basis/dct.rs": "5ca5b9a3d7d4016967eb2440d7f9d915bd1c20053ff4351819884dd4715d0e61",
+    "crates/fmridesign/src/basis/identity.rs": "762438413a5f96acba8d23c0d569d0fb60141e2a3dfcc2bc4780633610041f34",
+    "crates/fmridesign/src/basis/mod.rs": "010f3ffa986e4bc5d41ef4e408db5f85b68cab96df11ac1cf002a0a9f55d1aa3",
+    "crates/fmridesign/src/basis/polynomial.rs": "f0b012e4805b78e14daf1802688d5451842d0f25dff423b82584386ffdbfd3d7",
+    "crates/fmridesign/src/basis/spline.rs": "dffd8f42525d3f286ca2b78e56233b71a1223c6509947a83248b25101e6dddc2",
+    "crates/fmridesign/src/basis/sub_basis.rs": "f81c5427815b2e3f66659e3efa34e7459ff2c88f935a999d8b885c93b2c8c9a9",
+    "crates/fmridesign/src/basis/transform.rs": "327d0224fbd2ca6b5eea6a7019056b88d8bca699f63e6a6a635ed6e169e16e57",
+    "crates/fmridesign/src/cache.rs": "41d6e192736ff67b54c85d99df05d8ce99d35e17104ebc511a8fd42a9198d4f2",
+    "crates/fmridesign/src/condition_basis_list.rs": "53b4b853b829f161d63b99ba491bef927b0cf155473efc54ba1cf4c0135e1511",
+    "crates/fmridesign/src/contrast/fcontrast.rs": "b542d946ad205e4566fe3819a17f2771729a795ef1861b263e8a84399fec7f79",
+    "crates/fmridesign/src/contrast/spec.rs": "487040e804d3b129cd09a5ea7f5e5e2fa0746b9ef4406af9342194ffdd1a354a",
+    "crates/fmridesign/src/contrast/weights.rs": "7fa97136b34f52aacc87a3289a3ff7834e06607c687b3d119a26e71a6cbc30e7",
+    "crates/fmridesign/src/contrast.rs": "db27216b1a37c7da434c2696c20ef3a428a762a5497fc77b100788fe6622625d",
+    "crates/fmridesign/src/convolve.rs": "0edfd00176417f170d0b53237f0831e115f32f36f6e3038711168740b03a7e86",
+    "crates/fmridesign/src/convolve_cached.rs": "d8cff710e4acccf392c1acdfeda5903170d1f064b84159d4761ed104657516d3",
+    "crates/fmridesign/src/convolve_design.rs": "8e80e2bfc5e924bd4db5310bb74fbf0a6a80df1c92050cd89d02129f68639089",
+    "crates/fmridesign/src/core.rs": "9359c7c68184ce587621370fcd1f831ed690f82058313292d9c2d16169fb4d30",
+    "crates/fmridesign/src/covariate.rs": "ce1a1f9e770aa7302459a5963a1246a096306696af443c81555c1ffc0dade0dc",
+    "crates/fmridesign/src/crossval.rs": "f2f194ea13e40a0f17610eb1b5742eaaa59deca99aebc469b359233084186ac2",
+    "crates/fmridesign/src/dataframe_polars.rs": "5e7bbc639f03a8fc3fb1afabb80c60fba1ff49a21b3191476123e3c162561492",
+    "crates/fmridesign/src/design.rs": "d2bc5803d68e4f910f1467140eda90bd377667dbfc6d357ceb6f15764a8de10d",
+    "crates/fmridesign/src/design_colmap.rs": "422e644bc67314d89322d26d01bb7fdcd4372ad99a69daa8a4fea4309c19cc6e",
+    "crates/fmridesign/src/error.rs": "39e3df60b43f8e1c2504071a4cbf69df750b7df68832d4560f350d1a566c84a8",
+    "crates/fmridesign/src/events/cells.rs": "743b4a856c26e5eb688b6ffc3ffe1af4963a652fe8ac9102f4d42c332e4ab630",
+    "crates/fmridesign/src/events/dataframe_conversion.rs": "23f9348dd26595eaadde3e3915a76263e0c35519b3c445bf4fe9a3ac8d367acc",
+    "crates/fmridesign/src/events/event_basis.rs": "ce4bce94f064fc4d44ca2648a4086606d4b0e498165ab55338220e181bdb9457",
+    "crates/fmridesign/src/events/event_factor.rs": "1fbab99bab37338ed858ee350066870620cad96b26f8a132b589ee897e6dc748",
+    "crates/fmridesign/src/events/event_hrf.rs": "414fd04faa54d556355ddbd500e36e76ab8243c8100c68e7f93d70aa307661e6",
+    "crates/fmridesign/src/events/event_matrix.rs": "de3e197846015d8231070fd839cc03e91367aa54df5dd10183864cd62ccebc53",
+    "crates/fmridesign/src/events/event_term.rs": "44015338beeb81e4dd772691fa4fa5af9463a3ec75bbd72a1f100efb6aa49c6f",
+    "crates/fmridesign/src/events/event_variable.rs": "164e3a0ebc8c1df5fb24e3d070e1927685ce96c7c253af67eec644a7f72516b2",
+    "crates/fmridesign/src/events/mod.rs": "d560044eec8a463f2068038aa489f558e4cffc35c5857dccf39950719b704323",
+    "crates/fmridesign/src/formula/builder.rs": "086cb1aa4c67d62f1665ef39d1eb14009e6c50ae27ef8afc5fb74bdf8f569a19",
+    "crates/fmridesign/src/formula/context.rs": "eac2d7aa55588a061f58650ffb061edda70d5ed8b85d5d2ed418d90421b10abd",
+    "crates/fmridesign/src/formula/dsl.rs": "7d38cf7b34d77af8c729e2a14a0e3798044c725364a2a3046510e5b3a461e070",
+    "crates/fmridesign/src/formula/event_model.rs": "b7351f9951d77c07ee74f2a1d50fa7c2ebf3b04b5360ebfd0aa1d97e16e77c18",
+    "crates/fmridesign/src/formula/mod.rs": "012948de98d194be2f13f51bb71876359189c08983473c50def5b22e33194579",
+    "crates/fmridesign/src/formula/parser.rs": "0962d945bdd3d8df00618b342ae31d45c4637a74fcfeb6b50c77262277e7364e",
+    "crates/fmridesign/src/formula/term.rs": "b1f515955d4e100a9a9159d1e7489e8eadb9cee16a0e927132a02f0431e8212c",
+    "crates/fmridesign/src/hrf.rs": "7277e760a857fdd00e11c26b3f70e86b62ebc82f560a1ee35dcd1bd6e379df69",
+    "crates/fmridesign/src/io/export.rs": "07dc0fcdcec90f3d166879b43e259dd8ffa02f799a7a2c237cd1f974e8daefda",
+    "crates/fmridesign/src/io/import.rs": "8a08303ce0e42d5425e69260528774389a950c1f6d05c31a3acaed01a9c35f11",
+    "crates/fmridesign/src/io/mod.rs": "47e80e60211c9843ac1644cdd9ec90e24bd446a7378fee68215ab770f848768c",
+    "crates/fmridesign/src/lib.rs": "84b9421762531af081e3d4df760f2026877a311ef18b922b46902781a92eb710",
+    "crates/fmridesign/src/naming.rs": "c50177bb052d9d19523b819cf950ddded1594d11ab79cd226d973c2ee140aa06",
+    "crates/fmridesign/src/nuisance.rs": "26a9b9ffa57d4f41ab6e040379bcfa47e0e80c8503f11bcd927b07558586ea80",
+    "crates/fmridesign/src/regressors.rs": "ccd922955c86a899672dc194b5ebc17599fe781a938184734be11163173613b4",
+    "crates/fmridesign/src/residualize.rs": "d872ad3e2c812540cc65f2f941f41fce73502e9f1bbbae2f08738f9e0ac83a02",
+    "crates/fmridesign/src/sampled_features.rs": "180c4392e224d47c1ef5914a16c5e2ca32b78a3fbbf757a140fbd34ae31eb07b",
+    "crates/fmridesign/src/sampling.rs": "49ba2e4db5a5dd38e6dde5248a67aa4eded76a04e0460a55d669185a7f762e50",
+    "crates/fmridesign/src/trialwise.rs": "9245ff3da5df65e2fe527e6cf72b5ac0004f1c4c769fad4c6d82a6667bf84f30",
+    "crates/fmridesign/src/types.rs": "95a8838c46d60d3b2976ed651f194b3f6d4c95ff5c8cda8f52a2d8d62f6617f0",
+    "crates/fmridesign/src/utils/event_utils.rs": "792cf8eb01874b710835d917d48309e221502369461a700aa7301935d55ff246",
+    "crates/fmridesign/src/utils/generics.rs": "7384270917c0d2d0bcecb6bae361006c7736a208c9e5f647c733cdbc69f1aaf3",
+    "crates/fmridesign/src/utils/mod.rs": "41971ba3307be105341e0b70c82cdb3da99af30f8889548b7ced4b6cc16e531a",
+    "crates/fmridesign/src/utils/model_utils.rs": "631791ccaf6bf29614b843a85ecea1ffaf06c197927bba5628a905cbc674f0e5",
+    "crates/fmridesign/src/utils/term_utils.rs": "386c12be5dcb8d2caf4f4af09e9a79a7d37b621fa5b41f2652c41b203dc6af5b",
+    "crates/fmridesign/src/utils/validation.rs": "117d22f3b1e0040d800ee093eb57b31eceb746e8c43aff547f94951d22caff8a",
+    "crates/fmridesign/src/validation.rs": "60ca628874c5e3a5086f23201ffb71e2ab0e4ba84cd43caa86f5390a910b4272",
+    "crates/fmridesign/src/visualization/correlation_map.rs": "ac2e84c5dc899655e490411d263bb82cac346a415afb966a214efeb3a725c3cd",
+    "crates/fmridesign/src/visualization/design_map.rs": "cae629b32ed62cfee4a148de977e65bdb6b63452a33ff4b4850425b05433fa7b",
+    "crates/fmridesign/src/visualization/simple.rs": "b1032dcccb65c451e67bc37f94ad726300f071da95d8f1f16dbf6af9be6f9fbd",
+    "crates/fmridesign/tests/design_safety.rs": "683c030674ce4f80ab1de3da4af15693bd8e1c99bb9216319e9685638d1adbd1",
+    "crates/fmridesign/tests/fixtures/nuisance_contract.json": "d9ca206bd31b9a75d7288cb0358724ad6fc7d2b711fd30d953c139e6677652aa",
+    "crates/fmridesign/tests/fixtures/r_core_contract.json": "3e6604dbd4596a0c025f186313869bc6383f658cff2970a5bc1051d624d7aa70",
+    "crates/fmridesign/tests/golden_tests.rs": "f8deca8bb34f368fc721bcd174a31a9e93d97104295b876d8c890bb81e275fc7",
+    "crates/fmridesign/tests/hrf_spec_roundtrip.rs": "58fc91fed426666a55e71af6a83ff7713f3a09264011b27de12de2206464ea34",
+    "crates/fmridesign/tests/integration_test.rs": "9a42e5eb84098ed3189ef99c9538b53687431cd3924c53b9dfca350f6ab4b4e1",
+    "crates/fmridesign/tests/nuisance_contract.rs": "527ed93861ff9178db82f206bfed36cc501d71d4efe770a892e632db41133e3e",
+    "crates/fmridesign/tests/r_core_contract.rs": "fcccf9771f72aaca08c11f9e8098af3dc2bed4bf6a305f3c9181a2d1dc2beb67",
+    "crates/fmridesign/tests/sampled_feature_design.rs": "20a365a6206c3dd4c1e03156c9fc9d68cc669651b594074069e5ab004647adf7",
+    "crates/fmridesign/tests/test_afni_integration.rs": "08e27a213dd90d5fc3e04f8c15ff1f600339524dc717fc9430d00d4c01badd9f",
+    "crates/fmridesign/tests/test_basis_functions.rs": "73d5d3e8484c061b86da883f45fe9e2cd9c27e1314dfe578849b50c99784e249",
+    "crates/fmridesign/tests/test_contrast_weights.rs": "0e48101ca8f23a603eeb250aec7647c7271001b1ae3edcf7b6c053626091e84e",
+    "crates/fmridesign/tests/test_convolution.rs": "839f4551e64f9589d86ab73b0ef67b994424c8b6a5b0f4be60bf4884dd484b24",
+    "crates/fmridesign/tests/test_core_parity.rs": "04563536ddb86ec119e41e96d38767cf2b7c46ea50ae78d5011956ea4b3cf271",
+    "crates/fmridesign/tests/test_crossval.rs": "9538a4e8f886bd1437dcaadf112ca3880579e347d5d6067de8ae723aa720450a",
+    "crates/fmridesign/tests/test_dataframe_conversion.rs": "c8b994d0fdcefa34eb39a3dfa5b7554eec0ea3a26069cbf1da15df6528f84921",
+    "crates/fmridesign/tests/test_event_basis.rs": "997a5d2ee68a6d972c27b26ff659f474976f015fd50601d84f64a4fcdfc8191c",
+    "crates/fmridesign/tests/test_event_model.rs": "cbe72e041b7f531d700d789eb473c165ce837683028549fb9e95ca32c417f6ce",
+    "crates/fmridesign/tests/test_events.rs": "0232ec222333b61b858be702e116610930827c8091247b15111492c8959cbbe3",
+    "crates/fmridesign/tests/test_export.rs": "102fbe878c91f092014d26926dad18e23100e71d3444022944b4c7f60eba7aa1",
+    "crates/fmridesign/tests/test_fcontrast.rs": "1a1c2642656ba4476bcdf864dc22375426f426dd2ac0b4d2e1e0fb3caaa7674e",
+    "crates/fmridesign/tests/test_formula_at_operator.rs": "423977e0735308083f0deb252d02ad04262978e42c49fc53c05441e78aab1560",
+    "crates/fmridesign/tests/test_formula_dsl.rs": "c31e95065e5a14b8656aa6a6ed3869da99d54b8632187d4ff533b1dd1ade7a66",
+    "crates/fmridesign/tests/test_formula_interface.rs": "81670b836b9ab3b21b9c842edf7280e424be0336bbaa9a33f0493ec4c099b167",
+    "crates/fmridesign/tests/test_formula_parser.rs": "dda3379a9a1fb1f8e79f3866d287979e13e0d1ea21190d03a7162bb574b0b100",
+    "crates/fmridesign/tests/test_hrf_integration.rs": "379a5943bdbaeee45d02f267caf87f493f26a101bf6ea57f21ddd06858e07d30",
+    "crates/fmridesign/tests/test_python_parity.rs": "d1782b88d323edefd009757c47942f164ca7ddd51d5e088154cd988cdd8de49f",
+    "crates/fmridesign/tests/test_sampling.rs": "6f328b112cd965842552be48537030cd409d3fc4baa885b6c30256b5e5cf89a2",
+    "crates/fmridesign/tests/test_scale_within.rs": "af518db32f1b243a4e87a6297d9050933b3c4d9d52580b6acac4d45c2e2f546e",
+    "crates/fmridesign/tests/test_standardized.rs": "9cd348559e20e3b100aeea4eed8d960ad9a740373f88511ede8a99619cfd2210",
+    "crates/fmridesign/tests/test_utils.rs": "abbe6e826fae36703fef7fda287f5b8d1ce8c2794901a519b6903196ec4c43f4",
+    "crates/fmrihrf/Cargo.toml": "1a2146766f01b426bb57ad49f01484ea92742cf3c73b0b72f3acc35257eec52b",
+    "crates/fmrihrf/benches/hrf_benchmark.rs": "41488d9538ad387c1797efab931b649250a0d8e8819d3a2f83d990832845779a",
+    "crates/fmrihrf/examples/comprehensive_demo.rs": "e80f65d9507ff6da15b1d7c2313a6e7ff29574eeaf2a05bc2850470a93f3e8ef",
+    "crates/fmrihrf/examples/empirical_hrf_demo.rs": "4937f203bc903bad69f553b139bb0ef2ec1c61d4ad429641ebff5872e761cc1e",
+    "crates/fmrihrf/examples/empirical_hrf_plotting.rs": "9e03228ecac66fe0d84eb8f5c19dea8257ce3032ccc449e63ef95a935b48ed6f",
+    "crates/fmrihrf/examples/html_plotting_demo.rs": "dac858718bffb4c6b2a12d612de5b5a6b44ce8c17d11411d9af79b41def1ad77",
+    "crates/fmrihrf/examples/plotting_demo.rs": "ff593e165a9e6af46d868796521e0cf76e4a58448b82b55323d774b04aa0db1c",
+    "crates/fmrihrf/examples/plotting_demo_simple.rs": "1282eccb14f8cc44d62843de1e9ff846fdfc1fbebda19b9e4516c867dea64b67",
+    "crates/fmrihrf/examples/port_benchmark.rs": "86cc0f67684ba4066a71fbe393384c566f8b333c7d3ad2b504b2e93f23f60911",
+    "crates/fmrihrf/examples/port_design.rs": "e9c03e9622dc8511567d8894ee93c0560cc0adc5d790d9d019a2b9c654b43306",
+    "crates/fmrihrf/examples/sampled_features.rs": "8738cced4f2e296279f4390c4dda891e96c98ace24260e1b2bec211a39eff061",
+    "crates/fmrihrf/examples/serialization_example.rs": "56be2c098eab1164013d57fcc25e933585113e56fcd371124e501a7a0a1f49d4",
+    "crates/fmrihrf/examples/validate_spm_canonical.rs": "ff1da109f7b7033dba7954a14c36b088cb029dd11de7234300e72bb947e7e719",
+    "crates/fmrihrf/examples/vignette_01_hrf.rs": "57b8851f604df1fcf5f39cb44b0b12b016edd7c6cc27cc8c74bdbf65af03b2b6",
+    "crates/fmrihrf/examples/vignette_02_regressor.rs": "87bcafe91a6ea6f12cc7b8c4d0a522c947291f24e701c64dd23223bead362067",
+    "crates/fmrihrf/examples/vignette_03_generators.rs": "692d43dbedf510fc785b443e35d6d83ac0f9710cb781d007eec0b48297255491",
+    "crates/fmrihrf/examples/vignette_04_advanced.rs": "032070618df727364df3cc76f62b7926979f9639ea0f462ccb7d25e85e9a19fa",
+    "crates/fmrihrf/scripts/generate_convolution_contract.R": "f73f478515476575512c6357ef9d7de9fe8202670fc7d25e64be68deb7c2d940",
+    "crates/fmrihrf/scripts/generate_r_fixtures.R": "2b3cc0583a6f706fc20dfbcf3cf334ea3d8d4085fd86881e83010faa6512d7e8",
+    "crates/fmrihrf/src/error.rs": "da700d1089fe4ecfa437db8173d8d430dd8e76d58096753a0f77fc3ed44a9bb9",
+    "crates/fmrihrf/src/hrf/core.rs": "497eb70c176a62d35b3550683ecd19ca0476bb993b4aed8d05eb4e01b701529a",
+    "crates/fmrihrf/src/hrf/derivatives.rs": "4d43e2ff6c5866c2fb7c4d4c3304b841c98f0cf178e4b633d4221bad998eb1e6",
+    "crates/fmrihrf/src/hrf/empirical.rs": "c0e4741cc41f68d65a83c396f1843ba865530970884976dcfd43443ad7559c24",
+    "crates/fmrihrf/src/hrf/functions.rs": "d4bbfc36660e93f1d5139999d81e2ebdabeba4fe798dd575163ca64943708014",
+    "crates/fmrihrf/src/hrf/generators.rs": "203e530e6c4a0001777c2d50b1e536cc45123ea40805ab4317f604fc9a642ed5",
+    "crates/fmrihrf/src/hrf/library.rs": "7f659345ea25941c05440b48dfb28af2b0130d6c6bbaaf2b1769e0b1b6420347",
+    "crates/fmrihrf/src/hrf/mod.rs": "302c88f3d18d955fa28cbafaa0502246e1ebf5672989ba92e086db13846e5043",
+    "crates/fmrihrf/src/hrf/normalization.rs": "b5e20f1cf2d7f65b7cd273a95411a67c50a10296600c275c67c45502f8b2e8f8",
+    "crates/fmrihrf/src/hrf/recipe.rs": "928af23b37c19030455d182f188f8a47c50b42e6f173feb4b0ab01cb16fbfa86",
+    "crates/fmrihrf/src/hrf/registry.rs": "cf8d9a15c9b775d1733093c845e6162d2ff61e821d7e47c7147c954887c40e1e",
+    "crates/fmrihrf/src/lib.rs": "61b0fa66905c63a1891a5009a483ce52d9b684056f7ee4f7e8060e5498be4657",
+    "crates/fmrihrf/src/penalty.rs": "a0385c7eb7eebafe75fc736c837c3609d7ad997239993a1d0ba343cdd2df5fb4",
+    "crates/fmrihrf/src/plotting.rs": "d2611fca9348ed47f1118f41d82cba4aa7992745ff8574cd4f03d02ffb71fffc",
+    "crates/fmrihrf/src/reconstruction.rs": "8f5b7d567075f37f5f1492f53fe5347a294ce48463d63abbf7a73123ad5afa88",
+    "crates/fmrihrf/src/regressor/convolution.rs": "e24956a116f7e08653a918d56a73f6ff586b7c92a5a47744e9f493416c020075",
+    "crates/fmrihrf/src/regressor/core.rs": "ff8dbca79c8d9909aeae911cba59ff761cec36daae7b70b98aaa1967925ed8a6",
+    "crates/fmrihrf/src/regressor/design.rs": "1864d0aa84b6c8281f45a1bea83b4e83131c8b21181e9b73f6d617ca1c39f1ce",
+    "crates/fmrihrf/src/regressor/event_design.rs": "9288796babd7821e27a588a4c5f6f64ed179154b28c2e198a422ce5f3e2ec820",
+    "crates/fmrihrf/src/regressor/mod.rs": "61cc5d39c156ae16c5571d198675effc91b72349c09d48e42257992784680f4d",
+    "crates/fmrihrf/src/regressor/neural_input.rs": "f2e8344993cdead8c65222a69d72685a740bec4bd312586a35984590e427a128",
+    "crates/fmrihrf/src/regressor/sampled.rs": "c9fa2394e1a84025710080fcf3860c0ed9e69b76437e6c93025023da9a017c9a",
+    "crates/fmrihrf/src/sampling.rs": "271c8b08552cdec1bfb5791de6389bb42c73639a7f76d3fdd4316b34bf4cce43",
+    "crates/fmrihrf/src/types.rs": "9376c52fd3eb228ed735e874e1a532244c4606b2b25dc0feee78eaa1f91f60d7",
+    "crates/fmrihrf/src/utils/cache.rs": "31a32ff0b32ce5ad20fae97e54c727ee2a7a27e94e3c2611671b000584532050",
+    "crates/fmrihrf/src/utils/misc.rs": "17ff6ffca7bbf0d1ca8b2aed46c37533000f8a4f889cf17b3a4b10bd8c0e63fa",
+    "crates/fmrihrf/src/utils/mod.rs": "70b5fd123cdc1334a20f665f05887c8d13bba00b254ad10a57365126d7e66817",
+    "crates/fmrihrf/tests/convolution_contract.rs": "1ccbc18de3979642ca57d1aa342cb95024a1815d3cd1b72205b7370e7b7fcc6e",
+    "crates/fmrihrf/tests/cross_validation.rs": "ed46faebd8b7f534211e9f69492bebb8eb26b1a0660372d0bcf4464f6fac7024",
+    "crates/fmrihrf/tests/cross_validation_spm.rs": "8d18a8321532361c694a8d521b1fe574086b6a17fda8abe3dad2624f244475e1",
+    "crates/fmrihrf/tests/current_spline_contract.rs": "90a4930b707753ab6bc4ae897307661cbaf2d3d9680ba7dff54e450d39d2d9b7",
+    "crates/fmrihrf/tests/edge_case_tests.rs": "536b53e2d64192fb387e39efed74b92eb4f56d632b9c54b146e9d967280ed5b8",
+    "crates/fmrihrf/tests/fixtures/convolution_contract.json": "6c3a8a7e885ad550117f68c6e7c12e7ba575fbf2ae941341c436b1ceda07ecc8",
+    "crates/fmrihrf/tests/fixtures/current_splines.json": "c6f477c179fbc347100f5874a944f8bdaf899404c6d8f243a7d8d425f8a01cf3",
+    "crates/fmrihrf/tests/fixtures/hrf_audit.json": "8b3bd3176e38d0a2f5063047a41bfde6782d6ce75d68873f0f4598ddaa725058",
+    "crates/fmrihrf/tests/fixtures/sampled_features.json": "ed98a0f2939ccbb7a61356a6bdae99ca14cd56178d63679def73cdf15d9bffac",
+    "crates/fmrihrf/tests/hrf_audit.rs": "32b22eed3f3965afd480314240f57e606805a2d4fd19f5762b1afcf35da84099",
+    "crates/fmrihrf/tests/hrf_decorator_fixtures_parity.rs": "9013f73e7ce1217c53918fa28ce435ef93b4ecfd4671c171c21cc15d0936e7d4",
+    "crates/fmrihrf/tests/hrf_fixtures_parity.rs": "d46ae1afffcaa6014c1a309373785cf1c2b709659d122bf2a65e6b997d6433af",
+    "crates/fmrihrf/tests/integration_test.rs": "345026d867334539dd2cdcc03a672cd64c15706cca9fa9e62945fa0966c88c1d",
+    "crates/fmrihrf/tests/regressor_design_parity.rs": "b6b9c71c73488ed27de8dd9e1ceaedad51c9171aab6c7ddb2f43bfd233320105",
+    "crates/fmrihrf/tests/regressor_design_spmg3_parity.rs": "309d6080dfefece3e138ebd0de8eca9e7eac3d68ecc1be8389e2cc5cdba45e33",
+    "crates/fmrihrf/tests/sampled_features.rs": "5187837737322da26ea9953eb57c74b858d5aa053390d8af2dc495b8631da477",
+    "crates/fmrihrf/tests/spmg_hrf_parity.rs": "ef2bb4b7fc73fd29db6a2b44af86d2b67c2aad8cde0afbb8f5dc0a8594b1e885",
+    "crates/fmrihrf/tests/tent_hrf_parity.rs": "896abc794da8ff56ac83dde5a5a3c220f39e6636678ceb1a7733e9c1eb58a756",
+    "crates/fmrihrf/tests/test_serialization.rs": "54b00b9ac2686948396d2a3d2976198179a3f8ad5bea9b204bf8b379e05f8342",
+    "crates/fmrihrf/tests/workflow_tests.rs": "63274e9960175f5088c7b5873cc1840ccea3d8b62b224d48709176756ad120c2",
+    "crates/fmrimod/Cargo.toml": "e97173ce599b7fd84ed5c34d8536789452391e1554e7cecde5278c46d3024a0e",
+    "crates/fmrimod/examples/analysis_viewer.rs": "8fd9473e4cd411b3802e3ca62f4009984807ef72ba024fb68d778ef00d7fce94",
+    "crates/fmrimod/examples/cohort_latency.rs": "111d2fb4a25a51d5a8258881a05ffb780293501600b72be913c8f7c2a74548d4",
+    "crates/fmrimod/examples/complete_first_level.rs": "ceb5543f2c261db6b251e7f87392379e37be7a5a078a86bdd9f876b6669c4734",
+    "crates/fmrimod/examples/first_level.rs": "16aa909e54ce4b804bdc261bd6c45cff432f55213a5cd95da3618141f8947df0",
+    "crates/fmrimod/scripts/analysis_browser.cjs": "4b1e5a7c98b05ad96fdec36dacf031053d7eb7f5b369446a4685623dd0f85c0b",
+    "crates/fmrimod/scripts/analysis_viewer.py": "1a2dcb2d6a6784c34e3ba5f6c79f1dcb2b6e013cc713f4c3f9a38bc4ad1b7144",
+    "crates/fmrimod/scripts/generate_cohort.py": "dee15fc33167e5a9a3ff5fbb7106eb12707a0591fc1f2c8855f32e90993c2334",
+    "crates/fmrimod/scripts/test_analysis_server.py": "33e8f7c55aaef0099e6b2e88c4f82d3f90b82ebd42cd2b902a46ad51204f0abc",
+    "crates/fmrimod/src/analysis.rs": "6db89f7a3bcbd8d2f5715bdfc94e623bf11097409aa03bd69084c2052649f441",
+    "crates/fmrimod/src/cohort.rs": "56a52b73fb20c15a1e31a82a6cf34fa852d83847ee009b9b8670bbd87ec88694",
+    "crates/fmrimod/src/group_requirements.rs": "82608e7b386cd8c8146d335659825b40512c3a1d907aae0e0b44f184ed4f56ac",
+    "crates/fmrimod/src/ingress.rs": "4b7b19a5036dd30ffc9fc0aca741fe737b5ac40d85bfb778789b56ab49074a1c",
+    "crates/fmrimod/src/lib.rs": "d054ab7d0cd8004abff40c7cc87cee67ba6b0663816fbd83b488d5ab18266f38",
+    "crates/fmrimod/src/outputs.rs": "07f4748be45fa681524766e419a860121f09831e06131794db2c90e5245c172e",
+    "crates/fmrimod/src/session.rs": "c3a529793f4ed370171473c0df6d14ddf9fa52dca58bb5017a8d1ef47671397b",
+    "crates/fmrimod/tests/analysis.rs": "b96793bb211cb07d3bb0408f7bfefc7107226871602f659d41e44c3b745c1647",
+    "crates/fmrimod/tests/cohort.rs": "082ac4c7a9ee68357b8377d4d98f9aef5b23fe5065de5c34ed55a8f390b3258a",
+    "crates/fmrimod/tests/fixtures/pipeline.json": "0d9e320518311fa79895f9ac07e4be414018a2f76891970bae5ee197305ec9a8",
+    "crates/fmrimod/tests/group.rs": "3b5d0229b60af0877e8afddb8a2bf2a1487de504835ae740de2335f9c05cdc08",
+    "crates/fmrimod/tests/group_requirements.rs": "a278caae7a8df0b8cf4c5cc2d2e2a73f8ee3894d7aaf6f01897d564fa4793389",
+    "crates/fmrimod/tests/ingress.rs": "032328361bb69c01ee0707097c2d5a6667862a88e901d0de3d509bc410a96b68",
+    "crates/fmrimod/tests/outputs.rs": "238779a5931bebce00248c49d3a6010c9c4894d09d62b738ea9689fde938d031",
+    "crates/fmrimod/tests/pipeline.rs": "bf6d89a513e53b29fc67abfbe2587c0c7cd55896baf44c74508db04d5787e465",
+    "crates/fmrimod/tests/session.rs": "b11c17382eecb04a1bddd1c5611c57475246e3d8066eef5ced0e3a6184ec9277",
+    "crates/fmrireg/Cargo.toml": "2bb512108f68acc06df63d6002215884acda002098b720c92e5b59cd6bfc24c5",
+    "crates/fmrireg/examples/algebra_gls.rs": "f65700083a3c8c094b8eec3d85b5e3851262ce60c55eb5434ffcf4afb361798a",
+    "crates/fmrireg/examples/algebra_qr.rs": "90957bed53445d15dec28eb1d79e27e5577b292815ab578eb97e5c3bfe74dc42",
+    "crates/fmrireg/examples/block_throughput.rs": "4fdca5037f11f068399ac5fe6cd034e04c21e6f53472c284547fc8e812d2d5c9",
+    "crates/fmrireg/examples/completion_ar_calibration.rs": "225d0e7faf960985f2dd9a20aff35e5b838d32c5831d4e7f11d2e8707218354b",
+    "crates/fmrireg/examples/gls_benchmark.rs": "da3153110e00a07d61dd976536f82b78e26f97a445cc89eeaf3e93d5de684cc9",
+    "crates/fmrireg/examples/hill_kernel.rs": "99725208833407771d2699b3bd6cfe8b445a60f8f9a9b9676291250de27ccc88",
+    "crates/fmrireg/examples/output_benchmark.rs": "97a6dda455de23801c7177375a2e8d7fbc5443b5b609c2b9a697fbbbadd6329d",
+    "crates/fmrireg/examples/reusable_fit.rs": "ad360a2b380e80749625f29f36477a95a18b70cf066ea1013d7df3e9cba60de4",
+    "crates/fmrireg/examples/selected_ar1.rs": "6cdc5ce527cf16bad0c7030670f884c17e9a493ede84fd12d1f558499c250ea5",
+    "crates/fmrireg/examples/selected_arp.rs": "a87a783933bc1a860a9ce9215e91adbcc1aefd412ae1926a5270efc75181ee6b",
+    "crates/fmrireg/examples/selected_gls.rs": "dde5fb27533ab2b45e81cb71dab26f9ae5d49df3f1c988c7b3d129b1c82cbe3d",
+    "crates/fmrireg/examples/selected_qualification.rs": "c9e745039f85815c40f1499771bec649849635912684e29e6d2e03822602b01a",
+    "crates/fmrireg/examples/throughput.rs": "328c19802afa729f08ffd922c9610099c0982047a8ef8f6cad3ee5f57831b079",
+    "crates/fmrireg/scripts/cohort_qualification.py": "54c2e51697b13e220336691a830da6cab83d430a0c5d3defb4c534f7b8276f2b",
+    "crates/fmrireg/scripts/hill_compare.py": "7dbbb5a852de90c91cae137d3d25bc92385c17c6c7527695893fc6238bb2cd2c",
+    "crates/fmrireg/scripts/qualify_algebra.py": "4f466c6187a4e452c6e80616cd0b4e508ede5ffebfe35bbb41a7fbb25fc60b74",
+    "crates/fmrireg/scripts/qualify_hill.py": "c3b92151ddb5986b893ca2a3599edf7dd299412b400185b8df43575dcbca0de6",
+    "crates/fmrireg/scripts/qualify_speed.py": "b1ca25d1201f3575529ab0c3e35458aa5a660ab7e964d6ac214553f9fca13ddf",
+    "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+    "crates/fmrireg/src/dataset.rs": "630bf108d20141f662ce71722363be3c7ced70e264fccc33c82556abe29c9421",
+    "crates/fmrireg/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmrireg/src/lib.rs": "e0dae8748aac365948ba6c136d02daff33b1b38020f208ed6d09ffe5907f53f3",
+    "crates/fmrireg/src/output.rs": "e1f72b9e435ba51290ec00b159590c2146d520ebc2f990e1e86697e4a84ac8f3",
+    "crates/fmrireg/src/output_dataset.rs": "69d52108862e6c85887b8f91445d5885311cd335a02dbf867629f0c8e7ff6775",
+    "crates/fmrireg/src/selected_estimation.rs": "ccb260a1409bdfd63f467025049e87f11d6e6b1f6771d024b73132ebb1795e03",
+    "crates/fmrireg/src/selection.rs": "b46d57bcdf20cf7fbbaf956c6ebcd744910084428e345341ca7748ea1a0fbb26",
+    "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+    "crates/fmrireg/tests/arp.rs": "ddd6ed8049e1c525c309df56741765b982b98fb82598cc0a869478aca0387065",
+    "crates/fmrireg/tests/contracts.rs": "a55f8f4b65572b94cb030f62c07ba3b5f25b44b33c90efa63310e5aefb6f5c7e",
+    "crates/fmrireg/tests/fixtures/estimation.json": "3c62bd7d39b1a51fc02c0c7e0e6dceb6c5c1af971166c98bbaa792f24e054a61",
+    "crates/fmrireg/tests/fixtures/selected_arp_estimation.json": "8cffc418c169f373d6278f25be6993e9d415f638909a50b1ac2371dbecb554f9",
+    "crates/fmrireg/tests/fixtures/selected_estimation.json": "6a81465e196e10b9e0685132a9c5870340f0506a0a2bda0c163c6aa9f6564cd9",
+    "crates/fmrireg/tests/fixtures/selected_gls.json": "2ca9373be15867f562a38bc5dc0e22a84c345bea461841dd6bd7150c3fe8e90c",
+    "crates/fmrireg/tests/invalid_allocation.rs": "ef8b68c67f896efb1b3a0dcc5fb60532397d0690cd3ae7ac3bbbed4ac5daab52",
+    "crates/fmrireg/tests/output.rs": "5c7592eaeb5a19e069c6a7758366841c2d1758578a730af920a386a4406dd4d5",
+    "crates/fmrireg/tests/output_dataset.rs": "6f211a317aca527e5588fe520744566f0e10c06a95eb02c353d3e1c2eaa75ce1",
+    "crates/fmrireg/tests/parallel.rs": "d0d2783f45198b517b05ebdf554f460deb2392d7ef42b863546e3d34b4388b60",
+    "crates/fmrireg/tests/selected_arp_estimation.rs": "bff9ec3f6088361f73c64a0195917dd85f49444e8a68885ae7611d47320ff3f8",
+    "crates/fmrireg/tests/selected_estimation.rs": "2503063347116b34670e89f8f65064321b5342e88769b723b1a69d3e402aeb0c",
+    "crates/fmrireg/tests/selected_gls.rs": "577e086d53e5e2f6a838acca70445ad381d46bd3e5e139b3295599fa923a3f0f",
+    "crates/fmrireg/tests/speed_contracts.rs": "d8b80f6d0d1ae31ad92c5e6760acb4627a9ea1acf217e111bc9a482fb24d8648",
+    "crates/splines/Cargo.toml": "9dfbdddd8786bd5109a968302f32a48402fdb75f9a0cbab17dc295fa3513f327",
+    "crates/splines/benches/performance.rs": "f6c3f9cdfc170be1082de6c560d708b7962e6e20e878e37fd98fca1f9527f0e9",
+    "crates/splines/debug_matrix.rs": "b0a53aebf4385361c9263eb31534724d4fe48139ea95bbc0fd42f332764dcaf7",
+    "crates/splines/debug_matrix_test.rs": "28fe3a7546905c298c27abb190ef4c587eea2971a18c05416c7d4e474c2c90fa",
+    "crates/splines/src/basis/design_matrix.rs": "dee9b4f0b0291622a5bfecdec9a88b012f028eff63ea33d8fea5b9351dac3ad7",
+    "crates/splines/src/basis/evaluation.rs": "b39180f156e229b9bba449713e7052d8305accce715c76a083ccb22b8e655bf7",
+    "crates/splines/src/basis/mod.rs": "268e2b5e8cd31b3711488a09890f41799b9a942da1a357020b31d0cecad264a6",
+    "crates/splines/src/core/bspline.rs": "1b80827f0456994ef6995c592348e78c99f2b4509356d10bf5606de010417a86",
+    "crates/splines/src/core/interpolation.rs": "3440f4584def3136d1f203bceb5dc897fb0d2dbe299455033dfb33de79b25aa2",
+    "crates/splines/src/core/mod.rs": "cc58b125c12f4d7bf896645c02811e6fe640d734a460c5e198666dd891b0f0f9",
+    "crates/splines/src/core/naturalspline.rs": "3898c980b3a0970586a9028cb4fc7b60a59b001785a1f8129635e244913eadec",
+    "crates/splines/src/errors.rs": "d19995b4bd1669f7e6bc78a9adc41f5fbf39b32ee4b5e8af1e43f16fba86442f",
+    "crates/splines/src/lib.rs": "5b4f7006ca5077fe6711a20bbb9ada548d32cbb0808921141cec69c4e0d50100",
+    "crates/splines/src/test_rust_bs_comparison.rs": "f9f44e3f7ae17187eb52eacb17ed54899b9c51cb5e81fd241b76d011f23697af",
+    "crates/splines/src/types/mod.rs": "d5f3e99f489b6c30f513efc5590319fc086fdc925c727176ffa1f7634a68c189",
+    "crates/splines/src/types/spline_result.rs": "8cd204f969a7d71d825b61f0ab0acda5bca55ccb12d7001b07bbac6533349281",
+    "crates/splines/src/types/spline_traits.rs": "cbc13598ad9bf19f9ce33a298bc915cf1174fafb39a67bc95d5d41544fd97262",
+    "crates/splines/src/types/xy_vector.rs": "c9a48c63eaedf34c00dd3973b6ad5b8e29a3370f5439458e714ce7b266bd9bf8",
+    "crates/splines/src/utils/knots.rs": "f8b9848cb2779f03339f62795751e0edfff939865c6207798f7e93e16f9ba572",
+    "crates/splines/src/utils/mod.rs": "5cf06cc8526a09148c15148ff1a2983391cea4cea575865844d1524c54a2a03f",
+    "crates/splines/src/utils/spline_utils.rs": "f9ca94d2bbbdc70a3ad1c32ce8e355eab5e80d819d0a55f26661c0826bf2373e",
+    "crates/splines/src/utils/validation.rs": "539158b1732560603f2a473568e3d6dfeabbadd8d3eb13d66c197f0e2f13f1e4",
+    "crates/splines/test_final_bs_verification.rs": "b37864ebe22ef9f2da8bf21afea67e506aa8d01de94736dc99644adda2ae513e",
+    "crates/splines/test_utility_equivalence.rs": "b3d5881eb7316e8d97e2f4b990b0b85ce4911c1435d3723cd72d4a2727db3ee4",
+    "scripts/audit_group_reference.R": "9f18ad75be8c594ca1863fcdf5413af6e230fc8665326dc4afc552f1816af249",
+    "scripts/audit_upstream.py": "b5598278329b8e46287fcf9953d785048e19087084000fa877db8ee5e4e62e13",
+    "scripts/benchmark_estimation.R": "014880d8a3798ed9ecc2b72697906e0a98baf57b0fb73118ad9a5a383f03e730",
+    "scripts/benchmark_gls.R": "6795c639d8829caf91a31c4b2631cd1c576180ad92e8a859bb8ed865d5eef330",
+    "scripts/benchmark_gls.py": "f9a71d3a41996622012abf4aac293289dd793b1b70adf367122e3cf442261464",
+    "scripts/check_bounded.py": "f1f5fcf1b0be5b34404d9b01b4be755cda772c970fb885605e64176eec1cf37e",
+    "scripts/check_source_preservation.py": "42d49b6fceb26cf3c3b39043990c8f34a4fbbdb2df73e252b4a10f2a1a8d6f42",
+    "scripts/completion_calibration.R": "3d8b43e6556e6b265df9f9a8f33fa2ce3fb6a79decb486ebad9814b45af3ef2a",
+    "scripts/generate_arp_contract.R": "41701138c2aef4adc09905e88071a6942cb3468f0d57b18d710c756b55febe44",
+    "scripts/generate_estimation_contract.R": "f38ac81ee122bf45a9ed47376003a89babf6617d7152a590254c0ef3ffecaf73",
+    "scripts/generate_hrf_audit_contract.R": "a28be7205c0b1f36b0b55f2f2f47c8a852d99dcb55731fe685faff530bfde21f",
+    "scripts/generate_nuisance_contract.R": "6568e14f59a06b483f4998f9ae11900a24762e8df94e330727b79000423c0dba",
+    "scripts/generate_pipeline_contract.R": "514000092d00fa1f167f748b21baad7a2b307eb7acc6f7ec32d339786a4b09da",
+    "scripts/generate_sampled_features.R": "cc271121bc17dbb300c3c0713da946e7c42e310c8d29d1634dcf4bdfd2616831",
+    "scripts/generate_selected_arp_estimation.R": "63ed5cf52e839eaf62c5f7bb28c6a82658e23e49386d54c7179fb113a6f0ac37",
+    "scripts/generate_selected_estimation.R": "2cf1c9589a929c899661c1ba9a0277a889329cb3e2aa73f5a01d2dae3cfbf1eb",
+    "scripts/generate_selected_gls.R": "f292848da078616ba1bece1fe4f2e9f359ce818e286fe6ecd9a38876ec09e9d8",
+    "scripts/generate_spline_contract.R": "2d4b765f63d6de7cb37fb4fee1962f47f3efcc23e74ac02128f2c593edd7ea89",
+    "scripts/group_meta_benchmark.py": "c865849f8c0a9aa32fb66378f556088840114e7c7f815201bab3ade012187e5c",
+    "scripts/group_meta_reference.R": "8cf9825144427d3a00acd202bf597b61d4383c5aff3c596afc7526ccbb373689",
+    "scripts/group_performance.py": "26daba3a7a13d9b09b361b8f38e7a2eaf02969709b506b3d318b95ce9634b862",
+    "scripts/group_portable_benchmark.py": "9e59500701598562fb11a1395bc86f34fd30569e240258b48c216fc7a2011b70",
+    "scripts/group_portable_reference.R": "d0a9d3382608b56f79e9e1887d8ad465edbb23382e2fe119ba3a08ccb52eb056",
+    "scripts/group_reference.R": "2975bb00e1d566d6ff0c876f0a278fed2b23acc7f6d250e53183d0bf34f3e6e7",
+    "scripts/import_sources.py": "8c50565cafd23d48676f2849ccb59dcbfe3b0dab7035d0579c60b4edfc03812f",
+    "scripts/influence_reference.R": "c59fac513855ffd7cabba977d328ed9411cc356b864603f4ae8c076b0e37f049",
+    "scripts/noise_extensions_reference.R": "03092b57565293ae23fac2d6c8a140610fbc1978aa51713e278408081c9d3be8",
+    "scripts/qualify_completion.py": "4851bb2b2a5e2c817f8d6f45c952a4da7741d9c12fd5cdff32e9ef428b0e926e",
+    "scripts/qualify_selected.py": "1378b50ae3c13d8791e9dccc4869065d12be66a138f6fc667dca4751108fe0b5",
+    "scripts/repeated_calibration.R": "5797b0cc2f49af5050f6d040b10fb024cafdf0574343f77e65b68aeb70204dff",
+    "scripts/repeated_reference.R": "25b3735e7b216dfb56e304d8df0d94a193694a772dbef0dd0a08f04d06c949a9",
+    "scripts/report_gls.py": "d7e891b10c566d34bc44b55ca79526b147f12c8c8457178b37190ebf07f74482",
+    "scripts/resampling_reference.R": "94e787053ad216eeb4717cb843e4bd779f53f7eac1ba7a70ef22d8d3e6e8cc25",
+    "scripts/verify_gls_benchmarks.py": "31e2bbf02acdb1b5c35dd4dbc61bc8676e5d500098e00c687d3a1ad884b7fe76",
+    "scripts/verify_hrf_design.py": "5e0a751ec739899b8ab4c16b36fedebf6c3ae14ff74be7a3e8c26ad70781507a",
+    "scripts/verify_workspace.py": "82764d5b2f8102215a121805ccc32ce17d1d72ff41370fbc6718358e1100a394"
+  },
+  "source_changes_during_run": [],
+  "failure": null,
+  "artifacts": {
+    "ar-calibration.jsonl": "386a9551378bca3d1f433d32fcf01207603d5e97f3f61d1408b416a028d9a29a",
+    "group-calibration-oracle.json": "cca44e3820f6aea6f41f82d89e2d4196a2e472e08baf9f44e058f3e92f042330",
+    "group-calibration.jsonl": "8971b35387efc83f7d27466af617ac2ff1360123b9e419838f0210719e5bb66f",
+    "permutation-calibration.jsonl": "3bec72224ea70d1c60413e7a1906c1fc560e1d1968b8db3d06594a49ed0efd78",
+    "repeated-calibration-oracle.json": "16f5a2d60d668909a2614e4c523cf310779040ed93d92564617bdf718e2eb876",
+    "repeated-calibration.jsonl": "59b666d18b9a1de52eef7a645e077ad8d5eb5e0bd58ba39bdecdb3ed21a85305"
+  },
+  "finished": "2026-10-27T20:36:51.090782+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "Rscript",
+    "--vanilla",
+    "crates/fmri-group/benchmarks/reference.R"
+  ],
+  "command_file_sha256": {
+    "crates/fmri-group/benchmarks/reference.R": "f1dcaf12bf6500730cad55ca739802272a866fc7cb857deccf49fdab1760faca"
+  },
+  "exit": 0,
+  "elapsed_seconds": 19.604682375007542,
+  "max_rss_bytes": 2298642432,
+  "scope": "whole benchmark process including resident inputs, oracle payloads and retained outputs",
+  "platform": "darwin",
+  "thread_environment": {
+    "FMRIGDS_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

@@ -1,0 +1,1262 @@
+[
+  {
+    "label": "bench-1-300-1000-64-1",
+    "arguments": [
+      1,
+      300,
+      1000,
+      64,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-1-300-1000-64-1.log",
+    "rss_log": "evidence/consolidation/bench-1-300-1000-64-1.time",
+    "block": 64,
+    "coefficients": [
+      [
+        0.38312491691332484
+      ],
+      [
+        0.38312491691332484
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 383729.85418265546,
+    "first_dense_seconds": 0.00242575,
+    "first_stream_seconds": 0.002704334,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.002606,
+    "order": 1,
+    "original_rows": 300,
+    "prepare_seconds": 0.001049208,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.002879667,
+      0.002465084,
+      0.002606
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 13795328
+  },
+  {
+    "label": "bench-1-300-1000-256-1",
+    "arguments": [
+      1,
+      300,
+      1000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-1-300-1000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-1-300-1000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.38312491691332484
+      ],
+      [
+        0.38312491691332484
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 405104.31436094793,
+    "first_dense_seconds": 0.002405459,
+    "first_stream_seconds": 0.002426084,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.0024685,
+    "order": 1,
+    "original_rows": 300,
+    "prepare_seconds": 0.000750125,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.002580292,
+      0.002371583,
+      0.0024685
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 14041088
+  },
+  {
+    "label": "bench-1-300-1000-256-4",
+    "arguments": [
+      1,
+      300,
+      1000,
+      256,
+      4
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-1-300-1000-256-4.log",
+    "rss_log": "evidence/consolidation/bench-1-300-1000-256-4.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.38312491691332484
+      ],
+      [
+        0.38312491691332484
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 620684.3044456514,
+    "first_dense_seconds": 0.00277675,
+    "first_stream_seconds": 0.001450791,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.001611125,
+    "order": 1,
+    "original_rows": 300,
+    "prepare_seconds": 0.000742542,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.001426375,
+      0.001619417,
+      0.001611125
+    ],
+    "workers": 4,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 39747584
+  },
+  {
+    "label": "bench-1-1200-1000-64-1",
+    "arguments": [
+      1,
+      1200,
+      1000,
+      64,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-1-1200-1000-64-1.log",
+    "rss_log": "evidence/consolidation/bench-1-1200-1000-64-1.time",
+    "block": 64,
+    "coefficients": [
+      [
+        0.4053996123838328
+      ],
+      [
+        0.4053996123838328
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 92988.30086290353,
+    "first_dense_seconds": 0.010845958,
+    "first_stream_seconds": 0.0106455,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.010754041,
+    "order": 1,
+    "original_rows": 1200,
+    "prepare_seconds": 0.00320275,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.010325,
+      0.010754041,
+      0.010794167
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 42467328
+  },
+  {
+    "label": "bench-1-1200-1000-256-1",
+    "arguments": [
+      1,
+      1200,
+      1000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-1-1200-1000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-1-1200-1000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4053996123838328
+      ],
+      [
+        0.4053996123838328
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 86054.81691837701,
+    "first_dense_seconds": 0.010721583,
+    "first_stream_seconds": 0.010914209,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.0116205,
+    "order": 1,
+    "original_rows": 1200,
+    "prepare_seconds": 0.003014209,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.01166475,
+      0.011077667,
+      0.0116205
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 58851328
+  },
+  {
+    "label": "bench-1-1200-1000-256-4",
+    "arguments": [
+      1,
+      1200,
+      1000,
+      256,
+      4
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-1-1200-1000-256-4.log",
+    "rss_log": "evidence/consolidation/bench-1-1200-1000-256-4.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4053996123838328
+      ],
+      [
+        0.4053996123838328
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 158445.13353993522,
+    "first_dense_seconds": 0.011246291,
+    "first_stream_seconds": 0.006006041,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.006311333,
+    "order": 1,
+    "original_rows": 1200,
+    "prepare_seconds": 0.002992708,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.006311333,
+      0.006362833,
+      0.005648875
+    ],
+    "workers": 4,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 124665856
+  },
+  {
+    "label": "bench-2-300-1000-64-1",
+    "arguments": [
+      2,
+      300,
+      1000,
+      64,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-2-300-1000-64-1.log",
+    "rss_log": "evidence/consolidation/bench-2-300-1000-64-1.time",
+    "block": 64,
+    "coefficients": [
+      [
+        0.4315624642796494,
+        -0.1782930388910673
+      ],
+      [
+        0.4315624642796494,
+        -0.1782930388910673
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 297305.7263164029,
+    "first_dense_seconds": 0.003277,
+    "first_stream_seconds": 0.003443375,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.003363541,
+    "order": 2,
+    "original_rows": 300,
+    "prepare_seconds": 0.000814791,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.003363541,
+      0.003350334,
+      0.0034035
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 13926400
+  },
+  {
+    "label": "bench-2-300-1000-256-1",
+    "arguments": [
+      2,
+      300,
+      1000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-2-300-1000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-2-300-1000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4315624642796494,
+        -0.1782930388910673
+      ],
+      [
+        0.4315624642796494,
+        -0.1782930388910673
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 291882.0026140952,
+    "first_dense_seconds": 0.003239375,
+    "first_stream_seconds": 0.003417167,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.003426042,
+    "order": 2,
+    "original_rows": 300,
+    "prepare_seconds": 0.000873375,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.003420833,
+      0.003717833,
+      0.003426042
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 13647872
+  },
+  {
+    "label": "bench-2-300-1000-256-4",
+    "arguments": [
+      2,
+      300,
+      1000,
+      256,
+      4
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-2-300-1000-256-4.log",
+    "rss_log": "evidence/consolidation/bench-2-300-1000-256-4.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4315624642796494,
+        -0.1782930388910673
+      ],
+      [
+        0.4315624642796494,
+        -0.1782930388910673
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 552448.0353566742,
+    "first_dense_seconds": 0.003535041,
+    "first_stream_seconds": 0.001821833,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.001810125,
+    "order": 2,
+    "original_rows": 300,
+    "prepare_seconds": 0.000805666,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.00175,
+      0.001896167,
+      0.001810125
+    ],
+    "workers": 4,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 40452096
+  },
+  {
+    "label": "bench-2-1200-1000-64-1",
+    "arguments": [
+      2,
+      1200,
+      1000,
+      64,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-2-1200-1000-64-1.log",
+    "rss_log": "evidence/consolidation/bench-2-1200-1000-64-1.time",
+    "block": 64,
+    "coefficients": [
+      [
+        0.4582093464835571,
+        -0.18079172896346418
+      ],
+      [
+        0.4582093464835571,
+        -0.18079172896346418
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 64849.43841034831,
+    "first_dense_seconds": 0.0142155,
+    "first_stream_seconds": 0.014696583,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.015420334,
+    "order": 2,
+    "original_rows": 1200,
+    "prepare_seconds": 0.003226375,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.01598375,
+      0.015420334,
+      0.014474833
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 48168960
+  },
+  {
+    "label": "bench-2-1200-1000-256-1",
+    "arguments": [
+      2,
+      1200,
+      1000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-2-1200-1000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-2-1200-1000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4582093464835571,
+        -0.18079172896346418
+      ],
+      [
+        0.4582093464835571,
+        -0.18079172896346418
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 63429.97863170879,
+    "first_dense_seconds": 0.01335975,
+    "first_stream_seconds": 0.015826166,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.015765416,
+    "order": 2,
+    "original_rows": 1200,
+    "prepare_seconds": 0.003308834,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.016693208,
+      0.014588791,
+      0.015765416
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 71712768
+  },
+  {
+    "label": "bench-2-1200-1000-256-4",
+    "arguments": [
+      2,
+      1200,
+      1000,
+      256,
+      4
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-2-1200-1000-256-4.log",
+    "rss_log": "evidence/consolidation/bench-2-1200-1000-256-4.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4582093464835571,
+        -0.18079172896346418
+      ],
+      [
+        0.4582093464835571,
+        -0.18079172896346418
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 140436.2821628929,
+    "first_dense_seconds": 0.013167458,
+    "first_stream_seconds": 0.007249541,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.007120667,
+    "order": 2,
+    "original_rows": 1200,
+    "prepare_seconds": 0.003234833,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.007120667,
+      0.007503833,
+      0.006603833
+    ],
+    "workers": 4,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 125108224
+  },
+  {
+    "label": "bench-3-300-1000-64-1",
+    "arguments": [
+      3,
+      300,
+      1000,
+      64,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-3-300-1000-64-1.log",
+    "rss_log": "evidence/consolidation/bench-3-300-1000-64-1.time",
+    "block": 64,
+    "coefficients": [
+      [
+        0.38132134426801834,
+        -0.15415385190790934,
+        0.06279669656142205
+      ],
+      [
+        0.38132134426801834,
+        -0.15415385190790934,
+        0.06279669656142205
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 241660.1861460082,
+    "first_dense_seconds": 0.004208875,
+    "first_stream_seconds": 0.0040665,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.004138042,
+    "order": 3,
+    "original_rows": 300,
+    "prepare_seconds": 0.000820292,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.003989042,
+      0.00443975,
+      0.004138042
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 14450688
+  },
+  {
+    "label": "bench-3-300-1000-256-1",
+    "arguments": [
+      3,
+      300,
+      1000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-3-300-1000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-3-300-1000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.38132134426801834,
+        -0.15415385190790934,
+        0.06279669656142205
+      ],
+      [
+        0.38132134426801834,
+        -0.15415385190790934,
+        0.06279669656142205
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 231843.7373210456,
+    "first_dense_seconds": 0.003953209,
+    "first_stream_seconds": 0.003953,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.00431325,
+    "order": 3,
+    "original_rows": 300,
+    "prepare_seconds": 0.000821333,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.00431325,
+      0.004389541,
+      0.004179042
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 17432576
+  },
+  {
+    "label": "bench-3-300-1000-256-4",
+    "arguments": [
+      3,
+      300,
+      1000,
+      256,
+      4
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-3-300-1000-256-4.log",
+    "rss_log": "evidence/consolidation/bench-3-300-1000-256-4.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.38132134426801834,
+        -0.15415385190790934,
+        0.06279669656142205
+      ],
+      [
+        0.38132134426801834,
+        -0.15415385190790934,
+        0.06279669656142205
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 470154.8078735886,
+    "first_dense_seconds": 0.003957625,
+    "first_stream_seconds": 0.00198875,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.002126959,
+    "order": 3,
+    "original_rows": 300,
+    "prepare_seconds": 0.000886042,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.002126959,
+      0.002193166,
+      0.001859958
+    ],
+    "workers": 4,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 42352640
+  },
+  {
+    "label": "bench-3-1200-1000-64-1",
+    "arguments": [
+      3,
+      1200,
+      1000,
+      64,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-3-1200-1000-64-1.log",
+    "rss_log": "evidence/consolidation/bench-3-1200-1000-64-1.time",
+    "block": 64,
+    "coefficients": [
+      [
+        0.40663011304490304,
+        -0.16066157935300207,
+        0.08071819030166802
+      ],
+      [
+        0.40663011304490304,
+        -0.16066157935300207,
+        0.08071819030166802
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 52708.21391628618,
+    "first_dense_seconds": 0.016263666,
+    "first_stream_seconds": 0.018005,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.018972375,
+    "order": 3,
+    "original_rows": 1200,
+    "prepare_seconds": 0.003361459,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.018041042,
+      0.019018167,
+      0.018972375
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 49217536
+  },
+  {
+    "label": "bench-3-1200-1000-256-1",
+    "arguments": [
+      3,
+      1200,
+      1000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-3-1200-1000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-3-1200-1000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.40663011304490304,
+        -0.16066157935300207,
+        0.08071819030166802
+      ],
+      [
+        0.40663011304490304,
+        -0.16066157935300207,
+        0.08071819030166802
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 54604.27625744911,
+    "first_dense_seconds": 0.015731042,
+    "first_stream_seconds": 0.018146959,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.018313584,
+    "order": 3,
+    "original_rows": 1200,
+    "prepare_seconds": 0.003422542,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.018663417,
+      0.018313584,
+      0.016955541
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 74661888
+  },
+  {
+    "label": "bench-3-1200-1000-256-4",
+    "arguments": [
+      3,
+      1200,
+      1000,
+      256,
+      4
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-3-1200-1000-256-4.log",
+    "rss_log": "evidence/consolidation/bench-3-1200-1000-256-4.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.40663011304490304,
+        -0.16066157935300207,
+        0.08071819030166802
+      ],
+      [
+        0.40663011304490304,
+        -0.16066157935300207,
+        0.08071819030166802
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 134121.66471273755,
+    "first_dense_seconds": 0.016668209,
+    "first_stream_seconds": 0.007732666,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.007455917,
+    "order": 3,
+    "original_rows": 1200,
+    "prepare_seconds": 0.00328075,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.007455917,
+      0.007128166,
+      0.008071208
+    ],
+    "workers": 4,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 103088128
+  },
+  {
+    "label": "bench-4-300-1000-64-1",
+    "arguments": [
+      4,
+      300,
+      1000,
+      64,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-4-300-1000-64-1.log",
+    "rss_log": "evidence/consolidation/bench-4-300-1000-64-1.time",
+    "block": 64,
+    "coefficients": [
+      [
+        0.379823046977264,
+        -0.14149590642976484,
+        0.054841144524662974,
+        -0.019626815996756905
+      ],
+      [
+        0.379823046977264,
+        -0.14149590642976484,
+        0.054841144524662974,
+        -0.019626815996756905
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 218473.74677450824,
+    "first_dense_seconds": 0.004834375,
+    "first_stream_seconds": 0.004607125,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.004577209,
+    "order": 4,
+    "original_rows": 300,
+    "prepare_seconds": 0.000875584,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.004390875,
+      0.004577209,
+      0.004766667
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 15368192
+  },
+  {
+    "label": "bench-4-300-1000-256-1",
+    "arguments": [
+      4,
+      300,
+      1000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-4-300-1000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-4-300-1000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.379823046977264,
+        -0.14149590642976484,
+        0.054841144524662974,
+        -0.019626815996756905
+      ],
+      [
+        0.379823046977264,
+        -0.14149590642976484,
+        0.054841144524662974,
+        -0.019626815996756905
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 190950.54800897773,
+    "first_dense_seconds": 0.005401416,
+    "first_stream_seconds": 0.005231291,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.005236958,
+    "order": 4,
+    "original_rows": 300,
+    "prepare_seconds": 0.000924917,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.005236958,
+      0.005342875,
+      0.004856667
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 16007168
+  },
+  {
+    "label": "bench-4-300-1000-256-4",
+    "arguments": [
+      4,
+      300,
+      1000,
+      256,
+      4
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-4-300-1000-256-4.log",
+    "rss_log": "evidence/consolidation/bench-4-300-1000-256-4.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.379823046977264,
+        -0.14149590642976484,
+        0.054841144524662974,
+        -0.019626815996756905
+      ],
+      [
+        0.379823046977264,
+        -0.14149590642976484,
+        0.054841144524662974,
+        -0.019626815996756905
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 497595.1227716447,
+    "first_dense_seconds": 0.004476625,
+    "first_stream_seconds": 0.001937333,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.002009666,
+    "order": 4,
+    "original_rows": 300,
+    "prepare_seconds": 0.000927125,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.00208475,
+      0.002009666,
+      0.001968
+    ],
+    "workers": 4,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 40763392
+  },
+  {
+    "label": "bench-4-1200-1000-64-1",
+    "arguments": [
+      4,
+      1200,
+      1000,
+      64,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-4-1200-1000-64-1.log",
+    "rss_log": "evidence/consolidation/bench-4-1200-1000-64-1.time",
+    "block": 64,
+    "coefficients": [
+      [
+        0.4072541295872808,
+        -0.151633606616369,
+        0.08471280503079738,
+        -0.04980922898134046
+      ],
+      [
+        0.4072541295872808,
+        -0.151633606616369,
+        0.08471280503079738,
+        -0.04980922898134046
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 48415.79406477558,
+    "first_dense_seconds": 0.018501625,
+    "first_stream_seconds": 0.019759416,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.020654417,
+    "order": 4,
+    "original_rows": 1200,
+    "prepare_seconds": 0.004769708,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.020654417,
+      0.020798375,
+      0.019766375
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 51396608
+  },
+  {
+    "label": "bench-4-1200-1000-256-1",
+    "arguments": [
+      4,
+      1200,
+      1000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-4-1200-1000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-4-1200-1000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4072541295872808,
+        -0.151633606616369,
+        0.08471280503079738,
+        -0.04980922898134046
+      ],
+      [
+        0.4072541295872808,
+        -0.151633606616369,
+        0.08471280503079738,
+        -0.04980922898134046
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 50620.2037989653,
+    "first_dense_seconds": 0.019098625,
+    "first_stream_seconds": 0.020201333,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.019754958,
+    "order": 4,
+    "original_rows": 1200,
+    "prepare_seconds": 0.00348925,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.019754958,
+      0.020306542,
+      0.019626
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 74203136
+  },
+  {
+    "label": "bench-4-1200-1000-256-4",
+    "arguments": [
+      4,
+      1200,
+      1000,
+      256,
+      4
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-4-1200-1000-256-4.log",
+    "rss_log": "evidence/consolidation/bench-4-1200-1000-256-4.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4072541295872808,
+        -0.151633606616369,
+        0.08471280503079738,
+        -0.04980922898134046
+      ],
+      [
+        0.4072541295872808,
+        -0.151633606616369,
+        0.08471280503079738,
+        -0.04980922898134046
+      ]
+    ],
+    "delivered": 1000,
+    "features": 1000,
+    "features_per_second": 128948.38338056498,
+    "first_dense_seconds": 0.018336208,
+    "first_stream_seconds": 0.008381167,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.007755041,
+    "order": 4,
+    "original_rows": 1200,
+    "prepare_seconds": 0.003208416,
+    "regressors": 8,
+    "retained_rows": 1090,
+    "warm_seconds": [
+      0.007755041,
+      0.007760167,
+      0.007453459
+    ],
+    "workers": 4,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 98091008
+  },
+  {
+    "label": "bench-1-300-10000-256-1",
+    "arguments": [
+      1,
+      300,
+      10000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-1-300-10000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-1-300-10000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.38312491691332484
+      ],
+      [
+        0.38312491691332484
+      ]
+    ],
+    "delivered": 10000,
+    "features": 10000,
+    "features_per_second": 363331.3898737289,
+    "first_dense_seconds": 0.025219667,
+    "first_stream_seconds": 0.025531125,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.027523083,
+    "order": 1,
+    "original_rows": 300,
+    "prepare_seconds": 0.000832333,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.029641666,
+      0.027523083,
+      0.027327209
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 106528768
+  },
+  {
+    "label": "bench-2-300-10000-256-1",
+    "arguments": [
+      2,
+      300,
+      10000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-2-300-10000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-2-300-10000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.4315624642796494,
+        -0.1782930388910673
+      ],
+      [
+        0.4315624642796494,
+        -0.1782930388910673
+      ]
+    ],
+    "delivered": 10000,
+    "features": 10000,
+    "features_per_second": 279250.3034124359,
+    "first_dense_seconds": 0.034991,
+    "first_stream_seconds": 0.037708334,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.035810167,
+    "order": 2,
+    "original_rows": 300,
+    "prepare_seconds": 0.000784792,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.037252417,
+      0.03533675,
+      0.035810167
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 107855872
+  },
+  {
+    "label": "bench-3-300-10000-256-1",
+    "arguments": [
+      3,
+      300,
+      10000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-3-300-10000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-3-300-10000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.38132134426801834,
+        -0.15415385190790934,
+        0.06279669656142205
+      ],
+      [
+        0.38132134426801834,
+        -0.15415385190790934,
+        0.06279669656142205
+      ]
+    ],
+    "delivered": 10000,
+    "features": 10000,
+    "features_per_second": 236934.54090971017,
+    "first_dense_seconds": 0.041459625,
+    "first_stream_seconds": 0.042592208,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.04220575,
+    "order": 3,
+    "original_rows": 300,
+    "prepare_seconds": 0.000820125,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.04220575,
+      0.042585041,
+      0.042079542
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 108675072
+  },
+  {
+    "label": "bench-4-300-10000-256-1",
+    "arguments": [
+      4,
+      300,
+      10000,
+      256,
+      1
+    ],
+    "exit": 0,
+    "log": "evidence/consolidation/bench-4-300-10000-256-1.log",
+    "rss_log": "evidence/consolidation/bench-4-300-10000-256-1.time",
+    "block": 256,
+    "coefficients": [
+      [
+        0.379823046977264,
+        -0.14149590642976484,
+        0.054841144524662974,
+        -0.019626815996756905
+      ],
+      [
+        0.379823046977264,
+        -0.14149590642976484,
+        0.054841144524662974,
+        -0.019626815996756905
+      ]
+    ],
+    "delivered": 10000,
+    "features": 10000,
+    "features_per_second": 138486.25165272955,
+    "first_dense_seconds": 0.080648834,
+    "first_stream_seconds": 0.140862584,
+    "max_relative_error": 0.0,
+    "median_warm_seconds": 0.072209334,
+    "order": 4,
+    "original_rows": 300,
+    "prepare_seconds": 0.000865458,
+    "regressors": 8,
+    "retained_rows": 272,
+    "warm_seconds": [
+      0.120387125,
+      0.072209334,
+      0.053888459
+    ],
+    "workers": 1,
+    "working_budget_bytes": 268435456,
+    "peak_process_rss_bytes": 112967680
+  }
+]

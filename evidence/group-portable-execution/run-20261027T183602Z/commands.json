@@ -1,0 +1,394 @@
+[
+  {
+    "argv": [
+      "cargo",
+      "test",
+      "-p",
+      "fmridataset",
+      "-p",
+      "fmri-group",
+      "-p",
+      "fmrimod",
+      "--all-features",
+      "--all-targets"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 9.768445749999955,
+    "log": "tests.log"
+  },
+  {
+    "argv": [
+      "cargo",
+      "test",
+      "-p",
+      "fmridataset",
+      "-p",
+      "fmri-group",
+      "-p",
+      "fmrimod",
+      "--all-features",
+      "--doc"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.336177666002186,
+    "log": "doctests.log"
+  },
+  {
+    "argv": [
+      "cargo",
+      "clippy",
+      "-p",
+      "fmri-group",
+      "-p",
+      "fmridataset",
+      "--all-targets",
+      "--all-features",
+      "--no-deps",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 1.1487769999948796,
+    "log": "clippy.log"
+  },
+  {
+    "argv": [
+      "rustfmt",
+      "--edition",
+      "2021",
+      "--check",
+      "crates/fmri-group/examples/group_benchmark.rs",
+      "crates/fmri-group/examples/group_pipeline.rs",
+      "crates/fmri-group/examples/meta_regression_benchmark.rs",
+      "crates/fmri-group/examples/portable_execution_benchmark.rs",
+      "crates/fmri-group/examples/weighted_group.rs",
+      "crates/fmri-group/src/cohort.rs",
+      "crates/fmri-group/src/fit.rs",
+      "crates/fmri-group/src/lib.rs",
+      "crates/fmri-group/src/meta_regression.rs",
+      "crates/fmri-group/src/multiplicity.rs",
+      "crates/fmri-group/src/portable.rs",
+      "crates/fmri-group/tests/common/mod.rs",
+      "crates/fmri-group/tests/group.rs",
+      "crates/fmri-group/tests/meta_regression.rs",
+      "crates/fmri-group/tests/portable.rs",
+      "crates/fmri-group/tests/portable_execution.rs",
+      "crates/fmri-group/tests/shared_weights.rs",
+      "crates/fmridataset/src/array.rs",
+      "crates/fmridataset/tests/file_source.rs"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.11674841601052321,
+    "log": "format.log"
+  },
+  {
+    "argv": [
+      "cargo",
+      "build",
+      "--release",
+      "-p",
+      "fmri-group",
+      "--example",
+      "meta_regression_benchmark",
+      "--example",
+      "portable_execution_benchmark"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 6.6887162500061095,
+    "log": "release-build.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "generate",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/roundtrip-rust",
+      "20",
+      "33",
+      "3",
+      "7"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.4037368749995949,
+    "log": "generate-small.log"
+  },
+  {
+    "argv": [
+      "Rscript",
+      "scripts/group_portable_reference.R",
+      "rewrite",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/roundtrip-rust",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/roundtrip-r"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.193673250003485,
+    "log": "r-rewrite.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "compare",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/roundtrip-rust",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/roundtrip-r",
+      "3"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.007311292007216252,
+    "log": "roundtrip.log"
+  },
+  {
+    "argv": [
+      "Rscript",
+      "scripts/group_portable_reference.R",
+      "oracle",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/roundtrip-rust",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/metafor-oracle.json",
+      "3"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.5749501660029637,
+    "log": "r-oracle.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "oracle",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/roundtrip-rust",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/metafor-oracle.json",
+      "3"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.01368512499902863,
+    "log": "oracle-compare.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/baseline_benchmark"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/baseline-run",
+    "exit_code": 0,
+    "seconds": 4.087139667011797,
+    "log": "weighted-0-baseline.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/meta_regression_benchmark"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/candidate-run",
+    "exit_code": 0,
+    "seconds": 4.467406417010352,
+    "log": "weighted-1-candidate.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/meta_regression_benchmark"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/candidate-run",
+    "exit_code": 0,
+    "seconds": 4.030511916993419,
+    "log": "weighted-2-candidate.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/baseline_benchmark"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/baseline-run",
+    "exit_code": 0,
+    "seconds": 4.1592272499983665,
+    "log": "weighted-3-baseline.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "generate",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "20",
+      "1000",
+      "3",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.04361500000231899,
+    "log": "generate-20-1000-3.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "compare",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "3"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.02874383400194347,
+    "log": "validate-20-1000-3.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "bench",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/bench-20-1000-3-disk-general.json",
+      "disk",
+      "general",
+      "3",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.026469291988178156,
+    "log": "bench-20-1000-3-disk-general.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "bench",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/bench-20-1000-3-disk-shared.json",
+      "disk",
+      "shared",
+      "3",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.019611166004324332,
+    "log": "bench-20-1000-3-disk-shared.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "bench",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/bench-20-1000-3-memory-general.json",
+      "memory",
+      "general",
+      "3",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.023193542001536116,
+    "log": "bench-20-1000-3-memory-general.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "bench",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/bench-20-1000-3-memory-shared.json",
+      "memory",
+      "shared",
+      "3",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 0.014966582995839417,
+    "log": "bench-20-1000-3-memory-shared.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "generate",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "100",
+      "100000",
+      "5",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 1.1238147919939365,
+    "log": "generate-100-100000-5.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "compare",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "5"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 4.622138542006724,
+    "log": "validate-100-100000-5.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "bench",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/bench-100-100000-5-disk-general.json",
+      "disk",
+      "general",
+      "5",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 4.468159707990708,
+    "log": "bench-100-100000-5-disk-general.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "bench",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/bench-100-100000-5-disk-shared.json",
+      "disk",
+      "shared",
+      "5",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 2.1247002500022063,
+    "log": "bench-100-100000-5-disk-shared.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "bench",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/bench-100-100000-5-memory-general.json",
+      "memory",
+      "general",
+      "5",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 4.271953040995868,
+    "log": "bench-100-100000-5-memory-general.log"
+  },
+  {
+    "argv": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/portable_execution_benchmark",
+      "bench",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/bench-100-100000-5-memory-shared.json",
+      "memory",
+      "shared",
+      "5",
+      "256"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/rust/fmrimod-rs",
+    "exit_code": 0,
+    "seconds": 1.917577166997944,
+    "log": "bench-100-100000-5-memory-shared.log"
+  }
+]

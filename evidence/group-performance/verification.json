@@ -1,0 +1,91 @@
+{
+  "timestamp_utc": "2026-10-27T14:14:01.981073+00:00",
+  "scope": "group performance tranche 1; local only",
+  "checks": {
+    "group": {
+      "exit_code": 0,
+      "passed": 16,
+      "log": "group-tests-final.log"
+    },
+    "group_and_facade_all_features": {
+      "exit_code": 0,
+      "passed": 27,
+      "log": "affected-tests-final.log"
+    },
+    "fmt": {
+      "exit_code": 0,
+      "log": "fmt.log"
+    },
+    "clippy": {
+      "exit_code": 0,
+      "log": "clippy-final.log"
+    }
+  },
+  "production_source_sha256": {
+    "crates/fmri-group/tests/group.rs": "5dae49bd8cf9eacb6bd647b87622ecfda9b627631fff352d97e9d992c5605f6e",
+    "crates/fmri-group/examples/group_pipeline.rs": "b7bbd455a6b563e13b9b001f42f66e4c2f2d39f37462f2923fc697fde654c8dd",
+    "crates/fmri-group/examples/group_benchmark.rs": "7f40b26ac03d84fbc06c5a485d5285ee0019fe8f7ca40bb55ae62771e59a05a8",
+    "crates/fmri-group/src/fit.rs": "3cba04d33fadf4a4ab99f2b8e978626a612c55519d6aebd46a052bd089f5ccd8",
+    "crates/fmri-group/src/lib.rs": "7ba5ec4393dba34faa8fb630bb66463b69b085ce83b922c10edae6a304ad5826",
+    "crates/fmri-group/src/cohort.rs": "38731b3bc106de4d5d5b14ab4ef3a07acb5bc2eaf250c81a91f4b398bdee03f1",
+    "crates/fmri-group/src/multiplicity.rs": "11b98409785b465b8838a71bed99c50b8e495a0b9da14d6816275b194e511426",
+    "crates/fmri-group/Cargo.toml": "5b4f7ea1fcf04b40d67e715c8a19937a76a49e8cc0973533beded18731a0644c",
+    "crates/fmri-group/tests/reference.json": "b7629aa7d59286eaf3a7e1528b149372b72bb53588b82b9bcd83c4c21061997f",
+    "crates/fmri-group/tests/performance_reference.json": "40fe46c1d6ff8865c6a475a1551f64398e78eb6df7cc5333ff653de73b78812d",
+    "scripts/group_performance.py": "26daba3a7a13d9b09b361b8f38e7a2eaf02969709b506b3d318b95ce9634b862",
+    "docs/GROUP_PERFORMANCE.md": "e0474849149cebf8c52ee469a70976bfc3c54800ed10285fd58e4e0578cc8ae5",
+    "docs/PLAN.md": "4010aa675792b6b0b5866ec166be0bdb6b00b4520afd03f62dd9d6557ae7f7ac"
+  },
+  "reference_payload_sha256": {
+    "evidence/group-tranche1/reference-100-10000-0-ols.bin": "fce7b01886df390e00f7d1e8905bfb37a59442598cc6317af89cd78ab17b937e",
+    "evidence/group-tranche1/reference-20-1000-0-dl.bin": "1902357c3d674c58003a05300fcb733fe96bfbd5d26cebbc0c0ec6b649805487",
+    "evidence/group-tranche1/reference-100-100000-0-ols.bin": "f8d1a520078e9e2822122cc3ffab7496af8b0c13858982886e913272a75abc58",
+    "evidence/group-tranche1/reference-20-1000-0-fe.bin": "f7c57b5814142617f380a845ff6bf56acd11ec0d794f0b7a3fe84e8252921462",
+    "evidence/group-tranche1/reference-100-10000-0-dl.bin": "1c32d649af5623e47b47b909a761cddec83ff898253224e2edccb3a284e1e790",
+    "evidence/group-tranche1/reference-100-10000-0-fe.bin": "7c7d465932417fcfd677393127d5894a7a16924681013741f0275e92c35f2f37",
+    "evidence/group-tranche1/reference-100-10000-1-ols.bin": "824dd61a0d4ccb7fe5716390e3e3c3c36a9487e1680062e2de20617fd27dae9f",
+    "evidence/group-tranche1/reference-100-100000-0-dl.bin": "0c42c83acb0a6c69caab6f4a7fffe90f0600553e1b0732041220831a8892b62b",
+    "evidence/group-tranche1/reference-100-100000-0-fe.bin": "9e842e87dd4e4d8c4ec990db3fe5c61d66ef34aec15b796861d5018353401e5a",
+    "evidence/group-tranche1/reference-20-1000-0-ols.bin": "607a3a786faf9d476b76ed291ef59d7384aa5f6186116f74b7b9f019b068e310",
+    "evidence/group-tranche1/reference-100-1e+05-0-fe.bin": "9e842e87dd4e4d8c4ec990db3fe5c61d66ef34aec15b796861d5018353401e5a",
+    "evidence/group-tranche1/reference-100-1e+05-0-dl.bin": "0c42c83acb0a6c69caab6f4a7fffe90f0600553e1b0732041220831a8892b62b",
+    "evidence/group-tranche1/reference-100-10000-1-fe.bin": "f9fcbf68ef4827e1518215b6f209f53dbe0ad3152b272d8473d84f5ccbc2cd65",
+    "evidence/group-tranche1/reference-100-10000-1-dl.bin": "3e20dd258d340381f8033166909ffc5a27c62ae22b07f9bcf94aab9a14a86ca1",
+    "evidence/group-tranche1/reference-100-10000-0-p20-ols.bin": "b74ee8619f1d6c6cb4ab4ba9e32b4145b3391a868dd139fc814d34066606c553",
+    "evidence/group-tranche1/reference-100-10000-0-p5-ols.bin": "4d21c87c4720c1b3386d6db0192753f01b89f59ce893f70dbd4a08ddc34a45e0",
+    "evidence/group-tranche1/reference-100-1e+05-0-ols.bin": "f8d1a520078e9e2822122cc3ffab7496af8b0c13858982886e913272a75abc58"
+  },
+  "benchmark": {
+    "cases": 14,
+    "comparison": "comparison.json",
+    "raw_trials": "paired/",
+    "max_scaled_error": 6.647145783823958e-10,
+    "scaled_tolerance": 2e-09,
+    "block_invariance_tolerance": 2e-10,
+    "timing_note": "ABBA per workload, ten warm times each, shared workstation, one-thread environment, no allocation counting during timing",
+    "adverse_cases": [
+      "smallest OLS paired run 0.97x",
+      "variable-whole-suite/ large DL 0.93x; timing variability retained"
+    ],
+    "rejected_evidence": "rejected-shared-target-run/reason.json"
+  },
+  "oracle": {
+    "fixture": "crates/fmri-group/tests/performance_reference.json",
+    "precision_digits": 256,
+    "ols_relative_tolerance": {
+      "effect_se": 3e-15,
+      "statistic": 4e-15
+    },
+    "meta_relative_tolerance": 2e-13,
+    "zero_reference_policy": "exact zero",
+    "R_source": "273b029bbe9c6c9024bfc12fe4ff6cdb98e18639",
+    "R_note": "preserved isolated reference, not current live checkout"
+  },
+  "limitations": [
+    "No new estimator or covariance model",
+    "No general population-level calibration claim",
+    "Allocation totals are not peak RSS",
+    "Prepared repeat-call speedup is not separately timed",
+    "Initial transient facade compile failure was in concurrently edited session.rs; final affected check passed"
+  ]
+}

@@ -1,0 +1,25 @@
+suppressPackageStartupMessages(library(fmrihrf))
+suppressPackageStartupMessages(library(fmridesign))
+suppressPackageStartupMessages(library(jsonlite))
+stopifnot(normalizePath(find.package('fmridesign'))==normalizePath('evidence/r-library/fmridesign'))
+n <- c(12L,9L); tr <- c(.7,1.1); starts <- c(.15,.2)
+f <- fmrihrf::sampling_frame(n, TR=tr, start_time=starts, precision=.025)
+polys <- lapply(c('none','global','runwise'), function(intercept) {
+ m <- baseline_model('poly',degree=2,sframe=f,intercept=intercept)
+ list(intercept=intercept,expected=unname(as.matrix(design_matrix(m))))
+})
+values <- list(cbind(sin(1:12),cos(1:12)),matrix((1:9)/9,ncol=1))
+nu <- fmridesign:::make_nuisance_term(values,f)
+dct <- function(n,tr,cutoff) {
+ k <- seq_len(floor(2*n*tr/cutoff))
+ sqrt(2/n)*cos(outer(seq_len(n)-.5,k)*pi/n)
+}
+d <- as.matrix(Matrix::bdiag(Map(function(n,tr)dct(n,tr,4),n,tr)))
+x <- cbind(1,seq_len(sum(n))/sum(n),sin(seq_len(sum(n))))
+y <- as.vector(x%*%c(2,-.7,1.4) + .1*cos(seq_len(sum(n))*2))
+censored <- c(2L,12L,20L); keep <- setdiff(seq_len(sum(n)),censored)
+s <- diag(sum(n))[,censored,drop=FALSE]
+fit <- lm.fit(cbind(x,s),y); reduced <- lm.fit(x[keep,,drop=FALSE],y[keep])
+source <- path.expand('~/code/fmridesign'); files <- list.files(file.path(source,'R'),full.names=TRUE)
+hashes<-as.list(tools::md5sum(files));names(hashes)<-substring(names(hashes),nchar(source)+2L)
+write_json(list(provenance=list(source=source,commit=system2('git',c('-C',source,'rev-parse','HEAD'),stdout=TRUE),source_md5=hashes,R=R.version.string),n=n,tr=tr,starts=starts,polynomials=polys,nuisance_values=values,nuisance_expected=unname(as.matrix(design_matrix(nu))),dct=unname(d),ols=list(x=unname(x),y=y,censored=censored,spike_beta=unname(fit$coefficients),selected_beta=unname(reduced$coefficients),spike_rank=fit$rank,selected_rank=reduced$rank,df=fit$df.residual,rss=sum(fit$residuals^2))), 'crates/fmridesign/tests/fixtures/nuisance_contract.json',auto_unbox=TRUE,pretty=TRUE,digits=17)

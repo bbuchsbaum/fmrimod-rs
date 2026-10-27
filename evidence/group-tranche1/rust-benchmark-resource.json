@@ -1,0 +1,19 @@
+{
+  "command": [
+    "target/release/examples/group_benchmark"
+  ],
+  "command_file_sha256": {
+    "target/release/examples/group_benchmark": "7ef32fa0cc72ebcf1812a227c803cb5ee6395a111e0aeb303afc4c3a734de533"
+  },
+  "exit": 0,
+  "elapsed_seconds": 4.414494500000728,
+  "max_rss_bytes": 500334592,
+  "scope": "whole benchmark process including resident inputs, oracle payloads and retained outputs",
+  "platform": "darwin",
+  "thread_environment": {
+    "FMRIGDS_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

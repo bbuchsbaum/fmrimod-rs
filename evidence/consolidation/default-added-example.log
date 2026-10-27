@@ -1,0 +1,9 @@
+    Blocking waiting for file lock on build directory
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+    Finished `test` profile [unoptimized] target(s) in 1.14s
+     Running unittests examples/selected_qualification.rs (target/debug/examples/selected_qualification-9e3cd865772747d1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

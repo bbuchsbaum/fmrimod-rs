@@ -228,12 +228,19 @@ pub use correction::{Ar1Estimator, ArEstimator};
 mod ar;
 pub use ar::{estimate_ar_uncorrected, ArDiagnostics, ArPlan, ArStart};
 
+mod extensions;
+pub use extensions::{
+    estimate_hannan_rissanen, estimate_parcel_ar, estimate_residual_innovation_scale,
+    select_ar_order_conditional, ArOrderCandidate, ArOrderSelection, ArmaPlan, HannanRissanenFit,
+    InnovationScaleDiagnostics, InnovationScaled, OrderCriterion, ParcelArPlan, ParcelWhitened,
+};
+
 /// Matched linear transform applied identically to design and data.
 pub trait WhiteningPlan {
     fn observations(&self) -> usize;
     fn apply(&self, values: ArrayView2<'_, f64>) -> Result<Array2<f64>>;
     /// Default compatibility path for custom plans. Built-in plans override this
-    /// with allocation-free kernels.
+    /// with specialized kernels; selected-observation AR uses O(p) scratch.
     fn apply_into(
         &self,
         values: ArrayView2<'_, f64>,
@@ -272,3 +279,8 @@ impl WhiteningPlan for ArPlan {
         self.apply_into(values, out)
     }
 }
+
+mod selected;
+pub use selected::{GapPolicy, ObservationSelection, SelectedArPlan};
+
+pub mod selected_estimation;

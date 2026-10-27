@@ -1,0 +1,183 @@
+{
+  "passed": true,
+  "complete_r_comparisons": 16,
+  "block_worker_comparisons": 8,
+  "memory_prefix_values": 1850000,
+  "max_scaled_error": 9.071189146422014e-10,
+  "checks": [
+    {
+      "key": "300-8-1000-ar1-b1000-w1",
+      "max_scaled_error": 1.8184498792162185e-12,
+      "values": 13000,
+      "reference": "evidence/gls-baseline/300-8-1000-ar1-b1000-w1-r.bin"
+    },
+    {
+      "key": "300-8-1000-ar4-b1000-w1",
+      "max_scaled_error": 2.023334701232365e-12,
+      "values": 13000,
+      "reference": "evidence/gls-baseline/300-8-1000-ar4-b1000-w1-r.bin"
+    },
+    {
+      "key": "300-8-50000-ar1-b1000-w1",
+      "max_scaled_error": 3.730259240914684e-10,
+      "values": 650000,
+      "reference": "evidence/gls-baseline/300-8-50000-ar1-b1000-w1-r.bin"
+    },
+    {
+      "key": "300-8-50000-ar4-b1000-w1",
+      "max_scaled_error": 6.6910046956726135e-12,
+      "values": 650000,
+      "reference": "evidence/gls-baseline/300-8-50000-ar4-b1000-w1-r.bin"
+    },
+    {
+      "key": "300-32-1000-ar1-b1000-w1",
+      "max_scaled_error": 1.0178365041498307e-12,
+      "values": 37000,
+      "reference": "evidence/gls-baseline/300-32-1000-ar1-b1000-w1-r.bin"
+    },
+    {
+      "key": "300-32-1000-ar4-b1000-w1",
+      "max_scaled_error": 1.9203641111595328e-11,
+      "values": 37000,
+      "reference": "evidence/gls-baseline/300-32-1000-ar4-b1000-w1-r.bin"
+    },
+    {
+      "key": "300-32-50000-ar1-b1000-w1",
+      "max_scaled_error": 8.54602246811611e-10,
+      "values": 1850000,
+      "reference": "evidence/gls-baseline/300-32-50000-ar1-b1000-w1-r.bin"
+    },
+    {
+      "key": "300-32-50000-ar4-b1000-w1",
+      "max_scaled_error": 2.109610550523682e-11,
+      "values": 1850000,
+      "reference": "evidence/gls-baseline/300-32-50000-ar4-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-8-1000-ar1-b1000-w1",
+      "max_scaled_error": 1.6168086241334333e-12,
+      "values": 13000,
+      "reference": "evidence/gls-baseline/1200-8-1000-ar1-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-8-1000-ar4-b1000-w1",
+      "max_scaled_error": 2.4251456109530544e-10,
+      "values": 13000,
+      "reference": "evidence/gls-baseline/1200-8-1000-ar4-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-8-50000-ar1-b1000-w1",
+      "max_scaled_error": 7.02726203437196e-11,
+      "values": 650000,
+      "reference": "evidence/gls-baseline/1200-8-50000-ar1-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-8-50000-ar4-b1000-w1",
+      "max_scaled_error": 2.8510520727565653e-10,
+      "values": 650000,
+      "reference": "evidence/gls-baseline/1200-8-50000-ar4-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-32-1000-ar1-b1000-w1",
+      "max_scaled_error": 1.2980139087491126e-12,
+      "values": 37000,
+      "reference": "evidence/gls-baseline/1200-32-1000-ar1-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-32-1000-ar4-b1000-w1",
+      "max_scaled_error": 2.6559293386418564e-10,
+      "values": 37000,
+      "reference": "evidence/gls-baseline/1200-32-1000-ar4-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-32-50000-ar1-b1000-w1",
+      "max_scaled_error": 5.619406066754545e-11,
+      "values": 1850000,
+      "reference": "evidence/gls-baseline/1200-32-50000-ar1-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b1000-w1",
+      "max_scaled_error": 9.071189146422014e-10,
+      "values": 1850000,
+      "reference": "evidence/gls-baseline/1200-32-50000-ar4-b1000-w1-r.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b128-w1",
+      "max_scaled_error": 0.0,
+      "values": 1850000,
+      "reference": "evidence/gls-final/1200-32-50000-ar4-b1000-w1-rust.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b128-w2",
+      "max_scaled_error": 0.0,
+      "values": 1850000,
+      "reference": "evidence/gls-final/1200-32-50000-ar4-b1000-w1-rust.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b128-w4",
+      "max_scaled_error": 0.0,
+      "values": 1850000,
+      "reference": "evidence/gls-final/1200-32-50000-ar4-b1000-w1-rust.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b1000-w2",
+      "max_scaled_error": 0.0,
+      "values": 1850000,
+      "reference": "evidence/gls-final/1200-32-50000-ar4-b1000-w1-rust.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b1000-w4",
+      "max_scaled_error": 0.0,
+      "values": 1850000,
+      "reference": "evidence/gls-final/1200-32-50000-ar4-b1000-w1-rust.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b4096-w1",
+      "max_scaled_error": 0.0,
+      "values": 1850000,
+      "reference": "evidence/gls-final/1200-32-50000-ar4-b1000-w1-rust.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b4096-w2",
+      "max_scaled_error": 0.0,
+      "values": 1850000,
+      "reference": "evidence/gls-final/1200-32-50000-ar4-b1000-w1-rust.bin"
+    },
+    {
+      "key": "1200-32-50000-ar4-b4096-w4",
+      "max_scaled_error": 0.0,
+      "values": 1850000,
+      "reference": "evidence/gls-final/1200-32-50000-ar4-b1000-w1-rust.bin"
+    }
+  ],
+  "R_provenance": {
+    "source": "/Users/bbuchsbaum/code/fmriAR",
+    "commit": "ca27f2772bb4675573fae717a992c993c2f986c8",
+    "source_md5": {
+      "R/acorr.R": "8df0e7b1f000f43bffd6e40c9732d499",
+      "R/acvf_bias.R": "67648a49b7e5094d27d13d0c841878d1",
+      "R/afni_restricted.R": "f0d1315563441dce96c887f44c218a70",
+      "R/compat.R": "c5a0db09d68bdf4eef17fe49ea02de85",
+      "R/fit_and_apply.R": "14620c09ad8bb08c5dac937ea8dd34ac",
+      "R/fmriAR-package.R": "715be3da78aa4beed016115ac8614f45",
+      "R/hr_arma.R": "dae938a3238a8729a9e616864830c2d2",
+      "R/ma_invertibility.R": "d62156e85dd0e4d7712cf8cafd06a0d3",
+      "R/multiscale_fast.R": "7d480f7263b045c76e06248af1380b0d",
+      "R/multiscale.R": "2549e4e4a9da5ebef592481d26f27bd2",
+      "R/noise_acvf.R": "b4593381754ed33f31a35debd047fa7d",
+      "R/pacf_helpers.R": "fa313b0e577a35aa8fb2cb3ce2fe9ca4",
+      "R/print-plan.R": "ad16014a2e951de2b2cf4f580834b3cb",
+      "R/RcppExports.R": "b6df8f3454635615cda7df2f8f5d0bc0",
+      "R/sandwich.R": "2f23a178a4c6143da860ff82b66a84aa",
+      "R/zzz.R": "1c81de1b4d9c01740302b1a9c0a7326c",
+      "src/fmriAR_hr.cpp": "ff0dab769a97b43cc19911f8e4e1935f",
+      "src/fmriAR_multiscale.cpp": "1f3078368af6dbe6a5bd8bdec6331204",
+      "src/fmriAR_whiten.cpp": "f882364cea9b5bc6b6c2866d82fe6674",
+      "src/RcppExports.cpp": "545f9c612926e40e9fb3a8e125e0576d"
+    },
+    "R": "R version 4.5.1 (2025-06-13)",
+    "binary_md5": {
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/r-library/fmriAR/libs/fmriAR.so": "0c6e6f7ca21af2f2c9e34055dfd4c3ce"
+    }
+  }
+}

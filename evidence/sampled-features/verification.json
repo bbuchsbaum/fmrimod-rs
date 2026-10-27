@@ -1,0 +1,121 @@
+{
+  "recorded_utc": "2026-10-27T02:23:16.055771+00:00",
+  "scope": "Sampled features only; no changes to fmrireg or fmri-noise by this tranche",
+  "checks": {
+    "fixture": {
+      "command": "LC_ALL=en_US.UTF-8 R_LIBS=\"$PWD/evidence/r-library\" Rscript --vanilla scripts/generate_sampled_features.R",
+      "exit": 0,
+      "log": "evidence/sampled-features/fixture.log",
+      "passed": 0,
+      "ignored": 0
+    },
+    "tests-final": {
+      "command": "cargo test -p fmrihrf --test sampled_features",
+      "exit": 0,
+      "log": "evidence/sampled-features/tests-final.log",
+      "passed": 4,
+      "ignored": 0
+    },
+    "hrf-all": {
+      "command": "cargo test -p fmrihrf --all-features",
+      "exit": 0,
+      "log": "evidence/sampled-features/hrf-all.log",
+      "passed": 292,
+      "ignored": 1
+    },
+    "design": {
+      "command": "cargo test -p fmridesign --test r_core_contract",
+      "exit": 0,
+      "log": "evidence/sampled-features/design.log",
+      "passed": 9,
+      "ignored": 0
+    },
+    "example": {
+      "command": "cargo run -p fmrihrf --example sampled_features",
+      "exit": 0,
+      "log": "evidence/sampled-features/example.log",
+      "passed": 0,
+      "ignored": 0
+    }
+  },
+  "source_preservation": {
+    "command": "python3 scripts/check_source_preservation.py",
+    "exit": 0,
+    "original_files_checked": 921,
+    "changes": 0
+  },
+  "reference": {
+    "source": "/Users/bbuchsbaum/code/fmrihrf",
+    "commit": "40c21257c0da333e651338ac258cfceec64656bf",
+    "source_md5": {
+      "R/all_generic.R": "ffdee9bff32034806cc6f538f332ee4c",
+      "R/cli.R": "f0d4e4a7df7c57ea91710b52c821a0a9",
+      "R/deriv-methods.R": "6b0998cf24894c67c943e98701314900",
+      "R/evaluate-helpers.R": "11c6805c50f2b895f296d69fe0c46634",
+      "R/feature-regressor.R": "929554f3e1659c17c88dbf0684e5d1d2",
+      "R/fmrihrf-package.R": "f80ddf372323e274faa0e914eb9648e0",
+      "R/hrf_decorators.R": "077bc23813046208d290fa6f8da13409",
+      "R/hrf_from_coefficients.R": "2f33a8b4c50a6598cce04a383b5868f0",
+      "R/hrf-formula.R": "c61966bd2e622c42e268be777d4451ba",
+      "R/hrf-functions.R": "ce975e862008ee45762f85475116c967",
+      "R/hrf.R": "d7d1f2ab2a04c97a90bd98332739e462",
+      "R/neural_input_methods.R": "e6efeb4d89b21a6cfde83ad697d7955b",
+      "R/penalty_matrix_methods.R": "d3e4abc0da21b52a8f7dbd4621a9628c",
+      "R/plot-methods.R": "6bb30f10539661d5f52d6157398da437",
+      "R/plot-style.R": "520f294a6f70c276e2b2ee8261c3acda",
+      "R/RcppExports.R": "c811700756db01ea959a4de4929eb409",
+      "R/reconstruction_matrix-methods.R": "bde69a21c3fe077822af21d3429ec4d2",
+      "R/reg-constructor.R": "c5bfd318c2c76a6d0bbd2acd5dc5c1ea",
+      "R/reg-methods.R": "b04fd566794c886cfe7eea49ee1bef4b",
+      "R/regressor-design.R": "5c452d4b4b98e769d8940282f552ce3d",
+      "R/regressor-set.R": "b961528ee2a4b4a8243469054d15ff0c",
+      "R/sampling_frame.R": "ff00da19ea496a09f13c27d250960b12",
+      "R/utils-internal.R": "d6ddfa14af6cc4aeaea47c2b9d1e1597",
+      "R/zzz.R": "5be3dfe5b23a3bca8083e03d959d0350"
+    },
+    "R": "R version 4.5.1 (2025-06-13)"
+  },
+  "reference_cases": 16,
+  "sha256": {
+    "crates/fmrihrf/src/types.rs": "9376c52fd3eb228ed735e874e1a532244c4606b2b25dc0feee78eaa1f91f60d7",
+    "crates/fmrihrf/src/plotting.rs": "d2611fca9348ed47f1118f41d82cba4aa7992745ff8574cd4f03d02ffb71fffc",
+    "crates/fmrihrf/src/error.rs": "da700d1089fe4ecfa437db8173d8d430dd8e76d58096753a0f77fc3ed44a9bb9",
+    "crates/fmrihrf/src/reconstruction.rs": "8f5b7d567075f37f5f1492f53fe5347a294ce48463d63abbf7a73123ad5afa88",
+    "crates/fmrihrf/src/lib.rs": "61b0fa66905c63a1891a5009a483ce52d9b684056f7ee4f7e8060e5498be4657",
+    "crates/fmrihrf/src/sampling.rs": "271c8b08552cdec1bfb5791de6389bb42c73639a7f76d3fdd4316b34bf4cce43",
+    "crates/fmrihrf/src/penalty.rs": "a0385c7eb7eebafe75fc736c837c3609d7ad997239993a1d0ba343cdd2df5fb4",
+    "crates/fmrihrf/src/hrf/core.rs": "497eb70c176a62d35b3550683ecd19ca0476bb993b4aed8d05eb4e01b701529a",
+    "crates/fmrihrf/src/hrf/registry.rs": "cf8d9a15c9b775d1733093c845e6162d2ff61e821d7e47c7147c954887c40e1e",
+    "crates/fmrihrf/src/hrf/library.rs": "7f659345ea25941c05440b48dfb28af2b0130d6c6bbaaf2b1769e0b1b6420347",
+    "crates/fmrihrf/src/hrf/functions.rs": "d4bbfc36660e93f1d5139999d81e2ebdabeba4fe798dd575163ca64943708014",
+    "crates/fmrihrf/src/hrf/mod.rs": "302c88f3d18d955fa28cbafaa0502246e1ebf5672989ba92e086db13846e5043",
+    "crates/fmrihrf/src/hrf/derivatives.rs": "4d43e2ff6c5866c2fb7c4d4c3304b841c98f0cf178e4b633d4221bad998eb1e6",
+    "crates/fmrihrf/src/hrf/recipe.rs": "928af23b37c19030455d182f188f8a47c50b42e6f173feb4b0ab01cb16fbfa86",
+    "crates/fmrihrf/src/hrf/empirical.rs": "c0e4741cc41f68d65a83c396f1843ba865530970884976dcfd43443ad7559c24",
+    "crates/fmrihrf/src/hrf/normalization.rs": "b5e20f1cf2d7f65b7cd273a95411a67c50a10296600c275c67c45502f8b2e8f8",
+    "crates/fmrihrf/src/hrf/generators.rs": "203e530e6c4a0001777c2d50b1e536cc45123ea40805ab4317f604fc9a642ed5",
+    "crates/fmrihrf/src/utils/cache.rs": "31a32ff0b32ce5ad20fae97e54c727ee2a7a27e94e3c2611671b000584532050",
+    "crates/fmrihrf/src/utils/misc.rs": "17ff6ffca7bbf0d1ca8b2aed46c37533000f8a4f889cf17b3a4b10bd8c0e63fa",
+    "crates/fmrihrf/src/utils/mod.rs": "70b5fd123cdc1334a20f665f05887c8d13bba00b254ad10a57365126d7e66817",
+    "crates/fmrihrf/src/regressor/core.rs": "ff8dbca79c8d9909aeae911cba59ff761cec36daae7b70b98aaa1967925ed8a6",
+    "crates/fmrihrf/src/regressor/design.rs": "1864d0aa84b6c8281f45a1bea83b4e83131c8b21181e9b73f6d617ca1c39f1ce",
+    "crates/fmrihrf/src/regressor/convolution.rs": "e24956a116f7e08653a918d56a73f6ff586b7c92a5a47744e9f493416c020075",
+    "crates/fmrihrf/src/regressor/neural_input.rs": "f2e8344993cdead8c65222a69d72685a740bec4bd312586a35984590e427a128",
+    "crates/fmrihrf/src/regressor/mod.rs": "61cc5d39c156ae16c5571d198675effc91b72349c09d48e42257992784680f4d",
+    "crates/fmrihrf/src/regressor/event_design.rs": "9288796babd7821e27a588a4c5f6f64ed179154b28c2e198a422ce5f3e2ec820",
+    "crates/fmrihrf/src/regressor/sampled.rs": "c9fa2394e1a84025710080fcf3860c0ed9e69b76437e6c93025023da9a017c9a",
+    "crates/fmrihrf/tests/sampled_features.rs": "5187837737322da26ea9953eb57c74b858d5aa053390d8af2dc495b8631da477",
+    "crates/fmrihrf/tests/fixtures/sampled_features.json": "ed98a0f2939ccbb7a61356a6bdae99ca14cd56178d63679def73cdf15d9bffac",
+    "crates/fmrihrf/examples/sampled_features.rs": "8738cced4f2e296279f4390c4dda891e96c98ace24260e1b2bec211a39eff061",
+    "scripts/generate_sampled_features.R": "cc271121bc17dbb300c3c0713da946e7c42e310c8d29d1634dcf4bdfd2616831",
+    "docs/SAMPLED_FEATURES.md": "2ab2cb05c4dbaa63185dc306fed374ae05c921f95ec52ee98774b6bc22f72f2a",
+    "docs/CAPABILITIES.md": "d9a37b660ca544cd85e7c85b582706726d34d54e353567bc2648876faa08e1a3",
+    "Cargo.lock": "e0dbe3e5b78af7d90ad9a5b008a613c6c2b078bdb7820b5d68e65ad859d28cb8"
+  },
+  "initial_failure": "Analytic test assumed zero acquisition start while SamplingFrame defaults to TR/2; fixed the test with explicit zero start. Initial failed log retained in tests.log; no convolution change required.",
+  "limits": [
+    "No new performance measurement",
+    "No AR/OLS optimization qualification",
+    "Local checks only; no hosted CI or publication"
+  ]
+}

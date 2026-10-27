@@ -1,0 +1,1 @@
+{"actor":"codex-fmrimod","entity":"bd-01M5ZDMBSFQ69V0TCT480QV3YT","kind":"reserve_open","mode":"exclusive","op":"20261027T195405.918042Z-p86430-c0000-r21da-h989530","paths":["crates/fmri-group/tests/repeated_numerics.rs"],"reservation_id":"rv-01M5ZETNPXM31NCJZP9MG51TWA","ts":"2026-10-27T19:54:05.918042Z","ttl_s":14400,"v":2}

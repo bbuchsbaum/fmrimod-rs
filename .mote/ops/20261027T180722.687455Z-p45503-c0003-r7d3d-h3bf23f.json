@@ -1,0 +1,1 @@
+{"actor":"codex-fmrimod","entity":"bd-01M5Z8P1HFTVRDA30R7B9BQDCF","kind":"note","note_kind":"progress","op":"20261027T180722.687455Z-p45503-c0003-r7d3d-h3bf23f","text":"Implementing versioned JSON + feature-major f64 estimate bundles and prepared weighted execution; independent disk-reader and bundle work have distinct file scopes.","ts":"2026-10-27T18:07:22.687455Z","v":1}

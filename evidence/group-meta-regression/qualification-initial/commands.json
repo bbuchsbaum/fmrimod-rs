@@ -1,0 +1,106 @@
+[
+  {
+    "argv": [
+      "cargo",
+      "test",
+      "-p",
+      "fmri-group",
+      "-p",
+      "fmrimod",
+      "--all-features",
+      "--all-targets"
+    ],
+    "log": "final-tests.log",
+    "exit_code": 0,
+    "elapsed_seconds": 27.364613458004897
+  },
+  {
+    "argv": [
+      "cargo",
+      "test",
+      "-p",
+      "fmri-group",
+      "-p",
+      "fmrimod",
+      "--all-features",
+      "--doc"
+    ],
+    "log": "doctests.log",
+    "exit_code": 0,
+    "elapsed_seconds": 0.40151049999985844
+  },
+  {
+    "argv": [
+      "cargo",
+      "clippy",
+      "-p",
+      "fmri-group",
+      "--all-targets",
+      "--no-deps",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "log": "clippy.log",
+    "exit_code": 0,
+    "elapsed_seconds": 0.9082898329943419
+  },
+  {
+    "argv": [
+      "rustfmt",
+      "--edition",
+      "2021",
+      "--check",
+      "crates/fmri-group/examples/group_benchmark.rs",
+      "crates/fmri-group/examples/group_pipeline.rs",
+      "crates/fmri-group/examples/meta_regression_benchmark.rs",
+      "crates/fmri-group/examples/weighted_group.rs",
+      "crates/fmri-group/src/cohort.rs",
+      "crates/fmri-group/src/fit.rs",
+      "crates/fmri-group/src/lib.rs",
+      "crates/fmri-group/src/meta_regression.rs",
+      "crates/fmri-group/src/multiplicity.rs",
+      "crates/fmri-group/tests/common/mod.rs",
+      "crates/fmri-group/tests/group.rs",
+      "crates/fmri-group/tests/meta_regression.rs"
+    ],
+    "log": "format.log",
+    "exit_code": 0,
+    "elapsed_seconds": 0.0936483339901315
+  },
+  {
+    "argv": [
+      "cargo",
+      "run",
+      "-p",
+      "fmri-group",
+      "--example",
+      "weighted_group"
+    ],
+    "log": "example.log",
+    "exit_code": 0,
+    "elapsed_seconds": 1.1876950000005309
+  },
+  {
+    "argv": [
+      "cargo",
+      "build",
+      "--release",
+      "-p",
+      "fmri-group",
+      "--example",
+      "meta_regression_benchmark"
+    ],
+    "log": "release-build.log",
+    "exit_code": 0,
+    "elapsed_seconds": 4.668726084011723
+  },
+  {
+    "argv": [
+      "target/release/examples/meta_regression_benchmark"
+    ],
+    "log": "rust-experiments.log",
+    "exit_code": 0,
+    "elapsed_seconds": 5.0440106250025565
+  }
+]

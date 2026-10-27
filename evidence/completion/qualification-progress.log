@@ -1,0 +1,17 @@
+RUN default-workspace
+EXIT default-workspace 0
+RUN all-features-workspace
+Traceback (most recent call last):
+  File "/Users/bbuchsbaum/code/rust/fmrimod-rs/scripts/qualify_completion.py", line 109, in <module>
+    main()
+    ~~~~^^
+  File "/Users/bbuchsbaum/code/rust/fmrimod-rs/scripts/qualify_completion.py", line 99, in main
+    shutil.copy2(artifact, run / artifact.name)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/shutil.py", line 529, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/shutil.py", line 315, in copyfile
+    with open(dst, 'wb') as fdst:
+         ~~~~^^^^^^^^^^^
+OSError: [Errno 28] No space left on device: '/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/completion/run-20261027T201836Z/group-calibration-oracle.json'

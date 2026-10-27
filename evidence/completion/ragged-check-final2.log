@@ -1,0 +1,19 @@
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `test` profile [unoptimized] target(s) in 0.58s
+     Running tests/repeated_numerics.rs (target/debug/deps/repeated_numerics-c9f28ad082166882)
+
+running 11 tests
+test huge_negative_random_variance_is_rejected_even_when_total_covariance_is_spd ... ok
+test true_two_visit_confounding_and_reml_subject_intercepts_are_rejected ... ok
+test limits_invalid_covariance_and_invalid_indices_never_return_estimates ... ok
+test analytic_covariance_gradients_match_central_differences_for_ml_and_reml ... ok
+test exact_zero_random_covariance_and_singular_fixed_g_are_valid ... ok
+test high_heterogeneity_fit_is_invariant_to_fixed_design_units ... ok
+test fitted_ml_reml_exact_boundary_and_variance_witness ... ok
+test unequal_visits_match_dense_gls_and_independent_reml_optimizer ... ok
+test fitted_response_units_and_large_intercept_offset_are_invariant ... ok
+test correlated_slope_objective_matches_independent_r_optimizer ... ok
+test covariance_coordinate_and_subject_order_changes_preserve_fit ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.32s
+

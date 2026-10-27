@@ -1,0 +1,20 @@
+0: cargo test -p fmri-group -p fmrimod --all-features --all-targets (final-tests.log)
+0: cargo test -p fmri-group -p fmrimod --all-features --doc (doctests.log)
+0: cargo clippy -p fmri-group --all-targets --no-deps -- -D warnings (clippy.log)
+0: rustfmt --edition 2021 --check crates/fmri-group/examples/group_benchmark.rs crates/fmri-group/examples/group_pipeline.rs crates/fmri-group/examples/meta_regression_benchmark.rs crates/fmri-group/examples/weighted_group.rs crates/fmri-group/src/cohort.rs crates/fmri-group/src/fit.rs crates/fmri-group/src/lib.rs crates/fmri-group/src/meta_regression.rs crates/fmri-group/src/multiplicity.rs crates/fmri-group/tests/common/mod.rs crates/fmri-group/tests/group.rs crates/fmri-group/tests/meta_regression.rs (format.log)
+0: cargo run -p fmri-group --example weighted_group (example.log)
+0: cargo build --release -p fmri-group --example meta_regression_benchmark (release-build.log)
+0: target/release/examples/meta_regression_benchmark (rust-experiments.log)
+20-200-3 FE: Rust 0.000358s, R 0.000200s, ratio 0.56
+20-200-3 DL: Rust 0.000603s, R 0.000687s, ratio 1.14
+20-200-3 PM: Rust 0.002193s, R 0.955000s, ratio 435.41
+20-1000-3 FE: Rust 0.001784s, R 0.001020s, ratio 0.57
+20-1000-3 DL: Rust 0.003007s, R 0.003400s, ratio 1.13
+100-200-5 FE: Rust 0.002018s, R 0.001227s, ratio 0.61
+100-200-5 DL: Rust 0.003042s, R 0.003632s, ratio 1.19
+100-200-5 PM: Rust 0.007427s, R 2.797000s, ratio 376.62
+100-1000-5 FE: Rust 0.008376s, R 0.005960s, ratio 0.71
+100-1000-5 DL: Rust 0.011167s, R 0.018125s, ratio 1.62
+100-10000-5 FE: Rust 0.060104s, R 0.059333s, ratio 0.99
+100-10000-5 DL: Rust 0.106374s, R 0.182000s, ratio 1.71
+PASS: 12000 fits; every coverage/rejection count matches

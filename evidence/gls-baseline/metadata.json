@@ -1,0 +1,28 @@
+{
+  "platform": "macOS-14.3-arm64-arm-64bit-Mach-O",
+  "machine": "Apple M3 Max",
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "hashes": {
+    "crates/fmri-noise/tests/arp.rs": "43f0be30503523f308ccb13b71cb17644d33712d57d3e0e3fb66f7a85fcfc7c4",
+    "crates/fmri-noise/tests/contracts.rs": "9e69d584408c9a3e103d384332ad69de0af1e5502cde26fffcd430a0e00929c1",
+    "crates/fmri-noise/src/lib.rs": "9480c4c78ce58b910acb5b7758bd7e682613ad0a32c2de941e9ca6bc3ef6625d",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/ar.rs": "c918a93c1d53e92b874745a553814eebb19984a3b9f726b1aee35540c643b265",
+    "crates/fmrireg/tests/arp.rs": "ddd6ed8049e1c525c309df56741765b982b98fb82598cc0a869478aca0387065",
+    "crates/fmrireg/tests/contracts.rs": "a9cea9d3cb365d4856ddf26ad974be4706ec2d5eb7fc4116dfe16ccacf185501",
+    "crates/fmrireg/examples/throughput.rs": "328c19802afa729f08ffd922c9610099c0982047a8ef8f6cad3ee5f57831b079",
+    "crates/fmrireg/examples/gls_benchmark.rs": "80566b57c6e6a8bfae65f9adf76eb931f2810d6e123b6e456b922664bed07104",
+    "crates/fmrireg/src/lib.rs": "9ae94724e111a2c74c437cfbe04ce98b488a55bf051eda1b97df4a952a4472c1",
+    "crates/fmrireg/src/dataset.rs": "2898a1a0ab6b8fedc2e301e9e0fec0cd56ef55da3ed87dde91be60c073e8c711",
+    "scripts/benchmark_gls.R": "6795c639d8829caf91a31c4b2631cd1c576180ad92e8a859bb8ed865d5eef330",
+    "scripts/benchmark_gls.py": "1280dc8d57fa719e5f99bcf44021760abfbabfb3c85e3e1daa9b1281ccc504b5",
+    "Cargo.lock": "5551286ca7c2c2d54de6ae260d0db045fd40b9567487ac91243314574ad14249"
+  },
+  "binary_sha256": "3b4dc50a90d1bfccc5ae556add761497f4c20f07eae2aa52a580437dfe103947",
+  "r_source_commit": "ca27f2772bb4675573fae717a992c993c2f986c8"
+}

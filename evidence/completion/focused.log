@@ -1,0 +1,36 @@
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `test` profile [unoptimized] target(s) in 2.35s
+     Running tests/repeated_numerics.rs (target/debug/deps/repeated_numerics-c9f28ad082166882)
+
+running 10 tests
+test huge_negative_random_variance_is_rejected_even_when_total_covariance_is_spd ... ok
+test limits_invalid_covariance_and_invalid_indices_never_return_estimates ... ok
+test true_two_visit_confounding_and_reml_subject_intercepts_are_rejected ... ok
+test analytic_covariance_gradients_match_central_differences_for_ml_and_reml ... ok
+test exact_zero_random_covariance_and_singular_fixed_g_are_valid ... ok
+test high_heterogeneity_fit_is_invariant_to_fixed_design_units ... ok
+test fitted_ml_reml_exact_boundary_and_variance_witness ... ok
+test fitted_response_units_and_large_intercept_offset_are_invariant ... ok
+test correlated_slope_objective_matches_independent_r_optimizer ... ok
+test covariance_coordinate_and_subject_order_changes_preserve_fit ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.35s
+
+     Running tests/extensions.rs (target/debug/deps/extensions-a1912e36782d3eb0)
+
+running 11 tests
+test arma_zero_history_is_independent_by_run_and_matches_scalar_recursion ... ok
+test independent_r_zero_history_witness_matches_known_arma_plan ... ok
+test innovation_scale_is_known_or_explicit_plugin_only ... ok
+test fixture_has_fresh_source_fingerprints ... ok
+test parcel_plan_requires_matched_design_and_preserves_columns ... ok
+test parcel_acvf_pools_features_not_means_and_weights_global_by_feature_count ... ok
+test specialized_apply_into_reuses_output_and_rejects_bad_inner_or_scaling ... ok
+test conditional_selection_is_scale_relative_and_rejects_giant_orders ... ok
+test conditional_order_selection_is_comparable_and_auditable ... ok
+test hannan_rissanen_is_explicit_single_series_and_refuses_bad_orders ... ok
+test full_hr_estimate_and_all_order_scores_match_independent_r_qr ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

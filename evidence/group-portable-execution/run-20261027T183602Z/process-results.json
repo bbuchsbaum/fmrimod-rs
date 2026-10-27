@@ -1,0 +1,298 @@
+[
+  {
+    "id": "20-1000-3",
+    "storage": "disk",
+    "strategy": "general",
+    "peak_rss_bytes": 2588672,
+    "result": {
+      "allocated_bytes": 2035167,
+      "allocation_calls": 9219,
+      "allocation_checksum": 13372779727441493826,
+      "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "factorizations": 1000,
+      "first_fit_seconds": 0.001339791,
+      "materialization_read_budget_bytes": 268435456,
+      "materialization_seconds": 8.3e-08,
+      "numeric_working_bytes": 501984,
+      "open_checksum_seconds": 0.001171709,
+      "peak_rss_bytes": 2588672,
+      "preparation_seconds": 9.125e-06,
+      "shape": [
+        20,
+        1000
+      ],
+      "shared_features": 0,
+      "sink_checksum": 13372779727441493826,
+      "sink_count": 12000,
+      "sink_sum": 101514.61475960832,
+      "storage": "disk",
+      "strategy": "general",
+      "warm_fit_seconds": [
+        0.001254542,
+        0.001262958,
+        0.001252125,
+        0.001247458,
+        0.001257833
+      ]
+    }
+  },
+  {
+    "id": "20-1000-3",
+    "storage": "disk",
+    "strategy": "shared",
+    "peak_rss_bytes": 2752512,
+    "result": {
+      "allocated_bytes": 1519487,
+      "allocation_calls": 3224,
+      "allocation_checksum": 13372779727441493826,
+      "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "factorizations": 0,
+      "first_fit_seconds": 0.000615125,
+      "materialization_read_budget_bytes": 268435456,
+      "materialization_seconds": 2.5e-07,
+      "numeric_working_bytes": 670560,
+      "open_checksum_seconds": 0.001146833,
+      "peak_rss_bytes": 2752512,
+      "preparation_seconds": 1.2458e-05,
+      "shape": [
+        20,
+        1000
+      ],
+      "shared_features": 1000,
+      "sink_checksum": 13372779727441493826,
+      "sink_count": 12000,
+      "sink_sum": 101514.61475960832,
+      "storage": "disk",
+      "strategy": "shared",
+      "warm_fit_seconds": [
+        0.000555042,
+        0.000540125,
+        0.000549583,
+        0.000550167,
+        0.000561167
+      ]
+    }
+  },
+  {
+    "id": "20-1000-3",
+    "storage": "memory",
+    "strategy": "general",
+    "peak_rss_bytes": 2998272,
+    "result": {
+      "allocated_bytes": 1715167,
+      "allocation_calls": 9211,
+      "allocation_checksum": 13372779727441493826,
+      "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "factorizations": 1000,
+      "first_fit_seconds": 0.001169542,
+      "materialization_read_budget_bytes": 268435456,
+      "materialization_seconds": 0.00025275,
+      "numeric_working_bytes": 501984,
+      "open_checksum_seconds": 0.001138167,
+      "peak_rss_bytes": 2998272,
+      "preparation_seconds": 1.0459e-05,
+      "shape": [
+        20,
+        1000
+      ],
+      "shared_features": 0,
+      "sink_checksum": 13372779727441493826,
+      "sink_count": 12000,
+      "sink_sum": 101514.61475960832,
+      "storage": "memory",
+      "strategy": "general",
+      "warm_fit_seconds": [
+        0.001168,
+        0.001133916,
+        0.001140542,
+        0.001143959,
+        0.001135542
+      ]
+    }
+  },
+  {
+    "id": "20-1000-3",
+    "storage": "memory",
+    "strategy": "shared",
+    "peak_rss_bytes": 3162112,
+    "result": {
+      "allocated_bytes": 1199487,
+      "allocation_calls": 3216,
+      "allocation_checksum": 13372779727441493826,
+      "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-20-1000-3",
+      "factorizations": 0,
+      "first_fit_seconds": 0.000517833,
+      "materialization_read_budget_bytes": 268435456,
+      "materialization_seconds": 0.000296667,
+      "numeric_working_bytes": 670560,
+      "open_checksum_seconds": 0.00121125,
+      "peak_rss_bytes": 3162112,
+      "preparation_seconds": 1.7916e-05,
+      "shape": [
+        20,
+        1000
+      ],
+      "shared_features": 1000,
+      "sink_checksum": 13372779727441493826,
+      "sink_count": 12000,
+      "sink_sum": 101514.61475960832,
+      "storage": "memory",
+      "strategy": "shared",
+      "warm_fit_seconds": [
+        0.000481042,
+        0.000474,
+        0.000471459,
+        0.000476541,
+        0.0004715
+      ]
+    }
+  },
+  {
+    "id": "100-100000-5",
+    "storage": "disk",
+    "strategy": "general",
+    "peak_rss_bytes": 33800192,
+    "result": {
+      "allocated_bytes": 725521977,
+      "allocation_calls": 905459,
+      "allocation_checksum": 5559425486000052104,
+      "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "factorizations": 100000,
+      "first_fit_seconds": 0.578517542,
+      "materialization_read_budget_bytes": 268435456,
+      "materialization_seconds": 1.25e-07,
+      "numeric_working_bytes": 2081760,
+      "open_checksum_seconds": 0.371898833,
+      "peak_rss_bytes": 33800192,
+      "preparation_seconds": 2.5125e-05,
+      "shape": [
+        100,
+        100000
+      ],
+      "shared_features": 0,
+      "sink_checksum": 5559425486000052104,
+      "sink_count": 1600000,
+      "sink_sum": 57124853.64581739,
+      "storage": "disk",
+      "strategy": "general",
+      "warm_fit_seconds": [
+        0.579011125,
+        0.579423,
+        0.577398958,
+        0.579640375,
+        0.578766166
+      ]
+    }
+  },
+  {
+    "id": "100-100000-5",
+    "storage": "disk",
+    "strategy": "shared",
+    "peak_rss_bytes": 35979264,
+    "result": {
+      "allocated_bytes": 286188377,
+      "allocation_calls": 305464,
+      "allocation_checksum": 5559425486000052104,
+      "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "factorizations": 0,
+      "first_fit_seconds": 0.252507,
+      "materialization_read_budget_bytes": 268435456,
+      "materialization_seconds": 1.25e-07,
+      "numeric_working_bytes": 2932960,
+      "open_checksum_seconds": 0.377623,
+      "peak_rss_bytes": 35979264,
+      "preparation_seconds": 3.7459e-05,
+      "shape": [
+        100,
+        100000
+      ],
+      "shared_features": 100000,
+      "sink_checksum": 5559425486000052104,
+      "sink_count": 1600000,
+      "sink_sum": 57124853.64581739,
+      "storage": "disk",
+      "strategy": "shared",
+      "warm_fit_seconds": [
+        0.245337667,
+        0.245270833,
+        0.244493417,
+        0.24513425,
+        0.252647875
+      ]
+    }
+  },
+  {
+    "id": "100-100000-5",
+    "storage": "memory",
+    "strategy": "general",
+    "peak_rss_bytes": 207241216,
+    "result": {
+      "allocated_bytes": 674272825,
+      "allocation_calls": 904677,
+      "allocation_checksum": 5559425486000052104,
+      "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "factorizations": 100000,
+      "first_fit_seconds": 0.5386535,
+      "materialization_read_budget_bytes": 268435456,
+      "materialization_seconds": 0.052802166,
+      "numeric_working_bytes": 2081760,
+      "open_checksum_seconds": 0.371734792,
+      "peak_rss_bytes": 207241216,
+      "preparation_seconds": 3.2584e-05,
+      "shape": [
+        100,
+        100000
+      ],
+      "shared_features": 0,
+      "sink_checksum": 5559425486000052104,
+      "sink_count": 1600000,
+      "sink_sum": 57124853.64581739,
+      "storage": "memory",
+      "strategy": "general",
+      "warm_fit_seconds": [
+        0.545531167,
+        0.540109041,
+        0.538161917,
+        0.542581583,
+        0.558801
+      ]
+    }
+  },
+  {
+    "id": "100-100000-5",
+    "storage": "memory",
+    "strategy": "shared",
+    "peak_rss_bytes": 205881344,
+    "result": {
+      "allocated_bytes": 234939225,
+      "allocation_calls": 304682,
+      "allocation_checksum": 5559425486000052104,
+      "directory": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183602Z/input-100-100000-5",
+      "factorizations": 0,
+      "first_fit_seconds": 0.208598209,
+      "materialization_read_budget_bytes": 268435456,
+      "materialization_seconds": 0.051935375,
+      "numeric_working_bytes": 2932960,
+      "open_checksum_seconds": 0.3760535,
+      "peak_rss_bytes": 205881344,
+      "preparation_seconds": 3.3875e-05,
+      "shape": [
+        100,
+        100000
+      ],
+      "shared_features": 100000,
+      "sink_checksum": 5559425486000052104,
+      "sink_count": 1600000,
+      "sink_sum": 57124853.64581739,
+      "storage": "memory",
+      "strategy": "shared",
+      "warm_fit_seconds": [
+        0.209020375,
+        0.209386583,
+        0.207380291,
+        0.207392209,
+        0.208685958
+      ]
+    }
+  }
+]

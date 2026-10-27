@@ -1,0 +1,169 @@
+{
+  "recorded_utc": "2026-10-27T03:42:01.064714+00:00",
+  "checks": {
+    "fixture": {
+      "command": "LC_ALL=en_US.UTF-8 Rscript --vanilla scripts/generate_selected_estimation.R",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-estimation/fixture.log"
+    },
+    "all-features": {
+      "command": "cargo test -p fmri-noise -p fmrireg --all-features -- --nocapture",
+      "exit": 0,
+      "passed": 47,
+      "ignored": 0,
+      "log": "evidence/selected-estimation/all-features.log"
+    },
+    "minimal": {
+      "command": "cargo test -p fmrireg --no-default-features --test selected_estimation -- --nocapture",
+      "exit": 0,
+      "passed": 4,
+      "ignored": 0,
+      "log": "evidence/selected-estimation/minimal.log"
+    },
+    "clippy": {
+      "command": "cargo clippy -p fmri-noise -p fmrireg --lib --all-features --no-deps -- -D warnings",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-estimation/clippy.log"
+    },
+    "example": {
+      "command": "cargo run -p fmrireg --features dataset --example selected_ar1",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-estimation/example.log"
+    },
+    "source-preservation": {
+      "command": "python3 scripts/check_source_preservation.py",
+      "exit": 0,
+      "passed": 0,
+      "ignored": 0,
+      "log": "evidence/selected-estimation/source-preservation.log"
+    }
+  },
+  "reference_cases": 4,
+  "reference_provenance": {
+    "R": "R version 4.5.1 (2025-06-13)",
+    "seed": 60271,
+    "method": "Explicit dense C(I-QQt) S_k (I-QQt)Ct moments and dense stationary GLS; not the full-grid fmriAR correction"
+  },
+  "adversarial_coefficient": 1.0008051795586506,
+  "simulation": [
+    {
+      "scenario": 0,
+      "replicates": 160,
+      "failures": 0,
+      "bias": [
+        -0.0007207506226910024,
+        -0.0007207506226910024
+      ],
+      "mean_whitened_residual_lag1": -0.010205,
+      "coverage": 0.9625,
+      "coverage_wilson_95": [
+        0.9206101926328578,
+        0.9827020768335
+      ]
+    },
+    {
+      "scenario": 1,
+      "replicates": 160,
+      "failures": 0,
+      "bias": [
+        -0.002819512468374355,
+        -0.002819512468374355
+      ],
+      "mean_whitened_residual_lag1": -0.01602,
+      "coverage": 0.925,
+      "coverage_wilson_95": [
+        0.8734917309593303,
+        0.9565790031448905
+      ]
+    },
+    {
+      "scenario": 2,
+      "replicates": 160,
+      "failures": 0,
+      "bias": [
+        -0.0026498332128259312,
+        -0.0018221531942914926
+      ],
+      "mean_whitened_residual_lag1": -0.009828,
+      "coverage": 0.9625,
+      "coverage_wilson_95": [
+        0.9206101926328578,
+        0.9827020768335
+      ]
+    },
+    {
+      "scenario": 3,
+      "replicates": 160,
+      "failures": 0,
+      "bias": [
+        -0.0037228109885449486,
+        -0.0007459467691862121
+      ],
+      "mean_whitened_residual_lag1": -0.010618,
+      "coverage": 0.9625,
+      "coverage_wilson_95": [
+        0.9206101926328578,
+        0.9827020768335
+      ]
+    }
+  ],
+  "simulation_seeds": [
+    71931,
+    71932,
+    71933,
+    71934
+  ],
+  "sha256": {
+    "crates/fmrireg/Cargo.toml": "25afb03e4df22e3ce15b81128dd8ca58bd7858ff4df2c195e26d27e5b45919f5",
+    "crates/fmrireg/tests/selected_estimation.rs": "2503063347116b34670e89f8f65064321b5342e88769b723b1a69d3e402aeb0c",
+    "crates/fmrireg/tests/fixtures/selected_estimation.json": "6a81465e196e10b9e0685132a9c5870340f0506a0a2bda0c163c6aa9f6564cd9",
+    "crates/fmrireg/examples/selected_ar1.rs": "6cdc5ce527cf16bad0c7030670f884c17e9a493ede84fd12d1f558499c250ea5",
+    "scripts/generate_selected_estimation.R": "2cf1c9589a929c899661c1ba9a0277a889329cb3e2aa73f5a01d2dae3cfbf1eb",
+    "docs/SELECTED_ESTIMATION.md": "4b2331fcb4e6fa0914d73e71dca63da3531a1f9054b904a9c74cca9ca96203c6",
+    "docs/SELECTED_GLS.md": "f1c2c376655ca982e07b63603bbe4348a6d00fcc71cc61df4407bea3c545d19c",
+    "docs/CAPABILITIES.md": "43e5b62df0ac95572d6c82e7f209f3493f6db8f76e2139e86faa60050efb3224",
+    "docs/PLAN.md": "2ce740a7983817b097754fce66d5f4fa9b7bc787711abaa632bdd58b0b96af7f",
+    "/Users/bbuchsbaum/code/fmriAR/R/acvf_bias.R": "435b4a678dda4ecbd6a2c4fd0f6c12fdf12cc50243893b5342bd9a53bf30a013",
+    "/Users/bbuchsbaum/code/fmriAR/R/noise_acvf.R": "9af82228ea176b132c9876ee9c47f58af3c596ab595bca3a7c01f132a9961a1f",
+    "crates/fmri-noise/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmri-noise/src/lib.rs": "d0194404f721ede8e5044bc3a36661c2f5bb53a06ea8c99a7e61a092ac6e9ce6",
+    "crates/fmri-noise/src/selected_estimation.rs": "0120d6916d2d6c9a8750027f4f2cadf580cc8cad10ff88c0f7175156bab8e714",
+    "crates/fmri-noise/src/selected.rs": "e0bb8c6b9b4eaadba1a4f5fc455f2165bf670132d263770d8c656ea210935edb",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/ar.rs": "a19aeb0af7dfcc4d405a4c2e6de0ce8816b136c6a8660c47c05a45af2d8a90ab",
+    "crates/fmrireg/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+    "crates/fmrireg/src/lib.rs": "dc64a0e69b9baef1e873bc3edc5b3a78a716c80e3cb05e96b2db030590d1b8f4",
+    "crates/fmrireg/src/selected_estimation.rs": "60e3a78a1531422e3310dd44d737a2303adce7d1c26998c974c8fbf6550652f6",
+    "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+    "crates/fmrireg/src/selection.rs": "b46d57bcdf20cf7fbbaf956c6ebcd744910084428e345341ca7748ea1a0fbb26",
+    "crates/fmrireg/src/dataset.rs": "0bbfff19de41213c4ca21d8410e228176d5dc89b1bcd035965df9f0d085a8778",
+    "crates/fmridataset/src/lib.rs": "08b129c164242fd6844aa761385a9b766d0752b1dcad4cebd44c1b06c2096b74",
+    "crates/fmridataset/src/axis.rs": "9f623816c403baeb9432f8c6a944895536b81af5a414518333e3bb91fe0f185a",
+    "crates/fmridataset/src/space.rs": "757b0dda2edbc04c5b57150e7c033f95ef0396cf0955cba010eb504466c36af6",
+    "crates/fmridataset/src/selection.rs": "bca9e37f14703780e42e9f37b197809d996db3a2c8a8a42f1040ff9a010b0414",
+    "crates/fmridataset/src/errors.rs": "c03e6a6c71604f116f1ee0a338cd2da5e2ee0c18b303a843891d0e7e443c4c91",
+    "crates/fmridataset/src/array.rs": "84e92650bdffaa4306f7722f9ae6a6651eb285ff35f066a876f80ebc15de9df8",
+    "crates/fmridataset/src/frame.rs": "7dfcbfb04b54912760203c75238731f1b1b8b4154a2b6753b3a86ac9a7e96b52",
+    "crates/fmridataset/src/sampling.rs": "30e6e6483478d7f3f0997202a49b6cebba9732be52cb10cfd480bee6c6cb8f14"
+  },
+  "tolerances": {
+    "bias_matrix": "2e-11*(1+abs(reference))",
+    "ACVF_and_coefficients": "2e-10*(1+abs(reference))",
+    "GLS": "2e-9*(1+abs(reference))"
+  },
+  "limitations": [
+    "Stationary fixed AR1 only; no zero-history estimation or censored ARp qualification",
+    "Explicit finite-lag tail truncation; no guarantee at high persistence or under unsupported censor geometry",
+    "Plug-in inference ignores AR-parameter uncertainty",
+    "Simulation calibration uses 16 representative noise features and independent target; no same-feature or real-data calibration claim",
+    "No new speed measurements, whole-workspace or hosted-CI claim; no publication"
+  ],
+  "coordination": "Module exports completed and released before qualification; optimized fit and whitening implementations were not changed by this tranche."
+}

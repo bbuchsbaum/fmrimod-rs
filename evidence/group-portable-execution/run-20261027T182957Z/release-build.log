@@ -1,0 +1,14 @@
+   Compiling libc v0.2.191
+   Compiling fmridataset v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset)
+   Compiling getrandom v0.2.17
+   Compiling cpufeatures v0.2.17
+   Compiling sha2 v0.10.9
+   Compiling rand_core v0.6.4
+   Compiling rand_chacha v0.3.1
+   Compiling rand v0.8.8
+   Compiling rand_distr v0.4.3
+   Compiling nalgebra v0.29.0
+   Compiling statrs v0.16.1
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `release` profile [optimized] target(s) in 11.55s

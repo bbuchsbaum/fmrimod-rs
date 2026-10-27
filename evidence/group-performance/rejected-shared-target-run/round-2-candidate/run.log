@@ -1,0 +1,14 @@
+20-1000-0 ols: median 0.000342s, max scaled error 1.823e-14
+20-1000-0 fe: median 0.000344s, max scaled error 3.301e-11
+20-1000-0 dl: median 0.000476s, max scaled error 3.331e-11
+100-10000-0 ols: median 0.009613s, max scaled error 8.264e-14
+100-10000-0 fe: median 0.014048s, max scaled error 3.261e-11
+100-10000-0 dl: median 0.020618s, max scaled error 2.987e-11
+100-10000-1 ols: median 0.009678s, max scaled error 1.932e-13
+100-10000-1 fe: median 0.013935s, max scaled error 3.261e-11
+100-10000-1 dl: median 0.020948s, max scaled error 2.987e-11
+100-100000-0 ols: median 0.096117s, max scaled error 1.926e-13
+100-100000-0 fe: median 0.143873s, max scaled error 3.330e-11
+100-100000-0 dl: median 0.214097s, max scaled error 3.332e-11
+100-10000-0-p5 ols: median 0.007627s, max scaled error 6.647e-10
+100-10000-0-p20 ols: median 0.009432s, max scaled error 2.194e-10

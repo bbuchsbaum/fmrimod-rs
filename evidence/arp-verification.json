@@ -1,0 +1,94 @@
+{
+  "checks": {
+    "arp-regression-check": {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "fmri-noise",
+        "-p",
+        "fmrireg",
+        "-p",
+        "fmrimod",
+        "--all-features"
+      ],
+      "exit": 0,
+      "log_sha256": "7cbb4b779ad2d85b27196b979399fb040b26a154fc13e457e65bcd9635f51de9",
+      "passed": 19,
+      "failed": 0,
+      "ignored": 0
+    },
+    "arp-minimal": {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "fmrireg",
+        "--no-default-features"
+      ],
+      "exit": 0,
+      "log_sha256": "14176075b694b1e05e5745bd23c24c4b8ddff4a16b833f73ce46bbf2e90f2a18",
+      "passed": 8,
+      "failed": 0,
+      "ignored": 0
+    },
+    "arp-clippy": {
+      "command": [
+        "cargo",
+        "clippy",
+        "-p",
+        "fmri-noise",
+        "-p",
+        "fmrireg",
+        "--all-features",
+        "--lib",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "log_sha256": "dda7980e8da1041233b9bd7cd86f479320cbe44ef953019bb06c5f1c023ea622",
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0
+    },
+    "arp-format": {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0
+    }
+  },
+  "source_sha256": {
+    "Cargo.lock": "5551286ca7c2c2d54de6ae260d0db045fd40b9567487ac91243314574ad14249",
+    "crates/fmri-noise/Cargo.toml": "3375f87390276d641f0c5c1175891858984fd83a63511cc0b4ddd3f4410c0455",
+    "crates/fmri-noise/src/ar.rs": "c918a93c1d53e92b874745a553814eebb19984a3b9f726b1aee35540c643b265",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/lib.rs": "9480c4c78ce58b910acb5b7758bd7e682613ad0a32c2de941e9ca6bc3ef6625d",
+    "crates/fmri-noise/tests/arp.rs": "43f0be30503523f308ccb13b71cb17644d33712d57d3e0e3fb66f7a85fcfc7c4",
+    "crates/fmri-noise/tests/contracts.rs": "9e69d584408c9a3e103d384332ad69de0af1e5502cde26fffcd430a0e00929c1",
+    "crates/fmri-noise/tests/fixtures/arp.json": "7172e6ef880034c9fcfb3254b5da619f49582a34dd148e7677810e4d304f4676",
+    "crates/fmri-noise/tests/fixtures/correction.json": "42eea3b43f03eb37210ff4f4fd54a79ab74bfa8fa0d542f831a26adc2c393e54",
+    "crates/fmri-noise/tests/fixtures/estimation.json": "ba53dc4cdd79e38a62762fe32da5b55bae0295871a16c6d5306f06c7ad6826c4",
+    "crates/fmrimod/Cargo.toml": "88596b252a92573c3afbee877dfbcef1530e05f7a77cf328b3887d4362c0e871",
+    "crates/fmrimod/examples/first_level.rs": "16aa909e54ce4b804bdc261bd6c45cff432f55213a5cd95da3618141f8947df0",
+    "crates/fmrimod/src/lib.rs": "50c1f107da9d08a72803fbf647efbe533fdc93554beb1438b708d04eafc03f00",
+    "crates/fmrireg/Cargo.toml": "00897c975b50dae9805003d20ec00f99cd1c147e021ffb0c9e834a7654469447",
+    "crates/fmrireg/examples/throughput.rs": "328c19802afa729f08ffd922c9610099c0982047a8ef8f6cad3ee5f57831b079",
+    "crates/fmrireg/src/dataset.rs": "2898a1a0ab6b8fedc2e301e9e0fec0cd56ef55da3ed87dde91be60c073e8c711",
+    "crates/fmrireg/src/lib.rs": "9ae94724e111a2c74c437cfbe04ce98b488a55bf051eda1b97df4a952a4472c1",
+    "crates/fmrireg/tests/arp.rs": "ddd6ed8049e1c525c309df56741765b982b98fb82598cc0a869478aca0387065",
+    "crates/fmrireg/tests/contracts.rs": "a9cea9d3cb365d4856ddf26ad974be4706ec2d5eb7fc4116dfe16ccacf185501",
+    "crates/fmrireg/tests/fixtures/estimation.json": "3c62bd7d39b1a51fc02c0c7e0e6dceb6c5c1af971166c98bbaa792f24e054a61",
+    "scripts/generate_arp_contract.R": "41701138c2aef4adc09905e88071a6942cb3468f0d57b18d710c756b55febe44"
+  },
+  "scope": "Affected kernels, facade and minimal regression; historical full-workspace baseline not rerun. No new throughput claims."
+}

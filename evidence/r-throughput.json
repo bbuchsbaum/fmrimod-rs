@@ -1,0 +1,36 @@
+{
+  "R": "R version 4.5.1 (2025-06-13)",
+  "BLAS": "/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib",
+  "cases": [
+    {
+      "n": 300,
+      "p": 8,
+      "features": 1000,
+      "prepare_seconds": 0.0010000000000000009,
+      "median_fit_seconds": 0.0020000000000000018,
+      "beta_sum": -29.878554927262229,
+      "variance_sum": 134.65560160297485,
+      "repetitions": 5
+    },
+    {
+      "n": 300,
+      "p": 8,
+      "features": 10000,
+      "prepare_seconds": 0,
+      "median_fit_seconds": 0.019999999999999962,
+      "beta_sum": -28.30735878040938,
+      "variance_sum": 1343.7763090417905,
+      "repetitions": 5
+    },
+    {
+      "n": 1200,
+      "p": 32,
+      "features": 1000,
+      "prepare_seconds": 0,
+      "median_fit_seconds": 0.033000000000000029,
+      "beta_sum": 2.0034163937387293,
+      "variance_sum": 499.26312538665286,
+      "repetitions": 5
+    }
+  ]
+}

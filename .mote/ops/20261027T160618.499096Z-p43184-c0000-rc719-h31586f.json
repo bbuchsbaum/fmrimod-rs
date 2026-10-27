@@ -1,0 +1,1 @@
+{"actor":"codex-fit-algebra","entity":"bd-01M5YYJKNY4V7TFGKQ9GDWA6D5","kind":"reserve_open","mode":"exclusive","op":"20261027T160618.499096Z-p43184-c0000-rc719-h31586f","paths":["crates/fmridataset/src/nifti.rs","crates/fmridataset/tests/nifti.rs"],"reservation_id":"rv-01M5Z1SJM3VKA85W22E90QV8H4","ts":"2026-10-27T16:06:18.499096Z","ttl_s":3600,"v":2}

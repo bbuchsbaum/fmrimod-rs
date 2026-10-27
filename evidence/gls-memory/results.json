@@ -1,0 +1,251 @@
+[
+  {
+    "block": 1000,
+    "cold": {
+      "contrast": 0.0002445,
+      "fit": 0.00495875,
+      "generate": 0.014307291,
+      "wall": 0.023831833,
+      "whiten": 0.00424675
+    },
+    "df": 1168,
+    "features": 1000,
+    "n": 1200,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.6023663645778425,
+        -3.2152392146641264,
+        2.587433685893115,
+        -0.99
+      ],
+      [
+        2.2800725338150842,
+        -2.446095540986793,
+        1.8399605044177367,
+        -0.6933991872079784
+      ]
+    ],
+    "rank": 32,
+    "setup": {
+      "correction_prepare": 0.008954125,
+      "design_whiten": 0.0001345,
+      "gls_prepare": 0.001308125,
+      "initial_prepare": 0.001147458,
+      "noise_fit": 0.00059975,
+      "residual": 0.000314583
+    },
+    "warm": [
+      {
+        "contrast": 0.0002375,
+        "fit": 0.004330167,
+        "generate": 0.01450725,
+        "wall": 0.022633625,
+        "whiten": 0.003443417
+      },
+      {
+        "contrast": 0.000225292,
+        "fit": 0.004387417,
+        "generate": 0.014024167,
+        "wall": 0.022300125,
+        "whiten": 0.003593875
+      },
+      {
+        "contrast": 0.000216791,
+        "fit": 0.004133584,
+        "generate": 0.013771375,
+        "wall": 0.02169625,
+        "whiten": 0.003503792
+      }
+    ],
+    "workers": 1,
+    "engine": "rust",
+    "key": "1200-32-1000-ar4-b1000-w1",
+    "exit": 0,
+    "process_seconds": 0.14583802223205566,
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/gls_benchmark",
+      "1200",
+      "32",
+      "1000",
+      "4",
+      "1000",
+      "1",
+      "3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-memory/1200-32-1000-ar4-b1000-w1-rust.bin"
+    ],
+    "peak_rss_bytes": 50135040,
+    "output_sha256": "63e649c791f4f531ad232e5bd2fd96e10512ca4475eb5b7236e9be6487404063",
+    "comparison": {
+      "max_scaled": 2.6559293386418564e-10,
+      "values": 37000,
+      "tolerance": 2e-08,
+      "passed": true
+    }
+  },
+  {
+    "block": 1000,
+    "cold": {
+      "contrast": 0.011355167000000001,
+      "fit": 0.21135654000000004,
+      "generate": 0.6835463299999999,
+      "wall": 1.083518459,
+      "whiten": 0.17674662700000005
+    },
+    "df": 1168,
+    "features": 50000,
+    "n": 1200,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.6023663645778425,
+        -3.2152392146641264,
+        2.587433685893115,
+        -0.99
+      ],
+      [
+        2.2800725338150842,
+        -2.446095540986793,
+        1.8399605044177367,
+        -0.6933991872079784
+      ]
+    ],
+    "rank": 32,
+    "setup": {
+      "correction_prepare": 0.008576667,
+      "design_whiten": 0.000116541,
+      "gls_prepare": 0.001401542,
+      "initial_prepare": 0.001136291,
+      "noise_fit": 0.001584292,
+      "residual": 0.000262958
+    },
+    "warm": [
+      {
+        "contrast": 0.011286788999999997,
+        "fit": 0.21371820900000005,
+        "generate": 0.691481042,
+        "wall": 1.093855833,
+        "whiten": 0.176837251
+      },
+      {
+        "contrast": 0.011227291999999996,
+        "fit": 0.20505599900000004,
+        "generate": 0.6879642050000001,
+        "wall": 1.080479875,
+        "whiten": 0.175933828
+      },
+      {
+        "contrast": 0.011273957999999999,
+        "fit": 0.20919354399999998,
+        "generate": 0.68463146,
+        "wall": 1.081300708,
+        "whiten": 0.17569020999999999
+      }
+    ],
+    "workers": 1,
+    "engine": "rust",
+    "key": "1200-32-50000-ar4-b1000-w1",
+    "exit": 0,
+    "process_seconds": 5.465075969696045,
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/gls_benchmark",
+      "1200",
+      "32",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-memory/1200-32-50000-ar4-b1000-w1-rust.bin"
+    ],
+    "peak_rss_bytes": 64765952,
+    "output_sha256": "458abf447fe08229a29b90464fd98636b258e3a4cf4535cb39fc6af775c53880",
+    "comparison": {
+      "max_scaled": 9.071189146422014e-10,
+      "values": 1850000,
+      "tolerance": 2e-08,
+      "passed": true
+    }
+  },
+  {
+    "block": 1000,
+    "cold": {
+      "contrast": 0.04823913099999999,
+      "fit": 0.850613719,
+      "generate": 2.7577784219999995,
+      "wall": 4.372105959,
+      "whiten": 0.7127000129999995
+    },
+    "df": 1168,
+    "features": 200000,
+    "n": 1200,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.6023663645778425,
+        -3.2152392146641264,
+        2.587433685893115,
+        -0.99
+      ],
+      [
+        2.2800725338150842,
+        -2.446095540986793,
+        1.8399605044177367,
+        -0.6933991872079784
+      ]
+    ],
+    "rank": 32,
+    "setup": {
+      "correction_prepare": 0.00823525,
+      "design_whiten": 0.000119542,
+      "gls_prepare": 0.001467125,
+      "initial_prepare": 0.001032458,
+      "noise_fit": 0.000568375,
+      "residual": 0.000243541
+    },
+    "warm": [
+      {
+        "contrast": 0.04526036700000001,
+        "fit": 0.8523949989999997,
+        "generate": 2.7452690339999997,
+        "wall": 4.360112708,
+        "whiten": 0.7148331720000005
+      },
+      {
+        "contrast": 0.04520944999999999,
+        "fit": 0.8632324599999998,
+        "generate": 2.755679623,
+        "wall": 4.383838834,
+        "whiten": 0.7167351669999996
+      },
+      {
+        "contrast": 0.04496791400000001,
+        "fit": 0.8354098259999995,
+        "generate": 2.7418996219999987,
+        "wall": 4.333581917,
+        "whiten": 0.7082572519999994
+      }
+    ],
+    "workers": 1,
+    "engine": "rust",
+    "key": "1200-32-200000-ar4-b1000-w1",
+    "exit": 0,
+    "process_seconds": 22.000698804855347,
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/release/examples/gls_benchmark",
+      "1200",
+      "32",
+      "200000",
+      "4",
+      "1000",
+      "1",
+      "3",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-memory/1200-32-200000-ar4-b1000-w1-rust.bin"
+    ],
+    "peak_rss_bytes": 65224704,
+    "output_sha256": "a451a1b2ac98c4a11c72144de917844de81b673e84ba68699855b7b1e375ad93"
+  }
+]

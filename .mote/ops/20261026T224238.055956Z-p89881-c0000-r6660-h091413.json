@@ -1,0 +1,1 @@
+{"actor":"codex-fmrimod","entity":"bd-01M5X48BCJRHEK0N0A4FV1YHCR","kind":"reserve_open","mode":"exclusive","op":"20261026T224238.055956Z-p89881-c0000-r6660-h091413","paths":["crates/fmri-noise","crates/fmrireg","scripts/generate_arp_contract.R","docs","README.md","evidence"],"reservation_id":"rv-01M5X62HV7F8FBQDYCFFYW3ZKJ","ts":"2026-10-26T22:42:38.055956Z","ttl_s":3600,"v":2}

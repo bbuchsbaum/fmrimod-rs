@@ -1,0 +1,66 @@
+{
+  "default": {
+    "receipt": "run-20261027T201836Z/receipt.json",
+    "passed": 1024,
+    "failed": 0,
+    "ignored": 17
+  },
+  "all_features": {
+    "receipt": "run-20261027T203157Z/receipt.json",
+    "passed": 1054,
+    "failed": 0,
+    "ignored": 21,
+    "example_targets": 58
+  },
+  "post_checks_and_calibration": {
+    "receipt": "run-20261027T203534Z/receipt.json",
+    "exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "sources_changed_during_run": []
+  },
+  "source_transitions": [
+    {
+      "from": "run-20261027T201836Z",
+      "to": "run-20261027T203157Z",
+      "changed_source_paths": [
+        "crates/fmri-group/tests/fixtures/repeated_reference.json",
+        "crates/fmri-group/tests/repeated_numerics.rs",
+        "scripts/qualify_completion.py",
+        "scripts/repeated_reference.R"
+      ]
+    },
+    {
+      "from": "run-20261027T203157Z",
+      "to": "run-20261027T203534Z",
+      "changed_source_paths": [
+        "crates/fmridesign/src/lib.rs",
+        "scripts/qualify_completion.py"
+      ]
+    }
+  ],
+  "after_final_run": "Added scripts/summarize_completion.py as postprocessing only; documentation, tracker and evidence updated. Numerical implementations unchanged.",
+  "upstream_audit": {
+    "command": [
+      "python3",
+      "scripts/audit_upstream.py"
+    ],
+    "exit_code": 0,
+    "log_sha256": "0c18a40c53d2658d5d0e8395824693ffe6228767e32b3d2086285644f84b09a7"
+  },
+  "synthetic_only": true,
+  "hosted_ci_executed": false,
+  "staged_whitespace_scan": {
+    "log": "staging-whitespace.log",
+    "status": "warnings in retained imported material and historical raw logs; none in new group/noise completion implementation",
+    "rustfmt": "passed workspace check"
+  }
+}

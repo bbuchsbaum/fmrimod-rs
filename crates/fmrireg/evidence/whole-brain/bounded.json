@@ -1,0 +1,37 @@
+{
+  "budget_bytes": 1073741824,
+  "mode": "file batches, prepared models retained, data released",
+  "model_preparations_total": 50,
+  "model_reuses_total": 25,
+  "noise_estimated": false,
+  "source_reads_total": 75,
+  "stages": [
+    {
+      "first_level_ms": 2328.7508749999997,
+      "group_ms": 62.082499999999996,
+      "reserved_pipeline_numeric_bytes": 1037397272,
+      "resident_numeric_bytes": 1471200,
+      "stage": "cold",
+      "to_html_ms": 2409.078792,
+      "workers": 3
+    },
+    {
+      "first_level_ms": 2040.41175,
+      "group_ms": 61.791958,
+      "reserved_pipeline_numeric_bytes": 1038868472,
+      "resident_numeric_bytes": 1471200,
+      "stage": "design-edit",
+      "to_html_ms": 2126.152708,
+      "workers": 3
+    },
+    {
+      "first_level_ms": 2106.028875,
+      "group_ms": 93.143417,
+      "reserved_pipeline_numeric_bytes": 1038868472,
+      "resident_numeric_bytes": 1471200,
+      "stage": "contrast-edit",
+      "to_html_ms": 2223.692125,
+      "workers": 3
+    }
+  ]
+}

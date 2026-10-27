@@ -1,0 +1,144 @@
+{
+  "subjects": 25,
+  "frames": 300,
+  "dimensions": [
+    64,
+    64,
+    32
+  ],
+  "features": 131072,
+  "design_columns": 8,
+  "dtype": "float32",
+  "noise": "fixed zero-history AR4 [.4,-.1,.08,-.03], one run",
+  "seed_base": 70591,
+  "spatial_identity": "synthetic-grid, not registration evidence",
+  "generator_sha256": "dee15fc33167e5a9a3ff5fbb7106eb12707a0591fc1f2c8855f32e90993c2334",
+  "numpy": "2.4.3",
+  "files": [
+    {
+      "file": "sub-00.nii",
+      "sha256": "47c198ac8a77fab8efaaeb02471a1c37d6104744e00b314cddc1c8117d393cc2",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-01.nii",
+      "sha256": "e2bc8b895fd9024e4efdb47e4a7712ecb6ba0626ef78f644c61ecb06de9e0ca2",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-02.nii",
+      "sha256": "f5a2175a9362d15ab6595138cd55ff748271170d97d21436facbf0bc545cc093",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-03.nii",
+      "sha256": "b9492de2192fd0c0a44aaa1c861abcd8bd83df014910510bab03695c528dcc3a",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-04.nii",
+      "sha256": "1c7335bc7d56fc8732fa1889a116a94197731dd2336b2ddc9058fb4afec9e851",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-05.nii",
+      "sha256": "9a54bbe4bdccfc2f9c81e27135ea67be243b44c0e91d73b65215317c504607cd",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-06.nii",
+      "sha256": "0f3552b6b9f62cbe7c9265f824eb24d4855b76316ea4819b9799e30a6afa1a19",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-07.nii",
+      "sha256": "e3f3da272b8e2144cf6de7a7e294b2979c487a69226a47307f1796eb12d34bf7",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-08.nii",
+      "sha256": "0a0d015049ac2fd1d64085a1e12ab1bea75dfb33b12b9aeeb90984d208a19b27",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-09.nii",
+      "sha256": "3658f02faa2caeb74a74f3c5d4fe0cbbd73011c8d9f60ca6b423cfc71c3d9b34",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-10.nii",
+      "sha256": "cdd111b210b2a0320705bb90fd141ed44803dda5ccd0b8d82f9c4fd5fbcdf80b",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-11.nii",
+      "sha256": "919f0629a6b11e2b1c4193d48b993e824778a355ba2abd86e3d160652da3d9d7",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-12.nii",
+      "sha256": "c02a7d19d3dd8de05c723e5a44d68c7077f8d0b5d18518424df764292435e863",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-13.nii",
+      "sha256": "74f74c7595e916ecb04ffbd9d75f99dbec87882e06a46cb9407abc06d9f2ded0",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-14.nii",
+      "sha256": "bac7a29266280791741b1c7e4110222cd382c22180e07131306e34312550af96",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-15.nii",
+      "sha256": "0030b3a14599d1d442c599d43c0361da61d7df35cfb2e8f829099a4db85ae527",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-16.nii",
+      "sha256": "6f217be55f10f218d04a2051088fd0fecfa2a32f6d6902e908d5171674324f92",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-17.nii",
+      "sha256": "198c064a31adf29bc5049005bfa308a153e6ed7f0795bf3ddc7d0745bb4b7504",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-18.nii",
+      "sha256": "037de0f1c385483e0d2e8563859aa332ee5ab2f07337d661b6b58ef43428c3ce",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-19.nii",
+      "sha256": "b67449136e272d3daa431fe9c35470f70e8d3c4ea074c9af9f66e0ce7465389c",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-20.nii",
+      "sha256": "2ac3b670683857e1d25626892ac41009b1c7710dba8b2be4c1c87f92ac2081ab",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-21.nii",
+      "sha256": "78bf642b4208d50dc7b4dccb3b65c8a77e44a455fa928e2f7a0ca49e26b83f25",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-22.nii",
+      "sha256": "0ddda6b6782536cfb00c42085d8bf38538a59837d36b90e1e496d96299027272",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-23.nii",
+      "sha256": "93decb3170579edcf21dfbf3b68140cc393267809c9216ac9761c81f43ff78a2",
+      "bytes": 157286752
+    },
+    {
+      "file": "sub-24.nii",
+      "sha256": "1247df4f40fbf6fb5c10a48a284ce3ef949ed057e57c71d6d695f40c8d786659",
+      "bytes": 157286752
+    }
+  ]
+}

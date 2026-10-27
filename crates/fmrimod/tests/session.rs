@@ -447,3 +447,84 @@ fn reader_load_moves_its_buffer_without_a_second_full_copy() {
     assert_eq!(loaded.data().as_ptr(), pointer);
     assert_eq!(loaded.data_bytes(), 96);
 }
+
+#[test]
+fn explicit_retention_preserves_outputs_budgets_and_invalidation() {
+    use fmrimod::regression::output::{Summary, Uncertainty};
+    for ar in [false, true] {
+        let mut session = subject();
+        let mut model = spec(&session);
+        if ar {
+            model.noise = NoisePolicy::FixedAr {
+                run_lengths: vec![4],
+                coefficients: vec![vec![0.2]],
+                startup: ArStart::ZeroHistory,
+                resets: vec![],
+            };
+        }
+        session.prepare(&model, usize::MAX).unwrap();
+        let request = output().with_uncertainty(Uncertainty::Joint);
+        let baseline = session.run_owned(&request, 1, usize::MAX).unwrap();
+        assert_eq!(session.retained_numeric_bytes(), 0);
+        let required = session.retention_required_bytes(2).unwrap();
+        assert!(session.retain_for_edits(2, required - 1).is_err());
+        assert_eq!(session.retained_numeric_bytes(), 0);
+        session.retain_for_edits(2, required).unwrap();
+        assert_eq!(session.retained_numeric_bytes(), 3 * 3 * 8);
+        session.retain_for_edits(1, 0).unwrap();
+        let retained = session.run_owned(&request, 1, usize::MAX).unwrap();
+        for ((_, a), (_, b)) in baseline.blocks().iter().zip(retained.blocks()) {
+            assert!((a.estimates()[(0, 0)] - b.estimates()[(0, 0)]).abs() < 1e-12);
+            if let (Summary::Joint(a), Summary::Joint(b)) = (a, b) {
+                assert!((a.variance(0, 0).unwrap() - b.variance(0, 0).unwrap()).abs() < 1e-12);
+            } else {
+                panic!("lost joint output");
+            }
+        }
+        let bound = session.run_required_bytes(&request, 1, true).unwrap();
+        assert!(session.run_owned(&request, 1, bound - 1).is_err());
+        session.run_owned(&request, 1, bound).unwrap();
+        session.prepare(&model, usize::MAX).unwrap();
+        assert!(session.retained_numeric_bytes() > 0);
+        model.design[(0, 1)] = 0.3;
+        assert!(session.prepare(&model, 0).is_err());
+        assert!(session.retained_numeric_bytes() > 0);
+        session.prepare(&model, usize::MAX).unwrap();
+        assert_eq!(session.retained_numeric_bytes(), 0);
+        session.retain_for_edits(2, usize::MAX).unwrap();
+        session.clear_retained();
+        assert_eq!(session.retained_numeric_bytes(), 0);
+    }
+}
+
+#[test]
+fn detached_state_checks_source_identity_and_preserves_retained_model() {
+    let mut session = subject();
+    let model = spec(&session);
+    session.prepare(&model, usize::MAX).unwrap();
+    session.retain_for_edits(2, usize::MAX).unwrap();
+    let cache_bytes = session.retained_numeric_bytes();
+    let state = session.detach();
+    let fresh = subject();
+    let data = LoadedSubject::from_f64(
+        fresh.subject().data().to_owned(),
+        fresh.subject().observation_ids().to_vec(),
+        fresh.features().clone(),
+        fresh.subject_id(),
+        "source-1",
+    )
+    .unwrap();
+    let attached = state.attach(data).unwrap();
+    assert_eq!(attached.retained_numeric_bytes(), cache_bytes);
+    attached.run_owned(&output(), 1, usize::MAX).unwrap();
+    let state = attached.detach();
+    let wrong = LoadedSubject::from_f64(
+        fresh.subject().data().to_owned(),
+        fresh.subject().observation_ids().to_vec(),
+        fresh.features().clone(),
+        fresh.subject_id(),
+        "changed-source",
+    )
+    .unwrap();
+    assert!(state.attach(wrong).is_err());
+}

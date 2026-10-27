@@ -1,0 +1,43 @@
+{
+  "backend": "Accelerate",
+  "budget_bytes": 12884901888,
+  "cold": {
+    "first_level_ms": 1337.27025,
+    "group_ms": 76.29374999999999,
+    "reserved_pipeline_numeric_bytes": 7966587008,
+    "resident_numeric_bytes": 7865791200,
+    "workers": 4
+  },
+  "cold_session_to_html_ms": 8401.7515,
+  "contrast_edit": {
+    "first_level_ms": 43.738291,
+    "group_ms": 71.417709,
+    "reserved_pipeline_numeric_bytes": 8162670720,
+    "resident_numeric_bytes": 8101720800,
+    "workers": 4
+  },
+  "contrast_edit_preparations": 0,
+  "contrast_edit_to_html_ms": 135.191958,
+  "design_edit": {
+    "first_level_ms": 1077.08175,
+    "group_ms": 60.782833000000004,
+    "reserved_pipeline_numeric_bytes": 7966587008,
+    "resident_numeric_bytes": 7865791200,
+    "workers": 4
+  },
+  "design_edit_prepare_ms": 1.673125,
+  "design_edit_to_html_ms": 1160.0122920000001,
+  "features": 131072,
+  "frames": 300,
+  "initial_prepare_ms": 2.107583,
+  "load_ms": 6967.479458,
+  "load_reserved_bytes": 7865368576,
+  "load_workers": 4,
+  "model_preparations_total": 50,
+  "noise_policy": "fixed AR4",
+  "notes": "Synthetic AR4; see noise_policy. Filesystem cache uncontrolled. HTML written, browser rendering not included. Design edits scan data; contrast scans depend on retained_bytes. Numeric reservation excludes backend/decomposition scratch, metadata and allocator overhead.",
+  "retained_bytes": 235929600,
+  "retention_build_ms": 2975.858083,
+  "source_reads_total": 25,
+  "subjects": 25
+}

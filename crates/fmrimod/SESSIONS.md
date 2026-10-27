@@ -68,9 +68,10 @@ mutable whitening is deliberately outside this first session API.
 bridge uses the latter for approximation provenance. No requested AR model is
 replaced by IID errors.
 
-Contrast edits still scan resident time series and recompute needed residual
-scales. Avoiding that work requires retained coefficients/scales or a qualified
-projection cache; neither is silently introduced here.
+By default, contrast edits scan resident time series and recompute needed
+residual scales. `retain_for_edits` explicitly opts into coefficients plus scales
+for subsequent contrast edits; requested outputs remain controlled by OutputSpec.
+No temporal projection or squared-norm residual shortcut is used.
 
 ## Memory and scheduling
 
@@ -98,8 +99,10 @@ previously delivered outputs are not rolled back.
 The scalar collector has a separate `numeric_bytes()` reservation. Subtract it
 from the pipeline limit supplied to `run_cohort`, as the example does. Arbitrary
 copies made by external sinks are outside the library budget. All loaded subjects
-must fit the configured resident budget; there is no automatic eviction, mmap
-cache or spill-to-disk policy yet.
+must fit the configured resident budget for `run_cohort`. Use `run_file_cohort`
+when that is inappropriate: it loads bounded batches and releases their data
+after fitting, retaining prepared models. There is no automatic mmap or durable
+spill-to-disk cache.
 
 For Accelerate, set `VECLIB_MAXIMUM_THREADS=1` before process start when running
 multiple subject workers. The library never changes global thread settings.
@@ -154,3 +157,84 @@ Temporal projection is deferred: the current synthetic warm path is already
 roughly 0.1 seconds for 25 subjects, while disk ingress dominates a new session.
 The next speed work should measure realistic data/masks and compressed ingress
 before adding a new algebraic cache with additional rank/df/error obligations.
+
+## Explicit loading and retention policies
+
+`ingress::NiftiSubject` binds a source, exact observation IDs, subject ID and
+immutable source version. `load_subjects(&sources, LoadOptions { workers,
+max_numeric_bytes })` preflights all batches, then loads in parallel and returns
+resident `SubjectSession`s in input order. Its reservation includes previously
+loaded data plus every active reader's peak. It joins active jobs on failure and
+returns no partial cohort. Float32 ingress uses the NIfTI provider's typed frame
+decoder; scaling still occurs in f64 with provider-equivalent zero-slope behavior.
+Integer and other supported scalar inputs retain the existing accessor path.
+
+For cohorts larger than RAM, construct one `FileSession` per `NiftiSubject`, then
+call `run_file_cohort(&mut sessions, &model_specs, &output_specs, options, sink)`.
+It reduces the requested worker count until active data and numerical work fit
+the budget. If one subject cannot fit, it fails before voxel reads. The scalar
+group collector remains a separate reservation, as in the resident executor.
+The preflight conservatively includes old and replacement models; it is not an
+allocator-exact RSS bound. Caller-owned source metadata and input model specs are
+outside that reservation.
+
+File sessions release time-series arrays after each job but retain prepared
+models, including estimated noise. A contrast edit therefore reloads data but
+reuses the model. A design edit rebuilds it and re-estimates noise when requested.
+These are immutable file snapshots by contract: source versions are caller
+assertions. To change voxel values, rows or geometry, construct a new file
+session. Header changes are checked; voxel content is not automatically hashed.
+On failure, completed subjects can have updated preparation state; later batches
+and callbacks stop. Source reload failures preserve prior preparation state.
+
+Lower-level callers can `detach()` a resident session to release its time series
+and later `attach(loaded_subject)`. Attachment checks subject/source version,
+observation order, dimensions and feature geometry. A mismatched attachment is
+rejected and consumes the detached state; construct a new session for new data.
+
+For repeated contrast exploration on a fixed design, use:
+
+```rust,ignore
+let required = session.retention_required_bytes(block_features)?;
+session.retain_for_edits(block_features, required)?;
+// Subsequent run_owned/run_blocks calls use coefficients and residual scales.
+// OutputSpec still determines which effects and uncertainty leave the session.
+session.clear_retained(); // Return to scanning time series.
+```
+
+The caller must reserve `required` in addition to current resident data/model
+storage. Retention costs `(p + 1) * features * 8` bytes plus temporary fitting
+workspace while building it. It intentionally computes residual scales even if
+the current output request needs only estimates. Repeating retention is a no-op.
+Successful model replacement clears retained fits; failed preparation preserves
+the old model and cache. Default sessions retain neither coefficients nor scales.
+The regression-level `RetainedFit` carries an opaque exact-model identity, so
+`PreparedOutputs::summarize_retained` cannot combine it with another model. This
+is an in-process cache, not a serialized or cross-session compatibility promise.
+
+## Larger workload qualification
+
+The example accepts `COHORT_BUDGET_MIB` (default 1024), `COHORT_LOAD_WORKERS`
+(default 1), `COHORT_NOISE=fixed|estimated`, `COHORT_RETAIN=1`, and
+`COHORT_STREAMING=1`. Streaming runs keep models and release data; retention is
+only used in the resident experiment. Estimated AR uses an explicit global AR(4)
+policy on up to 256 spatially spread features with correction lag 8. This is a
+qualified example policy, not an assertion that 256 features suffice for every
+dataset. The generator accepts `--shape X Y Z`, `--frames N`, and `--gzip`.
+
+```sh
+OPENBLAS_NUM_THREADS=1 python3 crates/fmrimod/scripts/generate_cohort.py \
+  /tmp/cohort-large --shape 64 64 32
+VECLIB_MAXIMUM_THREADS=1 COHORT_BUDGET_MIB=12288 COHORT_LOAD_WORKERS=4 \
+  COHORT_RETAIN=1 /usr/bin/time -l /tmp/fmrimod-session-target/release/examples/cohort_latency \
+  /tmp/cohort-large /tmp/results-large 4
+# For a 1 GiB numerical budget, use COHORT_STREAMING=1 COHORT_BUDGET_MIB=1024.
+```
+
+See `crates/fmrireg/evidence/whole-brain/` for source hashes, independent NumPy
+checks, complete map comparisons, timing variability, and measured peak memory.
+The input has a whole-brain-sized feature count, but is synthetic, has no brain
+mask or verified MNI registration, and cannot establish real-data throughput.
+A durable decompressed/masked cache remains a separate decision: warm resident
+requests already avoid disk, and file sessions explicitly trade repeated loading
+for a smaller footprint. Temporal projection remains deferred.

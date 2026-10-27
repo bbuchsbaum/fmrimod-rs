@@ -1,0 +1,10 @@
+{
+  "removed": [
+    "/private/tmp/fmrimod-whole-target",
+    "/private/tmp/fmrimod-whole-input"
+  ],
+  "verified_idle": true,
+  "synthetic_fixture_manifest": "gzip-fixture-manifest.json",
+  "preserved": "source, SHA256 manifests, benchmark/check logs and contrast-edit.html",
+  "free_bytes_after": 22352052224
+}

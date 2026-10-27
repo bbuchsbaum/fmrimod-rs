@@ -2,22 +2,40 @@
 //! Generate inputs with scripts/generate_cohort.py; no research data is bundled.
 use fmrimod::{
     cohort::{run_cohort, CohortOptions, ScalarCohortBuilder},
-    dataset::{FeatureAxis, FeatureSpace, NiftiSource, ObservationId},
+    dataset::{FeatureAxis, NiftiSource, ObservationId},
     group,
-    noise::ArStart,
+    ingress::{load_subjects, run_file_cohort, FileSession, LoadOptions, NiftiSubject},
+    noise::{ArStart, Pooling},
     outputs::{DesignColumn, DesignColumns},
     regression::{
         output::{EstimandSet, OutputSpec, Uncertainty},
         MatrixBackend,
     },
-    session::{LoadedSubject, ModelSpec, NoisePolicy, SessionError, SubjectSession},
+    session::{ModelSpec, NoisePolicy, SessionError, SubjectSession},
 };
 use ndarray::Array2;
 use serde_json::json;
 use std::{error::Error, fs, path::Path, time::Instant};
-const BUDGET: usize = 1024 * 1024 * 1024;
+fn budget() -> usize {
+    std::env::var("COHORT_BUDGET_MIB")
+        .unwrap_or_else(|_| "1024".into())
+        .parse::<usize>()
+        .expect("validated budget")
+        * 1024
+        * 1024
+}
+fn estimated_noise() -> bool {
+    std::env::var("COHORT_NOISE").as_deref() == Ok("estimated")
+}
 fn model(session: &SubjectSession, phase: f64) -> ModelSpec {
-    let n = session.subject().data().nrows();
+    model_input(
+        session.subject().data().nrows(),
+        session.subject().data().ncols(),
+        session.subject().observation_ids(),
+        phase,
+    )
+}
+fn model_input(n: usize, v: usize, rows: &[ObservationId], phase: f64) -> ModelSpec {
     ModelSpec {
         design: Array2::from_shape_fn((n, 8), |(i, j)| {
             if j == 0 {
@@ -26,7 +44,7 @@ fn model(session: &SubjectSession, phase: f64) -> ModelSpec {
                 ((i + 1) as f64 * (j + 1) as f64 * 0.017 + if j == 1 { phase } else { 0. }).sin()
             }
         }),
-        observation_ids: session.subject().observation_ids().to_vec(),
+        observation_ids: rows.to_vec(),
         columns: DesignColumns::new(
             (0..8)
                 .map(|j| {
@@ -36,11 +54,24 @@ fn model(session: &SubjectSession, phase: f64) -> ModelSpec {
                 .collect(),
         )
         .unwrap(),
-        noise: NoisePolicy::FixedAr {
-            run_lengths: vec![n],
-            coefficients: vec![vec![0.4, -0.1, 0.08, -0.03]],
-            startup: ArStart::ZeroHistory,
-            resets: vec![],
+        noise: if estimated_noise() {
+            let k = v.min(256);
+            NoisePolicy::EstimateAr {
+                run_lengths: vec![n],
+                noise_valid: None,
+                order: 4,
+                correction_max_lag: 8,
+                pooling: Pooling::Global,
+                startup: ArStart::ZeroHistory,
+                feature_indices: (0..k).map(|i| i * v / k).collect(),
+            }
+        } else {
+            NoisePolicy::FixedAr {
+                run_lengths: vec![n],
+                coefficients: vec![vec![0.4, -0.1, 0.08, -0.03]],
+                startup: ArStart::ZeroHistory,
+                resets: vec![],
+            }
         },
         tolerance: 1e-12,
         backend: MatrixBackend::default(),
@@ -59,22 +90,21 @@ fn request(contrast_edit: bool) -> OutputSpec {
     OutputSpec::new(EstimandSet::contrasts(vec!["task".into()], l).unwrap())
         .with_uncertainty(Uncertainty::Marginal)
 }
-fn run(
-    sessions: &[SubjectSession],
-    workers: usize,
+fn make_collector(
+    ids: &[String],
+    features: &FeatureAxis,
     contrast_edit: bool,
-) -> Result<(Vec<f64>, serde_json::Value), Box<dyn Error>> {
-    let requests = vec![request(contrast_edit); sessions.len()];
-    let subjects = sessions
+) -> Result<ScalarCohortBuilder, Box<dyn Error>> {
+    let subjects = ids
         .iter()
         .map(|s| group::Subject {
-            observation: ObservationId::new(s.subject_id()).unwrap(),
+            observation: ObservationId::new(s.as_str()).unwrap(),
             dataset: "synthetic-fixture".into(),
-            participant: s.subject_id().into(),
+            participant: s.as_str().into(),
             measurement: "run-1".into(),
         })
         .collect();
-    let mut collector = ScalarCohortBuilder::new(
+    Ok(ScalarCohortBuilder::new(
         subjects,
         group::Estimand {
             id: "task".into(),
@@ -86,13 +116,28 @@ fn run(
             .into(),
             units: "signal".into(),
         },
-        sessions[0].features().clone(),
+        features.clone(),
         group::Admission {
             target: "synthetic-grid".into(),
             evidence: "generated identical affines and distinct synthetic subjects".into(),
         },
         true,
-        BUDGET,
+        budget(),
+    )?)
+}
+fn run(
+    sessions: &[SubjectSession],
+    workers: usize,
+    contrast_edit: bool,
+) -> Result<(Vec<f64>, serde_json::Value), Box<dyn Error>> {
+    let requests = vec![request(contrast_edit); sessions.len()];
+    let mut collector = make_collector(
+        &sessions
+            .iter()
+            .map(|s| s.subject_id().to_string())
+            .collect::<Vec<_>>(),
+        sessions[0].features(),
+        contrast_edit,
     )?;
     let collector_bytes = collector.numeric_bytes();
     let start = Instant::now();
@@ -102,7 +147,7 @@ fn run(
         CohortOptions {
             workers,
             block_features: 2048,
-            max_numeric_bytes: BUDGET - collector_bytes,
+            max_numeric_bytes: budget() - collector_bytes,
         },
         |i, out| {
             collector
@@ -111,6 +156,14 @@ fn run(
         },
     )?;
     let fit_ms = start.elapsed().as_secs_f64() * 1000.;
+    finish_run(collector, receipt, collector_bytes, fit_ms)
+}
+fn finish_run(
+    collector: ScalarCohortBuilder,
+    receipt: fmrimod::cohort::CohortReceipt,
+    collector_bytes: usize,
+    fit_ms: f64,
+) -> Result<(Vec<f64>, serde_json::Value), Box<dyn Error>> {
     let start = Instant::now();
     let cohort = collector.finish()?;
     let design = group::GroupDesign::intercept(&cohort);
@@ -142,6 +195,99 @@ fn run(
         json!({"first_level_ms":fit_ms,"group_ms":group_ms,"resident_numeric_bytes":receipt.resident_numeric_bytes,"reserved_pipeline_numeric_bytes":receipt.reserved_numeric_bytes+collector_bytes,"workers":receipt.active_workers}),
     ))
 }
+fn run_files(
+    sessions: &mut [FileSession],
+    workers: usize,
+    phase: f64,
+    contrast_edit: bool,
+) -> Result<(Vec<f64>, serde_json::Value), Box<dyn Error>> {
+    let specs = sessions
+        .iter()
+        .map(|s| {
+            model_input(
+                s.source().shape()[0],
+                s.source().shape()[1],
+                s.source().observation_ids(),
+                phase,
+            )
+        })
+        .collect::<Vec<_>>();
+    let requests = vec![request(contrast_edit); sessions.len()];
+    let mut collector = make_collector(
+        &sessions
+            .iter()
+            .map(|s| s.source().subject_id().to_string())
+            .collect::<Vec<_>>(),
+        sessions[0].source().features(),
+        contrast_edit,
+    )?;
+    let collector_bytes = collector.numeric_bytes();
+    let start = Instant::now();
+    let receipt = run_file_cohort(
+        sessions,
+        &specs,
+        &requests,
+        CohortOptions {
+            workers,
+            block_features: 2048,
+            max_numeric_bytes: budget()
+                .checked_sub(collector_bytes)
+                .ok_or("collector budget")?,
+        },
+        |i, out| {
+            collector
+                .push(i, out)
+                .map_err(|_| SessionError::Invalid("scalar group bridge"))
+        },
+    )?;
+    finish_run(
+        collector,
+        receipt,
+        collector_bytes,
+        start.elapsed().as_secs_f64() * 1000.,
+    )
+}
+fn file_experiment(
+    initial_start: Instant,
+    sources: Vec<NiftiSubject>,
+    workers: usize,
+    dimensions: [usize; 3],
+    output: &Path,
+) -> Result<(), Box<dyn Error>> {
+    let mut sessions = sources
+        .into_iter()
+        .map(FileSession::new)
+        .collect::<Vec<_>>();
+    let mut stages = Vec::new();
+    for (name, phase, contrast) in [
+        ("cold", 0., false),
+        ("design-edit", 0.18, false),
+        ("contrast-edit", 0.18, true),
+    ] {
+        let start = if name == "cold" {
+            initial_start
+        } else {
+            Instant::now()
+        };
+        let (values, mut receipt) = run_files(&mut sessions, workers, phase, contrast)?;
+        viewer(
+            &output.join(format!("{name}.html")),
+            &values,
+            dimensions,
+            name,
+        )?;
+        receipt["stage"] = json!(name);
+        receipt["to_html_ms"] = json!(start.elapsed().as_secs_f64() * 1000.);
+        stages.push(receipt);
+    }
+    let receipt = json!({"mode":"file batches, prepared models retained, data released", "noise_estimated":estimated_noise(), "budget_bytes":budget(),"stages":stages,"source_reads_total":sessions.iter().map(FileSession::read_count).sum::<usize>(),"model_preparations_total":sessions.iter().map(|s|s.preparation_counts().prepared).sum::<usize>(),"model_reuses_total":sessions.iter().map(|s|s.preparation_counts().reused).sum::<usize>()});
+    fs::write(
+        output.join("receipt.json"),
+        serde_json::to_vec_pretty(&receipt)?,
+    )?;
+    println!("{}", receipt);
+    Ok(())
+}
 fn viewer(
     path: &Path,
     values: &[f64],
@@ -162,6 +308,18 @@ fn viewer(
     Ok(())
 }
 fn main() -> Result<(), Box<dyn Error>> {
+    let mib = std::env::var("COHORT_BUDGET_MIB")
+        .unwrap_or_else(|_| "1024".into())
+        .parse::<usize>()?;
+    if mib == 0 || mib.checked_mul(1024 * 1024).is_none() {
+        return Err("invalid budget".into());
+    }
+    if !matches!(
+        std::env::var("COHORT_NOISE").as_deref(),
+        Err(_) | Ok("fixed") | Ok("estimated")
+    ) {
+        return Err("COHORT_NOISE must be fixed or estimated".into());
+    }
     let args = std::env::args().collect::<Vec<_>>();
     if args.len() < 3 {
         return Err("usage: cohort_latency INPUT_DIRECTORY OUTPUT_DIRECTORY [WORKERS]".into());
@@ -174,30 +332,37 @@ fn main() -> Result<(), Box<dyn Error>> {
         serde_json::from_slice(&fs::read(input.join("manifest.json"))?)?;
     let cold_start = Instant::now();
     let load_start = Instant::now();
-    let mut sessions = Vec::new();
-    let mut loaded = 0usize;
+    let load_workers = std::env::var("COHORT_LOAD_WORKERS")
+        .unwrap_or_else(|_| "1".into())
+        .parse()?;
+    let mut sources = Vec::new();
     let mut dimensions = [0; 3];
     for file in manifest["files"].as_array().ok_or("manifest files")? {
         let name = file["file"].as_str().ok_or("file name")?;
         let id = name.trim_end_matches(".gz").trim_end_matches(".nii");
         let source = NiftiSource::new(input.join(name), None, Some("synthetic-grid".into()))?;
         dimensions = source.space().dimensions();
-        let features = FeatureAxis::from_space(FeatureSpace::Volume(source.space().clone()))?;
         let rows = (0..source.shape()[0])
             .map(|i| ObservationId::new(format!("scan-{i}")).unwrap())
             .collect();
-        let mut reader = source.open_reader()?;
-        let subject = LoadedSubject::from_reader(
-            &mut reader,
+        sources.push(NiftiSubject::new(
+            source,
             rows,
-            features,
             id,
             file["sha256"].as_str().ok_or("source version")?,
-            BUDGET.checked_sub(loaded).ok_or("resident budget")?,
-        )?;
-        loaded += subject.data_bytes();
-        sessions.push(SubjectSession::new(subject));
+        )?);
     }
+    if std::env::var("COHORT_STREAMING").as_deref() == Ok("1") {
+        return file_experiment(cold_start, sources, workers, dimensions, output);
+    }
+    let (mut sessions, load_receipt) = load_subjects(
+        &sources,
+        LoadOptions {
+            workers: load_workers,
+            max_numeric_bytes: budget(),
+        },
+    )?;
+    drop(sources);
     let load_ms = load_start.elapsed().as_secs_f64() * 1000.;
     let start = Instant::now();
     for i in 0..sessions.len() {
@@ -209,7 +374,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             .try_fold(0usize, |sum, (_, s)| {
                 Ok::<_, SessionError>(sum + s.resident_numeric_bytes()?)
             })?;
-        let available = BUDGET - other - sessions[i].data_bytes();
+        let available = budget() - other - sessions[i].data_bytes();
         sessions[i].prepare(&spec, available)?;
     }
     let prepare_ms = start.elapsed().as_secs_f64() * 1000.;
@@ -231,7 +396,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             .try_fold(0usize, |sum, (_, s)| {
                 Ok::<_, SessionError>(sum + s.resident_numeric_bytes()?)
             })?;
-        let available = BUDGET - other - sessions[i].data_bytes();
+        let available = budget() - other - sessions[i].data_bytes();
         sessions[i].prepare(&spec, available)?;
     }
     let edit_prepare_ms = start.elapsed().as_secs_f64() * 1000.;
@@ -248,6 +413,19 @@ fn main() -> Result<(), Box<dyn Error>> {
         .iter()
         .map(|s| s.preparation_counts().prepared)
         .sum::<usize>();
+    let retention_start = Instant::now();
+    if std::env::var("COHORT_RETAIN").as_deref() == Ok("1") {
+        for i in 0..sessions.len() {
+            let resident = sessions.iter().try_fold(0usize, |a, s| {
+                Ok::<_, SessionError>(a + s.resident_numeric_bytes()?)
+            })?;
+            sessions[i].retain_for_edits(
+                2048,
+                budget().checked_sub(resident).ok_or("retention budget")?,
+            )?;
+        }
+    }
+    let retention_ms = retention_start.elapsed().as_secs_f64() * 1000.;
     let contrast_start = Instant::now();
     let (values, contrast) = run(&sessions, workers, true)?;
     viewer(
@@ -262,7 +440,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         .map(|s| s.preparation_counts().prepared)
         .sum::<usize>();
     assert_eq!(before, after);
-    let receipt = json!({"backend":format!("{:?}",MatrixBackend::default()),"subjects":sessions.len(),"frames":manifest["frames"],"features":manifest["features"],"load_ms":load_ms,"initial_prepare_ms":prepare_ms,"cold_session_to_html_ms":cold_total_ms,"cold":cold,"design_edit_prepare_ms":edit_prepare_ms,"design_edit_to_html_ms":edit_total_ms,"design_edit":edit,"contrast_edit_to_html_ms":contrast_total_ms,"contrast_edit":contrast,"source_reads_total":sessions.iter().map(SubjectSession::read_count).sum::<usize>(),"model_preparations_total":after,"contrast_edit_preparations":after-before,"notes":"Synthetic fixed AR4; filesystem cache uncontrolled. HTML written, browser rendering not included. Warm requests still scan resident data. Numeric reservation excludes backend/decomposition scratch, metadata and allocator overhead."});
+    let receipt = json!({"retention_build_ms":retention_ms,"retained_bytes":sessions.iter().map(SubjectSession::retained_numeric_bytes).sum::<usize>(),"load_workers":load_receipt.active_workers,"load_reserved_bytes":load_receipt.reserved_numeric_bytes,"noise_policy":if estimated_noise(){"estimated global AR4, 256 spatially spread features, correction lag8"}else{"fixed AR4"},"budget_bytes":budget(),"backend":format!("{:?}",MatrixBackend::default()),"subjects":sessions.len(),"frames":manifest["frames"],"features":manifest["features"],"load_ms":load_ms,"initial_prepare_ms":prepare_ms,"cold_session_to_html_ms":cold_total_ms,"cold":cold,"design_edit_prepare_ms":edit_prepare_ms,"design_edit_to_html_ms":edit_total_ms,"design_edit":edit,"contrast_edit_to_html_ms":contrast_total_ms,"contrast_edit":contrast,"source_reads_total":sessions.iter().map(SubjectSession::read_count).sum::<usize>(),"model_preparations_total":after,"contrast_edit_preparations":after-before,"notes":"Synthetic AR4; see noise_policy. Filesystem cache uncontrolled. HTML written, browser rendering not included. Design edits scan data; contrast scans depend on retained_bytes. Numeric reservation excludes backend/decomposition scratch, metadata and allocator overhead."});
     fs::write(
         output.join("receipt.json"),
         serde_json::to_vec_pretty(&receipt)?,

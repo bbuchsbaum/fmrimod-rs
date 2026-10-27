@@ -1,0 +1,44 @@
+[
+  {
+    "case": "bounded-final",
+    "reference": "fast",
+    "stage": "cold",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "bounded-final",
+    "reference": "fast",
+    "stage": "design-edit",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "bounded-final",
+    "reference": "fast",
+    "stage": "contrast-edit",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "bounded-estimated",
+    "reference": "estimated",
+    "stage": "cold",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "bounded-estimated",
+    "reference": "estimated",
+    "stage": "design-edit",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "bounded-estimated",
+    "reference": "estimated",
+    "stage": "contrast-edit",
+    "features": 131072,
+    "max_abs_error": 0.0
+  }
+]

@@ -17,7 +17,7 @@ use crate::{
 };
 use fmri_noise::{ArDiagnostics, ArPlan, ArStart, Pooling};
 use fmrireg::{
-    output::{OutputSpec, Summary, SummaryView, Uncertainty},
+    output::{OutputSpec, RetainedFit, Summary, SummaryView, Uncertainty},
     ArOptions, FitError, GlsModel, LinearModel, MatrixBackend,
 };
 
@@ -312,6 +312,44 @@ impl Clone for ModelSpec {
     }
 }
 impl ModelSpec {
+    #[cfg(feature = "nifti")]
+    pub(crate) fn preparation_bytes(&self) -> Result<usize> {
+        preparation_bytes(self)
+    }
+    #[cfg(feature = "nifti")]
+    pub(crate) fn resident_bytes(&self) -> Result<usize> {
+        resident_model_bytes(self)
+    }
+    #[cfg(feature = "nifti")]
+    pub(crate) fn execution_bytes(
+        &self,
+        features: usize,
+        output: &OutputSpec,
+        block: usize,
+    ) -> Result<usize> {
+        if output.estimands().weights().ncols() != self.design.ncols() {
+            return Err(SessionError::Invalid("output weights do not match design"));
+        }
+        let n = self.design.nrows();
+        let p = self.design.ncols();
+        let q = output.estimands().weights().nrows();
+        let plan = output_preparation_bytes(n, p, q, output.uncertainty())?;
+        let workspace = output_workspace_bytes(
+            n,
+            p,
+            q,
+            block,
+            output.uncertainty(),
+            !matches!(self.noise, NoisePolicy::Ols),
+        )?;
+        add(
+            add(plan, workspace)?,
+            add(
+                output_retained_bytes(q, features, output.uncertainty())?,
+                policy_receipt_bytes(&self.noise)?,
+            )?,
+        )
+    }
     fn same_as(&self, other: &Self) -> bool {
         self.design == other.design
             && self.observation_ids == other.observation_ids
@@ -363,6 +401,53 @@ pub struct SubjectSession {
     cached: Option<(ModelSpec, PreparedModel, bool, PreparationReceipt)>,
     counts: PreparationCounts,
     generation: usize,
+    retained: Vec<(Range<usize>, RetainedFit)>,
+}
+/// Prepared state without resident time series. Reattachment requires exact
+/// source version, subject/observation identity, feature geometry and shape.
+/// A version is the caller's immutable-content assertion, not an automatic hash.
+pub struct DetachedSession {
+    shape: [usize; 2],
+    observation_ids: Vec<ObservationId>,
+    features: Arc<FeatureAxis>,
+    subject_id: String,
+    source_version: String,
+    cached: Option<(ModelSpec, PreparedModel, bool, PreparationReceipt)>,
+    counts: PreparationCounts,
+    generation: usize,
+    retained: Vec<(Range<usize>, RetainedFit)>,
+}
+impl DetachedSession {
+    pub fn resident_numeric_bytes(&self) -> Result<usize> {
+        add(
+            self.cached
+                .as_ref()
+                .map_or(Ok(0), |(s, _, _, _)| resident_model_bytes(s))?,
+            self.retained.iter().map(|(_, f)| f.numeric_bytes()).sum(),
+        )
+    }
+    pub fn preparation_counts(&self) -> PreparationCounts {
+        self.counts
+    }
+    pub fn attach(self, subject: LoadedSubject) -> Result<SubjectSession> {
+        if self.shape != [subject.data.nrows(), subject.data.ncols()]
+            || self.observation_ids != subject.observation_ids
+            || self.features.space() != subject.features.space()
+            || self.subject_id != subject.subject_id
+            || self.source_version != subject.source_version
+        {
+            return Err(SessionError::Invalid(
+                "detached session source or axes changed",
+            ));
+        }
+        Ok(SubjectSession {
+            subject,
+            cached: self.cached,
+            counts: self.counts,
+            generation: self.generation,
+            retained: self.retained,
+        })
+    }
 }
 impl SubjectSession {
     pub fn new(subject: LoadedSubject) -> Self {
@@ -374,6 +459,32 @@ impl SubjectSession {
                 reused: 0,
             },
             generation: 0,
+            retained: Vec::new(),
+        }
+    }
+    /// Drop the time-series allocation while preserving prepared state. An
+    /// optional retained coefficient cache survives, and remains model-bound.
+    pub fn detach(self) -> DetachedSession {
+        let LoadedSubject {
+            data,
+            observation_ids,
+            features,
+            subject_id,
+            source_version,
+            ..
+        } = self.subject;
+        let shape = [data.nrows(), data.ncols()];
+        drop(data);
+        DetachedSession {
+            shape,
+            observation_ids,
+            features,
+            subject_id,
+            source_version,
+            cached: self.cached,
+            counts: self.counts,
+            generation: self.generation,
+            retained: self.retained,
         }
     }
     pub fn subject(&self) -> &LoadedSubject {
@@ -396,7 +507,7 @@ impl SubjectSession {
     }
     pub fn resident_numeric_bytes(&self) -> Result<usize> {
         add(
-            self.data_bytes(),
+            add(self.data_bytes(), self.retained_numeric_bytes())?,
             self.cached
                 .as_ref()
                 .map_or(Ok(0), |(s, _, _, _)| resident_model_bytes(s))?,
@@ -420,7 +531,10 @@ impl SubjectSession {
         let old = self.cached.as_ref().map_or(0, |(s, _, _, _)| {
             resident_model_bytes(s).unwrap_or(usize::MAX)
         });
-        let required = add(old, preparation_bytes(spec)?)?;
+        let required = add(
+            add(old, self.retained_numeric_bytes())?,
+            preparation_bytes(spec)?,
+        )?;
         if required > working_budget {
             return Err(SessionError::Budget {
                 required,
@@ -436,9 +550,91 @@ impl SubjectSession {
             self.subject.source_version(),
             self.generation,
         )?;
+        self.retained.clear();
         self.cached = Some((spec.clone(), model, estimated, receipt.clone()));
         self.counts.prepared += 1;
         Ok(PrepareStatus::Prepared(receipt))
+    }
+    /// Storage retained solely for future contrast edits, independent of OutputSpec.
+    pub fn retained_numeric_bytes(&self) -> usize {
+        self.retained.iter().map(|(_, f)| f.numeric_bytes()).sum()
+    }
+    pub fn clear_retained(&mut self) {
+        self.retained.clear();
+    }
+    pub fn retention_required_bytes(&self, block_features: usize) -> Result<usize> {
+        if block_features == 0 {
+            return Err(SessionError::Invalid("zero block feature count"));
+        }
+        if !self.retained.is_empty() {
+            return Ok(0);
+        }
+        let (spec, model, _, _) = self
+            .cached
+            .as_ref()
+            .ok_or(SessionError::Invalid("model has not been prepared"))?;
+        let n = self.subject.data.nrows();
+        let p = spec.design.ncols();
+        let v = self.subject.data.ncols();
+        let rows = add(
+            add(
+                mul(
+                    n,
+                    if matches!(model, PreparedModel::Ar(_)) {
+                        2
+                    } else {
+                        1
+                    },
+                )?,
+                p,
+            )?,
+            1,
+        )?;
+        add(
+            bytes(mul(add(p, 1)?, v)?)?,
+            bytes(mul(rows, block_features.min(v))?)?,
+        )
+    }
+    /// Explicitly cache all coefficients plus scales. Default sessions retain
+    /// neither. A successful model change invalidates this cache; failed model
+    /// preparation leaves it intact. Repeating this call is a no-op.
+    pub fn retain_for_edits(&mut self, block_features: usize, working_budget: usize) -> Result<()> {
+        let required = self.retention_required_bytes(block_features)?;
+        if required > working_budget {
+            return Err(SessionError::Budget {
+                required,
+                budget: working_budget,
+            });
+        }
+        if !self.retained.is_empty() {
+            return Ok(());
+        }
+        let (_, model, _, _) = self
+            .cached
+            .as_ref()
+            .ok_or(SessionError::Invalid("model has not been prepared"))?;
+        let v = self.subject.data.ncols();
+        let capacity = block_features.min(v);
+        let mut retained = Vec::new();
+        macro_rules! fit_blocks {
+            ($m:expr) => {{
+                let mut workspace = $m.workspace(capacity)?;
+                for start in (0..v).step_by(capacity) {
+                    let range = start..(start + capacity).min(v);
+                    let fit = $m.fit_into(
+                        self.subject.data.slice(ndarray::s![.., range.clone()]),
+                        &mut workspace,
+                    )?;
+                    retained.push((range, fit.retain_for_outputs()?));
+                }
+            }};
+        }
+        match model {
+            PreparedModel::Ols(m) => fit_blocks!(m),
+            PreparedModel::Ar(m) => fit_blocks!(m),
+        }
+        self.retained = retained;
+        Ok(())
     }
     pub fn run_required_bytes(
         &self,
@@ -462,14 +658,22 @@ impl SubjectSession {
         }
         let q = output.estimands().weights().nrows();
         let plan = output_preparation_bytes(n, p, q, output.uncertainty())?;
-        let workspace = output_workspace_bytes(
-            n,
-            p,
-            q,
-            block_features,
-            output.uncertainty(),
-            matches!(model, PreparedModel::Ar(_)),
-        )?;
+        let workspace = if !self.retained.is_empty() {
+            output_retained_bytes(
+                q,
+                block_features.min(self.subject.data.ncols()),
+                output.uncertainty(),
+            )?
+        } else {
+            output_workspace_bytes(
+                n,
+                p,
+                q,
+                block_features,
+                output.uncertainty(),
+                matches!(model, PreparedModel::Ar(_)),
+            )?
+        };
         let retained = if retain {
             add(
                 output_retained_bytes(q, self.subject.data.ncols(), output.uncertainty())?,
@@ -498,6 +702,25 @@ impl SubjectSession {
             .cached
             .as_ref()
             .ok_or(SessionError::Invalid("model has not been prepared"))?;
+        if !self.retained.is_empty() {
+            macro_rules! summarize {
+                ($m:expr) => {{
+                    let plan = $m.prepare_outputs(output)?;
+                    for (global, fit) in &self.retained {
+                        for start in (0..fit.features()).step_by(block_features) {
+                            let end = (start + block_features).min(fit.features());
+                            let summary = plan.summarize_retained(fit, start..end)?;
+                            sink(global.start + start..global.start + end, &summary.as_view())?;
+                        }
+                    }
+                }};
+            }
+            match model {
+                PreparedModel::Ols(m) => summarize!(m),
+                PreparedModel::Ar(m) => summarize!(m),
+            }
+            return Ok(());
+        }
         match model {
             PreparedModel::Ols(model) => run_ols(
                 model,

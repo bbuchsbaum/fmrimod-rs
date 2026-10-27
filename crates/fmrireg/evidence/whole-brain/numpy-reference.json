@@ -1,0 +1,51 @@
+{
+  "numpy": "2.4.3",
+  "subjects": 25,
+  "checks": [
+    {
+      "stage": "cold",
+      "features": [
+        0,
+        1,
+        63,
+        64,
+        4095,
+        32768,
+        65536,
+        131071
+      ],
+      "max_abs_error": 8.81392181462104e-13,
+      "tolerance": 2e-10
+    },
+    {
+      "stage": "design-edit",
+      "features": [
+        0,
+        1,
+        63,
+        64,
+        4095,
+        32768,
+        65536,
+        131071
+      ],
+      "max_abs_error": 2.4185514702068645e-13,
+      "tolerance": 2e-10
+    },
+    {
+      "stage": "contrast-edit",
+      "features": [
+        0,
+        1,
+        63,
+        64,
+        4095,
+        32768,
+        65536,
+        131071
+      ],
+      "max_abs_error": 1.7445767053203554e-13,
+      "tolerance": 2e-10
+    }
+  ]
+}

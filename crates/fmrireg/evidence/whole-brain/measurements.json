@@ -1,0 +1,90 @@
+[
+  {
+    "case": "baseline",
+    "receipt": "baseline.json",
+    "peak_rss_bytes": 8465956864,
+    "peak_footprint_bytes": 8268993280,
+    "exit_code": 0,
+    "cold_to_html_ms": 26238.067959
+  },
+  {
+    "case": "parallel",
+    "receipt": "parallel.json",
+    "peak_rss_bytes": 8683044864,
+    "peak_footprint_bytes": 8679794624,
+    "exit_code": 0,
+    "cold_to_html_ms": 12919.274666
+  },
+  {
+    "case": "retained",
+    "receipt": "retained.json",
+    "peak_rss_bytes": 8566554624,
+    "peak_footprint_bytes": 8652597248,
+    "exit_code": 0,
+    "cold_to_html_ms": 10845.911125
+  },
+  {
+    "case": "fast",
+    "receipt": "fast.json",
+    "peak_rss_bytes": 8705867776,
+    "peak_footprint_bytes": 8641800448,
+    "exit_code": 0,
+    "cold_to_html_ms": 4866.032583
+  },
+  {
+    "case": "fast-repeat",
+    "receipt": "fast-repeat.json",
+    "peak_rss_bytes": 8411627520,
+    "peak_footprint_bytes": 8460511552,
+    "exit_code": 0,
+    "cold_to_html_ms": 5186.604208000001
+  },
+  {
+    "case": "estimated",
+    "receipt": "estimated.json",
+    "peak_rss_bytes": 8537079808,
+    "peak_footprint_bytes": 8550541504,
+    "exit_code": 0,
+    "cold_to_html_ms": 5294.064125
+  },
+  {
+    "case": "bounded",
+    "receipt": "bounded.json",
+    "peak_rss_bytes": 2174222336,
+    "peak_footprint_bytes": 1247160576,
+    "exit_code": 0,
+    "cold_to_html_ms": 2409.078792
+  },
+  {
+    "case": "bounded-final",
+    "receipt": "bounded-final.json",
+    "peak_rss_bytes": 2158804992,
+    "peak_footprint_bytes": 1742042432,
+    "exit_code": 0,
+    "cold_to_html_ms": 3559.428333
+  },
+  {
+    "case": "bounded-estimated",
+    "receipt": "bounded-estimated.json",
+    "peak_rss_bytes": 2151694336,
+    "peak_footprint_bytes": 1233070080,
+    "exit_code": 0,
+    "cold_to_html_ms": 2981.7825
+  },
+  {
+    "case": "gzip",
+    "receipt": "gzip.json",
+    "peak_rss_bytes": 8728018944,
+    "peak_footprint_bytes": 8638834752,
+    "exit_code": 0,
+    "cold_to_html_ms": 8401.7515
+  },
+  {
+    "case": "gzip-bounded",
+    "receipt": "gzip-bounded.json",
+    "peak_rss_bytes": 2151694336,
+    "peak_footprint_bytes": 1260136512,
+    "exit_code": 0,
+    "cold_to_html_ms": 7523.114416
+  }
+]

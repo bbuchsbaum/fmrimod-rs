@@ -1,0 +1,107 @@
+[
+  {
+    "stage": "cold",
+    "case": "parallel",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "cold",
+    "case": "retained",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "cold",
+    "case": "fast",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "cold",
+    "case": "fast-repeat",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "cold",
+    "case": "bounded",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "design-edit",
+    "case": "parallel",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "design-edit",
+    "case": "retained",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "design-edit",
+    "case": "fast",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "design-edit",
+    "case": "fast-repeat",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "design-edit",
+    "case": "bounded",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "contrast-edit",
+    "case": "parallel",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "contrast-edit",
+    "case": "retained",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "contrast-edit",
+    "case": "fast",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "contrast-edit",
+    "case": "fast-repeat",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  },
+  {
+    "stage": "contrast-edit",
+    "case": "bounded",
+    "features": 131072,
+    "max_abs_error": 0.0,
+    "bitwise_equal": true
+  }
+]

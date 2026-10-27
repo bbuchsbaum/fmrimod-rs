@@ -231,3 +231,87 @@ fn qform_accepts_standard_rotation_reflection_and_near_unit_quaternions() {
         ],
     );
 }
+
+#[test]
+fn typed_float_frames_match_scalar_provider_and_analytic_scaling() {
+    use nifti::{NiftiObject, RandomAccessNiftiVolume, ReaderOptions};
+    use std::io::Write;
+    let dir = tempdir().unwrap();
+    let payload = [0.1f32, 1e-8, -5.25, 1e6, 0.25, -3., 42., 123.125];
+    for big in [false, true] {
+        for compressed in [false, true] {
+            for slope in [0f32, -1., 2.5] {
+                let mut h = if big {
+                    big_endian_fixture(&[])
+                } else {
+                    fixture(2, 1, &[])
+                };
+                for (offset, value) in [(70, 16i16), (72, 32i16)] {
+                    h[offset..offset + 2].copy_from_slice(&if big {
+                        value.to_be_bytes()
+                    } else {
+                        value.to_le_bytes()
+                    });
+                }
+                for (offset, value) in [(112, slope), (116, 0.3f32)] {
+                    h[offset..offset + 4].copy_from_slice(&if big {
+                        value.to_be_bytes()
+                    } else {
+                        value.to_le_bytes()
+                    });
+                }
+                for v in payload {
+                    h.extend_from_slice(&if big {
+                        v.to_be_bytes()
+                    } else {
+                        v.to_le_bytes()
+                    });
+                }
+                let path = dir.path().join(if compressed {
+                    "float.nii.gz"
+                } else {
+                    "float.nii"
+                });
+                if compressed {
+                    let mut gz = GzEncoder::new(Vec::new(), Compression::fast());
+                    gz.write_all(&h).unwrap();
+                    fs::write(&path, gz.finish().unwrap()).unwrap();
+                } else {
+                    fs::write(&path, h).unwrap();
+                }
+                let mut reader = source(&path).open_reader().unwrap();
+                let selection = ReadSelection::new(
+                    reader.shape(),
+                    Selection::Indices(vec![1, 0]),
+                    Selection::Indices(vec![2, 0]),
+                )
+                .unwrap();
+                let cost = reader.estimate(&selection).unwrap();
+                let block = reader
+                    .read(&selection, MemoryBudget::new(cost.peak_bytes))
+                    .unwrap();
+                let Values::F64(values) = block.into_values() else {
+                    panic!()
+                };
+                let reference = ReaderOptions::new().read_file(&path).unwrap();
+                for (i, (t, position)) in [(1usize, 2usize), (1, 3), (0, 2), (0, 3)]
+                    .into_iter()
+                    .enumerate()
+                {
+                    let raw = payload[t * 4 + position] as f64;
+                    let expected = if slope == 0. {
+                        raw
+                    } else {
+                        raw * slope as f64 + 0.3f32 as f64
+                    };
+                    assert_eq!(values[i].to_bits(), expected.to_bits());
+                    let scalar = reference
+                        .volume()
+                        .get_f64(&[(position % 2) as u16, (position / 2) as u16, 0, t as u16])
+                        .unwrap();
+                    assert_eq!(values[i].to_bits(), scalar.to_bits());
+                }
+            }
+        }
+    }
+}

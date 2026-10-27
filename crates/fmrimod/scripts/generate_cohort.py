@@ -6,9 +6,10 @@ reference design/effects. Generation is outside measured cold-session latency.
 """
 import argparse, gzip, hashlib, json, pathlib, struct
 import numpy as np
-p=argparse.ArgumentParser();p.add_argument('directory',type=pathlib.Path);p.add_argument('--subjects',type=int,default=25);p.add_argument('--frames',type=int,default=300);p.add_argument('--gzip',action='store_true');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('directory',type=pathlib.Path);p.add_argument('--subjects',type=int,default=25);p.add_argument('--frames',type=int,default=300);p.add_argument('--gzip',action='store_true');p.add_argument('--shape',type=int,nargs=3,default=[32,32,8]);args=p.parse_args()
+if args.subjects < 2 or not 9 <= args.frames <= 32767 or any(not 1 <= d <= 32767 for d in args.shape):p.error('need >=2 subjects, 9..32767 frames and positive NIfTI-1 dimensions')
 args.directory.mkdir(parents=True,exist_ok=True)
-n=args.frames;nx,ny,nz=32,32,8;v=nx*ny*nz
+n=args.frames;nx,ny,nz=args.shape;v=nx*ny*nz
 x=np.empty((n,8))
 for i in range(n):
  for j in range(8):x[i,j]=1. if j==0 else np.sin((i+1)*(j+1)*0.017)
@@ -29,6 +30,6 @@ for subject in range(args.subjects):
  path=args.directory/name
  with (gzip.open(path,'wb') if args.gzip else path.open('wb')) as f:f.write(h);f.write(values.tobytes(order='C'))
  files.append({'file':name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size})
-manifest={'subjects':args.subjects,'frames':n,'dimensions':[nx,ny,nz],'features':v,'design_columns':8,'dtype':'float32','noise':'fixed zero-history AR4 [.4,-.1,.08,-.03], one run','seed_base':70591,'spatial_identity':'synthetic-grid, not registration evidence','numpy':np.__version__,'files':files}
+manifest={'subjects':args.subjects,'frames':n,'dimensions':[nx,ny,nz],'features':v,'design_columns':8,'dtype':'float32','noise':'fixed zero-history AR4 [.4,-.1,.08,-.03], one run','seed_base':70591,'spatial_identity':'synthetic-grid, not registration evidence','generator_sha256':hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),'numpy':np.__version__,'files':files}
 (args.directory/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(json.dumps({k:manifest[k] for k in ['subjects','frames','features','dtype']}))

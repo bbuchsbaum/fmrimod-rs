@@ -32,6 +32,7 @@ pub type Result<T> = std::result::Result<T, FitError>;
 /// Prepared least-squares problem. Rank threshold is relative to largest singular value.
 #[derive(Debug)]
 pub struct LinearModel {
+    identity: std::sync::Arc<()>,
     design: Array2<f64>,
     inverse: Array2<f64>,
     covariance: Array2<f64>,
@@ -162,6 +163,7 @@ impl LinearModel {
             return Err(FitError::Invalid("factorization overflow; rescale design"));
         }
         Ok(Self {
+            identity: std::sync::Arc::new(()),
             design: design.to_owned(),
             inverse,
             covariance,

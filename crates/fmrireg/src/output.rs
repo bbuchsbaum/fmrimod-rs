@@ -903,3 +903,83 @@ fn view_from_workspace<'p, 'w, M: OutputModel>(
         }),
     })
 }
+
+/// Coefficients and residual scales explicitly retained for future contrast edits.
+/// Bound to the exact prepared model by an opaque identity; not serializable and
+/// never accepted by a different model, even when dimensions/designs coincide.
+#[derive(Debug)]
+pub struct RetainedFit {
+    model_identity: Arc<()>,
+    coefficients: Array2<f64>,
+    scales: Array1<f64>,
+}
+impl RetainedFit {
+    pub fn features(&self) -> usize {
+        self.coefficients.ncols()
+    }
+    pub fn numeric_bytes(&self) -> usize {
+        8 * (self.coefficients.len() + self.scales.len())
+    }
+}
+impl crate::FitView<'_, '_> {
+    /// Explicitly pay for retaining all coefficients and scales for this block.
+    pub fn retain_for_outputs(&self) -> Result<RetainedFit> {
+        if self.coefficients.iter().any(|x| !x.is_finite())
+            || self.variance.iter().any(|x| !x.is_finite() || *x < 0.)
+        {
+            return Err(FitError::Invalid("nonfinite retained fit"));
+        }
+        Ok(RetainedFit {
+            model_identity: Arc::clone(&self.model.identity),
+            coefficients: self.coefficients.to_owned(),
+            scales: self.variance.to_owned(),
+        })
+    }
+}
+#[allow(private_bounds)]
+impl<M: OutputModel> PreparedOutputs<'_, M> {
+    /// Apply validated requested weights to a retained fit without reading or
+    /// whitening time series. Geometry and residual df come from this model.
+    /// Only output arrays allocate; `retained_numeric_bytes(range.len())` bounds
+    /// their numerical storage. Backend packing remains outside that bound.
+    pub fn summarize_retained(
+        &self,
+        fit: &RetainedFit,
+        range: std::ops::Range<usize>,
+    ) -> Result<Summary> {
+        if !Arc::ptr_eq(&fit.model_identity, &self.model.output_core().identity) {
+            return Err(FitError::Invalid(
+                "retained fit belongs to a different model",
+            ));
+        }
+        if range.start >= range.end || range.end > fit.features() {
+            return Err(FitError::Invalid("retained feature range"));
+        }
+        self.retained_numeric_bytes(range.len())?;
+        let mut estimates = Array2::zeros((self.output_count(), range.len()));
+        self.model.output_core().backend.multiply(
+            self.context.spec.estimands.weights.view(),
+            fit.coefficients.slice(ndarray::s![.., range.clone()]),
+            estimates.view_mut(),
+        );
+        if estimates.iter().any(|x| !x.is_finite()) {
+            return Err(FitError::Invalid(
+                "estimand overflow; rescale weights or inputs",
+            ));
+        }
+        let context = Arc::clone(&self.context);
+        Ok(match self.spec().uncertainty() {
+            Uncertainty::None => Summary::Estimates(OwnedEstimates { estimates, context }),
+            Uncertainty::Marginal => Summary::Marginal(OwnedMarginal {
+                estimates,
+                scales: fit.scales.slice(ndarray::s![range]).to_owned(),
+                context,
+            }),
+            Uncertainty::Joint => Summary::Joint(OwnedJoint {
+                estimates,
+                scales: fit.scales.slice(ndarray::s![range]).to_owned(),
+                context,
+            }),
+        })
+    }
+}

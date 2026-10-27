@@ -1,6 +1,6 @@
 use fmri_noise::{Ar1Plan, FirstSample, WhiteningPlan};
 use fmrireg::{
-    output::{EstimandSet, OutputSpec, SummaryView, Uncertainty},
+    output::{EstimandSet, OutputSpec, Summary, SummaryView, Uncertainty},
     FitError, GlsModel, LinearModel, MatrixBackend,
 };
 use ndarray::{array, s, Array2, ArrayView2, ShapeBuilder};
@@ -409,4 +409,47 @@ fn output_context_copies_only_logical_sliced_weights() {
             .len(),
         2
     );
+}
+
+#[test]
+fn retained_fit_is_model_bound_and_matches_analytic_uncertainty() {
+    let x = ndarray::array![[1., -1.], [1., -1.], [1., 1.], [1., 1.]];
+    let y = ndarray::array![[0.5, 1.], [1.5, 3.], [2.5, 5.], [3.5, 7.]];
+    let model = LinearModel::new(x.view(), 1e-12).unwrap();
+    let mut workspace = model.workspace(2).unwrap();
+    let retained = model
+        .fit_into(y.view(), &mut workspace)
+        .unwrap()
+        .retain_for_outputs()
+        .unwrap();
+    assert_eq!(retained.numeric_bytes(), 48);
+    // Move the model: opaque identity must remain valid.
+    let moved = Box::new(model);
+    for level in [Uncertainty::None, Uncertainty::Marginal, Uncertainty::Joint] {
+        let request = OutputSpec::new(
+            EstimandSet::contrasts(
+                vec!["slope".into(), "twice".into(), "zero".into()],
+                ndarray::array![[0., 1.], [0., 2.], [0., 0.]],
+            )
+            .unwrap(),
+        )
+        .with_uncertainty(level);
+        let plan = moved.prepare_outputs(&request).unwrap();
+        let result = plan.summarize_retained(&retained, 0..2).unwrap();
+        assert!((result.estimates()[(0, 0)] - 1.).abs() < 1e-12);
+        assert!((result.estimates()[(0, 1)] - 2.).abs() < 1e-12);
+        assert_eq!(result.estimates()[(2, 0)], 0.);
+        match result {
+            Summary::Marginal(r) => assert!((r.variance(0, 0).unwrap() - 0.125).abs() < 1e-12),
+            Summary::Joint(r) => assert!((r.covariance(0, 1, 0).unwrap() - 0.25).abs() < 1e-12),
+            _ => {}
+        }
+        let other = LinearModel::new(x.view(), 1e-12).unwrap();
+        assert!(other
+            .prepare_outputs(&request)
+            .unwrap()
+            .summarize_retained(&retained, 0..2)
+            .is_err());
+        assert!(plan.summarize_retained(&retained, 0..3).is_err());
+    }
 }

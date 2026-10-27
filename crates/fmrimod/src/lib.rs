@@ -12,3 +12,6 @@ pub mod outputs;
 
 pub mod cohort;
 pub mod session;
+
+#[cfg(feature = "nifti")]
+pub mod ingress;

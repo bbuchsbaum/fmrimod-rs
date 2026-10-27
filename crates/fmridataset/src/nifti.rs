@@ -170,6 +170,30 @@ impl ArrayReader for NiftiReader {
                 .next()
                 .ok_or_else(|| invalid("NIfTI data", "missing frame"))?
                 .map_err(nifti_error)?;
+            // Common fMRI input: decode endian-aware f32 once per frame through
+            // the provider, then gather support directly. Avoid repeated 3D
+            // coordinate validation and datatype dispatch for every voxel.
+            // Raw + typed frame overlap fits the existing two-frame budget.
+            if self.source.datatype == NiftiType::Float32 {
+                let frame = frame.into_nifti_typed_data::<f32>().map_err(nifti_error)?;
+                let slope = f32::from_bits(self.source.signature.slope) as f64;
+                let intercept = f32::from_bits(self.source.signature.intercept) as f64;
+                for out_row in 0..out_rows {
+                    if selection.rows().at(out_row) != time {
+                        continue;
+                    }
+                    for out_col in 0..out_columns {
+                        let position = self.source.space.support()[selection.columns().at(out_col)];
+                        let value = frame[position] as f64;
+                        values[out_row * out_columns + out_col] = if slope == 0.0 {
+                            value
+                        } else {
+                            value * slope + intercept
+                        };
+                    }
+                }
+                continue;
+            }
             for out_row in 0..out_rows {
                 if selection.rows().at(out_row) != time {
                     continue;

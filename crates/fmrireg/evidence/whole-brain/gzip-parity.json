@@ -1,0 +1,38 @@
+[
+  {
+    "case": "gzip",
+    "stage": "cold",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "gzip",
+    "stage": "design-edit",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "gzip",
+    "stage": "contrast-edit",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "gzip-bounded",
+    "stage": "cold",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "gzip-bounded",
+    "stage": "design-edit",
+    "features": 131072,
+    "max_abs_error": 0.0
+  },
+  {
+    "case": "gzip-bounded",
+    "stage": "contrast-edit",
+    "features": 131072,
+    "max_abs_error": 0.0
+  }
+]

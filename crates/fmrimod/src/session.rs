@@ -312,6 +312,24 @@ impl Clone for ModelSpec {
     }
 }
 impl ModelSpec {
+    pub(crate) fn validate_metadata(&self, rows: &[ObservationId]) -> Result<()> {
+        if self.design.nrows() != rows.len()
+            || self.observation_ids != rows
+            || self.columns.len() != self.design.ncols()
+        {
+            return Err(SessionError::Invalid(
+                "design, columns, or observation IDs do not match subject",
+            ));
+        }
+        if self.design.ncols() == 0 || self.design.iter().any(|x| !x.is_finite()) {
+            return Err(SessionError::Invalid("empty or nonfinite design"));
+        }
+        if !self.tolerance.is_finite() || self.tolerance <= 0. || self.tolerance >= 1. {
+            return Err(SessionError::Invalid("invalid rank tolerance"));
+        }
+        Ok(())
+    }
+
     #[cfg(feature = "nifti")]
     pub(crate) fn preparation_bytes(&self) -> Result<usize> {
         preparation_bytes(self)
@@ -418,6 +436,13 @@ pub struct DetachedSession {
     retained: Vec<(Range<usize>, RetainedFit)>,
 }
 impl DetachedSession {
+    #[cfg(feature = "nifti")]
+    pub(crate) fn matches_model(&self, spec: &ModelSpec) -> bool {
+        self.cached
+            .as_ref()
+            .is_some_and(|(old, _, _, _)| old.same_as(spec))
+    }
+
     pub fn resident_numeric_bytes(&self) -> Result<usize> {
         add(
             self.cached
@@ -450,6 +475,13 @@ impl DetachedSession {
     }
 }
 impl SubjectSession {
+    #[cfg(feature = "nifti")]
+    pub(crate) fn matches_model(&self, spec: &ModelSpec) -> bool {
+        self.cached
+            .as_ref()
+            .is_some_and(|(old, _, _, _)| old.same_as(spec))
+    }
+
     pub fn new(subject: LoadedSubject) -> Self {
         Self {
             subject,
@@ -806,22 +838,9 @@ fn model_receipt(
 }
 
 fn validate_spec(subject: &LoadedSubject, spec: &ModelSpec) -> Result<()> {
-    if spec.design.nrows() != subject.data.nrows()
-        || spec.observation_ids != subject.observation_ids
-        || spec.columns.len() != spec.design.ncols()
-    {
-        return Err(SessionError::Invalid(
-            "design, columns, or observation IDs do not match subject",
-        ));
-    }
-    if spec.design.ncols() == 0 || spec.design.iter().any(|x| !x.is_finite()) {
-        return Err(SessionError::Invalid("empty or nonfinite design"));
-    }
-    if !spec.tolerance.is_finite() || spec.tolerance <= 0. || spec.tolerance >= 1. {
-        return Err(SessionError::Invalid("invalid rank tolerance"));
-    }
-    Ok(())
+    spec.validate_metadata(&subject.observation_ids)
 }
+
 fn preparation_bytes(spec: &ModelSpec) -> Result<usize> {
     let (n, p) = spec.design.dim();
     let np = mul(n, p)?;

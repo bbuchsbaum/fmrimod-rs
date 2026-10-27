@@ -1,0 +1,79 @@
+{
+  "numpy": "2.4.3",
+  "tolerance_absolute": 2e-09,
+  "scope": "Independent conditional GLS given reported AR coefficients; four spatial probes per subject, all eight runs. Not an independent AR estimator oracle.",
+  "checks": [
+    {
+      "case": "01-run.json",
+      "effect_max_abs": 2.461433834533011e-12,
+      "variance_max_abs": 6.210310043996969e-16,
+      "group_effect_max_abs": 4.414593690604818e-13,
+      "group_se_max_abs": 5.155598170603071e-14
+    },
+    {
+      "case": "03-run.json",
+      "effect_max_abs": 5.755118603900655e-12,
+      "variance_max_abs": 7.424616477180734e-16,
+      "group_effect_max_abs": 1.0421802310034423e-12,
+      "group_se_max_abs": 5.399847236020605e-14
+    },
+    {
+      "case": "04-run.json",
+      "effect_max_abs": 1.8443579996585413e-12,
+      "variance_max_abs": 6.38378239159465e-16,
+      "group_effect_max_abs": 2.1520285553577878e-13,
+      "group_se_max_abs": 2.5722479701784096e-14
+    },
+    {
+      "case": "05-run.json",
+      "effect_max_abs": 1.8443579996585413e-12,
+      "variance_max_abs": 6.38378239159465e-16,
+      "group_effect_max_abs": 2.1520285553577878e-13,
+      "group_se_max_abs": 2.5722479701784096e-14
+    },
+    {
+      "case": "06-run.json",
+      "effect_max_abs": 1.8443579996585413e-12,
+      "variance_max_abs": 0,
+      "group_effect_max_abs": 2.1520285553577878e-13,
+      "group_se_max_abs": 2.5722479701784096e-14
+    },
+    {
+      "case": "07-run.json",
+      "effect_max_abs": 1.8443579996585413e-12,
+      "variance_max_abs": 6.38378239159465e-16,
+      "group_effect_max_abs": 2.1520285553577878e-13,
+      "group_se_max_abs": 2.5722479701784096e-14
+    },
+    {
+      "case": "08-run.json",
+      "effect_max_abs": 1.6368573163560995e-12,
+      "variance_max_abs": 5.516420653606247e-16,
+      "group_effect_max_abs": 1.0696304952872993e-13,
+      "group_se_max_abs": 2.969846590872294e-14
+    },
+    {
+      "case": "09-run.json",
+      "effect_max_abs": 1.236594160403115e-12,
+      "variance_max_abs": 5.620504062164855e-16,
+      "group_effect_max_abs": 5.243600692539374e-13,
+      "group_se_max_abs": 2.6874336089832696e-14
+    }
+  ],
+  "full_map_equivalence_max_abs": {
+    "05-run.json": 0.0,
+    "06-run.json": 0.0,
+    "07-run.json": 0.0
+  },
+  "design_edit_max_noise_coefficient_change": 0.003415436712923936,
+  "receipt_sha256": {
+    "01-run.json": "1ba7b73db956636010ee01a8be779f718c0fd631cceca5038ee7c3cf5115f631",
+    "03-run.json": "0c732ca1420c326cb9c94ca79174659cadfecda01fdf28c43aeee399e9a1fd5d",
+    "04-run.json": "fdcdae3b3858a5db5848d9e884f0ed3ff5b954090733a1658fe1693f36b59411",
+    "05-run.json": "800874c067533a209082573fd7bfe4988baa767f0e629d4fc56a27cb7e5c0671",
+    "06-run.json": "c05d9d9cecb808f98d4e16de45d924a16083fb4254b6accb92aea930dbc9bc9d",
+    "07-run.json": "dc1ca6f2f8ff3205b1da6b071e46c577bbbe20c1905a8f5dbb523d761c27ff31",
+    "08-run.json": "d2fb47e49eaeeed0582435461541cf818cd1345d008e5a9ec05c3e4f27517048",
+    "09-run.json": "51b39c007d9416f12bcd1830b104175973d9066b11a0dc457023ed71ec933a96"
+  }
+}

@@ -30,3 +30,7 @@ required-features = ["formula"]
 [[example]]
 name = "cohort_latency"
 required-features = ["nifti"]
+
+[[example]]
+name = "analysis_viewer"
+required-features = ["nifti"]

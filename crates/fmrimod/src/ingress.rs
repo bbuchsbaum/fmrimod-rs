@@ -167,6 +167,12 @@ pub struct FileSession {
     reads: usize,
 }
 impl FileSession {
+    pub(crate) fn matches_model(&self, spec: &crate::session::ModelSpec) -> bool {
+        self.prepared
+            .as_ref()
+            .is_some_and(|s| s.matches_model(spec))
+    }
+
     pub fn new(source: NiftiSubject) -> Self {
         Self {
             source,
@@ -226,55 +232,22 @@ pub fn run_file_cohort(
     options: crate::cohort::CohortOptions,
     mut sink: impl FnMut(usize, &crate::session::SubjectOutput) -> Result<(), SessionError>,
 ) -> Result<crate::cohort::CohortReceipt, SessionError> {
+    let sources = sessions.iter().map(|s| &s.source).collect::<Vec<_>>();
+    let cached = sessions
+        .iter()
+        .map(FileSession::resident_numeric_bytes)
+        .collect::<Result<Vec<_>, _>>()?;
+    let reused = sessions
+        .iter()
+        .zip(specs)
+        .map(|(s, m)| s.matches_model(m))
+        .collect::<Vec<_>>();
+    let FilePreflight {
+        workers,
+        total,
+        jobs,
+    } = file_preflight(&sources, &cached, &reused, specs, requests, options)?;
     let add = |a: usize, b: usize| a.checked_add(b).ok_or(SessionError::Overflow);
-    if sessions.is_empty()
-        || specs.len() != sessions.len()
-        || requests.len() != sessions.len()
-        || options.workers == 0
-        || options.block_features == 0
-    {
-        return Err(SessionError::Invalid("file cohort dimensions or options"));
-    }
-    let mut ids = std::collections::HashSet::new();
-    let mut resident = 0usize;
-    let mut jobs = Vec::new();
-    for ((s, spec), request) in sessions.iter().zip(specs).zip(requests) {
-        if !ids.insert(s.source.subject_id()) {
-            return Err(SessionError::Invalid("duplicate cohort subject ID"));
-        }
-        if spec.observation_ids != s.source.rows || spec.design.nrows() != s.source.shape()[0] {
-            return Err(SessionError::Invalid("file subject/design observations"));
-        }
-        // Include old and new model storage for every subject; intentionally
-        // conservative while models are being replaced in different batches.
-        resident = add(
-            resident,
-            add(s.resident_numeric_bytes()?, spec.resident_bytes()?)?,
-        )?;
-        let transient = add(
-            spec.preparation_bytes()?,
-            spec.execution_bytes(s.source.shape()[1], request, options.block_features)?,
-        )?;
-        jobs.push(add(s.source.peak_bytes, transient)?);
-    }
-    let reservation = |workers: usize| -> Result<usize, SessionError> {
-        let mut peak = 0;
-        for batch in jobs.chunks(workers) {
-            peak = peak.max(batch.iter().try_fold(0usize, |a, b| add(a, *b))?);
-        }
-        add(resident, peak)
-    };
-    let mut workers = options.workers.min(sessions.len());
-    while workers > 1 && reservation(workers)? > options.max_numeric_bytes {
-        workers -= 1;
-    }
-    let total = reservation(workers)?;
-    if total > options.max_numeric_bytes {
-        return Err(SessionError::Budget {
-            required: total,
-            budget: options.max_numeric_bytes,
-        });
-    }
     for (batch_index, batch) in sessions.chunks_mut(workers).enumerate() {
         let start = batch_index * workers;
         std::thread::scope(|scope| -> Result<(), SessionError> {
@@ -306,5 +279,83 @@ pub fn run_file_cohort(
             .iter()
             .try_fold(0usize, |a, s| add(a, s.resident_numeric_bytes()?))?,
         reserved_numeric_bytes: total,
+    })
+}
+
+pub(crate) struct FilePreflight {
+    pub workers: usize,
+    pub total: usize,
+    jobs: Vec<usize>,
+}
+pub(crate) fn file_preflight(
+    sources: &[&NiftiSubject],
+    cached_bytes: &[usize],
+    reused: &[bool],
+    specs: &[crate::session::ModelSpec],
+    requests: &[fmrireg::output::OutputSpec],
+    options: crate::cohort::CohortOptions,
+) -> Result<FilePreflight, SessionError> {
+    let add = |a: usize, b: usize| a.checked_add(b).ok_or(SessionError::Overflow);
+    if sources.is_empty()
+        || cached_bytes.len() != sources.len()
+        || reused.len() != sources.len()
+        || specs.len() != sources.len()
+        || requests.len() != sources.len()
+        || options.workers == 0
+        || options.block_features == 0
+    {
+        return Err(SessionError::Invalid("file cohort dimensions or options"));
+    }
+    let mut ids = std::collections::HashSet::new();
+    let mut resident = 0usize;
+    let mut jobs = Vec::new();
+    for (index, ((s, spec), request)) in sources.iter().zip(specs).zip(requests).enumerate() {
+        if !ids.insert(s.subject_id()) {
+            return Err(SessionError::Invalid("duplicate cohort subject ID"));
+        }
+        if spec.observation_ids != s.rows || spec.design.nrows() != s.shape()[0] {
+            return Err(SessionError::Invalid("file subject/design observations"));
+        }
+        // Preserve old state plus replacement storage only when preparing a new
+        // model. Reused models need no replacement allocation.
+        resident = add(
+            resident,
+            add(
+                cached_bytes[index],
+                if reused[index] {
+                    0
+                } else {
+                    spec.resident_bytes()?
+                },
+            )?,
+        )?;
+        let transient = add(
+            spec.preparation_bytes()?,
+            spec.execution_bytes(s.shape()[1], request, options.block_features)?,
+        )?;
+        jobs.push(add(s.peak_bytes, transient)?);
+    }
+    let reservation = |workers: usize| -> Result<usize, SessionError> {
+        let mut peak = 0;
+        for batch in jobs.chunks(workers) {
+            peak = peak.max(batch.iter().try_fold(0usize, |a, b| add(a, *b))?);
+        }
+        add(resident, peak)
+    };
+    let mut workers = options.workers.min(sources.len());
+    while workers > 1 && reservation(workers)? > options.max_numeric_bytes {
+        workers -= 1;
+    }
+    let total = reservation(workers)?;
+    if total > options.max_numeric_bytes {
+        return Err(SessionError::Budget {
+            required: total,
+            budget: options.max_numeric_bytes,
+        });
+    }
+    Ok(FilePreflight {
+        workers,
+        total,
+        jobs,
     })
 }

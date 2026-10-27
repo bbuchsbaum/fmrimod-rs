@@ -15,3 +15,6 @@ pub mod session;
 
 #[cfg(feature = "nifti")]
 pub mod ingress;
+
+#[cfg(feature = "nifti")]
+pub mod analysis;

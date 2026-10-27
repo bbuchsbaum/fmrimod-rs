@@ -1,0 +1,23 @@
+{
+  "base_head": "55449c10a9c5efd9c684871741555ded5b314c54",
+  "platform": "macOS-14.3-arm64-arm-64bit-Mach-O",
+  "cpu": "Apple M3 Max",
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+  "binary_sha256": "bd45ffe5b1bbba182564cffb8ea93d1b32049e98a9a0f03d6a80e0bd871a3636",
+  "tests_passed": 102,
+  "checks": {
+    "affected_tests": 0,
+    "clippy_all_targets": 0,
+    "format": 0,
+    "portable_build": 0,
+    "release_example_build": 0,
+    "browser": 0,
+    "independent_reference": 0
+  },
+  "threads": {
+    "cohort_workers": 4,
+    "BLAS": 1,
+    "OMP": 1
+  },
+  "source_boundary": "Live workspace source hashes, including pre-existing uncommitted provider work; not a clean-checkout reproducibility claim."
+}

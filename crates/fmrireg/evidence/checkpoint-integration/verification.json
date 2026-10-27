@@ -1,0 +1,129 @@
+{
+  "main_parent": "5e0c8a9b7dd36259f122f8c8d29872e0caeaac9e",
+  "checkpoint_parent": "9d8fe7168d4250c581f83ed9d3d58cdd51096fc2",
+  "strategy": "Preserve all main blobs; add missing historical checkpoint manifest and integration evidence. No numerical or Cargo changes.",
+  "checkpoint_files": 429,
+  "checkpoint_manifest_verified_files": 428,
+  "identical_existing_files": 417,
+  "added_checkpoint_files": [
+    "source-manifest.json"
+  ],
+  "preserved_differences": [
+    {
+      "path": ".gitignore",
+      "checkpoint_blob": "4d26375debcbee74e96f7324625366d938d810c5",
+      "main_blob": "974057f1c4927141852443d3f32a762db394d231",
+      "reason": "Retain main safeguards for local state and regenerable artifacts."
+    },
+    {
+      "path": "README.md",
+      "checkpoint_blob": "c4010faede94420117dc4c1f9c0da2fc776f814e",
+      "main_blob": "2730ba05ca5cfa8a85105cd60cb8a3a6e4910e8c",
+      "reason": "Retain consolidated workspace guide and current capability links."
+    },
+    {
+      "path": "crates/fmri-group/examples/meta_regression_benchmark.rs",
+      "checkpoint_blob": "1725c6c2b044f6b96895bac37ed860ad7913bcbb",
+      "main_blob": "ab8d4b316506a84222106131594e46fa7983d466",
+      "reason": "Retain callers adapted to optional fixed-effect Q diagnostic."
+    },
+    {
+      "path": "crates/fmri-group/examples/portable_execution_benchmark.rs",
+      "checkpoint_blob": "bde399b14cf0f969d574de26e9ed26a91461c2fd",
+      "main_blob": "3420733f760a478163a5511566ecf00e73b8f19f",
+      "reason": "Retain callers adapted to optional fixed-effect Q diagnostic."
+    },
+    {
+      "path": "crates/fmri-group/src/lib.rs",
+      "checkpoint_blob": "2310fe5dc7175e22056877c9e890dc52cefd3ad6",
+      "main_blob": "11ab019e7c5b610792a0a718e894c6de10d1b102",
+      "reason": "Retain repeated, resampling and influence module exports."
+    },
+    {
+      "path": "crates/fmri-group/src/meta_regression.rs",
+      "checkpoint_blob": "7e7e88327407d9a2c323a8e0ae4e6bbf7aa1af79",
+      "main_blob": "563347a7c532cc713df66746fc95d97e5354c419",
+      "reason": "Retain exact deletion refits and optional fixed-effect Q diagnostic."
+    },
+    {
+      "path": "crates/fmri-group/tests/meta_regression.rs",
+      "checkpoint_blob": "4a18508d31fa0d7677f3e27366f01b8ad07e3883",
+      "main_blob": "5b9e4269631fce5c8d7375950d8c726767785648",
+      "reason": "Retain callers adapted to optional fixed-effect Q diagnostic."
+    },
+    {
+      "path": "crates/fmri-group/tests/portable_execution.rs",
+      "checkpoint_blob": "f9ead7e0a5252a0d01e3c15ae09daefd514f26c0",
+      "main_blob": "9d3582e4772992c64e4aea5d8ebf12568438fc40",
+      "reason": "Retain callers adapted to optional fixed-effect Q diagnostic."
+    },
+    {
+      "path": "crates/fmri-noise/src/lib.rs",
+      "checkpoint_blob": "5c311edda3999fce1b1fc41ab64bf9c2ac1fb967",
+      "main_blob": "80d89cda58557bbe7afd9976c326229084c469f3",
+      "reason": "Retain noise extension exports."
+    },
+    {
+      "path": "crates/fmridesign/Cargo.toml",
+      "checkpoint_blob": "5591c59292278ee772f69bfa8649375ec00215bf",
+      "main_blob": "b1fa81926dd33747ba0535dc4bae5eaca7246752",
+      "reason": "Retain removal of placeholder repository URL."
+    },
+    {
+      "path": "crates/fmridesign/src/lib.rs",
+      "checkpoint_blob": "0852fac94429059c38a0078e63c3b13fedd7c228",
+      "main_blob": "9010019afd27712175c964c67b726c07702ae213",
+      "reason": "Retain rustfmt module ordering."
+    }
+  ],
+  "inherited_qualification": {
+    "receipt": "evidence/completion/run-20261027T203534Z/receipt.json",
+    "sha256": "46024b91cefb2fe3a8c5bc08eb44c0b0b187735cf002acd6c5373721a440f242",
+    "matching_source_files": 380,
+    "fresh_rust_tests_run": false
+  },
+  "checks": [
+    {
+      "name": "metadata",
+      "command": [
+        "cargo",
+        "metadata",
+        "--locked",
+        "--offline",
+        "--no-deps",
+        "--format-version",
+        "1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.144,
+      "log": "metadata.log",
+      "log_sha256": "92acd32b55bbb00df147b2883e78a735bcf14cd585bc5dee0c18e8c6f89d3673"
+    },
+    {
+      "name": "format",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 1.045,
+      "log": "format.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "controller",
+      "command": [
+        "python3",
+        "-B",
+        "crates/fmrimod/scripts/test_analysis_server.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.266,
+      "log": "controller.log",
+      "log_sha256": "96ada94330112baee8a6ab76c53629684b94de05819bd75c7914bf003ac485cc"
+    }
+  ],
+  "publication": false
+}

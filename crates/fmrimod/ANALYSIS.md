@@ -53,7 +53,8 @@ coefficient. Scientific semantics and column bindings must agree.
 `CoefficientsAndScale` retains coefficients and residual scale internally so
 later contrasts and their uncertainty need no time-series scan. It does not add
 coefficients to the returned result. Even an estimates-only request pays this
-retention cost if retention is explicitly selected. Retention is supported by resident or retained-fit storage and is never silently
+retention cost if retention is explicitly selected. Retention is supported by
+resident or retained-fit storage and is never silently
 dropped to meet a budget. `StoragePolicy::RetainedFits` fits bounded subject
 batches, keeps coefficients/scales and releases time series immediately. Contrast
 edits then need no source reads. A changed model reloads the affected subject; a
@@ -61,18 +62,20 @@ failed replacement preserves its last valid retained fit.
 
 ## Inspectable execution choices
 
-`StoragePolicy::Auto` uses file batches for `ExpectedUse::OneShot`. For
-`ContrastExploration`, it attempts resident storage, reducing the worker count
+With retention disabled, `StoragePolicy::Auto` uses file batches for
+`ExpectedUse::OneShot`. For `ContrastExploration` or explicit coefficient
+retention, it attempts resident storage, reducing the worker count
 if necessary, then falls back to file batches when retention is disabled, or to
 retained-fit batches when coefficient retention is requested. Explicit
 `Resident`, `FileBatches` or `RetainedFits` selects that storage constraint.
-`RetainedFits` requires explicit `CoefficientsAndScale` retention. Worker count is bounded by the
-subject count and budget; block width is caller supplied.
+`RetainedFits` requires explicit `CoefficientsAndScale` retention. Worker count
+is bounded by the subject count and budget; block width is caller supplied.
 
 The plan reports storage, workers, retained bytes, total numerical reservation,
 reason, source version, model ID, noise policy, rank tolerance, uncertainty and
 estimand IDs. Each subject also has data (`Load`, `ReuseResident`, `Reload`,
-`NotNeeded` for retained fits), model (`Prepare`, `EstimateNoise`, `Reuse`) and fit (`ScanData`,
+`NotNeeded` for retained fits), model (`Prepare`, `EstimateNoise`, `Reuse`) and
+fit (`ScanData`,
 `BuildRetainedFit`, `UseRetainedFit`) actions. Requested AR errors, startup,
 run boundaries, estimation sample and uncertainty are preserved. There is no
 implicit IID fallback or automatic statistical approximation.

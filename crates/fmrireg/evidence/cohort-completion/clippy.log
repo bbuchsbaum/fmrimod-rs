@@ -1,0 +1,8 @@
+    Checking fmri-noise v0.1.0 (/private/tmp/cohort-qualified-source/crates/fmri-noise)
+    Checking fmridataset v0.1.0 (/private/tmp/cohort-qualified-source/crates/fmridataset)
+    Checking splines v0.1.0 (/private/tmp/cohort-qualified-source/crates/splines)
+    Checking fmrireg v0.1.0 (/private/tmp/cohort-qualified-source/crates/fmrireg)
+    Checking fmrihrf v0.1.0 (/private/tmp/cohort-qualified-source/crates/fmrihrf)
+    Checking fmri-group v0.1.0 (/private/tmp/cohort-qualified-source/crates/fmri-group)
+    Checking fmrimod v0.1.0 (/private/tmp/cohort-qualified-source/crates/fmrimod)
+    Finished `dev` profile [unoptimized] target(s) in 1.99s

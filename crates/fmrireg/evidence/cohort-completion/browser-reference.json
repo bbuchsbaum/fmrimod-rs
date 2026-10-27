@@ -1,0 +1,151 @@
+{
+  "checks": [
+    {
+      "case": "01-run.json",
+      "group": "ols",
+      "errors": {
+        "effect": 2.461433834533011e-12,
+        "variance": 6.210310043996969e-16,
+        "group_effect": 4.414489607196259e-13,
+        "group_se": 5.155598170603071e-14,
+        "tau_squared": 0.0
+      },
+      "sha256": "c335d5aaacc218b6397e598772f5fb37db71e7f6555ac5f9fc70166a8794c0bb"
+    },
+    {
+      "case": "03-run.json",
+      "group": "ols",
+      "errors": {
+        "effect": 5.755118603900655e-12,
+        "variance": 7.424616477180734e-16,
+        "group_effect": 1.0421802310034423e-12,
+        "group_se": 5.400541125410996e-14,
+        "tau_squared": 0.0
+      },
+      "sha256": "90e3e49343391f29c3bd5cd71c7dbd237206bad9e1e93b1bafd75df40a4aca0c"
+    },
+    {
+      "case": "04-run.json",
+      "group": "ols",
+      "errors": {
+        "effect": 1.8443579996585413e-12,
+        "variance": 6.38378239159465e-16,
+        "group_effect": 2.1517509996016315e-13,
+        "group_se": 2.5722479701784096e-14,
+        "tau_squared": 0.0
+      },
+      "sha256": "8b5b95efcbd685c4138d4061aeca587dcc92703fe7fce1d862dbb88bdf3690cf"
+    },
+    {
+      "case": "05-run.json",
+      "group": "ols",
+      "errors": {
+        "effect": 1.8443579996585413e-12,
+        "variance": 6.38378239159465e-16,
+        "group_effect": 2.1517509996016315e-13,
+        "group_se": 2.5722479701784096e-14,
+        "tau_squared": 0.0
+      },
+      "sha256": "bbcff777bea733cfbc76d58284e3f4fe8f3ad24a198ad40adcfc3702e58222bd"
+    },
+    {
+      "case": "06-run.json",
+      "group": "ols",
+      "errors": {
+        "effect": 1.8443579996585413e-12,
+        "variance": 0.0,
+        "group_effect": 2.1517509996016315e-13,
+        "group_se": 2.5722479701784096e-14,
+        "tau_squared": 0.0
+      },
+      "sha256": "13e12dadf19cf4980b3b9c943b5c543a3f9bbcff1471ead5886790d14e7ff374"
+    },
+    {
+      "case": "07-run.json",
+      "group": "ols",
+      "errors": {
+        "effect": 1.8443579996585413e-12,
+        "variance": 6.38378239159465e-16,
+        "group_effect": 2.1517509996016315e-13,
+        "group_se": 2.5722479701784096e-14,
+        "tau_squared": 0.0
+      },
+      "sha256": "b6712e660707b248cdab965deeb4ff4d5b19deb3566ab735fc864b0fb0d8b7b6"
+    },
+    {
+      "case": "08-run.json",
+      "group": "ols",
+      "errors": {
+        "effect": 1.6368573163560995e-12,
+        "variance": 5.516420653606247e-16,
+        "group_effect": 1.0696998842263383e-13,
+        "group_se": 2.969846590872294e-14,
+        "tau_squared": 0.0
+      },
+      "sha256": "40cec745d80ef97e00887fb299d6c5a42fd824004812488a68b6483753d1405e"
+    },
+    {
+      "case": "09-run.json",
+      "group": "ols",
+      "errors": {
+        "effect": 1.236594160403115e-12,
+        "variance": 5.620504062164855e-16,
+        "group_effect": 5.243600692539374e-13,
+        "group_se": 2.6874336089832696e-14,
+        "tau_squared": 0.0
+      },
+      "sha256": "2fc5051258e5afb1eeee9f683ece79af30197fa0e73b2681b552d6b61044dab8"
+    },
+    {
+      "case": "10-run.json",
+      "group": "meta",
+      "errors": {
+        "effect": 1.236594160403115e-12,
+        "variance": 5.620504062164855e-16,
+        "group_effect": 5.218048215738236e-13,
+        "group_se": 8.347489366400396e-15,
+        "tau_squared": 1.1350729384185243e-14
+      },
+      "sha256": "3dd32b013add51e21c69b00c845d7f6cffde12e71581e78bd8e925018a1fd084"
+    },
+    {
+      "case": "13-run.json",
+      "group": "meta",
+      "errors": {
+        "effect": 8.720038580101175e-13,
+        "variance": 5.464378949326942e-16,
+        "group_effect": 2.756891936961381e-13,
+        "group_se": 3.028827189055505e-15,
+        "tau_squared": 4.198030811863873e-15
+      },
+      "sha256": "2a4c72f605b4c819a2ecbe070b0bd18f8d1113fcc92e2fe0567fe4451cba4f67"
+    },
+    {
+      "case": "15-run.json",
+      "group": "meta",
+      "errors": {
+        "effect": 1.1207701433590955e-12,
+        "variance": 6.054184931159057e-16,
+        "group_effect": 5.480841475113962e-13,
+        "group_se": 1.2382456171522449e-14,
+        "tau_squared": 1.668847351976588e-14
+      },
+      "sha256": "97b281f7e429dd458c412e13be9001f813749f4342fed653363090b2bac9ed73"
+    },
+    {
+      "case": "16-run.json",
+      "group": "meta",
+      "errors": {
+        "effect": 1.1207701433590955e-12,
+        "variance": 6.054184931159057e-16,
+        "group_effect": 5.480841475113962e-13,
+        "group_se": 0.0,
+        "tau_squared": 1.668847351976588e-14
+      },
+      "sha256": "656f3760956c98e5db7643db660a1f6e81da648fb98040f2b88fb7dcdd8e76df"
+    }
+  ],
+  "tolerance": 2e-09,
+  "numpy": "2.4.3",
+  "scope": "Conditional GLS at four probes per subject, followed by independent bisection PM and modified KH group SE. AR estimation itself is not independently re-estimated."
+}

@@ -1,0 +1,42 @@
+{
+  "shape": [
+    80,
+    80,
+    64
+  ],
+  "run_lengths": [
+    120,
+    120
+  ],
+  "masked_features": 120935,
+  "subjects": 2,
+  "seed_base": 84521,
+  "numpy": "2.4.3",
+  "mask_sha256": "b07631cc3c0d81859ee4f8cd4a20133f566f3decfee7e159df9c56d8479ecb30",
+  "generator_sha256": "f2958bfa546f64adc617b9c3fbf96176e5931d2587df9889abcd4f2b4a1842c3",
+  "noise": [
+    [
+      0.4,
+      -0.12
+    ],
+    [
+      0.2,
+      0.05
+    ]
+  ],
+  "files": [
+    {
+      "id": "sub-00",
+      "file": "sub-00.nii.gz",
+      "sha256": "a4d76973ee1a5ae6424d71317f16d4c09d4b84ed1751702271ca581b9030686f",
+      "bytes": 84646769
+    },
+    {
+      "id": "sub-01",
+      "file": "sub-01.nii.gz",
+      "sha256": "3bd687deee1687783bdd27e688af0a54bab0b3e09ba0f49b086a459fe7c90ebb",
+      "bytes": 84651144
+    }
+  ],
+  "provenance": "Generated synthetic ellipsoid mask, two runs, nuisance and run intercepts; not research data or MNI registration evidence"
+}

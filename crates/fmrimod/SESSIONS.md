@@ -174,7 +174,8 @@ call `run_file_cohort(&mut sessions, &model_specs, &output_specs, options, sink)
 It reduces the requested worker count until active data and numerical work fit
 the budget. If one subject cannot fit, it fails before voxel reads. The scalar
 group collector remains a separate reservation, as in the resident executor.
-The preflight conservatively includes old and replacement models; it is not an
+The preflight includes old and replacement models when a model changes; reused
+models are counted once. It is not an
 allocator-exact RSS bound. Caller-owned source metadata and input model specs are
 outside that reservation.
 

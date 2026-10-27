@@ -1,0 +1,9 @@
+{"mode": "resident", "repeat": 0, "rss_mib": 695.546875, "first_ms": 1271.0401250078576, "contrast_ms": 172.66441699757706}
+{"mode": "resident", "repeat": 1, "rss_mib": 691.65625, "first_ms": 1271.1961250024615, "contrast_ms": 174.9802499980433}
+{"mode": "resident", "repeat": 2, "rss_mib": 682.6875, "first_ms": 1265.9217080072267, "contrast_ms": 174.46791699330788}
+{"mode": "detached", "repeat": 0, "rss_mib": 712.5625, "first_ms": 1180.8168749994365, "contrast_ms": 174.70883400528692}
+{"mode": "detached", "repeat": 1, "rss_mib": 698.0625, "first_ms": 1211.3154169928748, "contrast_ms": 173.54491699370556}
+{"mode": "detached", "repeat": 2, "rss_mib": 715.34375, "first_ms": 1197.4266670004, "contrast_ms": 169.9217499990482}
+{"mode": "files", "repeat": 0, "rss_mib": 748.640625, "first_ms": 1204.0547920041718, "contrast_ms": 1051.39949999284}
+{"mode": "files", "repeat": 1, "rss_mib": 733.625, "first_ms": 1162.1468329976778, "contrast_ms": 1034.4989580044057}
+{"mode": "files", "repeat": 2, "rss_mib": 754.703125, "first_ms": 1179.5192919962574, "contrast_ms": 1047.675124995294}

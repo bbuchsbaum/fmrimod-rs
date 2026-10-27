@@ -122,7 +122,7 @@ def verify(root, manifest, probes):
         path = root / entry['file']
         with path.open('rb') as f:
             assert hashlib.file_digest(f, 'sha256').hexdigest() == entry['sha256']
-        with gzip.open(path, 'rb') as f:
+        with (gzip.open(path, 'rb') if path.suffix == '.gz' else path.open('rb')) as f:
             header = f.read(352); assert struct.unpack_from('<f', header, 108)[0] == 352
             frame_bytes = int(np.prod(manifest['shape'])) * 4
             y = np.array([np.frombuffer(f.read(frame_bytes), dtype='<f4')[coordinates] for _ in range(n)], dtype=float)

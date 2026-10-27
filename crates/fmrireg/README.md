@@ -44,6 +44,16 @@ an error for incompatible dimensions or excess capacity. Smaller tail blocks
 reuse its storage. A failed fit may overwrite workspace buffers; only a
 successful result provides access to output.
 
+## Requested outputs
+
+Use `model.prepare_outputs(&OutputSpec)` when a downstream analysis needs only
+selected coefficients or contrasts. `Uncertainty::None` skips predictions and
+RSS; `Marginal` supplies variances/standard errors; `Joint` also supplies
+within-feature covariance among requested effects. Owned summaries retain only
+requested effects and, when needed, residual scales. Full-fit APIs remain
+available. See [OUTPUTS.md](OUTPUTS.md) for examples, memory accounting, upstream
+`fmrimod::outputs` compilation, numerical qualification and remaining work.
+
 ## Ordered parallel blocks
 
 Enable `dataset` for `dataset::fit_blocks_with_options` and

@@ -1,0 +1,107 @@
+   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
+    Finished `test` profile [unoptimized] target(s) in 1.13s
+     Running unittests src/lib.rs (/private/tmp/fmrimod-output-target/debug/deps/fmrireg-706b3f0bc1ab351d)
+
+running 1 test
+test finite::tests::rejects_every_nonfinite_position_and_accepts_finite_extremes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/arp.rs (/private/tmp/fmrimod-output-target/debug/deps/arp-9ecc930d2d181407)
+
+running 2 tests
+test stationary_gls_matches_independent_dense_covariance_solve ... ok
+test conditional_feasible_gls_matches_current_r_full_fit ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+     Running tests/contracts.rs (/private/tmp/fmrimod-output-target/debug/deps/contracts-c9855d5cabaef411)
+
+running 7 tests
+test ill_conditioned_full_rank_design_recovers_known_coefficients ... ok
+test analytic_intercept_and_invalid_inputs ... ok
+test contrast_overflow_errors_instead_of_returning_misleading_inference ... ok
+test rank_deficient_estimability_and_chunk_equivalence ... ok
+test r_ols_contrasts_and_explicit_covariance_gls ... ok
+test residual_variance_preserves_small_errors_on_large_offsets_across_blocks ... ok
+test feasible_gls_uses_corrected_noise_and_preserves_feature_block_fits ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/invalid_allocation.rs (/private/tmp/fmrimod-output-target/debug/deps/invalid_allocation-3d15656fa798a186)
+
+running 1 test
+test broadcast_nonfinite_data_is_rejected_before_numeric_allocation ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/output.rs (/private/tmp/fmrimod-output-target/debug/deps/output-c42651cf63946605)
+
+running 8 tests
+test gls_marginal_and_joint_match_independent_precision_solution ... ok
+test requests_preserve_estimability_and_allow_zero_scale ... ok
+test custom_transform_compatibility_and_transformed_validation ... ok
+test estimates_only_does_not_compute_overflowing_residual_squares ... ok
+test current_r_fixture_matches_requested_effects_and_standard_errors ... ok
+test analytic_joint_covariance_dependent_and_zero_estimands ... ok
+test near_collinear_estimand_variance_uses_stable_geometry ... ok
+test minimal_workspace_tail_strides_and_owned_summary_outlive_models ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/output_dataset.rs (/private/tmp/fmrimod-output-target/debug/deps/output_dataset-dee365fdf9ef4564)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/parallel.rs (/private/tmp/fmrimod-output-target/debug/deps/parallel-67f3d563a8542be1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/selected_arp_estimation.rs (/private/tmp/fmrimod-output-target/debug/deps/selected_arp_estimation-8134e785cd4b2f0e)
+
+running 3 tests
+test order_contracts_and_ar1_compatibility ... ok
+test independent_r_orders_two_to_four_and_diagnostics ... ok
+test arp_simulations_recovery_whitening_and_independent_target_coverage ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 12.84s
+
+     Running tests/selected_estimation.rs (/private/tmp/fmrimod-output-target/debug/deps/selected_estimation-8e23bc8aecbc8d18)
+
+running 4 tests
+test nonstationary_corrected_estimates_are_errors_not_clipped ... ok
+test unsupported_geometry_bad_residuals_and_singular_correction_error ... ok
+test selected_correction_and_fgls_match_independent_dense_r ... ok
+test stationary_simulations_check_recovery_whitening_and_conditional_coverage ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.14s
+
+     Running tests/selected_gls.rs (/private/tmp/fmrimod-output-target/debug/deps/selected_gls-0d4f1e661530dfdb)
+
+running 4 tests
+test invalid_selection_coefficients_shapes_and_short_runs ... ok
+test excluding_a_run_uses_retained_rank_and_rejects_its_contrast ... ok
+test no_gaps_matches_contiguous_kernels_and_selection_handles_strides ... ok
+test selected_arp_matches_dense_r_covariance_gls_and_inference ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/speed_contracts.rs (/private/tmp/fmrimod-output-target/debug/deps/speed_contracts-c08b29b411dd17c3)
+
+running 3 tests
+test workspaces_reject_invalid_inputs_and_recover_after_error ... ok
+test reused_gls_matches_independent_analytic_two_run_solution ... ok
+test analytic_variance_and_reuse_with_tail_blocks_and_strides ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fmrireg
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

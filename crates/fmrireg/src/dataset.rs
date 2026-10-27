@@ -205,7 +205,67 @@ pub fn fit_blocks_with_options<'m, M: BlockModel + Sync>(
     model: &'m M,
     reader: &mut dyn ArrayReader,
     options: BlockOptions,
-    mut sink: impl FnMut(Range<usize>, &FitView<'m, '_>) -> Result<()>,
+    sink: impl FnMut(Range<usize>, &FitView<'m, '_>) -> Result<()>,
+) -> Result<()> {
+    run_blocks(&FullFitKernel(model), reader, options, sink)
+}
+
+/// Private execution seam shared by full fits and requested summaries. Workers
+/// return owned workspaces; borrowed views are reconstructed on the sink thread.
+pub(crate) trait BlockKernel: Sync {
+    type Workspace: Send;
+    type View<'k, 'w>
+    where
+        Self: 'k;
+    fn observations(&self) -> usize;
+    fn workspace_bytes(&self, capacity: usize) -> Result<usize>;
+    fn workspace(&self, capacity: usize) -> Result<Self::Workspace>;
+    fn execute(&self, data: ArrayView2<'_, f64>, workspace: &mut Self::Workspace) -> Result<()>;
+    fn view<'k, 'w>(
+        &'k self,
+        workspace: &'w Self::Workspace,
+        features: usize,
+    ) -> Result<Self::View<'k, 'w>>;
+}
+
+struct FullFitKernel<'m, M>(&'m M);
+impl<'m, M: BlockModel + Sync> BlockKernel for FullFitKernel<'m, M> {
+    type Workspace = FitWorkspace;
+    type View<'k, 'w>
+        = FitView<'m, 'w>
+    where
+        Self: 'k;
+    fn observations(&self) -> usize {
+        self.0.observations()
+    }
+    fn workspace_bytes(&self, capacity: usize) -> Result<usize> {
+        FitWorkspace::required_bytes(
+            self.0.observations(),
+            self.0.columns(),
+            capacity,
+            self.0.time_buffers() == 2,
+        )
+    }
+    fn workspace(&self, capacity: usize) -> Result<FitWorkspace> {
+        self.0.workspace(capacity)
+    }
+    fn execute(&self, data: ArrayView2<'_, f64>, workspace: &mut FitWorkspace) -> Result<()> {
+        self.0.fit_reuse(data, workspace).map(|_| ())
+    }
+    fn view<'k, 'w>(
+        &'k self,
+        workspace: &'w FitWorkspace,
+        features: usize,
+    ) -> Result<FitView<'m, 'w>> {
+        Ok(workspace.view(self.0.prepared(), features))
+    }
+}
+
+pub(crate) fn run_blocks<'k, K: BlockKernel>(
+    kernel: &'k K,
+    reader: &mut dyn ArrayReader,
+    options: BlockOptions,
+    mut sink: impl for<'w> FnMut(Range<usize>, &K::View<'k, 'w>) -> Result<()>,
 ) -> Result<()> {
     use std::sync::mpsc::sync_channel;
     let [n, v] = reader.shape();
@@ -214,7 +274,7 @@ pub fn fit_blocks_with_options<'m, M: BlockModel + Sync>(
         workers,
         working_bytes,
     } = options;
-    if n != model.observations()
+    if n != kernel.observations()
         || v == 0
         || block_features == 0
         || workers == 0
@@ -227,8 +287,7 @@ pub fn fit_blocks_with_options<'m, M: BlockModel + Sync>(
     let capacity = block_features.min(v);
     let blocks = v.div_ceil(capacity);
     let workers = workers.min(blocks);
-    let fit_bytes =
-        FitWorkspace::required_bytes(n, model.columns(), capacity, model.time_buffers() == 2)?;
+    let fit_bytes = kernel.workspace_bytes(capacity)?;
     // Inspect estimates before allocating a workspace or reading any data.
     // Conservative reservation: each worker gets one maximum reader peak.
     let mut peak = 0;
@@ -270,27 +329,27 @@ pub fn fit_blocks_with_options<'m, M: BlockModel + Sync>(
             .map_err(|_| FitError::Invalid("block shape"))
     };
     if workers == 1 {
-        let mut workspace = model.workspace(capacity)?;
+        let mut workspace = kernel.workspace(capacity)?;
         for start in (0..v).step_by(capacity) {
             let range = start..start.saturating_add(capacity).min(v);
             let data = read(range.clone())?;
-            let fit = model.fit_reuse(data.view(), &mut workspace)?;
-            sink(range, &fit)?;
+            kernel.execute(data.view(), &mut workspace)?;
+            sink(range.clone(), &kernel.view(&workspace, range.len())?)?;
         }
         return Ok(());
     }
-    type Task = (Range<usize>, ndarray::Array2<f64>, FitWorkspace);
-    type Completed = (Range<usize>, FitWorkspace, Result<()>);
+    type Task<W> = (Range<usize>, ndarray::Array2<f64>, W);
+    type Completed<W> = (Range<usize>, W, Result<()>);
     std::thread::scope(|scope| {
         let mut channels = Vec::with_capacity(workers);
         for _ in 0..workers {
-            let workspace = model.workspace(capacity)?;
-            let (send_task, tasks) = sync_channel::<Task>(1);
-            let (send_result, results) = sync_channel::<Completed>(1);
+            let workspace = kernel.workspace(capacity)?;
+            let (send_task, tasks) = sync_channel::<Task<K::Workspace>>(1);
+            let (send_result, results) = sync_channel::<Completed<K::Workspace>>(1);
             std::thread::Builder::new()
                 .spawn_scoped(scope, move || {
                     while let Ok((range, data, mut workspace)) = tasks.recv() {
-                        let result = model.fit_reuse(data.view(), &mut workspace).map(|_| ());
+                        let result = kernel.execute(data.view(), &mut workspace);
                         drop(data);
                         if send_result.send((range, workspace, result)).is_err() {
                             break;
@@ -314,10 +373,7 @@ pub fn fit_blocks_with_options<'m, M: BlockModel + Sync>(
                 .recv()
                 .map_err(|_| FitError::Invalid("fitting worker stopped"))?;
             result?;
-            sink(
-                range.clone(),
-                &workspace.view(model.prepared(), range.len()),
-            )?;
+            sink(range.clone(), &kernel.view(&workspace, range.len())?)?;
             if next < v {
                 let range = next..next.saturating_add(capacity).min(v);
                 let data = read(range.clone())?;

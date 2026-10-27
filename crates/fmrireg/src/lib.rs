@@ -7,6 +7,9 @@ use nalgebra::DMatrix;
 use ndarray::{Array1, Array2, ArrayView1, ArrayView2, ArrayViewMut1, ArrayViewMut2};
 mod backend;
 mod finite;
+pub mod output;
+#[cfg(feature = "dataset")]
+pub mod output_dataset;
 mod workspace;
 pub use backend::MatrixBackend;
 use statrs::distribution::{ContinuousCDF, FisherSnedecor, StudentsT};

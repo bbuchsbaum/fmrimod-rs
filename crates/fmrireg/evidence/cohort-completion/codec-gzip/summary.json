@@ -1,0 +1,105 @@
+{
+  "summary": [
+    {
+      "mode": "resident",
+      "peak_rss_max_bytes": 729333760,
+      "cases": {
+        "first": {
+          "median_ms": 1271.0401250078576,
+          "min_ms": 1265.9217080072267,
+          "max_ms": 1271.1961250024615
+        },
+        "contrast": {
+          "median_ms": 174.46791699330788,
+          "min_ms": 172.66441699757706,
+          "max_ms": 174.9802499980433
+        },
+        "repeat": {
+          "median_ms": 171.55912501038983,
+          "min_ms": 170.71670800214633,
+          "max_ms": 175.47379099414684
+        },
+        "design": {
+          "median_ms": 369.1364580008667,
+          "min_ms": 365.3508329880424,
+          "max_ms": 384.3603749992326
+        },
+        "estimates-only": {
+          "median_ms": 153.58045800530817,
+          "min_ms": 152.99233300902415,
+          "max_ms": 155.58350000355858
+        }
+      }
+    },
+    {
+      "mode": "detached",
+      "peak_rss_max_bytes": 750092288,
+      "cases": {
+        "first": {
+          "median_ms": 1197.4266670004,
+          "min_ms": 1180.8168749994365,
+          "max_ms": 1211.3154169928748
+        },
+        "contrast": {
+          "median_ms": 173.54491699370556,
+          "min_ms": 169.9217499990482,
+          "max_ms": 174.70883400528692
+        },
+        "repeat": {
+          "median_ms": 172.64620900095906,
+          "min_ms": 170.82191600638907,
+          "max_ms": 172.71233299106825
+        },
+        "design": {
+          "median_ms": 1061.075792007614,
+          "min_ms": 1041.1331250070361,
+          "max_ms": 1072.223084003781
+        },
+        "estimates-only": {
+          "median_ms": 153.52720800729003,
+          "min_ms": 153.04679199471138,
+          "max_ms": 159.25425000023097
+        }
+      }
+    },
+    {
+      "mode": "files",
+      "peak_rss_max_bytes": 791363584,
+      "cases": {
+        "first": {
+          "median_ms": 1179.5192919962574,
+          "min_ms": 1162.1468329976778,
+          "max_ms": 1204.0547920041718
+        },
+        "contrast": {
+          "median_ms": 1047.675124995294,
+          "min_ms": 1034.4989580044057,
+          "max_ms": 1051.39949999284
+        },
+        "repeat": {
+          "median_ms": 1042.0981670031324,
+          "min_ms": 1027.6305000006687,
+          "max_ms": 1056.8542910041288
+        },
+        "design": {
+          "median_ms": 1047.4984159955056,
+          "min_ms": 1045.5718339944724,
+          "max_ms": 1051.265375004732
+        },
+        "estimates-only": {
+          "median_ms": 1012.6264580030693,
+          "min_ms": 1005.9782079915749,
+          "max_ms": 1025.3142500005197
+        }
+      }
+    }
+  ],
+  "repeats": 3,
+  "binary_sha256": "8a86ae5155c3ed96f76732b561341b645251e53f6f57fcfbe0288b6d0ac503e3",
+  "timing": "Submission to complete JSON response parsed; no browser. Fresh process each repeat, OS cache uncontrolled.",
+  "threads": {
+    "requested_workers": 4,
+    "blas": 1
+  },
+  "numpy": "2.4.3"
+}

@@ -1,0 +1,33 @@
+{
+  "cohort-server.json:server_pid": {
+    "pid": 61755,
+    "present": false
+  },
+  "cohort-server.json:backend_pid": {
+    "pid": 61848,
+    "present": false
+  },
+  "cohort-server-final.json:server_pid": {
+    "pid": 75113,
+    "present": false
+  },
+  "cohort-server-final.json:backend_pid": {
+    "pid": 75139,
+    "present": false
+  },
+  "cohort-browser-input": {
+    "removed": true
+  },
+  "cohort-wholebrain-input": {
+    "removed": true
+  },
+  "cohort-long-input": {
+    "removed": true
+  },
+  "cohort-codec-gzip": {
+    "removed": true
+  },
+  "cohort-codec-raw": {
+    "removed": true
+  }
+}

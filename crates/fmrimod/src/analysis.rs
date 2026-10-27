@@ -5,7 +5,9 @@ use crate::{
     cohort::{run_cohort, CohortOptions},
     ingress::{file_preflight, load_subjects, FileSession, LoadOptions, NiftiSubject},
     outputs::{compile_requirements, CompiledOutput, ConsumerRequirement, OutputRequirementError},
-    session::{ModelSpec, NoisePolicy, SessionError, SubjectOutput, SubjectSession},
+    session::{
+        DetachedSession, ModelSpec, NoisePolicy, SessionError, SubjectOutput, SubjectSession,
+    },
 };
 use fmrireg::output::{OutputSpec, Uncertainty};
 use std::{error::Error, fmt};
@@ -54,6 +56,8 @@ pub enum StoragePolicy {
     Auto,
     Resident,
     FileBatches,
+    /// Keep fitted coefficients/scales; release time series after each fit.
+    RetainedFits,
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RetentionPolicy {
@@ -64,6 +68,8 @@ pub enum RetentionPolicy {
 pub enum StorageMode {
     Resident,
     FileBatches,
+    /// Keep fitted coefficients/scales; release time series after each fit.
+    RetainedFits,
 }
 #[derive(Clone, Copy, Debug)]
 pub struct ExecutionPolicy {
@@ -105,6 +111,7 @@ pub enum DataAction {
     Load,
     ReuseResident,
     Reload,
+    NotNeeded,
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ModelAction {
@@ -156,6 +163,19 @@ enum State {
     Empty,
     Resident(Vec<SubjectSession>),
     Files(Vec<FileSession>),
+    Retained {
+        sessions: Vec<Option<DetachedSession>>,
+        reads: usize,
+    },
+}
+
+/// Callback checkpoints occur before work and between load/preparation/output batches.
+/// Returning an error cancels future dispatch; already active jobs finish and join.
+#[derive(Clone, Copy, Debug)]
+pub struct AnalysisProgress {
+    pub phase: &'static str,
+    pub completed_subjects: usize,
+    pub total_subjects: usize,
 }
 
 /// One entry point for planning and repeated execution. Sources are immutable for
@@ -184,7 +204,14 @@ impl CohortAnalysis {
         if policy.storage == StoragePolicy::FileBatches && policy.retention != RetentionPolicy::None
         {
             return Err(AnalysisError::Invalid(
-                "fit retention requires resident storage",
+                "file batches cannot retain fits; select RetainedFits storage",
+            ));
+        }
+        if policy.storage == StoragePolicy::RetainedFits
+            && policy.retention == RetentionPolicy::None
+        {
+            return Err(AnalysisError::Invalid(
+                "RetainedFits storage requires explicit coefficient retention",
             ));
         }
         let (sources, requests): (Vec<_>, Vec<_>) =
@@ -232,11 +259,20 @@ impl CohortAnalysis {
         match (&self.state, mode) {
             (State::Resident(s), StorageMode::Resident) => s[i].matches_model(model),
             (State::Files(s), StorageMode::FileBatches) => s[i].matches_model(model),
+            (State::Retained { sessions, .. }, StorageMode::RetainedFits) => {
+                sessions[i].as_ref().is_some_and(|s| s.matches_model(model))
+            }
             _ => false,
         }
     }
     fn retained_reused(&self, i: usize, model: &ModelSpec) -> bool {
-        matches!(&self.state,State::Resident(s) if s[i].matches_model(model) && s[i].retained_numeric_bytes()>0)
+        match &self.state {
+            State::Resident(s) => s[i].matches_model(model) && s[i].retained_numeric_bytes() > 0,
+            State::Retained { sessions, .. } => {
+                sessions[i].as_ref().is_some_and(|s| s.matches_model(model))
+            }
+            _ => false,
+        }
     }
     fn plan_for(
         &self,
@@ -253,7 +289,7 @@ impl CohortAnalysis {
             || self.policy.retention != RetentionPolicy::None
             || (self.policy.storage == StoragePolicy::Auto
                 && self.policy.expected_use == ExpectedUse::ContrastExploration);
-        let resident = if wants_resident {
+        let resident = if wants_resident && self.policy.storage != StoragePolicy::RetainedFits {
             self.resident_plan(models, &requests, limit)?
         } else {
             None
@@ -265,6 +301,13 @@ impl CohortAnalysis {
                 bytes,
                 "resident data supports repeated requests; retention is explicit",
             )
+        } else if self.policy.storage == StoragePolicy::RetainedFits
+            || (self.policy.storage == StoragePolicy::Auto
+                && self.policy.retention != RetentionPolicy::None)
+        {
+            let (workers, required, _) = self.detached_plan(models, &requests, limit)?;
+            (StorageMode::RetainedFits, workers, required,
+             "retained fits answer contrasts without time series; changed models reload bounded subject batches")
         } else {
             if self.policy.storage == StoragePolicy::Resident
                 || self.policy.retention != RetentionPolicy::None
@@ -327,6 +370,14 @@ impl CohortAnalysis {
             let reused = self.model_reused(i, model, mode);
             let data_action = match (&self.state, mode) {
                 (State::Resident(_), StorageMode::Resident) => DataAction::ReuseResident,
+                (State::Retained { .. }, StorageMode::RetainedFits) if reused => {
+                    DataAction::NotNeeded
+                }
+                (State::Retained { sessions, .. }, StorageMode::RetainedFits)
+                    if sessions[i].is_some() =>
+                {
+                    DataAction::Reload
+                }
                 (State::Files(s), StorageMode::FileBatches) if s[i].read_count() > 0 => {
                     DataAction::Reload
                 }
@@ -346,7 +397,9 @@ impl CohortAnalysis {
                 },
                 fit: if self.policy.retention == RetentionPolicy::None {
                     FitAction::ScanData
-                } else if self.retained_reused(i, model) && mode == StorageMode::Resident {
+                } else if self.retained_reused(i, model)
+                    && (mode == StorageMode::Resident || mode == StorageMode::RetainedFits)
+                {
                     FitAction::UseRetainedFit
                 } else {
                     FitAction::BuildRetainedFit
@@ -448,9 +501,99 @@ impl CohortAnalysis {
         }
         Ok(None)
     }
+    fn detached_plan(
+        &self,
+        models: &[ModelSpec],
+        requests: &[OutputSpec],
+        limit: usize,
+    ) -> Result<(usize, usize, Vec<usize>)> {
+        let mut base = 0;
+        let mut jobs = Vec::new();
+        for (i, (source, model)) in self.sources.iter().zip(models).enumerate() {
+            let old = match &self.state {
+                State::Retained { sessions, .. } => sessions[i].as_ref(),
+                _ => None,
+            };
+            base = add(
+                base,
+                old.map_or(Ok(0), DetachedSession::resident_numeric_bytes)?,
+            )?;
+            if old.is_some_and(|s| s.matches_model(model)) {
+                jobs.push(old.unwrap().run_required_bytes(
+                    &requests[i],
+                    self.policy.block_features,
+                    true,
+                )?);
+            } else {
+                let n = model.design.nrows();
+                let p = model.design.ncols();
+                let v = source.shape()[1];
+                let retained = mul(mul(add(p, 1)?, v)?, 8)?;
+                // Reserve all old caches and every replacement, even though replacements
+                // are committed individually. Decoder/data, prepare, fit and output work
+                // are conservatively summed; active jobs cannot exceed this forecast.
+                base = add(base, add(model.resident_bytes()?, retained)?)?;
+                let rows = add(
+                    add(
+                        mul(
+                            n,
+                            if matches!(model.noise, NoisePolicy::Ols) {
+                                1
+                            } else {
+                                2
+                            },
+                        )?,
+                        p,
+                    )?,
+                    1,
+                )?;
+                let fit_work = mul(mul(rows, self.policy.block_features.min(v))?, 8)?;
+                jobs.push(add(
+                    add(source.load_required_bytes(), model.preparation_bytes()?)?,
+                    add(
+                        fit_work,
+                        model.execution_bytes(v, &requests[i], self.policy.block_features)?,
+                    )?,
+                )?);
+            }
+        }
+        let reservation = |workers: usize| -> Result<usize> {
+            let mut peak = 0;
+            for batch in jobs.chunks(workers) {
+                peak = peak.max(batch.iter().try_fold(0usize, |a, b| add(a, *b))?);
+            }
+            add(base, peak)
+        };
+        let mut workers = self.policy.workers.min(models.len());
+        while workers > 1 && reservation(workers)? > limit {
+            workers -= 1;
+        }
+        let required = reservation(workers)?;
+        if required > limit {
+            return Err(SessionError::Budget {
+                required,
+                budget: limit,
+            }
+            .into());
+        }
+        Ok((workers, required, jobs))
+    }
     fn counts(&self) -> (usize, usize, usize) {
         match &self.state {
             State::Empty => (0, 0, 0),
+            State::Retained { sessions, reads } => (
+                *reads,
+                sessions
+                    .iter()
+                    .flatten()
+                    .map(|s| s.preparation_counts().prepared)
+                    .sum(),
+                sessions
+                    .iter()
+                    .flatten()
+                    .map(|s| s.preparation_counts().reused)
+                    .sum(),
+            ),
             State::Resident(s) => (
                 s.iter().map(SubjectSession::read_count).sum(),
                 s.iter().map(|s| s.preparation_counts().prepared).sum(),
@@ -468,17 +611,38 @@ impl CohortAnalysis {
     /// No process-wide BLAS settings are changed.
     pub fn run(
         &mut self,
+        sink: impl FnMut(
+            usize,
+            &SubjectOutput,
+            &CompiledOutput,
+        ) -> std::result::Result<(), SessionError>,
+    ) -> Result<ExecutionReceipt> {
+        self.run_with_progress(|_| Ok(()), sink)
+    }
+    /// Fallible progress callbacks provide cooperative cancellation. Callbacks run
+    /// on the caller thread; an active subject batch always finishes before return.
+    pub fn run_with_progress(
+        &mut self,
+        mut progress: impl FnMut(AnalysisProgress) -> std::result::Result<(), SessionError>,
         mut sink: impl FnMut(
             usize,
             &SubjectOutput,
             &CompiledOutput,
         ) -> std::result::Result<(), SessionError>,
     ) -> Result<ExecutionReceipt> {
+        let total_subjects = self.sources.len();
+        progress(AnalysisProgress {
+            phase: "starting",
+            completed_subjects: 0,
+            total_subjects,
+        })?;
         let plan = self.inspect()?;
-        if matches!(
+        if !matches!(
             (&self.state, plan.storage),
-            (State::Resident(_), StorageMode::FileBatches)
-                | (State::Files(_), StorageMode::Resident)
+            (State::Empty, _)
+                | (State::Resident(_), StorageMode::Resident)
+                | (State::Files(_), StorageMode::FileBatches)
+                | (State::Retained { .. }, StorageMode::RetainedFits)
         ) {
             self.state = State::Empty;
         }
@@ -487,16 +651,36 @@ impl CohortAnalysis {
         let limit = self.policy.max_numeric_bytes - self.policy.external_reserved_bytes;
         if matches!(self.state, State::Empty) {
             self.state = match plan.storage {
-                StorageMode::Resident => State::Resident(
-                    load_subjects(
-                        &self.sources,
-                        LoadOptions {
-                            workers: plan.workers,
-                            max_numeric_bytes: limit,
-                        },
-                    )?
-                    .0,
-                ),
+                StorageMode::Resident => {
+                    let mut sessions = Vec::new();
+                    let mut loaded = 0;
+                    for batch in self.sources.chunks(plan.workers) {
+                        progress(AnalysisProgress {
+                            phase: "loading",
+                            completed_subjects: sessions.len(),
+                            total_subjects,
+                        })?;
+                        let (mut next, _) = load_subjects(
+                            batch,
+                            LoadOptions {
+                                workers: plan.workers,
+                                max_numeric_bytes: limit - loaded,
+                            },
+                        )?;
+                        loaded = add(
+                            loaded,
+                            batch
+                                .iter()
+                                .try_fold(0usize, |a, s| add(a, s.data_bytes()))?,
+                        )?;
+                        sessions.append(&mut next);
+                    }
+                    State::Resident(sessions)
+                }
+                StorageMode::RetainedFits => State::Retained {
+                    sessions: (0..total_subjects).map(|_| None).collect(),
+                    reads: 0,
+                },
                 StorageMode::FileBatches => {
                     State::Files(self.sources.iter().cloned().map(FileSession::new).collect())
                 }
@@ -512,9 +696,19 @@ impl CohortAnalysis {
             block_features: self.policy.block_features,
             max_numeric_bytes: limit,
         };
+        let detached_jobs = if plan.storage == StorageMode::RetainedFits {
+            self.detached_plan(&self.models, &requests, limit)?.2
+        } else {
+            Vec::new()
+        };
         match &mut self.state {
             State::Resident(sessions) => {
                 for i in 0..sessions.len() {
+                    progress(AnalysisProgress {
+                        phase: "preparing",
+                        completed_subjects: i,
+                        total_subjects,
+                    })?;
                     let total = sessions
                         .iter()
                         .try_fold(0usize, |n, s| add(n, s.resident_numeric_bytes()?))?;
@@ -537,7 +731,17 @@ impl CohortAnalysis {
                         builds += usize::from(fresh);
                     }
                 }
+                progress(AnalysisProgress {
+                    phase: "fitting",
+                    completed_subjects: 0,
+                    total_subjects,
+                })?;
                 run_cohort(sessions, &requests, options, |i, out| {
+                    progress(AnalysisProgress {
+                        phase: "fitting",
+                        completed_subjects: i + 1,
+                        total_subjects,
+                    })?;
                     sink(i, out, &self.outputs[i])
                 })?;
             }
@@ -547,8 +751,68 @@ impl CohortAnalysis {
                     &self.models,
                     &requests,
                     options,
-                    |i, out| sink(i, out, &self.outputs[i]),
+                    |i, out| {
+                        progress(AnalysisProgress {
+                            phase: "fitting",
+                            completed_subjects: i + 1,
+                            total_subjects,
+                        })?;
+                        sink(i, out, &self.outputs[i])
+                    },
                 )?;
+            }
+            State::Retained { sessions, reads } => {
+                for (batch_index, batch) in sessions.chunks_mut(plan.workers).enumerate() {
+                    let start = batch_index * plan.workers;
+                    progress(AnalysisProgress {
+                        phase: "fitting",
+                        completed_subjects: start,
+                        total_subjects,
+                    })?;
+                    std::thread::scope(|scope| -> Result<()> {
+                        let mut handles = Vec::new();
+                        for (offset, slot) in batch.iter_mut().enumerate() {
+                            let i = start + offset;
+                            let source = &self.sources[i];
+                            let model = &self.models[i];
+                            let output = &requests[i];
+                            let block = self.policy.block_features;
+                            let job = detached_jobs[i];
+                            // Count attempted reads even when a later load/preparation fails.
+                            let fresh = !slot.as_ref().is_some_and(|s| s.matches_model(model));
+                            *reads += usize::from(fresh);
+                            handles.push(scope.spawn(move || -> std::result::Result<(SubjectOutput, bool), SessionError> {
+                                if fresh {
+                                    let loaded = source.load(source.load_required_bytes())?;
+                                    let mut candidate = match slot.as_ref() {
+                                        Some(old) => old.replacement(loaded)?,
+                                        None => SubjectSession::new(loaded),
+                                    };
+                                    candidate.prepare(model, model.preparation_bytes()?)?;
+                                    let retention = candidate.retention_required_bytes(block)?;
+                                    candidate.retain_for_edits(block, retention)?;
+                                    *slot = Some(candidate.detach());
+                                } else { slot.as_mut().unwrap().record_reuse(); }
+                                let output = slot.as_ref().unwrap().run_owned(output, block, job)?;
+                                Ok((output, fresh))
+                            }));
+                        }
+                        for (offset, handle) in handles.into_iter().enumerate() {
+                            let (out, fresh) = handle.join().map_err(|_| {
+                                SessionError::Invalid("retained subject worker panicked")
+                            })??;
+                            builds += usize::from(fresh);
+                            let i = start + offset;
+                            progress(AnalysisProgress {
+                                phase: "fitting",
+                                completed_subjects: i + 1,
+                                total_subjects,
+                            })?;
+                            sink(i, &out, &self.outputs[i])?;
+                        }
+                        Ok(())
+                    })?;
+                }
             }
             State::Empty => unreachable!(),
         }

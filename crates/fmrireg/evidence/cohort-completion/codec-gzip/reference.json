@@ -1,0 +1,10 @@
+{
+  "max_absolute_errors": {
+    "effect": 1.7260359808091152e-12,
+    "variance": 5.447031714567174e-16,
+    "group_effect": 8.937017792476354e-13,
+    "group_se": 1.253129544576126e-12
+  },
+  "tolerance": 2e-09,
+  "scope": "Four probes per subject across changed contrasts/design and estimates-only; conditional on exported AR coefficients, not independent noise estimation."
+}

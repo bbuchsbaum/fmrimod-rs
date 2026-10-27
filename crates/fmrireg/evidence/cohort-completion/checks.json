@@ -1,0 +1,20 @@
+{
+  "platform": "macOS-14.3-arm64-arm-64bit-Mach-O",
+  "cpu": "Apple M3 Max",
+  "memory_bytes": 38654705664,
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "zlib": "1.2.12",
+  "binary_sha256": "8a86ae5155c3ed96f76732b561341b645251e53f6f57fcfbe0288b6d0ac503e3",
+  "checks": {
+    "affected_rust_tests": 108,
+    "controller_tests": 7,
+    "clippy_exit": 0,
+    "portable_build_exit": 0,
+    "release_build_exit": 0,
+    "browser_exit": 0,
+    "larger_and_codec_processes": 36,
+    "larger_and_codec_requests": 180
+  },
+  "scope": "Qualified provider baseline in isolated complete source checkpoint; shared in-progress provider additions excluded. Cached dependencies reused, no empty-cache claim."
+}

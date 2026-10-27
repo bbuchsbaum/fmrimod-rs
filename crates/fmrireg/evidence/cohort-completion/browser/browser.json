@@ -1,0 +1,3055 @@
+{
+  "backend": "installed Playwright Chromium",
+  "headless": true,
+  "playwright": "1.62.1",
+  "browser": "151.0.7922.34",
+  "owner_node_pid": 75889,
+  "profile": "fresh ephemeral context",
+  "cases": [
+    {
+      "name": "cold-estimated",
+      "timing": {
+        "sequence": 1,
+        "command": {
+          "action": "run",
+          "phase": 0,
+          "contrast": "task",
+          "noise": "estimated",
+          "group": "ols",
+          "mode": "resident",
+          "variance": true
+        },
+        "request_start_ms": 83.40000000596046,
+        "render_opportunity_ms": 1806,
+        "server_ms": 1730.1115,
+        "screenshot_confirmed_upper_bound_ms": 1870.0999999940395
+      },
+      "reads": 25,
+      "prepares": 25,
+      "builds": 25,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "resident data supports repeated requests; retention is explicit",
+        "reserved_numeric_bytes": 1105109696,
+        "retention": "CoefficientsAndScale",
+        "storage": "Resident",
+        "subjects": [
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-00",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-01",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-02",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-03",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-04",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-05",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-06",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-07",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-08",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-09",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-10",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-11",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-12",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-13",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-14",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-15",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-16",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-17",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-18",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-19",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-20",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-21",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-22",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-23",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-24",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          }
+        ],
+        "workers": 4
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": true,
+      "painted": 1264,
+      "screenshot": "cold-estimated.png"
+    },
+    {
+      "name": "contrast-edit",
+      "timing": {
+        "sequence": 2,
+        "command": {
+          "action": "run",
+          "phase": 0,
+          "contrast": "difference",
+          "noise": "estimated",
+          "group": "ols",
+          "mode": "resident",
+          "variance": true
+        },
+        "request_start_ms": 2016.300000011921,
+        "render_opportunity_ms": 106.19999998807907,
+        "server_ms": 29.40425,
+        "screenshot_confirmed_upper_bound_ms": 158.69999998807907
+      },
+      "reads": 0,
+      "prepares": 0,
+      "builds": 0,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "resident data supports repeated requests; retention is explicit",
+        "reserved_numeric_bytes": 1105109696,
+        "retention": "CoefficientsAndScale",
+        "storage": "Resident",
+        "subjects": [
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-00",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-01",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-02",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-03",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-04",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-05",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-06",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-07",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-08",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-09",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-10",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-11",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-12",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-13",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-14",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-15",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-16",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-17",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-18",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-19",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-20",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-21",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-22",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-23",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-24",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          }
+        ],
+        "workers": 4
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": true,
+      "painted": 1264,
+      "screenshot": "contrast-edit.png"
+    },
+    {
+      "name": "design-edit",
+      "timing": {
+        "sequence": 3,
+        "command": {
+          "action": "run",
+          "phase": 0.18,
+          "contrast": "difference",
+          "noise": "estimated",
+          "group": "ols",
+          "mode": "resident",
+          "variance": true
+        },
+        "request_start_ms": 2202,
+        "render_opportunity_ms": 587.1000000089407,
+        "server_ms": 510.03475,
+        "screenshot_confirmed_upper_bound_ms": 640.4000000059605
+      },
+      "reads": 0,
+      "prepares": 25,
+      "builds": 25,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "resident data supports repeated requests; retention is explicit",
+        "reserved_numeric_bytes": 1136548896,
+        "retention": "CoefficientsAndScale",
+        "storage": "Resident",
+        "subjects": [
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-00",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-01",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-02",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-03",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-04",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-05",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-06",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-07",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-08",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-09",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-10",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-11",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-12",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-13",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-14",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-15",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-16",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-17",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-18",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-19",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-20",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-21",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-22",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-23",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-24",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          }
+        ],
+        "workers": 4
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": true,
+      "painted": 1264,
+      "screenshot": "design-edit.png"
+    },
+    {
+      "name": "repeat",
+      "timing": {
+        "sequence": 4,
+        "command": {
+          "action": "run",
+          "phase": 0.18,
+          "contrast": "difference",
+          "noise": "estimated",
+          "group": "ols",
+          "mode": "resident",
+          "variance": true
+        },
+        "request_start_ms": 2857.300000011921,
+        "render_opportunity_ms": 107.19999998807907,
+        "server_ms": 28.69125,
+        "screenshot_confirmed_upper_bound_ms": 168.59999999403954
+      },
+      "reads": 0,
+      "prepares": 0,
+      "builds": 0,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "resident data supports repeated requests; retention is explicit",
+        "reserved_numeric_bytes": 1105109696,
+        "retention": "CoefficientsAndScale",
+        "storage": "Resident",
+        "subjects": [
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-00",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-01",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-02",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-03",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-04",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-05",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-06",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-07",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-08",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-09",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-10",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-11",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-12",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-13",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-14",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-15",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-16",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-17",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-18",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-19",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-20",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-21",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-22",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-23",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-24",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          }
+        ],
+        "workers": 4
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": true,
+      "painted": 1264,
+      "screenshot": "repeat.png"
+    },
+    {
+      "name": "estimates-only",
+      "timing": {
+        "sequence": 5,
+        "command": {
+          "action": "run",
+          "phase": 0.18,
+          "contrast": "difference",
+          "noise": "estimated",
+          "group": "ols",
+          "mode": "resident",
+          "variance": false
+        },
+        "request_start_ms": 3057.300000011921,
+        "render_opportunity_ms": 98.3999999910593,
+        "server_ms": 20.453333,
+        "screenshot_confirmed_upper_bound_ms": 150
+      },
+      "reads": 0,
+      "prepares": 0,
+      "builds": 0,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "resident data supports repeated requests; retention is explicit",
+        "reserved_numeric_bytes": 1096514208,
+        "retention": "CoefficientsAndScale",
+        "storage": "Resident",
+        "subjects": [
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-00",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-01",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-02",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-03",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-04",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-05",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-06",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-07",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-08",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-09",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-10",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-11",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-12",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-13",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-14",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-15",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-16",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-17",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-18",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-19",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-20",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-21",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-22",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-23",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          },
+          {
+            "data": "ReuseResident",
+            "estimands": [
+              "task"
+            ],
+            "fit": "UseRetainedFit",
+            "id": "sub-24",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "None"
+          }
+        ],
+        "workers": 4
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": false,
+      "painted": 1264,
+      "screenshot": "estimates-only.png"
+    },
+    {
+      "name": "file-batches",
+      "timing": {
+        "sequence": 6,
+        "command": {
+          "action": "run",
+          "phase": 0.18,
+          "contrast": "difference",
+          "noise": "estimated",
+          "group": "ols",
+          "mode": "files",
+          "variance": true
+        },
+        "request_start_ms": 3243.4000000059605,
+        "render_opportunity_ms": 2420.5999999940395,
+        "server_ms": 2347.555167,
+        "screenshot_confirmed_upper_bound_ms": 2465.0999999940395
+      },
+      "reads": 25,
+      "prepares": 25,
+      "builds": 0,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "one-shot or explicitly selected file batches release time series",
+        "reserved_numeric_bytes": 104418736,
+        "retention": "None",
+        "storage": "FileBatches",
+        "subjects": [
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-00",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-01",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-02",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-03",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-04",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-05",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-06",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-07",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-08",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-09",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-10",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-11",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-12",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-13",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-14",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-15",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-16",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-17",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-18",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-19",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-20",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-21",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-22",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-23",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-24",
+            "model": "EstimateNoise",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          }
+        ],
+        "workers": 2
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": true,
+      "painted": 1264,
+      "screenshot": "file-batches.png"
+    },
+    {
+      "name": "file-contrast",
+      "timing": {
+        "sequence": 7,
+        "command": {
+          "action": "run",
+          "phase": 0.18,
+          "contrast": "task",
+          "noise": "estimated",
+          "group": "ols",
+          "mode": "files",
+          "variance": true
+        },
+        "request_start_ms": 5724,
+        "render_opportunity_ms": 2147.6000000089407,
+        "server_ms": 2073.4630420000003,
+        "screenshot_confirmed_upper_bound_ms": 2192.2000000029802
+      },
+      "reads": 25,
+      "prepares": 0,
+      "builds": 0,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "one-shot or explicitly selected file batches release time series",
+        "reserved_numeric_bytes": 104418736,
+        "retention": "None",
+        "storage": "FileBatches",
+        "subjects": [
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-00",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-01",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-02",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-03",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-04",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-05",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-06",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-07",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-08",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-09",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-10",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-11",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-12",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-13",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-14",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-15",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-16",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-17",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-18",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-19",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-20",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-21",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-22",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-23",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-24",
+            "model": "Reuse",
+            "noise": "EstimateAr { run_lengths: [120, 120], noise_valid: None, order: 2, correction_max_lag: 4, pooling: Run, startup: ZeroHistory, feature_indices: [0, 341, 682, 1023, 1364, 1705, 2046, 2387, 2728, 3069, 3410, 3751, 4092, 4433, 4774, 5115, 5456, 5797, 6138, 6479, 6820, 7161, 7502, 7843, 8184, 8525, 8866, 9207, 9548, 9889, 10230, 10571, 10912, 11253, 11594, 11935, 12276, 12617, 12958, 13299, 13640, 13981, 14322, 14663, 15004, 15345, 15686, 16027, 16368, 16709, 17050, 17391, 17732, 18073, 18414, 18755, 19096, 19437, 19778, 20119, 20460, 20801, 21142, 21483] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          }
+        ],
+        "workers": 2
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": true,
+      "painted": 1264,
+      "screenshot": "file-contrast.png"
+    },
+    {
+      "name": "fixed-noise",
+      "timing": {
+        "sequence": 8,
+        "command": {
+          "action": "run",
+          "phase": 0.18,
+          "contrast": "task",
+          "noise": "fixed",
+          "group": "ols",
+          "mode": "files",
+          "variance": true
+        },
+        "request_start_ms": 7932.70000000298,
+        "render_opportunity_ms": 2156.2999999970198,
+        "server_ms": 2078.926916,
+        "screenshot_confirmed_upper_bound_ms": 2200.1000000089407
+      },
+      "reads": 25,
+      "prepares": 25,
+      "builds": 0,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "one-shot or explicitly selected file batches release time series",
+        "reserved_numeric_bytes": 104320016,
+        "retention": "None",
+        "storage": "FileBatches",
+        "subjects": [
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-00",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-01",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-02",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-03",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-04",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-05",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-06",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-07",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-08",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-09",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-10",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-11",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-12",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-13",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-14",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-15",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-16",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-17",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-18",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-19",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-20",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-21",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-22",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-23",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Reload",
+            "estimands": [
+              "task"
+            ],
+            "fit": "ScanData",
+            "id": "sub-24",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          }
+        ],
+        "workers": 2
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": true,
+      "painted": 1264,
+      "screenshot": "fixed-noise.png"
+    },
+    {
+      "name": "meta-detached",
+      "timing": {
+        "sequence": 9,
+        "command": {
+          "action": "run",
+          "phase": 0.18,
+          "contrast": "task",
+          "noise": "fixed",
+          "group": "meta",
+          "mode": "detached",
+          "variance": true
+        },
+        "request_start_ms": 10155.90000000596,
+        "render_opportunity_ms": 1483,
+        "server_ms": 1393.315583,
+        "screenshot_confirmed_upper_bound_ms": 1534.5
+      },
+      "reads": 25,
+      "prepares": 25,
+      "builds": 25,
+      "plan": {
+        "external_reserved_bytes": 8729600,
+        "reason": "retained fits answer contrasts without time series; changed models reload bounded subject batches",
+        "reserved_numeric_bytes": 243768448,
+        "retention": "CoefficientsAndScale",
+        "storage": "RetainedFits",
+        "subjects": [
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-00",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-01",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-02",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-03",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-04",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-05",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-06",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-07",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-08",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-09",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-10",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-11",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-12",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-13",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-14",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-15",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-16",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-17",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-18",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-19",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-20",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-21",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-22",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-23",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          },
+          {
+            "data": "Load",
+            "estimands": [
+              "task"
+            ],
+            "fit": "BuildRetainedFit",
+            "id": "sub-24",
+            "model": "Prepare",
+            "noise": "FixedAr { run_lengths: [120, 120], coefficients: [[0.4, -0.12], [0.2, 0.05]], startup: ZeroHistory, resets: [] }",
+            "tolerance": 1e-12,
+            "uncertainty": "Marginal"
+          }
+        ],
+        "workers": 4
+      },
+      "features": 21824,
+      "finite": true,
+      "variance": true,
+      "painted": 1264,
+      "screenshot": "meta-detached.png"
+    }
+  ],
+  "outcomes": {
+    "rapid_latest_wins": true,
+    "delayed_ack_latest_wins": true,
+    "cancelled": true,
+    "recovered": true
+  },
+  "slider_endpoints": [
+    0,
+    31
+  ],
+  "page_errors": [],
+  "timing_definition": "Browser performance clock: request submission through canvas update and two animation frames; screenshot completion is a render-confirmed upper bound, not physical display latency."
+}

@@ -1,0 +1,16 @@
+{
+  "commit": "9d8fe7168d4250c581f83ed9d3d58cdd51096fc2",
+  "branch": "cohort-completion",
+  "bundle": "source.bundle",
+  "clean_checkout_tests_exit": 0,
+  "dependencies": "Existing Cargo cache reused with --locked --offline; not empty-cache qualification",
+  "provider_baseline": "Three files restored to exact hashes in previous analysis-plan/source-hashes.json; other active provider work excluded; shared files untouched",
+  "tested_rust_commit": "8d7d282c823286eaaa4d0c30ad6ce6ba672f404c",
+  "rust_sources_unchanged_from_tested_commit": true,
+  "manifest_files": 428,
+  "local_workspace_branch": "cohort-completion-qualified",
+  "final_manifest_verified": true,
+  "final_clean_status": true,
+  "final_controller_tests": 7,
+  "final_format_exit": 0
+}

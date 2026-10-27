@@ -9,12 +9,12 @@ const fs=require('node:fs');const path=require('node:path');const assert=require
  try {
   context=await browser.newContext({viewport:{width:1200,height:1000},deviceScaleFactor:1});
   const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  const reports=[];
+  const reports=[],outcomes={rapid_latest_wins:false,delayed_ack_latest_wins:false,cancelled:false,recovered:false};
   await page.goto(`http://127.0.0.1:${info.port}/`,{waitUntil:'load'});
   await page.getByRole('heading',{name:'Design → group contrast'}).waitFor();
   async function run(name,change,expected){
    if(change.phase!==undefined)await page.locator('#phase').fill(String(change.phase));
-   for(const key of ['contrast','noise','mode'])if(change[key])await page.locator('#'+key).selectOption(change[key]);
+   for(const key of ['contrast','noise','group','mode'])if(change[key])await page.locator('#'+key).selectOption(change[key]);
    if(change.variance!==undefined)await page.locator('#variance').setChecked(change.variance);
    const previous=await page.evaluate(()=>window.renderSequence);
    await page.getByRole('button',{name:'Run analysis',exact:true}).click();
@@ -38,6 +38,34 @@ const fs=require('node:fs');const path=require('node:path');const assert=require
   await run('file-batches',{mode:'files',variance:true},{reads:25,prepares:25,builds:0});
   await run('file-contrast',{contrast:'task'},{reads:25,prepares:0,builds:0});
   await run('fixed-noise',{noise:'fixed'},{reads:25,prepares:25,builds:0});
+  await page.locator('#group').selectOption('meta');
+  assert.equal(await page.locator('#variance').isChecked(),true);
+  assert.equal(await page.locator('#variance').isDisabled(),true);
+  await run('meta-detached',{mode:'detached'},{reads:25,prepares:25,builds:25});
+  assert.equal((await page.evaluate(()=>window.lastRender.command)).group,'meta');
+  // Submit three edits without waiting: only the latest request may paint the map.
+  let delayFirstAck=true;
+  const delayedAckRoute=async route=>{const response=await route.fetch();if(delayFirstAck){delayFirstAck=false;await new Promise(resolve=>setTimeout(resolve,150));}await route.fulfill({response});};
+  await page.route('**/api',delayedAckRoute);
+  await page.locator('#phase').fill('0.31');await page.getByRole('button',{name:'Run analysis',exact:true}).click();
+  await page.locator('#phase').fill('0.32');await page.getByRole('button',{name:'Run analysis',exact:true}).click();
+  const rapidBefore=await page.evaluate(()=>window.renderSequence);
+  await page.locator('#phase').fill('0.33');await page.getByRole('button',{name:'Run analysis',exact:true}).click();
+  await page.waitForFunction(n=>window.renderSequence>n,rapidBefore,{timeout:120000});
+  assert.equal((await page.evaluate(()=>window.lastRender.command)).phase,.33);
+  await page.unroute('**/api',delayedAckRoute);
+  outcomes.rapid_latest_wins=true;outcomes.delayed_ack_latest_wins=true;
+  // Cancellation is cooperative; the button must be exposed while an active request exists.
+  await page.locator('#phase').fill('0.41');await page.getByRole('button',{name:'Run analysis',exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Running'),{timeout:10000});
+  await page.getByRole('button',{name:'Cancel',exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Analysis cancelled;'),{timeout:120000});
+  outcomes.cancelled=true;
+  const recoverBefore=await page.evaluate(()=>window.renderSequence);
+  await page.locator('#phase').fill('0.42');await page.getByRole('button',{name:'Run analysis',exact:true}).click();
+  await page.waitForFunction(n=>window.renderSequence>n,recoverBefore,{timeout:120000});
+  assert.equal((await page.evaluate(()=>window.lastRender.command)).phase,.42);
+  outcomes.recovered=true;
   const before=await page.evaluate(()=>window.drawCount);
   for(const z of [0,31]){
    await page.locator('#slice').focus();await page.locator('#slice').press(z===0?'Home':'End');
@@ -45,6 +73,6 @@ const fs=require('node:fs');const path=require('node:path');const assert=require
   }
   assert((await page.evaluate(()=>window.drawCount))>=before+2);
   assert.deepEqual(errors,[]);
-  fs.writeFileSync(path.join(outDir,'browser.json'),JSON.stringify({backend:'installed Playwright Chromium',headless:true,playwright:require('playwright/package.json').version,browser:browser.version(),owner_node_pid:process.pid,profile:'fresh ephemeral context',cases:reports,slider_endpoints:[0,31],page_errors:errors,timing_definition:'Browser performance clock: request submission through canvas update and two animation frames; screenshot completion is a render-confirmed upper bound, not physical display latency.'},null,2)+'\n');
+  fs.writeFileSync(path.join(outDir,'browser.json'),JSON.stringify({backend:'installed Playwright Chromium',headless:true,playwright:require('playwright/package.json').version,browser:browser.version(),owner_node_pid:process.pid,profile:'fresh ephemeral context',cases:reports,outcomes,slider_endpoints:[0,31],page_errors:errors,timing_definition:'Browser performance clock: request submission through canvas update and two animation frames; screenshot completion is a render-confirmed upper bound, not physical display latency.'},null,2)+'\n');
  } finally {if(context)await context.close();await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

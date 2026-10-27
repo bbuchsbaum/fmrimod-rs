@@ -454,7 +454,100 @@ impl DetachedSession {
     pub fn preparation_counts(&self) -> PreparationCounts {
         self.counts
     }
-    pub fn attach(self, subject: LoadedSubject) -> Result<SubjectSession> {
+    /// Bytes for outputs from retained coefficients/scales; no time series needed.
+    pub fn run_required_bytes(
+        &self,
+        output: &OutputSpec,
+        block: usize,
+        owned: bool,
+    ) -> Result<usize> {
+        let (spec, _, _, receipt) = self
+            .cached
+            .as_ref()
+            .ok_or(SessionError::Invalid("model has not been prepared"))?;
+        if self.retained.is_empty() || block == 0 {
+            return Err(SessionError::Invalid(
+                "detached execution requires retained fit and nonzero block",
+            ));
+        }
+        let p = spec.design.ncols();
+        if output.estimands().weights().ncols() != p {
+            return Err(SessionError::Invalid(
+                "output weights do not match prepared design",
+            ));
+        }
+        let q = output.estimands().weights().nrows();
+        let work = add(
+            output_preparation_bytes(self.shape[0], p, q, output.uncertainty())?,
+            output_retained_bytes(q, block.min(self.shape[1]), output.uncertainty())?,
+        )?;
+        if owned {
+            add(
+                work,
+                add(
+                    output_retained_bytes(q, self.shape[1], output.uncertainty())?,
+                    receipt_numeric_bytes(receipt)?,
+                )?,
+            )
+        } else {
+            Ok(work)
+        }
+    }
+    pub fn run_blocks(
+        &self,
+        output: &OutputSpec,
+        block: usize,
+        budget: usize,
+        mut sink: impl for<'a, 'b> FnMut(Range<usize>, &SummaryView<'a, 'b>) -> Result<()>,
+    ) -> Result<()> {
+        let required = self.run_required_bytes(output, block, false)?;
+        if required > budget {
+            return Err(SessionError::Budget { required, budget });
+        }
+        summarize_retained(
+            &self.cached.as_ref().unwrap().1,
+            &self.retained,
+            output,
+            block,
+            &mut sink,
+        )
+    }
+    pub fn run_owned(
+        &self,
+        output: &OutputSpec,
+        block: usize,
+        budget: usize,
+    ) -> Result<SubjectOutput> {
+        let required = self.run_required_bytes(output, block, true)?;
+        if required > budget {
+            return Err(SessionError::Budget { required, budget });
+        }
+        let mut blocks = Vec::new();
+        self.run_blocks(output, block, budget, |r, v| {
+            blocks.push((r, v.to_owned()));
+            Ok(())
+        })?;
+        Ok(SubjectOutput {
+            subject_id: self.subject_id.clone(),
+            features: Arc::clone(&self.features),
+            blocks,
+            receipt: self.cached.as_ref().unwrap().3.clone(),
+        })
+    }
+    #[cfg(feature = "nifti")]
+    pub(crate) fn record_reuse(&mut self) {
+        self.counts.reused += 1;
+    }
+    /// Prepare a replacement without consuming the last valid cache on failure.
+    #[cfg(feature = "nifti")]
+    pub(crate) fn replacement(&self, subject: LoadedSubject) -> Result<SubjectSession> {
+        self.validate_attachment(&subject)?;
+        let mut replacement = SubjectSession::new(subject);
+        replacement.counts = self.counts;
+        replacement.generation = self.generation;
+        Ok(replacement)
+    }
+    fn validate_attachment(&self, subject: &LoadedSubject) -> Result<()> {
         if self.shape != [subject.data.nrows(), subject.data.ncols()]
             || self.observation_ids != subject.observation_ids
             || self.features.space() != subject.features.space()
@@ -465,6 +558,10 @@ impl DetachedSession {
                 "detached session source or axes changed",
             ));
         }
+        Ok(())
+    }
+    pub fn attach(self, subject: LoadedSubject) -> Result<SubjectSession> {
+        self.validate_attachment(&subject)?;
         Ok(SubjectSession {
             subject,
             cached: self.cached,
@@ -735,23 +832,7 @@ impl SubjectSession {
             .as_ref()
             .ok_or(SessionError::Invalid("model has not been prepared"))?;
         if !self.retained.is_empty() {
-            macro_rules! summarize {
-                ($m:expr) => {{
-                    let plan = $m.prepare_outputs(output)?;
-                    for (global, fit) in &self.retained {
-                        for start in (0..fit.features()).step_by(block_features) {
-                            let end = (start + block_features).min(fit.features());
-                            let summary = plan.summarize_retained(fit, start..end)?;
-                            sink(global.start + start..global.start + end, &summary.as_view())?;
-                        }
-                    }
-                }};
-            }
-            match model {
-                PreparedModel::Ols(m) => summarize!(m),
-                PreparedModel::Ar(m) => summarize!(m),
-            }
-            return Ok(());
+            return summarize_retained(model, &self.retained, output, block_features, &mut sink);
         }
         match model {
             PreparedModel::Ols(model) => run_ols(
@@ -801,6 +882,32 @@ impl SubjectSession {
             receipt,
         })
     }
+}
+
+fn summarize_retained(
+    model: &PreparedModel,
+    retained: &[(Range<usize>, RetainedFit)],
+    output: &OutputSpec,
+    block: usize,
+    sink: &mut impl for<'a, 'b> FnMut(Range<usize>, &SummaryView<'a, 'b>) -> Result<()>,
+) -> Result<()> {
+    macro_rules! summarize {
+        ($m:expr) => {{
+            let plan = $m.prepare_outputs(output)?;
+            for (global, fit) in retained {
+                for start in (0..fit.features()).step_by(block) {
+                    let end = (start + block).min(fit.features());
+                    let summary = plan.summarize_retained(fit, start..end)?;
+                    sink(global.start + start..global.start + end, &summary.as_view())?;
+                }
+            }
+        }};
+    }
+    match model {
+        PreparedModel::Ols(m) => summarize!(m),
+        PreparedModel::Ar(m) => summarize!(m),
+    }
+    Ok(())
 }
 
 fn model_receipt(

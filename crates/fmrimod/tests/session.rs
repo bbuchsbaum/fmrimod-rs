@@ -528,3 +528,36 @@ fn detached_state_checks_source_identity_and_preserves_retained_model() {
     .unwrap();
     assert!(state.attach(wrong).is_err());
 }
+
+#[test]
+fn detached_outputs_match_analytic_slopes_and_variances_without_data() {
+    use fmrimod::regression::output::{Summary, Uncertainty};
+    let mut session = subject();
+    session.prepare(&spec(&session), usize::MAX).unwrap();
+    session.retain_for_edits(2, usize::MAX).unwrap();
+    let before = session.resident_numeric_bytes().unwrap();
+    let data = session.data_bytes();
+    let detached = session.detach();
+    assert_eq!(detached.resident_numeric_bytes().unwrap(), before - data);
+    let request = output().with_uncertainty(Uncertainty::Marginal);
+    let budget = detached.run_required_bytes(&request, 1, true).unwrap();
+    assert!(detached.run_owned(&request, 1, budget - 1).is_err());
+    let out = detached.run_owned(&request, 1, budget).unwrap();
+    // Ordinary straight-line least squares: Sxx=5, SSE=(0,.2,.7), df=2.
+    for ((range, summary), (effect, variance)) in
+        out.blocks()
+            .iter()
+            .zip([(1., 0.), (1.6, 0.02), (2.1, 0.07)])
+    {
+        assert_eq!(range.len(), 1);
+        assert!((summary.estimates()[(0, 0)] - effect).abs() < 1e-12);
+        if let Summary::Marginal(m) = summary {
+            assert!((m.variance(0, 0).unwrap() - variance).abs() < 1e-12);
+        } else {
+            panic!("missing marginal uncertainty");
+        }
+    }
+    let mut empty = subject();
+    empty.prepare(&spec(&empty), usize::MAX).unwrap();
+    assert!(empty.detach().run_owned(&request, 1, usize::MAX).is_err());
+}

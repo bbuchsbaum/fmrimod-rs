@@ -174,7 +174,8 @@ call `run_file_cohort(&mut sessions, &model_specs, &output_specs, options, sink)
 It reduces the requested worker count until active data and numerical work fit
 the budget. If one subject cannot fit, it fails before voxel reads. The scalar
 group collector remains a separate reservation, as in the resident executor.
-The preflight conservatively includes old and replacement models; it is not an
+The preflight includes old and replacement models when a model changes; reused
+models are counted once. It is not an
 allocator-exact RSS bound. Caller-owned source metadata and input model specs are
 outside that reservation.
 
@@ -188,7 +189,11 @@ On failure, completed subjects can have updated preparation state; later batches
 and callbacks stop. Source reload failures preserve prior preparation state.
 
 Lower-level callers can `detach()` a resident session to release its time series
-and later `attach(loaded_subject)`. Attachment checks subject/source version,
+and later `attach(loaded_subject)`. If coefficients/scales were retained,
+`DetachedSession::run_blocks` and `run_owned` execute output requests directly
+without reattachment or time-series reads. They reject a detached session without
+a retained fit. Their budget covers output preparation, summary work and owned
+results; it excludes the already resident detached cache. Attachment checks subject/source version,
 observation order, dimensions and feature geometry. A mismatched attachment is
 rejected and consumes the detached state; construct a new session for new data.
 
@@ -238,3 +243,10 @@ mask or verified MNI registration, and cannot establish real-data throughput.
 A durable decompressed/masked cache remains a separate decision: warm resident
 requests already avoid disk, and file sessions explicitly trade repeated loading
 for a smaller footprint. Temporal projection remains deferred.
+
+
+The higher-level [analysis planner](ANALYSIS.md) supports `StoragePolicy::RetainedFits`
+for cohorts. It fits/reloads bounded subject batches, releases time series, and
+reuses detached fits for contrast edits. `run_with_progress` permits cooperative
+cancellation between batches and subject preparations. Group consumer adapters
+keep first-level input uncertainty separate from requested group-output uncertainty.

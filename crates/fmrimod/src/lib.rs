@@ -18,3 +18,5 @@ pub mod ingress;
 
 #[cfg(feature = "nifti")]
 pub mod analysis;
+
+pub mod group_requirements;

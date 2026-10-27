@@ -1,0 +1,180 @@
+{
+  "shape": [
+    64,
+    64,
+    48
+  ],
+  "run_lengths": [
+    240,
+    240
+  ],
+  "masked_features": 58075,
+  "subjects": 25,
+  "seed_base": 84521,
+  "numpy": "2.4.3",
+  "mask_sha256": "c9ee955f678e45e693b7e94b945cd00114facb6a5c856cc92dbdf48931b4e014",
+  "generator_sha256": "1a2dcb2d6a6784c34e3ba5f6c79f1dcb2b6e013cc713f4c3f9a38bc4ad1b7144",
+  "noise": [
+    [
+      0.4,
+      -0.12
+    ],
+    [
+      0.2,
+      0.05
+    ]
+  ],
+  "files": [
+    {
+      "id": "sub-00",
+      "file": "sub-00.nii.gz",
+      "sha256": "c5e787c4e8051c03a84f950045a9a91b145de10116f07951671ce95215a4aafc",
+      "bytes": 82253258
+    },
+    {
+      "id": "sub-01",
+      "file": "sub-01.nii.gz",
+      "sha256": "3935ef5536e8122a1bd26da357ad26e5997be2e373d277382fba3f627611931a",
+      "bytes": 82257096
+    },
+    {
+      "id": "sub-02",
+      "file": "sub-02.nii.gz",
+      "sha256": "d500dc2ab427f045f18de40b3b89677ce4b409c498823ebabe3ff4192b8994ae",
+      "bytes": 82250054
+    },
+    {
+      "id": "sub-03",
+      "file": "sub-03.nii.gz",
+      "sha256": "03718e0f70319791ccfb921c5059a58bcc101c91762489fd60c7235caa0a389a",
+      "bytes": 82245878
+    },
+    {
+      "id": "sub-04",
+      "file": "sub-04.nii.gz",
+      "sha256": "193a7f15aa27daf66575b14ed339bf3ab1e1e47e53c65be30290fba035f2bcfc",
+      "bytes": 82249871
+    },
+    {
+      "id": "sub-05",
+      "file": "sub-05.nii.gz",
+      "sha256": "2f3abc93d872a02b5b974a0575dd295aee447ae66b5ced65ad42361f784665b8",
+      "bytes": 82254460
+    },
+    {
+      "id": "sub-06",
+      "file": "sub-06.nii.gz",
+      "sha256": "e70c1acee4128b8f7edc57522a178c1924b181a25763882510b189396fec5dd9",
+      "bytes": 82252122
+    },
+    {
+      "id": "sub-07",
+      "file": "sub-07.nii.gz",
+      "sha256": "1f5e9f7d48c5cb00a17bfaaa4ce6a0a55d1327537d3381b8a5cca1790b224958",
+      "bytes": 82251317
+    },
+    {
+      "id": "sub-08",
+      "file": "sub-08.nii.gz",
+      "sha256": "5435f96899701e2e4951d8864bd0c5fe397c507de63142796f7300b09b2d7ae3",
+      "bytes": 82251914
+    },
+    {
+      "id": "sub-09",
+      "file": "sub-09.nii.gz",
+      "sha256": "7d809a3644c1d4ab66316edd6490ed7f4db735515a7e6af7a2981eee17e387d1",
+      "bytes": 82255485
+    },
+    {
+      "id": "sub-10",
+      "file": "sub-10.nii.gz",
+      "sha256": "217313d68fdbc7a79c66723215f1bc1b66125c4fec31834b148abd424c2c3588",
+      "bytes": 82253016
+    },
+    {
+      "id": "sub-11",
+      "file": "sub-11.nii.gz",
+      "sha256": "98519f5f5746954bb2b36c7586603e4a3a8fe4dae347509a5c352b1a5b05a301",
+      "bytes": 82255303
+    },
+    {
+      "id": "sub-12",
+      "file": "sub-12.nii.gz",
+      "sha256": "065e8b9e39be79981494b84154282f1d9b3ab83cc2a50b3566810bf0038fcd49",
+      "bytes": 82247879
+    },
+    {
+      "id": "sub-13",
+      "file": "sub-13.nii.gz",
+      "sha256": "58364a140fc875359e2012070b4612002c32ee3284dd0b366258bcc8e0d4bb85",
+      "bytes": 82254814
+    },
+    {
+      "id": "sub-14",
+      "file": "sub-14.nii.gz",
+      "sha256": "f7d88ccfa57ecaf0b283b3d50972b4843b306d85bea21af2d55b2675f44f92c6",
+      "bytes": 82255737
+    },
+    {
+      "id": "sub-15",
+      "file": "sub-15.nii.gz",
+      "sha256": "e721e8b19ee8346518c81c971d4385ffd018a5a73c91b0c4b9f34643df05e096",
+      "bytes": 82256372
+    },
+    {
+      "id": "sub-16",
+      "file": "sub-16.nii.gz",
+      "sha256": "79022866fe884dec4c07cb616a95bf0c549a7f5eeabe9ced4590171a8b398623",
+      "bytes": 82258871
+    },
+    {
+      "id": "sub-17",
+      "file": "sub-17.nii.gz",
+      "sha256": "474c2c85501afea49845e166a464692cffacaa19899c323283a9607291ef2a77",
+      "bytes": 82259660
+    },
+    {
+      "id": "sub-18",
+      "file": "sub-18.nii.gz",
+      "sha256": "6144b88df95fb52ad3970d048b7b1f4869c5512906862981de09ab8ae5f2db98",
+      "bytes": 82260043
+    },
+    {
+      "id": "sub-19",
+      "file": "sub-19.nii.gz",
+      "sha256": "840fbbdc03cdd566c3ba85c2dd09119b7b122a9e5a04c6b431696dd588c0b742",
+      "bytes": 82259240
+    },
+    {
+      "id": "sub-20",
+      "file": "sub-20.nii.gz",
+      "sha256": "63230e87beec721b4f9135cb8f7e81ab7dc13d1d0ad72ffdf257ffa892032c1b",
+      "bytes": 82259771
+    },
+    {
+      "id": "sub-21",
+      "file": "sub-21.nii.gz",
+      "sha256": "49120fb5c069ee3b12f5a158425e96beba5d171ee59e87a624f6b4b8cb070bf7",
+      "bytes": 82261200
+    },
+    {
+      "id": "sub-22",
+      "file": "sub-22.nii.gz",
+      "sha256": "3002dddfebffd47ac1ffc9ae098a8b87a4466f04e67d7e455bf4cf84bb5f1465",
+      "bytes": 82257497
+    },
+    {
+      "id": "sub-23",
+      "file": "sub-23.nii.gz",
+      "sha256": "c8f249094064b469d1c5661058a35569486b384a53b3367cff1439c67ce7ef3d",
+      "bytes": 82258561
+    },
+    {
+      "id": "sub-24",
+      "file": "sub-24.nii.gz",
+      "sha256": "899d8eaafbf9fb303d6b330e222a66d788a4354e8e5291c09413a69b2d2d89c2",
+      "bytes": 82261541
+    }
+  ],
+  "provenance": "Generated synthetic ellipsoid mask, two runs, nuisance and run intercepts; not research data or MNI registration evidence"
+}

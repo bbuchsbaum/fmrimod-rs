@@ -402,3 +402,201 @@ fn policy_and_binding_errors_are_preflighted() {
         base.reserved_numeric_bytes + external
     );
 }
+
+#[test]
+fn detached_cohort_reuses_without_files_and_reloads_changed_models() {
+    let (fixture, sources) = fixture();
+    let req = requests(&sources, 1., true);
+    let mut opts = ExecutionPolicy {
+        storage: StoragePolicy::RetainedFits,
+        workers: 1,
+        ..policy()
+    };
+    let probe = CohortAnalysis::new(subjects(&sources, req.clone()), opts).unwrap();
+    let exact = probe.inspect().unwrap().reserved_numeric_bytes;
+    let automatic = CohortAnalysis::new(
+        subjects(&sources, req.clone()),
+        ExecutionPolicy {
+            storage: StoragePolicy::Auto,
+            max_numeric_bytes: exact,
+            ..opts
+        },
+    )
+    .unwrap();
+    assert_eq!(
+        automatic.inspect().unwrap().storage,
+        StorageMode::RetainedFits
+    );
+    opts.max_numeric_bytes = exact;
+    let mut analysis = CohortAnalysis::new(subjects(&sources, req.clone()), opts).unwrap();
+    assert_eq!(analysis.inspect().unwrap().resident_data_bytes, 0);
+    assert!(CohortAnalysis::new(
+        subjects(&sources, req.clone()),
+        ExecutionPolicy {
+            max_numeric_bytes: exact - 1,
+            ..opts
+        }
+    )
+    .is_err());
+    let mut expected = Vec::new();
+    let first = analysis
+        .run(|_, out, _| {
+            expected.push(
+                out.blocks()
+                    .iter()
+                    .flat_map(|(_, b)| b.estimates().row(0).to_vec())
+                    .collect::<Vec<_>>(),
+            );
+            Ok(())
+        })
+        .unwrap();
+    assert_eq!(
+        (
+            first.source_reads,
+            first.model_preparations,
+            first.retained_fit_builds
+        ),
+        (4, 4, 4)
+    );
+    assert!(analysis.inspect().unwrap().reserved_numeric_bytes < exact);
+    // File access would now fail: contrasts still work using retained state alone.
+    for i in 0..4 {
+        fs::rename(
+            fixture.0.join(format!("s{i}.nii")),
+            fixture.0.join(format!("s{i}.saved")),
+        )
+        .unwrap();
+    }
+    analysis.update(requests(&sources, 2., true)).unwrap();
+    assert!(analysis
+        .inspect()
+        .unwrap()
+        .subjects
+        .iter()
+        .all(|s| s.data == DataAction::NotNeeded && s.fit == FitAction::UseRetainedFit));
+    let next = analysis
+        .run(|i, out, _| {
+            let got = out
+                .blocks()
+                .iter()
+                .flat_map(|(_, b)| b.estimates().row(0).to_vec())
+                .collect::<Vec<_>>();
+            for (a, b) in got.iter().zip(&expected[i]) {
+                assert!((a - 2. * b).abs() < 1e-10);
+            }
+            Ok(())
+        })
+        .unwrap();
+    assert_eq!(
+        (
+            next.source_reads,
+            next.model_preparations,
+            next.model_reuses
+        ),
+        (0, 0, 4)
+    );
+    let mut changed = requests(&sources, 1., true);
+    for r in &mut changed {
+        r.model.design[(0, 1)] += 0.2;
+    }
+    // The exact first-build budget need not cover old+replacement caches.
+    // Reuse an ample-budget object to exercise replacement and rollback separately.
+    let mut replacement = CohortAnalysis::new(
+        subjects(&sources, req.clone()),
+        ExecutionPolicy {
+            max_numeric_bytes: 10_000_000,
+            ..opts
+        },
+    )
+    .unwrap();
+    for i in 0..4 {
+        fs::rename(
+            fixture.0.join(format!("s{i}.saved")),
+            fixture.0.join(format!("s{i}.nii")),
+        )
+        .unwrap();
+    }
+    replacement.run(|_, _, _| Ok(())).unwrap();
+    replacement.update(changed).unwrap();
+    assert!(replacement
+        .inspect()
+        .unwrap()
+        .subjects
+        .iter()
+        .all(|s| s.data == DataAction::Reload && s.model == ModelAction::EstimateNoise));
+    let edited = replacement
+        .run(|_, out, _| {
+            assert_eq!(out.receipt().model_generation, 2);
+            Ok(())
+        })
+        .unwrap();
+    assert_eq!(
+        (
+            edited.source_reads,
+            edited.model_preparations,
+            edited.retained_fit_builds
+        ),
+        (4, 4, 4)
+    );
+    let mut invalid = req.clone();
+    for r in &mut invalid {
+        r.model.design.column_mut(0).fill(0.);
+        r.model.design.column_mut(1).fill(0.);
+    }
+    // Numerical failures occur during execution and must preserve last valid caches.
+    replacement.update(invalid).unwrap();
+    assert!(replacement.run(|_, _, _| Ok(())).is_err());
+    let mut edited_req = req;
+    for r in &mut edited_req {
+        r.model.design[(0, 1)] += 0.2;
+    }
+    replacement.update(edited_req).unwrap();
+    let restored = replacement.run(|_, _, _| Ok(())).unwrap();
+    assert_eq!((restored.source_reads, restored.model_preparations), (0, 0));
+}
+
+#[test]
+fn progress_cancels_dispatch_and_resumes_completed_detached_fits() {
+    for workers in [1, 2] {
+        let (_fixture, sources) = fixture();
+        let mut analysis = CohortAnalysis::new(
+            subjects(&sources, requests(&sources, 1., false)),
+            ExecutionPolicy {
+                storage: StoragePolicy::RetainedFits,
+                workers,
+                ..policy()
+            },
+        )
+        .unwrap();
+        let mut delivered = 0;
+        let error = analysis.run_with_progress(
+            |p| {
+                if p.completed_subjects == 1 {
+                    Err(SessionError::Invalid("cancelled by caller"))
+                } else {
+                    Ok(())
+                }
+            },
+            |_, _, _| {
+                delivered += 1;
+                Ok(())
+            },
+        );
+        assert!(error.is_err());
+        assert_eq!(delivered, 0);
+        let plan = analysis.inspect().unwrap();
+        assert_eq!(plan.subjects[0].data, DataAction::NotNeeded);
+        assert!(plan.subjects[workers..]
+            .iter()
+            .all(|s| s.data == DataAction::Load));
+        let receipt = analysis.run(|_, _, _| Ok(())).unwrap();
+        assert_eq!(
+            (
+                receipt.source_reads,
+                receipt.model_preparations,
+                receipt.model_reuses
+            ),
+            (4 - workers, 4 - workers, workers)
+        );
+    }
+}

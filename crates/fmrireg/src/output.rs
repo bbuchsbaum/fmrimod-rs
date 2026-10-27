@@ -21,10 +21,20 @@ pub enum Uncertainty {
 }
 
 /// Named linear estimands, one row of weights per requested output.
-#[derive(Clone, Debug)]
+#[derive(Debug)]
 pub struct EstimandSet {
     ids: Vec<String>,
     weights: Array2<f64>,
+}
+impl Clone for EstimandSet {
+    fn clone(&self) -> Self {
+        // Array2::clone may retain hidden backing elements after slice_move.
+        // Prepared output contexts account for only the logical weight matrix.
+        Self {
+            ids: self.ids.clone(),
+            weights: self.weights.to_owned(),
+        }
+    }
 }
 impl EstimandSet {
     /// Construct general named contrasts. IDs must be unique and nonblank.

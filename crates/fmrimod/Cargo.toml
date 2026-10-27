@@ -6,6 +6,7 @@ license = "GPL-3.0-or-later"
 description = "Composable fMRI design and estimation"
 
 [dependencies]
+fmri-group = { path = "../fmri-group" }
 ndarray = "0.16"
 fmrihrf = { path = "../fmrihrf" }
 fmrireg = { path = "../fmrireg", features = ["dataset"] }
@@ -19,7 +20,13 @@ serde_json = "1"
 [features]
 default = []
 formula = ["dep:fmridesign"]
+nifti = ["fmridataset/nifti"]
+accelerate = ["fmrireg/accelerate"]
 
 [[example]]
 name = "complete_first_level"
 required-features = ["formula"]
+
+[[example]]
+name = "cohort_latency"
+required-features = ["nifti"]

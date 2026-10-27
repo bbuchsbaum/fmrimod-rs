@@ -549,6 +549,14 @@ impl<P: fmri_noise::WhiteningPlan> GlsModel<P> {
     pub fn noise_plan(&self) -> &P {
         &self.noise
     }
+    /// Numerical rank of the whitened design, at the model's rank tolerance.
+    pub fn rank(&self) -> usize {
+        self.model.rank()
+    }
+    /// Original observation count minus the whitened design's numerical rank.
+    pub fn residual_df(&self) -> usize {
+        self.model.residual_df()
+    }
 }
 
 /// Fixed-order AR settings; no automatic order reduction or IID fallback.

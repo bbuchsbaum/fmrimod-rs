@@ -379,3 +379,34 @@ fn near_collinear_estimand_variance_uses_stable_geometry() {
         }
     }
 }
+
+#[test]
+fn output_context_copies_only_logical_sliced_weights() {
+    let mut backing = Array2::zeros((10_000, 2));
+    backing[(5000, 0)] = 1.;
+    let weights = backing.slice_move(s![5000..5001, ..]);
+    let request = spec(weights, Uncertainty::None);
+    assert_eq!(
+        request
+            .clone()
+            .estimands()
+            .weights()
+            .clone()
+            .into_raw_vec_and_offset()
+            .0
+            .len(),
+        2
+    );
+    let model = LinearModel::new(array![[1., 0.], [1., 1.], [1., 2.]].view(), 1e-12).unwrap();
+    let plan = model.prepare_outputs(&request).unwrap();
+    assert_eq!(
+        plan.spec()
+            .estimands()
+            .weights()
+            .clone()
+            .into_raw_vec_and_offset()
+            .0
+            .len(),
+        2
+    );
+}

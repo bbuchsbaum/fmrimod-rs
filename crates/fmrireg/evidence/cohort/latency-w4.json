@@ -1,0 +1,37 @@
+{
+  "backend": "Accelerate",
+  "cold": {
+    "first_level_ms": 85.627792,
+    "group_ms": 4.9080829999999995,
+    "reserved_pipeline_numeric_bytes": 536770688,
+    "resident_numeric_bytes": 492991200,
+    "workers": 4
+  },
+  "cold_session_to_html_ms": 2020.2020830000001,
+  "contrast_edit": {
+    "first_level_ms": 93.512,
+    "group_ms": 5.181,
+    "reserved_pipeline_numeric_bytes": 536770688,
+    "resident_numeric_bytes": 492991200,
+    "workers": 4
+  },
+  "contrast_edit_preparations": 0,
+  "contrast_edit_to_html_ms": 100.764875,
+  "design_edit": {
+    "first_level_ms": 85.78379199999999,
+    "group_ms": 5.028290999999999,
+    "reserved_pipeline_numeric_bytes": 536770688,
+    "resident_numeric_bytes": 492991200,
+    "workers": 4
+  },
+  "design_edit_prepare_ms": 2.107042,
+  "design_edit_to_html_ms": 95.33629199999999,
+  "features": 8192,
+  "frames": 300,
+  "initial_prepare_ms": 2.1237909999999998,
+  "load_ms": 1924.922833,
+  "model_preparations_total": 50,
+  "notes": "Synthetic fixed AR4; filesystem cache uncontrolled. HTML written, browser rendering not included. Warm requests still scan resident data. Numeric reservation excludes backend/decomposition scratch, metadata and allocator overhead.",
+  "source_reads_total": 25,
+  "subjects": 25
+}

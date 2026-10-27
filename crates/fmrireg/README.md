@@ -54,6 +54,11 @@ requested effects and, when needed, residual scales. Full-fit APIs remain
 available. See [OUTPUTS.md](OUTPUTS.md) for examples, memory accounting, upstream
 `fmrimod::outputs` compilation, numerical qualification and remaining work.
 
+For NIfTI input, reusable subject models and bounded cohort execution, see
+[resident sessions](../fmrimod/SESSIONS.md). The
+[25-subject example and measurements](evidence/cohort/README.md) connect these
+summaries to the group reducer and a browsable synthetic contrast map.
+
 ## Ordered parallel blocks
 
 Enable `dataset` for `dataset::fit_blocks_with_options` and

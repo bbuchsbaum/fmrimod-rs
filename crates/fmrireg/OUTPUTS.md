@@ -144,8 +144,10 @@ the new paths. It separately probes K=L D applied to explicitly whitened data;
 that arithmetic reassociation remains outside production dispatch until its
 accuracy boundary is supported. It never composes W into K.
 
-Persistent cohort sessions, temporal dictionary projections, on-disk cache and
-NIfTI ingestion are the next stage of the plan. They are not implemented here.
-The present benchmarks measure warm in-memory fitting, not latency from 25
-NIfTI files to a browsable group map. Future projection work must preserve
-original selected observation count, residual df and complement energy.
+NIfTI ingestion and resident cohort sessions now live in `fmridataset` and
+`fmrimod`; see [the session interface](../fmrimod/SESSIONS.md) and
+[25-subject latency evidence](evidence/cohort/README.md). These reuse the
+requested-output regression path and existing group reducer. Temporal dictionary
+projections and durable on-disk caches remain deferred. Future projection work
+must preserve original selected observation count, residual df and complement
+energy.

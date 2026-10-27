@@ -1,0 +1,11 @@
+{
+  "command": [
+    "cargo",
+    "test",
+    "--workspace",
+    "--offline",
+    "--locked"
+  ],
+  "exit": 0,
+  "seconds": 91.06759667396545
+}

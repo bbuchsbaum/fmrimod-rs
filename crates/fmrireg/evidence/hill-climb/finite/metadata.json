@@ -1,0 +1,24 @@
+{
+  "base": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/baseline/hill_kernel",
+  "base_sha256": "1a8fc3102fa62a51cabe239d979b14243c0cf721465b0d2315a96f0159a60417",
+  "candidate_sha256": "ea7029dcd098a5921020103aaafa6f99ccf2bee2940d7b1cf269b8c937231eaa",
+  "order": 4,
+  "sources": {
+    "crates/fmrireg/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+    "crates/fmrireg/src/lib.rs": "815bfa4cf6dfe3fcdc78e1638d999140c802403351fddc76774cb267537065f7",
+    "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+    "crates/fmrireg/src/dataset.rs": "0bbfff19de41213c4ca21d8410e228176d5dc89b1bcd035965df9f0d085a8778",
+    "crates/fmri-noise/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmri-noise/src/lib.rs": "f6b720809d484a9eb4ca7e67b6d4ba29456651de93413abe0d4c771d67949468",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/ar.rs": "3a736408042c64c87cfa8c94b5db4b5cf9d028d04a87d2eba8630e827f61e91f",
+    "crates/fmrireg/examples/hill_kernel.rs": "99725208833407771d2699b3bd6cfe8b445a60f8f9a9b9676291250de27ccc88"
+  },
+  "threads": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "method": "ABBA fresh processes; seven warmed batches per stage per process; checksum guard only, independent full-output qualification follows"
+}

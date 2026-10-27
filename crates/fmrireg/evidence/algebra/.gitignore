@@ -1,0 +1,6 @@
+*.log
+/algebra_gls
+/algebra_qr
+/baseline/gls_benchmark
+/baseline/block_throughput
+/baseline/hill_kernel

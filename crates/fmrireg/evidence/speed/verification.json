@@ -1,0 +1,204 @@
+{
+  "checks": {
+    "minimal": {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "fmrireg",
+        "--no-default-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 4.535545110702515,
+      "passed": 13,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "fc3bcac60163b2cba8d6127e4744d4ee9155cf292bc331a2cb03eaa1a3af2071"
+    },
+    "focused": {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "fmrireg",
+        "-p",
+        "fmri-noise",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 6.11008882522583,
+      "passed": 33,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "2c57ceab854ca682bb5b6e44144fccfb8df6a4f719f4e1dd1f65cc4b1ff008cc"
+    },
+    "workspace-default": {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 91.06759667396545,
+      "passed": 880,
+      "failed": 0,
+      "ignored": 17,
+      "log_sha256": "81939af7da7d522acfc7e24261ae75978fd22dd5c213b3f9eadc9291bc664ff5"
+    },
+    "workspace-all": {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 82.69135880470276,
+      "passed": 894,
+      "failed": 0,
+      "ignored": 21,
+      "log_sha256": "64a5680d5fdf251a936affc3f3c714df4368cfa2438b6ff79dab9626bc9cab2d"
+    },
+    "clippy-delivery": {
+      "command": [
+        "cargo",
+        "clippy",
+        "-p",
+        "fmrireg",
+        "-p",
+        "fmri-noise",
+        "--all-features",
+        "--all-targets",
+        "--offline",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 0.5217339992523193,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "28c4597199fd8713b6ba4949880492904b924c4e5d0952b8f30d86fd12b0b6a3"
+    },
+    "example-reuse": {
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "fmrireg",
+        "--all-features",
+        "--example",
+        "reusable_fit",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 0.8388020992279053,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "a85d189a905edb65fac197dff4dd3fbd517023781c0b40828a595ef7dda6788d"
+    },
+    "release-final": {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "-p",
+        "fmrireg",
+        "--all-features",
+        "--examples",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 5.880611181259155,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "00cb32e999f634eb853bcab1f727116487901258a17fb07b245838012780371a"
+    },
+    "release-executor": {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "-p",
+        "fmrireg",
+        "--all-features",
+        "--example",
+        "block_throughput",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 3.0667479038238525,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "fa5d86b8c06a03aa19a85257102e0b0a9c03f81c46a1cbb356651b70e474f2fa"
+    },
+    "format": {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "review": {
+    "scope": "backend FFI, borrowed results, numeric buffer budget, worker shutdown, numerical semantics",
+    "verdict": "no unresolved findings after fixes",
+    "fixed_findings": [
+      "model lifetime in result sinks",
+      "nonfinite input validated before fitting allocation"
+    ]
+  },
+  "source_sha256": {
+    "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+    "crates/fmrireg/src/lib.rs": "3993effb1b71cbf13245f31a892878f9461b5abf9dbba022f9ae0554aaccb16f",
+    "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+    "crates/fmrireg/src/dataset.rs": "0bbfff19de41213c4ca21d8410e228176d5dc89b1bcd035965df9f0d085a8778",
+    "crates/fmrireg/tests/invalid_allocation.rs": "ef8b68c67f896efb1b3a0dcc5fb60532397d0690cd3ae7ac3bbbed4ac5daab52",
+    "crates/fmrireg/tests/speed_contracts.rs": "d8b80f6d0d1ae31ad92c5e6760acb4627a9ea1acf217e111bc9a482fb24d8648",
+    "crates/fmrireg/tests/parallel.rs": "d0d2783f45198b517b05ebdf554f460deb2392d7ef42b863546e3d34b4388b60",
+    "crates/fmrireg/tests/arp.rs": "ddd6ed8049e1c525c309df56741765b982b98fb82598cc0a869478aca0387065",
+    "crates/fmrireg/tests/contracts.rs": "a55f8f4b65572b94cb030f62c07ba3b5f25b44b33c90efa63310e5aefb6f5c7e",
+    "crates/fmrireg/examples/reusable_fit.rs": "ad360a2b380e80749625f29f36477a95a18b70cf066ea1013d7df3e9cba60de4",
+    "crates/fmrireg/examples/throughput.rs": "328c19802afa729f08ffd922c9610099c0982047a8ef8f6cad3ee5f57831b079",
+    "crates/fmrireg/examples/block_throughput.rs": "4fdca5037f11f068399ac5fe6cd034e04c21e6f53472c284547fc8e812d2d5c9",
+    "crates/fmrireg/examples/gls_benchmark.rs": "da3153110e00a07d61dd976536f82b78e26f97a445cc89eeaf3e93d5de684cc9",
+    "crates/fmrireg/Cargo.toml": "51ea66ff559cecc43a2bcf3a99cae23263b13bf01e22e433f8c53d3355e5ac04",
+    "crates/fmri-noise/src/lib.rs": "e7e7e415bcbf2b36c7cf809da63b2f3161c75589550d31b62fa6da37e42e92b4",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/ar.rs": "e5b4a6f60b95572af1e7c90b71fdc0deebfe8e9865a787ebbbc31f94c17a5437",
+    "crates/fmri-noise/tests/whitening_into.rs": "44a50aadaedbddc4eba7450592117cac1ccb795a756d7b978961e2721cca122e"
+  },
+  "benchmark_kernel_bindings": {
+    "qualified-1": "all kernel source hashes match delivered sources",
+    "executor-qualified": "all kernel source hashes match delivered sources"
+  },
+  "r_comparisons": {
+    "passed": 16,
+    "max_scaled_error": 9.071189146422014e-10,
+    "tolerance": 2e-08
+  },
+  "documentation_sha256": {
+    "README.md": "a767dc2236fdb4011cec80fde10efc393b8b2cbad0ec01fe94d1d155ad7dff57",
+    "PERFORMANCE.md": "fadd0e322c8b3ff38cc594b07b114879e554fe58e66b446f0169c353c03c4099"
+  }
+}

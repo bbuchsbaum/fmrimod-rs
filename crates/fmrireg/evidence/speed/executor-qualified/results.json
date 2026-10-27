@@ -1,0 +1,322 @@
+[
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.237505208,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.231484625,
+      0.225514625,
+      0.234771708,
+      0.226335,
+      0.234789708
+    ],
+    "workers": 1,
+    "name": "executor-1200-32-50000-b1000-w1",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "1",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w1.bin"
+    ],
+    "process_seconds": 2.081843852996826,
+    "peak_rss_bytes": 39419904,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4"
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.121059166,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.121688792,
+      0.122307917,
+      0.121740792,
+      0.122504458,
+      0.122351583
+    ],
+    "workers": 2,
+    "name": "executor-1200-32-50000-b1000-w2",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "2",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w2.bin"
+    ],
+    "process_seconds": 0.9236721992492676,
+    "peak_rss_bytes": 70270976,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.07519875,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.073191083,
+      0.073237292,
+      0.071887917,
+      0.0735955,
+      0.072803917
+    ],
+    "workers": 4,
+    "name": "executor-1200-32-50000-b1000-w4",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "4",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w4.bin"
+    ],
+    "process_seconds": 0.5796761512756348,
+    "peak_rss_bytes": 129433600,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 128,
+    "cold": 0.216145167,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.214111291,
+      0.212237167,
+      0.2086945,
+      0.209446042,
+      0.210497209
+    ],
+    "workers": 1,
+    "name": "executor-1200-32-50000-b128-w1",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "128",
+      "1",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b128-w1.bin"
+    ],
+    "process_seconds": 1.5588719844818115,
+    "peak_rss_bytes": 36519936,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 128,
+    "cold": 0.070529208,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.068345875,
+      0.069745083,
+      0.070688709,
+      0.071516459,
+      0.071004709
+    ],
+    "workers": 4,
+    "name": "executor-1200-32-50000-b128-w4",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "128",
+      "4",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b128-w4.bin"
+    ],
+    "process_seconds": 0.5617730617523193,
+    "peak_rss_bytes": 97222656,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 4096,
+    "cold": 0.118010667,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.111215625,
+      0.1108665,
+      0.107884917,
+      0.1102155,
+      0.1095675
+    ],
+    "workers": 4,
+    "name": "executor-1200-32-50000-b4096-w4",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "4096",
+      "4",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b4096-w4.bin"
+    ],
+    "process_seconds": 0.8691070079803467,
+    "peak_rss_bytes": 548569088,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.236186,
+    "features": 50000,
+    "legacy": true,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.2388145,
+      0.235418541,
+      0.239498333,
+      0.240632084,
+      0.244419541
+    ],
+    "workers": 1,
+    "name": "executor-legacy",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "1",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-legacy.bin",
+      "legacy"
+    ],
+    "process_seconds": 1.7342417240142822,
+    "peak_rss_bytes": 41189376,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/speed/executor-qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.006789375,
+    "features": 1000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.004746917,
+      0.004658,
+      0.004719833,
+      0.004634791,
+      0.00459025
+    ],
+    "workers": 4,
+    "name": "executor-memory-1000",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "1000",
+      "1000",
+      "4",
+      "-"
+    ],
+    "process_seconds": 0.05551719665527344,
+    "peak_rss_bytes": 36323328
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.253534375,
+    "features": 200000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.248218084,
+      0.253672708,
+      0.253796375,
+      0.250430625,
+      0.250397417
+    ],
+    "workers": 4,
+    "name": "executor-memory-200000",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "200000",
+      "1000",
+      "4",
+      "-"
+    ],
+    "process_seconds": 1.5357229709625244,
+    "peak_rss_bytes": 129892352
+  }
+]

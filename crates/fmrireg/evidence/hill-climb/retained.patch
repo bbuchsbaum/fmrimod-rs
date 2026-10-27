@@ -1,0 +1,129 @@
+--- before/crates/fmrireg/src/lib.rs
++++ after/crates/fmrireg/src/lib.rs
+@@ -6,6 +6,7 @@
+ use nalgebra::DMatrix;
+ use ndarray::{Array1, Array2, ArrayView1, ArrayView2, ArrayViewMut1, ArrayViewMut2};
+ mod backend;
++mod finite;
+ mod workspace;
+ pub use backend::MatrixBackend;
+ use statrs::distribution::{ContinuousCDF, FisherSnedecor, StudentsT};
+@@ -236,7 +237,7 @@
+     }
+     fn validate_data(&self, data: ArrayView2<'_, f64>) -> Result<()> {
+         self.validate_shape(data)?;
+-        if data.iter().any(|x| !x.is_finite()) {
++        if !finite::all_finite(data) {
+             return Err(FitError::Invalid("nonfinite data"));
+         }
+         Ok(())
+--- before/crates/fmri-noise/src/lib.rs
++++ after/crates/fmri-noise/src/lib.rs
+@@ -2,6 +2,7 @@
+ //! downstream regression; this transform does not divide by innovation SD.
+ use ndarray::{Array2, ArrayView2, ArrayViewMut2, Zip};
+ use thiserror::Error;
++mod finite;
+ 
+ #[derive(Debug, Error)]
+ pub enum NoiseError {
+@@ -94,7 +95,7 @@
+     fn validate_values(&self, values: ArrayView2<'_, f64>) -> Result<()> {
+         if values.nrows() != self.observations()
+             || values.ncols() == 0
+-            || values.iter().any(|x| !x.is_finite())
++            || !finite::all_finite(values)
+         {
+             return Err(NoiseError::Invalid("matrix dimensions or nonfinite values"));
+         }
+@@ -125,7 +126,7 @@
+             }
+             start += len;
+         }
+-        if out.iter().any(|x| !x.is_finite()) {
++        if !finite::all_finite(out.view()) {
+             return Err(NoiseError::Invalid("whitening overflow"));
+         }
+         Ok(())
+--- before/crates/fmri-noise/src/ar.rs
++++ after/crates/fmri-noise/src/ar.rs
+@@ -130,7 +130,7 @@
+     fn validate_values(&self, values: ArrayView2<'_, f64>) -> Result<()> {
+         if values.nrows() != self.observations()
+             || values.ncols() == 0
+-            || values.iter().any(|v| !v.is_finite())
++            || !crate::finite::all_finite(values)
+         {
+             return Err(NoiseError::Invalid(
+                 "AR matrix dimensions or nonfinite values",
+@@ -160,6 +160,61 @@
+                             .and(values.row(segment + k))
+                             .for_each(|output, &value| *output += weight * value);
+                     }
++                } else if phi.len() <= 4 {
++                    // Keep the original per-feature `0.0 + phi[0] * y[t - 1]
++                    // + ...` evaluation order, but visit each output feature only
++                    // once. Zip handles arbitrary row strides, including negative
++                    // strides, without a contiguity assumption.
++                    match phi.len().min(offset) {
++                        0 => Zip::from(out.row_mut(t))
++                            .and(values.row(t))
++                            .for_each(|output, &current| *output = current),
++                        1 => Zip::from(out.row_mut(t))
++                            .and(values.row(t))
++                            .and(values.row(t - 1))
++                            .for_each(|output, &current, &lag_1| {
++                                let mut sum = 0.0;
++                                sum += phi[0] * lag_1;
++                                *output = current - sum;
++                            }),
++                        2 => Zip::from(out.row_mut(t))
++                            .and(values.row(t))
++                            .and(values.row(t - 1))
++                            .and(values.row(t - 2))
++                            .for_each(|output, &current, &lag_1, &lag_2| {
++                                let mut sum = 0.0;
++                                sum += phi[0] * lag_1;
++                                sum += phi[1] * lag_2;
++                                *output = current - sum;
++                            }),
++                        3 => Zip::from(out.row_mut(t))
++                            .and(values.row(t))
++                            .and(values.row(t - 1))
++                            .and(values.row(t - 2))
++                            .and(values.row(t - 3))
++                            .for_each(|output, &current, &lag_1, &lag_2, &lag_3| {
++                                let mut sum = 0.0;
++                                sum += phi[0] * lag_1;
++                                sum += phi[1] * lag_2;
++                                sum += phi[2] * lag_3;
++                                *output = current - sum;
++                            }),
++                        4 => Zip::from(out.row_mut(t))
++                            .and(values.row(t))
++                            .and(values.row(t - 1))
++                            .and(values.row(t - 2))
++                            .and(values.row(t - 3))
++                            .and(values.row(t - 4))
++                            .for_each(|output, &current, &lag_1, &lag_2, &lag_3, &lag_4| {
++                                let mut sum = 0.0;
++                                sum += phi[0] * lag_1;
++                                sum += phi[1] * lag_2;
++                                sum += phi[2] * lag_3;
++                                sum += phi[3] * lag_4;
++                                *output = current - sum;
++                            }),
++                        _ => unreachable!("small-order AR path has at most four lags"),
++                    }
+                 } else {
+                     // Keep the lag sum separate from the final subtraction: this
+                     // preserves the original floating-point evaluation order.
+@@ -176,7 +231,7 @@
+             }
+             start += len;
+         }
+-        if out.iter().any(|x| !x.is_finite()) {
++        if !crate::finite::all_finite(out.view()) {
+             return Err(NoiseError::Invalid("AR whitening overflow"));
+         }
+         Ok(())

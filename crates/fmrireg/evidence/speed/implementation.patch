@@ -1,0 +1,837 @@
+--- before/crates/fmrireg/src/lib.rs
++++ after/crates/fmrireg/src/lib.rs
+@@ -4,9 +4,13 @@
+ //! uses matrix products and retains only coefficients and residual variances.
+ //! Singular designs are allowed; contrasts must lie in the estimable row space.
+ use nalgebra::DMatrix;
+-use ndarray::{Array1, Array2, ArrayView1, ArrayView2};
++use ndarray::{Array1, Array2, ArrayView1, ArrayView2, ArrayViewMut1, ArrayViewMut2};
++mod backend;
++mod workspace;
++pub use backend::MatrixBackend;
+ use statrs::distribution::{ContinuousCDF, FisherSnedecor, StudentsT};
+ use thiserror::Error;
++pub use workspace::FitWorkspace;
+ 
+ #[derive(Debug, Error)]
+ pub enum FitError {
+@@ -30,6 +34,7 @@
+     row_space: Array2<f64>,
+     rank: usize,
+     tolerance: f64,
++    backend: MatrixBackend,
+ }
+ 
+ /// Compact results. Variance is RSS / (observations - numerical rank).
+@@ -49,6 +54,35 @@
+     }
+     pub fn residual_df(&self) -> usize {
+         self.df
++    }
++}
++
++/// Borrowed fit results backed by a reusable workspace.
++#[derive(Debug, Clone, Copy)]
++pub struct FitView<'m, 'w> {
++    model: &'m LinearModel,
++    coefficients: ArrayView2<'w, f64>,
++    variance: ArrayView1<'w, f64>,
++    df: usize,
++}
++impl<'m, 'w> FitView<'m, 'w> {
++    pub fn coefficients(&self) -> ArrayView2<'w, f64> {
++        self.coefficients
++    }
++    pub fn residual_variance(&self) -> ArrayView1<'w, f64> {
++        self.variance
++    }
++    pub fn residual_df(&self) -> usize {
++        self.df
++    }
++    /// Copy compact outputs when the caller needs to retain them past the next fit.
++    pub fn to_owned(&self) -> Fit<'m> {
++        Fit {
++            model: self.model,
++            coefficients: self.coefficients.to_owned(),
++            variance: self.variance.to_owned(),
++            df: self.df,
++        }
+     }
+ }
+ 
+@@ -130,6 +164,7 @@
+             row_space,
+             rank,
+             tolerance: relative_tolerance.max(64.0 * f64::EPSILON),
++            backend: MatrixBackend::default(),
+         })
+     }
+     pub fn rank(&self) -> usize {
+@@ -145,25 +180,105 @@
+         &self.covariance
+     }
+ 
++    /// Select the fitting backend; preparation and rank policy are unchanged.
++    pub fn with_backend(mut self, backend: MatrixBackend) -> Self {
++        self.backend = backend;
++        self
++    }
++    pub fn backend(&self) -> MatrixBackend {
++        self.backend
++    }
++    pub fn workspace(&self, max_features: usize) -> Result<FitWorkspace> {
++        FitWorkspace::new(
++            self.design.nrows(),
++            self.design.ncols(),
++            max_features,
++            false,
++        )
++    }
+     pub fn fit(&self, data: ArrayView2<'_, f64>) -> Result<Fit<'_>> {
+-        if data.nrows() != self.design.nrows()
+-            || data.ncols() == 0
+-            || data.iter().any(|x| !x.is_finite())
+-        {
+-            return Err(FitError::Invalid("data dimensions or nonfinite values"));
+-        }
+-        let coefficients = self.inverse.dot(&data);
+-        let mut residuals = self.design.dot(&coefficients);
+-        residuals -= &data;
+-        // Matrix products produce row-major residuals. Accumulate all feature
+-        // sums in a contiguous pass rather than revisiting strided columns.
+-        // Keep explicit residuals: ||y||² - ||fitted||² loses precision near
+-        // perfect fits and is deliberately not used here.
+-        let mut variance = Array1::zeros(data.ncols());
+-        for row in residuals.rows() {
++        self.validate_data(data)?;
++        let mut workspace = self.workspace(data.ncols())?;
++        self.fit_buffers_validated(
++            data,
++            &mut workspace.coefficients,
++            &mut workspace.fitted,
++            &mut workspace.variance,
++        )?;
++        Ok(workspace.into_fit(self, data.ncols()))
++    }
++    /// Fit without allocating numeric outputs. Smaller tail blocks reuse the same
++    /// buffers with contiguous layout. Backend packing scratch may still allocate.
++    pub fn fit_into<'m, 'w>(
++        &'m self,
++        data: ArrayView2<'_, f64>,
++        workspace: &'w mut FitWorkspace,
++    ) -> Result<FitView<'m, 'w>> {
++        workspace.check(
++            self.design.nrows(),
++            self.design.ncols(),
++            data.ncols(),
++            false,
++        )?;
++        self.fit_buffers(
++            data,
++            &mut workspace.coefficients,
++            &mut workspace.fitted,
++            &mut workspace.variance,
++        )?;
++        Ok(workspace.view(self, data.ncols()))
++    }
++    fn validate_shape(&self, data: ArrayView2<'_, f64>) -> Result<()> {
++        if data.nrows() != self.design.nrows() || data.ncols() == 0 {
++            return Err(FitError::Invalid("data dimensions"));
++        }
++        Ok(())
++    }
++    fn validate_data(&self, data: ArrayView2<'_, f64>) -> Result<()> {
++        self.validate_shape(data)?;
++        if data.iter().any(|x| !x.is_finite()) {
++            return Err(FitError::Invalid("nonfinite data"));
++        }
++        Ok(())
++    }
++    fn fit_buffers(
++        &self,
++        data: ArrayView2<'_, f64>,
++        coefficients: &mut [f64],
++        fitted: &mut [f64],
++        variance: &mut [f64],
++    ) -> Result<()> {
++        self.validate_data(data)?;
++        self.fit_buffers_validated(data, coefficients, fitted, variance)
++    }
++    fn fit_buffers_validated(
++        &self,
++        data: ArrayView2<'_, f64>,
++        coefficients: &mut [f64],
++        fitted: &mut [f64],
++        variance: &mut [f64],
++    ) -> Result<()> {
++        let (n, b) = data.dim();
++        let p = self.design.ncols();
++        let mut coefficients =
++            ArrayViewMut2::from_shape((p, b), &mut coefficients[..p * b]).unwrap();
++        let mut fitted = ArrayViewMut2::from_shape((n, b), &mut fitted[..n * b]).unwrap();
++        self.backend
++            .multiply(self.inverse.view(), data, coefficients.view_mut());
++        self.backend
++            .multiply(self.design.view(), coefficients.view(), fitted.view_mut());
++        let mut variance = ArrayViewMut1::from(&mut variance[..b]);
++        variance.fill(0.);
++        // Form explicit residuals before squaring, in one contiguous pass. The
++        // difference of squared norms would lose precision near perfect fits.
++        for (prediction, observed) in fitted.rows().into_iter().zip(data.rows()) {
+             ndarray::Zip::from(&mut variance)
+-                .and(row)
+-                .for_each(|sum, &r| *sum += r * r);
++                .and(prediction)
++                .and(observed)
++                .for_each(|sum, &f, &y| {
++                    let r = f - y;
++                    *sum += r * r;
++                });
+         }
+         variance /= self.residual_df() as f64;
+         if coefficients
+@@ -173,12 +288,7 @@
+         {
+             return Err(FitError::Invalid("fit overflow; rescale inputs"));
+         }
+-        Ok(Fit {
+-            model: self,
+-            coefficients,
+-            variance,
+-            df: self.residual_df(),
+-        })
++        Ok(())
+     }
+     fn check_contrast(&self, c: ArrayView1<'_, f64>) -> Result<()> {
+         if c.len() != self.design.ncols() || c.iter().any(|x| !x.is_finite()) {
+@@ -214,7 +324,23 @@
+     }
+ }
+ 
+-impl Fit<'_> {
++impl<'m> Fit<'m> {
++    pub fn as_view(&self) -> FitView<'m, '_> {
++        FitView {
++            model: self.model,
++            coefficients: self.coefficients.view(),
++            variance: self.variance.view(),
++            df: self.df,
++        }
++    }
++    pub fn t_contrast(&self, c: ArrayView1<'_, f64>) -> Result<TContrast> {
++        self.as_view().t_contrast(c)
++    }
++    pub fn f_contrast(&self, c: ArrayView2<'_, f64>) -> Result<FContrast> {
++        self.as_view().f_contrast(c)
++    }
++}
++impl FitView<'_, '_> {
+     /// Evaluate a contrast without refitting; inference uses the original design factorization.
+     pub fn t_contrast(&self, c: ArrayView1<'_, f64>) -> Result<TContrast> {
+         self.model.check_contrast(c)?;
+@@ -321,12 +447,53 @@
+             noise,
+         })
+     }
++    pub fn with_backend(mut self, backend: MatrixBackend) -> Self {
++        self.model = self.model.with_backend(backend);
++        self
++    }
++    pub fn backend(&self) -> MatrixBackend {
++        self.model.backend()
++    }
++    pub fn workspace(&self, max_features: usize) -> Result<FitWorkspace> {
++        FitWorkspace::new(
++            self.model.design.nrows(),
++            self.model.design.ncols(),
++            max_features,
++            true,
++        )
++    }
+     pub fn fit(&self, data: ArrayView2<'_, f64>) -> Result<Fit<'_>> {
++        // Preserve the custom-plan contract and reject invalid built-in inputs
++        // before allocating fitting buffers.
+         let transformed = self.noise.apply(data)?;
+         if transformed.dim() != data.dim() {
+             return Err(FitError::Invalid("whitening must preserve matrix shape"));
+         }
+         self.model.fit(transformed.view())
++    }
++    pub fn fit_into<'m, 'w>(
++        &'m self,
++        data: ArrayView2<'_, f64>,
++        workspace: &'w mut FitWorkspace,
++    ) -> Result<FitView<'m, 'w>> {
++        workspace.check(
++            self.model.design.nrows(),
++            self.model.design.ncols(),
++            data.ncols(),
++            true,
++        )?;
++        self.model.validate_shape(data)?;
++        let (n, b) = data.dim();
++        let mut transformed =
++            ArrayViewMut2::from_shape((n, b), &mut workspace.transformed[..n * b]).unwrap();
++        self.noise.apply_into(data, transformed.view_mut())?;
++        self.model.fit_buffers(
++            transformed.view(),
++            &mut workspace.coefficients,
++            &mut workspace.fitted,
++            &mut workspace.variance,
++        )?;
++        Ok(workspace.view(&self.model, b))
+     }
+     pub fn t_contrast(
+         &self,
+--- before/crates/fmrireg/src/dataset.rs
++++ after/crates/fmrireg/src/dataset.rs
+@@ -1,7 +1,7 @@
+ //! Explicit feature-block adapter. The caller guarantees that reader rows have
+ //! the same identities/order as the prepared design. This API does not infer
+ //! alignment from equal dimensions. It requires f64 and preserves feature order.
+-use crate::{Fit, FitError, GlsModel, LinearModel, Result};
++use crate::{Fit, FitError, FitView, FitWorkspace, GlsModel, LinearModel, Result};
+ use fmridataset::{
+     ArrayReader, DType, ExecutionContext, MemoryBudget, ReadSelection, Selection, Values,
+ };
+@@ -75,8 +75,31 @@
+     /// Explicit n-by-block buffers in addition to the reader output.
+     fn time_buffers(&self) -> usize;
+     fn fit_block(&self, data: ArrayView2<'_, f64>) -> Result<Fit<'_>>;
++    #[doc(hidden)]
++    fn prepared(&self) -> &LinearModel;
++    #[doc(hidden)]
++    fn workspace(&self, features: usize) -> Result<FitWorkspace>;
++    #[doc(hidden)]
++    fn fit_reuse<'m, 'w>(
++        &'m self,
++        data: ArrayView2<'_, f64>,
++        workspace: &'w mut FitWorkspace,
++    ) -> Result<FitView<'m, 'w>>;
+ }
+ impl BlockModel for LinearModel {
++    fn prepared(&self) -> &LinearModel {
++        self
++    }
++    fn workspace(&self, features: usize) -> Result<FitWorkspace> {
++        self.workspace(features)
++    }
++    fn fit_reuse<'m, 'w>(
++        &'m self,
++        data: ArrayView2<'_, f64>,
++        workspace: &'w mut FitWorkspace,
++    ) -> Result<FitView<'m, 'w>> {
++        self.fit_into(data, workspace)
++    }
+     fn observations(&self) -> usize {
+         self.design().nrows()
+     }
+@@ -91,6 +114,19 @@
+     }
+ }
+ impl<P: fmri_noise::WhiteningPlan> BlockModel for GlsModel<P> {
++    fn prepared(&self) -> &LinearModel {
++        &self.model
++    }
++    fn workspace(&self, features: usize) -> Result<FitWorkspace> {
++        self.workspace(features)
++    }
++    fn fit_reuse<'m, 'w>(
++        &'m self,
++        data: ArrayView2<'_, f64>,
++        workspace: &'w mut FitWorkspace,
++    ) -> Result<FitView<'m, 'w>> {
++        self.fit_into(data, workspace)
++    }
+     fn observations(&self) -> usize {
+         self.noise_plan().observations()
+     }
+@@ -149,3 +185,168 @@
+         )
+     }
+ }
++
++/// Explicit block/worker policy. `working_bytes` bounds numeric reader and fit
++/// buffers across ALL workers, excluding resident sources/models, allocator and
++/// backend scratch, thread stacks, custom transform scratch, and retained sink data.
++/// With an internally threaded BLAS, cap its threads to avoid nested oversubscription.
++#[derive(Debug, Clone, Copy)]
++pub struct BlockOptions {
++    pub block_features: usize,
++    pub workers: usize,
++    pub working_bytes: usize,
++}
++
++/// Reuse one workspace per worker and deliver borrowed results in feature order.
++/// Reads and sink calls stay on the caller thread, so readers need not be Send.
++/// At most one block per worker is in flight. Errors stop new reads; already
++/// running fits finish before return. Previously delivered sink results remain.
++pub fn fit_blocks_with_options<'m, M: BlockModel + Sync>(
++    model: &'m M,
++    reader: &mut dyn ArrayReader,
++    options: BlockOptions,
++    mut sink: impl FnMut(Range<usize>, &FitView<'m, '_>) -> Result<()>,
++) -> Result<()> {
++    use std::sync::mpsc::sync_channel;
++    let [n, v] = reader.shape();
++    let BlockOptions {
++        block_features,
++        workers,
++        working_bytes,
++    } = options;
++    if n != model.observations()
++        || v == 0
++        || block_features == 0
++        || workers == 0
++        || reader.dtype() != DType::F64
++    {
++        return Err(FitError::Invalid(
++            "reader dimensions/dtype, block size or workers",
++        ));
++    }
++    let capacity = block_features.min(v);
++    let blocks = v.div_ceil(capacity);
++    let workers = workers.min(blocks);
++    let fit_bytes =
++        FitWorkspace::required_bytes(n, model.columns(), capacity, model.time_buffers() == 2)?;
++    // Inspect estimates before allocating a workspace or reading any data.
++    // Conservative reservation: each worker gets one maximum reader peak.
++    let mut peak = 0;
++    for start in (0..v).step_by(capacity) {
++        let range = start..start.saturating_add(capacity).min(v);
++        let selection = ReadSelection::new([n, v], Selection::All, Selection::Range(range.clone()))
++            .map_err(|_| FitError::Invalid("reader selection"))?;
++        let cost = reader
++            .estimate(&selection)
++            .map_err(|_| FitError::Invalid("reader estimate"))?;
++        let expected = n
++            .checked_mul(range.len())
++            .and_then(|s| s.checked_mul(8))
++            .ok_or(FitError::Invalid("reader byte overflow"))?;
++        if cost.output_bytes != expected || cost.peak_bytes < expected {
++            return Err(FitError::Invalid("reader estimate is inconsistent"));
++        }
++        peak = peak.max(cost.peak_bytes);
++    }
++    let required = fit_bytes
++        .checked_add(peak)
++        .and_then(|s| s.checked_mul(workers))
++        .ok_or(FitError::Invalid("parallel working byte overflow"))?;
++    if required > working_bytes {
++        return Err(FitError::Invalid("working memory budget exceeded"));
++    }
++    let context = ExecutionContext::new(MemoryBudget::new(peak));
++    let mut read = |range: Range<usize>| {
++        let selection = ReadSelection::new([n, v], Selection::All, Selection::Range(range))
++            .map_err(|_| FitError::Invalid("reader selection"))?;
++        let block = context
++            .read(reader, &selection)
++            .map_err(|_| FitError::Invalid("dataset read failed"))?;
++        let [rows, cols] = block.shape();
++        let Values::F64(values) = block.into_values() else {
++            return Err(FitError::Invalid("reader changed dtype"));
++        };
++        ndarray::Array2::from_shape_vec((rows, cols), values)
++            .map_err(|_| FitError::Invalid("block shape"))
++    };
++    if workers == 1 {
++        let mut workspace = model.workspace(capacity)?;
++        for start in (0..v).step_by(capacity) {
++            let range = start..start.saturating_add(capacity).min(v);
++            let data = read(range.clone())?;
++            let fit = model.fit_reuse(data.view(), &mut workspace)?;
++            sink(range, &fit)?;
++        }
++        return Ok(());
++    }
++    type Task = (Range<usize>, ndarray::Array2<f64>, FitWorkspace);
++    type Completed = (Range<usize>, FitWorkspace, Result<()>);
++    std::thread::scope(|scope| {
++        let mut channels = Vec::with_capacity(workers);
++        for _ in 0..workers {
++            let workspace = model.workspace(capacity)?;
++            let (send_task, tasks) = sync_channel::<Task>(1);
++            let (send_result, results) = sync_channel::<Completed>(1);
++            std::thread::Builder::new()
++                .spawn_scoped(scope, move || {
++                    while let Ok((range, data, mut workspace)) = tasks.recv() {
++                        let result = model.fit_reuse(data.view(), &mut workspace).map(|_| ());
++                        drop(data);
++                        if send_result.send((range, workspace, result)).is_err() {
++                            break;
++                        }
++                    }
++                })
++                .map_err(|_| FitError::Invalid("cannot start fitting worker"))?;
++            channels.push((send_task, results, Some(workspace)));
++        }
++        let mut next = 0usize;
++        for (send, _, workspace) in &mut channels {
++            let range = next..next.saturating_add(capacity).min(v);
++            let data = read(range.clone())?;
++            send.send((range.clone(), data, workspace.take().unwrap()))
++                .map_err(|_| FitError::Invalid("fitting worker stopped"))?;
++            next = range.end;
++        }
++        for index in 0..blocks {
++            let (send, receive, _) = &channels[index % workers];
++            let (range, workspace, result) = receive
++                .recv()
++                .map_err(|_| FitError::Invalid("fitting worker stopped"))?;
++            result?;
++            sink(
++                range.clone(),
++                &workspace.view(model.prepared(), range.len()),
++            )?;
++            if next < v {
++                let range = next..next.saturating_add(capacity).min(v);
++                let data = read(range.clone())?;
++                send.send((range.clone(), data, workspace))
++                    .map_err(|_| FitError::Invalid("fitting worker stopped"))?;
++                next = range.end;
++            }
++        }
++        Ok(())
++    })
++}
++
++impl<'m, M: BlockModel + Sync> BoundModel<'m, M> {
++    /// Parallel/reusable counterpart of `fit_assay`, with identical ID binding.
++    pub fn fit_assay_with_options(
++        &self,
++        assay: &fmridataset::Assay,
++        options: BlockOptions,
++        mut sink: impl FnMut(&[fmridataset::FeatureId], &FitView<'m, '_>) -> Result<()>,
++    ) -> Result<()> {
++        if self.observations.ids() != assay.observation_ids() {
++            return Err(FitError::Invalid(
++                "design/assay observation IDs or ordering differ",
++            ));
++        }
++        let context = ExecutionContext::new(MemoryBudget::new(options.working_bytes));
++        let mut reader = context.open(assay.source());
++        fit_blocks_with_options(self.model, &mut reader, options, |range, fit| {
++            sink(&assay.feature_ids()[range], fit)
++        })
++    }
++}
+--- before/crates/fmrireg/Cargo.toml
++++ after/crates/fmrireg/Cargo.toml
+@@ -21,4 +21,6 @@
+ 
+ [features]
+ default = []
++# Uses the system framework on macOS; other targets retain the portable backend.
++accelerate = []
+ dataset = ["dep:fmridataset"]
+--- before/crates/fmrireg/examples/gls_benchmark.rs
++++ after/crates/fmrireg/examples/gls_benchmark.rs
+@@ -1,7 +1,7 @@
+ //! Reproducible synthetic streamed GLS benchmark; see scripts/benchmark_gls.py.
+ use fmri_noise::{ArEstimator, ArStart, Pooling};
+ use fmrireg::LinearModel;
+-use ndarray::{Array1, Array2};
++use ndarray::{Array1, Array2, ArrayViewMut2};
+ use std::{
+     fs::File,
+     io::{BufWriter, Write},
+@@ -20,6 +20,12 @@
+     let args: Vec<_> = std::env::args().collect();
+     let a: Vec<usize> = args[1..8].iter().map(|s| s.parse().unwrap()).collect();
+     let (n, p, v, order, block, workers, reps) = (a[0], a[1], a[2], a[3], a[4], a[5], a[6]);
++    let reuse = args.get(9).is_some_and(|s| s == "reuse");
++    let backend = if std::env::var("FMRIREG_BACKEND").as_deref() == Ok("portable") {
++        fmrireg::MatrixBackend::Portable
++    } else {
++        fmrireg::MatrixBackend::default()
++    };
+     assert!(n % 2 == 0 && block > 0 && workers > 0 && reps > 0);
+     let x = Array2::from_shape_fn((n, p), |(i, j)| {
+         if j == 0 {
+@@ -32,7 +38,9 @@
+         .map(|i| ![n / 4 - 1, n / 4, 3 * n / 4].contains(&i))
+         .collect();
+     let begin = Instant::now();
+-    let ols = LinearModel::new(x.view(), 1e-12).unwrap();
++    let ols = LinearModel::new(x.view(), 1e-12)
++        .unwrap()
++        .with_backend(backend);
+     let initial_prepare = begin.elapsed().as_secs_f64();
+     let noise = data(n, 0, 32);
+     let begin = Instant::now();
+@@ -58,7 +66,9 @@
+     let xw = plan.apply(x.view()).unwrap();
+     let design_whiten = begin.elapsed().as_secs_f64();
+     let begin = Instant::now();
+-    let model = LinearModel::new(xw.view(), 1e-12).unwrap();
++    let model = LinearModel::new(xw.view(), 1e-12)
++        .unwrap()
++        .with_backend(backend);
+     let gls_prepare = begin.elapsed().as_secs_f64();
+     let mut contrast = Array1::zeros(p);
+     contrast[1] = 1.0;
+@@ -72,19 +82,42 @@
+                     let contrast = &contrast;
+                     scope.spawn(move || {
+                         let mut totals = [0.0; 4];
++                        let mut workspace = reuse.then(|| model.workspace(block).unwrap());
++                        let mut whitened = if reuse {
++                            vec![0.; n * block]
++                        } else {
++                            Vec::new()
++                        };
+                         for start in (worker * block..v).step_by(workers * block) {
+                             let tick = Instant::now();
+                             let y = data(n, start, block.min(v - start));
+                             totals[0] += tick.elapsed().as_secs_f64();
+-                            let tick = Instant::now();
+-                            let yw = plan.apply(y.view()).unwrap();
+-                            totals[1] += tick.elapsed().as_secs_f64();
+-                            let tick = Instant::now();
+-                            let fit = model.fit(yw.view()).unwrap();
+-                            totals[2] += tick.elapsed().as_secs_f64();
+-                            let tick = Instant::now();
+-                            std::hint::black_box(fit.t_contrast(contrast.view()).unwrap());
+-                            totals[3] += tick.elapsed().as_secs_f64();
++                            if let Some(workspace) = &mut workspace {
++                                let tick = Instant::now();
++                                let mut yw = ArrayViewMut2::from_shape(
++                                    (n, y.ncols()),
++                                    &mut whitened[..n * y.ncols()],
++                                )
++                                .unwrap();
++                                plan.apply_into(y.view(), yw.view_mut()).unwrap();
++                                totals[1] += tick.elapsed().as_secs_f64();
++                                let tick = Instant::now();
++                                let fit = model.fit_into(yw.view(), workspace).unwrap();
++                                totals[2] += tick.elapsed().as_secs_f64();
++                                let tick = Instant::now();
++                                std::hint::black_box(fit.t_contrast(contrast.view()).unwrap());
++                                totals[3] += tick.elapsed().as_secs_f64();
++                            } else {
++                                let tick = Instant::now();
++                                let yw = plan.apply(y.view()).unwrap();
++                                totals[1] += tick.elapsed().as_secs_f64();
++                                let tick = Instant::now();
++                                let fit = model.fit(yw.view()).unwrap();
++                                totals[2] += tick.elapsed().as_secs_f64();
++                                let tick = Instant::now();
++                                std::hint::black_box(fit.t_contrast(contrast.view()).unwrap());
++                                totals[3] += tick.elapsed().as_secs_f64();
++                            }
+                         }
+                         totals
+                     })
+@@ -105,10 +138,11 @@
+     // Untimed validation pass, one feature record at a time; no full-volume output retention.
+     if args[8] != "-" {
+         let mut out = BufWriter::new(File::create(&args[8]).unwrap());
++        let mut workspace = model.workspace(block).unwrap();
+         for start in (0..v).step_by(block) {
+             let y = data(n, start, block.min(v - start));
+             let yw = plan.apply(y.view()).unwrap();
+-            let fit = model.fit(yw.view()).unwrap();
++            let fit = model.fit_into(yw.view(), &mut workspace).unwrap();
+             let c = fit.t_contrast(contrast.view()).unwrap();
+             for j in 0..y.ncols() {
+                 for i in 0..p {
+@@ -129,6 +163,6 @@
+     }
+     println!(
+         "{}",
+-        serde_json::json!({"n":n,"p":p,"features":v,"order":order,"block":block,"workers":workers,"rank":model.rank(),"df":model.residual_df(),"phi":plan.coefficients(),"setup":{"initial_prepare":initial_prepare,"residual":residual_seconds,"correction_prepare":correction_prepare,"noise_fit":noise_fit,"design_whiten":design_whiten,"gls_prepare":gls_prepare},"cold":cold,"warm":times})
++        serde_json::json!({"reuse":reuse,"backend":format!("{backend:?}"),"n":n,"p":p,"features":v,"order":order,"block":block,"workers":workers,"rank":model.rank(),"df":model.residual_df(),"phi":plan.coefficients(),"setup":{"initial_prepare":initial_prepare,"residual":residual_seconds,"correction_prepare":correction_prepare,"noise_fit":noise_fit,"design_whiten":design_whiten,"gls_prepare":gls_prepare},"cold":cold,"warm":times})
+     );
+ }
+--- before/crates/fmri-noise/src/lib.rs
++++ after/crates/fmri-noise/src/lib.rs
+@@ -1,6 +1,6 @@
+ //! Run-aware AR(1) correlation whitening. Innovation scale is estimated by the
+ //! downstream regression; this transform does not divide by innovation SD.
+-use ndarray::{Array2, ArrayView2, ArrayViewMut2};
++use ndarray::{Array2, ArrayView2, ArrayViewMut2, Zip};
+ use thiserror::Error;
+ 
+ #[derive(Debug, Error)]
+@@ -74,23 +74,37 @@
+         self.resets.len()
+     }
+     pub fn apply(&self, values: ArrayView2<'_, f64>) -> Result<Array2<f64>> {
++        self.validate_values(values)?;
+         let mut out = Array2::zeros(values.raw_dim());
+-        self.apply_into(values, out.view_mut())?;
++        self.apply_into_validated(values, out.view_mut())?;
+         Ok(out)
+     }
+     /// Apply this plan into a caller-owned output matrix for repeated reuse.
+     pub fn apply_into(
+         &self,
+         values: ArrayView2<'_, f64>,
+-        mut out: ArrayViewMut2<'_, f64>,
++        out: ArrayViewMut2<'_, f64>,
+     ) -> Result<()> {
++        self.validate_values(values)?;
++        if out.dim() != values.dim() {
++            return Err(NoiseError::Invalid("matrix dimensions or nonfinite values"));
++        }
++        self.apply_into_validated(values, out)
++    }
++    fn validate_values(&self, values: ArrayView2<'_, f64>) -> Result<()> {
+         if values.nrows() != self.observations()
+             || values.ncols() == 0
+-            || out.dim() != values.dim()
+             || values.iter().any(|x| !x.is_finite())
+         {
+             return Err(NoiseError::Invalid("matrix dimensions or nonfinite values"));
+         }
++        Ok(())
++    }
++    fn apply_into_validated(
++        &self,
++        values: ArrayView2<'_, f64>,
++        mut out: ArrayViewMut2<'_, f64>,
++    ) -> Result<()> {
+         let mut start = 0;
+         for (&len, &phi) in self.run_lengths.iter().zip(&self.phi) {
+             let scale = match self.first {
+@@ -98,12 +112,15 @@
+                 FirstSample::ZeroHistory => 1.0,
+             };
+             for t in start..start + len {
+-                for j in 0..values.ncols() {
+-                    out[(t, j)] = if self.resets[t] {
+-                        scale * values[(t, j)]
+-                    } else {
+-                        values[(t, j)] - phi * values[(t - 1, j)]
+-                    };
++                if self.resets[t] {
++                    Zip::from(out.row_mut(t))
++                        .and(values.row(t))
++                        .for_each(|output, &value| *output = scale * value);
++                } else {
++                    Zip::from(out.row_mut(t))
++                        .and(values.row(t))
++                        .and(values.row(t - 1))
++                        .for_each(|output, &current, &previous| *output = current - phi * previous);
+                 }
+             }
+             start += len;
+@@ -216,11 +233,18 @@
+     fn apply(&self, values: ArrayView2<'_, f64>) -> Result<Array2<f64>>;
+     /// Default compatibility path for custom plans. Built-in plans override this
+     /// with allocation-free kernels.
+-    fn apply_into(&self, values: ArrayView2<'_, f64>, mut out: ArrayViewMut2<'_, f64>) -> Result<()> {
++    fn apply_into(
++        &self,
++        values: ArrayView2<'_, f64>,
++        mut out: ArrayViewMut2<'_, f64>,
++    ) -> Result<()> {
+         if out.dim() != values.dim() {
+             return Err(NoiseError::Invalid("output matrix dimensions"));
+         }
+         let transformed = self.apply(values)?;
++        if transformed.dim() != values.dim() {
++            return Err(NoiseError::Invalid("transformed matrix dimensions"));
++        }
+         out.assign(&transformed);
+         Ok(())
+     }
+--- before/crates/fmri-noise/src/ar.rs
++++ after/crates/fmri-noise/src/ar.rs
+@@ -1,7 +1,7 @@
+ //! Fixed-order autoregression with explicit startup and estimation diagnostics.
+ use crate::{NoiseError, Pooling, Result};
+ use nalgebra::{DMatrix, DVector};
+-use ndarray::{Array2, ArrayView2, ArrayViewMut2};
++use ndarray::{Array2, ArrayView2, ArrayViewMut2, Zip};
+ 
+ /// Treatment of the first observations in every independent segment.
+ #[derive(Debug, Clone, Copy)]
+@@ -108,25 +108,41 @@
+         self.pooling_adjusted
+     }
+     pub fn apply(&self, values: ArrayView2<'_, f64>) -> Result<Array2<f64>> {
++        self.validate_values(values)?;
+         let mut out = Array2::zeros(values.raw_dim());
+-        self.apply_into(values, out.view_mut())?;
++        self.apply_into_validated(values, out.view_mut())?;
+         Ok(out)
+     }
+     /// Apply this plan into a caller-owned output matrix for repeated reuse.
+     pub fn apply_into(
+         &self,
+         values: ArrayView2<'_, f64>,
+-        mut out: ArrayViewMut2<'_, f64>,
++        out: ArrayViewMut2<'_, f64>,
+     ) -> Result<()> {
++        self.validate_values(values)?;
++        if out.dim() != values.dim() {
++            return Err(NoiseError::Invalid(
++                "AR matrix dimensions or nonfinite values",
++            ));
++        }
++        self.apply_into_validated(values, out)
++    }
++    fn validate_values(&self, values: ArrayView2<'_, f64>) -> Result<()> {
+         if values.nrows() != self.observations()
+             || values.ncols() == 0
+-            || out.dim() != values.dim()
+             || values.iter().any(|v| !v.is_finite())
+         {
+             return Err(NoiseError::Invalid(
+                 "AR matrix dimensions or nonfinite values",
+             ));
+         }
++        Ok(())
++    }
++    fn apply_into_validated(
++        &self,
++        values: ArrayView2<'_, f64>,
++        mut out: ArrayViewMut2<'_, f64>,
++    ) -> Result<()> {
+         let mut start = 0;
+         for (run, &len) in self.lengths.iter().enumerate() {
+             let phi = &self.coefficients[run];
+@@ -137,30 +153,25 @@
+                 }
+                 let offset = t - segment;
+                 if matches!(self.startup, ArStart::Stationary) && offset < phi.len() {
+-                    for j in 0..values.ncols() {
+-                        out[(t, j)] = 0.0;
+-                    }
++                    out.row_mut(t).fill(0.0);
+                     for k in 0..=offset {
+                         let weight = self.initial[run][(offset, k)];
+-                        for j in 0..values.ncols() {
+-                            out[(t, j)] += weight * values[(segment + k, j)];
+-                        }
++                        Zip::from(out.row_mut(t))
++                            .and(values.row(segment + k))
++                            .for_each(|output, &value| *output += weight * value);
+                     }
+                 } else {
+                     // Keep the lag sum separate from the final subtraction: this
+                     // preserves the original floating-point evaluation order.
+-                    for j in 0..values.ncols() {
+-                        out[(t, j)] = 0.0;
++                    out.row_mut(t).fill(0.0);
++                    for (k, &coefficient) in phi.iter().take(offset).enumerate() {
++                        Zip::from(out.row_mut(t))
++                            .and(values.row(t - k - 1))
++                            .for_each(|sum, &value| *sum += coefficient * value);
+                     }
+-                    for k in 0..phi.len().min(offset) {
+-                        let coefficient = phi[k];
+-                        for j in 0..values.ncols() {
+-                            out[(t, j)] += coefficient * values[(t - k - 1, j)];
+-                        }
+-                    }
+-                    for j in 0..values.ncols() {
+-                        out[(t, j)] = values[(t, j)] - out[(t, j)];
+-                    }
++                    Zip::from(out.row_mut(t))
++                        .and(values.row(t))
++                        .for_each(|sum, &current| *sum = current - *sum);
+                 }
+             }
+             start += len;

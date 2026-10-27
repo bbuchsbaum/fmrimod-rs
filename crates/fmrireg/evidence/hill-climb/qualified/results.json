@@ -1,0 +1,2370 @@
+[
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.000255917,
+      "fit": 0.000358042,
+      "generate": 0.004185458,
+      "wall": 0.005504292,
+      "whiten": 0.000139125
+    },
+    "df": 292,
+    "features": 1000,
+    "n": 300,
+    "order": 1,
+    "p": 8,
+    "phi": [
+      [
+        0.9360092840410753
+      ],
+      [
+        0.99
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.000548625,
+      "design_whiten": 3.375e-06,
+      "gls_prepare": 3.7292e-05,
+      "initial_prepare": 7.8583e-05,
+      "noise_fit": 0.000143334,
+      "residual": 5.725e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.000237792,
+        "fit": 0.000203458,
+        "generate": 0.003932792,
+        "wall": 0.004983,
+        "whiten": 0.000304875
+      },
+      {
+        "contrast": 0.000237709,
+        "fit": 0.000200167,
+        "generate": 0.003600292,
+        "wall": 0.004797042,
+        "whiten": 0.000123375
+      },
+      {
+        "contrast": 0.00024,
+        "fit": 0.000179083,
+        "generate": 0.0035865,
+        "wall": 0.004578084,
+        "whiten": 0.000127041
+      },
+      {
+        "contrast": 0.000235792,
+        "fit": 0.000178875,
+        "generate": 0.00377525,
+        "wall": 0.004800083,
+        "whiten": 0.000117458
+      },
+      {
+        "contrast": 0.000251417,
+        "fit": 0.000181125,
+        "generate": 0.003721041,
+        "wall": 0.005168042,
+        "whiten": 0.000412209
+      }
+    ],
+    "workers": 1,
+    "name": "300-8-1000-ar1-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "300",
+      "8",
+      "1000",
+      "1",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-8-1000-ar1-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 0.42469191551208496,
+    "peak_rss_bytes": 43991040,
+    "output_sha256": "67dbbb584ee51ca1cc9093288849f253556db18d6d83daebb3625cdfa1ce72ce",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-8-1000-ar1-b1000-w1-r.bin",
+      "reference_sha256": "d2bcd84cd0ba5c93b58ef55c968ded361eb5db93f544062f5537f8d8bac099ec",
+      "values": 13000,
+      "max_scaled_error": 1.8184498792162185e-12,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.000162417,
+      "fit": 0.00017775,
+      "generate": 0.0036605,
+      "wall": 0.004961041,
+      "whiten": 0.000188917
+    },
+    "df": 292,
+    "features": 1000,
+    "n": 300,
+    "order": 4,
+    "p": 8,
+    "phi": [
+      [
+        2.1714036553882683,
+        -2.353976243410374,
+        1.800345065155248,
+        -0.6875395547941756
+      ],
+      [
+        2.503767087767391,
+        -3.0180172691189338,
+        2.489688451212059,
+        -0.99
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.000441375,
+      "design_whiten": 5.959e-06,
+      "gls_prepare": 3.2541e-05,
+      "initial_prepare": 4.0166e-05,
+      "noise_fit": 0.000168375,
+      "residual": 5.85e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.000140041,
+        "fit": 0.000238125,
+        "generate": 0.003663875,
+        "wall": 0.004810875,
+        "whiten": 0.000210417
+      },
+      {
+        "contrast": 0.000147333,
+        "fit": 0.000285792,
+        "generate": 0.004637125,
+        "wall": 0.005928666,
+        "whiten": 0.000224708
+      },
+      {
+        "contrast": 0.000143041,
+        "fit": 0.000198917,
+        "generate": 0.004024709,
+        "wall": 0.004962708,
+        "whiten": 0.000195125
+      },
+      {
+        "contrast": 0.000144875,
+        "fit": 0.000276292,
+        "generate": 0.004903292,
+        "wall": 0.006251834,
+        "whiten": 0.000194416
+      },
+      {
+        "contrast": 0.0001365,
+        "fit": 0.000212875,
+        "generate": 0.003620834,
+        "wall": 0.004682416,
+        "whiten": 0.000196625
+      }
+    ],
+    "workers": 1,
+    "name": "300-8-1000-ar4-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "300",
+      "8",
+      "1000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-8-1000-ar4-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 0.050375938415527344,
+    "peak_rss_bytes": 44531712,
+    "output_sha256": "cd03c24c15165660be9b7e1130584b9b4dfd4c7e651905bc05021b4065a1caf2",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-8-1000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "05447d09023205dd1b3d68572768c2a0081e88f67571d98545c8c1bbd80d7d5b",
+      "values": 13000,
+      "max_scaled_error": 2.1757953370981415e-12,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.012389421999999999,
+      "fit": 0.009211880000000002,
+      "generate": 0.184780794,
+      "wall": 0.214532833,
+      "whiten": 0.006177914000000001
+    },
+    "df": 292,
+    "features": 50000,
+    "n": 300,
+    "order": 1,
+    "p": 8,
+    "phi": [
+      [
+        0.9360092840410753
+      ],
+      [
+        0.99
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.00044025,
+      "design_whiten": 2.917e-06,
+      "gls_prepare": 3.2458e-05,
+      "initial_prepare": 4.6166e-05,
+      "noise_fit": 0.000111708,
+      "residual": 5.5625e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.012038160000000001,
+        "fit": 0.009102002000000001,
+        "generate": 0.17981503800000004,
+        "wall": 0.208629,
+        "whiten": 0.006034043000000002
+      },
+      {
+        "contrast": 0.012451085,
+        "fit": 0.009701254000000001,
+        "generate": 0.18335620600000002,
+        "wall": 0.213304292,
+        "whiten": 0.005956793999999999
+      },
+      {
+        "contrast": 0.012047915999999999,
+        "fit": 0.009539460000000001,
+        "generate": 0.181126378,
+        "wall": 0.210269083,
+        "whiten": 0.005921831
+      },
+      {
+        "contrast": 0.011938248,
+        "fit": 0.009604498999999999,
+        "generate": 0.17810108499999996,
+        "wall": 0.207278959,
+        "whiten": 0.0059914200000000025
+      },
+      {
+        "contrast": 0.011835417999999999,
+        "fit": 0.009153540999999998,
+        "generate": 0.17663454099999998,
+        "wall": 0.205241167,
+        "whiten": 0.005818045000000001
+      }
+    ],
+    "workers": 1,
+    "name": "300-8-50000-ar1-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "300",
+      "8",
+      "50000",
+      "1",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-8-50000-ar1-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 1.5021569728851318,
+    "peak_rss_bytes": 62160896,
+    "output_sha256": "325e09dd124cf437619dd5cfebc575bfcc12b638ea061deb6fb0fae9c859183c",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-8-50000-ar1-b1000-w1-r.bin",
+      "reference_sha256": "0c3971cad9f05efcc2433b79127e778914b01767db60e256509948e7d1641474",
+      "values": 650000,
+      "max_scaled_error": 3.730259240914684e-10,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.007182085999999999,
+      "fit": 0.011698460000000004,
+      "generate": 0.181612166,
+      "wall": 0.233564542,
+      "whiten": 0.031428498000000006
+    },
+    "df": 292,
+    "features": 50000,
+    "n": 300,
+    "order": 4,
+    "p": 8,
+    "phi": [
+      [
+        2.1714036553882683,
+        -2.353976243410374,
+        1.800345065155248,
+        -0.6875395547941756
+      ],
+      [
+        2.503767087767391,
+        -3.0180172691189338,
+        2.489688451212059,
+        -0.99
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.0007225,
+      "design_whiten": 1.3584e-05,
+      "gls_prepare": 5.4875e-05,
+      "initial_prepare": 5.8083e-05,
+      "noise_fit": 0.000281417,
+      "residual": 5.975e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.006911538999999999,
+        "fit": 0.012559250999999999,
+        "generate": 0.17754345399999993,
+        "wall": 0.230189792,
+        "whiten": 0.031366418
+      },
+      {
+        "contrast": 0.006891752,
+        "fit": 0.011981288999999997,
+        "generate": 0.17600524699999998,
+        "wall": 0.226771125,
+        "whiten": 0.030397917999999996
+      },
+      {
+        "contrast": 0.006949376000000001,
+        "fit": 0.012872209999999999,
+        "generate": 0.17829050200000005,
+        "wall": 0.230922708,
+        "whiten": 0.031002872
+      },
+      {
+        "contrast": 0.0070774939999999975,
+        "fit": 0.012852837999999997,
+        "generate": 0.18184008400000004,
+        "wall": 0.234579875,
+        "whiten": 0.031234377
+      },
+      {
+        "contrast": 0.006851581000000001,
+        "fit": 0.012305749,
+        "generate": 0.17613166700000002,
+        "wall": 0.227121542,
+        "whiten": 0.030237627000000006
+      }
+    ],
+    "workers": 1,
+    "name": "300-8-50000-ar4-before",
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/baseline/gls_benchmark",
+      "300",
+      "8",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-8-50000-ar4-before.bin",
+      "reuse"
+    ],
+    "process_seconds": 1.8098218441009521,
+    "peak_rss_bytes": 61898752,
+    "output_sha256": "7532258d37fce1ef1ad8ef6576b3232c6bff8b75089fec0069f910e1a1ca2097",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-8-50000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "b79c5ed64cd4554c1322c1ccb51d0d3edf4e6bbba3d1ec1fdf3d285ac6289557",
+      "values": 650000,
+      "max_scaled_error": 6.6910046956726135e-12,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.006878877,
+      "fit": 0.008129294999999998,
+      "generate": 0.17503670400000007,
+      "wall": 0.200163458,
+      "whiten": 0.008774250999999999
+    },
+    "df": 292,
+    "features": 50000,
+    "n": 300,
+    "order": 4,
+    "p": 8,
+    "phi": [
+      [
+        2.1714036553882683,
+        -2.353976243410374,
+        1.800345065155248,
+        -0.6875395547941756
+      ],
+      [
+        2.503767087767391,
+        -3.0180172691189338,
+        2.489688451212059,
+        -0.99
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.000432125,
+      "design_whiten": 5.916e-06,
+      "gls_prepare": 3.025e-05,
+      "initial_prepare": 4.8375e-05,
+      "noise_fit": 0.000175958,
+      "residual": 6.5958e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.006870002000000002,
+        "fit": 0.007951164000000004,
+        "generate": 0.17426437399999997,
+        "wall": 0.198660958,
+        "whiten": 0.008593664000000003
+      },
+      {
+        "contrast": 0.006811379999999998,
+        "fit": 0.007942709,
+        "generate": 0.174126585,
+        "wall": 0.19883275,
+        "whiten": 0.008770420000000001
+      },
+      {
+        "contrast": 0.006805711000000002,
+        "fit": 0.008404915000000002,
+        "generate": 0.17378829600000004,
+        "wall": 0.199166292,
+        "whiten": 0.008797959999999995
+      },
+      {
+        "contrast": 0.006854996,
+        "fit": 0.007900580999999997,
+        "generate": 0.17658112100000004,
+        "wall": 0.201327917,
+        "whiten": 0.008817542
+      },
+      {
+        "contrast": 0.006843293000000002,
+        "fit": 0.007923872000000002,
+        "generate": 0.174652623,
+        "wall": 0.1992315,
+        "whiten": 0.008696123
+      }
+    ],
+    "workers": 1,
+    "name": "300-8-50000-ar4-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "300",
+      "8",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-8-50000-ar4-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 1.450767993927002,
+    "peak_rss_bytes": 49020928,
+    "output_sha256": "7532258d37fce1ef1ad8ef6576b3232c6bff8b75089fec0069f910e1a1ca2097",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-8-50000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "b79c5ed64cd4554c1322c1ccb51d0d3edf4e6bbba3d1ec1fdf3d285ac6289557",
+      "values": 650000,
+      "max_scaled_error": 6.6910046956726135e-12,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.000202292,
+      "fit": 0.000247125,
+      "generate": 0.003550083,
+      "wall": 0.004595542,
+      "whiten": 0.000111209
+    },
+    "df": 268,
+    "features": 1000,
+    "n": 300,
+    "order": 1,
+    "p": 32,
+    "phi": [
+      [
+        0.9728261171892056
+      ],
+      [
+        0.99
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.001981042,
+      "design_whiten": 6.958e-06,
+      "gls_prepare": 0.000425625,
+      "initial_prepare": 0.000293625,
+      "noise_fit": 0.000120708,
+      "residual": 7.8125e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.000208792,
+        "fit": 0.000260125,
+        "generate": 0.003544209,
+        "wall": 0.004664334,
+        "whiten": 0.000115791
+      },
+      {
+        "contrast": 0.000196084,
+        "fit": 0.000321834,
+        "generate": 0.003763041,
+        "wall": 0.00497625,
+        "whiten": 0.000118167
+      },
+      {
+        "contrast": 0.00020075,
+        "fit": 0.000265417,
+        "generate": 0.003784083,
+        "wall": 0.004859042,
+        "whiten": 0.000109458
+      },
+      {
+        "contrast": 0.000193333,
+        "fit": 0.00023725,
+        "generate": 0.003526208,
+        "wall": 0.004432167,
+        "whiten": 0.000109666
+      },
+      {
+        "contrast": 0.000185458,
+        "fit": 0.000218083,
+        "generate": 0.003560667,
+        "wall": 0.004358667,
+        "whiten": 0.00010525
+      }
+    ],
+    "workers": 1,
+    "name": "300-32-1000-ar1-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "300",
+      "32",
+      "1000",
+      "1",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-32-1000-ar1-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 0.06299066543579102,
+    "peak_rss_bytes": 35569664,
+    "output_sha256": "f3098bfd4e77c15d9bda9f7a3558b77d2b9735af6505e6cdebb522f2a5a48f84",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-32-1000-ar1-b1000-w1-r.bin",
+      "reference_sha256": "a3b859d8d97c240d624eb8af139474133dbd245c5e6757026e0925e29bfedd2e",
+      "values": 37000,
+      "max_scaled_error": 1.0178365041498307e-12,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.000234792,
+      "fit": 0.000236916,
+      "generate": 0.003421208,
+      "wall": 0.004529667,
+      "whiten": 0.00018475
+    },
+    "df": 268,
+    "features": 1000,
+    "n": 300,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.541200804724843,
+        -3.117332118815534,
+        2.5272352524647212,
+        -0.99
+      ],
+      [
+        2.374815735442256,
+        -2.766197885066714,
+        2.3577958049803227,
+        -0.99
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.002367667,
+      "design_whiten": 1.1792e-05,
+      "gls_prepare": 0.000361375,
+      "initial_prepare": 0.000312292,
+      "noise_fit": 0.000224416,
+      "residual": 8.2125e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.000230917,
+        "fit": 0.000234167,
+        "generate": 0.003403667,
+        "wall": 0.004276458,
+        "whiten": 0.000157291
+      },
+      {
+        "contrast": 0.000225167,
+        "fit": 0.000219833,
+        "generate": 0.003358958,
+        "wall": 0.00421025,
+        "whiten": 0.00015675
+      },
+      {
+        "contrast": 0.000223708,
+        "fit": 0.000213292,
+        "generate": 0.003392125,
+        "wall": 0.004299375,
+        "whiten": 0.000155375
+      },
+      {
+        "contrast": 0.000224166,
+        "fit": 0.000213042,
+        "generate": 0.00336775,
+        "wall": 0.004229875,
+        "whiten": 0.000155417
+      },
+      {
+        "contrast": 0.000235375,
+        "fit": 0.000219209,
+        "generate": 0.003446084,
+        "wall": 0.004330417,
+        "whiten": 0.000155
+      }
+    ],
+    "workers": 1,
+    "name": "300-32-1000-ar4-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "300",
+      "32",
+      "1000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-32-1000-ar4-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 0.06385493278503418,
+    "peak_rss_bytes": 21626880,
+    "output_sha256": "bf1d1f9f5eb7fce4ab0ff210499dd08321d0958dd20e4466737f0b00556db870",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-32-1000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "b8618ee4bda877b5c094383033d88635169e2d277cd60f8d64a4915903274b97",
+      "values": 37000,
+      "max_scaled_error": 1.1809869243643167e-11,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.010270246999999995,
+      "fit": 0.012304082000000001,
+      "generate": 0.17538345899999994,
+      "wall": 0.205223333,
+      "whiten": 0.005690955999999999
+    },
+    "df": 268,
+    "features": 50000,
+    "n": 300,
+    "order": 1,
+    "p": 32,
+    "phi": [
+      [
+        0.9728261171892056
+      ],
+      [
+        0.99
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.001936958,
+      "design_whiten": 6.084e-06,
+      "gls_prepare": 0.000351708,
+      "initial_prepare": 0.000387917,
+      "noise_fit": 0.0001165,
+      "residual": 7.45e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.010230792000000002,
+        "fit": 0.012185330999999999,
+        "generate": 0.17521762500000007,
+        "wall": 0.20479575,
+        "whiten": 0.005823461999999999
+      },
+      {
+        "contrast": 0.010279623999999998,
+        "fit": 0.013280667999999997,
+        "generate": 0.17517983200000004,
+        "wall": 0.206497875,
+        "whiten": 0.0063092040000000005
+      },
+      {
+        "contrast": 0.011486124,
+        "fit": 0.012734581,
+        "generate": 0.18031383600000003,
+        "wall": 0.212083209,
+        "whiten": 0.0058443359999999995
+      },
+      {
+        "contrast": 0.010687960000000002,
+        "fit": 0.013038171000000001,
+        "generate": 0.17787504199999996,
+        "wall": 0.209267667,
+        "whiten": 0.005982039999999999
+      },
+      {
+        "contrast": 0.010486666000000002,
+        "fit": 0.013304709,
+        "generate": 0.180543,
+        "wall": 0.212051084,
+        "whiten": 0.006022915999999999
+      }
+    ],
+    "workers": 1,
+    "name": "300-32-50000-ar1-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "300",
+      "32",
+      "50000",
+      "1",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-32-50000-ar1-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 1.6099069118499756,
+    "peak_rss_bytes": 68911104,
+    "output_sha256": "9e8ab2ec16061f346ddd89d87fcc0d7d0b96cdb655cf0ed2a65bf0670be9c489",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-32-50000-ar1-b1000-w1-r.bin",
+      "reference_sha256": "042e5774d85337524289877ffffdb03830b83348ef4c8dd96ba51e2e7aa60f18",
+      "values": 1850000,
+      "max_scaled_error": 8.54602246811611e-10,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.011860003000000003,
+      "fit": 0.016169708000000005,
+      "generate": 0.181817707,
+      "wall": 0.242773875,
+      "whiten": 0.031014999999999994
+    },
+    "df": 268,
+    "features": 50000,
+    "n": 300,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.541200804724843,
+        -3.117332118815534,
+        2.5272352524647212,
+        -0.99
+      ],
+      [
+        2.374815735442256,
+        -2.766197885066714,
+        2.3577958049803227,
+        -0.99
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.002130333,
+      "design_whiten": 2.2708e-05,
+      "gls_prepare": 0.000353084,
+      "initial_prepare": 0.000314916,
+      "noise_fit": 0.000219666,
+      "residual": 7.7917e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.011775918000000005,
+        "fit": 0.016437920999999994,
+        "generate": 0.18082233000000003,
+        "wall": 0.2422715,
+        "whiten": 0.031149081999999998
+      },
+      {
+        "contrast": 0.012089504,
+        "fit": 0.016710335,
+        "generate": 0.179465795,
+        "wall": 0.241286917,
+        "whiten": 0.03094395899999999
+      },
+      {
+        "contrast": 0.012113748000000002,
+        "fit": 0.015974878999999997,
+        "generate": 0.17682383499999998,
+        "wall": 0.236812583,
+        "whiten": 0.030040040999999996
+      },
+      {
+        "contrast": 0.011714669999999996,
+        "fit": 0.016136048000000004,
+        "generate": 0.17930508700000003,
+        "wall": 0.239549583,
+        "whiten": 0.030708579
+      },
+      {
+        "contrast": 0.011775836000000001,
+        "fit": 0.016306251000000004,
+        "generate": 0.177516791,
+        "wall": 0.237840208,
+        "whiten": 0.030504500000000004
+      }
+    ],
+    "workers": 1,
+    "name": "300-32-50000-ar4-before",
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/baseline/gls_benchmark",
+      "300",
+      "32",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-32-50000-ar4-before.bin",
+      "reuse"
+    ],
+    "process_seconds": 1.7816898822784424,
+    "peak_rss_bytes": 68780032,
+    "output_sha256": "f6d3d5a1132a814b44a33e1640e5a509f6b2ddd3dd3cb406b07383bf2259df04",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-32-50000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "77e49217d33cbc19da3a3d3528549dcd89a08819f10e6ee0eb6626be52ebb13c",
+      "values": 1850000,
+      "max_scaled_error": 1.3281281512460144e-11,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.011634499000000003,
+      "fit": 0.012576625999999999,
+      "generate": 0.17660829700000005,
+      "wall": 0.211708958,
+      "whiten": 0.009206173999999998
+    },
+    "df": 268,
+    "features": 50000,
+    "n": 300,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.541200804724843,
+        -3.117332118815534,
+        2.5272352524647212,
+        -0.99
+      ],
+      [
+        2.374815735442256,
+        -2.766197885066714,
+        2.3577958049803227,
+        -0.99
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.00199875,
+      "design_whiten": 1.075e-05,
+      "gls_prepare": 0.000335833,
+      "initial_prepare": 0.000307959,
+      "noise_fit": 0.000215459,
+      "residual": 6.8417e-05
+    },
+    "warm": [
+      {
+        "contrast": 0.012004372999999999,
+        "fit": 0.012646206000000004,
+        "generate": 0.18030100099999993,
+        "wall": 0.215941166,
+        "whiten": 0.009533459
+      },
+      {
+        "contrast": 0.011487289,
+        "fit": 0.013124498999999996,
+        "generate": 0.17467483200000003,
+        "wall": 0.210450292,
+        "whiten": 0.009362293000000002
+      },
+      {
+        "contrast": 0.011738834000000004,
+        "fit": 0.012416331000000001,
+        "generate": 0.17594916900000002,
+        "wall": 0.210408417,
+        "whiten": 0.008926166999999999
+      },
+      {
+        "contrast": 0.011391122,
+        "fit": 0.012432705999999996,
+        "generate": 0.17445858,
+        "wall": 0.208638333,
+        "whiten": 0.009093128000000002
+      },
+      {
+        "contrast": 0.011500876999999998,
+        "fit": 0.012282750999999998,
+        "generate": 0.176235545,
+        "wall": 0.210063042,
+        "whiten": 0.008807337
+      }
+    ],
+    "workers": 1,
+    "name": "300-32-50000-ar4-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "300",
+      "32",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/300-32-50000-ar4-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 1.5485737323760986,
+    "peak_rss_bytes": 60342272,
+    "output_sha256": "f6d3d5a1132a814b44a33e1640e5a509f6b2ddd3dd3cb406b07383bf2259df04",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/300-32-50000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "77e49217d33cbc19da3a3d3528549dcd89a08819f10e6ee0eb6626be52ebb13c",
+      "values": 1850000,
+      "max_scaled_error": 1.3281281512460144e-11,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.000257292,
+      "fit": 0.0007615,
+      "generate": 0.014718584,
+      "wall": 0.017688875,
+      "whiten": 0.001164834
+    },
+    "df": 1192,
+    "features": 1000,
+    "n": 1200,
+    "order": 1,
+    "p": 8,
+    "phi": [
+      [
+        0.99
+      ],
+      [
+        0.9856943819953384
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.001690833,
+      "design_whiten": 7.583e-06,
+      "gls_prepare": 0.00010675,
+      "initial_prepare": 0.00012425,
+      "noise_fit": 0.000445417,
+      "residual": 0.000159625
+    },
+    "warm": [
+      {
+        "contrast": 0.000273375,
+        "fit": 0.000901167,
+        "generate": 0.014040416,
+        "wall": 0.016002459,
+        "whiten": 0.000527166
+      },
+      {
+        "contrast": 0.000252875,
+        "fit": 0.0007635,
+        "generate": 0.013823292,
+        "wall": 0.015591458,
+        "whiten": 0.000592583
+      },
+      {
+        "contrast": 0.000261,
+        "fit": 0.000821375,
+        "generate": 0.0133955,
+        "wall": 0.01512325,
+        "whiten": 0.000465542
+      },
+      {
+        "contrast": 0.000265459,
+        "fit": 0.000792167,
+        "generate": 0.013519625,
+        "wall": 0.015267125,
+        "whiten": 0.000516208
+      },
+      {
+        "contrast": 0.000255709,
+        "fit": 0.000770125,
+        "generate": 0.013509084,
+        "wall": 0.015147708,
+        "whiten": 0.000465417
+      }
+    ],
+    "workers": 1,
+    "name": "1200-8-1000-ar1-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "1200",
+      "8",
+      "1000",
+      "1",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-8-1000-ar1-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 0.1365060806274414,
+    "peak_rss_bytes": 37027840,
+    "output_sha256": "3dbce75874de8776db03c9765890adbccd7b4557d1249d40318744e1a98c7db1",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-8-1000-ar1-b1000-w1-r.bin",
+      "reference_sha256": "7e809655bae2c69c0f5836d73ee822a5071ca66ca42118a7f2c843f86dac8618",
+      "values": 13000,
+      "max_scaled_error": 1.6168086241334333e-12,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.000245875,
+      "fit": 0.000787166,
+      "generate": 0.014427042,
+      "wall": 0.017534667,
+      "whiten": 0.001402708
+    },
+    "df": 1192,
+    "features": 1000,
+    "n": 1200,
+    "order": 4,
+    "p": 8,
+    "phi": [
+      [
+        2.608415598864741,
+        -3.226087781577321,
+        2.5943079577796695,
+        -0.99
+      ],
+      [
+        2.146120469665914,
+        -2.156730985013975,
+        1.5621639246680394,
+        -0.5692277142755903
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.001739959,
+      "design_whiten": 1.9e-05,
+      "gls_prepare": 0.000103083,
+      "initial_prepare": 0.0001205,
+      "noise_fit": 0.000492916,
+      "residual": 0.000134
+    },
+    "warm": [
+      {
+        "contrast": 0.000249292,
+        "fit": 0.000800917,
+        "generate": 0.013526959,
+        "wall": 0.015621083,
+        "whiten": 0.000877167
+      },
+      {
+        "contrast": 0.000242792,
+        "fit": 0.000769166,
+        "generate": 0.013542,
+        "wall": 0.0156255,
+        "whiten": 0.000917708
+      },
+      {
+        "contrast": 0.0002355,
+        "fit": 0.000768125,
+        "generate": 0.013589875,
+        "wall": 0.015711084,
+        "whiten": 0.000946958
+      },
+      {
+        "contrast": 0.000233167,
+        "fit": 0.000821542,
+        "generate": 0.013441584,
+        "wall": 0.015616375,
+        "whiten": 0.000961667
+      },
+      {
+        "contrast": 0.000235125,
+        "fit": 0.000787125,
+        "generate": 0.013615916,
+        "wall": 0.015611583,
+        "whiten": 0.000818875
+      }
+    ],
+    "workers": 1,
+    "name": "1200-8-1000-ar4-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "1200",
+      "8",
+      "1000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-8-1000-ar4-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 0.13889217376708984,
+    "peak_rss_bytes": 35799040,
+    "output_sha256": "9e86ae21dc50515f0d8a3ac00b8ab5cbb55177317569c0b2a87688acd9de0553",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-8-1000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "3ceb2159a0640aa4e22d4b7b7591961d01c9fd87fa744c6c2ac3b090156c8fac",
+      "values": 13000,
+      "max_scaled_error": 2.3859632216868127e-10,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.012896502999999998,
+      "fit": 0.039661871,
+      "generate": 0.6775033290000001,
+      "wall": 0.756801125,
+      "whiten": 0.025934626999999995
+    },
+    "df": 1192,
+    "features": 50000,
+    "n": 1200,
+    "order": 1,
+    "p": 8,
+    "phi": [
+      [
+        0.99
+      ],
+      [
+        0.9856943819953384
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.001618167,
+      "design_whiten": 7.333e-06,
+      "gls_prepare": 0.000106666,
+      "initial_prepare": 0.000113084,
+      "noise_fit": 0.00043675,
+      "residual": 0.000112209
+    },
+    "warm": [
+      {
+        "contrast": 0.012833794000000003,
+        "fit": 0.03940395899999999,
+        "generate": 0.6782898319999999,
+        "wall": 0.7558985,
+        "whiten": 0.024974709
+      },
+      {
+        "contrast": 0.012964960999999999,
+        "fit": 0.03893092100000001,
+        "generate": 0.6851288729999998,
+        "wall": 0.762797709,
+        "whiten": 0.025384290999999996
+      },
+      {
+        "contrast": 0.013223921,
+        "fit": 0.039986378,
+        "generate": 0.7322016259999998,
+        "wall": 0.813553292,
+        "whiten": 0.027443206000000005
+      },
+      {
+        "contrast": 0.013304331,
+        "fit": 0.039671410000000004,
+        "generate": 0.706041337,
+        "wall": 0.784998917,
+        "whiten": 0.025638043
+      },
+      {
+        "contrast": 0.013001415999999998,
+        "fit": 0.040149956000000014,
+        "generate": 0.6922811239999999,
+        "wall": 0.771304541,
+        "whiten": 0.025533915
+      }
+    ],
+    "workers": 1,
+    "name": "1200-8-50000-ar1-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "1200",
+      "8",
+      "50000",
+      "1",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-8-50000-ar1-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 5.449657678604126,
+    "peak_rss_bytes": 39780352,
+    "output_sha256": "94ff4b53bdb2e955b44328bfd882b9825bfd89a6a64a931dc0914140d1c4ace6",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-8-50000-ar1-b1000-w1-r.bin",
+      "reference_sha256": "027b0eb25ea13899231b0d88a9913be7754fe23ea5ad7fbba158075d32acae1a",
+      "values": 650000,
+      "max_scaled_error": 7.02726203437196e-11,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.012008329000000002,
+      "fit": 0.050577128,
+      "generate": 0.682618331,
+      "wall": 0.8785725,
+      "whiten": 0.13250445800000002
+    },
+    "df": 1192,
+    "features": 50000,
+    "n": 1200,
+    "order": 4,
+    "p": 8,
+    "phi": [
+      [
+        2.608415598864741,
+        -3.226087781577321,
+        2.5943079577796695,
+        -0.99
+      ],
+      [
+        2.146120469665914,
+        -2.156730985013975,
+        1.5621639246680394,
+        -0.5692277142755903
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.001653875,
+      "design_whiten": 3.3584e-05,
+      "gls_prepare": 0.000104083,
+      "initial_prepare": 0.000120292,
+      "noise_fit": 0.0004835,
+      "residual": 0.000145333
+    },
+    "warm": [
+      {
+        "contrast": 0.012095788,
+        "fit": 0.05024199300000001,
+        "generate": 0.6914405040000001,
+        "wall": 0.88369,
+        "whiten": 0.12945237500000004
+      },
+      {
+        "contrast": 0.012162957,
+        "fit": 0.049794796,
+        "generate": 0.6911332499999999,
+        "wall": 0.88481325,
+        "whiten": 0.131255168
+      },
+      {
+        "contrast": 0.012124629999999999,
+        "fit": 0.050740914,
+        "generate": 0.6873037040000001,
+        "wall": 0.880315125,
+        "whiten": 0.12973449400000003
+      },
+      {
+        "contrast": 0.013345999000000002,
+        "fit": 0.052187496,
+        "generate": 0.7242076620000001,
+        "wall": 0.9197385,
+        "whiten": 0.129633829
+      },
+      {
+        "contrast": 0.012327041000000002,
+        "fit": 0.052264206999999986,
+        "generate": 0.7293616209999999,
+        "wall": 0.928589209,
+        "whiten": 0.13418962799999995
+      }
+    ],
+    "workers": 1,
+    "name": "1200-8-50000-ar4-before",
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/baseline/gls_benchmark",
+      "1200",
+      "8",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-8-50000-ar4-before.bin",
+      "reuse"
+    ],
+    "process_seconds": 6.304146766662598,
+    "peak_rss_bytes": 40009728,
+    "output_sha256": "fff7bf1e7af9f1a60ba5a41c99454d28fa6b4383e462427e1e79cfe6850de90e",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-8-50000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "4557431c03ba06f37bba0bf082043dbbbcc97fee171a6ae1ece5b250f1b750c3",
+      "values": 650000,
+      "max_scaled_error": 2.792472817814748e-10,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.012066289999999999,
+      "fit": 0.038405377000000004,
+      "generate": 0.6779052979999999,
+      "wall": 0.773834959,
+      "whiten": 0.04455683199999999
+    },
+    "df": 1192,
+    "features": 50000,
+    "n": 1200,
+    "order": 4,
+    "p": 8,
+    "phi": [
+      [
+        2.608415598864741,
+        -3.226087781577321,
+        2.5943079577796695,
+        -0.99
+      ],
+      [
+        2.146120469665914,
+        -2.156730985013975,
+        1.5621639246680394,
+        -0.5692277142755903
+      ]
+    ],
+    "rank": 8,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.001699333,
+      "design_whiten": 1.9583e-05,
+      "gls_prepare": 0.00012225,
+      "initial_prepare": 0.000119583,
+      "noise_fit": 0.000544333,
+      "residual": 0.00012825
+    },
+    "warm": [
+      {
+        "contrast": 0.012075333,
+        "fit": 0.03805970800000001,
+        "generate": 0.6755400009999999,
+        "wall": 0.769966792,
+        "whiten": 0.043776665999999985
+      },
+      {
+        "contrast": 0.011905669000000004,
+        "fit": 0.03791258200000001,
+        "generate": 0.6739086269999998,
+        "wall": 0.767737167,
+        "whiten": 0.043313169
+      },
+      {
+        "contrast": 0.012024293000000002,
+        "fit": 0.03791116299999999,
+        "generate": 0.6777892930000001,
+        "wall": 0.772267416,
+        "whiten": 0.044131666
+      },
+      {
+        "contrast": 0.012054044,
+        "fit": 0.03822882799999999,
+        "generate": 0.6814980399999998,
+        "wall": 0.77776775,
+        "whiten": 0.045631164
+      },
+      {
+        "contrast": 0.013532960000000004,
+        "fit": 0.04037512200000001,
+        "generate": 0.732930419,
+        "wall": 0.835521875,
+        "whiten": 0.04835245800000001
+      }
+    ],
+    "workers": 1,
+    "name": "1200-8-50000-ar4-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "1200",
+      "8",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-8-50000-ar4-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 5.533865928649902,
+    "peak_rss_bytes": 39550976,
+    "output_sha256": "fff7bf1e7af9f1a60ba5a41c99454d28fa6b4383e462427e1e79cfe6850de90e",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-8-50000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "4557431c03ba06f37bba0bf082043dbbbcc97fee171a6ae1ece5b250f1b750c3",
+      "values": 650000,
+      "max_scaled_error": 2.792472817814748e-10,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.000292792,
+      "fit": 0.001005084,
+      "generate": 0.015016792,
+      "wall": 0.018238375,
+      "whiten": 0.001202334
+    },
+    "df": 1168,
+    "features": 1000,
+    "n": 1200,
+    "order": 1,
+    "p": 32,
+    "phi": [
+      [
+        0.99
+      ],
+      [
+        0.9860072250055566
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.008556875,
+      "design_whiten": 2.4708e-05,
+      "gls_prepare": 0.00146025,
+      "initial_prepare": 0.001138375,
+      "noise_fit": 0.0005035,
+      "residual": 0.000171708
+    },
+    "warm": [
+      {
+        "contrast": 0.000287334,
+        "fit": 0.00105425,
+        "generate": 0.01404575,
+        "wall": 0.016077167,
+        "whiten": 0.000509417
+      },
+      {
+        "contrast": 0.000284584,
+        "fit": 0.001027584,
+        "generate": 0.013749541,
+        "wall": 0.015747708,
+        "whiten": 0.00051825
+      },
+      {
+        "contrast": 0.000278083,
+        "fit": 0.001084667,
+        "generate": 0.013534083,
+        "wall": 0.015569167,
+        "whiten": 0.000470084
+      },
+      {
+        "contrast": 0.000282208,
+        "fit": 0.000986333,
+        "generate": 0.01351525,
+        "wall": 0.015469583,
+        "whiten": 0.000497125
+      },
+      {
+        "contrast": 0.000284541,
+        "fit": 0.000981792,
+        "generate": 0.013577,
+        "wall": 0.015458125,
+        "whiten": 0.000460375
+      }
+    ],
+    "workers": 1,
+    "name": "1200-32-1000-ar1-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "1200",
+      "32",
+      "1000",
+      "1",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-32-1000-ar1-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 0.1435689926147461,
+    "peak_rss_bytes": 39714816,
+    "output_sha256": "15003819216087fb32949ea358af052b06313442a95754b9b0018f64ec8c6d8f",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-32-1000-ar1-b1000-w1-r.bin",
+      "reference_sha256": "15396710eb8e5e4f4f7dc3f6b63bc318cef6d4e16e5b6cc414cf026005f0b3dc",
+      "values": 37000,
+      "max_scaled_error": 1.2980139087491126e-12,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.000243459,
+      "fit": 0.001108709,
+      "generate": 0.014366916,
+      "wall": 0.018104875,
+      "whiten": 0.001635208
+    },
+    "df": 1168,
+    "features": 1000,
+    "n": 1200,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.6023663645768043,
+        -3.2152392146620774,
+        2.587433685892046,
+        -0.99
+      ],
+      [
+        2.280072533814824,
+        -2.4460955409861898,
+        1.8399605044171874,
+        -0.6933991872077735
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.008555541,
+      "design_whiten": 4.5375e-05,
+      "gls_prepare": 0.001339083,
+      "initial_prepare": 0.001205125,
+      "noise_fit": 0.00058225,
+      "residual": 0.000194334
+    },
+    "warm": [
+      {
+        "contrast": 0.000228542,
+        "fit": 0.000996708,
+        "generate": 0.014057292,
+        "wall": 0.016285375,
+        "whiten": 0.000853
+      },
+      {
+        "contrast": 0.000221417,
+        "fit": 0.001019208,
+        "generate": 0.013528625,
+        "wall": 0.01579025,
+        "whiten": 0.000840125
+      },
+      {
+        "contrast": 0.000236709,
+        "fit": 0.0009705,
+        "generate": 0.013550375,
+        "wall": 0.015693375,
+        "whiten": 0.000788292
+      },
+      {
+        "contrast": 0.000226292,
+        "fit": 0.000971666,
+        "generate": 0.013535833,
+        "wall": 0.015646833,
+        "whiten": 0.000767375
+      },
+      {
+        "contrast": 0.000218,
+        "fit": 0.001033833,
+        "generate": 0.013537,
+        "wall": 0.015778458,
+        "whiten": 0.000822292
+      }
+    ],
+    "workers": 1,
+    "name": "1200-32-1000-ar4-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "1200",
+      "32",
+      "1000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-32-1000-ar4-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 0.15301775932312012,
+    "peak_rss_bytes": 38469632,
+    "output_sha256": "51302cd6fd01ca428749a8f4408139a4dd6b879eec42616ed4008e2b95b6ead4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-32-1000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "a1bd5bc6f039717adf20190373a87783d21a50eb8bb5f1b47b48aa29ecd62bdb",
+      "values": 37000,
+      "max_scaled_error": 2.573925897432827e-10,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.013737082999999999,
+      "fit": 0.05270541399999999,
+      "generate": 0.6846109970000003,
+      "wall": 0.778954375,
+      "whiten": 0.026996666999999995
+    },
+    "df": 1168,
+    "features": 50000,
+    "n": 1200,
+    "order": 1,
+    "p": 32,
+    "phi": [
+      [
+        0.99
+      ],
+      [
+        0.9860072250055566
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.008550083,
+      "design_whiten": 3.85e-05,
+      "gls_prepare": 0.001510916,
+      "initial_prepare": 0.001186333,
+      "noise_fit": 0.000555416,
+      "residual": 0.000180583
+    },
+    "warm": [
+      {
+        "contrast": 0.013714167999999999,
+        "fit": 0.051159666999999985,
+        "generate": 0.6782570830000001,
+        "wall": 0.768707417,
+        "whiten": 0.024811085
+      },
+      {
+        "contrast": 0.014218539999999998,
+        "fit": 0.051483293000000006,
+        "generate": 0.6775739590000002,
+        "wall": 0.768577667,
+        "whiten": 0.024957287999999994
+      },
+      {
+        "contrast": 0.013754995999999997,
+        "fit": 0.05204103599999998,
+        "generate": 0.6791030450000001,
+        "wall": 0.770129666,
+        "whiten": 0.024873461
+      },
+      {
+        "contrast": 0.013622752,
+        "fit": 0.051058292999999984,
+        "generate": 0.6755151269999998,
+        "wall": 0.76508625,
+        "whiten": 0.024541328999999997
+      },
+      {
+        "contrast": 0.013713454999999994,
+        "fit": 0.05154053699999999,
+        "generate": 0.6795629579999999,
+        "wall": 0.770043667,
+        "whiten": 0.024900247999999993
+      }
+    ],
+    "workers": 1,
+    "name": "1200-32-50000-ar1-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "1200",
+      "32",
+      "50000",
+      "1",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-32-50000-ar1-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 5.521592140197754,
+    "peak_rss_bytes": 42795008,
+    "output_sha256": "ccba57fbe60ea3b8fd7c6957089e47f3c8ab5a72954269ad7cbd9949cc3dde6d",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-32-50000-ar1-b1000-w1-r.bin",
+      "reference_sha256": "2708f8c823953a2ee1bba63a86bbb6f066e59d32ae6d70edc4534bd98bae0d59",
+      "values": 1850000,
+      "max_scaled_error": 5.619406066754545e-11,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.011576041,
+      "fit": 0.06395183600000001,
+      "generate": 0.689705119,
+      "wall": 0.895101625,
+      "whiten": 0.128915585
+    },
+    "df": 1168,
+    "features": 50000,
+    "n": 1200,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.6023663645768043,
+        -3.2152392146620774,
+        2.587433685892046,
+        -0.99
+      ],
+      [
+        2.280072533814824,
+        -2.4460955409861898,
+        1.8399605044171874,
+        -0.6933991872077735
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.009179417,
+      "design_whiten": 9.1375e-05,
+      "gls_prepare": 0.001322375,
+      "initial_prepare": 0.001119083,
+      "noise_fit": 0.000592708,
+      "residual": 0.000193459
+    },
+    "warm": [
+      {
+        "contrast": 0.011248084999999998,
+        "fit": 0.060688458,
+        "generate": 0.6774755379999999,
+        "wall": 0.876657041,
+        "whiten": 0.12679437699999996
+      },
+      {
+        "contrast": 0.011196584000000002,
+        "fit": 0.06051858399999998,
+        "generate": 0.6766314569999998,
+        "wall": 0.874874334,
+        "whiten": 0.12616900499999997
+      },
+      {
+        "contrast": 0.011109709000000002,
+        "fit": 0.062484703999999995,
+        "generate": 0.6786607509999999,
+        "wall": 0.879724167,
+        "whiten": 0.127066454
+      },
+      {
+        "contrast": 0.011025205000000003,
+        "fit": 0.061406454,
+        "generate": 0.6768558760000001,
+        "wall": 0.877006709,
+        "whiten": 0.127347208
+      },
+      {
+        "contrast": 0.011481750000000002,
+        "fit": 0.062213249000000005,
+        "generate": 0.678492835,
+        "wall": 0.88124825,
+        "whiten": 0.12867775099999995
+      }
+    ],
+    "workers": 1,
+    "name": "1200-32-50000-ar4-before",
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/baseline/gls_benchmark",
+      "1200",
+      "32",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-32-50000-ar4-before.bin",
+      "reuse"
+    ],
+    "process_seconds": 6.277944087982178,
+    "peak_rss_bytes": 44810240,
+    "output_sha256": "79a3b74a4f86d994505410027bd6e695d5c86af1f64599d38b875e4441f3bcb6",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-32-50000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "f0103edb77fbd8c2090bc3fed8c108269e3b16d81595cd827f681ad2862c341d",
+      "values": 1850000,
+      "max_scaled_error": 9.071189146422014e-10,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": {
+      "contrast": 0.011515167000000001,
+      "fit": 0.05278825099999999,
+      "generate": 0.706274752,
+      "wall": 0.819547125,
+      "whiten": 0.04798608299999999
+    },
+    "df": 1168,
+    "features": 50000,
+    "n": 1200,
+    "order": 4,
+    "p": 32,
+    "phi": [
+      [
+        2.6023663645768043,
+        -3.2152392146620774,
+        2.587433685892046,
+        -0.99
+      ],
+      [
+        2.280072533814824,
+        -2.4460955409861898,
+        1.8399605044171874,
+        -0.6933991872077735
+      ]
+    ],
+    "rank": 32,
+    "reuse": true,
+    "setup": {
+      "correction_prepare": 0.009926125,
+      "design_whiten": 4.9583e-05,
+      "gls_prepare": 0.001274708,
+      "initial_prepare": 0.001149584,
+      "noise_fit": 0.000553375,
+      "residual": 0.00019275
+    },
+    "warm": [
+      {
+        "contrast": 0.011265250000000001,
+        "fit": 0.05167596000000002,
+        "generate": 0.689131668,
+        "wall": 0.797710083,
+        "whiten": 0.04500916799999999
+      },
+      {
+        "contrast": 0.011441836000000004,
+        "fit": 0.05084370900000001,
+        "generate": 0.682991414,
+        "wall": 0.790463958,
+        "whiten": 0.044612666999999995
+      },
+      {
+        "contrast": 0.011162332000000004,
+        "fit": 0.05114046300000001,
+        "generate": 0.6773777480000001,
+        "wall": 0.784185084,
+        "whiten": 0.04401258400000001
+      },
+      {
+        "contrast": 0.011199917000000002,
+        "fit": 0.05077158399999998,
+        "generate": 0.675984711,
+        "wall": 0.780814042,
+        "whiten": 0.04252008300000001
+      },
+      {
+        "contrast": 0.011455164999999998,
+        "fit": 0.050624960000000004,
+        "generate": 0.6775457940000001,
+        "wall": 0.783406292,
+        "whiten": 0.043427629
+      }
+    ],
+    "workers": 1,
+    "name": "1200-32-50000-ar4-reuse",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/gls_benchmark",
+      "1200",
+      "32",
+      "50000",
+      "4",
+      "1000",
+      "1",
+      "5",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/1200-32-50000-ar4-reuse.bin",
+      "reuse"
+    ],
+    "process_seconds": 5.598373889923096,
+    "peak_rss_bytes": 44843008,
+    "output_sha256": "79a3b74a4f86d994505410027bd6e695d5c86af1f64599d38b875e4441f3bcb6",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/gls-baseline/1200-32-50000-ar4-b1000-w1-r.bin",
+      "reference_sha256": "f0103edb77fbd8c2090bc3fed8c108269e3b16d81595cd827f681ad2862c341d",
+      "values": 1850000,
+      "max_scaled_error": 9.071189146422014e-10,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.136395708,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.132166708,
+      0.134678625,
+      0.155692333,
+      0.136671042,
+      0.132069417
+    ],
+    "workers": 1,
+    "name": "executor-1200-32-50000-b1000-w1",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "1",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin"
+    ],
+    "process_seconds": 1.342452049255371,
+    "peak_rss_bytes": 40681472,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4"
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.077237708,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.082023541,
+      0.079991875,
+      0.08098975,
+      0.078027125,
+      0.083542459
+    ],
+    "workers": 2,
+    "name": "executor-1200-32-50000-b1000-w2",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "2",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w2.bin"
+    ],
+    "process_seconds": 0.6038048267364502,
+    "peak_rss_bytes": 71827456,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.05614375,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.050766917,
+      0.049405,
+      0.050525,
+      0.050552917,
+      0.049385292
+    ],
+    "workers": 4,
+    "name": "executor-1200-32-50000-b1000-w4",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "4",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w4.bin"
+    ],
+    "process_seconds": 0.4097461700439453,
+    "peak_rss_bytes": 131760128,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 128,
+    "cold": 0.114772458,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.1125895,
+      0.116882709,
+      0.112265458,
+      0.112321583,
+      0.113368458
+    ],
+    "workers": 1,
+    "name": "executor-1200-32-50000-b128-w1",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "128",
+      "1",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b128-w1.bin"
+    ],
+    "process_seconds": 0.8542206287384033,
+    "peak_rss_bytes": 38764544,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 128,
+    "cold": 0.056585,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.059795958,
+      0.063721041,
+      0.053946792,
+      0.05013075,
+      0.060409625
+    ],
+    "workers": 4,
+    "name": "executor-1200-32-50000-b128-w4",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "128",
+      "4",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b128-w4.bin"
+    ],
+    "process_seconds": 0.45249295234680176,
+    "peak_rss_bytes": 115671040,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 4096,
+    "cold": 0.112116208,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.102834917,
+      0.097112458,
+      0.101965834,
+      0.095632125,
+      0.098794958
+    ],
+    "workers": 4,
+    "name": "executor-1200-32-50000-b4096-w4",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "4096",
+      "4",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b4096-w4.bin"
+    ],
+    "process_seconds": 0.7748091220855713,
+    "peak_rss_bytes": 531578880,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.235377541,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.233866125,
+      0.235362667,
+      0.230559166,
+      0.226541208,
+      0.235632791
+    ],
+    "workers": 1,
+    "name": "executor-before-w1",
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/baseline/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "1",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-before-w1.bin"
+    ],
+    "process_seconds": 1.8412649631500244,
+    "peak_rss_bytes": 39370752,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.073405916,
+    "features": 50000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.068911667,
+      0.070538333,
+      0.073527541,
+      0.069233667,
+      0.07669725
+    ],
+    "workers": 4,
+    "name": "executor-before-w4",
+    "command": [
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/baseline/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "4",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-before-w4.bin"
+    ],
+    "process_seconds": 0.5402121543884277,
+    "peak_rss_bytes": 130826240,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.140187958,
+    "features": 50000,
+    "legacy": true,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.133140666,
+      0.135812583,
+      0.149557417,
+      0.143988,
+      0.135255167
+    ],
+    "workers": 1,
+    "name": "executor-legacy",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "50000",
+      "1000",
+      "1",
+      "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-legacy.bin",
+      "legacy"
+    ],
+    "process_seconds": 1.033440113067627,
+    "peak_rss_bytes": 42811392,
+    "output_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+    "comparison": {
+      "reference": "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/hill-climb/qualified/executor-1200-32-50000-b1000-w1.bin",
+      "reference_sha256": "a757f71119a271e0849a0392191b90bcb0d5b6ad3a4069534c8eaffd53069ea4",
+      "values": 1650000,
+      "max_scaled_error": 0.0,
+      "tolerance": 2e-08
+    }
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.004338208,
+    "features": 1000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.002956041,
+      0.00290925,
+      0.002566417,
+      0.00257625,
+      0.002779041
+    ],
+    "workers": 4,
+    "name": "executor-memory-1000",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "1000",
+      "1000",
+      "4",
+      "-"
+    ],
+    "process_seconds": 0.043241024017333984,
+    "peak_rss_bytes": 35962880
+  },
+  {
+    "backend": "Accelerate",
+    "block": 1000,
+    "cold": 0.210460125,
+    "features": 200000,
+    "legacy": false,
+    "n": 1200,
+    "p": 32,
+    "scope": "known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included",
+    "warm": [
+      0.198555625,
+      0.196832583,
+      0.200397167,
+      0.2007505,
+      0.180001583
+    ],
+    "workers": 4,
+    "name": "executor-memory-200000",
+    "command": [
+      "/private/tmp/fmrimod-fit-speed-target/release/examples/block_throughput",
+      "1200",
+      "32",
+      "200000",
+      "1000",
+      "4",
+      "-"
+    ],
+    "process_seconds": 1.2153329849243164,
+    "peak_rss_bytes": 132759552
+  }
+]

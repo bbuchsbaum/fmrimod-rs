@@ -1,0 +1,15 @@
+{
+  "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+  "crates/fmrireg/src/lib.rs": "3993effb1b71cbf13245f31a892878f9461b5abf9dbba022f9ae0554aaccb16f",
+  "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+  "crates/fmrireg/src/dataset.rs": "0bbfff19de41213c4ca21d8410e228176d5dc89b1bcd035965df9f0d085a8778",
+  "crates/fmrireg/Cargo.toml": "51ea66ff559cecc43a2bcf3a99cae23263b13bf01e22e433f8c53d3355e5ac04",
+  "Cargo.lock": "e0dbe3e5b78af7d90ad9a5b008a613c6c2b078bdb7820b5d68e65ad859d28cb8",
+  "crates/fmri-noise/src/lib.rs": "e7e7e415bcbf2b36c7cf809da63b2f3161c75589550d31b62fa6da37e42e92b4",
+  "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+  "crates/fmri-noise/src/ar.rs": "e5b4a6f60b95572af1e7c90b71fdc0deebfe8e9865a787ebbbc31f94c17a5437",
+  "crates/fmrireg/examples/gls_benchmark.rs": "da3153110e00a07d61dd976536f82b78e26f97a445cc89eeaf3e93d5de684cc9",
+  "crates/fmrireg/examples/block_throughput.rs": "4fdca5037f11f068399ac5fe6cd034e04c21e6f53472c284547fc8e812d2d5c9",
+  "gls_benchmark": "f8e586835f7b5af58104b8eb5bb9354c0bf05d94bae0323327849531db6ac3e0",
+  "block_throughput": "ef47b276414de2be6797c7d5d91ceddf69e9593f464eb22bb7561cde8508bb42"
+}

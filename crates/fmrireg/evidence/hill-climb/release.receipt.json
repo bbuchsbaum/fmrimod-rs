@@ -1,0 +1,15 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "--release",
+    "-p",
+    "fmrireg",
+    "--all-features",
+    "--examples",
+    "--offline",
+    "--locked"
+  ],
+  "exit": 0,
+  "seconds": 4.811748027801514
+}

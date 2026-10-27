@@ -1,0 +1,15 @@
+{
+  "command": [
+    "cargo",
+    "run",
+    "-p",
+    "fmrireg",
+    "--all-features",
+    "--example",
+    "reusable_fit",
+    "--offline",
+    "--locked"
+  ],
+  "exit": 0,
+  "seconds": 0.8388020992279053
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "cargo",
+    "test",
+    "-p",
+    "fmrireg",
+    "-p",
+    "fmri-noise",
+    "--all-features",
+    "--offline",
+    "--locked"
+  ],
+  "exit": 0,
+  "seconds": 2.1234071254730225
+}

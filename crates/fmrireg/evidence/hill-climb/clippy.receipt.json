@@ -1,0 +1,19 @@
+{
+  "command": [
+    "cargo",
+    "clippy",
+    "-p",
+    "fmrireg",
+    "-p",
+    "fmri-noise",
+    "--all-features",
+    "--all-targets",
+    "--offline",
+    "--locked",
+    "--",
+    "-D",
+    "warnings"
+  ],
+  "exit": 101,
+  "seconds": 0.5531148910522461
+}

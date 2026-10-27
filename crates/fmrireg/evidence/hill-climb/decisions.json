@@ -1,0 +1,23 @@
+{
+  "finite": {
+    "decision": "retain",
+    "evidence": "finite/summary.json",
+    "complete_gls_speedup_range": [
+      1.17,
+      1.31
+    ]
+  },
+  "fused": {
+    "decision": "retain",
+    "evidence": "fused/summary.json",
+    "incremental_complete_gls_speedup_range": [
+      1.46,
+      2.01
+    ]
+  },
+  "tile": {
+    "decision": "reject",
+    "evidence": "tile/summary.json",
+    "reason": "1200x8x1000 slower by about 10%; gains on remaining active cases small/noisy; restored pre-tile source byte-for-byte"
+  }
+}

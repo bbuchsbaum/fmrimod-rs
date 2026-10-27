@@ -1,0 +1,29 @@
+[
+  {
+    "name": "minimal-examples",
+    "command": [
+      "cargo",
+      "check",
+      "-p",
+      "fmrireg",
+      "--no-default-features",
+      "--example",
+      "algebra_gls",
+      "--example",
+      "algebra_qr"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "example-format",
+    "command": [
+      "rustfmt",
+      "--edition",
+      "2021",
+      "--check",
+      "examples/algebra_gls.rs",
+      "examples/algebra_qr.rs"
+    ],
+    "exit_code": 0
+  }
+]

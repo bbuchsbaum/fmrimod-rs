@@ -1,0 +1,205 @@
+{
+  "checks": {
+    "focused-final": {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "fmrireg",
+        "-p",
+        "fmri-noise",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 1.394399881362915,
+      "passed": 37,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "fe09401b1f9d71d1c34abffaf6e02bf2b514b30110b8668b0320af7875142557"
+    },
+    "minimal": {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "fmrireg",
+        "--no-default-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 3.2300519943237305,
+      "passed": 14,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "d6e6819316ef196b0da6c01fc30e304bb4113c7c2309a99c201e77d592d43a79"
+    },
+    "clippy-final": {
+      "command": [
+        "cargo",
+        "clippy",
+        "-p",
+        "fmrireg",
+        "-p",
+        "fmri-noise",
+        "--all-features",
+        "--all-targets",
+        "--offline",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 0.39461302757263184,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "0949005c4f5e5e93e3ce9f1e58d4782325f7deb3e071d6f2f2c7b687a644fab9"
+    },
+    "release": {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "-p",
+        "fmrireg",
+        "--all-features",
+        "--examples",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 4.811748027801514,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "031ab723e6cf39d698853b20404662e788aae50f956d1e38aa1977c9799d9b0f"
+    },
+    "workspace-default": {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 64.16128921508789,
+      "passed": 891,
+      "failed": 0,
+      "ignored": 17,
+      "log_sha256": "ef3f2bc9cea39cd373d0929e8ec1a827730efd5336ee70641d625d9fa2c283d5"
+    },
+    "workspace-all": {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 67.1100070476532,
+      "passed": 905,
+      "failed": 0,
+      "ignored": 21,
+      "log_sha256": "afbcd5d9caac969344b192dbd807209f11898f7a9ee22187e013017b3fdad9aa"
+    },
+    "format": {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 1,
+      "seconds": 0.8300690650939941,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "90850fc903c62f2477bab2ea8e7138cc30b18bed8c095385bc2c4ea9fd14fabe"
+    },
+    "format-scoped": {
+      "command": [
+        "cargo",
+        "fmt",
+        "-p",
+        "fmrireg",
+        "-p",
+        "fmri-noise",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "review": {
+    "status": "no unresolved findings",
+    "scope": "finite validation and fused AR semantics; rejected tiling also inspected",
+    "coverage_fix": "24-row reversed-view test now reaches full AR4 and order8 continuation; mixed-scale and signed-zero scalar bit-equality regression added"
+  },
+  "source_sha256": {
+    "crates/fmrireg/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmrireg/src/backend.rs": "374689abcebd03688d0927fd5fe324a879e9400847bf53baa143f87b642b33dc",
+    "crates/fmrireg/src/lib.rs": "815bfa4cf6dfe3fcdc78e1638d999140c802403351fddc76774cb267537065f7",
+    "crates/fmrireg/src/workspace.rs": "cd8b91d566cec19e3c70b399be8ce9cc172fb3e5a2e84ad3d75e2feeac550ecd",
+    "crates/fmrireg/src/dataset.rs": "0bbfff19de41213c4ca21d8410e228176d5dc89b1bcd035965df9f0d085a8778",
+    "crates/fmrireg/tests/invalid_allocation.rs": "ef8b68c67f896efb1b3a0dcc5fb60532397d0690cd3ae7ac3bbbed4ac5daab52",
+    "crates/fmrireg/tests/speed_contracts.rs": "d8b80f6d0d1ae31ad92c5e6760acb4627a9ea1acf217e111bc9a482fb24d8648",
+    "crates/fmrireg/tests/parallel.rs": "d0d2783f45198b517b05ebdf554f460deb2392d7ef42b863546e3d34b4388b60",
+    "crates/fmrireg/tests/arp.rs": "ddd6ed8049e1c525c309df56741765b982b98fb82598cc0a869478aca0387065",
+    "crates/fmrireg/tests/contracts.rs": "a55f8f4b65572b94cb030f62c07ba3b5f25b44b33c90efa63310e5aefb6f5c7e",
+    "crates/fmri-noise/src/finite.rs": "dd6f8813b259cd6273ce2698a467d71213abdd82cacf856aa9be78f9ed8c4035",
+    "crates/fmri-noise/src/lib.rs": "f6b720809d484a9eb4ca7e67b6d4ba29456651de93413abe0d4c771d67949468",
+    "crates/fmri-noise/src/correction.rs": "0388daeb13c28ec88112b2d669e41df8c54cb6f5615426e8d9be212adce6e2f4",
+    "crates/fmri-noise/src/ar.rs": "f7ca66b29050e007c23f2a6d7089a4a95070ce3439f870dbe1760852b66bff86",
+    "crates/fmri-noise/tests/whitening_into.rs": "44a50aadaedbddc4eba7450592117cac1ccb795a756d7b978961e2721cca122e",
+    "crates/fmri-noise/tests/ar_small_orders.rs": "d6e85f24dddbf0cadc5c0f9838391a5335341b9081cb15b4efa05efa958be1aa",
+    "crates/fmri-noise/tests/arp.rs": "43f0be30503523f308ccb13b71cb17644d33712d57d3e0e3fb66f7a85fcfc7c4",
+    "crates/fmri-noise/tests/contracts.rs": "9e69d584408c9a3e103d384332ad69de0af1e5502cde26fffcd430a0e00929c1"
+  },
+  "decisions": {
+    "finite": {
+      "decision": "retain",
+      "evidence": "finite/summary.json",
+      "complete_gls_speedup_range": [
+        1.17,
+        1.31
+      ]
+    },
+    "fused": {
+      "decision": "retain",
+      "evidence": "fused/summary.json",
+      "incremental_complete_gls_speedup_range": [
+        1.46,
+        2.01
+      ]
+    },
+    "tile": {
+      "decision": "reject",
+      "evidence": "tile/summary.json",
+      "reason": "1200x8x1000 slower by about 10%; gains on remaining active cases small/noisy; restored pre-tile source byte-for-byte"
+    }
+  },
+  "unrelated_workspace_format": {
+    "file": "crates/fmridesign/src/lib.rs",
+    "reason": "sampling/sampled_features module and prelude import order in concurrent work; no edits made",
+    "source_sha256": "90dd891a27b16f43be203727d17a0b9f4405163b883313f34af295d311310ae6"
+  },
+  "r_comparisons": {
+    "passed": 16,
+    "max_scaled_error": 9.071189146422014e-10,
+    "tolerance": 2e-08
+  },
+  "benchmark_bindings": "all final sources and benchmark executable hashes verified",
+  "documentation_sha256": {
+    "README.md": "a27f1a1118cb527666a8030d763b4bbbc5f3c9eeede23946ad1f37acada1a7ac",
+    "HILL_CLIMB.md": "2dcd34c3ed0b0354b767eae61f5fe840ae40505634e30479b3bc71bdcafda229"
+  }
+}

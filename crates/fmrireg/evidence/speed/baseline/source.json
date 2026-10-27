@@ -1,0 +1,10 @@
+{
+  "crates/fmrireg/src/lib.rs": "7660b3d0e44b06158fd1aa190fe0753c49baa8e263876942f858bec8e36e2948",
+  "crates/fmrireg/src/dataset.rs": "2898a1a0ab6b8fedc2e301e9e0fec0cd56ef55da3ed87dde91be60c073e8c711",
+  "crates/fmrireg/Cargo.toml": "00897c975b50dae9805003d20ec00f99cd1c147e021ffb0c9e834a7654469447",
+  "crates/fmrireg/examples/gls_benchmark.rs": "dcfdf58d04333f3d87ad89830190d78b3579ca3ae53830d72d2480a6b844904f",
+  "crates/fmri-noise/src/lib.rs": "8e8e0ad0f90ce17188cf45ec75ea1ea5c0bbc7425845b6d1f588c167cd737a39",
+  "crates/fmri-noise/src/ar.rs": "5e856e760644783022751c018f3b1aa6d96dab74ef2e184bcd9535d2a4549167",
+  "Cargo.lock": "e0dbe3e5b78af7d90ad9a5b008a613c6c2b078bdb7820b5d68e65ad859d28cb8",
+  "gls_benchmark_binary": "455d17388de6ea808582a55116520d5b90c4b1d797553f7a951f1511450fb577"
+}

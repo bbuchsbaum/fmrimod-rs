@@ -1,0 +1,145 @@
+{
+  "machine": "Apple M3 Max",
+  "macos": "14.3",
+  "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+  "hardware_verification": "sysctl -n machdep.cpu.brand_string and sw_vers succeeded with authorized read access after sandbox denied sysctl; all numerical runs completed before the initial metadata-only failure",
+  "threads": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "application_workers": 1
+  },
+  "commands": [
+    {
+      "name": "prototype-accelerate",
+      "command": [
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/algebra/algebra_gls"
+      ],
+      "environment": {},
+      "exit_code": 0
+    },
+    {
+      "name": "qr-accelerate",
+      "command": [
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/algebra/algebra_qr"
+      ],
+      "environment": {},
+      "exit_code": 0
+    },
+    {
+      "name": "qr-blocked-accelerate",
+      "command": [
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/algebra/algebra_qr"
+      ],
+      "environment": {
+        "FMRIREG_QR_BLOCKED": "1"
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "inplace-cancellation-accelerate",
+      "command": [
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/algebra/algebra_gls",
+        "--stress-product"
+      ],
+      "environment": {},
+      "exit_code": 0
+    },
+    {
+      "name": "composition-accelerate",
+      "command": [
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/algebra/algebra_gls",
+        "--stress-composition"
+      ],
+      "environment": {},
+      "exit_code": 0
+    },
+    {
+      "name": "inplace-cancellation-portable",
+      "command": [
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/algebra/algebra_gls",
+        "--stress-product"
+      ],
+      "environment": {
+        "FMRIREG_BACKEND": "portable"
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "composition-portable",
+      "command": [
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg/evidence/algebra/algebra_gls",
+        "--stress-composition"
+      ],
+      "environment": {
+        "FMRIREG_BACKEND": "portable"
+      },
+      "exit_code": 0
+    }
+  ],
+  "build_input_hashes_verified_unchanged_before_after": true,
+  "source_manifest": "build-inputs.json",
+  "source_snapshot": "source",
+  "binaries": {
+    "algebra_gls": "22280ce3cfebcd0ae6e9c2d4a4d90b17e6b81dacb16b82e26c3e5309d2eb4476",
+    "algebra_qr": "c037fabda18a5d4c7ffa05c0358a89b89cd792e37e2b77c215c2786bb955db13"
+  },
+  "receipts": {
+    "inplace-cancellation-portable.json": "77a8a6c5a3dbcdb43ed26bd83c8ba42714cbdb29ca35d94bd61604dbbad772af",
+    "qr-accelerate.json": "341b70deaaf8f3bfc254e5fb4bc9c2d4af6e20cc574c75ab9d39d5a286c9c699",
+    "composition-portable.json": "1eaba90512d4ddd53de8893c877c42bd727f6ebb59e00fcdc79815b482fe6f14",
+    "build-inputs.json": "c9efa3724d547285f74b5cdfe7eaf7291646145abd2433fdd92d4982df35b370",
+    "composition-accelerate.json": "0551d0d6e1270a4948467c4937e1b40dfcfd2e425ef2fc5170eb64b905f6cce3",
+    "reassociation-stress.json": "4c78e60a06007213ee8a734a5624c4ebc6789a1e0d4e29101f64a748f4af6b4d",
+    "qr-blocked-accelerate.json": "ee491a54ec9f212d4f716f8112cad7b379a4729473380a3f647e7d175351025d",
+    "decisions.json": "650be64ae13c17b81f3b2449395cc428609a24821530ae585e6a2a766be654ed",
+    "checks.json": "2c1ed1d447601c34922a9b50e1fc9357e8ee4680c9e4215f5e2b010a579bef93",
+    "prototype-accelerate.json": "f2a3ab85f768921226732d85e76f2be38f89aba045de295f13b6c4f188c204b8",
+    "inplace-cancellation-accelerate.json": "891e1410c70fa477f922a9253e9915792b0819b5698f4ce0add417f84ada77d4"
+  },
+  "validation": {
+    "all_features_tests_passed": 30,
+    "all_features_tests_ignored": 0,
+    "all_features_test_process_exit_code": 0,
+    "strict_examples_clippy": "success confirmed by complete clippy.log; command was followed by tests in same shell so independent exit status was not captured",
+    "checks": [
+      {
+        "name": "minimal-examples",
+        "command": [
+          "cargo",
+          "check",
+          "-p",
+          "fmrireg",
+          "--no-default-features",
+          "--example",
+          "algebra_gls",
+          "--example",
+          "algebra_qr"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "example-format",
+        "command": [
+          "rustfmt",
+          "--edition",
+          "2021",
+          "--check",
+          "examples/algebra_gls.rs",
+          "examples/algebra_qr.rs"
+        ],
+        "exit_code": 0
+      }
+    ]
+  },
+  "limitations": [
+    "local unisolated hardware load and frequency",
+    "prepared warm timings exclude generation and setup; no new full pipeline R/streaming timing because no production candidate was accepted",
+    "GLS timing is zero-history AR4; separate native AR1 reassociation stress uses both startup policies",
+    "QR timings are full-rank OLS only",
+    "workspace bytes are numeric buffers, not peak RSS or BLAS scratch",
+    "pilot receipts have older unsnapshotted example revisions and are not bound to final sources",
+    "Decimal90 is arithmetic precision, not a certified90digit error bound",
+    "inplace cancellation witness isolates the residual GEMM kernel, not an end-to-end fitted-model counterexample"
+  ]
+}

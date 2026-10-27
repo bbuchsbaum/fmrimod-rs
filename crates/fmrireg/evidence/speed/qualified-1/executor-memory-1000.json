@@ -1,0 +1,1 @@
+{"backend":"Accelerate","block":1000,"cold":0.008486125,"features":1000,"legacy":false,"n":1200,"p":32,"scope":"known AR4 GLS coefficients and variance; serial synthetic reader and ordered sink; thread launch included","warm":[0.00769875,0.0071385,0.007260292,0.006960834,0.007921333],"workers":4}

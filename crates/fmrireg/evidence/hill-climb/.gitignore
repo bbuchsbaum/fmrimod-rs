@@ -1,0 +1,5 @@
+*.log
+*.bin
+baseline/gls_benchmark
+baseline/block_throughput
+*/hill_kernel

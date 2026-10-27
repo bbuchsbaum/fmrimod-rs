@@ -9,7 +9,7 @@ use crate::{
         DetachedSession, ModelSpec, NoisePolicy, SessionError, SubjectOutput, SubjectSession,
     },
 };
-use fmrireg::output::{OutputSpec, Uncertainty};
+use fmri_reg::output::{OutputSpec, Uncertainty};
 use std::{error::Error, fmt};
 
 #[derive(Debug)]

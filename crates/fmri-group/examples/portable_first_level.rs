@@ -1,7 +1,7 @@
 //! Actual first-level fits -> incremental bundle -> disk-backed group inference.
 //! Synthetic demonstration, not a calibration experiment. Output must be new.
+use fmri_data::{FeatureAxis, FeatureId, FeatureSpace, IndexSpace, ObservationId};
 use fmri_group::*;
-use fmridataset::{FeatureAxis, FeatureId, FeatureSpace, IndexSpace, ObservationId};
 use ndarray::{array, Array2};
 
 fn main() -> Result<()> {
@@ -16,7 +16,7 @@ fn main() -> Result<()> {
             (t as f64 * 0.7).sin()
         }
     });
-    let model = fmrireg::LinearModel::new(x.view(), 1e-12)?;
+    let model = fmri_reg::LinearModel::new(x.view(), 1e-12)?;
     let metadata = PortableMetadata {
         subjects: (0..subjects)
             .map(|i| {
@@ -37,7 +37,7 @@ fn main() -> Result<()> {
             "synthetic-parcels",
             (0..features)
                 .map(|j| FeatureId::new(format!("parcel-{j}")))
-                .collect::<fmridataset::Result<Vec<_>>>()?,
+                .collect::<fmri_data::Result<Vec<_>>>()?,
         )?))?,
         variance_origins: Some(vec![
             VarianceOrigin::Estimated {

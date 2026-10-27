@@ -16,7 +16,7 @@ use crate::{
     outputs::DesignColumns,
 };
 use fmri_noise::{ArDiagnostics, ArPlan, ArStart, Pooling};
-use fmrireg::{
+use fmri_reg::{
     output::{OutputSpec, RetainedFit, Summary, SummaryView, Uncertainty},
     ArOptions, FitError, GlsModel, LinearModel, MatrixBackend,
 };
@@ -30,7 +30,7 @@ pub enum SessionError {
     Invalid(&'static str),
     Budget { required: usize, budget: usize },
     Overflow,
-    Dataset(fmridataset::FmriDatasetError),
+    Dataset(fmri_data::FmriDatasetError),
     Noise(fmri_noise::NoiseError),
     Fit(FitError),
 }
@@ -50,8 +50,8 @@ impl fmt::Display for SessionError {
     }
 }
 impl Error for SessionError {}
-impl From<fmridataset::FmriDatasetError> for SessionError {
-    fn from(x: fmridataset::FmriDatasetError) -> Self {
+impl From<fmri_data::FmriDatasetError> for SessionError {
+    fn from(x: fmri_data::FmriDatasetError) -> Self {
         Self::Dataset(x)
     }
 }
@@ -104,7 +104,7 @@ impl LoadedSubject {
                 "subject ID and source version must not be empty",
             ));
         }
-        if reader.dtype() != fmridataset::DType::F64 {
+        if reader.dtype() != fmri_data::DType::F64 {
             return Err(SessionError::Invalid(
                 "f32 input requires explicit external conversion to f64",
             ));

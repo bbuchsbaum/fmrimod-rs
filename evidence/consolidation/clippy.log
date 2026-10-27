@@ -1,4 +1,0 @@
-    Blocking waiting for file lock on build directory
-    Checking fmridataset v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset)
-    Checking fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
-    Finished `dev` profile [unoptimized] target(s) in 1.81s

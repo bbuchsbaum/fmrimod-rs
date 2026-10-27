@@ -28,7 +28,7 @@ or arbitrary dimensions. No automatic performance gate is derived from them.
 
 Raw receipts: evidence/rust-throughput-memory.json, evidence/r-throughput.json,
 evidence/rust-memory.log, evidence/r-memory.log. Reproduce with
-`cargo run --release -p fmrireg --example throughput` and
+`cargo run --release -p fmri-reg --example throughput` and
 `scripts/benchmark_estimation.R`; use `/usr/bin/time -l` for process RSS.
 
 
@@ -104,7 +104,7 @@ more. Independent R contracts and an analytic large-offset/small-residual test
 pass, including extreme feature scales and block equivalence.
 
 ```sh
-cargo build --release -p fmrireg --example gls_benchmark
+cargo build --release -p fmri-reg --example gls_benchmark
 python3 scripts/benchmark_gls.py --label baseline
 python3 scripts/benchmark_gls.py --label final --rust-only
 python3 scripts/benchmark_gls.py --label memory --memory-only

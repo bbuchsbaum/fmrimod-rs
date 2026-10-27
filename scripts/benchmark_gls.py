@@ -40,6 +40,6 @@ for n,p,v,o,b,w in cases:
   if x.shape==y.shape:
    err=float(np.max(np.abs(x-y)/(1+np.abs(y))));records[-1]['block_worker_max_scaled']=err;assert err<2e-8
  (out/'results.json').write_text(json.dumps(records,indent=2))
-files=[p for c in ['fmri-noise','fmrireg'] for p in Path('crates',c).rglob('*.rs')]+[Path('scripts/benchmark_gls.R'),Path('scripts/benchmark_gls.py'),Path('Cargo.lock')]
+files=[p for c in ['fmri-noise','fmri-reg'] for p in Path('crates',c).rglob('*.rs')]+[Path('scripts/benchmark_gls.R'),Path('scripts/benchmark_gls.py'),Path('Cargo.lock')]
 metadata={'platform':platform.platform(),'machine':subprocess.check_output(['sysctl','-n','machdep.cpu.brand_string'],text=True).strip(),'rustc':subprocess.check_output(['rustc','--version'],text=True).strip(),'threads':{k:env[k] for k in ['OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','VECLIB_MAXIMUM_THREADS']},'hashes':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in files},'binary_sha256':hashlib.sha256(Path('target/release/examples/gls_benchmark').read_bytes()).hexdigest(),'r_source_commit':subprocess.check_output(['git','-C',str(Path.home()/'code/fmriAR'),'rev-parse','HEAD'],text=True).strip()}
 (out/'metadata.json').write_text(json.dumps(metadata,indent=2))

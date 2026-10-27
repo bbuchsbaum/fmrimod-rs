@@ -49,7 +49,10 @@ Its first tranche is implemented; see GROUP_ANALYSIS.md and GROUP_BENCHMARK.md.
 * Installed R packages differ from checkout versions (notably fmriAR). Generate
   fixtures from isolated builds of the recorded sources, not ambient libraries.
 
-## Architecture decisions
+## Initial architecture decisions (historical)
+
+Package names and layout now follow [REPOSITORY.md](REPOSITORY.md); the original
+choices below preserve the consolidation record.
 
 Keep crates `fmrihrf`, `fmridesign`, `fmridataset`; add `fmri-noise`, `fmrireg`
 and a small `fmrimod` facade. Keep scientific kernels independent of file formats

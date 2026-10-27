@@ -147,13 +147,13 @@ and calibration before promoting those approximate p-values.
 
 ### Reuse the existing foundation
 
-`fmridataset::FmriFrame` already binds observation × feature assays to exact ordered
+`fmri_data::FmriFrame` already binds observation × feature assays to exact ordered
 IDs. `FeatureAxis` binds support and geometry; `FeatureSpace::assert_compatible`
 compares semantic values, not dimensions alone. Reuse this instead of introducing
 an unrelated `GroupSpace`. Index/volume spaces exist; full surface/mesh semantics
 are a future dataset capability, not something label-only arrays can assert.
 
-`fmrireg::LinearModel` already has rank-aware SVD, reusable block workspaces,
+`fmri_reg::LinearModel` already has rank-aware SVD, reusable block workspaces,
 contrast estimability and unit covariance. Reuse it for complete-case group OLS
 and cache preparations for repeated validity patterns. Set a cache budget;
 worst-case every feature has a distinct pattern. Never fill missing effects with

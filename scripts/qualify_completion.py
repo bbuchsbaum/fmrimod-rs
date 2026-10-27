@@ -127,11 +127,11 @@ def main():
                                 clean_executables=True)
                 command(features+"-doc", ["cargo", "test", *common, "--doc"])
             command("format", ["cargo", "fmt", "--all", "--check"])
-            command("numerical-clippy", ["cargo", "clippy", "-p", "fmri-group", "-p", "fmri-noise", "-p", "fmrireg", "--lib", "--all-features", "--locked", "--", "-D", "warnings"])
+            command("numerical-clippy", ["cargo", "clippy", "-p", "fmri-group", "-p", "fmri-noise", "-p", "fmri-reg", "--lib", "--all-features", "--locked", "--", "-D", "warnings"])
             command("repeated-example", ["cargo", "run", "-p", "fmri-group", "--example", "repeated_group", "--locked"])
         if args.calibration:
             for name, package, example, replicates in [
-                ("ar", "fmrireg", "completion_ar_calibration", "500"),
+                ("ar", "fmri-reg", "completion_ar_calibration", "500"),
                 ("group", "fmri-group", "completion_group_calibration", "500"),
                 ("repeated", "fmri-group", "repeated_calibration", "1000"),
                 ("permutation", "fmri-group", "permutation_calibration", "200"),

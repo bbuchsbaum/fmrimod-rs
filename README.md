@@ -1,68 +1,74 @@
 # fmrimod-rs
 
-Composable fMRI modelling in Rust: HRFs and event designs, spatially typed
-bounded data access, and reusable mass-univariate estimation.
+Composable fMRI modelling in Rust: HRFs and experimental designs, typed data,
+fast reusable OLS/GLS fitting, AR noise models, and group inference.
 
-Group OLS, FE/DL/PM meta-regression, and covariance-bound repeated ML/REML models
-are available through `fmri-group` and `fmrimod::group`. Portable estimate bundles,
-whole-family permutation max-T and exact deletion diagnostics have separate APIs.
-Start with the [group guide](docs/GROUP_ANALYSIS.md), [repeated models](docs/REPEATED_GROUP.md),
-and [current qualification and limits](docs/COMPLETION_REPORT.md).
+Start with **`fmrimod`** for an analysis pipeline. Use a component directly when
+you need a smaller dependency set. R packages supply scientific references;
+the Rust APIs use explicit identities, reusable plans and bounded data blocks.
 
-This workspace consolidates the working sources of `fmrihrf-rs`,
-`fmridesign-rs`, and `fmridataset-rs`. `fmrireg` and `fmri-noise` are new crates.
-The aim is scientific capabilities with efficient Rust interfaces; R package
-syntax and object systems are not the API blueprint.
+| Crate | Responsibility |
+| --- | --- |
+| [fmrimod](crates/fmrimod) | Pipeline entry point, sessions, named outputs and group adapters |
+| [fmri-data](crates/fmri-data) | Observation/feature identities, assays, spatial metadata and readers |
+| [fmri-hrf](crates/fmri-hrf) | HRFs, convolution, sampled regressors and reconstruction |
+| [fmri-design](crates/fmri-design) | Design matrices, formulas, nuisance terms and contrasts |
+| [fmri-noise](crates/fmri-noise) | AR/ARMA estimation, whitening, censoring and run scales |
+| [fmri-reg](crates/fmri-reg) | Reusable mass-univariate OLS/GLS and contrast estimation |
+| [fmri-group](crates/fmri-group) | Group regression, meta-analysis, repeated models and resampling |
+| [fmri-splines](crates/fmri-splines) | Numerical spline support for the workspace |
 
-```rust
-use fmrireg::LinearModel;
-use ndarray::array;
+Cargo names use hyphens; Rust imports use underscores, for example `fmri_reg`.
+The [architecture guide](docs/REPOSITORY.md) explains dependencies, naming changes
+and repository conventions.
 
-let x = array![[1., 0.], [1., 1.], [1., 2.], [1., 3.], [1., 4.]];
-let y = array![[1., 2.], [2., 1.], [2., 4.], [4., 3.], [6., 6.]];
-let model = LinearModel::new(x.view(), 1e-12)?;
-let fit = model.fit(y.view())?;
-let contrast = fit.t_contrast(array![0., 1.].view())?;
-# Ok::<(), fmrireg::FitError>(())
-```
+## Run from a checkout
 
-Prepare the design once and reuse it across feature blocks. A fit stores
-coefficients and residual variances; t/F contrasts reuse that fit. Rank-deficient
-models require estimable contrasts. Known AR(p) GLS and one-step feasible GLS
-are explicit APIs; the latter estimates design-corrected noise from a supplied
-representative matrix and reuses the plan for subsequent feature blocks.
-
-`fmrireg::dataset::fit_blocks` (feature `dataset`) streams f64 readers into a
-result sink with an explicit working-buffer budget. Row identity/order must
-already match the design. `BoundModel::fit_assay` additionally verifies exact
-observation IDs and order before opening the reader, and supplies feature IDs
-to the sink. Both OLS and GLS support block execution. `fmrimod` reexports the components; its optional
-`formula` feature enables the legacy dataframe/design frontend. Plotting is
-opt-in in `fmridesign`.
-
-Run the event-to-fit example:
+Rust 1.91.1 or newer is required. Registry publication is disabled for this
+initial source distribution; use the workspace directly.
 
 ```sh
 cargo run -p fmrimod --example first_level
-# Events + sampled features + nuisance + censoring + estimated AR(2) + streamed contrasts
 cargo run -p fmrimod --features formula --example complete_first_level
-cargo test --workspace --all-features -j 2
+cargo run -p fmri-group --example repeated_group
 ```
 
-See [the execution plan](docs/PLAN.md) for scope, architecture and acceptance
-criteria, [capability status](docs/CAPABILITIES.md) and the [HRF/design audit](docs/HRF_DESIGN_AUDIT.md) for limitations and compatibility changes, and
-[integrated qualification](docs/QUALIFICATION.md) for current workspace checks,
-selected-row performance and statistical limitations. [Earlier evidence](evidence/README.md)
-records prior stages. Existing crate audit documents
-are historical; their percentages and September source references do not certify
-current R behavior.
+The default `fmrimod` build omits the Polars formula frontend and NIfTI ingress.
+Enable `formula`, `nifti`, or `accelerate` explicitly when needed. Plotting remains
+an optional feature of the HRF/design components.
 
-Original sibling repositories remain intact. Source hashes and original Git
-HEAD/status are in `evidence/source-manifest.json`; local Git history bundles are
-kept in `evidence/` but excluded from version control. Each crate retains its
-license. Dataset and the facade declare GPL-3.0-or-later; the workspace has no
-blanket relicensing declaration. Nothing has been published or remotely migrated.
+For direct numeric fitting, prepare a model once and reuse it across blocks:
 
-Run `python3 scripts/audit_upstream.py` to detect drift in the five local R
-reference checkouts. A drift report requires review and fresh numerical
-qualification; it never automatically blesses new upstream behavior.
+```rust
+use fmri_reg::LinearModel;
+use ndarray::array;
+
+fn main() -> Result<(), fmri_reg::FitError> {
+    let x = array![[1., 0.], [1., 1.], [1., 2.], [1., 3.], [1., 4.]];
+    let y = array![[1., 2.], [2., 1.], [2., 4.], [4., 3.], [6., 6.]];
+    let model = LinearModel::new(x.view(), 1e-12)?;
+    let fit = model.fit(y.view())?;
+    let contrast = fit.t_contrast(array![0., 1.].view())?;
+    println!("{:?}", contrast);
+    Ok(())
+}
+```
+
+## Documentation and qualification
+
+Read [the documentation index](docs/README.md), [capability matrix](docs/CAPABILITIES.md),
+and [scientific qualification report](docs/COMPLETION_REPORT.md). That report
+separates numerical agreement from coverage: estimated-noise and repeated-model
+plug-in intervals have documented limitations. Synthetic qualification does not
+establish real-data acceptance.
+
+For development, see [CONTRIBUTING.md](CONTRIBUTING.md). CI is configured for
+Linux, macOS and Windows; hosted execution is separate from local checks.
+
+The [evidence index](evidence/README.md) explains retained receipts, fixtures,
+archived raw experiments and reproduction. Original sibling repositories remain
+intact. Historical porting notes are in [docs/history](docs/history/README.md).
+
+Licenses are retained per crate; see [the license map](LICENSE.md). The data,
+group and facade crates declare GPL-3.0-or-later. There is no blanket relicensing
+of the workspace.

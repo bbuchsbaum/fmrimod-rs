@@ -1,13 +1,13 @@
 # Selected-observation AR(1) estimation
 
-`fmrireg::selected_estimation::estimate_selected_ar1` prepares **one-step stationary
+`fmri_reg::selected_estimation::estimate_selected_ar1` prepares **one-step stationary
 AR(1) feasible GLS** after observation exclusion. It selects the original design
 and representative noise data using the same `ObservationSelection`, fits OLS on
 those retained rows, estimates corrected residual lag moments, and returns a
 `GlsModel<SelectedArPlan>` plus diagnostics. Subsequent fits accept selected rows.
 
 ```sh
-cargo run -p fmrireg --features dataset --example selected_ar1
+cargo run -p fmri-reg --features dataset --example selected_ar1
 ```
 
 The example estimates a common coefficient from 24 synthetic feature series,
@@ -144,7 +144,7 @@ These diagnostics supplement the correction condition, pair counts, rank, and
 scaled ACVFs already described above. Stability margin is not a confidence bound.
 
 ```sh
-cargo run -p fmrireg --features dataset --example selected_arp
+cargo run -p fmri-reg --features dataset --example selected_arp
 ```
 
 The example generates independent run histories for a moderate AR(2), estimates

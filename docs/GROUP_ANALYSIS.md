@@ -36,7 +36,7 @@ No unit variance is fabricated. Declaring an assay an effect remains the caller'
 scientific responsibility; an arbitrary statistic map cannot be converted into
 a scientifically meaningful effect by naming it.
 
-`FirstLevelEstimate::from_t` offers a typed bridge from `fmrireg::TContrast`.
+`FirstLevelEstimate::from_t` offers a typed bridge from `fmri_reg::TContrast`.
 It retains effect, squared SE, residual df, the caller's noise/selection/model
 receipt and approximate/conditional uncertainty flag. Assembly checks estimand
 identity, units and exact feature-space compatibility. This bridge currently
@@ -55,7 +55,7 @@ rank tolerance, original fit/variance provenance and missingness policy.
 ## Estimation and unavailable results
 
 - OLS estimates residual scale and uses two-sided Student t inference. It reuses
-  `fmrireg::LinearModel`'s SVD preparation for features with the same retained rows.
+  `fmri_reg::LinearModel`'s SVD preparation for features with the same retained rows.
   A bounded FIFO cache prevents unbounded growth when missingness patterns differ.
 - Common-effect meta-analysis uses inverse sampling variance and normal inference.
 - DL additionally estimates nonnegative between-subject heterogeneity and uses
@@ -78,7 +78,7 @@ produce finite outputs reports numerical failure rather than changing the model.
 
 ## Bounded execution
 
-`fit_ols` / `fit_meta` read contiguous feature blocks through `fmridataset` and
+`fit_ols` / `fit_meta` read contiguous feature blocks through `fmri-data` and
 transfer each `ResultBlock` to a fallible callback. Sink failure stops execution.
 The dataset foundation currently supplies memory-backed f32/f64 sources and lazy
 views; this is not a new disk-format implementation. Input is accumulated in f64.

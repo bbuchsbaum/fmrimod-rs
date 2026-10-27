@@ -37,4 +37,4 @@ for(order in 2:4)for(policy in c('preserve','restart'))for(pool in c('global','r
  original_y<-matrix(0,n,64);original_y[keep+1L,]<-ys
  cases[[length(cases)+1L]]<-list(order=order,policy=policy,pool=pool,conditions=conditions,innovation_fraction=fractions,y=unname(original_y),residual=unname(residual),bias=unname(A),pair_counts=vapply(pairs,nrow,integer(1)),gamma=gamma,coefficients=estimated,beta=unname(beta),variance=variance,t=tstat)
 }
-write_json(list(provenance=list(R=R.version.string,seed=60272,method='Dense retained residual projection and lag covariance operators; direct Yule-Walker solve, ARMAacf covariance and dense GLS'),lengths=lengths,keep=keep,x=unname(x),lag=lag,cases=cases),'crates/fmrireg/tests/fixtures/selected_arp_estimation.json',auto_unbox=TRUE,pretty=TRUE,digits=17)
+write_json(list(provenance=list(R=R.version.string,seed=60272,method='Dense retained residual projection and lag covariance operators; direct Yule-Walker solve, ARMAacf covariance and dense GLS'),lengths=lengths,keep=keep,x=unname(x),lag=lag,cases=cases),'crates/fmri-reg/tests/fixtures/selected_arp_estimation.json',auto_unbox=TRUE,pretty=TRUE,digits=17)

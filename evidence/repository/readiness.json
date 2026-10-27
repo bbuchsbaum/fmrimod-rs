@@ -1,0 +1,24 @@
+{
+  "prepared_for": "first GitHub source push; no remote action performed",
+  "crate_names": [
+    "fmrimod",
+    "fmri-data",
+    "fmri-hrf",
+    "fmri-design",
+    "fmri-noise",
+    "fmri-reg",
+    "fmri-group",
+    "fmri-splines"
+  ],
+  "checks": "checks.json",
+  "packages": "package-audit.json",
+  "source_review": "source-review.json",
+  "archived_files": 1217,
+  "archived_bytes": 126704417,
+  "tracked_tree_bytes_before_final_receipts": 39116703,
+  "preservation": "preservation.json",
+  "history_rewritten": false,
+  "hosted_ci_executed": false,
+  "registry_publication_enabled": false,
+  "source_drift_during_final_checks": []
+}

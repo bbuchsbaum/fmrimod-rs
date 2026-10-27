@@ -13,7 +13,7 @@ copy = pathlib.Path(manifest['reference']['isolated_build_copy'])
 assert all(sha(copy/p)==h for p,h in manifest['reference']['sha256'].items())
 paths = list(pathlib.Path('crates/fmri-group').rglob('*.rs')) + list(pathlib.Path('crates/fmri-group/benchmarks').glob('*'))
 paths += [pathlib.Path(p) for p in ['crates/fmri-group/Cargo.toml','crates/fmri-group/tests/reference.json','scripts/group_reference.R','crates/fmrimod/src/lib.rs','crates/fmrimod/Cargo.toml','crates/fmrimod/tests/group.rs','Cargo.toml','Cargo.lock']]
-producer = list(pathlib.Path('crates/fmrireg/src').glob('*.rs')) + list(pathlib.Path('crates/fmridataset/src').glob('*.rs'))
+producer = list(pathlib.Path('crates/fmri-reg/src').glob('*.rs')) + list(pathlib.Path('crates/fmri-data/src').glob('*.rs'))
 for label in ['r-benchmark','rust-benchmark']:
     run = json.loads((base/f'{label}-resource.json').read_text())
     assert run['exit']==0

@@ -15,4 +15,4 @@ for(irregular in c(FALSE,TRUE))for(center in c(FALSE,TRUE))for(scale in c('none'
  }
  cases[[length(cases)+1L]]<-list(irregular=irregular,center=center,scale=scale,masked=masked,onsets=onsets,widths=widths,amplitudes=unname(do.call(rbind,amps)),expected=unname(do.call(rbind,expected)))
 }
-write_json(list(provenance=list(source=source,commit=system2('git',c('-C',source,'rev-parse','HEAD'),stdout=TRUE),source_md5=hashes,R=R.version.string),inputs=inputs,lens=lens,tr=tr,start=start,precision=precision,cases=cases),'crates/fmrihrf/tests/fixtures/sampled_features.json',auto_unbox=TRUE,pretty=TRUE,digits=17)
+write_json(list(provenance=list(source=source,commit=system2('git',c('-C',source,'rev-parse','HEAD'),stdout=TRUE),source_md5=hashes,R=R.version.string),inputs=inputs,lens=lens,tr=tr,start=start,precision=precision,cases=cases),'crates/fmri-hrf/tests/fixtures/sampled_features.json',auto_unbox=TRUE,pretty=TRUE,digits=17)

@@ -25,10 +25,7 @@ fn close(a: f64, b: f64) {
 }
 #[test]
 fn fractional_multirun_multibasis_design_to_streamed_gls_and_contrasts() {
-    let f: Value = serde_json::from_str(include_str!(
-        "../../fmridesign/tests/fixtures/r_core_contract.json"
-    ))
-    .unwrap();
+    let f: Value = serde_json::from_str(include_str!("fixtures/r_core_contract.json")).unwrap();
     let r: Value = serde_json::from_str(include_str!("fixtures/pipeline.json")).unwrap();
     let lens: Vec<usize> = f["frame"]["blocklens"]
         .as_array()

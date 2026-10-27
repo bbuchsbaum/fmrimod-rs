@@ -1,5 +1,5 @@
 use crate::{nonblank, Error, Result};
-use fmridataset::{
+use fmri_data::{
     Assay, AssayAnnotations, Axis, FeatureAxis, FmriFrame, Metadata, NumericBlock, ObservationId,
     SourceSpec, Values,
 };
@@ -269,7 +269,7 @@ impl FirstLevelEstimate {
         subject: Subject,
         estimand: Estimand,
         features: FeatureAxis,
-        contrast: &fmrireg::TContrast,
+        contrast: &fmri_reg::TContrast,
         fit: FitReceipt,
         approximate: bool,
     ) -> Result<Self> {

@@ -1,0 +1,18 @@
+warning: /Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/Cargo.toml: `default-features` is ignored for fmri-design, since `default-features` was not specified for `workspace.dependencies.fmri-design`, this could become a hard error in the future
+   Compiling simba v0.8.1
+   Compiling ndarray v0.16.1
+   Compiling simba v0.6.0
+   Compiling nalgebra v0.32.6
+   Compiling nalgebra v0.29.0
+   Compiling fmri-splines v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-splines)
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+   Compiling fmri-data v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-data)
+   Compiling statrs v0.16.1
+   Compiling fmri-hrf v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-hrf)
+   Compiling fmri-reg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-reg)
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+   Compiling fmri-design v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-design)
+   Compiling fmrimod v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod)
+    Finished `dev` profile [unoptimized] target(s) in 15.53s
+     Running `target/debug/examples/complete_first_level`
+{"column_names":["task","sound","drift.run1.dct.1","drift.run1.dct.2","drift.run1.dct.3","drift.run1.dct.4","drift.run2.dct.1","drift.run2.dct.2","drift.run2.dct.3","drift.run2.dct.4","intercept.run1","intercept.run2","nuisance.run1.motion_x","nuisance.run2.motion_x"],"delivered_features":32,"estimated_ar":[[0.42745422594644006,-0.1334264367792477],[0.42745422594644006,-0.1334264367792477]],"original_scans":150,"rank":14,"residual_df":128,"retained_scans":142,"streamed_equals_dense":true,"task_effects":[4.78803230696923,-2.3636322396250486,-8.607827394106877,1.5829291103299712,-2.647013118335226,-0.8259147258987798,10.99552588934331,3.781643223346086,3.719043857010331,-9.957923206141079,2.331595625344728,0.4720648782497668,0.4290405736241349,4.2289193202596636,1.6891416595257822,-0.035658679973834206,16.177636131569137,0.9221666803803152,8.020323747511695,1.8090070801870173,-1.8283272625359954,1.2692606736363363,1.4704316874400458,-2.0459150523244642,8.065026915109796,0.5961316960410465,6.8131746700974185,1.8703401188439626,-1.6494353013466139,-8.120190822027894,6.505007241016837,-5.509154386398795],"task_t":[0.7655072012278031,-0.3889885811043164,-1.2200331657401131,0.24631114468895826,-0.3898892386795214,-0.12383747741385594,1.7030673165804637,0.5344575163839919,0.5469768879970218,-1.6431579995848018,0.3509657467878015,0.0800346847796335,0.062474244373908326,0.6703659774005717,0.24498290399276385,-0.005716752239258804,2.4968193526120572,0.13926030171396442,1.254961366307723,0.2572368023859077,-0.27218194354058006,0.18361354943481561,0.23518763385439484,-0.3376742989285619,1.2769449673039772,0.0940815769041851,1.032702299318427,0.29484874804489136,-0.26616047276234617,-1.1781804542847933,0.9570593388726085,-0.7892223827707204]}

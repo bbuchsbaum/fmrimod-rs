@@ -15,4 +15,4 @@ hashes<-as.list(tools::md5sum(files));names(hashes)<-substring(names(hashes),nch
 write_json(list(provenance=list(source=source,commit=system2('git',c('-C',source,'rev-parse','HEAD'),stdout=TRUE),source_md5=hashes,R=R.version.string),times=t,cases=cases,
  empirical=list(times=tp,values=yp,expected=as.numeric(evaluate(emp,t))),derivative_times=dt,
  derivatives=list(spmg1=as.numeric(deriv(HRF_SPMG1,dt)),spmg2=unname(deriv(HRF_SPMG2,dt)))),
- 'crates/fmrihrf/tests/fixtures/hrf_audit.json',auto_unbox=TRUE,pretty=TRUE,digits=17)
+ 'crates/fmri-hrf/tests/fixtures/hrf_audit.json',auto_unbox=TRUE,pretty=TRUE,digits=17)

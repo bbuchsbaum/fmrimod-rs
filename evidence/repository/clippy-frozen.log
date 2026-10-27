@@ -1,0 +1,6 @@
+warning: /Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/Cargo.toml: `default-features` is ignored for fmri-design, since `default-features` was not specified for `workspace.dependencies.fmri-design`, this could become a hard error in the future
+    Checking fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+    Checking fmri-data v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-data)
+    Checking fmri-reg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-reg)
+    Checking fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `dev` profile [unoptimized] target(s) in 1.88s

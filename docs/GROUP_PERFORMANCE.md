@@ -59,7 +59,7 @@ These are planned extensions, not claims of implemented or measured performance.
 
 Precision-reducing variance binning, mixed precision and sketches require separate
 accuracy contracts. Existing rejected reassociations and residual-kernel failures
-in `crates/fmrireg/ALGEBRA.md` remain acceptance counterexamples.
+in `crates/fmri-reg/ALGEBRA.md` remain acceptance counterexamples.
 
 ## Implemented API and numerical scope
 

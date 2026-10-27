@@ -1,6 +1,0 @@
-    Blocking waiting for file lock on build directory
-   Compiling fmrihrf v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrihrf)
-    Finished `dev` profile [unoptimized] target(s) in 3.42s
-     Running `target/debug/examples/sampled_features`
-55 scans × 4 columns: f1/b1, f2/b1, f1/b2, f2/b2
-Run preprocessing: [FeatureStatistics { active_samples: 3, means: [2.3333333333333335, 2.0], divisors: [1.5275252316519465, 1.0] }, FeatureStatistics { active_samples: 3, means: [3.333333333333333, 2.3333333333333335], divisors: [1.5275252316519468, 1.5275252316519465] }]

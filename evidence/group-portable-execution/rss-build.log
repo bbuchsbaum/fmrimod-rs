@@ -1,5 +1,0 @@
-    Checking nalgebra v0.29.0
-    Checking statrs v0.16.1
-    Checking fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
-    Checking fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
-    Finished `dev` profile [unoptimized] target(s) in 3.51s

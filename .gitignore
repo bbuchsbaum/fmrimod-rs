@@ -23,3 +23,12 @@ __pycache__/
 /evidence/group-performance/baseline_benchmark
 /evidence/group-performance/candidate_benchmark
 /evidence/group-portable-execution/baseline_benchmark
+
+# Workspace source distribution excludes generated experiments and nested histories.
+*.bundle
+/evidence/**/*.log
+/evidence/**/source/
+/evidence/**/baseline-source/
+/evidence/**/run-*/
+/crates/*/Cargo.lock
+.DS_Store

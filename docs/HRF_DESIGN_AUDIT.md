@@ -106,8 +106,8 @@ Reproduction:
 LC_ALL=en_US.UTF-8 R_LIBS="$PWD/evidence/r-library" Rscript --vanilla scripts/generate_hrf_audit_contract.R
 Rscript --vanilla scripts/generate_pipeline_contract.R
 python3 scripts/check_bounded.py --label hrf-design-recheck
-cargo test -p fmridesign -p fmrimod --all-features
-cargo test -p fmrihrf --no-default-features --lib --test hrf_audit
+cargo test -p fmri-design -p fmrimod --all-features
+cargo test -p fmri-hrf --no-default-features --lib --test hrf_audit
 ```
 
 `--resume` on the bounded runner reuses successful targets and is appropriate

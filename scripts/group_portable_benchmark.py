@@ -72,14 +72,14 @@ def main():
 
     initial = sources()
     save("source.json", initial)
-    run(["cargo", "test", "-p", "fmridataset", "-p", "fmri-group", "-p", "fmrimod",
+    run(["cargo", "test", "-p", "fmri-data", "-p", "fmri-group", "-p", "fmrimod",
          "--all-features", "--all-targets"], "tests")
-    run(["cargo", "test", "-p", "fmridataset", "-p", "fmri-group", "-p", "fmrimod",
+    run(["cargo", "test", "-p", "fmri-data", "-p", "fmri-group", "-p", "fmrimod",
          "--all-features", "--doc"], "doctests")
-    run(["cargo", "clippy", "-p", "fmri-group", "-p", "fmridataset", "--all-targets",
+    run(["cargo", "clippy", "-p", "fmri-group", "-p", "fmri-data", "--all-targets",
          "--all-features", "--no-deps", "--", "-D", "warnings"], "clippy")
     rust_files = sorted(str(p.relative_to(ROOT)) for p in (ROOT / "crates/fmri-group").rglob("*.rs"))
-    rust_files += ["crates/fmridataset/src/array.rs", "crates/fmridataset/tests/file_source.rs"]
+    rust_files += ["crates/fmri-data/src/array.rs", "crates/fmri-data/tests/file_source.rs"]
     run(["rustfmt", "--edition", "2021", "--check", *rust_files], "format")
     run(["cargo", "run", "-p", "fmri-group", "--example", "portable_first_level",
          "--", out / "first-level-bundle"], "first-level-example")

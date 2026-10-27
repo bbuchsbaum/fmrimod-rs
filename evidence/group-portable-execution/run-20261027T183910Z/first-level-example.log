@@ -1,3 +1,0 @@
-    Finished `dev` profile [unoptimized] target(s) in 0.09s
-     Running `target/debug/examples/portable_first_level /Users/bbuchsbaum/code/rust/fmrimod-rs/evidence/group-portable-execution/run-20261027T183910Z/first-level-bundle`
-8 subjects, 37 features; actual first-level estimates written in blocks of 7; 6 group blocks, 304 weighted evaluations

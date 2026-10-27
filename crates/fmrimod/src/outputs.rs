@@ -10,7 +10,7 @@ use std::fmt;
 
 use ndarray::Array2;
 
-use fmrireg::output::{EstimandSet, OutputSpec, Uncertainty};
+use fmri_reg::output::{EstimandSet, OutputSpec, Uncertainty};
 
 #[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct ScientificSemantics {

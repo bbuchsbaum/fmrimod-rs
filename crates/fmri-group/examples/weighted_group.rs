@@ -1,18 +1,18 @@
 //! Synthetic first-level contrasts -> admitted cohort -> PM meta-regression with modified Knapp–Hartung inference.
+use fmri_data::{FeatureAxis, FeatureId, FeatureSpace, IndexSpace, ObservationId};
 use fmri_group::*;
-use fmridataset::{FeatureAxis, FeatureId, FeatureSpace, IndexSpace, ObservationId};
 use ndarray::{array, Array2};
 fn main() -> Result<()> {
     let x = Array2::from_shape_fn(
         (24, 2),
         |(t, j)| if j == 0 { 1. } else { (t as f64 * 0.7).sin() },
     );
-    let model = fmrireg::LinearModel::new(x.view(), 1e-12)?;
+    let model = fmri_reg::LinearModel::new(x.view(), 1e-12)?;
     let features = FeatureAxis::from_space(FeatureSpace::Index(IndexSpace::new(
         "synthetic-parcels",
         (0..6)
             .map(|j| FeatureId::new(format!("parcel-{j}")))
-            .collect::<fmridataset::Result<Vec<_>>>()?,
+            .collect::<fmri_data::Result<Vec<_>>>()?,
     )?))?;
     let mut rows = vec![];
     for subject in 0..20 {

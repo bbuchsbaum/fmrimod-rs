@@ -1,6 +1,6 @@
 //! Three measurements per subject with explicitly identified sampling covariance.
+use fmri_data::*;
 use fmri_group::*;
-use fmridataset::*;
 use ndarray::Array2;
 fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     let ids = (0..12)

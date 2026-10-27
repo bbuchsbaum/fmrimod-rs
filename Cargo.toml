@@ -1,6 +1,29 @@
 [workspace]
-members = ["crates/fmrihrf", "crates/fmridesign", "crates/fmridataset", "crates/splines", "crates/fmri-noise", "crates/fmrireg", "crates/fmrimod", "crates/fmri-group"]
+members = ["crates/*"]
 resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.91.1"
+repository = "https://github.com/bbuchsbaum/fmrimod-rs"
+# Git source distribution first; registry releases are a separate workflow.
+publish = false
+
+[workspace.dependencies]
+fmri-data = { path = "crates/fmri-data", version = "0.1.0" }
+fmri-splines = { path = "crates/fmri-splines", version = "0.1.0" }
+fmri-hrf = { path = "crates/fmri-hrf", version = "0.1.0" }
+fmri-design = { path = "crates/fmri-design", version = "0.1.0" }
+fmri-noise = { path = "crates/fmri-noise", version = "0.1.0" }
+fmri-reg = { path = "crates/fmri-reg", version = "0.1.0" }
+fmri-group = { path = "crates/fmri-group", version = "0.1.0" }
+ndarray = "0.16"
+nalgebra = "0.32"
+statrs = "0.16"
+thiserror = "1"
+serde = "1"
+serde_json = "1"
 
 [profile.release]
 lto = "thin"
@@ -10,7 +33,7 @@ opt-level = 3
 [profile.bench]
 debug = true
 
-# Keep workspace test artifacts bounded on developer machines.
+# Bound build artifacts on developer machines.
 [profile.dev]
 debug = 0
 incremental = false

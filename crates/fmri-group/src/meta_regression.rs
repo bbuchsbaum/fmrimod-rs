@@ -3,7 +3,7 @@ use crate::{
     Distribution, Error, FitOptions, GroupContrast, GroupDesign, IndependentCohort, Missingness,
     ModelReceipt, Result, RunReceipt,
 };
-use fmridataset::FeatureId;
+use fmri_data::FeatureId;
 use nalgebra::{linalg::ColPivQR, DMatrix, DVector, Dyn};
 use ndarray::Array2;
 use statrs::distribution::{ContinuousCDF, Normal, StudentsT};
@@ -1268,7 +1268,7 @@ mod numerical_tests {
     #[test]
     fn analytic_derivative_matches_independent_finite_difference() {
         let rows = (0..12)
-            .map(|i| fmridataset::ObservationId::new(format!("s{i}")).unwrap())
+            .map(|i| fmri_data::ObservationId::new(format!("s{i}")).unwrap())
             .collect();
         let d = GroupDesign::new(
             rows,
@@ -1294,7 +1294,7 @@ mod numerical_tests {
                     let order = [a, b, c, 6 - a - b - c];
                     for factors in [[1., 1.], [1e-8, -1e8]] {
                         let ids = (0..4)
-                            .map(|i| fmridataset::ObservationId::new(format!("s{i}")).unwrap())
+                            .map(|i| fmri_data::ObservationId::new(format!("s{i}")).unwrap())
                             .collect();
                         let d = GroupDesign::new(
                             ids,

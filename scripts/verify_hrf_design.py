@@ -6,7 +6,7 @@ suite=json.loads((root/'evidence/hrf-design-final.json').read_text())
 assert all(x['exit_code']==0 for x in suite)
 assert suite[-1]['label']=='doctests'
 for x in suite:assert hashlib.sha256((root/x['log']).read_bytes()).hexdigest()==x['sha256']
-f=json.loads((root/'crates/fmrihrf/tests/fixtures/hrf_audit.json').read_text())
+f=json.loads((root/'crates/fmri-hrf/tests/fixtures/hrf_audit.json').read_text())
 for p,h in f['provenance']['source_md5'].items():assert hashlib.md5((Path(f['provenance']['source'])/p).read_bytes()).hexdigest()==h
 p=json.loads((root/'crates/fmrimod/tests/fixtures/pipeline.json').read_text())
 assert hashlib.md5((root/p['input_fixture']).read_bytes()).hexdigest()==p['input_md5']

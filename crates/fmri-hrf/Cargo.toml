@@ -1,0 +1,48 @@
+[package]
+name = "fmri-hrf"
+description = "Rust implementation of fMRI Hemodynamic Response Function (HRF) and Regressor Tools"
+license = "MIT OR Apache-2.0"
+keywords = ["fmri", "hrf", "neuroimaging", "neuroscience", "signal-processing"]
+categories = ["science", "mathematics"]
+
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+publish.workspace = true
+readme = "README.md"
+include = ["src/**", "tests/**", "examples/**", "benches/**", "README.md", "LICENSE*", "Cargo.toml"]
+
+[dependencies]
+libm = "0.2"
+thiserror = { workspace = true }
+ndarray = { workspace = true }
+nalgebra = { workspace = true }
+num-traits = "0.2"
+rayon = { version = "1.7", optional = true }
+serde = { workspace = true, features = ["derive"], optional = true }
+serde_json = { workspace = true }
+lazy_static = "1.4"
+sprs = "0.11"
+approx = "0.5"
+statrs = { workspace = true }
+rustfft = "6.1"
+fmri-splines = { workspace = true }
+
+# Plotting dependencies
+plotters = { version = "0.3", default-features = false, features = ["bitmap_backend", "svg_backend", "ttf", "bitmap_encoder", "line_series"], optional = true }
+plotly = { version = "0.8", optional = true }
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+proptest = "1.2"
+approx = "0.5"
+pretty_assertions = "1.4"
+rstest = "0.18"
+tempfile = "3.8"
+
+[features]
+default = []
+serde = ["dep:serde", "ndarray/serde"]
+parallel = ["ndarray/rayon", "dep:rayon"]
+plotting = ["dep:plotters", "dep:plotly"]

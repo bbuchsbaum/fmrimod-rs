@@ -2,7 +2,7 @@
 //! Each active subject uses one regression worker. Backend threads remain a
 //! process-level caller setting (for Accelerate set VECLIB_MAXIMUM_THREADS=1).
 use crate::session::{SessionError, SubjectOutput, SubjectSession};
-use fmrireg::output::OutputSpec;
+use fmri_reg::output::OutputSpec;
 use std::collections::HashSet;
 
 #[derive(Clone, Copy, Debug)]
@@ -161,7 +161,7 @@ impl ScalarCohortBuilder {
     }
     pub fn push(&mut self, index: usize, output: &SubjectOutput) -> crate::group::Result<()> {
         use crate::group::{DegreesOfFreedom, FitReceipt, VarianceOrigin};
-        use fmrireg::output::SummaryView;
+        use fmri_reg::output::SummaryView;
         if index != self.next
             || index >= self.subjects.len()
             || self.subjects[index].observation.as_str() != output.subject_id()

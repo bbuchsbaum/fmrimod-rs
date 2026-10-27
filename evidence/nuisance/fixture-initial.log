@@ -1,3 +1,0 @@
-Error in fmrihrf::sampling_frame(n, tr = tr, start_time = starts, precision = 0.025) : 
-  unused argument (tr = tr)
-Execution halted

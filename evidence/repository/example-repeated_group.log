@@ -1,0 +1,9 @@
+warning: /Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrimod/Cargo.toml: `default-features` is ignored for fmri-design, since `default-features` was not specified for `workspace.dependencies.fmri-design`, this could become a hard error in the future
+   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
+   Compiling fmri-data v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-data)
+   Compiling fmri-reg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-reg)
+   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
+    Finished `dev` profile [unoptimized] target(s) in 2.63s
+     Running `target/debug/examples/repeated_group`
+status=Estimated, subjects=4, observations=12
+mean=0.500000, conditional SE=0.645497, random-intercept variance=1.566667, extra variance=0.000000

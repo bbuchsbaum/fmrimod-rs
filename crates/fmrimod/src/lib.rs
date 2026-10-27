@@ -1,12 +1,12 @@
 //! Composable fMRI modelling. The default path accepts borrowed events and
 //! matrices; enable `formula` for the dataframe/formula frontend.
-pub use fmri_group as group;
-pub use fmri_noise as noise;
-pub use fmridataset as dataset;
+pub use fmri_data as dataset;
 #[cfg(feature = "formula")]
-pub use fmridesign as design;
-pub use fmrihrf as hrf;
-pub use fmrireg as regression;
+pub use fmri_design as design;
+pub use fmri_group as group;
+pub use fmri_hrf as hrf;
+pub use fmri_noise as noise;
+pub use fmri_reg as regression;
 
 pub mod outputs;
 

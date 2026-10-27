@@ -26,5 +26,7 @@ jobs:
       - run: cargo test --workspace --locked
       - run: cargo test --workspace --all-features --locked
       - run: cargo fmt --all --check
+      - name: Repository structure and package inventory
+        run: python scripts/check_repository.py
       - name: Numerical kernels lint
-        run: cargo clippy -p fmri-noise -p fmrireg -p fmri-group --lib --all-features --locked -- -D warnings
+        run: cargo clippy -p fmri-noise -p fmri-reg -p fmri-group --lib --all-features --locked -- -D warnings

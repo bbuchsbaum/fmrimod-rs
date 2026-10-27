@@ -1,7 +1,0 @@
-   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
-    Finished `dev` profile [unoptimized] target(s) in 0.60s
-     Running `target/debug/examples/selected_gls`
-3 features; residual df 62; task t [10.058409926819799, 11.693994847005225, 13.99465240856926]
-3 features; residual df 62; task t [16.118455778918193, 17.601924264128506, 19.97615417626087]
-1 features; residual df 62; task t [22.297813713798686]
-Retained 65 of 72 original scans

@@ -7,7 +7,7 @@
 
 use crate::outputs::{ConsumerRequirement, NamedLinearEstimand, OutputRequirementError};
 use fmri_group::{FitOptions, MetaOutputSpec, MetaRegressionOptions};
-use fmrireg::output::Uncertainty;
+use fmri_reg::output::Uncertainty;
 
 /// The first-level payload that a portable scalar cohort must retain.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]

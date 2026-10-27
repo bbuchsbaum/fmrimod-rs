@@ -6,7 +6,7 @@ existing `WhiteningPlan` interface, so `GlsModel` applies the same transform to
 the selected design and response. The optimized fitting kernels are unchanged.
 
 ```sh
-cargo run -p fmrireg --features dataset --example selected_gls
+cargo run -p fmri-reg --features dataset --example selected_gls
 ```
 
 This example constructs a two-run design with separate intercepts and a task
@@ -37,7 +37,7 @@ Keep original acquisition metadata alongside the selection; the AR model uses
 integer original-scan lags, assuming a constant acquisition interval within each
 run. It does not model arbitrary irregular acquisition times.
 
-For datasets, `fmrireg::selection::select_assay(assay, original_design_ids,
+For datasets, `fmri_reg::selection::select_assay(assay, original_design_ids,
 selection)` first requires exact equality of the complete original observation ID
 sequence. It then creates a lazy source view and selected IDs, retaining feature
 IDs and annotations. Bind those IDs with `BoundModel::new` and use the existing

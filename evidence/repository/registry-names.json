@@ -1,0 +1,48 @@
+[
+  {
+    "name": "fmrimod",
+    "http_status": 404,
+    "status": "not found"
+  },
+  {
+    "name": "fmri-hrf",
+    "http_status": 404,
+    "status": "not found"
+  },
+  {
+    "name": "fmri-design",
+    "http_status": 404,
+    "status": "not found"
+  },
+  {
+    "name": "fmri-data",
+    "http_status": 404,
+    "status": "not found"
+  },
+  {
+    "name": "fmri-reg",
+    "http_status": 404,
+    "status": "not found"
+  },
+  {
+    "name": "fmri-noise",
+    "http_status": 404,
+    "status": "not found"
+  },
+  {
+    "name": "fmri-group",
+    "http_status": 404,
+    "status": "not found"
+  },
+  {
+    "name": "fmri-splines",
+    "http_status": 404,
+    "status": "not found"
+  },
+  {
+    "name": "splines",
+    "status": "exists",
+    "repository": "https://git.sr.ht/~hadronized/splines",
+    "description": "Spline interpolation made easy"
+  }
+]

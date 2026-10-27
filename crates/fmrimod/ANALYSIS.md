@@ -144,11 +144,11 @@ content verification: do not mutate admitted files behind a live analysis.
 
 ## Synthetic browser qualification
 
-[The retained evidence](../fmrireg/evidence/analysis-plan/README.md) covers 25
+[The retained evidence](../../evidence/regression/analysis-plan/README.md) covers 25
 synthetic subjects, two 120-frame runs, 21,824 masked voxels, six design columns
 and estimated AR(2) per run using 64 sampled voxels. Fixed AR is also exercised.
 The original qualification viewer computed an unthresholded group OLS mean.
-The subsequent [completion evidence](../fmrireg/evidence/cohort-completion/README.md)
+The subsequent [completion evidence](../../evidence/regression/cohort-completion/README.md)
 also exercises the weighted PM/mKH provider, detached fits and cancellation.
 The grid is synthetic and is not evidence of MNI registration.
 

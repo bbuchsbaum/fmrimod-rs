@@ -1,5 +1,5 @@
+use fmri_data::*;
 use fmri_group::*;
-use fmridataset::*;
 use ndarray::{array, Array2};
 use serde_json::Value;
 mod common;
@@ -264,7 +264,7 @@ fn fdr_matches_base_r_and_preserves_missing_family_members() {
 #[test]
 fn first_level_to_group_and_explicit_provenance() {
     let x = array![[1., -1.], [1., 0.], [1., 1.], [1., 2.], [1., 3.]];
-    let model = fmrireg::LinearModel::new(x.view(), 1e-12).unwrap();
+    let model = fmri_reg::LinearModel::new(x.view(), 1e-12).unwrap();
     let mut rows = vec![];
     let mut expected = vec![];
     for (i, subject) in subjects(5).into_iter().enumerate() {
@@ -431,7 +431,7 @@ fn f32_source_and_invalid_variance_policy() {
 }
 #[test]
 fn first_level_bridge_rejects_different_estimands_and_feature_identity() {
-    let t = fmrireg::TContrast {
+    let t = fmri_reg::TContrast {
         effect: array![1.],
         standard_error: array![1.],
         statistic: array![1.],

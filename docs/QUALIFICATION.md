@@ -12,7 +12,7 @@ checked separately from the modified consolidated workspace.
 cargo run -p fmrimod --features formula --example complete_first_level
 ```
 
-The `formula` feature exposes fmridesign through the facade; this example uses
+The `formula` feature exposes fmri-design through the facade; this example uses
 numeric constructors, without parsing a formula. Its two runs have 80 and 70
 scans, TRs 0.8 and 1 second, and default acquisition offsets TR/2.
 
@@ -51,7 +51,7 @@ The simulation stress cases below instead use independent inference targets.
 Build and rerun the release driver and collection script:
 
 ```sh
-cargo build --release -p fmrireg --features dataset --example selected_qualification
+cargo build --release -p fmri-reg --features dataset --example selected_qualification
 python3 scripts/qualify_selected.py
 ```
 

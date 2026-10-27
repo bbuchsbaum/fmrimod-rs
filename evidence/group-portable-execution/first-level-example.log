@@ -1,8 +1,0 @@
-   Compiling fmridataset v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmridataset)
-   Compiling nalgebra v0.29.0
-   Compiling statrs v0.16.1
-   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
-   Compiling fmri-group v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-group)
-    Finished `dev` profile [unoptimized] target(s) in 4.44s
-     Running `target/debug/examples/portable_first_level evidence/group-portable-execution/first-level-bundle`
-8 subjects, 37 features; actual first-level estimates written in blocks of 7; 6 group blocks, 304 weighted evaluations

@@ -1,10 +1,10 @@
 # Continuous sampled features
 
-`fmrihrf::regressor::SampledFeatures` prepares multiple numeric feature columns
+`fmri_hrf::regressor::SampledFeatures` prepares multiple numeric feature columns
 and evaluates them on an acquisition frame. Run the complete example with:
 
 ```sh
-cargo run -p fmrihrf --example sampled_features
+cargo run -p fmri-hrf --example sampled_features
 ```
 
 Each sample describes a zero-order-hold bin: its contribution is amplitude times
@@ -59,7 +59,7 @@ This tranche makes no new speedup claim and does not change AR/OLS kernels.
 
 ## Named designs and contrasts
 
-`fmridesign::sampled_features::sampled_feature_design` accepts prepared features,
+`fmri_design::sampled_features::sampled_feature_design` accepts prepared features,
 a slice of feature names, the acquisition frame, HRF and convolution method. It
 moves the convolved matrix into a `DesignMatrix`, attaching acquisition times
 and names without another copy of the numeric matrix. It is also in the prelude.
@@ -80,7 +80,7 @@ cumulative run offsets; convolution still uses run-local times and isolates tail
 Matching numeric times alone does not prove matching subject/run identity.
 
 ```sh
-cargo run -p fmridesign --example sampled_feature_design
+cargo run -p fmri-design --example sampled_feature_design
 ```
 
 The example composes sampled features and an intercept, then selects the

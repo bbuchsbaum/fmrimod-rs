@@ -1,6 +1,6 @@
 //! Exact participant deletion; no automatic exclusion or approximate rank update.
 use crate::*;
-use fmridataset::{FeatureId, ObservationId};
+use fmri_data::{FeatureId, ObservationId};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DeletionHeterogeneity {

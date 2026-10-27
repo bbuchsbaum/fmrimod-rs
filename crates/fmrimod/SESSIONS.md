@@ -6,7 +6,7 @@ This is an in-process resident session, not a durable cache service.
 
 ## Boundaries
 
-- `fmridataset::NiftiSource` owns NIfTI-1 header validation, streamed decoding,
+- `fmri_data::NiftiSource` owns NIfTI-1 header validation, streamed decoding,
   conversion to f64 and exact spatial support. Enable `nifti` in fmrimod.
 - `LoadedSubject` reads once and owns immutable data, observation IDs, feature
   geometry and a caller-supplied source version. Construction through a reader
@@ -146,7 +146,7 @@ The example writes `cold.html`, `design-edit.html`, `contrast-edit.html` and a
 latency receipt. Browser rendering time is excluded. The static page has a slice
 slider and is not a clinical viewer or a registration-quality check.
 
-Qualification artifacts are in `crates/fmrireg/evidence/cohort/`. An independent
+Qualification artifacts are in `evidence/regression/cohort/`. An independent
 NumPy least-squares calculation verifies selected group-map coordinates across
 all 25 subjects and all three edit scenarios. Worker-count comparisons cover
 all 8,192 output values. Unit/integration tests cover file geometry/scaling,
@@ -236,7 +236,7 @@ VECLIB_MAXIMUM_THREADS=1 COHORT_BUDGET_MIB=12288 COHORT_LOAD_WORKERS=4 \
 # For a 1 GiB numerical budget, use COHORT_STREAMING=1 COHORT_BUDGET_MIB=1024.
 ```
 
-See `crates/fmrireg/evidence/whole-brain/` for source hashes, independent NumPy
+See `evidence/regression/whole-brain/` for source hashes, independent NumPy
 checks, complete map comparisons, timing variability, and measured peak memory.
 The input has a whole-brain-sized feature count, but is synthetic, has no brain
 mask or verified MNI registration, and cannot establish real-data throughput.

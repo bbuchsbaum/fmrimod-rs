@@ -7,7 +7,7 @@ use crate::{
     nonblank, Admission, DegreesOfFreedom, Error, Estimand, FitReceipt, IndependentCohort, Result,
     Subject, VarianceOrigin,
 };
-use fmridataset::{
+use fmri_data::{
     Assay, AssayAnnotations, Axis, ExecutionContext, FeatureAxis, FeatureId, FeatureSpace,
     FmriFrame, IndexSpace, MemoryBudget, Metadata, ObservationId, ReadSelection, Selection,
     SourceSpec, Values, VolumeSpace,
@@ -625,7 +625,7 @@ impl MetaDto {
                     measurement: s.measurement,
                 })
             })
-            .collect::<std::result::Result<Vec<_>, fmridataset::FmriDatasetError>>()?;
+            .collect::<std::result::Result<Vec<_>, fmri_data::FmriDatasetError>>()?;
         let features = FeatureAxis::from_space(self.feature_space.into_space()?)?;
         Ok(PortableMetadata {
             subjects,

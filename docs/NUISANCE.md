@@ -1,11 +1,11 @@
 # Nuisance design and censoring
 
-The numeric API in `fmridesign::nuisance` constructs nuisance columns on the
+The numeric API in `fmri_design::nuisance` constructs nuisance columns on the
 complete original acquisition grid. Build event and continuous-feature designs
 on that same grid, compose them, then choose an explicit censoring operation.
 
 ```sh
-cargo run -p fmridesign --example nuisance_design
+cargo run -p fmri-design --example nuisance_design
 ```
 
 The example combines events, sampled features, DCT drift, run intercepts and

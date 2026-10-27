@@ -35,9 +35,9 @@ pub enum Error {
     #[error(transparent)]
     Json(#[from] serde_json::Error),
     #[error(transparent)]
-    Dataset(#[from] fmridataset::FmriDatasetError),
+    Dataset(#[from] fmri_data::FmriDatasetError),
     #[error(transparent)]
-    Fit(#[from] fmrireg::FitError),
+    Fit(#[from] fmri_reg::FitError),
 }
 pub type Result<T> = std::result::Result<T, Error>;
 fn nonblank(s: &str) -> bool {

@@ -5,7 +5,7 @@
 //! silently treated as independent observations.  Covariances are supplied in
 //! subject blocks, and all likelihood work is done block by block.
 use crate::{nonblank, Admission, Error, Estimand, GroupContrast, GroupDesign, Result};
-use fmridataset::{FeatureId, FmriFrame, ObservationId};
+use fmri_data::{FeatureId, FmriFrame, ObservationId};
 use nalgebra::{DMatrix, DVector};
 use ndarray::Array2;
 use std::collections::{HashMap, HashSet};
@@ -1077,7 +1077,7 @@ fn spd(a: &Array2<f64>) -> bool {
     symmetric_finite(a) && matrix(a).cholesky().is_some()
 }
 fn read_effect(c: &RepeatedCohort, j: usize, bytes: usize) -> Result<DVector<f64>> {
-    use fmridataset::{ExecutionContext, MemoryBudget, ReadSelection, Selection, Values};
+    use fmri_data::{ExecutionContext, MemoryBudget, ReadSelection, Selection, Values};
     let src = c.frame.assay(&c.effect)?.source();
     let ctx = ExecutionContext::new(MemoryBudget::new(bytes));
     let b = ctx.read(

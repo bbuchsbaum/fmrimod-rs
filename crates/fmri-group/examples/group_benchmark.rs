@@ -1,6 +1,6 @@
 //! Run after benchmarks/reference.R. Validates every output before reporting timing.
+use fmri_data::*;
 use fmri_group::*;
-use fmridataset::*;
 use ndarray::Array2;
 use serde_json::{json, Value};
 use statrs::distribution::{ContinuousCDF, Normal, StudentsT};

@@ -203,7 +203,7 @@ impl FileSession {
     fn run(
         &mut self,
         spec: &crate::session::ModelSpec,
-        request: &fmrireg::output::OutputSpec,
+        request: &fmri_reg::output::OutputSpec,
         block: usize,
         work: usize,
     ) -> Result<crate::session::SubjectOutput, SessionError> {
@@ -228,7 +228,7 @@ impl FileSession {
 pub fn run_file_cohort(
     sessions: &mut [FileSession],
     specs: &[crate::session::ModelSpec],
-    requests: &[fmrireg::output::OutputSpec],
+    requests: &[fmri_reg::output::OutputSpec],
     options: crate::cohort::CohortOptions,
     mut sink: impl FnMut(usize, &crate::session::SubjectOutput) -> Result<(), SessionError>,
 ) -> Result<crate::cohort::CohortReceipt, SessionError> {
@@ -292,7 +292,7 @@ pub(crate) fn file_preflight(
     cached_bytes: &[usize],
     reused: &[bool],
     specs: &[crate::session::ModelSpec],
-    requests: &[fmrireg::output::OutputSpec],
+    requests: &[fmri_reg::output::OutputSpec],
     options: crate::cohort::CohortOptions,
 ) -> Result<FilePreflight, SessionError> {
     let add = |a: usize, b: usize| a.checked_add(b).ok_or(SessionError::Overflow);

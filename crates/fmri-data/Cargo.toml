@@ -1,0 +1,29 @@
+[package]
+name = "fmri-data"
+description = "Spatially typed, annotated observation-by-feature data"
+license = "GPL-3.0-or-later"
+
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+publish.workspace = true
+readme = "README.md"
+include = ["src/**", "tests/**", "examples/**", "benches/**", "README.md", "LICENSE*", "Cargo.toml"]
+
+[dependencies]
+thiserror = { workspace = true }
+serde = { workspace = true, features = ["derive", "rc"] }
+serde_json = { workspace = true }
+nifti = { version = "0.17", default-features = false, optional = true }
+
+[dev-dependencies]
+proptest = "1"
+flate2 = "1"
+tempfile = "3"
+
+[lib]
+crate-type = ["rlib"]
+[features]
+default = []
+nifti = ["dep:nifti"]

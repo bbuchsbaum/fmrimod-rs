@@ -1,6 +1,0 @@
-   Compiling serde_core v1.0.229
-   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
-   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
-   Compiling serde_json v1.0.154
-    Finished `release` profile [optimized] target(s) in 6.65s
-     Running `target/release/examples/completion_calibration 500`

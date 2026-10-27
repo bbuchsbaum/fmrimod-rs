@@ -1,5 +1,5 @@
+use fmri_data::*;
 use fmri_group::*;
-use fmridataset::*;
 use ndarray::{array, Array2};
 use serde_json::Value;
 

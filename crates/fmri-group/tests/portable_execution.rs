@@ -1,8 +1,8 @@
-use fmri_group::*;
-use fmridataset::{
+use fmri_data::{
     Assay, AssayAnnotations, Axis, ExecutionContext, FeatureAxis, FeatureId, FeatureSpace,
     FmriFrame, IndexSpace, MemoryBudget, Metadata, NumericBlock, ObservationId, SourceSpec,
 };
+use fmri_group::*;
 use ndarray::Array2;
 use std::time::{SystemTime, UNIX_EPOCH};
 

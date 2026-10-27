@@ -1,4 +1,0 @@
-   Compiling fmri-noise v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmri-noise)
-   Compiling fmrireg v0.1.0 (/Users/bbuchsbaum/code/rust/fmrimod-rs/crates/fmrireg)
-    Finished `release` profile [optimized] target(s) in 7.42s
-     Running `target/release/examples/completion_ar_calibration 500`

@@ -1,6 +1,6 @@
 //! Declared-family, two-sided max-T inference with an explicit transformation law.
 use crate::{Error, GroupContrast, GroupDesign, IndependentCohort, Result};
-use fmridataset::FeatureId;
+use fmri_data::FeatureId;
 use nalgebra::{DMatrix, DVector};
 use std::collections::BTreeMap;
 

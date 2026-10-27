@@ -1,8 +1,8 @@
 mod common;
 
 use common::*;
+use fmri_data::*;
 use fmri_group::*;
-use fmridataset::*;
 use ndarray::array;
 use std::fs;
 use std::time::{SystemTime, UNIX_EPOCH};

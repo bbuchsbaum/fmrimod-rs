@@ -5,12 +5,12 @@
 //!   cargo run -p fmri-group --example portable_execution_benchmark -- bench DIR OUT_JSON disk|memory general|shared P BLOCK
 //!   cargo run -p fmri-group --example portable_execution_benchmark -- compare DIR1 DIR2 P
 
-use fmri_group::*;
-use fmridataset::{
+use fmri_data::{
     Assay, AssayAnnotations, Axis, ExecutionContext, FeatureAxis, FeatureId, FeatureSpace,
     FmriFrame, IndexSpace, MemoryBudget, Metadata, NumericBlock, ObservationId, ReadSelection,
     Selection, SourceSpec, Values,
 };
+use fmri_group::*;
 use ndarray::Array2;
 use serde_json::{json, Value};
 use std::alloc::{GlobalAlloc, Layout, System};

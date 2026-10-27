@@ -1,8 +1,8 @@
 use crate::{Error, IndependentCohort, Result};
-use fmridataset::{
+use fmri_data::{
     ExecutionContext, FeatureId, MemoryBudget, ObservationId, ReadSelection, Selection, Values,
 };
-use fmrireg::{FitError, LinearModel};
+use fmri_reg::{FitError, LinearModel};
 use ndarray::{Array1, Array2};
 use statrs::distribution::{ContinuousCDF, Normal};
 use std::collections::{BTreeMap, HashSet, VecDeque};
@@ -300,7 +300,7 @@ pub struct PreparedOls {
     options: FitOptions,
     intercept: bool,
     cache: VecDeque<(Vec<usize>, LinearModel)>,
-    workspace: Option<(usize, fmrireg::FitWorkspace)>,
+    workspace: Option<(usize, fmri_reg::FitWorkspace)>,
     gathered: Vec<f64>,
     moments: Vec<Moment>,
     retained_features: usize,
@@ -524,7 +524,7 @@ pub fn fit_ols(
 
 fn fit_pattern_outputs(
     model: &LinearModel,
-    workspace: &mut fmrireg::FitWorkspace,
+    workspace: &mut fmri_reg::FitWorkspace,
     data: ndarray::ArrayView2<'_, f64>,
     contrasts: &[GroupContrast],
     columns: &[usize],
@@ -681,7 +681,7 @@ fn intercept_block(
         }
     }
 }
-fn put_t(out: &mut FeatureResult, i: usize, t: &fmrireg::TContrast, j: usize) {
+fn put_t(out: &mut FeatureResult, i: usize, t: &fmri_reg::TContrast, j: usize) {
     out.status[i] = Status::Estimated;
     out.estimates[i] = Some(Estimate {
         effect: t.effect[j],

@@ -1,0 +1,14 @@
+{
+  "baseline": "9a0fc9f6d0948db800a45214be984dab30d553bb",
+  "production_rust_files_reviewed": 150,
+  "comparison": "Normalize crate identifiers, whole comment lines and whitespace; inspect remaining diffs manually. This is source review, not a formal equivalence proof.",
+  "remaining_differences": {
+    "crates/fmri-hrf/src/hrf/empirical.rs": "Import ordering and rustfmt trailing comma/wrapping around unchanged spline construction",
+    "crates/fmrimod/src/lib.rs": "Reexport ordering and renamed dependencies; short facade names retained",
+    "crates/fmri-reg/src/selection.rs": "Import ordering",
+    "crates/fmri-splines/src/lib.rs": "Moved unit-test file paths and removed unsupported doc claims"
+  },
+  "numerical_algorithm_changes": false,
+  "test_fixture_changes": "Three byte-identical fixture mirrors replace cross-package include paths; existing oracle values unchanged.",
+  "external_dependency_identities_unchanged": 324
+}

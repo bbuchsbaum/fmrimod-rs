@@ -1,0 +1,59 @@
+[package]
+name = "fmri-design"
+description = "Rust implementation of fMRI experimental design matrices"
+license = "MIT OR Apache-2.0"
+keywords = ["fmri", "neuroimaging", "design-matrix", "neuroscience"]
+categories = ["science", "mathematics"]
+
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+publish.workspace = true
+readme = "README.md"
+include = ["src/**", "tests/**", "examples/**", "benches/**", "README.md", "LICENSE*", "Cargo.toml"]
+
+[dependencies]
+# Shared HRF implementation
+fmri-hrf = { workspace = true }
+ndarray = { workspace = true, features = ["serde"] }
+nalgebra = { workspace = true }
+polars = { version = "0.35", default-features = false }
+thiserror = { workspace = true }
+anyhow = "1.0"
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+rayon = { version = "1.7", optional = true }
+indexmap = "2.0"
+num-integer = "0.1"
+rand = "0.8"
+itertools = "0.12"
+nom = "7.1"  # For formula parsing
+regex = "1.10"
+lazy_static = "1.4"
+plotly = { version = "0.8", optional = true }
+plotters = { version = "0.3", optional = true }
+indicatif = "0.17"
+colored = "2.0"
+num-traits = "0.2"
+approx = "0.5"
+statrs = { workspace = true } # Statistical functions
+enum_dispatch = "0.3"  # For efficient polymorphic dispatch
+once_cell = "1.19"
+
+
+[dev-dependencies]
+criterion = "0.5"
+proptest = "1.2"
+pretty_assertions = "1.4"
+tempfile = "3.8"
+rand = "0.8"
+
+[features]
+default = []
+visualization = ["plotly", "plotters"]
+parallel = ["rayon"]
+
+[[bench]]
+name = "design_matrix"
+harness = false

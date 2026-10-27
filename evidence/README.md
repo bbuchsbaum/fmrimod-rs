@@ -1,3 +1,42 @@
+# Scientific evidence and provenance
+
+Current entry points are the [completion report](../docs/COMPLETION_REPORT.md),
+[repository layout](../docs/REPOSITORY.md), and [capability matrix](../docs/CAPABILITIES.md).
+Numerical test fixtures live with their crates. This directory retains reviewed
+receipts, reference inputs, oracle summaries, source hashes and benchmark results.
+
+## Generated artifacts and recovery
+
+Raw logs, duplicate payloads, source snapshots and nested Git bundles are not
+part of the current public source tree. The local files are preserved. The
+[archive index](repository/archive-index.json) records each original/current
+path, SHA-256, size, reason and any retained replacement. The
+[preservation receipt](repository/preservation.json) records the complete verified
+pre-cleanup archive. Historical receipt bodies remain unchanged; their paths and
+source hashes describe their original checkpoints.
+
+To recover a single archived file in a fresh clone, use its `original_path`:
+
+```sh
+git show 9a0fc9f:ORIGINAL_PATH > RESTORED_FILE
+```
+
+Or extract the verified archive into an empty directory. On this machine it is
+stored in the sibling `fmrimod-archives` directory; the receipt gives its exact
+path and hash. The archive contains all previously tracked files, not ignored
+runtime payloads. Reproduction scripts regenerate their own outputs. Large
+ignored data that already existed locally remain in place.
+
+New generated logs and dated run directories are ignored by default. Add compact,
+reviewed evidence explicitly when it supports a scientific or performance claim.
+Do not change old receipt contents to match renamed crates. First-level evidence
+formerly under `crates/fmrireg/evidence` now lives under `evidence/regression`.
+
+## Earlier stage index
+
+The following index is historical; paths may refer to the archive or original
+checkpoint layout. Use the archive index when a raw file is not tracked here.
+
 # Evidence
 
 `source-manifest.json` captures original working files (SHA-256), original Git

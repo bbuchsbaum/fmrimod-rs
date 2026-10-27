@@ -1,5 +1,5 @@
 use crate::{Error, Result};
-use fmridataset::FeatureId;
+use fmri_data::FeatureId;
 use std::collections::HashSet;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FdrMethod {

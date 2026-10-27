@@ -37,8 +37,8 @@ hashes <- as.list(tools::md5sum(files)); names(hashes)<-substring(names(hashes),
 out <- list(provenance=list(R=R.version.string,source=source,commit=system2('git',c('-C',source,'rev-parse','HEAD'),stdout=TRUE),source_md5=hashes),
  X=unname(X),Y=unname(Y),C=unname(C),ols=reference(X,Y),phi=phi,runs=runs,
  whitened_X=unname(w$X),whitened_Y=unname(w$Y),gls=reference(w$X,w$Y),dense_gls_beta=unname(beta),dense_gls_variance=variance)
-dir.create('crates/fmrireg/tests/fixtures',recursive=TRUE,showWarnings=FALSE)
-write_json(out,'crates/fmrireg/tests/fixtures/estimation.json',pretty=TRUE,auto_unbox=TRUE,digits=17)
+dir.create('crates/fmri-reg/tests/fixtures',recursive=TRUE,showWarnings=FALSE)
+write_json(out,'crates/fmri-reg/tests/fixtures/estimation.json',pretty=TRUE,auto_unbox=TRUE,digits=17)
 cat('R lm, source-built fmriAR and independent dense GLS references generated\n')
 # Estimation oracle: run centering, censor-separated pairs, global/run pooling.
 noise <- cbind(sin(t*.31)+.25*cos(t*1.7), cos(t*.43)+.2*sin(t*1.1))

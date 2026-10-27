@@ -1,5 +1,5 @@
+use fmri_data::*;
 use fmri_group::*;
-use fmridataset::*;
 use ndarray::Array2;
 pub fn features(n: usize) -> FeatureAxis {
     FeatureAxis::from_space(FeatureSpace::Index(

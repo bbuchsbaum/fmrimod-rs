@@ -35,4 +35,4 @@ adverse_pairs<-lapply(0:lag,function(h)which(outer(keep,keep,'-')==h & outer(ids
 adverse_raw<-vapply(adverse_pairs,function(ii)mean(z[ii[,1]]*z[ii[,2]]),numeric(1))
 adverse_gamma<-solve(cases[[1]]$bias,adverse_raw)
 stopifnot(adverse_gamma[1]>0,adverse_gamma[2]/adverse_gamma[1]>1)
-write_json(list(provenance=list(R=R.version.string,seed=60271,method='Explicit dense C(I-QQt) S_k (I-QQt)Ct moments and dense stationary GLS; not the full-grid fmriAR correction'),lengths=lengths,keep=keep,x=unname(x),lag=lag,cases=cases,adverse=list(residual=unname(adverse_residual),coefficient=adverse_gamma[2]/adverse_gamma[1])),'crates/fmrireg/tests/fixtures/selected_estimation.json',auto_unbox=TRUE,pretty=TRUE,digits=17)
+write_json(list(provenance=list(R=R.version.string,seed=60271,method='Explicit dense C(I-QQt) S_k (I-QQt)Ct moments and dense stationary GLS; not the full-grid fmriAR correction'),lengths=lengths,keep=keep,x=unname(x),lag=lag,cases=cases,adverse=list(residual=unname(adverse_residual),coefficient=adverse_gamma[2]/adverse_gamma[1])),'crates/fmri-reg/tests/fixtures/selected_estimation.json',auto_unbox=TRUE,pretty=TRUE,digits=17)

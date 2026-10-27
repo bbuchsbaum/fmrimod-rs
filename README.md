@@ -25,7 +25,8 @@ and repository conventions.
 ## Run from a checkout
 
 Rust 1.91.1 or newer is required. Registry publication is disabled for this
-initial source distribution; use the workspace directly.
+initial source distribution. Use the workspace directly or follow the
+[pinned Git dependency guide](docs/GIT_CONSUMERS.md).
 
 ```sh
 cargo run -p fmrimod --example first_level

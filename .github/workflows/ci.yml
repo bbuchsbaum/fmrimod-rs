@@ -30,3 +30,6 @@ jobs:
         run: python scripts/check_repository.py
       - name: Numerical kernels lint
         run: cargo clippy -p fmri-noise -p fmri-reg -p fmri-group --lib --all-features --locked -- -D warnings
+
+      - name: External Git dependency consumers
+        run: python scripts/verify_git_consumer.py --rev ${{ github.sha }}

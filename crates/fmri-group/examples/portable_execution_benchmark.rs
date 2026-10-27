@@ -362,14 +362,17 @@ fn bench(
     COUNT_ALLOCATIONS.store(false, Ordering::Relaxed);
     // This executable is launched once per workload. getrusage observes only
     // its own process and avoids /usr/bin/time's privileged sysctl on macOS.
-    let peak_rss_bytes = unsafe {
+    #[cfg(unix)]
+    let peak_rss_bytes = Some(unsafe {
         let mut usage: libc::rusage = std::mem::zeroed();
         if libc::getrusage(libc::RUSAGE_SELF, &mut usage) != 0 {
             return Err(std::io::Error::last_os_error().into());
         }
         let units = if cfg!(target_os = "macos") { 1 } else { 1024 };
         usage.ru_maxrss as u64 * units
-    };
+    });
+    #[cfg(not(unix))]
+    let peak_rss_bytes: Option<u64> = None;
     let record = json!({
         "directory": directory,
         "storage": storage,

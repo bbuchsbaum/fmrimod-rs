@@ -3,6 +3,7 @@
 ## Using the library
 
 - [Workspace overview and examples](../README.md)
+- [Using pinned Git dependencies](GIT_CONSUMERS.md)
 - [Crate boundaries, naming and repository layout](REPOSITORY.md)
 - [Current capabilities and limits](CAPABILITIES.md)
 - [First-level sessions and data ingress](../crates/fmrimod/SESSIONS.md)

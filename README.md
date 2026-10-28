@@ -3,6 +3,9 @@
 Composable fMRI modelling in Rust: HRFs and experimental designs, typed data,
 fast reusable OLS/GLS fitting, AR noise models, and group inference.
 
+**Developer preview 0.1.0-alpha.1.** APIs may change; see the
+[release notes](docs/RELEASE_NOTES.md) and documented inference limits.
+
 Start with **`fmrimod`** for an analysis pipeline. Use a component directly when
 you need a smaller dependency set. R packages supply scientific references;
 the Rust APIs use explicit identities, reusable plans and bounded data blocks.
@@ -56,6 +59,11 @@ fn main() -> Result<(), fmri_reg::FitError> {
 ```
 
 ## Documentation and qualification
+
+Start with the [developer guide](https://bbuchsbaum.github.io/fmrimod-rs/) or
+[generated API](https://bbuchsbaum.github.io/fmrimod-rs/api/fmrimod/index.html).
+The continuous synthetic [guide example](crates/fmrimod/examples/guide_workflow.rs)
+connects events, estimated-AR fitting, named estimates and group analysis.
 
 Read [the documentation index](docs/README.md), [capability matrix](docs/CAPABILITIES.md),
 and [scientific qualification report](docs/COMPLETION_REPORT.md). That report

@@ -71,6 +71,9 @@ def main():
             target = target.split("#", 1)[0].strip("<>")
             if not target or ":" in target:
                 continue
+            # Generated guide targets are checked against actual HTML by check_site.py.
+            if guide.is_relative_to(ROOT / "docs/guide") and (target.startswith("api/") or target == "build-info.json"):
+                continue
             path = (guide.parent / target).resolve()
             if not path.is_relative_to(ROOT):
                 broken.append((str(guide.relative_to(ROOT)), target))

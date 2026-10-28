@@ -3,7 +3,7 @@ members = ["crates/*"]
 resolver = "2"
 
 [workspace.package]
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 edition = "2021"
 rust-version = "1.91.1"
 repository = "https://github.com/bbuchsbaum/fmrimod-rs"
@@ -11,13 +11,13 @@ repository = "https://github.com/bbuchsbaum/fmrimod-rs"
 publish = false
 
 [workspace.dependencies]
-fmri-data = { path = "crates/fmri-data", version = "0.1.0" }
-fmri-splines = { path = "crates/fmri-splines", version = "0.1.0" }
-fmri-hrf = { path = "crates/fmri-hrf", version = "0.1.0" }
-fmri-design = { path = "crates/fmri-design", version = "0.1.0" }
-fmri-noise = { path = "crates/fmri-noise", version = "0.1.0" }
-fmri-reg = { path = "crates/fmri-reg", version = "0.1.0" }
-fmri-group = { path = "crates/fmri-group", version = "0.1.0" }
+fmri-data = { path = "crates/fmri-data", version = "0.1.0-alpha.1" }
+fmri-splines = { path = "crates/fmri-splines", version = "0.1.0-alpha.1" }
+fmri-hrf = { path = "crates/fmri-hrf", version = "0.1.0-alpha.1" }
+fmri-design = { path = "crates/fmri-design", version = "0.1.0-alpha.1", default-features = false }
+fmri-noise = { path = "crates/fmri-noise", version = "0.1.0-alpha.1" }
+fmri-reg = { path = "crates/fmri-reg", version = "0.1.0-alpha.1" }
+fmri-group = { path = "crates/fmri-group", version = "0.1.0-alpha.1" }
 ndarray = "0.16"
 nalgebra = "0.32"
 statrs = "0.16"

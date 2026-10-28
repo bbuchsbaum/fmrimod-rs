@@ -74,7 +74,7 @@ def main():
                 shutil.copyfile(ROOT / "examples/git-consumer" / (case+".rs"), directory / "src/bin" / (case+".rs"))
                 bins = [case]
                 if case == "components":
-                    for name, crate in [("group_pipeline", "fmri-group"), ("repeated_group", "fmri-group"), ("complete_first_level", "fmrimod")]:
+                    for name, crate in [("group_pipeline", "fmri-group"), ("repeated_group", "fmri-group"), ("complete_first_level", "fmrimod"), ("guide_workflow", "fmrimod")]:
                         shutil.copyfile(ROOT / "crates" / crate / "examples" / (name+".rs"), directory / "src/bin" / (name+".rs"))
                         bins.append(name)
                 raw = run(case+"-metadata", ["cargo", "metadata", "--format-version", "1"], directory)
@@ -89,6 +89,8 @@ def main():
                 receipt[case] = dict(git_packages={p["name"]:p["source"] for p in git_packages}, manifests_contain_no_path_dependencies=True)
                 for name in bins:
                     text = run(case+"-"+name, ["cargo", "run", "--locked", "--bin", name], directory)
+                    if name == "guide_workflow":
+                        assert "PASS guide: 12 participants, 4 group estimates" in text
                     if name == "repeated_group":
                         assert "status=Estimated" in text and "mean=0.500000" in text
                     if name == "group_pipeline":

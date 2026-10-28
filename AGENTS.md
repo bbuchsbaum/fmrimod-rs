@@ -7,7 +7,9 @@ See docs/REPOSITORY.md for structure, docs/CAPABILITIES.md for scope and
 evidence/source-manifest.json for original provenance. Use Mote for work state.
 Preserve original sibling repositories and their dirty work. The user authorized
 creation and pushes to bbuchsbaum/fmrimod-rs on 2026-10-27. Removal of originals
-and crates.io publication remain outside that scope. Retain each crate's license.
+remains outside that scope. The user also authorized GitHub Pages documentation
+and the v0.1.0-alpha.1 preview on 2026-10-27. Crates.io publication remains outside
+that scope. Retain each crate's license.
 
 Regression scope: core fast OLS/GLS estimation, AR modelling, contrasts,
 uncertainty and bounded-memory data processing. Reduced rank and peripheral

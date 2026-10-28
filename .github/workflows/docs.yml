@@ -1,0 +1,48 @@
+name: Documentation
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Rust workspace]
+    branches: [main]
+    types: [completed]
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    env:
+      CARGO_BUILD_JOBS: 2
+      VECLIB_MAXIMUM_THREADS: 1
+      OPENBLAS_NUM_THREADS: 1
+      OMP_NUM_THREADS: 1
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: dtolnay/rust-toolchain@stable
+      - run: sudo apt-get update && sudo apt-get install -y pkg-config libfontconfig1-dev libfreetype6-dev
+      - name: Build executable guide and API documentation
+        run: python scripts/build_docs.py
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: target/site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy qualified documentation
+        id: deployment
+        uses: actions/deploy-pages@v5

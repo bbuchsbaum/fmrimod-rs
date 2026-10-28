@@ -1,0 +1,18 @@
+[book]
+title = "fmrimod — developer guide"
+description = "From HRF events to first-level estimates and group inference in Rust"
+language = "en"
+src = "guide"
+
+[build]
+build-dir = "../target/site"
+
+[rust]
+edition = "2021"
+
+[output.html]
+git-repository-url = "https://github.com/bbuchsbaum/fmrimod-rs"
+edit-url-template = "https://github.com/bbuchsbaum/fmrimod-rs/edit/main/docs/guide/{path}"
+site-url = "/fmrimod-rs/"
+default-theme = "light"
+preferred-dark-theme = "navy"

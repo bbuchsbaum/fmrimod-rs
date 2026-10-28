@@ -33,3 +33,19 @@ historical receipts to make old source hashes or paths look current.
 The source repository can be shared on GitHub independently of a crates.io
 release. All packages currently inherit `publish = false`. A registry release
 requires its own version, package-content and dependency-order qualification.
+
+Build and check the published guide/API artifact with:
+
+```sh
+python3 scripts/build_docs.py
+```
+
+This installs a checksum-pinned mdBook binary into `target/docs-tools`, executes
+the guide companion, builds all-feature Rustdoc, and validates the generated
+local links/assets under `target/site`. Serve that directory with a local HTTP
+server for inspection. The optional `scripts/check_docs_browser.cjs` check uses
+an installed Playwright Chromium; follow the repository's browser lifecycle policy.
+
+Documentation deployment follows a successful `main` Rust workflow and checks
+out that workflow's exact qualified SHA. Developer-preview tags point to the
+qualified code commit. Registry publication remains a separate authorization.

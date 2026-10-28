@@ -1,5 +1,8 @@
 # Documentation
 
+Start with the [online developer guide and API](https://bbuchsbaum.github.io/fmrimod-rs/).
+The source guide is under [guide/](guide/index.md).
+
 ## Using the library
 
 - [Workspace overview and examples](../README.md)
@@ -16,6 +19,8 @@
 - [Noise-model extensions](NOISE_EXTENSIONS.md)
 
 ## Scientific evidence and development
+
+- [Developer preview release notes](RELEASE_NOTES.md)
 
 - [Public source and hosted qualification](PUBLICATION.md)
 

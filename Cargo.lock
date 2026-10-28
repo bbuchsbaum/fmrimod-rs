@@ -838,7 +838,7 @@ checksum = "8ce81f49ae8a0482e4c55ea62ebbd7e5a686af544c00b9d090bba3ff9be97b3d"
 
 [[package]]
 name = "fmri-data"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "flate2",
  "nifti",
@@ -851,7 +851,7 @@ dependencies = [
 
 [[package]]
 name = "fmri-design"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "anyhow",
  "approx 0.5.1",
@@ -886,7 +886,7 @@ dependencies = [
 
 [[package]]
 name = "fmri-group"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "fmri-data",
  "fmri-reg",
@@ -902,7 +902,7 @@ dependencies = [
 
 [[package]]
 name = "fmri-hrf"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "approx 0.5.1",
  "criterion",
@@ -929,7 +929,7 @@ dependencies = [
 
 [[package]]
 name = "fmri-noise"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "nalgebra 0.32.6",
  "ndarray 0.16.1",
@@ -939,7 +939,7 @@ dependencies = [
 
 [[package]]
 name = "fmri-reg"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "fmri-data",
  "fmri-noise",
@@ -952,7 +952,7 @@ dependencies = [
 
 [[package]]
 name = "fmri-splines"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "anyhow",
  "approx 0.5.1",
@@ -973,7 +973,7 @@ dependencies = [
 
 [[package]]
 name = "fmrimod"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "fmri-data",
  "fmri-design",

@@ -1,5 +1,7 @@
 # Repository structure and naming
 
+Subsequent source publication and hosted CI: [publication record](PUBLICATION.md).
+
 The virtual Cargo workspace and flat `crates/` directory match the current
 component boundaries. Each crate has one responsibility and the internal
 dependency graph is acyclic. Keep the existing numerical boundaries.

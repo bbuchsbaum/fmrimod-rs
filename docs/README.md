@@ -17,6 +17,8 @@
 
 ## Scientific evidence and development
 
+- [Public source and hosted qualification](PUBLICATION.md)
+
 - [Current completion and calibration report](COMPLETION_REPORT.md)
 - [Earlier integrated qualification](QUALIFICATION.md)
 - [HRF/design contracts](HRF_DESIGN_AUDIT.md)

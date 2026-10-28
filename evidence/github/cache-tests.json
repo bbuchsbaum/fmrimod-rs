@@ -1,0 +1,16 @@
+{
+  "runs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "parallel_threads": 16,
+  "reason": "Two tests previously raced while clearing the same global cache; exact miss/hit assertions retained."
+}

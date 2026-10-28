@@ -1,0 +1,151 @@
+{
+  "repository": "https://github.com/bbuchsbaum/fmrimod-rs",
+  "code_revision": "a9f601f415748a5dcf8c66d93ea4fea9135a67a2",
+  "hosted_run": "https://github.com/bbuchsbaum/fmrimod-rs/actions/runs/40607394554",
+  "hosted_conclusion": "success",
+  "platforms": [
+    {
+      "platform": "linux",
+      "tests": {
+        "passed": 2079,
+        "failed": 0,
+        "ignored": 36
+      },
+      "consumer_commands": 7,
+      "log": "final-linux.log",
+      "sha256": "877780cb34c21ef0754181537203c90a12a4a908e029b9b40b42cf4dc2d48a75"
+    },
+    {
+      "platform": "macos",
+      "tests": {
+        "passed": 2079,
+        "failed": 0,
+        "ignored": 36
+      },
+      "consumer_commands": 7,
+      "log": "final-macos.log",
+      "sha256": "9f12a1400588fe44cb0a97111e910754320f15270c75f6c979522a5a31884c0c"
+    },
+    {
+      "platform": "windows",
+      "tests": {
+        "passed": 2079,
+        "failed": 0,
+        "ignored": 36
+      },
+      "consumer_commands": 7,
+      "log": "final-windows.log",
+      "sha256": "8a90098ea9a8f75814ea042848d2d13b20fcfecfb39944699d79f3bd4d861edf"
+    }
+  ],
+  "local_consumers": [
+    {
+      "receipt": "evidence/git-consumer/f09cac2/receipt.json",
+      "revision": "f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "failure": null
+    },
+    {
+      "receipt": "evidence/git-consumer/rust199/receipt.json",
+      "revision": "f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "failure": null
+    }
+  ],
+  "rustdoc": {
+    "command": "cargo +1.99.0 doc --workspace --all-features --no-deps --locked",
+    "exit_code": 0,
+    "log_sha256": "9e87438d1bbb3790111eb584bea9c12fc15d54b4da306929a2a6bd5723fcb689"
+  },
+  "created_utc": "2026-10-28T00:27:54.007740+00:00",
+  "data": "synthetic only",
+  "registry_publication": false,
+  "lossless_log_archives": [
+    {
+      "raw": "final-linux.log",
+      "gzip": "final-linux.log.gz",
+      "raw_sha256": "877780cb34c21ef0754181537203c90a12a4a908e029b9b40b42cf4dc2d48a75",
+      "gzip_sha256": "05a665be1acefb664ad057297ad1cb96236df1d9f53bb24a9ce8d111c41fd395",
+      "raw_bytes": 423996,
+      "gzip_bytes": 78407
+    },
+    {
+      "raw": "final-macos.log",
+      "gzip": "final-macos.log.gz",
+      "raw_sha256": "9f12a1400588fe44cb0a97111e910754320f15270c75f6c979522a5a31884c0c",
+      "gzip_sha256": "27bc185ff8dd902bb025dac8b7a21cfec978d9191cacc3208a723f65b1150342",
+      "raw_bytes": 409355,
+      "gzip_bytes": 73999
+    },
+    {
+      "raw": "final-windows.log",
+      "gzip": "final-windows.log.gz",
+      "raw_sha256": "8a90098ea9a8f75814ea042848d2d13b20fcfecfb39944699d79f3bd4d861edf",
+      "gzip_sha256": "c4b6b8368900d01745e630d4dbe82dd8344511df17d0112b2e5059634babe8a0",
+      "raw_bytes": 413632,
+      "gzip_bytes": 76886
+    },
+    {
+      "raw": "initial-linux.log",
+      "gzip": "initial-linux.log.gz",
+      "raw_sha256": "b5d8413d1a49980d72e4ff955d78a526df6892ad4588e1d00b7dd2891e6f6736",
+      "gzip_sha256": "bc7eed6bab9e8ff2b7ac4f1503df5b8b17def640fd911ac58b6368e27302f1bf",
+      "raw_bytes": 420869,
+      "gzip_bytes": 77983
+    },
+    {
+      "raw": "initial-windows.log",
+      "gzip": "initial-windows.log.gz",
+      "raw_sha256": "19493a809739b6c2ae412d5fc68c4f18dec42db2d9f719fb77a9f07e860a11d6",
+      "gzip_sha256": "a4956a0629afe9ac37e69f62d8e598b74f338fe5008f9e7ec82fe9aab65df4bc",
+      "raw_bytes": 64045,
+      "gzip_bytes": 13824
+    },
+    {
+      "raw": "second-linux.log",
+      "gzip": "second-linux.log.gz",
+      "raw_sha256": "5a320f34156fb6e05250b74efb86d20122be10e219f0ab0248dcf8fa5bca68d2",
+      "gzip_sha256": "9ce507448b7debbe3253d3bc7ee25f3e92db047356c71b6f0c753c8224e8c652",
+      "raw_bytes": 130516,
+      "gzip_bytes": 25125
+    },
+    {
+      "raw": "latest-windows.log",
+      "gzip": "latest-windows.log.gz",
+      "raw_sha256": "c67b85cd05ef294146cad8339a60557b40ab5d81d61775b84c6a132f82002691",
+      "gzip_sha256": "7da7c59026b5b569eaf82f7c5b31947eb93ee78ef91cc78053650ce237bf8338",
+      "raw_bytes": 413390,
+      "gzip_bytes": 76599
+    },
+    {
+      "raw": "latest-clippy.log",
+      "gzip": "latest-clippy.log.gz",
+      "raw_sha256": "8fc0bffe78c6882ceff71df463ff5b06fdaaebb6bd0cf6c1088bf636c1ede2fe",
+      "gzip_sha256": "fe5c70520e34680bb1d2b0e35ab64c5066a577a8118d7fd77dac9fd8b9c8d611",
+      "raw_bytes": 2351,
+      "gzip_bytes": 850
+    },
+    {
+      "raw": "cache-tests.log",
+      "gzip": "cache-tests.log.gz",
+      "raw_sha256": "8c69397a78ebe337783dd0f7a70374a3e0b7fb1823efd6147e9da769ac38902f",
+      "gzip_sha256": "a7e690684d1b56e68320922eea87604ff6191610e7610b827c95e287827a18cb",
+      "raw_bytes": 23034,
+      "gzip_bytes": 1352
+    },
+    {
+      "raw": "data-msrv-tests.log",
+      "gzip": "data-msrv-tests.log.gz",
+      "raw_sha256": "499fe85ecd0ed047ef429a73e9997f515118aaffa3204f40f8a160b1f6a57950",
+      "gzip_sha256": "504b69577337469f00e8a7e452b6831065489b2319715aed23a7db013e12fb09",
+      "raw_bytes": 3155,
+      "gzip_bytes": 1247
+    },
+    {
+      "raw": "rustdoc.log",
+      "gzip": "rustdoc.log.gz",
+      "raw_sha256": "9e87438d1bbb3790111eb584bea9c12fc15d54b4da306929a2a6bd5723fcb689",
+      "gzip_sha256": "fb7d49ac9e77be6344a181eb631f6e0e465bfa7860f4870601347405274f4f84",
+      "raw_bytes": 7566,
+      "gzip_bytes": 2186
+    }
+  ]
+}

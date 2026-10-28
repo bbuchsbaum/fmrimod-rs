@@ -1,0 +1,14 @@
+[package]
+name = "external-facade"
+version = "0.0.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+ndarray = "0.16"
+fmrimod = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "2c87903efad3e5bbb69194108b00c3a56f91724c" }
+
+[profile.dev]
+debug = 0
+incremental = false

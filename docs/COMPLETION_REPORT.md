@@ -1,5 +1,7 @@
 # Core capability completion and qualification
 
+Subsequent source publication and hosted CI: [publication record](PUBLICATION.md).
+
 This tranche delivers the five areas in [the execution plan](COMPLETION_PLAN.md):
 repeated group models, broader synthetic qualification, permutation/influence
 methods, noise extensions, and a reproducible local workspace checkpoint.

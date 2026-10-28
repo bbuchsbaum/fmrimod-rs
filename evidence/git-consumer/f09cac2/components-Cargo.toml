@@ -1,0 +1,22 @@
+[package]
+name = "external-components"
+version = "0.0.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+ndarray = "0.16"
+serde_json = "1"
+fmrimod = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "f09cac270817343e8b6b3cd069dfbf7d525976ec", features = ["formula", "nifti", "accelerate"] }
+fmri-data = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "f09cac270817343e8b6b3cd069dfbf7d525976ec" }
+fmri-hrf = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "f09cac270817343e8b6b3cd069dfbf7d525976ec" }
+fmri-design = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "f09cac270817343e8b6b3cd069dfbf7d525976ec" }
+fmri-noise = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "f09cac270817343e8b6b3cd069dfbf7d525976ec" }
+fmri-reg = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "f09cac270817343e8b6b3cd069dfbf7d525976ec" }
+fmri-group = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "f09cac270817343e8b6b3cd069dfbf7d525976ec" }
+fmri-splines = { git = "https://github.com/bbuchsbaum/fmrimod-rs.git", rev = "f09cac270817343e8b6b3cd069dfbf7d525976ec" }
+
+[profile.dev]
+debug = 0
+incremental = false

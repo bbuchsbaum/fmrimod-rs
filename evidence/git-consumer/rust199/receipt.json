@@ -1,0 +1,138 @@
+{
+  "revision": "f09cac270817343e8b6b3cd069dfbf7d525976ec",
+  "repository": "https://github.com/bbuchsbaum/fmrimod-rs.git",
+  "started": "2026-10-28T00:03:21.150695+00:00",
+  "commands": [
+    {
+      "label": "facade-metadata",
+      "command": [
+        "cargo",
+        "metadata",
+        "--format-version",
+        "1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3292825419921428,
+      "log": "facade-metadata.log",
+      "sha256": "b73b738581c9965675af4f1eba1639674b5504e8938c6398272e54cc0c1af2a2"
+    },
+    {
+      "label": "facade-facade",
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "--bin",
+        "facade"
+      ],
+      "exit_code": 0,
+      "seconds": 16.398332084005233,
+      "log": "facade-facade.log",
+      "sha256": "fbbd3913c9bd3686711b2cfeee389b2e4ac805801c1bf326ff834d3d3afb1195"
+    },
+    {
+      "label": "components-metadata",
+      "command": [
+        "cargo",
+        "metadata",
+        "--format-version",
+        "1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.12345804198412225,
+      "log": "components-metadata.log",
+      "sha256": "fdc69973d077c8306c53ee0397baa6f55499ffdccfdd570f605942f71864c829"
+    },
+    {
+      "label": "components-components",
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "--bin",
+        "components"
+      ],
+      "exit_code": 0,
+      "seconds": 30.41820225000265,
+      "log": "components-components.log",
+      "sha256": "febdd830d3d821fcdd7a5d70f1611ee421d92a3e173c6f9c5837ae4d4e298d52"
+    },
+    {
+      "label": "components-group_pipeline",
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "--bin",
+        "group_pipeline"
+      ],
+      "exit_code": 0,
+      "seconds": 0.9294085419969633,
+      "log": "components-group_pipeline.log",
+      "sha256": "f1ae40326c7274c6573ccd6e378481ce48c88ac151f8ca96e826ab0af17a6b61"
+    },
+    {
+      "label": "components-repeated_group",
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "--bin",
+        "repeated_group"
+      ],
+      "exit_code": 0,
+      "seconds": 0.7651871669804677,
+      "log": "components-repeated_group.log",
+      "sha256": "d3727ac695c1bd7745d58038fe1374abd2a5a15f2735c3f366c1b023eb9a9a98"
+    },
+    {
+      "label": "components-complete_first_level",
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "--bin",
+        "complete_first_level"
+      ],
+      "exit_code": 0,
+      "seconds": 2.1485567500058096,
+      "log": "components-complete_first_level.log",
+      "sha256": "f3cb5c06978ad1c0107d5711068c74fb705aae35012a3edad83584169f9ea6c2"
+    }
+  ],
+  "harness_source_sha256": {
+    "scripts/verify_git_consumer.py": "751b4245a0c1c719230e6de49cdff911a40b8c36dcbbcadc394ee1cb26aa37a1",
+    "examples/git-consumer/components.rs": "6ecbeb681ed1e019bdf1ddc6fed50ff258b0192734cc307deaefb2ba72b01037",
+    "examples/git-consumer/facade.rs": "827fcce3863fbb50898dc1c4ea2f5613e578e3de73408e31eb83aaf30c03c253",
+    "crates/fmri-group/examples/group_pipeline.rs": "80c3c97524302de175d3b7174432c64faba509cd08551825548fa40ffb528021",
+    "crates/fmri-group/examples/repeated_group.rs": "8df5f6b5529a9cc3ddf3d36571bf17dbed07134d366e05674119b5b97525e3fb",
+    "crates/fmrimod/examples/complete_first_level.rs": "ceb5543f2c261db6b251e7f87392379e37be7a5a078a86bdd9f876b6669c4734"
+  },
+  "facade": {
+    "git_packages": {
+      "fmri-data": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-group": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-hrf": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-noise": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-reg": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-splines": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmrimod": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec"
+    },
+    "manifests_contain_no_path_dependencies": true
+  },
+  "components": {
+    "git_packages": {
+      "fmri-data": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-design": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-group": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-hrf": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-noise": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-reg": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmri-splines": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec",
+      "fmrimod": "git+https://github.com/bbuchsbaum/fmrimod-rs.git?rev=f09cac270817343e8b6b3cd069dfbf7d525976ec#f09cac270817343e8b6b3cd069dfbf7d525976ec"
+    },
+    "manifests_contain_no_path_dependencies": true
+  },
+  "failure": null,
+  "finished": "2026-10-28T00:04:12.285933+00:00"
+}

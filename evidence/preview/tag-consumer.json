@@ -1,0 +1,20 @@
+{
+  "tag": "v0.1.0-alpha.1",
+  "commit": "fc1895f19cb2fdd0303457be72a93832e19fe26f",
+  "package_versions": {
+    "fmri-data": "0.1.0-alpha.1",
+    "fmri-group": "0.1.0-alpha.1",
+    "fmri-hrf": "0.1.0-alpha.1",
+    "fmri-noise": "0.1.0-alpha.1",
+    "fmri-reg": "0.1.0-alpha.1",
+    "fmri-splines": "0.1.0-alpha.1",
+    "fmrimod": "0.1.0-alpha.1"
+  },
+  "command": [
+    "cargo",
+    "run",
+    "--locked"
+  ],
+  "exit_code": 0,
+  "log_sha256": "2c0e71792fcddc1abb934eee3570aec2c4a89d68cc968aaec3db21c21e0eff47"
+}

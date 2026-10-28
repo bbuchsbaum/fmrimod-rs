@@ -1,0 +1,76 @@
+{
+  "build": {
+    "version": "0.1.0-alpha.1",
+    "source_revision": "fc1895f19cb2fdd0303457be72a93832e19fe26f",
+    "mdbook": "0.5.4",
+    "built_utc": "2026-10-28T01:12:03.442629+00:00",
+    "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)"
+  },
+  "commands": [
+    {
+      "name": "guide",
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "fmrimod",
+        "--example",
+        "guide_workflow",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log_sha256": "5539c0bf378a4e74c704dc0eb4aa7f2e44dd3ee0ec8a6072f69e6f5fec1aa623"
+    },
+    {
+      "name": "rustdoc",
+      "command": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--all-features",
+        "--no-deps",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log_sha256": "07e7b812342f854648d12d6694353ec191c460d1a29a6ae17f3010c99c9fee62"
+    },
+    {
+      "name": "book",
+      "command": [
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/docs-tools/mdbook",
+        "build",
+        "docs",
+        "--dest-dir",
+        "/Users/bbuchsbaum/code/rust/fmrimod-rs/target/site"
+      ],
+      "exit_code": 0,
+      "log_sha256": "0e29900c5bd236a0641a92dae24ce741c6f47826f49fe4bf24a8c549c408dfca"
+    }
+  ],
+  "site_check": {
+    "html_pages": 1216,
+    "local_links_checked": 134156,
+    "broken_links": 0
+  },
+  "empty_implementor_indexes": [
+    "api/trait.impl/fmri_splines/types/spline_traits/trait.SplineBuilder.js",
+    "api/trait.impl/fmri_splines/types/spline_traits/trait.ToPolynomial.js",
+    "api/trait.impl/fmri_design/design/trait.ExtractDesignMatrix.js",
+    "api/trait.impl/fmri_design/types/trait.Model.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasElements.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasNBasis.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasLabels.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasBlockLengths.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasEventTerms.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasTermNames.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasShortNames.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasLongNames.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.Construct.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasBlockIds.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasColumns.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasOnsets.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasLevels.js",
+    "api/trait.impl/fmri_design/utils/generics/trait.HasDurations.js"
+  ],
+  "companion_sha256": "cb20f2b7926fad454c92daa56595aee2c69c97e7b6c9870a5b83650718df3aff"
+}

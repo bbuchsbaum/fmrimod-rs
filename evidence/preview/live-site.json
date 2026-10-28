@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-28T01:28:44.691163+00:00",
+  "passed": true,
+  "source_revision": "fc1895f19cb2fdd0303457be72a93832e19fe26f",
+  "pages": [
+    {
+      "url": "https://bbuchsbaum.github.io/fmrimod-rs/",
+      "status": 200,
+      "bytes": 23308,
+      "sha256": "71da2467035ed45e9da8e79b87b29d0fb771c67a246a207c67ec9b259a22a984"
+    },
+    {
+      "url": "https://bbuchsbaum.github.io/fmrimod-rs/design.html",
+      "status": 200,
+      "bytes": 26089,
+      "sha256": "21a2a7d2f7ec8a45346da7beb86891a6c03ba755626bd58dfc72ac8dc1b1ef98"
+    },
+    {
+      "url": "https://bbuchsbaum.github.io/fmrimod-rs/fit.html",
+      "status": 200,
+      "bytes": 26585,
+      "sha256": "02eca27e45dededf2a571f174308572ffa313b30cc599c31864174faa0da9e4e"
+    },
+    {
+      "url": "https://bbuchsbaum.github.io/fmrimod-rs/outputs.html",
+      "status": 200,
+      "bytes": 27480,
+      "sha256": "54995511be8b07094f32a5da2304c56ec7ca2e534335e6f1cd6888c2d0de8aaa"
+    },
+    {
+      "url": "https://bbuchsbaum.github.io/fmrimod-rs/group.html",
+      "status": 200,
+      "bytes": 26856,
+      "sha256": "4d96ecee62088524ad0de1f926b4eff4485a37ee00991cbc43ee480d128ec95d"
+    },
+    {
+      "url": "https://bbuchsbaum.github.io/fmrimod-rs/api/fmrimod/index.html",
+      "status": 200,
+      "bytes": 8178,
+      "sha256": "119bd2fba296cc3faece69abd14d27002ab23fbe55cb809fb8dc3d426a1f4b51"
+    },
+    {
+      "url": "https://bbuchsbaum.github.io/fmrimod-rs/build-info.json",
+      "status": 200,
+      "bytes": 220,
+      "sha256": "c6db0205dc0f2f6e937de745774ad0d48cab21cc16049fb7acafe233cb9eee94"
+    }
+  ]
+}

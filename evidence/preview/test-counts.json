@@ -1,0 +1,23 @@
+{
+  "scope": "Totals across default and all-feature CI test invocations; includes repeated tests. Ignored cases are explicit exclusions, not passes.",
+  "jobs": {
+    "test (macos-latest)": {
+      "passed": 2079,
+      "failed": 0,
+      "ignored": 36,
+      "test_summaries": 192
+    },
+    "test (ubuntu-latest)": {
+      "passed": 2079,
+      "failed": 0,
+      "ignored": 36,
+      "test_summaries": 192
+    },
+    "test (windows-latest)": {
+      "passed": 2079,
+      "failed": 0,
+      "ignored": 36,
+      "test_summaries": 192
+    }
+  }
+}

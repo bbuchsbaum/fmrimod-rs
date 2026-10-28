@@ -1,0 +1,12 @@
+{
+  "base": "http://127.0.0.1:62401/fmrimod-rs/",
+  "browser": "151.0.7922.34",
+  "passed": true,
+  "desktop": true,
+  "mobile_width": 390,
+  "navigation": true,
+  "guide_search": true,
+  "api_search": true,
+  "api": true,
+  "page_errors": []
+}

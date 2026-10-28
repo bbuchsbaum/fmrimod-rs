@@ -75,7 +75,7 @@ def main():
             if not path.is_relative_to(ROOT):
                 broken.append((str(guide.relative_to(ROOT)), target))
                 continue
-            relative = str(path.relative_to(ROOT))
+            relative = path.relative_to(ROOT).as_posix()
             if relative not in tracked and not any(p.startswith(relative + "/") for p in tracked):
                 broken.append((str(guide.relative_to(ROOT)), target))
     assert not broken, broken

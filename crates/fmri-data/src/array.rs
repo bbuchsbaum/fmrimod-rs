@@ -455,10 +455,9 @@ fn read_file_values(
         while position < n {
             let count = (n - position).min(scratch.len() / 8);
             file.read_exact(&mut scratch[..count * 8])?;
-            for (j, bytes) in scratch[..count * 8].chunks_exact(8).enumerate() {
+            for (j, bytes) in scratch[..count * 8].as_chunks::<8>().0.iter().enumerate() {
                 let index = position + j;
-                output[(index % rows) * columns + index / rows] =
-                    f64::from_le_bytes(bytes.try_into().expect("eight-byte chunk"));
+                output[(index % rows) * columns + index / rows] = f64::from_le_bytes(*bytes);
             }
             position += count;
         }
@@ -483,9 +482,9 @@ fn read_file_values(
             while output_row < rows {
                 let count = ((rows - output_row) * std::mem::size_of::<f64>()).min(scratch.len());
                 file.read_exact(&mut scratch[..count])?;
-                for (index, bytes) in scratch[..count].chunks_exact(8).enumerate() {
+                for (index, bytes) in scratch[..count].as_chunks::<8>().0.iter().enumerate() {
                     output[(output_row + index) * columns + output_col] =
-                        f64::from_le_bytes(bytes.try_into().expect("eight-byte chunk"));
+                        f64::from_le_bytes(*bytes);
                 }
                 output_row += count / std::mem::size_of::<f64>();
             }

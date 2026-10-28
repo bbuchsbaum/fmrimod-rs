@@ -151,8 +151,12 @@ mod tests {
     use crate::cache::GLOBAL_CACHE;
     use crate::events::EventVariable;
 
+    // These tests clear shared process-global state and inspect exact counters.
+    static CACHE_TEST_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
+
     #[test]
     fn test_cached_convolution() {
+        let _guard = CACHE_TEST_LOCK.lock().unwrap();
         // Clear caches first
         GLOBAL_CACHE.clear_all();
 
@@ -202,6 +206,7 @@ mod tests {
 
     #[test]
     fn test_precompute_cache() {
+        let _guard = CACHE_TEST_LOCK.lock().unwrap();
         GLOBAL_CACHE.clear_all();
 
         let hrfs = vec!["canonical", "gamma"];

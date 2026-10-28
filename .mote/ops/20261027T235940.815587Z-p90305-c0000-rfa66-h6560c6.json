@@ -1,0 +1,1 @@
+{"actor":"codex-fmrimod","entity":"bd-01M5ZW85KE38RQN448G8Z786J2","kind":"reserve_open","mode":"exclusive","op":"20261027T235940.815587Z-p90305-c0000-rfa66-h6560c6","paths":["crates/fmri-design/src/convolve_cached.rs"],"reservation_id":"rv-01M5ZWWB8F98ZJKQQ7DSMGRA75","ts":"2026-10-27T23:59:40.815587Z","ttl_s":3600,"v":2}

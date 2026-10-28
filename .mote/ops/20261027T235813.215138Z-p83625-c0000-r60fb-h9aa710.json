@@ -1,0 +1,1 @@
+{"actor":"codex-fmrimod","entity":"bd-01M5ZW85KE38RQN448G8Z786J2","kind":"reserve_open","mode":"exclusive","op":"20261027T235813.215138Z-p83625-c0000-r60fb-h9aa710","paths":["crates/fmri-data/src/array.rs","crates/fmri-group/examples/portable_execution_benchmark.rs"],"reservation_id":"rv-01M5ZWSNPZQKRFQZ5024164ZTE","ts":"2026-10-27T23:58:13.215138Z","ttl_s":3600,"v":2}

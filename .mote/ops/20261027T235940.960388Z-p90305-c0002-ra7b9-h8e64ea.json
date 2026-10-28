@@ -1,0 +1,1 @@
+{"actor":"codex-fmrimod","entity":"bd-01M5ZW85KE38RQN448G8Z786J2","kind":"note","note_kind":"progress","op":"20261027T235940.960388Z-p90305-c0002-ra7b9-h8e64ea","text":"Second Linux run exposed two concurrent unit tests clearing the same global cache; serializing only those tests, retaining parallel suite and exact assertions.","ts":"2026-10-27T23:59:40.960388Z","v":1}
